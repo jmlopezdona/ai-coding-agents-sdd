@@ -12,7 +12,7 @@ SDD isn't writing lots of documentation. It isn't waterfall in disguise. It isn'
 
 Two things change. First, **order**: you specify before asking the agent to code, not after. Second, **persistence**: the spec lives in the repository, versioned, and is updated as the code evolves. It's the difference between "I drop a ticket on the agent and see what comes out" and "I give it a contract I can compare its output against".
 
-What SDD isn't: a promise that the agent will get it right the first time. A guarantee that generated code will be correct. A substitute for reviewing what the agent produces. A process that scales uniformly to any task — a three-line bug fix and a database migration don't ask for the same amount of spec, and forcing the opposite is one of the fastest ways to kill a team (chapter 9).
+What SDD isn't: a promise that the agent will get it right the first time, a guarantee that generated code will be correct, a substitute for reviewing what the agent produces, or a process that scales uniformly to any task — a three-line bug fix and a database migration don't ask for the same amount of spec, and forcing the opposite is one of the fastest ways to kill a team (chapter 9).
 
 ## Why we need a discipline, not just "better prompts"
 

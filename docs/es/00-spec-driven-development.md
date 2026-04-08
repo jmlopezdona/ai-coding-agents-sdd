@@ -12,7 +12,7 @@ SDD no es escribir mucha documentación. No es waterfall disfrazado. No es cerem
 
 Cambian dos cosas. Primero, **el orden**: especificas antes de pedirle al agente que codifique, no después. Segundo, **la persistencia**: la especificación queda en el repositorio, versionada, y se actualiza cuando el código evoluciona. Es la diferencia entre "le pongo un ticket al agente y veo qué sale" y "le doy un contrato con el que comparar lo que produce".
 
-Lo que SDD no es: una promesa de que el agente acertará a la primera. Una garantía de que el código generado será correcto. Un sustituto de revisar lo que sale. Un proceso que escala uniformemente a cualquier tarea — un bug fix de tres líneas y una migración de base de datos no piden la misma cantidad de spec, y forzar lo contrario es una de las cosas más rápidas de matar un equipo (capítulo 9).
+Lo que SDD no es: una promesa de que el agente acertará a la primera, una garantía de que el código generado será correcto, un sustituto de revisar lo que sale, ni un proceso que escala uniformemente a cualquier tarea — un bug fix de tres líneas y una migración de base de datos no piden la misma cantidad de spec, y forzar lo contrario es una de las cosas más rápidas de matar un equipo (capítulo 9).
 
 ## Por qué hace falta una disciplina, no solo "mejores prompts"
 
