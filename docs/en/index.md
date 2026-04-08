@@ -71,11 +71,11 @@ Two chapters are **not optional** even though they look negative: chapter 9 (the
 
 ## Sources
 
-- *Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants* — arXiv
-- *A Survey on Code Generation with LLM-based Agents* — arXiv 2508.00083
+- [*Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants*](https://arxiv.org/html/2602.00180) — arXiv
+- [*A Survey on Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1) — arXiv 2508.00083
 - Addy Osmani — [*How to write a good spec for AI agents*](https://addyosmani.com/blog/good-spec/)
 - Augment Code — [*How to Write Living Specs for AI Agent Development*](https://www.augmentcode.com/guides/living-specs-for-ai-agent-development)
 - Pockit Tools — [*Specification-Driven Development: How to Stop Vibe Coding*](https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788)
-- r/vibecoding — *Everything one should know about Spec-Driven Development*
+- r/vibecoding — [*Everything one should know about Spec-Driven Development*](https://www.reddit.com/r/vibecoding/comments/1qs80k4/everything_one_should_know_about_specdriven/)
 - Isoform — [*The Limits of Spec-Driven Development*](https://isoform.ai/blog/the-limits-of-spec-driven-development)
 - Martin Fowler / Thoughtworks — [*Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl*](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html)
