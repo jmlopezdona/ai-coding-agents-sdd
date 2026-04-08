@@ -1784,7 +1784,14 @@
 <blockquote>
 <p><em>Currently viable mainly in mature domains like automotive embedded systems using tools such as Simulink.</em></p>
 </blockquote>
-<p>Traducido: en dominios donde la generación de código a partir de modelos lleva décadas funcionando porque los modelos tienen una semántica muy estrecha y muy bien entendida. Para software de propósito general — APIs web, frontends, scripts internos, todo lo que la mayoría de equipos hacen el 95% del tiempo — el spec-as-source sigue siendo más promesa que realidad. La razón fundamental es la misma que mató al Model-Driven Development en los años 2000, y el capítulo 9 vuelve sobre esto.</p>
+<p><strong>Simulink</strong> es el ejemplo paradigmático y conviene entenderlo porque ilustra qué condiciones tiene que cumplir un dominio para que spec-as-source funcione de verdad. Es una herramienta de MathWorks (los mismos de MATLAB) en la que diseñas sistemas dibujando <strong>diagramas de bloques visuales</strong> — sensores, controladores, filtros, conexiones — y la herramienta <strong>genera automáticamente código C/C++ embebido</strong> a partir de ese diagrama. Los ingenieros editan el diagrama, no el código generado. Si hay un bug en el <code>.c</code>, se arregla el bloque y se regenera. Las industrias de automoción, aeroespacial y control industrial llevan décadas — desde los años 90 — produciendo firmware crítico de esta forma. No es teoría, es producción real a gran escala.</p>
+<p>Lo que hace que Simulink funcione, y que es exactamente lo que falta en software de propósito general, son tres condiciones:</p>
+<ol>
+<li><strong>Semántica formal estrecha</strong>: cada bloque tiene un significado matemático preciso (una integral, un PID, un filtro Kalman). No hay ambigüedad sobre qué hace.</li>
+<li><strong>Dominio acotado</strong>: sistemas de control, dinámica física, procesamiento de señales. Problemas con leyes bien establecidas.</li>
+<li><strong>Generación determinística</strong>: el mismo diagrama produce el mismo código. Siempre.</li>
+</ol>
+<p>Para software de propósito general — APIs web, frontends, scripts internos, todo lo que la mayoría de equipos hacen el 95% del tiempo — ninguna de las tres condiciones se cumple. Las specs están en lenguaje natural (ambigüedad), el dominio cambia con cada feature (no acotado), y los LLMs son no determinísticos por diseño. Por eso spec-as-source aplicado a este tipo de software sigue siendo más promesa que realidad. La razón fundamental es la misma que mató al Model-Driven Development en los años 2000, y el capítulo 9 vuelve sobre esto.</p>
 <p><strong>Cuándo funciona:</strong>
 - Dominios maduros con semántica formal (embedded, control, hardware/software co-design).
 - Capas finas de glue code donde el mapeo spec→código es trivial.</p>
