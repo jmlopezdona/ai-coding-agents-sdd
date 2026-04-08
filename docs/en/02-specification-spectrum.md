@@ -56,7 +56,15 @@ The paper is clear about where this actually works:
 
 > *Currently viable mainly in mature domains like automotive embedded systems using tools such as Simulink.*
 
-Translated: in domains where code generation from models has worked for decades because the models have a very narrow, very well-understood semantics. For general-purpose software — web APIs, frontends, internal scripts, everything most teams do 95% of the time — spec-as-source is still more promise than reality. The fundamental reason is the same one that killed Model-Driven Development in the 2000s, and chapter 9 returns to this.
+**Simulink** is the paradigmatic example and worth understanding because it illustrates what conditions a domain must meet for spec-as-source to actually work. It's a MathWorks tool (same people who make MATLAB) where you design systems by drawing **visual block diagrams** — sensors, controllers, filters, connections — and the tool **automatically generates embedded C/C++ code** from that diagram. Engineers edit the diagram, not the generated code. If there's a bug in the `.c`, you fix the block and regenerate. The automotive, aerospace, and industrial control industries have been producing critical firmware this way for decades — since the 1990s. It's not theory, it's real production at scale.
+
+What makes Simulink work, and what's missing in general-purpose software, are three conditions:
+
+1. **Narrow formal semantics**: each block has a precise mathematical meaning (an integral, a PID, a Kalman filter). No ambiguity about what it does.
+2. **Bounded domain**: control systems, physical dynamics, signal processing. Problems with well-established laws.
+3. **Deterministic generation**: the same diagram produces the same code. Always.
+
+For general-purpose software — web APIs, frontends, internal scripts, everything most teams do 95% of the time — none of the three conditions hold. Specs are in natural language (ambiguity), the domain changes with every feature (unbounded), and LLMs are non-deterministic by design. That's why spec-as-source applied to this kind of software is still more promise than reality. The fundamental reason is the same one that killed Model-Driven Development in the 2000s, and chapter 9 returns to this.
 
 **When it works:**
 - Mature domains with formal semantics (embedded, control, hardware/software co-design).
