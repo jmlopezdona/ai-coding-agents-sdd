@@ -37,7 +37,7 @@ It's less artisanal and more architectural work. The hard part stops being typin
 
 ## The specification spectrum, in one idea
 
-One useful contribution of the arXiv SDD paper is that it doesn't present SDD as one thing. It presents it as a spectrum of three commitment levels:
+One useful contribution of the paper *Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants* (arXiv) is that it doesn't present SDD as one thing. It presents it as a spectrum of three commitment levels:
 
 - **Spec-First**: you write a spec before coding; useful to start; then the code diverges freely.
 - **Spec-Anchored**: spec and code evolve together; automatic tests guarantee alignment; this is where serious teams live.

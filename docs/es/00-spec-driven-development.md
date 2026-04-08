@@ -37,7 +37,7 @@ Es un trabajo menos artesanal y más arquitectónico. Lo difícil deja de ser te
 
 ## El espectro de la especificación, en una sola idea
 
-Una de las contribuciones útiles del paper de arXiv sobre SDD es que no presenta el SDD como una cosa única, sino como un espectro de tres niveles de compromiso:
+Una de las contribuciones útiles del paper *Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants* (arXiv) es que no presenta el SDD como una cosa única, sino como un espectro de tres niveles de compromiso:
 
 - **Spec-First**: escribes una spec antes de codificar; sirve para arrancar; luego el código diverge libremente.
 - **Spec-Anchored**: spec y código evolucionan a la par; tests automáticos garantizan la alineación; es donde viven los equipos serios.
