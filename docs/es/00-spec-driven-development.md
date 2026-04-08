@@ -8,7 +8,7 @@ La reacción habitual es echarle la culpa al modelo, esperar al siguiente, o con
 
 SDD no es escribir mucha documentación. No es waterfall disfrazado. No es ceremonia de gestión de proyectos. SDD es una idea muy concreta:
 
-> **La especificación de la intención — qué se construye, por qué, con qué restricciones — es el artefacto principal del trabajo. El código es la realización de esa especificación.**
+> **La especificación de la intención — qué se construye, por qué, con qué restricciones y bajo qué criterios de aceptación — es el artefacto principal del trabajo. El código es la realización de esa especificación.**
 
 Cambian dos cosas. Primero, **el orden**: especificas antes de pedirle al agente que codifique, no después. Segundo, **la persistencia**: la especificación queda en el repositorio, versionada, y se actualiza cuando el código evoluciona. Es la diferencia entre "le pongo un ticket al agente y veo qué sale" y "le doy un contrato con el que comparar lo que produce".
 

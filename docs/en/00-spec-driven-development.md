@@ -8,7 +8,7 @@ The usual reaction is to blame the model, wait for the next one, or convince you
 
 SDD isn't writing lots of documentation. It isn't waterfall in disguise. It isn't project-management ceremony. SDD is one very concrete idea:
 
-> **The specification of intent — what is being built, why, with what constraints — is the primary artifact of the work. Code is the realization of that specification.**
+> **The specification of intent — what is being built, why, with what constraints and under what acceptance criteria — is the primary artifact of the work. Code is the realization of that specification.**
 
 Two things change. First, **order**: you specify before asking the agent to code, not after. Second, **persistence**: the spec lives in the repository, versioned, and is updated as the code evolves. It's the difference between "I drop a ticket on the agent and see what comes out" and "I give it a contract I can compare its output against".
 
