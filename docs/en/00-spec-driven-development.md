@@ -47,9 +47,9 @@ Most teams confuse what they're doing: they say "we're doing SDD" when they're a
 
 ## The critique that's also part of the course
 
-An honest guide on SDD has to accept that SDD can also go wrong. Chapter 9 develops the strongest critiques — Isoform's *maintenance tax*, Martin Fowler's parallel with the old Model-Driven Development, the loss of the *whys*, the false illusion of control — and chapter 10 presents Isoform's alternative: *context engineering*, where intent and *whys* are preserved **inside the code** rather than in external specs.
+An honest guide on SDD has to accept that the discipline can also go wrong. Chapter 9 develops the strongest critiques — Isoform's *maintenance tax*, Martin Fowler's parallel with the old Model-Driven Development, the loss of the *whys*, the false illusion of control — and chapter 10 presents Isoform's alternative: *context engineering*, where intent and *whys* are preserved **inside the code** rather than in external specs.
 
-They aren't there for noise. They're there because misapplied SDD is indistinguishable from bureaucracy, and if the course only teaches you the positive patterns it leaves you defenseless against the moment — and it will come — when your own SDD process becomes the bottleneck.
+They aren't there for noise. They're there because misapplied, this discipline is indistinguishable from bureaucracy, and if the course only teaches you the positive patterns it leaves you defenseless against the moment — and it will come — when your own process becomes the bottleneck.
 
 ## How this fits in the trilogy
 

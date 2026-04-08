@@ -47,9 +47,9 @@ La mayoría de los equipos confunden lo que están haciendo: dicen "estamos haci
 
 ## La crítica que también es parte del curso
 
-Una guía honesta sobre SDD tiene que aceptar que SDD también puede salir mal. El capítulo 9 desarrolla las críticas más fuertes — el *maintenance tax* de Isoform, el paralelo con el viejo Model-Driven Development de Martin Fowler, la pérdida de los "por qués", la falsa ilusión de control — y el capítulo 10 presenta la alternativa que propone Isoform: *context engineering*, donde la intención y los "por qués" se preservan **dentro del código** en vez de en specs externas.
+Una guía honesta sobre SDD tiene que aceptar que la disciplina también puede salir mal. El capítulo 9 desarrolla las críticas más fuertes — el *maintenance tax* de Isoform, el paralelo con el viejo Model-Driven Development de Martin Fowler, la pérdida de los "por qués", la falsa ilusión de control — y el capítulo 10 presenta la alternativa que propone Isoform: *context engineering*, donde la intención y los "por qués" se preservan **dentro del código** en vez de en specs externas.
 
-No están ahí para hacer ruido. Están porque el SDD mal aplicado es indistinguible de la burocracia, y si el curso solo te enseña los patrones positivos te va a dejar sin defensa contra el momento — que llegará — en el que tu propio proceso SDD se convierta en el cuello de botella.
+No están ahí para hacer ruido. Están porque mal aplicada esta disciplina es indistinguible de la burocracia, y si el curso solo te enseña los patrones positivos te va a dejar sin defensa contra el momento — que llegará — en el que tu propio proceso se convierta en el cuello de botella.
 
 ## Cómo encaja en la trilogía
 
