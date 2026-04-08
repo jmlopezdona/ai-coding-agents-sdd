@@ -12,15 +12,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: deep orange
-      accent: deep orange
+      primary: deep purple
+      accent: deep purple
       toggle:
         icon: material/brightness-7
         name: Modo oscuro
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep orange
-      accent: deep orange
+      primary: deep purple
+      accent: deep purple
       toggle:
         icon: material/brightness-4
         name: Modo claro
