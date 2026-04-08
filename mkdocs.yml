@@ -44,7 +44,8 @@ theme:
 
 nav:
   - Home: index.md
-  - Overview: 00-spec-driven-development.md
+  - Introduction:
+      - "Spec-Driven Development: building software with intent": 00-spec-driven-development.md
   - The problem:
       - "1. From vibe coding to SDD": 01-from-vibe-coding-to-sdd.md
   - Foundations:
@@ -114,7 +115,8 @@ plugins:
           site_name: Spec-Driven Development
           nav_translations:
             "Home": "Inicio"
-            "Overview": "Resumen"
+            "Introduction": "Introducción"
+            "Spec-Driven Development: building software with intent": "Spec-Driven Development: producir software con intención"
             "1. From vibe coding to SDD": "1. Del vibe coding al SDD"
             "The problem": "El problema"
             "Foundations": "Fundamentos"
