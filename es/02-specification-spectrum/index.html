@@ -892,6 +892,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#spec-anchored-vs-spec-as-source-la-diferencia-que-mas-confunde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec-Anchored vs Spec-as-Source: la diferencia que más confunde
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#como-saber-en-que-nivel-estas-de-verdad" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1675,6 +1686,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#spec-anchored-vs-spec-as-source-la-diferencia-que-mas-confunde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec-Anchored vs Spec-as-Source: la diferencia que más confunde
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#como-saber-en-que-nivel-estas-de-verdad" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1797,6 +1819,67 @@
 - Capas finas de glue code donde el mapeo spec→código es trivial.</p>
 <p><strong>Cuándo se rompe:</strong>
 - En la mayoría del software real. La traducción spec→código no es determinística cuando la spec está en lenguaje natural y el generador es un LLM, y ese no-determinismo es exactamente lo que rompe la promesa central del nivel.</p>
+<h2 id="spec-anchored-vs-spec-as-source-la-diferencia-que-mas-confunde">Spec-Anchored vs Spec-as-Source: la diferencia que más confunde<a class="headerlink" href="#spec-anchored-vs-spec-as-source-la-diferencia-que-mas-confunde" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>A primera vista parece que la diferencia entre los dos niveles es solo técnica — <em>"en los dos la spec es la fuente, ¿no?"</em>. A nivel filosófico sí. A nivel operacional, son modelos muy distintos, y entender la diferencia te ahorra elegir mal.</p>
+<p>La distinción clave es <strong>quién puede editar el código</strong>:</p>
+<ul>
+<li>
+<p><strong>En spec-anchored, el código se edita a mano.</strong> Spec y código son dos artefactos paralelos, los dos se mantienen, los dos pueden modificarse directamente. Lo que el "anclaje" añade es un mecanismo automático (tests, validadores, agentes recurrentes) que <strong>detecta cuándo se desincronizan</strong>. Cuando hay drift, alguien decide: actualizo el código para que cumpla la spec, o actualizo la spec para reflejar lo que el código hace ahora. Las dos direcciones son válidas. Un dev puede arreglar un bug puntual editando directamente un archivo, y el sensor abrirá un issue para reconciliar la spec después.</p>
+</li>
+<li>
+<p><strong>En spec-as-source, el código no se edita nunca a mano.</strong> Está marcado como generado. Si hay un bug, no abres el <code>.c</code> y lo arreglas — tienes que cambiar la spec y regenerar. El código es <strong>solo lectura por contrato</strong>, como un binario compilado.</p>
+</li>
+</ul>
+<p>Esto tiene tres consecuencias prácticas que no son matices:</p>
+<ol>
+<li>
+<p><strong>No hay escape hatch en spec-as-source.</strong> Si la generación produce algo que no encaja con lo que necesitas, no puedes "tocar dos líneas para arreglarlo". Tienes que volver a la spec, refinarla, regenerar todo. En spec-anchored sí puedes tocar las dos líneas y luego actualizar la spec con la decisión.</p>
+</li>
+<li>
+<p><strong>Cambia quién puede contribuir.</strong> En spec-anchored, cualquiera que sepa el lenguaje de programación puede contribuir. En spec-as-source, tienes que aprender el formato de la spec y entender cómo el generador la interpreta. Es un skill nuevo y obligatorio.</p>
+</li>
+<li>
+<p><strong>El coste de los cambios pequeños sube.</strong> Un fix trivial en spec-anchored es trivial. En spec-as-source, hasta el fix más pequeño tiene que pasar por "edita la spec, regenera, valida que el resto del código no cambió de forma indeseada". Es exactamente el problema que mató al MDD en los 2000.</p>
+</li>
+</ol>
+<p>Resumido en una tabla:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Spec-Anchored</th>
+<th>Spec-as-Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿Quién edita el código?</td>
+<td>Humanos / agentes directamente</td>
+<td>Nadie — se genera</td>
+</tr>
+<tr>
+<td>¿Dónde haces un cambio pequeño?</td>
+<td>Spec o código, después sincronizas</td>
+<td>Solo spec, regeneras</td>
+</tr>
+<tr>
+<td>¿Hay escape hatch para casos raros?</td>
+<td>Sí (edita el código)</td>
+<td>No (refactoriza la spec)</td>
+</tr>
+<tr>
+<td>Fuente única de verdad</td>
+<td>Dos artefactos sincronizados</td>
+<td>Una sola, el resto deriva</td>
+</tr>
+<tr>
+<td>Skill necesario</td>
+<td>Programar</td>
+<td>Programar + escribir spec generadora</td>
+</tr>
+</tbody>
+</table>
+<p>Y ahí está exactamente por qué Simulink funciona en su dominio — semántica formal estrecha = la generación es predecible y rara vez necesitas el escape hatch — y por qué Tessl tiene difícil replicarlo en software de propósito general: la generación con LLMs no es determinística, así que el escape hatch se necesita constantemente, y prohibirlo te deja atascado.</p>
 <h2 id="como-saber-en-que-nivel-estas-de-verdad">Cómo saber en qué nivel estás de verdad<a class="headerlink" href="#como-saber-en-que-nivel-estas-de-verdad" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una pregunta diagnóstica simple: <strong>¿qué pasa cuando alguien cambia el código directamente sin tocar la spec?</strong></p>
 <ul>
