@@ -1,0 +1,142 @@
+site_name: Spec-Driven Development
+site_description: Guía en español sobre Spec-Driven Development con AI coding agents
+site_author: jmlopezdona
+site_url: https://jmlopezdona.github.io/ai-coding-agents-sdd/
+repo_url: https://github.com/jmlopezdona/ai-coding-agents-sdd
+repo_name: jmlopezdona/ai-coding-agents-sdd
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Overview: 00-spec-driven-development.md
+  - The problem:
+      - "1. From vibe coding to SDD": 01-from-vibe-coding-to-sdd.md
+  - Foundations:
+      - "2. The specification spectrum": 02-specification-spectrum.md
+      - "3. Anatomy of a good spec": 03-anatomy-of-a-spec.md
+  - The cycle:
+      - "4. The SDD cycles": 04-sdd-cycles.md
+      - "5. Living specs": 05-living-specs.md
+  - Tooling:
+      - "6. Native SDD tools": 06-native-sdd-tools.md
+      - "7. Architect layers over agents": 07-architect-layers.md
+  - Practice:
+      - "8. Patterns of application": 08-patterns-of-application.md
+  - Critique:
+      - "9. The honest critique": 09-honest-critique.md
+      - "10. Context engineering as alternative": 10-context-engineering.md
+  - Pitfalls:
+      - "11. Anti-patterns": 11-anti-patterns.md
+  - Bridge:
+      - "12. From SDD to the harness": 12-from-sdd-to-harness.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Enlace permanente a esta sección
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.smartsymbols
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      lang:
+        - en
+        - es
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: es
+          name: Español
+          build: true
+          site_name: Spec-Driven Development
+          nav_translations:
+            "Home": "Inicio"
+            "Overview": "Resumen"
+            "1. From vibe coding to SDD": "1. Del vibe coding al SDD"
+            "The problem": "El problema"
+            "Foundations": "Fundamentos"
+            "2. The specification spectrum": "2. El espectro de la especificación"
+            "3. Anatomy of a good spec": "3. Anatomía de una buena especificación"
+            "The cycle": "El ciclo"
+            "4. The SDD cycles": "4. Los ciclos SDD"
+            "5. Living specs": "5. Especificaciones vivas"
+            "Tooling": "Herramientas"
+            "6. Native SDD tools": "6. Herramientas SDD nativas"
+            "7. Architect layers over agents": "7. Capas de arquitecto sobre agentes"
+            "Practice": "Práctica"
+            "8. Patterns of application": "8. Patrones de aplicación"
+            "Critique": "Crítica"
+            "9. The honest critique": "9. La crítica honesta"
+            "10. Context engineering as alternative": "10. Context engineering como alternativa"
+            "Pitfalls": "Errores comunes"
+            "11. Anti-patterns": "11. Anti-patrones"
+            "Bridge": "Puente"
+            "12. From SDD to the harness": "12. Del SDD al harness"
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jmlopezdona/ai-coding-agents-sdd
