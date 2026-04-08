@@ -1749,7 +1749,7 @@
 <h2 id="what-sdd-is-exactly-and-what-it-isnt">What SDD is exactly (and what it isn't)<a class="headerlink" href="#what-sdd-is-exactly-and-what-it-isnt" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>SDD isn't writing lots of documentation. It isn't waterfall in disguise. It isn't project-management ceremony. SDD is one very concrete idea:</p>
 <blockquote>
-<p><strong>The specification of intent — what is being built, why, with what constraints — is the primary artifact of the work. Code is the realization of that specification.</strong></p>
+<p><strong>The specification of intent — what is being built, why, with what constraints and under what acceptance criteria — is the primary artifact of the work. Code is the realization of that specification.</strong></p>
 </blockquote>
 <p>Two things change. First, <strong>order</strong>: you specify before asking the agent to code, not after. Second, <strong>persistence</strong>: the spec lives in the repository, versioned, and is updated as the code evolves. It's the difference between "I drop a ticket on the agent and see what comes out" and "I give it a contract I can compare its output against".</p>
 <p>What SDD isn't: a promise that the agent will get it right the first time. A guarantee that generated code will be correct. A substitute for reviewing what the agent produces. A process that scales uniformly to any task — a three-line bug fix and a database migration don't ask for the same amount of spec, and forcing the opposite is one of the fastest ways to kill a team (chapter 9).</p>
