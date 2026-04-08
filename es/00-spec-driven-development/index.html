@@ -689,7 +689,7 @@
   <a href="#por-que-hace-falta-una-disciplina-no-solo-mejores-prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Por qué hace falta una disciplina, no solo "mejores prompts"
+        Por qué hace falta una disciplina, no solo mejores prompts
       
     </span>
   </a>
@@ -1656,7 +1656,7 @@
   <a href="#por-que-hace-falta-una-disciplina-no-solo-mejores-prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Por qué hace falta una disciplina, no solo "mejores prompts"
+        Por qué hace falta una disciplina, no solo mejores prompts
       
     </span>
   </a>
@@ -1753,7 +1753,7 @@
 </blockquote>
 <p>Cambian dos cosas. Primero, <strong>el orden</strong>: especificas antes de pedirle al agente que codifique, no después. Segundo, <strong>la persistencia</strong>: la especificación queda en el repositorio, versionada, y se actualiza cuando el código evoluciona. Es la diferencia entre "le pongo un ticket al agente y veo qué sale" y "le doy un contrato con el que comparar lo que produce".</p>
 <p>Lo que SDD no es: una promesa de que el agente acertará a la primera, una garantía de que el código generado será correcto, un sustituto de revisar lo que sale, ni un proceso que escala uniformemente a cualquier tarea — un bug fix de tres líneas y una migración de base de datos no piden la misma cantidad de spec, y forzar lo contrario es una de las cosas más rápidas de matar un equipo (capítulo 9).</p>
-<h2 id="por-que-hace-falta-una-disciplina-no-solo-mejores-prompts">Por qué hace falta una disciplina, no solo "mejores prompts"<a class="headerlink" href="#por-que-hace-falta-una-disciplina-no-solo-mejores-prompts" title="Enlace permanente a esta sección">&para;</a></h2>
+<h2 id="por-que-hace-falta-una-disciplina-no-solo-mejores-prompts">Por qué hace falta una disciplina, no solo mejores prompts<a class="headerlink" href="#por-que-hace-falta-una-disciplina-no-solo-mejores-prompts" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>El argumento más limpio para SDD viene de aceptar dos hechos sobre cómo funcionan los agentes hoy.</p>
 <p>El primero es el <strong>context collapse</strong>: cada sesión empieza con cero conocimiento del proyecto. Lo que el agente sabía ayer no lo sabe hoy. Las convenciones de nomenclatura, los patrones de manejo de errores, las decisiones arquitectónicas que el equipo discutió en Slack hace dos meses, todo eso es invisible al agente a menos que esté explícitamente escrito en algún sitio que el agente pueda leer. En un proyecto de 200 archivos, el conocimiento implícito es enorme, y el agente lo adivina a partir de su entrenamiento general — que casi nunca coincide con el tuyo.</p>
 <p>El segundo es el <strong>context drift</strong>, que es el primo operacional del context collapse pero ocurre <em>dentro</em> de una sesión: el agente arregla un bug en un archivo y rompe otros tres que no miró. No es que se confunda; es que su ventana de atención no abarca el blast radius real del cambio. Cuanto más grande el repo, peor.</p>

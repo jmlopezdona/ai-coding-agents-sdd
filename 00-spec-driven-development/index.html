@@ -689,7 +689,7 @@
   <a href="#why-we-need-a-discipline-not-just-better-prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why we need a discipline, not just "better prompts"
+        Why we need a discipline, not just better prompts
       
     </span>
   </a>
@@ -1656,7 +1656,7 @@
   <a href="#why-we-need-a-discipline-not-just-better-prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why we need a discipline, not just "better prompts"
+        Why we need a discipline, not just better prompts
       
     </span>
   </a>
@@ -1753,7 +1753,7 @@
 </blockquote>
 <p>Two things change. First, <strong>order</strong>: you specify before asking the agent to code, not after. Second, <strong>persistence</strong>: the spec lives in the repository, versioned, and is updated as the code evolves. It's the difference between "I drop a ticket on the agent and see what comes out" and "I give it a contract I can compare its output against".</p>
 <p>What SDD isn't: a promise that the agent will get it right the first time, a guarantee that generated code will be correct, a substitute for reviewing what the agent produces, or a process that scales uniformly to any task — a three-line bug fix and a database migration don't ask for the same amount of spec, and forcing the opposite is one of the fastest ways to kill a team (chapter 9).</p>
-<h2 id="why-we-need-a-discipline-not-just-better-prompts">Why we need a discipline, not just "better prompts"<a class="headerlink" href="#why-we-need-a-discipline-not-just-better-prompts" title="Enlace permanente a esta sección">&para;</a></h2>
+<h2 id="why-we-need-a-discipline-not-just-better-prompts">Why we need a discipline, not just better prompts<a class="headerlink" href="#why-we-need-a-discipline-not-just-better-prompts" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>The cleanest argument for SDD comes from accepting two facts about how agents work today.</p>
 <p>The first is <strong>context collapse</strong>: every session begins with zero project knowledge. What the agent knew yesterday it doesn't know today. The naming conventions, the error-handling patterns, the architectural decisions the team discussed in Slack two months ago — all of that is invisible to the agent unless it's explicitly written somewhere the agent can read. In a 200-file project, implicit knowledge is enormous, and the agent guesses from its general training — which almost never matches yours.</p>
 <p>The second is <strong>context drift</strong>, the operational cousin of context collapse but happening <em>within</em> a single session: the agent fixes a bug in one file and breaks three others it didn't look at. It's not that it forgot — its attention window doesn't cover the real blast radius of the change. The bigger the repo, the worse it gets.</p>
