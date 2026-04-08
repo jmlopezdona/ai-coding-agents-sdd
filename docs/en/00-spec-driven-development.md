@@ -6,7 +6,7 @@ The usual reaction is to blame the model, wait for the next one, or convince you
 
 ## What SDD is exactly (and what it isn't)
 
-SDD isn't writing lots of documentation. It isn't waterfall in disguise. It isn't PM ceremony. SDD is one very concrete idea:
+SDD isn't writing lots of documentation. It isn't waterfall in disguise. It isn't project-management ceremony. SDD is one very concrete idea:
 
 > **The specification of intent — what is being built, why, with what constraints — is the primary artifact of the work. Code is the realization of that specification.**
 

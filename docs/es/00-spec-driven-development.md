@@ -6,7 +6,7 @@ La reacción habitual es echarle la culpa al modelo, esperar al siguiente, o con
 
 ## Qué es exactamente SDD (y qué no)
 
-SDD no es escribir mucha documentación. No es waterfall disfrazado. No es ceremonia de PM. SDD es una idea muy concreta:
+SDD no es escribir mucha documentación. No es waterfall disfrazado. No es ceremonia de gestión de proyectos. SDD es una idea muy concreta:
 
 > **La especificación de la intención — qué se construye, por qué, con qué restricciones — es el artefacto principal del trabajo. El código es la realización de esa especificación.**
 
