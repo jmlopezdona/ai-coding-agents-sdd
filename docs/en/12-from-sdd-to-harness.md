@@ -88,4 +88,4 @@ If you take that, you take the best this guide can offer.
 
 ---
 
-*This chapter closes the course. If you want to take the next step, the harness course repository is linked in the [README](../../README.md) and in the index. And if you want to reread a specific chapter, all are self-contained: jump to whichever one you need when the problem it solves shows up.*
+*This chapter closes the course. If you want to take the next step, the harness course repository is linked in the [index](index.md). And if you want to reread a specific chapter, all are self-contained: jump to whichever one you need when the problem it solves shows up.*

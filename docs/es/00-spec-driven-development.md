@@ -69,4 +69,4 @@ Lo que no hace falta es leerla en orden de tapa a tapa. Lo que sí hace falta es
 
 ---
 
-*Este texto sintetiza ideas del paper de arXiv sobre SDD, los artículos de Addy Osmani y Augment Code sobre specs vivas y boundaries, los análisis críticos de Isoform y Martin Fowler (Thoughtworks) sobre los límites de SDD, y la discusión de la comunidad alrededor de herramientas como Kiro, Spec-kit, Tessl, BMAD y Traycer. URLs en la sección de fuentes del [README de la guía](../../README.md#sources).*
+*Este texto sintetiza ideas del paper de arXiv sobre SDD, los artículos de Addy Osmani y Augment Code sobre specs vivas y boundaries, los análisis críticos de Isoform y Martin Fowler (Thoughtworks) sobre los límites de SDD, y la discusión de la comunidad alrededor de herramientas como Kiro, Spec-kit, Tessl, BMAD y Traycer. URLs en la [sección de fuentes del índice](index.md#fuentes).*

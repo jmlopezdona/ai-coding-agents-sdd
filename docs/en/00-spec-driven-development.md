@@ -69,4 +69,4 @@ You don't have to read it cover to cover. You do have to not stop at the comfort
 
 ---
 
-*This text synthesizes ideas from the arXiv SDD paper, Addy Osmani and Augment Code on living specs and boundaries, the critical analyses of Isoform and Martin Fowler (Thoughtworks) on the limits of SDD, and the community discussion around tools like Kiro, Spec-kit, Tessl, BMAD, and Traycer. URLs in the [README sources section](../../README.md#sources).*
+*This text synthesizes ideas from the arXiv SDD paper, Addy Osmani and Augment Code on living specs and boundaries, the critical analyses of Isoform and Martin Fowler (Thoughtworks) on the limits of SDD, and the community discussion around tools like Kiro, Spec-kit, Tessl, BMAD, and Traycer. URLs in the [index sources section](index.md#sources).*

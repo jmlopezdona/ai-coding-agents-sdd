@@ -88,4 +88,4 @@ Si te llevas eso, te llevas lo mejor que esta guía puede ofrecer.
 
 ---
 
-*Este capítulo cierra el curso. Si quieres dar el siguiente paso, el repositorio del curso de harness está enlazado en el [README](../../README.md) y en el índice. Y si quieres releer algún capítulo concreto, todos son auto-contenidos: salta al que necesites cuando aparezca el problema que resuelve.*
+*Este capítulo cierra el curso. Si quieres dar el siguiente paso, el repositorio del curso de harness está enlazado en el [índice](index.md). Y si quieres releer algún capítulo concreto, todos son auto-contenidos: salta al que necesites cuando aparezca el problema que resuelve.*
