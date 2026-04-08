@@ -1847,6 +1847,7 @@
 <thead>
 <tr>
 <th></th>
+<th>Spec-First</th>
 <th>Spec-Anchored</th>
 <th>Spec-as-Source</th>
 </tr>
@@ -1855,25 +1856,36 @@
 <tr>
 <td>¿Quién edita el código?</td>
 <td>Humanos / agentes directamente</td>
+<td>Humanos / agentes directamente</td>
 <td>Nadie — se genera</td>
 </tr>
 <tr>
 <td>¿Dónde haces un cambio pequeño?</td>
+<td>Directamente en el código (la spec está abandonada)</td>
 <td>Spec o código, después sincronizas</td>
 <td>Solo spec, regeneras</td>
 </tr>
 <tr>
 <td>¿Hay escape hatch para casos raros?</td>
+<td>Siempre (no hay restricción)</td>
 <td>Sí (edita el código)</td>
 <td>No (refactoriza la spec)</td>
 </tr>
 <tr>
 <td>Fuente única de verdad</td>
+<td>Ninguna — el código deriva de facto</td>
 <td>Dos artefactos sincronizados</td>
 <td>Una sola, el resto deriva</td>
 </tr>
 <tr>
+<td>Mecanismo de sincronización</td>
+<td>Ninguno</td>
+<td>Tests / validadores / agentes</td>
+<td>Generación</td>
+</tr>
+<tr>
 <td>Skill necesario</td>
+<td>Programar</td>
 <td>Programar</td>
 <td>Programar + escribir spec generadora</td>
 </tr>

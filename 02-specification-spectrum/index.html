@@ -1847,6 +1847,7 @@
 <thead>
 <tr>
 <th></th>
+<th>Spec-First</th>
 <th>Spec-Anchored</th>
 <th>Spec-as-Source</th>
 </tr>
@@ -1855,25 +1856,36 @@
 <tr>
 <td>Who edits the code?</td>
 <td>Humans / agents directly</td>
+<td>Humans / agents directly</td>
 <td>Nobody — it's generated</td>
 </tr>
 <tr>
 <td>Where do you make a small change?</td>
+<td>Directly in the code (the spec is abandoned)</td>
 <td>Spec or code, then sync</td>
 <td>Only spec, regenerate</td>
 </tr>
 <tr>
 <td>Escape hatch for edge cases?</td>
+<td>Always (no constraint)</td>
 <td>Yes (edit the code)</td>
 <td>No (refactor the spec)</td>
 </tr>
 <tr>
 <td>Single source of truth</td>
+<td>None — code becomes the de facto source</td>
 <td>Two artifacts kept aligned</td>
 <td>One, the rest derives</td>
 </tr>
 <tr>
+<td>Sync mechanism</td>
+<td>None</td>
+<td>Tests / validators / agents</td>
+<td>Generation</td>
+</tr>
+<tr>
 <td>Required skill</td>
+<td>Programming</td>
 <td>Programming</td>
 <td>Programming + writing generator-friendly specs</td>
 </tr>
