@@ -73,6 +73,36 @@ For general-purpose software — web APIs, frontends, internal scripts, everythi
 **When it breaks:**
 - In most real software. The spec→code translation isn't deterministic when the spec is in natural language and the generator is an LLM, and that non-determinism is exactly what breaks the level's central promise.
 
+## Spec-Anchored vs Spec-as-Source: the most confusing distinction
+
+At first glance it looks like the difference between these two levels is only technical — *"in both the spec is the source, right?"*. Philosophically, yes. Operationally, they're very different models, and understanding the difference saves you from picking wrong.
+
+The key distinction is **who can edit the code**:
+
+- **In spec-anchored, code is edited by hand.** Spec and code are two parallel artifacts, both maintained, both directly modifiable. What "anchoring" adds is an automatic mechanism (tests, validators, recurring agents) that **detects when they desynchronize**. When there's drift, someone decides: update the code to meet the spec, or update the spec to reflect what the code now does. Both directions are valid. A dev can fix a one-off bug by directly editing a file, and the sensor will open an issue to reconcile the spec afterward.
+
+- **In spec-as-source, code is never edited by hand.** It's marked as generated. If there's a bug, you don't open the `.c` and fix it — you change the spec and regenerate. The code is **read-only by contract**, like a compiled binary.
+
+This has three practical consequences that aren't nuances:
+
+1. **No escape hatch in spec-as-source.** If generation produces something that doesn't fit what you need, you can't "tweak two lines to fix it". You have to go back to the spec, refine it, regenerate everything. In spec-anchored you can tweak the two lines and then update the spec with the decision.
+
+2. **Who can contribute changes.** In spec-anchored, anyone who knows the programming language can contribute. In spec-as-source, you have to learn the spec format and understand how the generator interprets it. It's a new and mandatory skill.
+
+3. **Small changes get more expensive.** A trivial fix in spec-anchored is trivial. In spec-as-source, even the smallest fix has to go through "edit the spec, regenerate, validate the rest of the code didn't change unexpectedly". This is exactly the problem that killed MDD in the 2000s.
+
+Summarized in a table:
+
+| | Spec-Anchored | Spec-as-Source |
+|---|---|---|
+| Who edits the code? | Humans / agents directly | Nobody — it's generated |
+| Where do you make a small change? | Spec or code, then sync | Only spec, regenerate |
+| Escape hatch for edge cases? | Yes (edit the code) | No (refactor the spec) |
+| Single source of truth | Two artifacts kept aligned | One, the rest derives |
+| Required skill | Programming | Programming + writing generator-friendly specs |
+
+And that's exactly why Simulink works in its domain — narrow formal semantics = generation is predictable and you rarely need the escape hatch — and why Tessl has a hard time replicating it for general-purpose software: LLM generation isn't deterministic, so the escape hatch is needed constantly, and forbidding it leaves you stuck.
+
 ## How to know what level you're really at
 
 A simple diagnostic question: **what happens when someone changes the code directly without touching the spec?**
