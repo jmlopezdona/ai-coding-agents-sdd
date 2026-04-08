@@ -14,7 +14,7 @@ Two things change. First, **order**: you specify before asking the agent to code
 
 What SDD isn't: a promise that the agent will get it right the first time, a guarantee that generated code will be correct, a substitute for reviewing what the agent produces, or a process that scales uniformly to any task — a three-line bug fix and a database migration don't ask for the same amount of spec, and forcing the opposite is one of the fastest ways to kill a team (chapter 9).
 
-## Why we need a discipline, not just "better prompts"
+## Why we need a discipline, not just better prompts
 
 The cleanest argument for SDD comes from accepting two facts about how agents work today.
 
