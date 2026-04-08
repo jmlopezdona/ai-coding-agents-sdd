@@ -93,13 +93,14 @@ This has three practical consequences that aren't nuances:
 
 Summarized in a table:
 
-| | Spec-Anchored | Spec-as-Source |
-|---|---|---|
-| Who edits the code? | Humans / agents directly | Nobody — it's generated |
-| Where do you make a small change? | Spec or code, then sync | Only spec, regenerate |
-| Escape hatch for edge cases? | Yes (edit the code) | No (refactor the spec) |
-| Single source of truth | Two artifacts kept aligned | One, the rest derives |
-| Required skill | Programming | Programming + writing generator-friendly specs |
+| | Spec-First | Spec-Anchored | Spec-as-Source |
+|---|---|---|---|
+| Who edits the code? | Humans / agents directly | Humans / agents directly | Nobody — it's generated |
+| Where do you make a small change? | Directly in the code (the spec is abandoned) | Spec or code, then sync | Only spec, regenerate |
+| Escape hatch for edge cases? | Always (no constraint) | Yes (edit the code) | No (refactor the spec) |
+| Single source of truth | None — code becomes the de facto source | Two artifacts kept aligned | One, the rest derives |
+| Sync mechanism | None | Tests / validators / agents | Generation |
+| Required skill | Programming | Programming | Programming + writing generator-friendly specs |
 
 And that's exactly why Simulink works in its domain — narrow formal semantics = generation is predictable and you rarely need the escape hatch — and why Tessl has a hard time replicating it for general-purpose software: LLM generation isn't deterministic, so the escape hatch is needed constantly, and forbidding it leaves you stuck.
 
