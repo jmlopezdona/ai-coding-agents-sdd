@@ -134,6 +134,44 @@ The simple test: a good spec survives **two different implementations** by the s
 
 ---
 
+## 13. Fusing user story and spec into a single file
+
+**Symptom.** The team, trying to "avoid duplicate work", merges the user story and the spec into a single hybrid file. The result tries to be both things at once and is neither: too technical for the PM to refine as a user story, and too vague in its product language for the agent to use as a verifiable technical contract. When a product change comes in, someone edits the file and a technical detail is left inconsistent. When an implementation discovery comes in, someone edits the file and a product decision changes without the PM noticing.
+
+**Why it happens.** It's very tempting, especially when product documentation lives in the same Git repo as the specs. The physical proximity makes the team ask "why have two files if they say the same thing?" — and the intuitive answer is to merge them. But the question is wrong: they don't say the same thing. The user story answers *what the user wants and why it matters to the business*. The spec answers *what observable guarantees the system must meet*. There's a 60-70% overlap, but they're not the same thing, and the overlap doesn't justify fusing them — each artifact serves a different audience and changes for different reasons.
+
+There's a more subtle cause too: the team confuses *traceability* with *unification*. It wants the link between product intent and technical contract to be explicit, and assumes the only way to achieve that is to put them in the same document. But traceability is achieved with references, traces and automatic sensors (chapter 5), not by fusing two artifacts with distinct purposes.
+
+**Correction.** Three rules:
+
+1. **Keep the physical separation**, even when both files live in the same repo. The user story in `docs/product/`, the spec in `specs/`, each with its own history and its own audience. Proximity enables traceability and cross-validation — not fusion.
+2. **The author test**. If the file is edited by both the PM (for product reasons) and an engineer (for implementation reasons) without coordination, that's a sign you're maintaining two artifacts collapsed into one. Split them.
+3. **Enable a divergence sensor** between the two files instead of fusing them. A git hook or a chapter 5 recurring agent can watch for the user story changing without the spec being updated (or vice versa), and open an issue to reconcile them consciously. That preserves both audiences and makes the relationship between the two artifacts explicit.
+
+Chapter 3 develops this in its section *"Reusing criteria from upstream documents"* — here we just flag why silent fusion is an anti-pattern in its own right. It's one of the pathologies that putting product documentation in the repo amplifies the most when done without thought: what was a good organizational idea becomes a new archetype of bad spec.
+
+---
+
+## 14. Reference soup
+
+**Symptom.** The spec contains a long list of references — ADRs, contracts, feature briefs, components, user stories, architecture documents — all cited without prioritization or annotation. The "References" block is longer than the spec's own content. When the agent reads the spec, it doesn't know which of those references are load-bearing for this task and which are tangential context. When the human reviews it six months later, the same thing happens. The result: **nobody follows them**, and the effective spec ends up being only the visible content — the rest is decorative noise.
+
+**Why it happens.** Two reinforcing causes. First, the team confuses *exhaustiveness of citations* with *rigor*: it cites everything "related" to look thorough, without distinguishing what this spec actually depends on from what just happens to live in the same neighborhood of the repo. Second, there's a defensive bias: adding references feels "cheap" (it doesn't break anything, it doesn't force you to think) compared to removing them (which requires defending why something isn't needed).
+
+On top of this comes the compound effect from chapter 3: when a team learns to reference upstream documents instead of copying them (which is the right rule), the easy slide is to reference *everything*. The "reference, don't copy" rule gets read as "reference always", and the other half is lost: "reference only what this task needs". It's the inverse of the *curse of instructions* from chapter 3 — and the paralyzing effect is the same.
+
+**Correction.** Three rules:
+
+1. **Reference only what the agent or the human needs for this task**, not what's tangentially related. If a reference would disappear without changing the implementation, it doesn't belong in the spec.
+2. **Annotate the why of each reference**. *"Cited because this endpoint must respect the invariant in section 3 of ADR-007"* is useful. *"Related: ADR-007"* is noise. The annotation is the proof that you've thought about why the reference is there.
+3. **Measure the references / own-content ratio**. If the citations block is longer than the criteria + whys + technical constraints sections combined, you have soup. Trim until your own content dominates.
+
+The simple test: ask someone outside the team to read the spec and underline the references *essential* for understanding what to build. If they underline less than 30% of those that appear, the rest are soup. Delete them or move them to the end as "optional context", separated from the spec's body.
+
+Chapter 3 develops this topic in its section *"The spec and technical components: consume, produce, modify"* — here we just give the symptom a name and the operational correction. It's an anti-pattern especially common in teams coming from adopting the "don't copy, reference" discipline: they've learned the right half of the rule but not the other half.
+
+---
+
 ## How to use this list
 
 Once a quarter, in a retro, read this list aloud and ask the team: *do we recognize any of these in ourselves?* People, contrary to what ego promises, almost always recognize one or two. And recognizing them is half of stopping them.

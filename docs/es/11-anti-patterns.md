@@ -134,6 +134,44 @@ El test sencillo: una buena spec sobrevive a **dos implementaciones distintas** 
 
 ---
 
+## 13. Fusionar user story y spec en un solo archivo
+
+**Síntoma.** El equipo, intentando "no duplicar trabajo", junta la user story y la spec en un único archivo híbrido. El resultado intenta ser las dos cosas a la vez y no es ninguna: es demasiado técnico para que el PM lo refine como user story, y demasiado vago en su lenguaje de producto para que el agente lo use como contrato técnico verificable. Cuando llega un cambio de producto, alguien edita el archivo y un detalle técnico queda inconsistente. Cuando llega un descubrimiento de implementación, alguien edita el archivo y una decisión de producto cambia sin que el PM se entere.
+
+**Por qué pasa.** Es muy tentador, especialmente cuando la documentación de producto vive en el mismo repo Git que las specs. La proximidad física hace que el equipo pregunte "¿para qué tener dos archivos si dicen lo mismo?" — y la respuesta intuitiva es fusionarlos. Pero la pregunta está mal planteada: no dicen lo mismo. La user story responde a *qué quiere el usuario y por qué le importa al negocio*. La spec responde a *qué garantías observables tiene que cumplir el sistema*. Tienen un solapamiento del 60-70%, pero no son la misma cosa, y el solapamiento no justifica fundirlas — cada artefacto sirve a una audiencia distinta y cambia por motivos distintos.
+
+A esto se suma una causa más sutil: el equipo confunde *trazabilidad* con *unificación*. Quiere que el lazo entre intención de producto y contrato técnico sea explícito, y asume que la única forma de lograrlo es ponerlos en el mismo documento. Pero la trazabilidad se consigue con referencias, traces y sensores automáticos (capítulo 5), no fundiendo dos artefactos con propósitos distintos.
+
+**Corrección.** Tres reglas:
+
+1. **Mantén la separación física**, incluso cuando los dos archivos vivan en el mismo repo. La user story en `docs/product/`, la spec en `specs/`, cada una con su propia historia de cambios y su propia audiencia. La proximidad facilita la trazabilidad y la validación cruzada — no la fusión.
+2. **El test del autor**. Si el archivo lo edita tanto el PM (por razones de producto) como un ingeniero (por razones de implementación) sin coordinación, es señal de que estás manteniendo dos artefactos colapsados en uno. Sepáralos.
+3. **Habilita un sensor de divergencia** entre ambos archivos en lugar de fusionarlos. Un git hook o un agente recurrente del capítulo 5 puede vigilar cuando la user story cambie sin que la spec se actualice (o al revés), y abrir un issue para reconciliarlas conscientemente. Eso preserva las dos audiencias y hace explícita la relación entre los dos artefactos.
+
+El capítulo 3 desarrolla este tema en su sección *"Reutilizar criterios de documentos upstream"* — aquí solo señalamos por qué la fusión silenciosa es un anti-patrón con nombre propio. Es una de las patologías que más amplifica meter la documentación de producto en el repo sin pensar: lo que era una buena idea organizativa se convierte en un arquetipo nuevo de spec malhecha.
+
+---
+
+## 14. Sopa de referencias
+
+**Síntoma.** La spec contiene una lista larga de referencias — ADRs, contratos, feature briefs, componentes, user stories, documentos de arquitectura — todas citadas sin priorización ni anotación. El bloque "Referencias" es más largo que el contenido propio de la spec. Cuando el agente lee la spec, no sabe cuáles de esas referencias son load-bearing para esta tarea y cuáles son contexto tangencial. Cuando el humano la revisa en seis meses, le pasa lo mismo. El resultado es que **nadie las sigue**, y la spec efectiva acaba siendo solo el contenido visible — el resto es ruido decorativo.
+
+**Por qué pasa.** Hay dos causas que se refuerzan. Primero, el equipo confunde *exhaustividad de citas* con *rigor*: cita todo lo "relacionado" para parecer riguroso, sin distinguir lo que esta spec realmente depende de lo que solo está en el mismo barrio del repo. Segundo, hay un sesgo defensivo: añadir referencias se siente "barato" (no rompe nada, no obliga a pensar) frente a quitarlas (que requiere defender por qué algo no se necesita).
+
+A esto se suma el efecto compuesto del capítulo 3: cuando el equipo aprende a referenciar documentos upstream en lugar de copiarlos (que es la regla correcta), la pendiente fácil es referenciarlo *todo*. La regla "referencia, no copies" se interpreta como "referencia siempre", y se pierde la otra mitad: "referencia solo lo que esta tarea necesita". Es el inverso de la *maldición de las instrucciones* del capítulo 3 — y el efecto paralizante es el mismo.
+
+**Corrección.** Tres reglas:
+
+1. **Referencia solo lo que el agente o el humano necesita para esta tarea**, no lo que está tangencialmente relacionado. Si una referencia desaparecería sin que la implementación cambie, no debe estar en la spec.
+2. **Anota el porqué de cada referencia**. *"Citado porque este endpoint debe respetar el invariante de la sección 3 de ADR-007"* es útil. *"Relacionado: ADR-007"* es ruido. La anotación es la prueba de que has pensado por qué la referencia está ahí.
+3. **Mide la ratio referencias / contenido propio**. Si el bloque de citas es más largo que las secciones de criterios + por qués + restricciones técnicas, hay sopa. Recorta hasta que el contenido propio domine.
+
+El test sencillo: pídele a alguien externo al equipo que lea la spec y subraye las referencias *imprescindibles* para entender qué hay que construir. Si subraya menos del 30% de las que aparecen, las otras son sopa. Bórralas o mueve al final como "contexto opcional", separado del cuerpo de la spec.
+
+El capítulo 3 desarrolla este tema en su sección *"La spec y los componentes técnicos: consumir, producir, modificar"* — aquí solo damos el síntoma con nombre y la corrección operativa. Es un anti-patrón especialmente común en equipos que vienen de adoptar la disciplina de "no copies, referencia": han aprendido la mitad correcta de la regla pero no la otra mitad.
+
+---
+
 ## Cómo usar esta lista
 
 Una vez al trimestre, durante una retrospectiva, lee esta lista en voz alta y pregunta al equipo: *¿reconocemos alguno de estos en nosotros?* La gente, contra lo que el ego promete, casi siempre reconoce uno o dos. Y reconocerlos es la mitad de pararlos.

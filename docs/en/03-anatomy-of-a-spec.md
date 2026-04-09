@@ -38,6 +38,39 @@ How you know it's done. The keyword is **verifiable**: an outsider, reading only
 
 "Works well" isn't an acceptance criterion. "Returns 413 with a readable message if the file exceeds 10 MB" is.
 
+#### Reusing criteria from upstream documents (user stories, contracts)
+
+A question that comes up the moment a team starts writing specs seriously: if the user story that motivated the feature **already contains acceptance criteria**, what do I do with them? Reference them? Copy them? Rewrite them?
+
+The short answer is **rewrite with traceability** — not copy verbatim, not reference-only. The longer answer depends on where that upstream document lives.
+
+**Case 1: the user story lives outside the repo (Jira, Linear, Notion).**
+
+The two bad options here are obvious:
+
+- *Reference only* (`"see criteria in JIRA-1234"`) breaks the self-containment chapter 1 defends: the agent and the human reading this in six months have to chase a link into an external system. Worse, the user story can change silently without the code or the spec noticing — it's invisible drift, the worst kind, because not even the chapter 5 sensor can detect it.
+- *Copy verbatim* imports the imprecision of product language. A user story says *"the user can easily upload a photo"*; your spec needs *"JPEG or PNG up to 10 MB, fails with 413 and a readable message if exceeded"*. Copying verbatim leaves you with criteria that *look* verifiable because they sound official but aren't.
+
+The right option is to **rewrite the criteria in the spec at the level of precision the validator needs** and **cite the user story as the source of the why**, not as the container of the what. The user story stays canonical for product; the spec becomes canonical for the agent and the code.
+
+Operationally: paste the criteria as an initial draft (with all the warnings from anti-pattern #12), rewrite them one by one, and in the "whys" section add something like *"criteria derived from JIRA-1234, refined in spec session on Mar 12, owner @maria"*. The chapter 5 validation runs against the spec, not against the user story.
+
+**Case 2: the user story lives in the same Git repo as the spec.**
+
+Here some objections to the "reference" option go away. Self-containment is preserved (everything is in the repo), drift stops being invisible (there's a commit), traceability becomes exact (you can cite a file and a commit), and a new possibility appears: an automatic sensor that detects when the user story changes without the spec being updated — a git hook or a nightly recurring agent. It's exactly the kind of two-floor bidirectional loop chapter 12 anticipates when it talks about the harness.
+
+But **what doesn't change**:
+
+- They're still two artifacts with two distinct purposes. The user story answers *what the user wants and why it matters to the business*. The spec answers *what observable guarantees the system must meet*. The right level of detail doesn't align by sharing a repo.
+- Each one changes for different reasons. The user story is refined for product reasons; the spec is updated for technical reasons. Having a single file for both forces you to edit it for cross-cutting reasons that don't apply.
+- The "rewrite, don't copy" rule still holds. The only thing that changes is that the complementary reference is now legitimate: you can point to `docs/product/avatar-upload.md` and the agent reads it as additional context, without that replacing your precise version in the spec.
+
+The unified rule: **the spec contains its own precise, verifiable version of the acceptance criteria. The upstream document is cited as the source of the why. If both live in the same repo, you can additionally enable a sensor that watches for divergence between them.**
+
+**The anti-pattern to avoid in both cases**: fusing the user story and the spec into a single hybrid file because "they say the same thing". They don't. And the resulting file is neither a good user story (too technical for the PM) nor a good spec (too vague for the agent). If you find yourself editing "the file" to reflect both a product copy change and a technical implementation discovery, split it back. We develop this pattern as anti-pattern #13 in chapter 11.
+
+**The special case where reference without rewriting is appropriate.** When the upstream document really is the authoritative source and lives under its own validation discipline: an API contract maintained in OpenAPI/Protobuf with its own CI, a corporate security policy, an external standard (RFC, protocol spec). In those cases the spec **summarizes the implications** (*"this endpoint complies with the contract defined in `api-contracts/avatar.yaml@v3`"*) but doesn't copy the content. The critical distinction: that upstream document has its *own* validation operating on it. A Jira user story almost never has that property.
+
 ### 5. The *whys*
 
 This is where ordinary specs die and good ones separate from the rest. Almost all specs explain the *what*. Almost none explain the *why*. And the whys are exactly what the agent needs to make smart decisions in the gaps the spec doesn't cover.
@@ -90,6 +123,13 @@ One or two sentences. Observable result. For whom.
 - ✅ Always: ...
 - ⚠️ Ask first: ...
 - 🚫 Never: ...
+
+## Affected surfaces (optional, use when the spec touches >1 component)
+### [Component] — [produced | modified | consumed]
+- **Functional:** ...
+- **Non-functional:** ...
+- **Technical:** ...
+- **More detail:** [reference to deeper doc if it exists]
 ```
 
 This template fits in less than a screen and covers 80% of the value a spec can deliver. The other 20% are domain-specific details — state diagrams, API contracts, concrete input/output examples — that you add when the domain demands them, not by default.
@@ -180,6 +220,115 @@ If you have to distill all of the above into a single sentence:
 In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.
 
 Almost every pathology we'll see in chapter 11 comes from **misaligning these three things**: writing spec-anchored without anchoring (#4), writing spec-as-source without a generator (#9 + #12), or writing spec-first with spec-as-source-level detail (#2 + #12). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.
+
+## The spec and technical components: consume, produce, modify
+
+So far we've talked about a spec's anatomy as if it applied to an isolated piece. In practice, almost every real spec **touches multiple components at once** — one is built new, another is modified, and several are consumed without being touched. Each of those relationships has different rules, and mixing them in a single language is one of the fastest ways to inflate a spec without gaining precision.
+
+This section extends the earlier subsection on *"Reusing criteria from upstream documents"* — where we covered the user-story case — to the more general question: what does a spec say about the technical components it relates to?
+
+### Three relationships, three rules
+
+A spec can have three distinct relationships with each component it touches:
+
+**1. Consumed (it exists; the spec uses it).** The component is already built, has its own contract (API, module, library), and the spec leans on it without modifying it. The rule is **reference the contract, don't reimplement it**. The spec documents *how* the component is used — which endpoints it calls, which errors it expects to handle — but it doesn't document what the component does on its own. That lives in the component's contract, which is its own source of truth.
+
+If the component is an ADR, an API contract, a security policy or an external standard, the rule is the same with one nuance: **cite the specific invariant this spec depends on, not the entire document**. *"This spec respects ADR-007 (single Postgres instance) and ADR-012 (no synchronous calls between services)"* is useful. *"Related: ADR-007"* is noise.
+
+**2. Produced (it doesn't exist; the spec creates it).** This is the typical case for a new feature: *"this spec creates a new endpoint / a new service / a new module"*. Here the trap is obvious and dangerous: because the component doesn't exist yet, you feel you have to "define it" in the spec, and you almost always end up describing it with classes, methods, signatures and payloads. That's exactly anti-pattern #12 (pseudocode dressed up as spec).
+
+The right form: the spec describes the **observable contract** the new component must offer, not its internal structure. *"After this spec, there must be a capability to accept authenticated avatar uploads (JPEG/PNG, ≤10 MB) and return a retrievable URL"* is observable contract. *"Create `AvatarUploadService` with method `upload(file, user_id) -> AvatarMetadata`"* is pseudocode.
+
+There's a conceptually important nuance: a spec that produces a new component is **the transient source of truth that hands off**. While the component doesn't exist, the spec is the only thing describing it. Once the component exists, **its own documentation** (its README, its OpenAPI contract, its tests, its own code) becomes the operational source, and the original spec becomes the *"why it was built this way"* — historical intent, not living contract. If you confuse the two roles, you end up with two artifacts competing to be the source of truth for the same component, and you fall back into the silent fusion of anti-pattern #13.
+
+**3. Modified (it exists; the spec adds, changes or removes capabilities).** Here the rule is **describe the observable delta, not the component's full state**. The spec doesn't have to re-document how `User` works; it has to say *"add the `avatar_url` field (optional, current avatar URL or absent). Updated when an avatar is uploaded; cleared when deleted. No other model behavior changes."*
+
+The **"no other behavior changes"** part is what saves the spec from inflating. Without it, the team tends to rewrite the entire component "to make the spec complete". The delta is the spec; the rest of the component lives in its own documentation.
+
+### Capturing the load-bearing essentials in three dimensions
+
+For each component the spec produces or modifies, the immediate question is *"how much detail do I include?"*. The vague answer leads to pseudocode. The useful answer is to decompose into **three explicit dimensions** and, for each, capture only what's load-bearing — and reference deeper docs when they exist.
+
+The three dimensions, applied to the component's **delta**:
+
+- **Functional** — what changes in observable behavior. *"The `User` model can now have an avatar; the field is optional; updated on upload, cleared on delete."*
+- **Non-functional** — which cross-cutting constraints the change must respect. Performance, security, compatibility, observability, data. *"The migration must not require downtime; the field must not break existing model serialization."*
+- **Technical** — which contract/integration decisions the change explicitly closes. *"The field is indexed by `user_id`; the avatar URL goes through the existing CDN, not directly through the bucket."*
+
+For each dimension, an **optional reference to the deeper document** if it exists: *"Migration detail in `docs/db/migrations/0042-add-avatar.md`. CDN policy in `infra/cdn/policy.md`."*
+
+Three important clarifications about this pattern:
+
+1. **If a dimension doesn't add anything, omit it.** Don't force three lines per component for symmetry. Absence is informative: it says that dimension doesn't change.
+2. **What goes in the spec is what's load-bearing**: what the chapter 5 validator can compare against the code, and what the team wants to be contractual. Finer detail lives in the component's documentation, which has its own validation mechanism (tests, type checks, versioned contracts).
+3. **The term "non-functional" is classical but contested** (Fowler argues everything is functional, just along different dimensions). For the purposes of this chapter we use it as an operational category — three different questions to ask about each component — not as ontology. If your team prefers calling them *behavior*, *qualities*, *contracts*, it makes no difference. What matters is that they are **three different questions**, not one.
+
+### The "Affected surfaces" block
+
+When a spec touches multiple components, it's worth having an explicit block at the start that **enumerates the affected surfaces with their relationship type**. It's not work breakdown (it doesn't enumerate tasks, doesn't mention files, doesn't assign order — that lives in the planning phase of chapter 4). It's **surface mapping**, and it does three things no other part of the spec does well:
+
+1. It gives the agent and the chapter 5 validator an **enumerable list** of the change's blast radius, which in chapter 1 was invisible.
+2. It gives the human a **signal of the spec's size**: if the list has 12 entries, the spec is almost certainly *two features* badly stitched together, or a refactor masquerading as a feature.
+3. **It isn't work breakdown**, which keeps it on the "what" side rather than the "how".
+
+An example of the block enriched with the three dimensions:
+
+```markdown
+## Affected surfaces
+
+### `User` model — modified
+
+- **Functional:** adds `avatar_url` (optional, current avatar URL or absent).
+  Updated on upload; cleared on delete. Rest of the model invariant.
+- **Non-functional:** the migration must not require downtime; existing
+  serialization can't break (test `test_user_serialization_back_compat`).
+- **Technical:** field indexed by `user_id`. Permission schema unchanged.
+- **More detail:** `docs/db/migrations/0042-add-avatar.md` (once created).
+
+### `POST /api/avatar` endpoint — produced
+
+- **Functional:** accepts authenticated uploads (JPEG/PNG, ≤10 MB), returns URL.
+  Errors: 401 unauthenticated, 413 if oversize, 415 if invalid type.
+- **Non-functional:** existing API gateway rate limit applies unchanged.
+- **Technical:** consumes `services/avatar-storage` (current contract, unchanged)
+  and `auth-middleware` (current contract, unchanged).
+- **More detail:** this block is the transient source; after implementation,
+  operational doc lives in the new service's README.
+
+### `services/avatar-storage` — consumed
+
+- **Functional:** calls `POST /upload`; handles 413 and 415 explicitly,
+  propagates 5xx to the caller.
+- Rest: see `services/avatar-storage/contract.openapi.yaml@v2`.
+```
+
+Notice how the *consumed* component has a much shorter block — it only describes *how this feature uses it*, not what the component does, because that lives in its own contract. And notice how the *modified* component declares explicitly what does **not** change. Those two habits are what distinguish a useful spec from an inflated one.
+
+### Size heuristic
+
+A practical rule that works: if a spec produces or modifies more than **3-4 surfaces**, you probably have one of three problems, and it's worth diagnosing before continuing:
+
+- **(a)** A feature too big that should be split into multiple specs (chapter 8 modulation).
+- **(b)** An architectural change disguised as a feature, which deserves its own ADR that this spec then hangs from.
+- **(c)** A refactor camouflaged as a feature (also chapter 8 modulation): what you're changing is the *shape* of the system, not adding business capability.
+
+The three have different treatments in the rest of the course, and the spec alone isn't the right artifact for any of them.
+
+### Consolidated summary table
+
+Pulling this section together with the earlier subsection on upstream documents, this is the unified rule by relationship type:
+
+| Relationship | Main rule | Spec section | Typical trap |
+|---|---|---|---|
+| **Consumed component** | Reference the contract; document the use | Technical constraints | Re-documenting the component |
+| **Produced component** | Define observable contract, not structure | Affected surfaces + Criteria | Pseudocode (#12); failing to mark the handoff to the component's doc |
+| **Modified component** | Describe the delta, declare the rest invariant | Affected surfaces + Criteria | Rewriting the entire component |
+| **ADR / architecture** | Cite specific invariants | Technical constraints | Copying invariants (drift guaranteed) |
+| **API contract / external standard** | Reference + summary of implications | Technical constraints | Re-documenting the contract |
+| **Feature brief / product doc** | Extract the cardinal whys | Whys | Importing vague product language |
+| **User story** | Rewrite criteria with traceability | Criteria + Whys | Verbatim copy or opaque reference |
+
+And a new anti-pattern that appears when references accumulate without discipline: **reference soup** — a spec where its own content gets buried under a long list of citations to ADRs, contracts, briefs and components, all without prioritization. The agent and the human don't know which are load-bearing and which are tangential, and they end up ignoring all of them. It's the inverse of the *curse of instructions*, and we develop it as anti-pattern #14 in chapter 11. The preventive rule: **reference only what the agent or the human needs for this task, and annotate the why of each reference**.
 
 ## What distinguishes a good spec from a mediocre one
 
