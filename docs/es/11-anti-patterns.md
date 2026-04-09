@@ -116,6 +116,24 @@ Cada anti-patrón sigue el mismo formato: **nombre**, síntoma observable, por q
 
 ---
 
+## 12. Spec generada que es pseudocódigo disfrazado
+
+**Síntoma.** El equipo usa un agente para generar specs a partir de user stories, features o componentes arquitectónicos. Las specs resultantes están llenas de clases, métodos, firmas de funciones, payloads de API y reglas de negocio inline. Parecen completísimas. Cuando llega la implementación, el equipo descubre que (a) está implementando dos veces, porque las decisiones ya estaban tomadas en la "spec", y (b) la revisión humana de esas specs es tan cara como revisar el código que aún no existe — pero sin la red de seguridad de tests ni ejecución real.
+
+**Por qué pasa.** Cuando le pides a un LLM "genera una spec", el modelo optimiza por *cobertura aparente* y baja al nivel de detalle donde está cómodo: el código. Es donde su corpus de entrenamiento le da más confianza. Subir al nivel correcto de una spec — intención, restricciones, por qués — requiere abstracción, que es justo lo que el modelo hace peor. El resultado es predecible: pseudocódigo en markdown, disfrazado de documento de diseño.
+
+A esto se suma el sesgo del equipo: una spec generada que tiene 600 líneas, clases, métodos y diagramas *parece* rigurosa. El revisor humano, cansado, asume que algo tan detallado tiene que estar bien pensado. Y la "spec" pasa el filtro sin que nadie verifique de verdad si captura intención o solo describe una implementación posible entre muchas. El capítulo 3 desarrolla este anti-patrón en su sección *"¿Y si la spec la genera un agente?"*: aquí solo damos las correcciones operativas.
+
+**Corrección.** Tres reglas concretas:
+
+1. **Si tu spec menciona firmas de función, nombres de clase o estructuras de payload, bórralas.** La spec habla de qué garantías tiene que cumplir el sistema, no de cómo se construye. Si después de borrarlas la spec queda vacía, no necesitabas una spec — necesitabas código bien escrito (cap. 10).
+2. **Usa el agente como draft generator solo del *qué*, no del *cómo*.** El agente puede arrancar bien el objetivo, los criterios de aceptación y una lista candidata de no-goals. El humano tiene que poner sí o sí los por qués, los no-goals reales y las restricciones tácitas. Lo que el agente no sabe, lo inventa o lo omite — y los por qués inventados son peores que los por qués ausentes.
+3. **Mide la ratio detalle-implementación / detalle-intención de tus specs.** Si más del 30% de la spec describe estructuras de código, estás escribiendo pseudocódigo, no una spec. Es señal de que el agente generador (o tú mismo) ha bajado un nivel de abstracción que rompe el propósito del documento.
+
+El test sencillo: una buena spec sobrevive a **dos implementaciones distintas** del mismo equipo y sigue siendo válida para las dos. Una spec generada como pseudocódigo no — describe *una* forma específica de implementar, y si el código se desvía mínimamente ya está en drift. Si la spec no pasa ese test, no tienes una spec; tienes un boceto de implementación al que llamas spec.
+
+---
+
 ## Cómo usar esta lista
 
 Una vez al trimestre, durante una retrospectiva, lee esta lista en voz alta y pregunta al equipo: *¿reconocemos alguno de estos en nosotros?* La gente, contra lo que el ego promete, casi siempre reconoce uno o dos. Y reconocerlos es la mitad de pararlos.

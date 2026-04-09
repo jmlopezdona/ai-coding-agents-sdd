@@ -116,6 +116,24 @@ Each anti-pattern follows the same format: **name**, observable symptom, why it 
 
 ---
 
+## 12. Generated spec that's pseudocode in disguise
+
+**Symptom.** The team uses an agent to generate specs from user stories, features, or architectural components. The resulting specs are full of classes, methods, function signatures, API payloads, and inline business rules. They look thorough. When implementation arrives, the team discovers that (a) it's implementing twice, because the decisions were already made in the "spec", and (b) human review of those specs is as expensive as reviewing code that doesn't exist yet — but without the safety net of tests or actual execution.
+
+**Why it happens.** When you ask an LLM to "generate a spec", the model optimizes for *apparent coverage* and drops to the level of detail where it's comfortable: code. That's where its training corpus gives it the most confidence. Climbing to the right level for a spec — intent, constraints, whys — requires abstraction, which is exactly what the model does worst. The result is predictable: pseudocode in markdown, dressed up as a design doc.
+
+On top of this comes the team's own bias: a generated spec with 600 lines, classes, methods and diagrams *looks* rigorous. The tired reviewer assumes that something so detailed must be well thought out. And the "spec" passes the filter without anyone really checking whether it captures intent or just describes one of many possible implementations. Chapter 3 develops this anti-pattern in its section *"What if a generator agent writes the spec?"*; here we just give the operational corrections.
+
+**Correction.** Three concrete rules:
+
+1. **If your spec mentions function signatures, class names or payload structures, delete them.** The spec talks about what guarantees the system must meet, not how it's built. If after deleting them the spec is empty, you didn't need a spec — you needed well-written code (ch. 10).
+2. **Use the agent as a draft generator only for the *what*, not the *how*.** The agent can start the objective, acceptance criteria and a candidate list of non-goals. The human has to put in, no exceptions, the whys, the real non-goals and the tacit constraints. What the agent doesn't know, it invents or omits — and invented whys are worse than missing whys.
+3. **Measure the implementation-detail / intent-detail ratio of your specs.** If more than 30% of the spec describes code structures, you're writing pseudocode, not a spec. It's a sign that the generator agent (or you) has dropped a level of abstraction that breaks the document's purpose.
+
+The simple test: a good spec survives **two different implementations** by the same team and is still valid for both. A spec generated as pseudocode doesn't — it describes *one* specific way of implementing, and if the code drifts even slightly it's already in drift. If your spec can't pass that test, you don't have a spec; you have an implementation sketch you call a spec.
+
+---
+
 ## How to use this list
 
 Once a quarter, in a retro, read this list aloud and ask the team: *do we recognize any of these in ourselves?* People, contrary to what ego promises, almost always recognize one or two. And recognizing them is half of stopping them.

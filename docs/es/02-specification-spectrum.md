@@ -110,6 +110,8 @@ Resumido en una tabla:
 
 Y ahí está exactamente por qué Simulink funciona en su dominio — semántica formal estrecha = la generación es predecible y rara vez necesitas el escape hatch — y por qué Tessl tiene difícil replicarlo en software de propósito general: la generación con LLMs no es determinística, así que el escape hatch se necesita constantemente, y prohibirlo te deja atascado.
 
+Una nota importante que el capítulo 3 desarrolla en detalle: **el nivel de detalle apropiado de una spec no es el mismo en los tres niveles del espectro**. Spec-first pide detalle ligero, spec-anchored pide detalle medio acotado por lo que el anclaje puede verificar, y spec-as-source pide detalle exhaustivo pero de naturaleza formal. Escribir una spec con el nivel de detalle equivocado para tu nivel del espectro es una de las patologías más comunes — y la sección *"El nivel de detalle depende del nivel del espectro"* del capítulo 3 explica por qué.
+
 ## Cómo saber en qué nivel estás de verdad
 
 Una pregunta diagnóstica simple: **¿qué pasa cuando alguien cambia el código directamente sin tocar la spec?**

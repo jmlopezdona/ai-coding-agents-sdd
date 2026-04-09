@@ -102,6 +102,85 @@ The operating consequence is counterintuitive: **more information in a single sp
 
 This is also one of the reasons tools like Spec-kit and Kiro generate **many small files** instead of one big one, and why that proliferation, mismanaged, becomes its own problem (we'll see this in chapter 9).
 
+## What if a generator agent writes the spec?
+
+It's a natural idea: if the agent can write code, it should also be able to write specs. You hand it a user story, a feature description or an architectural component, and it returns the template above filled in. Startup cost drops, the entry barrier disappears, and apparently you've solved SDD's most expensive problem — writing specs.
+
+It's an idea worth trying, and one that **fails by default almost every time**, not because of bad prompting but for a structural reason worth understanding before you spend weeks discovering it.
+
+### The default mode: pseudocode dressed up as a spec
+
+When you ask an LLM "generate a spec for this feature", the model optimizes for the metric it knows best how to measure: *apparent coverage*. And the easiest way to look exhaustive is to drop down to code-level detail, because that's where the model is comfortable — its training corpus is code. Climbing up to *intent*, *constraints* and *whys* requires abstraction, which is exactly what the model does worst.
+
+The result is predictable and almost universal: the generated "spec" is actually **commented pseudocode** dressed up as a design doc. It has classes, methods, function signatures, API payloads, inline business rules, sequence diagrams. It looks thorough. And it's exactly the *opposite* of what a good spec should be, according to everything we've seen in this chapter.
+
+A good spec operates at a **different abstraction level** from the code. If it mentions classes and methods, it's no longer a spec: it's an implementation sketch. The spec's question isn't "which class calls which method?", it's "what observable guarantees must this satisfy, under what constraints, and why?". When the agent drops to the first level, the spec has lost its reason for existing, because it stops being **comparable against the code from a different vantage point**. If the spec says the same thing as the code but in markdown, it's just noise.
+
+### The two serious consequences
+
+When you end up with specs like this — and, if you leave the agent in its default mode, you will — you pay two costs that reinforce each other.
+
+**You implement twice.** You've already paid the cost of thinking through the implementation at the level of classes and methods in the spec, and you're going to pay the same cost again when you code. Worse: anything you discover while implementing (and implementing always reveals something) forces you to go back and edit the spec, or accept drift on day one. You're at the worst point on the chapter 9 curve: maintenance tax from day one, before you've written a single line of code.
+
+**Human review becomes as expensive as code review.** This is exactly what Fowler reports about Spec-kit in chapter 6 — that the generated files were *heavier to review than the code itself*. And it's worse than reviewing code directly, because at least code runs and tests verify it; pseudocode in markdown has no safety net. You're reviewing something at code-level detail but **without code's guarantees**. The tired reviewer skims it — and the "spec" passes the filter as if it had been reviewed.
+
+The combination of the two is poisonous: you double the work *and* review it worse. It's almost always worse than not having written a spec at all.
+
+### Why it isn't just a template problem
+
+It's tempting to think this gets fixed with better prompting or a stricter template. *"I'll tell the agent not to include signatures, not to mention classes, to express everything as externally observable invariants."* And yes, that reduces the problem. But it **doesn't eliminate it**, for two reasons worth being clear about.
+
+First, the model's bias toward dropping to code level is very strong because that's where it "feels productive". When you restrict everything it does well and ask only for what it does badly — abstracting intent, capturing whys that aren't in the input — the resulting spec is short, thin, and the team senses "something is missing". The next step is almost always asking for more detail, and you're back to pseudocode. It's an unstable equilibrium.
+
+Second, there are things the agent **can't** generate well no matter what template you give it. The **whys** are almost never in the input — they live in the PM's head, in a Slack conversation, in a trade-off decided two years ago. What the agent doesn't know, it invents or omits. A spec generated with invented "whys" is worse than a spec without "whys", because it lies with the appearance of authority.
+
+### Legitimate use: the agent as a draft generator of the *what*, not the *how*
+
+This doesn't mean agent-generated specs are useless. They're useful, but in a narrower role than most people imagine:
+
+- **The agent can start well**: the **objective** block, the **verifiable acceptance criteria** (carefully), a first list of **candidate non-goals** that the human then refines, and a proposal for **boundaries** based on patterns it already sees in the repo.
+- **The human has to put in, no exceptions**: the **whys**, the **real non-goals** (especially political or scope ones that aren't in any input), the team's **tacit technical constraints**, and the decision of *how much* spec the task deserves (the modulation of chapter 8). And, above all, the human has to **delete** anything the agent injected as pseudocode: classes, methods, signatures, payloads. If after deleting all that the spec is empty, you didn't need a spec; you needed well-written code (chapter 10, *context engineering*).
+
+The most useful practical rule: **if your generated spec mentions a function signature or a class name, delete it**. The spec talks about what guarantees the system meets, not how it's built.
+
+And the honest warning: using the agent as a draft generator **doesn't reduce the total cost** of doing SDD well. What it reduces is the cost of starting the first draft, which for many teams is the psychological barrier that weighs the most. The real cost — thinking intent precisely, capturing whys, keeping the spec alive — is still there, with no shortcut, and the agent doesn't pay it for you. If your SDD adoption depends on automatic generation eliminating that cost, what you'll have isn't SDD — you'll have anti-pattern #12 from chapter 11.
+
+## The right level of detail depends on the spectrum level
+
+So far we've talked about a spec's anatomy as if it were a single thing. It isn't. **The appropriate level of detail depends on which level of the chapter 2 spectrum you're operating at**, and writing a spec at the wrong level of detail for your spectrum level is one of the most common — and most expensive — ways to suffer bad SDD.
+
+### Spec-first → light, intentional, non-exhaustive detail
+
+In spec-first the spec is read once, when the feature kicks off, and from then on the code drifts freely. Its only function is to **align team and agent at the start**. Nothing is going to read it again, so every extra line you write is work no one will ever recover.
+
+The right amount of detail: objective, non-goals, acceptance criteria, the critical whys, and little else. If your spec-first runs longer than a screen, it's almost always because you're writing *aspirational* spec-anchored (anti-pattern #4 in chapter 11) or because you've fallen into pseudocode (anti-pattern #12). The optimal spec-first is the minimum viable to start with clear intent.
+
+### Spec-anchored → medium detail, bounded by what the anchoring can verify
+
+The logic shifts here. The spec *is* going to be read again — by validators, by tests, by recurring agents that detect drift. Detail is no longer optional: it has to be **enough for the anchoring mechanism to compare against**.
+
+But there's a counterintuitive upper bound: **detail should not go beyond what your anchoring knows how to verify**. If your validator checks API contracts and your spec describes UI rules, the UI part isn't anchored — it's spec-first disguised as spec-anchored. And because that piece isn't verified, it drifts freely.
+
+The operating rule: the detail of a spec-anchored spec is measured against the **scope of the anchoring**, not against an abstract notion of "completeness". If what you write can't be verified automatically, writing it doesn't give you more anchoring — it just gives you more maintenance tax.
+
+### Spec-as-source → exhaustive detail, but of a different kind
+
+This is where the conversation gets interesting. Spec-as-source does need maximum detail, because the code is generated from the spec. But that detail is of **a different nature** from the other two levels.
+
+It's **formal or semi-formal** detail: type signatures, contracts, invariants, grammars, transformation rules. It's **generator-friendly** detail: designed so a generator (LLM or otherwise) can produce deterministic code from it. And it's legitimate for signatures, schemas and concrete structures to appear — because at this level **the spec is the source code, just in a different notation**.
+
+Here's the uncomfortable connection with the previous section: an agent-generated "spec" that is pseudocode in disguise *looks* superficially like a spec-as-source. It has classes, methods, payloads, rules. But there's a critical difference: **a legitimate spec-as-source comes with a deterministic generator that produces the code**. Without that generator, what you have is the worst possible combination: spec-as-source's exhaustive detail with spec-first's non-determinism. It's the conceptual equivalent of writing XML+OCL in the 2000s without an MDA compiler behind it. Fowler would know exactly what to call it.
+
+### The unifying rule
+
+If you have to distill all of the above into a single sentence:
+
+> **The right level of detail for a spec is the one your validation mechanism — human, automatic, or generative — knows how to consume. More than that is waste; less than that is blindness.**
+
+In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.
+
+Almost every pathology we'll see in chapter 11 comes from **misaligning these three things**: writing spec-anchored without anchoring (#4), writing spec-as-source without a generator (#9 + #12), or writing spec-first with spec-as-source-level detail (#2 + #12). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.
+
 ## What distinguishes a good spec from a mediocre one
 
 If you have to remember three things from this chapter, let them be these:

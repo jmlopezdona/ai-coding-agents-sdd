@@ -102,6 +102,85 @@ La consecuencia operativa es contraintuitiva: **más información en una sola sp
 
 Esta es también una de las razones por las que las herramientas tipo Spec-kit y Kiro generan **muchos archivos pequeños** en vez de uno grande, y por las que esa proliferación, mal gestionada, se convierte en su propio problema (lo veremos en el capítulo 9).
 
+## ¿Y si la spec la genera un agente?
+
+Es una idea natural: si el agente sabe escribir código, también debería saber escribir specs. Le pasas un user story, una descripción de la feature o un componente arquitectónico, y te devuelve la plantilla anterior rellena. El coste de arranque baja, la barrera de entrada desaparece, y aparentemente has resuelto el problema más caro de SDD — que es escribir specs.
+
+Es una idea que vale la pena intentar y que **falla casi siempre por defecto**, no por mal prompting sino por una razón estructural que conviene entender antes de gastar semanas descubriéndola.
+
+### El modo por defecto: pseudocódigo disfrazado de spec
+
+Cuando le pides a un LLM "genera una spec para esta feature", el modelo optimiza por la métrica que mejor sabe medir: *cobertura aparente*. Y la forma más fácil de parecer exhaustivo es bajar al nivel de detalle del código, porque ahí el modelo está cómodo — su corpus de entrenamiento es código. Subir al nivel de *intención*, *restricciones* y *por qués* requiere abstracción, que es justo lo que el modelo hace peor.
+
+El resultado es predecible y casi universal: la "spec" generada es en realidad un **pseudocódigo comentado** disfrazado de documento de diseño. Tiene clases, métodos, firmas de funciones, payloads de API, reglas de negocio inline, diagramas de secuencia. Parece completísima. Y es exactamente lo *contrario* de lo que una buena spec debería ser, según todo lo que hemos visto en este capítulo.
+
+Una buena spec opera en un nivel de abstracción **distinto** al código. Si menciona clases y métodos, ya no es una spec: es un boceto de implementación. La pregunta de la spec no es "¿qué clase llama a qué método?", es "¿qué garantías observables tiene que cumplir esto, bajo qué restricciones y por qué?". Cuando el agente baja al primer nivel, la spec pierde su razón de ser, porque deja de ser **comparable contra el código desde un punto de vista distinto**. Si la spec dice lo mismo que el código pero en markdown, sólo es ruido.
+
+### Las dos consecuencias graves
+
+Cuando te encuentras con specs así — y, si dejas al agente en su modo por defecto, te las vas a encontrar — pagas dos costes que se refuerzan entre sí.
+
+**Implementas dos veces.** Has pagado el coste de pensar la implementación a nivel de clases y métodos en la spec, y vas a pagar otra vez el mismo coste cuando codifiques. Peor: cualquier cosa que descubras al implementar (y al implementar siempre se descubren cosas) te obliga a volver atrás y editar la spec, o a aceptar drift inmediato. Estás en la peor parte de la curva del capítulo 9: maintenance tax desde el día uno, sin haber escrito todavía una línea de código.
+
+**La revisión humana se vuelve tan cara como revisar código.** Esto es exactamente lo que Fowler reporta de Spec-kit en el capítulo 6 — que los archivos generados eran *más pesados de revisar que el propio código*. Y es peor que revisar código directamente, porque al menos el código se ejecuta y los tests lo verifican; el pseudocódigo en markdown no tiene ninguna red de seguridad. Estás revisando algo del nivel de detalle del código pero **sin las garantías del código**. El reviewer humano, cansado, lo lee por encima — y la "spec" pasa el filtro como si hubiera sido revisada.
+
+La combinación de las dos es venenosa: doblas el trabajo y *además* lo revisas peor. Es casi siempre peor que no haber escrito ninguna spec.
+
+### Por qué no es solo un problema de plantilla
+
+Es tentador pensar que esto se arregla con mejor prompting o una plantilla más estricta. *"Le digo al agente que no incluya firmas, que no mencione clases, que exprese todo como invariantes externamente observables."* Y sí, eso reduce el problema. Pero **no lo elimina**, por dos razones que conviene tener claras.
+
+Primero, el sesgo del modelo a bajar al nivel del código es muy fuerte porque es donde "siente que produce valor". Cuando le restringes todo lo que sabe hacer bien y le pides solo lo que hace mal — abstraer intención, capturar por qués que no están en el input — la spec resultante es corta, pobre, y el equipo intuye que "le falta algo". El siguiente paso es casi siempre pedirle más detalle, y vuelves al pseudocódigo. Es un equilibrio inestable.
+
+Segundo, hay cosas que el agente **no puede** generar bien por mucha plantilla que le des. Los **por qués** casi nunca están en el input — viven en la cabeza del PM, en una conversación de Slack, en un trade-off histórico que se decidió hace dos años. Lo que el agente no sabe, lo inventa o lo omite. Una spec generada con "por qués" inventados es peor que una spec sin "por qués", porque miente con apariencia de autoridad.
+
+### Uso legítimo: el agente como draft generator del *qué*, no del *cómo*
+
+Esto no significa que la generación con agente no sirva. Sirve, pero en un papel más estrecho del que la mayoría de la gente imagina:
+
+- **El agente puede arrancar bien**: el bloque de **objetivo**, los **criterios de aceptación verificables** (con cuidado), una primera lista de **no-goals candidatos** que el humano luego refina, y una propuesta de **boundaries** basada en patrones que ya ve en el repo.
+- **El humano tiene que poner sí o sí**: los **por qués**, los **no-goals reales** (especialmente los políticos o de scope que no están en ningún input), las **restricciones técnicas tácitas** del equipo, y la decisión de *cuánta* spec merece la tarea (la modulación del capítulo 8). Y, sobre todo, tiene que **borrar** todo lo que el agente metió de pseudocódigo: clases, métodos, firmas, payloads. Si después de borrarlos la spec queda vacía, no necesitabas una spec; necesitabas escribir bien el código (capítulo 10, *context engineering*).
+
+La regla práctica más útil: **si tu spec generada menciona una firma de función o un nombre de clase, bórrala**. La spec habla de qué garantías cumple el sistema, no de cómo se construye.
+
+Y la advertencia honesta: usar el agente como generador de drafts **no reduce el coste total** de hacer SDD bien. Lo que reduce es el coste de empezar el primer borrador, que para muchos equipos es la barrera psicológica que más pesa. El coste real — pensar la intención con precisión, capturar los por qués, mantener viva la spec — sigue estando ahí, sin atajo, y el agente no lo paga por ti. Si tu adopción de SDD depende de que la generación automática elimine ese coste, lo que vas a tener no es SDD — vas a tener el anti-patrón #12 del capítulo 11.
+
+## El nivel de detalle depende del nivel del espectro
+
+Hasta aquí hemos hablado de la anatomía de una spec como si fuera una sola cosa. No lo es. **El nivel de detalle apropiado depende de en qué nivel del espectro del capítulo 2 estés operando**, y escribir una spec con el nivel de detalle equivocado para tu nivel del espectro es una de las formas más comunes — y más caras — de sufrir SDD malhecho.
+
+### Spec-first → detalle ligero, intencional, no exhaustivo
+
+En spec-first la spec se lee una vez, al arrancar la feature, y a partir de ahí el código deriva libremente. Su única función es **alinear al equipo y al agente al principio**. Nada la va a leer de vuelta, así que cada línea extra que escribas es trabajo que nadie va a recuperar.
+
+El detalle apropiado: objetivo, no-goals, criterios de aceptación, los por qués críticos, y poco más. Si tu spec-first ocupa más de una pantalla, casi siempre es porque estás escribiendo spec-anchored *aspiracional* (anti-patrón #4 del capítulo 11) o porque caíste en pseudocódigo (anti-patrón #12). La spec-first óptima es la mínima viable para arrancar con intención clara.
+
+### Spec-anchored → detalle medio, acotado por lo que el anclaje puede verificar
+
+Aquí cambia la lógica. La spec sí se va a leer otra vez — por los validadores, por los tests, por los agentes recurrentes que detectan drift. El detalle ya no es opcional: tiene que ser **suficiente para que el mecanismo de anclaje pueda comparar**.
+
+Pero hay un tope superior contraintuitivo: **el detalle no debe ir más allá de lo que tu anclaje sabe verificar**. Si tu validador comprueba contratos de API y tu spec describe reglas de UI, la parte de UI no está anclada — es spec-first disfrazada de spec-anchored. Y como ese trozo no se verifica, drifta libre.
+
+La regla operativa: el detalle de una spec-anchored se mide contra el **alcance del anclaje**, no contra una idea abstracta de "completitud". Si lo que escribes no se puede verificar automáticamente, escribirlo no te aporta más anclaje — solo te aporta más maintenance tax.
+
+### Spec-as-source → detalle exhaustivo, pero de un tipo distinto
+
+Aquí es donde la conversación se vuelve interesante. Spec-as-source sí necesita el máximo detalle, porque el código se genera a partir de la spec. Pero el detalle es de **una naturaleza diferente** del de los otros dos niveles.
+
+Es detalle **formal o semi-formal**: signaturas de tipos, contratos, invariantes, gramáticas, reglas de transformación. Es detalle **generator-friendly**: pensado para que un generador (LLM o no) pueda producir código determinista a partir de él. Y es legítimo que aparezcan firmas, esquemas y estructuras concretas — porque en este nivel **la spec es el código fuente, solo que en otra notación**.
+
+Aquí está la conexión incómoda con la sección anterior: la "spec" generada por un agente que es pseudocódigo disfrazado se *parece* superficialmente a una spec-as-source. Tiene clases, métodos, payloads, reglas. Pero hay una diferencia crítica: **una spec-as-source legítima viene acompañada de un generador determinista que produce el código**. Sin ese generador, lo que tienes es la peor combinación posible: el detalle exhaustivo de spec-as-source con el no-determinismo de spec-first. Es el equivalente, en lo conceptual, de escribir XML+OCL en los 2000 sin tener un compilador MDA detrás. Fowler sabría exactamente cómo se llama.
+
+### La regla unificadora
+
+Si tienes que destilar todo lo anterior a una sola frase:
+
+> **El nivel de detalle apropiado de una spec es el que tu mecanismo de validación — humano, automático o generativo — sabe consumir. Más detalle que eso es desperdicio; menos detalle es ceguera.**
+
+En spec-first el "validador" es el equipo en una sola lectura inicial, así que el detalle apropiado es lo que cabe en esa lectura. En spec-anchored el validador es el mecanismo de anclaje, así que el detalle apropiado es lo que el anclaje sabe comparar. En spec-as-source el validador es el generador, así que el detalle apropiado es lo que el generador necesita para producir código sin ambigüedad.
+
+Casi todas las patologías que veremos en el capítulo 11 vienen de **desalinear estas tres cosas**: escribir spec-anchored sin anclaje (#4), escribir spec-as-source sin generador (#9 + #12), o escribir spec-first con el detalle de spec-as-source (#2 + #12). La anatomía no es absoluta — es relativa a qué tipo de validación se va a hacer sobre lo que escribes.
+
 ## Lo que distingue una spec buena de una mediocre
 
 Si tienes que recordar tres cosas de este capítulo, que sean estas:
