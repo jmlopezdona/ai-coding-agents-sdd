@@ -2,7 +2,7 @@
 
 A guide for technical teams that already know how to drive AI coding agents (Claude Code, Codex, Cursor, Copilot…) and have hit the wall: results are inconsistent, agents drift mid-session, refactors break files the agent never saw, and "write a better prompt" stopped working a long time ago.
 
-This is the **second guide in a trilogy**: it comes after the [fundamentals](https://github.com/jmlopezdona/ai-coding-agents-fundamentals) (what an agent is, how to use one) and before the [harness](https://github.com/jmlopezdona/ai-coding-agents-harness) (how to engineer the system around the agent). SDD is the discipline in between: **how to structure work so the agent can execute it well**.
+This is the **second guide in a trilogy**: it comes after the [fundamentals guide](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/) (what an agent is, how to use one) and before the [harness guide](https://jmlopezdona.github.io/ai-coding-agents-harness/) (how to engineer the system around the agent). SDD is the discipline in between: **how to structure work so the agent can execute it well**.
 
 ## Premises
 

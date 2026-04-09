@@ -88,4 +88,4 @@ If you take that, you take the best this guide can offer.
 
 ---
 
-*This chapter closes the course. If you want to take the next step, the harness course repository is linked in the [index](index.md). And if you want to reread a specific chapter, all are self-contained: jump to whichever one you need when the problem it solves shows up.*
+*This chapter closes the course. If you want to take the next step, read the [harness guide](https://jmlopezdona.github.io/ai-coding-agents-harness/). And if you're missing the foundations on what an agent is and how to drive one, the [fundamentals guide](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/) is the natural starting point of the trilogy. All chapters here are self-contained: jump to whichever one you need when the problem it solves shows up.*

@@ -88,4 +88,4 @@ Si te llevas eso, te llevas lo mejor que esta guía puede ofrecer.
 
 ---
 
-*Este capítulo cierra el curso. Si quieres dar el siguiente paso, el repositorio del curso de harness está enlazado en el [índice](index.md). Y si quieres releer algún capítulo concreto, todos son auto-contenidos: salta al que necesites cuando aparezca el problema que resuelve.*
+*Este capítulo cierra el curso. Si quieres dar el siguiente paso, lee la [guía del harness](https://jmlopezdona.github.io/ai-coding-agents-harness/). Y si te faltan los fundamentos sobre qué es un agente y cómo se pilota, la [guía de fundamentos](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/) es el punto de partida natural de la trilogía. Todos los capítulos de aquí son auto-contenidos: salta al que necesites cuando aparezca el problema que resuelve.*

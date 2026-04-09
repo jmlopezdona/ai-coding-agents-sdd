@@ -55,9 +55,9 @@ They aren't there for noise. They're there because misapplied, this discipline i
 
 This guide is the middle piece between two sister courses:
 
-- **Fundamentals** taught you what an agent is, how to talk to it, what tools it has. It's the *what*.
-- **SDD** (this course) teaches you to structure work so the agent can execute it well. It's the *how to work with it*.
-- **Harness Engineering** teaches you to engineer the system around the agent — sandboxes, sensors, hooks, observability, the whole repo as substrate. It's the *what's built around it*.
+- **[Fundamentals](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/)** taught you what an agent is, how to talk to it, what tools it has. It's the *what*.
+- **Spec-Driven Development** (this course) teaches you to structure work so the agent can execute it well. It's the *how to work with it*.
+- **[Harness Engineering](https://jmlopezdona.github.io/ai-coding-agents-harness/)** teaches you to engineer the system around the agent — sandboxes, sensors, hooks, observability, the whole repo as substrate. It's the *what's built around it*.
 
 SDD exists because between knowing how to use an agent and knowing how to engineer a full harness around it, there's an intermediate discipline worth learning on its own. Without SDD, the harness becomes infrastructure without purpose. Without harness, specs become bureaucracy without traction. The three courses form a progression, and each one builds on the previous.
 
