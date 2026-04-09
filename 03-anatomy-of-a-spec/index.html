@@ -940,6 +940,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Verifiable acceptance criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reusing-criteria-from-upstream-documents-user-stories-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reusing criteria from upstream documents (user stories, contracts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1102,6 +1119,78 @@
     <span class="md-ellipsis">
       
         The unifying rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-spec-and-technical-components-consume-produce-modify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The spec and technical components: consume, produce, modify
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The spec and technical components: consume, produce, modify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-relationships-three-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three relationships, three rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capturing-the-load-bearing-essentials-in-three-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capturing the load-bearing essentials in three dimensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-affected-surfaces-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Affected surfaces" block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-heuristic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size heuristic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consolidated-summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consolidated summary table
       
     </span>
   </a>
@@ -1867,6 +1956,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Verifiable acceptance criteria">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reusing-criteria-from-upstream-documents-user-stories-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reusing criteria from upstream documents (user stories, contracts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2041,6 +2147,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-spec-and-technical-components-consume-produce-modify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The spec and technical components: consume, produce, modify
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The spec and technical components: consume, produce, modify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-relationships-three-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three relationships, three rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capturing-the-load-bearing-essentials-in-three-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capturing the load-bearing essentials in three dimensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-affected-surfaces-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "Affected surfaces" block
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#size-heuristic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Size heuristic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consolidated-summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consolidated summary table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-distinguishes-a-good-spec-from-a-mediocre-one" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2115,6 +2293,28 @@
 <p><em>An authenticated user can upload a JPEG or PNG image up to 10 MB. Upload fails with a clear message if the file is another type or exceeds the size. Only the file's owner can delete it. An integration test covers all three cases.</em></p>
 </blockquote>
 <p>"Works well" isn't an acceptance criterion. "Returns 413 with a readable message if the file exceeds 10 MB" is.</p>
+<h4 id="reusing-criteria-from-upstream-documents-user-stories-contracts">Reusing criteria from upstream documents (user stories, contracts)<a class="headerlink" href="#reusing-criteria-from-upstream-documents-user-stories-contracts" title="Enlace permanente a esta sección">&para;</a></h4>
+<p>A question that comes up the moment a team starts writing specs seriously: if the user story that motivated the feature <strong>already contains acceptance criteria</strong>, what do I do with them? Reference them? Copy them? Rewrite them?</p>
+<p>The short answer is <strong>rewrite with traceability</strong> — not copy verbatim, not reference-only. The longer answer depends on where that upstream document lives.</p>
+<p><strong>Case 1: the user story lives outside the repo (Jira, Linear, Notion).</strong></p>
+<p>The two bad options here are obvious:</p>
+<ul>
+<li><em>Reference only</em> (<code>"see criteria in JIRA-1234"</code>) breaks the self-containment chapter 1 defends: the agent and the human reading this in six months have to chase a link into an external system. Worse, the user story can change silently without the code or the spec noticing — it's invisible drift, the worst kind, because not even the chapter 5 sensor can detect it.</li>
+<li><em>Copy verbatim</em> imports the imprecision of product language. A user story says <em>"the user can easily upload a photo"</em>; your spec needs <em>"JPEG or PNG up to 10 MB, fails with 413 and a readable message if exceeded"</em>. Copying verbatim leaves you with criteria that <em>look</em> verifiable because they sound official but aren't.</li>
+</ul>
+<p>The right option is to <strong>rewrite the criteria in the spec at the level of precision the validator needs</strong> and <strong>cite the user story as the source of the why</strong>, not as the container of the what. The user story stays canonical for product; the spec becomes canonical for the agent and the code.</p>
+<p>Operationally: paste the criteria as an initial draft (with all the warnings from anti-pattern #12), rewrite them one by one, and in the "whys" section add something like <em>"criteria derived from JIRA-1234, refined in spec session on Mar 12, owner @maria"</em>. The chapter 5 validation runs against the spec, not against the user story.</p>
+<p><strong>Case 2: the user story lives in the same Git repo as the spec.</strong></p>
+<p>Here some objections to the "reference" option go away. Self-containment is preserved (everything is in the repo), drift stops being invisible (there's a commit), traceability becomes exact (you can cite a file and a commit), and a new possibility appears: an automatic sensor that detects when the user story changes without the spec being updated — a git hook or a nightly recurring agent. It's exactly the kind of two-floor bidirectional loop chapter 12 anticipates when it talks about the harness.</p>
+<p>But <strong>what doesn't change</strong>:</p>
+<ul>
+<li>They're still two artifacts with two distinct purposes. The user story answers <em>what the user wants and why it matters to the business</em>. The spec answers <em>what observable guarantees the system must meet</em>. The right level of detail doesn't align by sharing a repo.</li>
+<li>Each one changes for different reasons. The user story is refined for product reasons; the spec is updated for technical reasons. Having a single file for both forces you to edit it for cross-cutting reasons that don't apply.</li>
+<li>The "rewrite, don't copy" rule still holds. The only thing that changes is that the complementary reference is now legitimate: you can point to <code>docs/product/avatar-upload.md</code> and the agent reads it as additional context, without that replacing your precise version in the spec.</li>
+</ul>
+<p>The unified rule: <strong>the spec contains its own precise, verifiable version of the acceptance criteria. The upstream document is cited as the source of the why. If both live in the same repo, you can additionally enable a sensor that watches for divergence between them.</strong></p>
+<p><strong>The anti-pattern to avoid in both cases</strong>: fusing the user story and the spec into a single hybrid file because "they say the same thing". They don't. And the resulting file is neither a good user story (too technical for the PM) nor a good spec (too vague for the agent). If you find yourself editing "the file" to reflect both a product copy change and a technical implementation discovery, split it back. We develop this pattern as anti-pattern #13 in chapter 11.</p>
+<p><strong>The special case where reference without rewriting is appropriate.</strong> When the upstream document really is the authoritative source and lives under its own validation discipline: an API contract maintained in OpenAPI/Protobuf with its own CI, a corporate security policy, an external standard (RFC, protocol spec). In those cases the spec <strong>summarizes the implications</strong> (<em>"this endpoint complies with the contract defined in <code>api-contracts/avatar.yaml@v3</code>"</em>) but doesn't copy the content. The critical distinction: that upstream document has its <em>own</em> validation operating on it. A Jira user story almost never has that property.</p>
 <h3 id="5-the-whys">5. The <em>whys</em><a class="headerlink" href="#5-the-whys" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>This is where ordinary specs die and good ones separate from the rest. Almost all specs explain the <em>what</em>. Almost none explain the <em>why</em>. And the whys are exactly what the agent needs to make smart decisions in the gaps the spec doesn't cover.</p>
 <blockquote>
@@ -2160,6 +2360,13 @@
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">-</span><span class="w"> </span>✅ Always: ...
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">-</span><span class="w"> </span>⚠️ Ask first: ...
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="k">-</span><span class="w"> </span>🚫 Never: ...
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="gu">## Affected surfaces (optional, use when the spec touches &gt;1 component)</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="gu">### [Component] — [produced | modified | consumed]</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Functional:**</span> ...
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Non-functional:**</span> ...
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Technical:**</span> ...
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="k">-</span><span class="w"> </span><span class="gs">**More detail:**</span> [reference to deeper doc if it exists]
 </span></code></pre></div>
 <p>This template fits in less than a screen and covers 80% of the value a spec can deliver. The other 20% are domain-specific details — state diagrams, API contracts, concrete input/output examples — that you add when the domain demands them, not by default.</p>
 <h2 id="the-curse-of-instructions">The curse of instructions<a class="headerlink" href="#the-curse-of-instructions" title="Enlace permanente a esta sección">&para;</a></h2>
@@ -2210,6 +2417,134 @@
 </blockquote>
 <p>In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.</p>
 <p>Almost every pathology we'll see in chapter 11 comes from <strong>misaligning these three things</strong>: writing spec-anchored without anchoring (#4), writing spec-as-source without a generator (#9 + #12), or writing spec-first with spec-as-source-level detail (#2 + #12). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.</p>
+<h2 id="the-spec-and-technical-components-consume-produce-modify">The spec and technical components: consume, produce, modify<a class="headerlink" href="#the-spec-and-technical-components-consume-produce-modify" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>So far we've talked about a spec's anatomy as if it applied to an isolated piece. In practice, almost every real spec <strong>touches multiple components at once</strong> — one is built new, another is modified, and several are consumed without being touched. Each of those relationships has different rules, and mixing them in a single language is one of the fastest ways to inflate a spec without gaining precision.</p>
+<p>This section extends the earlier subsection on <em>"Reusing criteria from upstream documents"</em> — where we covered the user-story case — to the more general question: what does a spec say about the technical components it relates to?</p>
+<h3 id="three-relationships-three-rules">Three relationships, three rules<a class="headerlink" href="#three-relationships-three-rules" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>A spec can have three distinct relationships with each component it touches:</p>
+<p><strong>1. Consumed (it exists; the spec uses it).</strong> The component is already built, has its own contract (API, module, library), and the spec leans on it without modifying it. The rule is <strong>reference the contract, don't reimplement it</strong>. The spec documents <em>how</em> the component is used — which endpoints it calls, which errors it expects to handle — but it doesn't document what the component does on its own. That lives in the component's contract, which is its own source of truth.</p>
+<p>If the component is an ADR, an API contract, a security policy or an external standard, the rule is the same with one nuance: <strong>cite the specific invariant this spec depends on, not the entire document</strong>. <em>"This spec respects ADR-007 (single Postgres instance) and ADR-012 (no synchronous calls between services)"</em> is useful. <em>"Related: ADR-007"</em> is noise.</p>
+<p><strong>2. Produced (it doesn't exist; the spec creates it).</strong> This is the typical case for a new feature: <em>"this spec creates a new endpoint / a new service / a new module"</em>. Here the trap is obvious and dangerous: because the component doesn't exist yet, you feel you have to "define it" in the spec, and you almost always end up describing it with classes, methods, signatures and payloads. That's exactly anti-pattern #12 (pseudocode dressed up as spec).</p>
+<p>The right form: the spec describes the <strong>observable contract</strong> the new component must offer, not its internal structure. <em>"After this spec, there must be a capability to accept authenticated avatar uploads (JPEG/PNG, ≤10 MB) and return a retrievable URL"</em> is observable contract. <em>"Create <code>AvatarUploadService</code> with method <code>upload(file, user_id) -&gt; AvatarMetadata</code>"</em> is pseudocode.</p>
+<p>There's a conceptually important nuance: a spec that produces a new component is <strong>the transient source of truth that hands off</strong>. While the component doesn't exist, the spec is the only thing describing it. Once the component exists, <strong>its own documentation</strong> (its README, its OpenAPI contract, its tests, its own code) becomes the operational source, and the original spec becomes the <em>"why it was built this way"</em> — historical intent, not living contract. If you confuse the two roles, you end up with two artifacts competing to be the source of truth for the same component, and you fall back into the silent fusion of anti-pattern #13.</p>
+<p><strong>3. Modified (it exists; the spec adds, changes or removes capabilities).</strong> Here the rule is <strong>describe the observable delta, not the component's full state</strong>. The spec doesn't have to re-document how <code>User</code> works; it has to say <em>"add the <code>avatar_url</code> field (optional, current avatar URL or absent). Updated when an avatar is uploaded; cleared when deleted. No other model behavior changes."</em></p>
+<p>The <strong>"no other behavior changes"</strong> part is what saves the spec from inflating. Without it, the team tends to rewrite the entire component "to make the spec complete". The delta is the spec; the rest of the component lives in its own documentation.</p>
+<h3 id="capturing-the-load-bearing-essentials-in-three-dimensions">Capturing the load-bearing essentials in three dimensions<a class="headerlink" href="#capturing-the-load-bearing-essentials-in-three-dimensions" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>For each component the spec produces or modifies, the immediate question is <em>"how much detail do I include?"</em>. The vague answer leads to pseudocode. The useful answer is to decompose into <strong>three explicit dimensions</strong> and, for each, capture only what's load-bearing — and reference deeper docs when they exist.</p>
+<p>The three dimensions, applied to the component's <strong>delta</strong>:</p>
+<ul>
+<li><strong>Functional</strong> — what changes in observable behavior. <em>"The <code>User</code> model can now have an avatar; the field is optional; updated on upload, cleared on delete."</em></li>
+<li><strong>Non-functional</strong> — which cross-cutting constraints the change must respect. Performance, security, compatibility, observability, data. <em>"The migration must not require downtime; the field must not break existing model serialization."</em></li>
+<li><strong>Technical</strong> — which contract/integration decisions the change explicitly closes. <em>"The field is indexed by <code>user_id</code>; the avatar URL goes through the existing CDN, not directly through the bucket."</em></li>
+</ul>
+<p>For each dimension, an <strong>optional reference to the deeper document</strong> if it exists: <em>"Migration detail in <code>docs/db/migrations/0042-add-avatar.md</code>. CDN policy in <code>infra/cdn/policy.md</code>."</em></p>
+<p>Three important clarifications about this pattern:</p>
+<ol>
+<li><strong>If a dimension doesn't add anything, omit it.</strong> Don't force three lines per component for symmetry. Absence is informative: it says that dimension doesn't change.</li>
+<li><strong>What goes in the spec is what's load-bearing</strong>: what the chapter 5 validator can compare against the code, and what the team wants to be contractual. Finer detail lives in the component's documentation, which has its own validation mechanism (tests, type checks, versioned contracts).</li>
+<li><strong>The term "non-functional" is classical but contested</strong> (Fowler argues everything is functional, just along different dimensions). For the purposes of this chapter we use it as an operational category — three different questions to ask about each component — not as ontology. If your team prefers calling them <em>behavior</em>, <em>qualities</em>, <em>contracts</em>, it makes no difference. What matters is that they are <strong>three different questions</strong>, not one.</li>
+</ol>
+<h3 id="the-affected-surfaces-block">The "Affected surfaces" block<a class="headerlink" href="#the-affected-surfaces-block" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>When a spec touches multiple components, it's worth having an explicit block at the start that <strong>enumerates the affected surfaces with their relationship type</strong>. It's not work breakdown (it doesn't enumerate tasks, doesn't mention files, doesn't assign order — that lives in the planning phase of chapter 4). It's <strong>surface mapping</strong>, and it does three things no other part of the spec does well:</p>
+<ol>
+<li>It gives the agent and the chapter 5 validator an <strong>enumerable list</strong> of the change's blast radius, which in chapter 1 was invisible.</li>
+<li>It gives the human a <strong>signal of the spec's size</strong>: if the list has 12 entries, the spec is almost certainly <em>two features</em> badly stitched together, or a refactor masquerading as a feature.</li>
+<li><strong>It isn't work breakdown</strong>, which keeps it on the "what" side rather than the "how".</li>
+</ol>
+<p>An example of the block enriched with the three dimensions:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gu">## Affected surfaces</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gu">### `User` model — modified</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Functional:**</span> adds <span class="sb">`avatar_url`</span> (optional, current avatar URL or absent).
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  Updated on upload; cleared on delete. Rest of the model invariant.
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Non-functional:**</span> the migration must not require downtime; existing
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  serialization can&#39;t break (test <span class="sb">`test_user_serialization_back_compat`</span>).
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Technical:**</span> field indexed by <span class="sb">`user_id`</span>. Permission schema unchanged.
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">-</span><span class="w"> </span><span class="gs">**More detail:**</span> <span class="sb">`docs/db/migrations/0042-add-avatar.md`</span> (once created).
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="gu">### `POST /api/avatar` endpoint — produced</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Functional:**</span> accepts authenticated uploads (JPEG/PNG, ≤10 MB), returns URL.
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>  Errors: 401 unauthenticated, 413 if oversize, 415 if invalid type.
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Non-functional:**</span> existing API gateway rate limit applies unchanged.
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Technical:**</span> consumes <span class="sb">`services/avatar-storage`</span> (current contract, unchanged)
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  and <span class="sb">`auth-middleware`</span> (current contract, unchanged).
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">-</span><span class="w"> </span><span class="gs">**More detail:**</span> this block is the transient source; after implementation,
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  operational doc lives in the new service&#39;s README.
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="gu">### `services/avatar-storage` — consumed</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Functional:**</span> calls <span class="sb">`POST /upload`</span>; handles 413 and 415 explicitly,
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>  propagates 5xx to the caller.
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="k">-</span><span class="w"> </span>Rest: see <span class="sb">`services/avatar-storage/contract.openapi.yaml@v2`</span>.
+</span></code></pre></div>
+<p>Notice how the <em>consumed</em> component has a much shorter block — it only describes <em>how this feature uses it</em>, not what the component does, because that lives in its own contract. And notice how the <em>modified</em> component declares explicitly what does <strong>not</strong> change. Those two habits are what distinguish a useful spec from an inflated one.</p>
+<h3 id="size-heuristic">Size heuristic<a class="headerlink" href="#size-heuristic" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>A practical rule that works: if a spec produces or modifies more than <strong>3-4 surfaces</strong>, you probably have one of three problems, and it's worth diagnosing before continuing:</p>
+<ul>
+<li><strong>(a)</strong> A feature too big that should be split into multiple specs (chapter 8 modulation).</li>
+<li><strong>(b)</strong> An architectural change disguised as a feature, which deserves its own ADR that this spec then hangs from.</li>
+<li><strong>&copy;</strong> A refactor camouflaged as a feature (also chapter 8 modulation): what you're changing is the <em>shape</em> of the system, not adding business capability.</li>
+</ul>
+<p>The three have different treatments in the rest of the course, and the spec alone isn't the right artifact for any of them.</p>
+<h3 id="consolidated-summary-table">Consolidated summary table<a class="headerlink" href="#consolidated-summary-table" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Pulling this section together with the earlier subsection on upstream documents, this is the unified rule by relationship type:</p>
+<table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Main rule</th>
+<th>Spec section</th>
+<th>Typical trap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Consumed component</strong></td>
+<td>Reference the contract; document the use</td>
+<td>Technical constraints</td>
+<td>Re-documenting the component</td>
+</tr>
+<tr>
+<td><strong>Produced component</strong></td>
+<td>Define observable contract, not structure</td>
+<td>Affected surfaces + Criteria</td>
+<td>Pseudocode (#12); failing to mark the handoff to the component's doc</td>
+</tr>
+<tr>
+<td><strong>Modified component</strong></td>
+<td>Describe the delta, declare the rest invariant</td>
+<td>Affected surfaces + Criteria</td>
+<td>Rewriting the entire component</td>
+</tr>
+<tr>
+<td><strong>ADR / architecture</strong></td>
+<td>Cite specific invariants</td>
+<td>Technical constraints</td>
+<td>Copying invariants (drift guaranteed)</td>
+</tr>
+<tr>
+<td><strong>API contract / external standard</strong></td>
+<td>Reference + summary of implications</td>
+<td>Technical constraints</td>
+<td>Re-documenting the contract</td>
+</tr>
+<tr>
+<td><strong>Feature brief / product doc</strong></td>
+<td>Extract the cardinal whys</td>
+<td>Whys</td>
+<td>Importing vague product language</td>
+</tr>
+<tr>
+<td><strong>User story</strong></td>
+<td>Rewrite criteria with traceability</td>
+<td>Criteria + Whys</td>
+<td>Verbatim copy or opaque reference</td>
+</tr>
+</tbody>
+</table>
+<p>And a new anti-pattern that appears when references accumulate without discipline: <strong>reference soup</strong> — a spec where its own content gets buried under a long list of citations to ADRs, contracts, briefs and components, all without prioritization. The agent and the human don't know which are load-bearing and which are tangential, and they end up ignoring all of them. It's the inverse of the <em>curse of instructions</em>, and we develop it as anti-pattern #14 in chapter 11. The preventive rule: <strong>reference only what the agent or the human needs for this task, and annotate the why of each reference</strong>.</p>
 <h2 id="what-distinguishes-a-good-spec-from-a-mediocre-one">What distinguishes a good spec from a mediocre one<a class="headerlink" href="#what-distinguishes-a-good-spec-from-a-mediocre-one" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>If you have to remember three things from this chapter, let them be these:</p>
 <ol>
