@@ -85,9 +85,9 @@ A primera vista parece que la diferencia entre los dos niveles es solo técnica 
 
 La distinción clave es **quién puede editar el código**:
 
-- **En spec-anchored, el código se edita a mano.** Spec y código son dos artefactos paralelos, los dos se mantienen, los dos pueden modificarse directamente. Lo que el "anclaje" añade es un mecanismo automático (tests, validadores, agentes recurrentes) que **detecta cuándo se desincronizan**. Cuando hay drift, alguien decide: actualizo el código para que cumpla la spec, o actualizo la spec para reflejar lo que el código hace ahora. Las dos direcciones son válidas. Un dev puede arreglar un bug puntual editando directamente un archivo, y el sensor abrirá un issue para reconciliar la spec después.
+- **En spec-anchored, el código se edita directamente** (por un humano o por un agente). Spec y código son dos artefactos paralelos, los dos se mantienen, los dos pueden modificarse directamente. Lo que el "anclaje" añade es un mecanismo automático (tests, validadores, agentes recurrentes) que **detecta cuándo se desincronizan**. Cuando hay drift, alguien decide: actualizo el código para que cumpla la spec, o actualizo la spec para reflejar lo que el código hace ahora. Las dos direcciones son válidas. Un dev (o un agente) puede arreglar un bug puntual editando directamente un archivo, y el sensor abrirá un issue para reconciliar la spec después.
 
-- **En spec-as-source, el código no se edita nunca a mano.** Está marcado como generado. Si hay un bug, no abres el `.c` y lo arreglas — tienes que cambiar la spec y regenerar. El código es **solo lectura por contrato**, como un binario compilado.
+- **En spec-as-source, el código nunca se edita directamente.** Está marcado como generado. Si hay un bug, no abres el `.c` y lo arreglas — tienes que cambiar la spec y regenerar. El código es **solo lectura por contrato**, como un binario compilado.
 
 Esto tiene tres consecuencias prácticas que no son matices:
 
