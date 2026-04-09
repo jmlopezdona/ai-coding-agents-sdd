@@ -104,7 +104,7 @@ Esta es también una de las razones por las que las herramientas tipo Spec-kit y
 
 ## ¿Y si la spec la genera un agente?
 
-Es una idea natural: si el agente sabe escribir código, también debería saber escribir specs. Le pasas un user story, una descripción de la feature o un componente arquitectónico, y te devuelve la plantilla anterior rellena. El coste de arranque baja, la barrera de entrada desaparece, y aparentemente has resuelto el problema más caro de SDD — que es escribir specs.
+Es una idea natural: si el agente sabe escribir código, también debería saber escribir specs. Le pasas una user story, una descripción de la feature o un componente arquitectónico, y te devuelve la plantilla anterior rellena. El coste de arranque baja, la barrera de entrada desaparece, y aparentemente has resuelto el problema más caro de SDD — que es escribir specs.
 
 Es una idea que vale la pena intentar y que **falla casi siempre por defecto**, no por mal prompting sino por una razón estructural que conviene entender antes de gastar semanas descubriéndola.
 
