@@ -1836,10 +1836,10 @@
 <p>The key distinction is <strong>who can edit the code</strong>:</p>
 <ul>
 <li>
-<p><strong>In spec-anchored, code is edited by hand.</strong> Spec and code are two parallel artifacts, both maintained, both directly modifiable. What "anchoring" adds is an automatic mechanism (tests, validators, recurring agents) that <strong>detects when they desynchronize</strong>. When there's drift, someone decides: update the code to meet the spec, or update the spec to reflect what the code now does. Both directions are valid. A dev can fix a one-off bug by directly editing a file, and the sensor will open an issue to reconcile the spec afterward.</p>
+<p><strong>In spec-anchored, code is edited directly</strong> (by a human or by an agent). Spec and code are two parallel artifacts, both maintained, both directly modifiable. What "anchoring" adds is an automatic mechanism (tests, validators, recurring agents) that <strong>detects when they desynchronize</strong>. When there's drift, someone decides: update the code to meet the spec, or update the spec to reflect what the code now does. Both directions are valid. A dev (or an agent) can fix a one-off bug by directly editing a file, and the sensor will open an issue to reconcile the spec afterward.</p>
 </li>
 <li>
-<p><strong>In spec-as-source, code is never edited by hand.</strong> It's marked as generated. If there's a bug, you don't open the <code>.c</code> and fix it — you change the spec and regenerate. The code is <strong>read-only by contract</strong>, like a compiled binary.</p>
+<p><strong>In spec-as-source, code is never edited directly.</strong> It's marked as generated. If there's a bug, you don't open the <code>.c</code> and fix it — you change the spec and regenerate. The code is <strong>read-only by contract</strong>, like a compiled binary.</p>
 </li>
 </ul>
 <p>This has three practical consequences that aren't nuances:</p>

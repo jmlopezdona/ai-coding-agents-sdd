@@ -1836,10 +1836,10 @@
 <p>La distinción clave es <strong>quién puede editar el código</strong>:</p>
 <ul>
 <li>
-<p><strong>En spec-anchored, el código se edita a mano.</strong> Spec y código son dos artefactos paralelos, los dos se mantienen, los dos pueden modificarse directamente. Lo que el "anclaje" añade es un mecanismo automático (tests, validadores, agentes recurrentes) que <strong>detecta cuándo se desincronizan</strong>. Cuando hay drift, alguien decide: actualizo el código para que cumpla la spec, o actualizo la spec para reflejar lo que el código hace ahora. Las dos direcciones son válidas. Un dev puede arreglar un bug puntual editando directamente un archivo, y el sensor abrirá un issue para reconciliar la spec después.</p>
+<p><strong>En spec-anchored, el código se edita directamente</strong> (por un humano o por un agente). Spec y código son dos artefactos paralelos, los dos se mantienen, los dos pueden modificarse directamente. Lo que el "anclaje" añade es un mecanismo automático (tests, validadores, agentes recurrentes) que <strong>detecta cuándo se desincronizan</strong>. Cuando hay drift, alguien decide: actualizo el código para que cumpla la spec, o actualizo la spec para reflejar lo que el código hace ahora. Las dos direcciones son válidas. Un dev (o un agente) puede arreglar un bug puntual editando directamente un archivo, y el sensor abrirá un issue para reconciliar la spec después.</p>
 </li>
 <li>
-<p><strong>En spec-as-source, el código no se edita nunca a mano.</strong> Está marcado como generado. Si hay un bug, no abres el <code>.c</code> y lo arreglas — tienes que cambiar la spec y regenerar. El código es <strong>solo lectura por contrato</strong>, como un binario compilado.</p>
+<p><strong>En spec-as-source, el código nunca se edita directamente.</strong> Está marcado como generado. Si hay un bug, no abres el <code>.c</code> y lo arreglas — tienes que cambiar la spec y regenerar. El código es <strong>solo lectura por contrato</strong>, como un binario compilado.</p>
 </li>
 </ul>
 <p>Esto tiene tres consecuencias prácticas que no son matices:</p>
