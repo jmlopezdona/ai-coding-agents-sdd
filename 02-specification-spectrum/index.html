@@ -1775,14 +1775,18 @@
 <h2 id="level-1-spec-first">Level 1 — Spec-First<a class="headerlink" href="#level-1-spec-first" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>The lightest level. You write a specification <strong>before</strong> starting to code, hand it to the agent, the agent generates the code, and from then on the spec is <strong>abandoned</strong>. The code takes on a life of its own. Any future change is made directly on the code and the spec stays fossilized in its initial version.</p>
 <p>It's how most teams believe they're doing SDD. "Yes, we write a design doc before starting the feature." Fine, but that doc is just <em>spec-first</em>. Nothing more. It serves one specific thing — starting a feature with clear intent — and nothing else.</p>
-<p><strong>When it works:</strong>
-- New features with defined scope and a short horizon.
-- Prototypes where code is disposable and the spec doesn't need to keep living.
-- Small teams where knowledge of the change fits in the head of whoever makes it.</p>
-<p><strong>When it breaks:</strong>
-- As soon as the code enters maintenance.
-- As soon as someone (or some agent) has to touch it six months later and the spec no longer describes reality.
-- As soon as the drift between spec and code is such that the spec misleads instead of informs.</p>
+<p><strong>When it works:</strong></p>
+<ul>
+<li>New features with defined scope and a short horizon.</li>
+<li>Prototypes where code is disposable and the spec doesn't need to keep living.</li>
+<li>Small teams where knowledge of the change fits in the head of whoever makes it.</li>
+</ul>
+<p><strong>When it breaks:</strong></p>
+<ul>
+<li>As soon as the code enters maintenance.</li>
+<li>As soon as someone (or some agent) has to touch it six months later and the spec no longer describes reality.</li>
+<li>As soon as the drift between spec and code is such that the spec misleads instead of informs.</li>
+</ul>
 <p>The most common error with spec-first is <strong>believing it's spec-anchored</strong>. A team writes specs at the start of every feature and believes it's doing SDD. It isn't. It has a startup ritual.</p>
 <h2 id="level-2-spec-anchored">Level 2 — Spec-Anchored<a class="headerlink" href="#level-2-spec-anchored" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>The middle level, and where most serious teams that adopt SDD well end up living. Spec and code <strong>evolve together</strong> as equal partners, and there's some automatic mechanism that detects when they desynchronize. Tests verifying behaviors described in the spec, BDD frameworks like Cucumber, validators comparing declared signatures in the spec with actual ones in the code, or recurring agents that detect drift between the two.</p>
@@ -1792,13 +1796,17 @@
 <p><em>BDD frameworks like Cucumber exemplify this approach, making it the practical choice for most production systems.</em></p>
 </blockquote>
 <p>It's an honest hint. Spec-anchored isn't a new SDD invention. It's BDD done well, lifted to architectural intent rather than user-facing behavior. If your team already practices BDD with discipline, you're closer to SDD than you think.</p>
-<p><strong>When it works:</strong>
-- Production systems with long lifespans.
-- Teams where code passes through multiple hands (including artificial ones).
-- Domains where invariants are important and non-negotiable.</p>
-<p><strong>When it breaks:</strong>
-- When the cost of keeping spec and code synchronized exceeds the benefit. This is real and chapter 9 develops it honestly.
-- When automated tests don't cover enough to fulfill their "anchoring" role.</p>
+<p><strong>When it works:</strong></p>
+<ul>
+<li>Production systems with long lifespans.</li>
+<li>Teams where code passes through multiple hands (including artificial ones).</li>
+<li>Domains where invariants are important and non-negotiable.</li>
+</ul>
+<p><strong>When it breaks:</strong></p>
+<ul>
+<li>When the cost of keeping spec and code synchronized exceeds the benefit. This is real and chapter 9 develops it honestly.</li>
+<li>When automated tests don't cover enough to fulfill their "anchoring" role.</li>
+</ul>
 <h2 id="level-3-spec-as-source">Level 3 — Spec-as-Source<a class="headerlink" href="#level-3-spec-as-source" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>The most radical level and, today, the least viable in most contexts. The spec <strong>is</strong> the source code. Humans only edit the spec. Code is generated from it, always, and never edited directly. If something is wrong in the code, you fix the spec and regenerate.</p>
 <p>Tessl is the most visible example of this philosophy today: it generates code with a <code>// GENERATED FROM SPEC - DO NOT EDIT</code> comment at the top of each file. The promise is you have a single source of truth again, like classical compilation.</p>
@@ -1814,11 +1822,15 @@
 <li><strong>Deterministic generation</strong>: the same diagram produces the same code. Always.</li>
 </ol>
 <p>For general-purpose software — web APIs, frontends, internal scripts, everything most teams do 95% of the time — none of the three conditions hold. Specs are in natural language (ambiguity), the domain changes with every feature (unbounded), and LLMs are non-deterministic by design. That's why spec-as-source applied to this kind of software is still more promise than reality. The fundamental reason is the same one that killed Model-Driven Development in the 2000s, and chapter 9 returns to this.</p>
-<p><strong>When it works:</strong>
-- Mature domains with formal semantics (embedded, control, hardware/software co-design).
-- Thin glue code layers where the spec→code mapping is trivial.</p>
-<p><strong>When it breaks:</strong>
-- In most real software. The spec→code translation isn't deterministic when the spec is in natural language and the generator is an LLM, and that non-determinism is exactly what breaks the level's central promise.</p>
+<p><strong>When it works:</strong></p>
+<ul>
+<li>Mature domains with formal semantics (embedded, control, hardware/software co-design).</li>
+<li>Thin glue code layers where the spec→code mapping is trivial.</li>
+</ul>
+<p><strong>When it breaks:</strong></p>
+<ul>
+<li>In most real software. The spec→code translation isn't deterministic when the spec is in natural language and the generator is an LLM, and that non-determinism is exactly what breaks the level's central promise.</li>
+</ul>
 <h2 id="spec-anchored-vs-spec-as-source-the-most-confusing-distinction">Spec-Anchored vs Spec-as-Source: the most confusing distinction<a class="headerlink" href="#spec-anchored-vs-spec-as-source-the-most-confusing-distinction" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>At first glance it looks like the difference between these two levels is only technical — <em>"in both the spec is the source, right?"</em>. Philosophically, yes. Operationally, they're very different models, and understanding the difference saves you from picking wrong.</p>
 <p>The key distinction is <strong>who can edit the code</strong>:</p>

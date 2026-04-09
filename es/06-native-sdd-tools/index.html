@@ -1779,51 +1779,75 @@
 <p>Con eso delante, vamos una por una.</p>
 <h2 id="kiro">Kiro<a class="headerlink" href="#kiro" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Kiro es el IDE agéntico de AWS. Su workflow es probablemente el más simple del cuarteto: tres documentos markdown — <strong>Requirements → Design → Tasks</strong> — que se generan en orden y guían al agente a través del ciclo. Encaja casi exactamente con la "variante B" del ciclo del capítulo 4.</p>
-<p><strong>Lo que hace bien:</strong>
-- El flujo es legible a primera vista. Un humano que llega de fuera entiende el proceso en cinco minutos.
-- Tiene <strong>hooks que se disparan al guardar archivos</strong> para ejecutar tareas en segundo plano (actualizar docs, regenerar tests, validar contra la spec). Esto es relevante porque conecta directamente con uno de los temas centrales del curso de harness.
-- Es pragmático. No intenta forzarte a Spec-as-Source. Vive cómodamente en spec-anchored.</p>
-<p><strong>Lo que Fowler señala como problemático:</strong>
-- <strong>Excesivo para bug fixes pequeños.</strong> Trata cada cambio como una feature multi-story, lo que para arreglar un typo es absurdo. Si tu día a día son muchos cambios pequeños, Kiro te va a frustrar.
-- La estructura rígida no se adapta al tamaño del problema.</p>
-<p><strong>Para quién encaja:</strong>
-- Equipos con features medianas-grandes donde el ritual de tres documentos amortiza su coste.
-- Equipos que quieren un onramp suave a SDD sin reescribir su tooling.</p>
+<p><strong>Lo que hace bien:</strong></p>
+<ul>
+<li>El flujo es legible a primera vista. Un humano que llega de fuera entiende el proceso en cinco minutos.</li>
+<li>Tiene <strong>hooks que se disparan al guardar archivos</strong> para ejecutar tareas en segundo plano (actualizar docs, regenerar tests, validar contra la spec). Esto es relevante porque conecta directamente con uno de los temas centrales del curso de harness.</li>
+<li>Es pragmático. No intenta forzarte a Spec-as-Source. Vive cómodamente en spec-anchored.</li>
+</ul>
+<p><strong>Lo que Fowler señala como problemático:</strong></p>
+<ul>
+<li><strong>Excesivo para bug fixes pequeños.</strong> Trata cada cambio como una feature multi-story, lo que para arreglar un typo es absurdo. Si tu día a día son muchos cambios pequeños, Kiro te va a frustrar.</li>
+<li>La estructura rígida no se adapta al tamaño del problema.</li>
+</ul>
+<p><strong>Para quién encaja:</strong></p>
+<ul>
+<li>Equipos con features medianas-grandes donde el ritual de tres documentos amortiza su coste.</li>
+<li>Equipos que quieren un onramp suave a SDD sin reescribir su tooling.</li>
+</ul>
 <h2 id="spec-kit-github">Spec-kit (GitHub)<a class="headerlink" href="#spec-kit-github" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Spec-kit es el toolkit oficial de GitHub para Spec-Driven Development. Es un CLI y un conjunto de plantillas que introducen <em>checkpoints</em> en cada etapa del proceso. Su rasgo distintivo es la <strong>constitution</strong>: un documento de reglas fundamentales del proyecto que vive por encima de las specs individuales y que el agente lee antes de cualquier tarea.</p>
-<p><strong>Lo que hace bien:</strong>
-- La idea de la constitution es buena: separa lo que es invariante del proyecto (capítulo 3, "boundaries") de lo que es específico de una feature.
-- Usa checklists explícitas que obligan al agente a no saltarse pasos.
-- Es open source y se integra naturalmente con flujos de GitHub (PRs, issues, Actions).</p>
-<p><strong>Lo que Fowler señala como problemático:</strong>
-- <strong>Aspira a spec-anchored pero en la práctica es spec-first.</strong> Genera muchos archivos interconectados, pero el mecanismo automático de mantener spec y código sincronizados no está realmente implementado. Es spec-first con disfraz.
-- <strong>Genera markdown verboso y repetitivo.</strong> Fowler cuenta que, en su evaluación, los archivos generados eran <em>más pesados de revisar que el propio código</em>. Esto es exactamente lo que los críticos predicen del SDD malhecho: el tax de revisión sube en lugar de bajar.</p>
-<p><strong>Para quién encaja:</strong>
-- Equipos profundamente integrados en GitHub que quieren la ergonomía y no temen el coste de revisar markdown.
-- Equipos que quieren probar la idea de la "constitution" como capa global de boundaries.</p>
+<p><strong>Lo que hace bien:</strong></p>
+<ul>
+<li>La idea de la constitution es buena: separa lo que es invariante del proyecto (capítulo 3, "boundaries") de lo que es específico de una feature.</li>
+<li>Usa checklists explícitas que obligan al agente a no saltarse pasos.</li>
+<li>Es open source y se integra naturalmente con flujos de GitHub (PRs, issues, Actions).</li>
+</ul>
+<p><strong>Lo que Fowler señala como problemático:</strong></p>
+<ul>
+<li><strong>Aspira a spec-anchored pero en la práctica es spec-first.</strong> Genera muchos archivos interconectados, pero el mecanismo automático de mantener spec y código sincronizados no está realmente implementado. Es spec-first con disfraz.</li>
+<li><strong>Genera markdown verboso y repetitivo.</strong> Fowler cuenta que, en su evaluación, los archivos generados eran <em>más pesados de revisar que el propio código</em>. Esto es exactamente lo que los críticos predicen del SDD malhecho: el tax de revisión sube en lugar de bajar.</li>
+</ul>
+<p><strong>Para quién encaja:</strong></p>
+<ul>
+<li>Equipos profundamente integrados en GitHub que quieren la ergonomía y no temen el coste de revisar markdown.</li>
+<li>Equipos que quieren probar la idea de la "constitution" como capa global de boundaries.</li>
+</ul>
 <h2 id="tessl">Tessl<a class="headerlink" href="#tessl" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Tessl es la propuesta más radical del cuarteto. Apunta directamente al nivel <strong>Spec-as-Source</strong> del espectro: la spec es la única fuente que humanos editan, el código se genera, los archivos generados llevan una marca <code>// GENERATED FROM SPEC - DO NOT EDIT</code>. Si el código está mal, arreglas la spec y regeneras.</p>
-<p><strong>Lo que hace bien:</strong>
-- Es la única herramienta del cuarteto que persigue de verdad spec-as-source. Si esa es la dirección estratégica que crees correcta, no tienes muchas alternativas.
-- Fuerza una claridad en la spec que las otras no exigen, porque la spec <strong>es</strong> el sistema, no una descripción de él.</p>
-<p><strong>Lo que Fowler señala como problemático:</strong>
-- <strong>Está en beta privada</strong>, con todas las limitaciones que eso implica (acceso, soporte, riesgo de cambios disruptivos, riesgo de desaparecer).
-- <strong>El no-determinismo de los LLMs entra en conflicto directo con la promesa de "regenera y obtienes lo mismo"</strong>. Si dos generaciones del mismo spec producen código distinto, la promesa de "una sola fuente de verdad" se desinfla. Esto es casi exactamente el problema que mató al Model-Driven Development en los 2000 y que el capítulo 9 desarrolla.</p>
-<p><strong>Para quién encaja:</strong>
-- Experimentación deliberada en superficies aisladas y pequeñas. No es una herramienta para apostar tu repo principal en 2026.
-- Equipos con curiosidad por hacia dónde podría ir SDD a largo plazo.</p>
+<p><strong>Lo que hace bien:</strong></p>
+<ul>
+<li>Es la única herramienta del cuarteto que persigue de verdad spec-as-source. Si esa es la dirección estratégica que crees correcta, no tienes muchas alternativas.</li>
+<li>Fuerza una claridad en la spec que las otras no exigen, porque la spec <strong>es</strong> el sistema, no una descripción de él.</li>
+</ul>
+<p><strong>Lo que Fowler señala como problemático:</strong></p>
+<ul>
+<li><strong>Está en beta privada</strong>, con todas las limitaciones que eso implica (acceso, soporte, riesgo de cambios disruptivos, riesgo de desaparecer).</li>
+<li><strong>El no-determinismo de los LLMs entra en conflicto directo con la promesa de "regenera y obtienes lo mismo"</strong>. Si dos generaciones del mismo spec producen código distinto, la promesa de "una sola fuente de verdad" se desinfla. Esto es casi exactamente el problema que mató al Model-Driven Development en los 2000 y que el capítulo 9 desarrolla.</li>
+</ul>
+<p><strong>Para quién encaja:</strong></p>
+<ul>
+<li>Experimentación deliberada en superficies aisladas y pequeñas. No es una herramienta para apostar tu repo principal en 2026.</li>
+<li>Equipos con curiosidad por hacia dónde podría ir SDD a largo plazo.</li>
+</ul>
 <h2 id="bmad">BMAD<a class="headerlink" href="#bmad" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>BMAD es el caso más distinto del cuarteto, y por eso lo dejo para el final. En lugar de centrarse en la spec como artefacto, BMAD despliega un <strong>equipo de agentes especializados con roles</strong> — Product Manager, Arquitecto, QA, Developer — que gestionan el ciclo ágil completo manteniendo contexto consistente entre ellos. Es Spec-Driven Development implementado como sistema multi-agente.</p>
-<p><strong>Lo que hace bien:</strong>
-- La especialización por roles ayuda con la <em>curse of instructions</em> del capítulo 3. Cada agente solo ve las instrucciones relevantes para su rol, en lugar de un megaprompt que mezcla todo.
-- Encaja con lo que el survey académico de arXiv (<em>A Survey on Code Generation with LLM-based Agents</em>) describe como la familia de <strong>multi-agent role-playing systems</strong> (junto a ChatDev y MetaGPT en el lado más académico).
-- Para equipos que ya piensan en términos de roles ágiles, la mental model translation es trivial.</p>
-<p><strong>Lo que hay que mirar con cuidado:</strong>
-- La complejidad operativa es alta. Coordinar varios agentes con roles es un harness en miniatura, y los fallos de coordinación entre agentes son sutiles y difíciles de depurar.
-- La promesa multi-agente está sobrerrepresentada en marketing y subrepresentada en evidencia empírica fuera de demos.</p>
-<p><strong>Para quién encaja:</strong>
-- Equipos con apetito experimental y procesos ágiles maduros que pueden absorber la complejidad.
-- Casos donde la separación de preocupaciones por rol aporta más que la simplicidad de un solo agente bien dirigido.</p>
+<p><strong>Lo que hace bien:</strong></p>
+<ul>
+<li>La especialización por roles ayuda con la <em>curse of instructions</em> del capítulo 3. Cada agente solo ve las instrucciones relevantes para su rol, en lugar de un megaprompt que mezcla todo.</li>
+<li>Encaja con lo que el survey académico de arXiv (<em>A Survey on Code Generation with LLM-based Agents</em>) describe como la familia de <strong>multi-agent role-playing systems</strong> (junto a ChatDev y MetaGPT en el lado más académico).</li>
+<li>Para equipos que ya piensan en términos de roles ágiles, la mental model translation es trivial.</li>
+</ul>
+<p><strong>Lo que hay que mirar con cuidado:</strong></p>
+<ul>
+<li>La complejidad operativa es alta. Coordinar varios agentes con roles es un harness en miniatura, y los fallos de coordinación entre agentes son sutiles y difíciles de depurar.</li>
+<li>La promesa multi-agente está sobrerrepresentada en marketing y subrepresentada en evidencia empírica fuera de demos.</li>
+</ul>
+<p><strong>Para quién encaja:</strong></p>
+<ul>
+<li>Equipos con apetito experimental y procesos ágiles maduros que pueden absorber la complejidad.</li>
+<li>Casos donde la separación de preocupaciones por rol aporta más que la simplicidad de un solo agente bien dirigido.</li>
+</ul>
 <h2 id="como-elegir-o-no-elegir">Cómo elegir (o no elegir)<a class="headerlink" href="#como-elegir-o-no-elegir" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una recomendación honesta, sabiendo que envejecerá:</p>
 <ol>
