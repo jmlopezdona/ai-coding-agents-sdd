@@ -106,7 +106,7 @@ Resumido en una tabla:
 | ¿Hay escape hatch para casos raros? | Siempre (no hay restricción) | Sí (edita el código) | No (refactoriza la spec) |
 | Fuente única de verdad | Ninguna — el código deriva de facto | Dos artefactos sincronizados | Una sola, el resto deriva |
 | Mecanismo de sincronización | Ninguno | Tests / validadores / agentes | Generación |
-| Skill necesario | Programar | Programar | Programar + escribir spec generadora |
+| Skill necesario | Programar (+ escribir una spec inicial) | Programar + escribir specs + diseñar el anclaje (tests, validadores) | Escribir specs formales (la programación queda absorbida) |
 
 Y ahí está exactamente por qué Simulink funciona en su dominio — semántica formal estrecha = la generación es predecible y rara vez necesitas el escape hatch — y por qué Tessl tiene difícil replicarlo en software de propósito general: la generación con LLMs no es determinística, así que el escape hatch se necesita constantemente, y prohibirlo te deja atascado.
 

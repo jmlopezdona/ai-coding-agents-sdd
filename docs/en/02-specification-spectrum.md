@@ -106,7 +106,7 @@ Summarized in a table:
 | Escape hatch for edge cases? | Always (no constraint) | Yes (edit the code) | No (refactor the spec) |
 | Single source of truth | None — code becomes the de facto source | Two artifacts kept aligned | One, the rest derives |
 | Sync mechanism | None | Tests / validators / agents | Generation |
-| Required skill | Programming | Programming | Programming + writing generator-friendly specs |
+| Required skill | Programming (+ writing an initial spec) | Programming + writing specs + designing the anchoring (tests, validators) | Writing formal specs (programming gets absorbed) |
 
 And that's exactly why Simulink works in its domain — narrow formal semantics = generation is predictable and you rarely need the escape hatch — and why Tessl has a hard time replicating it for general-purpose software: LLM generation isn't deterministic, so the escape hatch is needed constantly, and forbidding it leaves you stuck.
 
