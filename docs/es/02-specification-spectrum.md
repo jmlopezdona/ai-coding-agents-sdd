@@ -14,11 +14,13 @@ El nivel más ligero. Escribes una especificación **antes** de empezar a codifi
 Es el modo en que la mayoría de equipos creen que están haciendo SDD. "Sí, escribimos un design doc antes de empezar la feature." Vale, pero ese doc es solo *spec-first*. No es nada más. Sirve para una cosa concreta — arrancar una feature con una intención clara — y para nada más.
 
 **Cuándo funciona:**
+
 - Features nuevas con un alcance definido y un horizonte corto.
 - Prototipos donde el código es desechable y la spec no necesita seguir viva.
 - Equipos pequeños donde el conocimiento del cambio cabe en la cabeza de quien lo hace.
 
 **Cuándo se rompe:**
+
 - En cuanto el código entra en mantenimiento.
 - En cuanto otra persona (o agente) tiene que tocarlo seis meses después y la spec ya no describe la realidad.
 - En cuanto la cantidad de drift entre spec y código es tal que la spec engaña en lugar de informar.
@@ -38,11 +40,13 @@ El paper dice algo importante sobre este nivel:
 Es una pista honesta. Spec-anchored no es una invención nueva del SDD. Es BDD bien hecho, llevado al nivel de la intención arquitectónica en lugar del comportamiento de cara al usuario. Si tu equipo ya practica BDD con disciplina, está más cerca de SDD del que cree.
 
 **Cuándo funciona:**
+
 - Sistemas en producción con vida larga.
 - Equipos donde el código pasa por varias manos (incluidas manos artificiales).
 - Dominios donde los invariantes son importantes y no negociables.
 
 **Cuándo se rompe:**
+
 - Cuando el coste de mantener spec y código sincronizados se vuelve mayor que el beneficio. Esto es real y el capítulo 9 lo desarrolla con honestidad.
 - Cuando los tests automáticos no cubren lo suficiente como para cumplir su rol de "anclaje".
 
@@ -67,10 +71,12 @@ Lo que hace que Simulink funcione, y que es exactamente lo que falta en software
 Para software de propósito general — APIs web, frontends, scripts internos, todo lo que la mayoría de equipos hacen el 95% del tiempo — ninguna de las tres condiciones se cumple. Las specs están en lenguaje natural (ambigüedad), el dominio cambia con cada feature (no acotado), y los LLMs son no determinísticos por diseño. Por eso spec-as-source aplicado a este tipo de software sigue siendo más promesa que realidad. La razón fundamental es la misma que mató al Model-Driven Development en los años 2000, y el capítulo 9 vuelve sobre esto.
 
 **Cuándo funciona:**
+
 - Dominios maduros con semántica formal (embedded, control, hardware/software co-design).
 - Capas finas de glue code donde el mapeo spec→código es trivial.
 
 **Cuándo se rompe:**
+
 - En la mayoría del software real. La traducción spec→código no es determinística cuando la spec está en lenguaje natural y el generador es un LLM, y ese no-determinismo es exactamente lo que rompe la promesa central del nivel.
 
 ## Spec-Anchored vs Spec-as-Source: la diferencia que más confunde

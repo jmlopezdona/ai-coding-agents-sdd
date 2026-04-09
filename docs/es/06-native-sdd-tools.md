@@ -19,15 +19,18 @@ Con eso delante, vamos una por una.
 Kiro es el IDE agéntico de AWS. Su workflow es probablemente el más simple del cuarteto: tres documentos markdown — **Requirements → Design → Tasks** — que se generan en orden y guían al agente a través del ciclo. Encaja casi exactamente con la "variante B" del ciclo del capítulo 4.
 
 **Lo que hace bien:**
+
 - El flujo es legible a primera vista. Un humano que llega de fuera entiende el proceso en cinco minutos.
 - Tiene **hooks que se disparan al guardar archivos** para ejecutar tareas en segundo plano (actualizar docs, regenerar tests, validar contra la spec). Esto es relevante porque conecta directamente con uno de los temas centrales del curso de harness.
 - Es pragmático. No intenta forzarte a Spec-as-Source. Vive cómodamente en spec-anchored.
 
 **Lo que Fowler señala como problemático:**
+
 - **Excesivo para bug fixes pequeños.** Trata cada cambio como una feature multi-story, lo que para arreglar un typo es absurdo. Si tu día a día son muchos cambios pequeños, Kiro te va a frustrar.
 - La estructura rígida no se adapta al tamaño del problema.
 
 **Para quién encaja:**
+
 - Equipos con features medianas-grandes donde el ritual de tres documentos amortiza su coste.
 - Equipos que quieren un onramp suave a SDD sin reescribir su tooling.
 
@@ -36,15 +39,18 @@ Kiro es el IDE agéntico de AWS. Su workflow es probablemente el más simple del
 Spec-kit es el toolkit oficial de GitHub para Spec-Driven Development. Es un CLI y un conjunto de plantillas que introducen *checkpoints* en cada etapa del proceso. Su rasgo distintivo es la **constitution**: un documento de reglas fundamentales del proyecto que vive por encima de las specs individuales y que el agente lee antes de cualquier tarea.
 
 **Lo que hace bien:**
+
 - La idea de la constitution es buena: separa lo que es invariante del proyecto (capítulo 3, "boundaries") de lo que es específico de una feature.
 - Usa checklists explícitas que obligan al agente a no saltarse pasos.
 - Es open source y se integra naturalmente con flujos de GitHub (PRs, issues, Actions).
 
 **Lo que Fowler señala como problemático:**
+
 - **Aspira a spec-anchored pero en la práctica es spec-first.** Genera muchos archivos interconectados, pero el mecanismo automático de mantener spec y código sincronizados no está realmente implementado. Es spec-first con disfraz.
 - **Genera markdown verboso y repetitivo.** Fowler cuenta que, en su evaluación, los archivos generados eran *más pesados de revisar que el propio código*. Esto es exactamente lo que los críticos predicen del SDD malhecho: el tax de revisión sube en lugar de bajar.
 
 **Para quién encaja:**
+
 - Equipos profundamente integrados en GitHub que quieren la ergonomía y no temen el coste de revisar markdown.
 - Equipos que quieren probar la idea de la "constitution" como capa global de boundaries.
 
@@ -53,14 +59,17 @@ Spec-kit es el toolkit oficial de GitHub para Spec-Driven Development. Es un CLI
 Tessl es la propuesta más radical del cuarteto. Apunta directamente al nivel **Spec-as-Source** del espectro: la spec es la única fuente que humanos editan, el código se genera, los archivos generados llevan una marca `// GENERATED FROM SPEC - DO NOT EDIT`. Si el código está mal, arreglas la spec y regeneras.
 
 **Lo que hace bien:**
+
 - Es la única herramienta del cuarteto que persigue de verdad spec-as-source. Si esa es la dirección estratégica que crees correcta, no tienes muchas alternativas.
 - Fuerza una claridad en la spec que las otras no exigen, porque la spec **es** el sistema, no una descripción de él.
 
 **Lo que Fowler señala como problemático:**
+
 - **Está en beta privada**, con todas las limitaciones que eso implica (acceso, soporte, riesgo de cambios disruptivos, riesgo de desaparecer).
 - **El no-determinismo de los LLMs entra en conflicto directo con la promesa de "regenera y obtienes lo mismo"**. Si dos generaciones del mismo spec producen código distinto, la promesa de "una sola fuente de verdad" se desinfla. Esto es casi exactamente el problema que mató al Model-Driven Development en los 2000 y que el capítulo 9 desarrolla.
 
 **Para quién encaja:**
+
 - Experimentación deliberada en superficies aisladas y pequeñas. No es una herramienta para apostar tu repo principal en 2026.
 - Equipos con curiosidad por hacia dónde podría ir SDD a largo plazo.
 
@@ -69,15 +78,18 @@ Tessl es la propuesta más radical del cuarteto. Apunta directamente al nivel **
 BMAD es el caso más distinto del cuarteto, y por eso lo dejo para el final. En lugar de centrarse en la spec como artefacto, BMAD despliega un **equipo de agentes especializados con roles** — Product Manager, Arquitecto, QA, Developer — que gestionan el ciclo ágil completo manteniendo contexto consistente entre ellos. Es Spec-Driven Development implementado como sistema multi-agente.
 
 **Lo que hace bien:**
+
 - La especialización por roles ayuda con la *curse of instructions* del capítulo 3. Cada agente solo ve las instrucciones relevantes para su rol, en lugar de un megaprompt que mezcla todo.
 - Encaja con lo que el survey académico de arXiv (*A Survey on Code Generation with LLM-based Agents*) describe como la familia de **multi-agent role-playing systems** (junto a ChatDev y MetaGPT en el lado más académico).
 - Para equipos que ya piensan en términos de roles ágiles, la mental model translation es trivial.
 
 **Lo que hay que mirar con cuidado:**
+
 - La complejidad operativa es alta. Coordinar varios agentes con roles es un harness en miniatura, y los fallos de coordinación entre agentes son sutiles y difíciles de depurar.
 - La promesa multi-agente está sobrerrepresentada en marketing y subrepresentada en evidencia empírica fuera de demos.
 
 **Para quién encaja:**
+
 - Equipos con apetito experimental y procesos ágiles maduros que pueden absorber la complejidad.
 - Casos donde la separación de preocupaciones por rol aporta más que la simplicidad de un solo agente bien dirigido.
 

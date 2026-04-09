@@ -14,11 +14,13 @@ The lightest level. You write a specification **before** starting to code, hand 
 It's how most teams believe they're doing SDD. "Yes, we write a design doc before starting the feature." Fine, but that doc is just *spec-first*. Nothing more. It serves one specific thing — starting a feature with clear intent — and nothing else.
 
 **When it works:**
+
 - New features with defined scope and a short horizon.
 - Prototypes where code is disposable and the spec doesn't need to keep living.
 - Small teams where knowledge of the change fits in the head of whoever makes it.
 
 **When it breaks:**
+
 - As soon as the code enters maintenance.
 - As soon as someone (or some agent) has to touch it six months later and the spec no longer describes reality.
 - As soon as the drift between spec and code is such that the spec misleads instead of informs.
@@ -38,11 +40,13 @@ The paper says something important about this level:
 It's an honest hint. Spec-anchored isn't a new SDD invention. It's BDD done well, lifted to architectural intent rather than user-facing behavior. If your team already practices BDD with discipline, you're closer to SDD than you think.
 
 **When it works:**
+
 - Production systems with long lifespans.
 - Teams where code passes through multiple hands (including artificial ones).
 - Domains where invariants are important and non-negotiable.
 
 **When it breaks:**
+
 - When the cost of keeping spec and code synchronized exceeds the benefit. This is real and chapter 9 develops it honestly.
 - When automated tests don't cover enough to fulfill their "anchoring" role.
 
@@ -67,10 +71,12 @@ What makes Simulink work, and what's missing in general-purpose software, are th
 For general-purpose software — web APIs, frontends, internal scripts, everything most teams do 95% of the time — none of the three conditions hold. Specs are in natural language (ambiguity), the domain changes with every feature (unbounded), and LLMs are non-deterministic by design. That's why spec-as-source applied to this kind of software is still more promise than reality. The fundamental reason is the same one that killed Model-Driven Development in the 2000s, and chapter 9 returns to this.
 
 **When it works:**
+
 - Mature domains with formal semantics (embedded, control, hardware/software co-design).
 - Thin glue code layers where the spec→code mapping is trivial.
 
 **When it breaks:**
+
 - In most real software. The spec→code translation isn't deterministic when the spec is in natural language and the generator is an LLM, and that non-determinism is exactly what breaks the level's central promise.
 
 ## Spec-Anchored vs Spec-as-Source: the most confusing distinction
