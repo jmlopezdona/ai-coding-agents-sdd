@@ -2,6 +2,8 @@
 
 Hay muchas formas de escribir una spec mal y bastantes pocas de escribirla bien. Este capítulo intenta destilar lo que distingue una spec útil para un agente de IA de una que es ceremonia disfrazada. La frase corta: una buena spec captura **intención, restricciones y los "por qués"** con la suficiente precisión para que el agente no tenga que adivinar, y con la suficiente brevedad para que un humano la siga leyendo dentro de seis meses.
 
+**Mapa del capítulo.** Empezamos por los **seis bloques** que toda spec mínima debería tener y una **plantilla** que cabe en una pantalla. Después atacamos las tres trampas más caras: la **maldición de las instrucciones** (specs grandes rinden peor que módulos pequeños), la **generación con agente** (que casi siempre produce pseudocódigo disfrazado), y el **nivel de detalle equivocado** para tu nivel del espectro. Luego abrimos una sección sobre cómo una spec se relaciona con los **componentes técnicos** del sistema (consumir, producir, modificar), cerramos con un **ejemplo end-to-end** de spec real, y rematamos con las tres cosas que separan una spec buena de una mediocre.
+
 ## Lo que tiene que estar dentro
 
 Una spec mínima útil tiene seis bloques. No todos los seis tienen que ser largos, pero los seis tienen que estar.
@@ -40,36 +42,11 @@ Cómo sabes que está hecho. La palabra clave es **verificable**: una persona ex
 
 #### Reutilizar criterios de documentos upstream (user stories, contratos)
 
-Una pregunta que surge en cuanto un equipo empieza a escribir specs en serio: si la user story que motivó la feature **ya contiene criterios de aceptación**, ¿qué hago con ellos? ¿Los referencio? ¿Los copio? ¿Los reescribo?
+Una pregunta inevitable: si la user story upstream **ya contiene criterios de aceptación**, ¿qué hago con ellos? La respuesta corta es **reescribir con traza** — ni copiar literal (importa la imprecisión del lenguaje de producto), ni referenciar a secas (`"ver JIRA-1234"` rompe la auto-contención del capítulo 1 y abre drift invisible). Reescribes los criterios en la spec al nivel de precisión que el validador del capítulo 5 necesita, y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*, no como contenedor del *qué hay que hacer*.
 
-La respuesta corta es **reescribir con traza**, no copiar y no referenciar a secas. Y la respuesta larga depende de dónde vive ese documento upstream.
+La regla unificada: **la spec contiene su propia versión, precisa y verificable, de los criterios. El documento upstream se cita como fuente del por qué.** El anti-patrón a evitar — *fusionar user story y spec en un único archivo híbrido porque "dicen lo mismo"* — lo desarrollamos como anti-patrón #13 en el capítulo 11.
 
-**Caso 1: la user story vive fuera del repo (Jira, Linear, Notion).**
-
-Aquí las dos opciones malas son obvias:
-
-- *Solo referenciar* (`"ver criterios en JIRA-1234"`) rompe la auto-contención que el capítulo 1 defiende: el agente y el humano de dentro de seis meses tienen que perseguir un link a un sistema externo. Peor, la user story puede cambiar silenciosamente sin que el código ni la spec se enteren — es drift invisible, el peor tipo, porque ni siquiera el sensor del capítulo 5 puede detectarlo.
-- *Copiar literal* importa la imprecisión del lenguaje de producto. Una user story dice *"el usuario puede subir fácilmente una foto"*; tu spec necesita *"JPEG o PNG hasta 10 MB, fallo con 413 y mensaje legible si excede"*. Copiar literal te deja con criterios que parecen verificables porque suenan oficiales pero no lo son.
-
-La opción correcta es **reescribir los criterios en la spec al nivel de precisión que el validador necesita** y **citar la user story como fuente del por qué**, no como contenedor del qué. La user story sigue siendo canónica para producto; la spec se convierte en canónica para el agente y el código.
-
-Operativamente: pegas los criterios como borrador inicial (con todas las advertencias del anti-patrón #12), los reescribes uno a uno, y en la sección de "por qués" añades algo como *"criterios derivados de JIRA-1234, refinados en sesión del 12-mar, dueño @maria"*. La validación del capítulo 5 corre contra la spec, no contra la user story.
-
-**Caso 2: la user story vive en el mismo repo Git que la spec.**
-
-Aquí algunas objeciones de la opción "referenciar" se desactivan. La auto-contención se conserva (todo está en el repo), el drift deja de ser invisible (queda un commit), la traza se vuelve exacta (puedes citar archivo y commit), y aparece una posibilidad nueva: un sensor automático que detecte cuando la user story cambia sin que la spec se actualice — un git hook o un agente recurrente nocturno. Es exactamente el tipo de bucle bidireccional de dos pisos que el capítulo 12 anticipa cuando habla del harness.
-
-Pero **lo que no cambia**:
-
-- Siguen siendo dos artefactos con dos propósitos distintos. La user story responde a *qué quiere el usuario y por qué le importa al negocio*. La spec responde a *qué garantías observables tiene que cumplir el sistema*. El nivel de detalle correcto no se alinea por estar en el mismo repo.
-- Cada uno cambia por motivos distintos. La user story se refina por razones de producto; la spec se actualiza por razones técnicas. Tener un solo archivo para los dos te obliga a editarlo por razones cruzadas que no aplican.
-- La regla de "reescribir, no copiar" sigue siendo correcta. Lo único que cambia es que ahora la referencia complementaria es legítima: puedes apuntar a `docs/product/avatar-upload.md` y el agente lo lee como contexto adicional, sin que eso reemplace tu versión precisa en la spec.
-
-La regla unificada: **la spec contiene su propia versión, precisa y verificable, de los criterios de aceptación. El documento upstream se cita como fuente del por qué. Si los dos viven en el mismo repo, además puedes habilitar un sensor que vigile la divergencia entre ambos.**
-
-**El anti-patrón a evitar en los dos casos**: fusionar la user story y la spec en un único archivo híbrido porque "dicen lo mismo". No dicen lo mismo. Y el archivo resultante no es ni una buena user story (demasiado técnica para el PM) ni una buena spec (demasiado vaga para el agente). Si te encuentras editando "el archivo" para reflejar tanto un cambio de copy de producto como un descubrimiento técnico de implementación, divídelo de vuelta. Este patrón lo desarrollamos como anti-patrón #13 en el capítulo 11.
-
-**El caso especial donde sí conviene referenciar sin reescribir.** Cuando el documento upstream es realmente la fuente autoritativa y vive bajo su propia disciplina de validación: una API contract mantenida en OpenAPI/Protobuf con su propio CI, una política de seguridad corporativa, un estándar externo (RFC, especificación de protocolo). En esos casos la spec **resume las implicaciones** (*"este endpoint cumple el contrato definido en `api-contracts/avatar.yaml@v3`"*) pero no copia el contenido. La distinción crítica: ese documento upstream tiene su *propia* validación operando sobre él. Una user story de Jira casi nunca tiene esa propiedad.
+**Una excepción legítima**: cuando el documento upstream es realmente autoritativo y vive bajo su propia disciplina de validación (un contrato OpenAPI/Protobuf con su propio CI, una política de seguridad corporativa, un RFC), la spec **resume las implicaciones** sin copiar el contenido. La distinción crítica: ese documento upstream tiene su *propia* validación operando sobre él. Una user story de Jira casi nunca tiene esa propiedad.
 
 ### 5. Los "por qués"
 
@@ -93,6 +70,17 @@ Esta es la contribución más útil de Addy Osmani al pensamiento sobre specs pa
   *Ejemplo: commitear secretos o claves, modificar `vendor/`, deshabilitar tests para que pasen, hacer force push.*
 
 La distinción crucial es la del medio. Sin el "ask first", el agente solo tiene dos modos: actuar o paralizarse. El "ask first" introduce un tercer modo — "consulta antes de proceder" — que es donde de verdad cabe la conversación humano-agente productiva. Es la pieza que más equipos olvidan, y es la que convierte una spec restrictiva en una spec colaborativa.
+
+#### Los seis bloques de un vistazo
+
+| Bloque | Propósito | Trampa típica |
+|---|---|---|
+| **Objetivo** | Resultado observable y para quién, en 1-2 frases | Mezclar dos features en una |
+| **No-goals** | Vacuna contra el scope creep del agente | No escribirlos |
+| **Restricciones técnicas** | Invariantes que la feature debe respetar | Reinventar lo que ya existe |
+| **Criterios de aceptación** | Cómo sabes que está hecho, verificables | "Funciona bien" como criterio |
+| **Por qués** | Razones con dueño y fecha; lo que envejece bien | Documentar el *qué* y omitir el *por qué* |
+| **Boundaries** | Always / Ask first / Never para el agente | Olvidar el "Ask first" |
 
 ## Una plantilla mínima
 
@@ -124,7 +112,7 @@ Una o dos frases. Resultado observable. Para quién.
 - ⚠️ Ask first: ...
 - 🚫 Never: ...
 
-## Superficies afectadas (opcional, usar cuando la spec toca >1 componente)
+## Superficies afectadas (recomendado siempre que la spec toque >1 componente; ver sección dedicada más abajo)
 ### [Componente] — [producido | modificado | consumido]
 - **Funcional:** ...
 - **No funcional:** ...
@@ -136,17 +124,21 @@ Esta plantilla cabe en menos de una pantalla y cubre el 80% del valor que una sp
 
 ## La maldición de las instrucciones
 
-Hay una trampa concreta a evitar. Addy Osmani, citando estudios académicos, identifica lo que llama **the curse of instructions**: cuanto más metes en un prompt, peor cumple el modelo *cada una* de las cosas. No es lineal — es un colapso cualitativo. Una spec con cinco restricciones se cumple razonablemente bien. Una spec con cincuenta se cumple razonablemente mal en todas, y muchas veces el agente actúa como si no existiera ninguna.
+**Más información en una sola spec no es mejor — es peor.** Una spec global de 500 líneas es un mal plan; cinco specs modulares de 100 líneas, donde la tarea de hoy referencia solo dos, es un buen plan. Esta es la regla práctica más importante de todo el capítulo, y va contra la intuición de casi todo el mundo que empieza con SDD.
 
-La consecuencia operativa es contraintuitiva: **más información en una sola spec no es mejor**. La estrategia ganadora es dividir specs grandes en módulos pequeños y pasarle al agente solo el módulo relevante para la tarea actual. Una spec global de 500 líneas es un mal plan; cinco specs modulares de 100 líneas cada una, donde la tarea de hoy referencia solo dos, es un buen plan.
+La razón tiene nombre. Addy Osmani, citando estudios académicos, la llama **the curse of instructions**: cuanto más metes en un prompt, peor cumple el modelo *cada una* de las cosas. No es lineal — es un colapso cualitativo. Una spec con cinco restricciones se cumple razonablemente bien. Una spec con cincuenta se cumple razonablemente mal en todas, y muchas veces el agente actúa como si no existiera ninguna.
+
+La estrategia ganadora, entonces, es dividir specs grandes en módulos pequeños y pasarle al agente solo el módulo relevante para la tarea actual.
 
 Esta es también una de las razones por las que las herramientas tipo Spec-kit y Kiro generan **muchos archivos pequeños** en vez de uno grande, y por las que esa proliferación, mal gestionada, se convierte en su propio problema (lo veremos en el capítulo 9).
 
 ## ¿Y si la spec la genera un agente?
 
-Es una idea natural: si el agente sabe escribir código, también debería saber escribir specs. Le pasas una user story, una descripción de la feature o un componente arquitectónico, y te devuelve la plantilla anterior rellena. El coste de arranque baja, la barrera de entrada desaparece, y aparentemente has resuelto el problema más caro de SDD — que es escribir specs.
+**La tesis de esta sección, por adelantado:** el agente sirve como *draft generator del qué* — objetivo, criterios candidatos, no-goals tentativos, boundaries derivados del repo —, pero **no** del *cómo*. Y los **por qués** no los puede generar bien por mucho prompting que le pongas, porque no están en el input. Si te quedas con una sola regla: *si tu spec generada menciona una firma de función o un nombre de clase, bórrala*.
 
-Es una idea que vale la pena intentar y que **falla casi siempre por defecto**, no por mal prompting sino por una razón estructural que conviene entender antes de gastar semanas descubriéndola.
+El resto de la sección explica por qué la versión optimista — *"el agente escribe la spec entera"* — falla casi siempre por defecto, no por mal prompting sino por una razón estructural que conviene entender antes de gastar semanas descubriéndola.
+
+Es una idea natural: si el agente sabe escribir código, también debería saber escribir specs. Le pasas una user story, una descripción de la feature o un componente arquitectónico, y te devuelve la plantilla anterior rellena. El coste de arranque baja, la barrera de entrada desaparece, y aparentemente has resuelto el problema más caro de SDD — que es escribir specs. Pero hay un problema estructural debajo.
 
 ### El modo por defecto: pseudocódigo disfrazado de spec
 
@@ -179,7 +171,7 @@ Segundo, hay cosas que el agente **no puede** generar bien por mucha plantilla q
 Esto no significa que la generación con agente no sirva. Sirve, pero en un papel más estrecho del que la mayoría de la gente imagina:
 
 - **El agente puede arrancar bien**: el bloque de **objetivo**, los **criterios de aceptación verificables** (con cuidado), una primera lista de **no-goals candidatos** que el humano luego refina, y una propuesta de **boundaries** basada en patrones que ya ve en el repo.
-- **El humano tiene que poner sí o sí**: los **por qués**, los **no-goals reales** (especialmente los políticos o de scope que no están en ningún input), las **restricciones técnicas tácitas** del equipo, y la decisión de *cuánta* spec merece la tarea (la modulación del capítulo 8). Y, sobre todo, tiene que **borrar** todo lo que el agente metió de pseudocódigo: clases, métodos, firmas, payloads. Si después de borrarlos la spec queda vacía, no necesitabas una spec; necesitabas escribir bien el código (capítulo 10, *context engineering*).
+- **El humano tiene que poner sí o sí**: los **por qués**, los **no-goals reales** (especialmente los políticos o de scope que no están en ningún input), las **restricciones técnicas tácitas** del equipo, y la decisión de *cuánta* spec merece la tarea (lo que en el capítulo 8 llamaremos *modulación*: ajustar el peso de la spec a la complejidad y el riesgo reales de la feature). Y, sobre todo, tiene que **borrar** todo lo que el agente metió de pseudocódigo: clases, métodos, firmas, payloads. Si después de borrarlos la spec queda vacía, no necesitabas una spec; necesitabas escribir bien el código (capítulo 10, *context engineering*).
 
 La regla práctica más útil: **si tu spec generada menciona una firma de función o un nombre de clase, bórrala**. La spec habla de qué garantías cumple el sistema, no de cómo se construye.
 
@@ -223,7 +215,7 @@ Casi todas las patologías que veremos en el capítulo 11 vienen de **desalinear
 
 ## La spec y los componentes técnicos: consumir, producir, modificar
 
-Hasta aquí hemos hablado de la anatomía de una spec como si se aplicara a una pieza aislada. En la práctica, casi todas las specs reales **tocan varios componentes a la vez** — alguno se construye nuevo, otro se modifica, y varios se consumen sin tocarse. Cada una de esas relaciones tiene reglas distintas, y mezclarlas en un mismo lenguaje es una de las formas más rápidas de inflar la spec sin ganar precisión.
+La anatomía no vive en el vacío: toda spec aterriza sobre código que ya existe. Y en la práctica, casi todas las specs reales **tocan varios componentes a la vez** — alguno se construye nuevo, otro se modifica, y varios se consumen sin tocarse. Cada una de esas relaciones tiene reglas distintas, y mezclarlas en un mismo lenguaje es una de las formas más rápidas de inflar la spec sin ganar precisión.
 
 Esta sección extiende la subsección anterior sobre *"Reutilizar criterios de documentos upstream"* — donde tratamos el caso de las user stories — a la pregunta más general: ¿qué dice una spec sobre los componentes técnicos del sistema con los que se relaciona?
 
@@ -245,6 +237,8 @@ Hay un matiz conceptualmente importante: una spec que produce un componente nuev
 
 La parte de **"ningún otro comportamiento cambia"** es lo que salva a la spec de inflarse. Sin ella, el equipo tiende a reescribir el componente entero "para que la spec sea completa". El delta es la spec; el resto del componente vive en su propia documentación.
 
+> **En resumen de las tres relaciones**: *consumido* = referencia el contrato y describe solo el uso; *producido* = define el contrato observable y prepara el handoff a la doc del componente; *modificado* = describe el delta y declara el resto invariante.
+
 ### Capturar lo fundamental en tres dimensiones
 
 Para cada componente que la spec produce o modifica, la pregunta inmediata es *"¿cuánto detalle pongo?"*. La respuesta vaga lleva al pseudocódigo. La respuesta útil es decomponer en **tres dimensiones explícitas** y, para cada una, capturar solo lo load-bearing — y referenciar a docs más profundas cuando existan.
@@ -262,6 +256,8 @@ Tres aclaraciones importantes sobre este patrón:
 1. **Si una dimensión no aporta, omítela.** No fuerces tres líneas por componente por simetría. La ausencia es informativa: dice que esa dimensión no cambia.
 2. **Lo que va en la spec es lo load-bearing**: lo que el validador del cap. 5 puede comparar contra el código y lo que el equipo quiere que sea contractual. El detalle más fino vive en la documentación del componente, que tiene su propio mecanismo de validación (tests, type checks, contratos versionados).
 3. **El término "no funcional" es clásico pero contestado** (Fowler argumenta que todo es funcional, solo cambia la dimensión). Para los efectos de este capítulo lo usamos como categoría operativa — tres preguntas distintas que hacerle a cada componente — no como ontología. Si a tu equipo le encaja mejor llamarlas *comportamiento*, *cualidades*, *contratos*, da exactamente igual. Lo que importa es que sean **tres preguntas distintas**, no una sola.
+
+> **En resumen de las tres dimensiones**: *funcional* describe el comportamiento observable; *no funcional* las restricciones cruzadas; *técnico* las decisiones de contrato e integración. Solo lo load-bearing entra en la spec; el resto se referencia.
 
 ### El bloque "Superficies afectadas"
 
@@ -328,9 +324,9 @@ Reuniendo esta sección con la subsección anterior sobre documentos upstream, e
 | **Feature brief / doc de producto** | Extrae los por qués cardinales | Por qués | Importar el lenguaje vago de producto |
 | **User story** | Reescribir criterios con traza | Criterios + Por qués | Copia literal o referencia opaca |
 
-Y un anti-patrón nuevo que aparece cuando las referencias se acumulan sin disciplina: **sopa de referencias** — una spec donde el contenido propio queda enterrado bajo una lista larga de citas a ADRs, contratos, briefs y componentes, todos sin priorización. El agente y el humano no saben cuáles son load-bearing y cuáles son tangenciales, y acaban ignorándolos a todos. Es el inverso de la *maldición de las instrucciones*, y lo desarrollamos como anti-patrón #14 en el capítulo 11. La regla preventiva: **referencia solo lo que el agente o el humano necesita para esta tarea, y anota el porqué de cada referencia**.
+Y un anti-patrón nuevo que aparece cuando las referencias se acumulan sin disciplina: **sopa de referencias** — una spec donde el contenido propio queda enterrado bajo una lista larga de citas a ADRs, contratos, briefs y componentes, todos sin priorización. El agente y el humano no saben cuáles son load-bearing y cuáles son tangenciales, y acaban ignorándolos a todos. Es el inverso de la *maldición de las instrucciones*, — una spec ahogada por sus propias citas — y lo desarrollamos como anti-patrón #14 en el capítulo 11. La regla preventiva: **referencia solo lo que el agente o el humano necesita para esta tarea, y anota el porqué de cada referencia**.
 
-## Lo que distingue una spec buena de una mediocre
+## En resumen: lo que distingue una spec buena de una mediocre
 
 Si tienes que recordar tres cosas de este capítulo, que sean estas:
 
@@ -338,8 +334,26 @@ Si tienes que recordar tres cosas de este capítulo, que sean estas:
 2. **Los por qués son lo que envejece bien**. Sin ellos, la spec dura semanas. Con ellos, dura años.
 3. **El "ask first" es la categoría que falta en casi todas las specs**. Es donde vive la colaboración real con el agente.
 
-Las specs malas son las que enumeran trivialidades técnicas y no dicen nada de la intención. Las specs mediocres son las que dicen mucho del *qué* y nada del *por qué*. Las specs buenas son cortas, dicen *qué*, *por qué* y *qué no*, y se pueden leer en cinco minutos sin perder nada importante.
+### Mediocre vs buena, lado a lado
+
+La diferencia se ve mejor en contraste. Misma feature, dos specs:
+
+**Mediocre** (parece completa, no lo es):
+
+> *Spec: Avatar upload. El sistema permitirá a los usuarios subir un avatar. Se creará un endpoint `POST /api/avatar` que recibirá el archivo y lo guardará. Se validará que el archivo sea una imagen. Se devolverá la URL del avatar guardado. Se añadirá un campo `avatar_url` al modelo `User`. Se implementarán tests.*
+
+Habla del *qué* en términos de implementación, no menciona ningún *por qué*, no hay no-goals, no hay boundaries, los criterios no son verificables ("se validará que el archivo sea una imagen" — ¿qué tipos? ¿qué tamaño? ¿qué error?), y menciona detalles de código (`POST /api/avatar`, `avatar_url`) que son decisiones de implementación, no contrato.
+
+**Buena** (corta, intencional, envejece):
+
+> *Spec: Avatar upload. **Objetivo:** permitir a un usuario autenticado subir una foto de perfil visible para sus seguidores y eliminable solo por él. **No-goals:** no se soporta GIF animado; no se comprime automáticamente; la moderación de contenido vive en otra spec. **Restricciones:** se sirve desde el bucket S3 existente; auth pasa por `requireAuth`; errores siguen el patrón `Result<T, AppError>`. **Criterios:** un usuario autenticado puede subir JPEG o PNG ≤10 MB; falla con 413 si excede tamaño y 415 si tipo inválido, ambos con mensaje legible; solo el dueño puede borrar; un test de integración cubre los tres casos. **Por qués:** no comprimimos porque diseño quiere preservar calidad para cuentas verificadas (sept-2025, @maria); solo el dueño borra porque añadir moderación cambiaría el modelo de permisos y queremos esta iteración mínima. **Boundaries:** ✅ ejecutar tests antes de declarar terminado; ⚠️ preguntar antes de tocar el esquema de `User`; 🚫 nunca deshabilitar tests existentes ni commitear secretos.*
+
+La buena cabe en la misma extensión que la mediocre, pero captura intención, restricciones, criterios verificables y los por qués que la harán sobrevivir a las decisiones que la rodean.
+
+**La regla final**: las specs malas enumeran trivialidades técnicas y no dicen nada de la intención. Las specs mediocres dicen mucho del *qué* y nada del *por qué*. Las specs buenas son cortas, dicen *qué*, *por qué* y *qué no*, y se pueden leer en cinco minutos sin perder nada importante.
 
 ## Lo que viene a continuación
 
-Hasta aquí hemos visto qué hay *dentro* de una spec. En el **capítulo 4** vamos a ver el ciclo en el que una spec vive: las cuatro fases del proceso SDD (con sus dos variantes en la literatura), cómo encadenarlas con un agente, y dónde encaja la verificación que evita que el código se aleje de la spec.
+Hasta aquí hemos visto qué hay *dentro* de una spec, y la regla unificadora que recorre todo el capítulo: **el detalle apropiado es el que tu mecanismo de validación sabe consumir** — ni más, ni menos. Si la anatomía responde al *qué*, lo siguiente es el *cuándo* y el *cómo se valida*: el momento en que una spec deja de ser documento y empieza a comportarse como contrato.
+
+En el **capítulo 4** vamos a ver el ciclo en el que una spec vive: las cuatro fases del proceso SDD (con sus dos variantes en la literatura), cómo encadenarlas con un agente, y dónde encaja la verificación que evita que el código se aleje de la spec.
