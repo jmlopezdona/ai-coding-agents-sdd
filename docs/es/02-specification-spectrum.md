@@ -126,7 +126,7 @@ La trampa más cara que vemos en equipos que adoptan SDD es esta: aspiran a spec
 
 Eso es spec-first vestido de spec-anchored, y es peor que spec-first puro porque genera la falsa sensación de tener una fuente de verdad cuando lo que tienes es ficción documentada. El capítulo 9 vuelve sobre esto bajo el nombre de "ilusión de control".
 
-La regla operativa: **no declares que haces spec-anchored hasta que tengas el mecanismo automático de anclaje funcionando**. Sin ese mecanismo, lo que tienes es spec-first con más papeles.
+La regla operativa: **no declares que haces spec-anchored hasta que tengas el mecanismo automático de anclaje funcionando**. Sin ese mecanismo, lo que tienes es spec-first con más papeleo.
 
 ## Qué nivel deberías elegir
 
