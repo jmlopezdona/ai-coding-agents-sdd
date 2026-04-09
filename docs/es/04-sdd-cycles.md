@@ -76,9 +76,9 @@ En la práctica, esto significa que tu fase 1 del ciclo (especificar) **no es li
 
 ## El ciclo no es lineal
 
-Una nota final que casi siempre se omite en las descripciones canónicas: **el ciclo SDD es raramente lineal en la práctica**. Lo que pasa de verdad es que en el paso 4 descubres algo que invalida una asunción del paso 1, y vuelves atrás. El paso 5 te enseña que el criterio que escribiste no era verificable y tienes que reescribirlo. A mitad de una tarea, te das cuenta de que la spec tiene un hueco.
+Una nota final que casi siempre se omite en las descripciones canónicas: **el ciclo es raramente lineal en la práctica**. Lo que pasa de verdad es que en el paso 4 descubres algo que invalida una asunción del paso 1, y vuelves atrás. El paso 5 te enseña que el criterio que escribiste no era verificable y tienes que reescribirlo. A mitad de una tarea, te das cuenta de que la spec tiene un hueco.
 
-Esto es **normal y deseable**. La diferencia entre un ciclo SDD sano y uno patológico no es que el primero no tenga retrocesos; es que el sano **actualiza la spec cuando descubre que estaba mal** en lugar de ignorarla y seguir codificando. Esa es exactamente la idea del próximo capítulo: las **especificaciones vivas**.
+Esto es **normal y deseable**. La diferencia entre un ciclo sano y uno patológico no es que el primero no tenga retrocesos; es que el sano **actualiza la spec cuando descubre que estaba mal** en lugar de ignorarla y seguir codificando. Esa es exactamente la idea del próximo capítulo: las **especificaciones vivas**.
 
 ## Lo que viene a continuación
 

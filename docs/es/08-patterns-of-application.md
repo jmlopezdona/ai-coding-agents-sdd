@@ -99,8 +99,8 @@ Si te quedas con una sola idea de este capítulo, que sea esta: **antes de aplic
 
 Las respuestas a esas dos preguntas, multiplicadas, te dicen cuánto SDD necesitas. Mucho × mucho = patrón 1 con todo. Poco × poco = patrón 3 minimal. Las combinaciones intermedias caen en variantes del patrón 2.
 
-Las herramientas del capítulo 6 (Kiro especialmente) tienden a aplicar el patrón 1 a todo, y por eso a veces se sienten pesadas. El criterio de modulación que estás aprendiendo aquí no lo ofrece ninguna herramienta hoy: lo aporta el ingeniero, y es exactamente el tipo de criterio que distingue a un equipo que usa SDD de uno que sufre SDD.
+Las herramientas del capítulo 6 (Kiro especialmente) tienden a aplicar el patrón 1 a todo, y por eso a veces se sienten pesadas. El criterio de modulación que estás aprendiendo aquí no lo ofrece ninguna herramienta hoy: lo aporta el ingeniero, y es exactamente el tipo de criterio que distingue a un equipo que usa SDD de uno que lo sufre.
 
 ## Lo que viene a continuación
 
-Llegamos al capítulo más incómodo del curso. El **capítulo 9** es la crítica honesta a SDD: dónde falla, qué cuesta, por qué algunas de las críticas son justas y qué hacer al respecto. Si vienes leyendo el curso convencido de que SDD es la respuesta, ese capítulo está diseñado para descolocarte un poco. Es deliberado y es necesario.
+Llegamos al capítulo más incómodo del curso. El **capítulo 9** es la crítica honesta a SDD: dónde falla, qué cuesta, por qué algunas de las críticas son justas y qué hacer al respecto. Si vienes leyendo el curso convencido de que esta disciplina es la respuesta, ese capítulo está diseñado para descolocarte un poco. Es deliberado y es necesario.

@@ -99,8 +99,8 @@ If you keep one idea from this chapter, let it be this: **before applying SDD, r
 
 The answers to those two questions, multiplied, tell you how much SDD you need. Lots × lots = pattern 1 with everything. Little × little = pattern 3 minimal. Intermediate combinations fall in pattern 2 variants.
 
-The chapter 6 tools (Kiro especially) tend to apply pattern 1 to everything, and that's why they sometimes feel heavy. The modulation criterion you're learning here is what no tool offers today: it's contributed by the engineer, and it's exactly the kind of judgment that distinguishes a team using SDD from one suffering SDD.
+The chapter 6 tools (Kiro especially) tend to apply pattern 1 to everything, and that's why they sometimes feel heavy. The modulation criterion you're learning here is what no tool offers today: it's contributed by the engineer, and it's exactly the kind of judgment that distinguishes a team using SDD from one suffering it.
 
 ## What comes next
 
-We arrive at the most uncomfortable chapter of the course. **Chapter 9** is the honest critique of SDD: where it fails, what it costs, why some critiques are fair, and what to do about it. If you've been reading the course convinced SDD is the answer, that chapter is designed to unsettle you a little. It's deliberate and necessary.
+We arrive at the most uncomfortable chapter of the course. **Chapter 9** is the honest critique of SDD: where it fails, what it costs, why some critiques are fair, and what to do about it. If you've been reading the course convinced this discipline is the answer, that chapter is designed to unsettle you a little. It's deliberate and necessary.

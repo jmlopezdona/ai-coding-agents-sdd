@@ -48,7 +48,7 @@ That comment is pure context engineering: it lives with the code, explains a why
 
 A short `AGENTS.md` file at the repo root, orienting the agent about **where things are** and **what conventions are followed**, is context engineering done well. It's not a system spec; it's an orientation map for someone arriving from outside. It ideally fits on one screen.
 
-The line between "AGENTS.md as map" and "AGENTS.md as giant spec" is exactly the line between context engineering and bad SDD. When AGENTS.md grows beyond orientation and starts describing the system, you're moving to SDD by the back door, with all its costs.
+The line between "AGENTS.md as map" and "AGENTS.md as giant spec" is exactly the line between context engineering and bad SDD. When AGENTS.md grows beyond orientation and starts describing the system, you're sliding into spec discipline by the back door, with all its costs.
 
 ## Where it resembles SDD and where it doesn't
 
@@ -91,7 +91,7 @@ One thing many teams discover after reading both positions is that **they aren't
 - **Living specs with bidirectional loop** only for modules where the maintenance cost amortizes through criticality.
 - **None of that** for minor refactors and trivial bug fixes.
 
-This may sound like "do whatever you want", and it's exactly the opposite. It's **deliberate modulation** of the formality level according to the change's cost and risk. It's the skill that distinguishes a team applying SDD well from one suffering universal SDD.
+This may sound like "do whatever you want", and it's exactly the opposite. It's **deliberate modulation** of the formality level according to the change's cost and risk. It's the skill that distinguishes a team applying SDD well from one suffering it universally.
 
 ## A note on the term "context engineering"
 

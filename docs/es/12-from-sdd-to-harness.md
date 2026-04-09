@@ -1,6 +1,6 @@
 # 12. Del SDD al harness: cómo encajan las piezas
 
-Si has llegado hasta aquí, ya tienes el SDD como disciplina: sabes especificar intención, mantener el bucle bidireccional, modular el proceso según el tipo de tarea, y tienes criterio para no confundir SDD con burocracia. Lo que falta es entender **dónde se conecta** esto con la siguiente capa de la trilogía: el **harness**, el sistema de infraestructura interna que rodea al agente para que el SDD escale a un equipo entero y a meses vista.
+Si has llegado hasta aquí, ya tienes el SDD como disciplina: sabes especificar intención, mantener el bucle bidireccional, modular el proceso según el tipo de tarea, y tienes criterio para no confundirlo con burocracia. Lo que falta es entender **dónde se conecta** esto con la siguiente capa de la trilogía: el **harness**, el sistema de infraestructura interna que rodea al agente para que la disciplina escale a un equipo entero y a meses vista.
 
 Este capítulo es el puente. No repite el contenido del curso de harness — eso es otro repositorio entero — pero sí señala con precisión los cinco puntos exactos donde SDD se acopla con harness, y por qué la combinación produce algo mejor que los dos por separado.
 
@@ -49,7 +49,7 @@ Varios de los anti-patrones del capítulo 11 son específicamente difíciles de 
 - **Confiar en la spec más que en el código** se vuelve raro cuando hay validadores automáticos que cuando hay desacuerdo te obligan a investigar antes de aceptar el merge.
 - **El review burden** se reduce cuando los hooks generan los markdowns repetitivos automáticamente y la atención humana queda libre para lo que aporta juicio.
 
-En otras palabras: **una parte significativa de lo que mata al SDD malhecho es exactamente lo que el harness está diseñado para resolver**. Los dos cursos no son secuenciales por capricho — son secuenciales porque los problemas que descubres en SDD bien hecho son los problemas que el harness aborda.
+En otras palabras: **una parte significativa de lo que mata al SDD malhecho es exactamente lo que el harness está diseñado para resolver**. Los dos cursos no son secuenciales por capricho — son secuenciales porque los problemas que descubres haciendo bien la disciplina son los problemas que el harness aborda.
 
 ## Cuándo dar el siguiente paso
 
@@ -80,7 +80,7 @@ Una guía honesta no termina con "y ahora cambiará tu vida". Termina con dos ve
 
 Primero, **SDD bien hecho mejora el output del agente y la sostenibilidad del proyecto**. Esto está documentado en la práctica de los equipos que llevan tiempo aplicándolo y se nota en métricas concretas: menos retrabajo, menos drift, mejor onboarding. No es magia, pero es real.
 
-Segundo, **SDD malhecho es indistinguible de la burocracia y a veces es peor**. Esto también está documentado y es por lo que el capítulo 9 existe. Aplicar SDD sin criterio convierte la disciplina en su propio cuello de botella, y a las pocas semanas el equipo vuelve al vibe coding con un nivel adicional de cinismo.
+Segundo, **SDD malhecho es indistinguible de la burocracia y a veces es peor**. Esto también está documentado y es por lo que el capítulo 9 existe. Aplicarlo sin criterio convierte la disciplina en su propio cuello de botella, y a las pocas semanas el equipo vuelve al vibe coding con un nivel adicional de cinismo.
 
 La diferencia entre las dos no está en la herramienta. Está en el juicio del equipo para modular el nivel de formalidad según el problema, mantener vivos los por qués, leer las críticas honestas como parte del curso, y entender que SDD es **una** estrategia dentro de context engineering, no la única.
 

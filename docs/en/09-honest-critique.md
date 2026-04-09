@@ -1,6 +1,6 @@
 # 9. The honest critique: maintenance tax, MDD and the illusion of control
 
-So far the course has been constructive: why SDD is needed, how to do it, with what tools. This chapter isn't. This chapter is the counterweight, and it exists because any guide on SDD that only teaches you the positive patterns leaves you defenseless against the moment — and it will come — when your own SDD process becomes the bottleneck.
+So far the course has been constructive: why SDD is needed, how to do it, with what tools. This chapter isn't. This chapter is the counterweight, and it exists because any guide that only teaches you the positive patterns leaves you defenseless against the moment — and it will come — when your own process becomes the bottleneck.
 
 The critiques we'll collect aren't marginal objections. They come from two sources worth reading whole: **Isoform** (*The Limits of Spec-Driven Development*) and **Martin Fowler / Thoughtworks** (*Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl*). Both are written by people who tried SDD seriously and decided to publish what they saw.
 
@@ -83,7 +83,7 @@ After reading these six critiques, there are concrete signals SDD isn't the answ
 - Your real bottleneck is deploy infrastructure, not code quality.
 - Every time you write a spec, the relevant code has changed before you finished.
 
-If you recognize your situation in any of the five, **the cost of SDD probably exceeds its benefit for you**. It's not a failing of SDD. It's that the tool doesn't fit your problem, and forcing it is wasting team time.
+If you recognize your situation in any of the five, **the cost of SDD probably exceeds its benefit for you**. It's not a failing of the discipline. It's that the tool doesn't fit your problem, and forcing it is wasting team time.
 
 ## What comes next
 

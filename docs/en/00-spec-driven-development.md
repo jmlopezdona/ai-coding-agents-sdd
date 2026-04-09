@@ -6,7 +6,7 @@ The usual reaction is to blame the model, wait for the next one, or convince you
 
 ## What SDD is exactly (and what it isn't)
 
-SDD isn't writing lots of documentation. It isn't waterfall in disguise. It isn't project-management ceremony. SDD is one very concrete idea:
+SDD isn't writing lots of documentation. It isn't waterfall in disguise. It isn't project-management ceremony. It's one very concrete idea:
 
 > **The specification of intent — what is being built, why, with what constraints and under what acceptance criteria — is the primary artifact of the work. Code is the realization of that specification.**
 
@@ -59,7 +59,7 @@ This guide is the middle piece between two sister courses:
 - **Spec-Driven Development** (this course) teaches you to structure work so the agent can execute it well. It's the *how to work with it*.
 - **[Harness Engineering](https://jmlopezdona.github.io/ai-coding-agents-harness/)** teaches you to engineer the system around the agent — sandboxes, sensors, hooks, observability, the whole repo as substrate. It's the *what's built around it*.
 
-SDD exists because between knowing how to use an agent and knowing how to engineer a full harness around it, there's an intermediate discipline worth learning on its own. Without SDD, the harness becomes infrastructure without purpose. Without harness, specs become bureaucracy without traction. The three courses form a progression, and each one builds on the previous.
+SDD exists because between knowing how to use an agent and knowing how to engineer a full harness around it, there's an intermediate discipline worth learning on its own. Without it, the harness becomes infrastructure without purpose. Without harness, specs become bureaucracy without traction. The three courses form a progression, and each one builds on the previous.
 
 ## Where to go next
 

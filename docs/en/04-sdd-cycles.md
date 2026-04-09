@@ -2,7 +2,7 @@
 
 If you read three articles about Spec-Driven Development, you'll find three different versions of the "SDD cycle". That's not a flaw of the discipline; it's a sign the discipline is still forming. But it leaves the reader with a concrete problem: *what phases are there, in what order, and why do two serious sources say different things?*
 
-This chapter disambiguates. There are **two main variants** of the SDD cycle in the literature, they aren't interchangeable, and the choice between them says something about what kind of project you're in.
+This chapter disambiguates. There are **two main variants** of the cycle in the literature, they aren't interchangeable, and the choice between them says something about what kind of project you're in.
 
 ## Variant A — The arXiv paper version
 
@@ -76,9 +76,9 @@ In practice, this means your phase 1 of the cycle **isn't linear**. It's a mini-
 
 ## The cycle isn't linear
 
-A final note almost always omitted in canonical descriptions: **the SDD cycle is rarely linear in practice**. What really happens is in step 4 you discover something that invalidates a step-1 assumption, and you go back. Step 5 teaches you that the criterion you wrote wasn't verifiable and you have to rewrite it. Mid-task, you realize the spec has a hole.
+A final note almost always omitted in canonical descriptions: **the cycle is rarely linear in practice**. What really happens is in step 4 you discover something that invalidates a step-1 assumption, and you go back. Step 5 teaches you that the criterion you wrote wasn't verifiable and you have to rewrite it. Mid-task, you realize the spec has a hole.
 
-This is **normal and desirable**. The difference between a healthy SDD cycle and a pathological one isn't that the first has no backtracks; it's that the healthy one **updates the spec when it discovers it was wrong** instead of ignoring it and continuing to code. That's exactly the idea of the next chapter: **living specifications**.
+This is **normal and desirable**. The difference between a healthy cycle and a pathological one isn't that the first has no backtracks; it's that the healthy one **updates the spec when it discovers it was wrong** instead of ignoring it and continuing to code. That's exactly the idea of the next chapter: **living specifications**.
 
 ## What comes next
 

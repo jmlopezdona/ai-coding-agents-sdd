@@ -48,7 +48,7 @@ Ese comentario es context engineering puro: vive con el código, explica un por 
 
 Un archivo `AGENTS.md` corto en la raíz del repo, que oriente al agente sobre **dónde están las cosas** y **qué convenciones se siguen**, es context engineering bien hecho. No es una spec del sistema; es un mapa de orientación para alguien que llega de fuera. Idealmente cabe en una pantalla.
 
-La línea entre "AGENTS.md como mapa" y "AGENTS.md como spec gigante" es exactamente la línea entre context engineering y SDD malhecho. Cuando AGENTS.md crece más allá de orientación y empieza a describir el sistema, te estás moviendo a SDD por la puerta de atrás, con todos sus costes.
+La línea entre "AGENTS.md como mapa" y "AGENTS.md como spec gigante" es exactamente la línea entre context engineering y SDD malhecho. Cuando AGENTS.md crece más allá de orientación y empieza a describir el sistema, te estás deslizando hacia la disciplina de specs por la puerta de atrás, con todos sus costes.
 
 ## En qué se parece a SDD y en qué no
 
@@ -91,7 +91,7 @@ Una de las cosas que más equipos descubren después de leer las dos posiciones 
 - **Specs vivas con bucle bidireccional** solo para los módulos donde el coste de mantenimiento se amortiza por su criticidad.
 - **Nada de eso** para refactors menores y bug fixes triviales.
 
-Esto puede sonar a "haz lo que te dé la gana", y es exactamente lo opuesto. Es **modulación deliberada** del nivel de formalidad según el coste y el riesgo del cambio. Es la habilidad que distingue a un equipo que aplica SDD bien de uno que sufre SDD universalmente.
+Esto puede sonar a "haz lo que te dé la gana", y es exactamente lo opuesto. Es **modulación deliberada** del nivel de formalidad según el coste y el riesgo del cambio. Es la habilidad que distingue a un equipo que aplica SDD bien de uno que lo sufre universalmente.
 
 ## Una nota sobre la palabra "context engineering"
 

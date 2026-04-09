@@ -108,7 +108,7 @@ Cada anti-patrón sigue el mismo formato: **nombre**, síntoma observable, por q
 
 ## 11. SDD aplicado a problemas que no son de SDD
 
-**Síntoma.** El equipo adopta SDD esperando que resuelva problemas que en realidad son de otra cosa: producto mal definido, arquitectura mal pensada, equipo sin experiencia, deploy infrastructure rota. SDD no mueve la aguja porque no era la palanca correcta.
+**Síntoma.** El equipo adopta SDD esperando que resuelva problemas que en realidad son de otra cosa: producto mal definido, arquitectura mal pensada, equipo sin experiencia, deploy infrastructure rota. La disciplina no mueve la aguja porque no era la palanca correcta.
 
 **Por qué pasa.** Reificación de la metodología. "Si SDD es bueno, mi problema debe poder resolverse con SDD." No siempre.
 
@@ -124,4 +124,4 @@ Si reconoces tres o más, **el problema no es uno de los anti-patrones; es la ad
 
 ## Lo que viene a continuación
 
-El **capítulo 12** cierra el curso conectando SDD con el siguiente paso: el harness. Cuáles son los puntos exactos donde SDD se acopla con la ingeniería del harness, y por qué los dos juntos producen mucho más que los dos por separado.
+El **capítulo 12** cierra el curso conectando SDD con el siguiente paso: el harness. Cuáles son los puntos exactos donde la disciplina se acopla con la ingeniería del harness, y por qué los dos juntos producen mucho más que los dos por separado.

@@ -6,7 +6,7 @@ La reacción habitual es echarle la culpa al modelo, esperar al siguiente, o con
 
 ## Qué es exactamente SDD (y qué no)
 
-SDD no es escribir mucha documentación. No es waterfall disfrazado. No es ceremonia de gestión de proyectos. SDD es una idea muy concreta:
+SDD no es escribir mucha documentación. No es waterfall disfrazado. No es ceremonia de gestión de proyectos. Es una idea muy concreta:
 
 > **La especificación de la intención — qué se construye, por qué, con qué restricciones y bajo qué criterios de aceptación — es el artefacto principal del trabajo. El código es la realización de esa especificación.**
 
@@ -57,9 +57,9 @@ Esta guía es la pieza intermedia entre dos cursos hermanos:
 
 - **[Fundamentals](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/)** te enseñó qué es un agente, cómo se le habla, qué herramientas tiene. Es el "qué".
 - **Spec-Driven Development** (este curso) te enseña a estructurar el trabajo para que el agente pueda ejecutarlo bien. Es el "cómo trabajar con él".
-- **[Harness Engineering](https://jmlopezdona.github.io/ai-coding-agents-harness/)** te enseña a ingeniar el sistema alrededor del agente — sandboxes, sensores, hooks, observabilidad, el repo entero como sustrato. Es el "qué se construye alrededor".
+- **[Harness Engineering](https://jmlopezdona.github.io/ai-coding-agents-harness/)** te enseña a implementar el sistema alrededor del agente — sandboxes, sensores, hooks, observabilidad, el repo entero como sustrato. Es el "qué se construye alrededor".
 
-SDD existe porque entre saber usar un agente y saber montarle un harness completo hay una disciplina intermedia que vale la pena aprender por separado. Sin SDD, el harness se convierte en infraestructura sin propósito. Sin harness, las specs se convierten en burocracia sin tracción. Los tres cursos forman una progresión, y cada uno se apoya en el anterior.
+SDD existe porque entre saber usar un agente y saber montarle un harness completo hay una disciplina intermedia que vale la pena aprender por separado. Sin ella, el harness se convierte en infraestructura sin propósito. Sin harness, las specs se convierten en burocracia sin tracción. Los tres cursos forman una progresión, y cada uno se apoya en el anterior.
 
 ## Por dónde seguir
 

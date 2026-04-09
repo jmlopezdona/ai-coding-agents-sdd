@@ -1,6 +1,6 @@
 # 9. La crítica honesta: maintenance tax, MDD y la ilusión de control
 
-Hasta aquí el curso ha sido constructivo: por qué hace falta SDD, cómo se hace, con qué herramientas. Este capítulo no. Este capítulo es el contrapeso, y existe porque cualquier guía sobre SDD que solo te enseñe los patrones positivos te está dejando sin defensa contra el momento — que llegará — en que tu propio proceso SDD se vuelva el cuello de botella.
+Hasta aquí el curso ha sido constructivo: por qué hace falta SDD, cómo se hace, con qué herramientas. Este capítulo no. Este capítulo es el contrapeso, y existe porque cualquier guía que solo te enseñe los patrones positivos te está dejando sin defensa contra el momento — que llegará — en que tu propio proceso se vuelva el cuello de botella.
 
 Las críticas que vamos a recoger no son objeciones marginales. Vienen de dos fuentes que conviene leer enteras: **Isoform** (*The Limits of Spec-Driven Development*) y **Martin Fowler / Thoughtworks** (*Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl*). Las dos están escritas por gente que ha probado SDD en serio y ha decidido publicar lo que vio.
 
@@ -83,7 +83,7 @@ Después de leer estas seis críticas, hay señales concretas de que SDD no es l
 - Tu cuello de botella real es la deploy infrastructure, no la calidad del código.
 - Cada vez que escribes una spec, el código relevante ha cambiado antes de terminarla.
 
-Si reconoces tu situación en cualquiera de las cinco, **el coste del SDD probablemente excede su beneficio para ti**. No es un fallo del SDD. Es que la herramienta no encaja en tu problema, y forzarla es malgastar el tiempo del equipo.
+Si reconoces tu situación en cualquiera de las cinco, **el coste del SDD probablemente excede su beneficio para ti**. No es un fallo de la disciplina. Es que la herramienta no encaja en tu problema, y forzarla es malgastar el tiempo del equipo.
 
 ## Lo que viene a continuación
 

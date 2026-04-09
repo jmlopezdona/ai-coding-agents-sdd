@@ -108,7 +108,7 @@ Each anti-pattern follows the same format: **name**, observable symptom, why it 
 
 ## 11. SDD applied to problems that aren't SDD problems
 
-**Symptom.** The team adopts SDD expecting it to solve problems that are actually about something else: poorly defined product, poorly thought architecture, inexperienced team, broken deploy infrastructure. SDD doesn't move the needle because it wasn't the right lever.
+**Symptom.** The team adopts SDD expecting it to solve problems that are actually about something else: poorly defined product, poorly thought architecture, inexperienced team, broken deploy infrastructure. The discipline doesn't move the needle because it wasn't the right lever.
 
 **Why it happens.** Methodology reification. "If SDD is good, my problem must be solvable with SDD." Not always.
 
@@ -124,4 +124,4 @@ If you recognize three or more, **the problem isn't one of the anti-patterns; it
 
 ## What comes next
 
-**Chapter 12** closes the course connecting SDD with the next step: the harness. The exact points where SDD couples with harness engineering, and why the two together produce much more than the two apart.
+**Chapter 12** closes the course connecting SDD with the next step: the harness. The exact points where the discipline couples with harness engineering, and why the two together produce much more than the two apart.
