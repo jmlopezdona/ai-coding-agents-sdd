@@ -66,7 +66,7 @@ That explicit delta is also a trace for a doc-gathering agent: it can compare wh
 
 > **In summary**: *consumed* = reference and describe only the use; *produced* = define the observable contract and prepare the handoff; *modified* = describe the delta and declare the rest invariant.
 
-### Special case: product documents (user stories, briefs)
+### Product documents: how to consume user stories and briefs
 
 Product documents are *consumed* — the spec feeds on them but doesn't modify them. The question is **how much gap exists between the upstream and what the spec needs**, and that depends on the rigor with which the functional requirements were elaborated.
 
@@ -88,7 +88,7 @@ The rule: **the spec always contains its own criteria, derived at the level of p
 
     Using assistants and agents to elaborate the functional requirements themselves (features, user stories, acceptance criteria) makes it possible to reach higher-rigor upstream more efficiently — with edge cases covered, business rules made explicit, and verifiable criteria from the start. That reduces the gap the spec has to bridge and leaves less room for interpretation, whether by the implementing agent or the human who would do the same without one. But human review and validation remain necessary to avoid the over-specification chapter 3 warns about: an agent generating requirements tends toward the same apparent-coverage bias as when it generates specs.
 
-### Special case: documents with automatic validation against code
+### Documents with automatic validation against code
 
 When the consumed artifact is automatically validated against code on an ongoing basis (an OpenAPI contract with CI, a Protobuf schema with compatibility checks), it's enough to reference it and summarize the implications for your feature. A Jira user story has no automatic validation against code — its consistency depends on occasional human discipline, which makes it vulnerable to silent drift.
 
