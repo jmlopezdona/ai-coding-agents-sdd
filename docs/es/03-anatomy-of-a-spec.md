@@ -113,18 +113,11 @@ Una o dos frases. Resultado observable. Para quién.
 - ✅ Always: ...
 - ⚠️ Ask first: ...
 - 🚫 Never: ...
-
-## Superficies afectadas
-### [Componente] — [producido | modificado | consumido]
-- **Funcional:** ...
-- **No funcional:** ...
-- **Técnico:** ...
-- **Más detalle:** [referencia a doc más profunda si existe]
 ```
 
-*Recomendado siempre que la spec toque más de un componente. Ver [sección 4](04-spec-in-context.md#la-spec-y-los-componentes-técnicos-consumir-producir-modificar) para las reglas de cada tipo de relación.*
-
 Esta plantilla cabe en menos de una pantalla y cubre el 80% del valor que una spec puede aportar. El otro 20% son detalles específicos del dominio — diagramas de estado, contratos de API, ejemplos concretos de input/output — que se añaden cuando el dominio los pide, no por defecto.
+
+Cuando la spec toca más de un componente, la plantilla se extiende con un bloque de **superficies afectadas** que enumera qué componentes se consumen, producen o modifican. Las reglas de ese bloque se desarrollan en la [sección 4](04-spec-in-context.md#la-spec-y-los-componentes-técnicos-consumir-producir-modificar).
 
 ## La maldición de las instrucciones
 

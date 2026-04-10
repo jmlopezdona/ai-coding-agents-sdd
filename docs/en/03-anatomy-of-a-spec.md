@@ -113,18 +113,11 @@ One or two sentences. Observable result. For whom.
 - ✅ Always: ...
 - ⚠️ Ask first: ...
 - 🚫 Never: ...
-
-## Affected surfaces
-### [Component] — [produced | modified | consumed]
-- **Functional:** ...
-- **Non-functional:** ...
-- **Technical:** ...
-- **More detail:** [reference to deeper doc if it exists]
 ```
 
-*Recommended whenever the spec touches more than one component. See [section 4](04-spec-in-context.md#the-spec-and-technical-components-consume-produce-modify) for the rules of each relationship type.*
-
 This template fits in less than a screen and covers 80% of the value a spec can deliver. The other 20% are domain-specific details — state diagrams, API contracts, concrete input/output examples — that you add when the domain demands them, not by default.
+
+When the spec touches more than one component, the template extends with an **affected surfaces** block that lists which components are consumed, produced or modified. The rules for that block are developed in [section 4](04-spec-in-context.md#the-spec-and-technical-components-consume-produce-modify).
 
 ## The curse of instructions
 
