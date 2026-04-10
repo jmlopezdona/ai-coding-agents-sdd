@@ -37,9 +37,9 @@ Two chapters are **not optional** even though they look negative: chapter 10 (th
 - [3. Anatomy of a good specification](03-anatomy-of-a-spec.md)
 - [4. The spec in context](04-spec-in-context.md)
 
-### Part 3 — The cycle
+### Part 3 — Lifecycle
 
-- [5. The SDD cycles: two variants and when to use each](05-sdd-cycles.md)
+- [5. The SDD lifecycles: two variants and when to use each](05-sdd-lifecycles.md)
 - [6. Living specs: the bidirectional loop](06-living-specs.md)
 
 ### Part 4 — Tooling

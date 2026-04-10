@@ -33,7 +33,7 @@ El framework de [Augment](https://www.augmentcode.com/guides/living-specs-for-ai
 
 ### Fase 1 — Especificar la intención inicial
 
-Idéntica a la fase 1 del ciclo del capítulo 5. Una spec mínima viable: objetivo, restricciones, criterios, no-goals, por qués. Nada nuevo aquí.
+Idéntica a la fase 1 del ciclo de vida del capítulo 5. Una spec mínima viable: objetivo, restricciones, criterios, no-goals, por qués. Nada nuevo aquí.
 
 ### Fase 2 — Implementar contra la spec
 

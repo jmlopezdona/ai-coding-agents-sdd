@@ -1,10 +1,10 @@
-# 5. Los ciclos SDD: dos variantes y cuándo usar cada una
+# 5. Los ciclos de vida SDD: dos variantes y cuándo usar cada una
 
-Si lees tres artículos sobre Spec-Driven Development, encontrarás tres versiones distintas del "ciclo SDD". Eso no es un fallo de la disciplina; es señal de que la disciplina aún se está formando. Pero deja al lector con un problema concreto: *¿qué fases hay, en qué orden, y por qué dos fuentes serias dicen cosas distintas?*
+Si lees tres artículos sobre Spec-Driven Development, encontrarás tres versiones distintas del "ciclo de vida SDD". Eso no es un fallo de la disciplina; es señal de que la disciplina aún se está formando. Pero deja al lector con un problema concreto: *¿qué fases hay, en qué orden, y por qué dos fuentes serias dicen cosas distintas?*
 
-Este capítulo desambigua. Hay **dos variantes principales** del ciclo SDD en la literatura, no son intercambiables, y la elección entre ellas dice algo sobre el tipo de proyecto en el que estás.
+Este capítulo desambigua. Hay **dos variantes principales** del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellas dice algo sobre el tipo de proyecto en el que estás.
 
-## Variante A — La del paper de arXiv
+## Variante A
 
 [El paper de arXiv sobre SDD](https://arxiv.org/html/2602.00180) propone un ciclo de cuatro fases:
 
@@ -15,7 +15,7 @@ Este capítulo desambigua. Hay **dos variantes principales** del ciclo SDD en la
 
 Lo característico de esta variante es que la **validación es una fase explícita y separada**. La verificación no es algo que pasa "al final si hay tiempo"; es uno de los cuatro vértices del ciclo, con el mismo peso que la implementación.
 
-## Variante B — La del artículo de DEV.to (Pockit)
+## Variante B
 
 [El artículo más práctico sobre cómo usar SDD en el día a día](https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788) propone un ciclo distinto, también de cuatro fases, pero con nombres y fronteras diferentes:
 
@@ -36,7 +36,7 @@ Ninguna. Son dos puntos de vista distintos sobre el mismo proceso, optimizados p
 
 En la práctica, los equipos maduros acaban combinando: usan los nombres de la variante B en el flujo diario y separan una fase de validación (variante A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.
 
-## El ciclo, paso a paso, con un agente real
+## El ciclo de vida, paso a paso, con un agente real
 
 Te lo cuento como flujo concreto, neutral respecto a la variante, que es cómo se ve cuando lo haces de verdad.
 
@@ -74,7 +74,7 @@ Hay un detalle que el survey de [*Code Generation with LLM-based Agents*](https:
 
 En la práctica, esto significa que tu fase 1 del ciclo (especificar) **no es lineal**. Es un mini-bucle dentro del bucle: prompt → preguntas del agente → respuestas → spec borrador → más preguntas → spec final. Los equipos que tratan la fase 1 como un ping-pong en lugar de un dictado obtienen specs sustancialmente mejores, y esto es independiente de qué herramienta uses.
 
-## El ciclo no es lineal
+## El ciclo de vida no es lineal
 
 Una nota final que casi siempre se omite en las descripciones canónicas: **el ciclo es raramente lineal en la práctica**. Lo que pasa de verdad es que en el paso 4 descubres algo que invalida una asunción del paso 1, y vuelves atrás. El paso 5 te enseña que el criterio que escribiste no era verificable y tienes que reescribirlo. A mitad de una tarea, te das cuenta de que la spec tiene un hueco.
 
@@ -82,4 +82,4 @@ Esto es **normal y deseable**. La diferencia entre un ciclo sano y uno patológi
 
 ## Lo que viene a continuación
 
-El capítulo 6 va sobre la diferencia entre specs estáticas (las que envejecen mal) y specs vivas (las que se mantienen útiles porque la implementación retroalimenta la spec). Es la pieza que convierte el ciclo de este capítulo en un proceso sostenible en lugar de un ritual de arranque.
+El capítulo 6 va sobre la diferencia entre specs estáticas (las que envejecen mal) y specs vivas (las que se mantienen útiles porque la implementación retroalimenta la spec). Es la pieza que convierte el ciclo de vida descrito en este capítulo en un proceso sostenible en lugar de un ritual de arranque.

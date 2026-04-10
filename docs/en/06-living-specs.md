@@ -33,7 +33,7 @@ Augment's framework breaks the bidirectional loop into four phases:
 
 ### Phase 1 — Specify initial intent
 
-Identical to phase 1 of the chapter 5 cycle. A minimum viable spec: objective, constraints, criteria, no-goals, whys. Nothing new.
+Identical to phase 1 of the chapter 5 lifecycle. A minimum viable spec: objective, constraints, criteria, no-goals, whys. Nothing new.
 
 ### Phase 2 — Implement against the spec
 

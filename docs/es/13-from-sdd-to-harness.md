@@ -20,7 +20,7 @@ La consecuencia operativa: cuando un equipo monta un harness, las specs no son u
 
 ## Punto de acople 2 — Los sensores que validan specs
 
-El segundo pilar del harness es la dualidad **guías y sensores**: artefactos que orientan al agente *antes* de actuar (guías) y verificadores que detectan cuándo el agente se ha desviado *después* (sensores). La fase 5 del ciclo SDD del capítulo 5 — verificación — es exactamente un tipo de sensor.
+El segundo pilar del harness es la dualidad **guías y sensores**: artefactos que orientan al agente *antes* de actuar (guías) y verificadores que detectan cuándo el agente se ha desviado *después* (sensores). La fase 5 del ciclo de vida SDD del capítulo 5 — verificación — es exactamente un tipo de sensor.
 
 Sin harness, esa fase 5 es manual o, en el mejor caso, un script ad-hoc que alguien ejecuta. Con harness, se convierte en infraestructura: tests que comparan código contra spec, agentes recurrentes que detectan drift entre uno y otro, linters que validan que las restricciones de la spec se siguen respetando.
 

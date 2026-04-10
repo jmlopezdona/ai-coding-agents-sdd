@@ -16,7 +16,7 @@ With that in front, we go one by one.
 
 ## Kiro
 
-Kiro is AWS's agentic IDE. Its workflow is probably the simplest of the four: three markdown documents — **Requirements → Design → Tasks** — generated in order to guide the agent through the cycle. It maps almost exactly to chapter 5's "variant B".
+Kiro is AWS's agentic IDE. Its workflow is probably the simplest of the four: three markdown documents — **Requirements → Design → Tasks** — generated in order to guide the agent through the lifecycle. It maps almost exactly to chapter 5's "variant B".
 
 **What it does well:**
 

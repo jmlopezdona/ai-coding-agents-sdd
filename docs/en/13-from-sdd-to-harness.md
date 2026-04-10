@@ -20,7 +20,7 @@ The operating consequence: when a team builds a harness, specs aren't just anoth
 
 ## Coupling point 2 — Sensors that validate specs
 
-The harness's second pillar is the duality **guides and sensors**: artifacts that orient the agent *before* acting (guides) and verifiers that detect when the agent has drifted *after* (sensors). The chapter 5 SDD cycle's phase 5 — verification — is exactly a kind of sensor.
+The harness's second pillar is the duality **guides and sensors**: artifacts that orient the agent *before* acting (guides) and verifiers that detect when the agent has drifted *after* (sensors). The chapter 5 SDD lifecycle's phase 5 — verification — is exactly a kind of sensor.
 
 Without harness, that phase 5 is manual or, at best, an ad-hoc script someone runs. With harness, it becomes infrastructure: tests comparing code against spec, recurring agents detecting drift, linters validating that spec constraints are still respected.
 

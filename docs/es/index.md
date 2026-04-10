@@ -37,9 +37,9 @@ Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 10 (l
 - [3. Anatomía de una buena especificación](03-anatomy-of-a-spec.md)
 - [4. La spec en contexto](04-spec-in-context.md)
 
-### Parte 3 — El ciclo
+### Parte 3 — Ciclo de vida
 
-- [5. Los ciclos SDD: dos variantes y cuándo usar cada una](05-sdd-cycles.md)
+- [5. Los ciclos de vida SDD: dos variantes y cuándo usar cada una](05-sdd-lifecycles.md)
 - [6. Especificaciones vivas: el bucle bidireccional](06-living-specs.md)
 
 ### Parte 4 — Herramientas

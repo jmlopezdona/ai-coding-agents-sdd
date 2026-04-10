@@ -1,10 +1,10 @@
-# 5. The SDD cycles: two variants and when to use each
+# 5. The SDD lifecycles: two variants and when to use each
 
-If you read three articles about Spec-Driven Development, you'll find three different versions of the "SDD cycle". That's not a flaw of the discipline; it's a sign the discipline is still forming. But it leaves the reader with a concrete problem: *what phases are there, in what order, and why do two serious sources say different things?*
+If you read three articles about Spec-Driven Development, you'll find three different versions of the "SDD lifecycle". That's not a flaw of the discipline; it's a sign the discipline is still forming. But it leaves the reader with a concrete problem: *what phases are there, in what order, and why do two serious sources say different things?*
 
-This chapter disambiguates. There are **two main variants** of the cycle in the literature, they aren't interchangeable, and the choice between them says something about what kind of project you're in.
+This chapter disambiguates. There are **two main variants** of the lifecycle in the literature, they aren't interchangeable, and the choice between them says something about what kind of project you're in.
 
-## Variant A — The arXiv paper version
+## Variant A
 
 [The arXiv SDD paper](https://arxiv.org/html/2602.00180) proposes a four-phase cycle:
 
@@ -15,7 +15,7 @@ This chapter disambiguates. There are **two main variants** of the cycle in the 
 
 What characterizes this variant is that **validation is an explicit, separate phase**. Verification isn't something that happens "at the end if there's time"; it's one of the four corners of the cycle, with the same weight as implementation.
 
-## Variant B — The DEV.to (Pockit) article version
+## Variant B
 
 [The most practical article on day-to-day SDD use](https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788) proposes a different cycle, also four phases, but with different names and boundaries:
 
@@ -36,7 +36,7 @@ Neither. They're two different views of the same process, optimized for differen
 
 In practice, mature teams end up combining: they use variant B's names in daily flow and break out a separate validation phase (variant A) when the feature touches something critical. That's not contradictory. It's choosing the right tool for the change's risk.
 
-## The cycle, step by step, with a real agent
+## The lifecycle, step by step, with a real agent
 
 I'll tell you as a concrete flow, neutral with respect to the variant, which is how it looks when you actually do it.
 
@@ -74,7 +74,7 @@ There's a detail the [*Code Generation with LLM-based Agents*](https://arxiv.org
 
 In practice, this means your phase 1 of the cycle **isn't linear**. It's a mini-loop within the loop: prompt → agent questions → answers → draft spec → more questions → final spec. Teams that treat phase 1 as ping-pong instead of dictation get substantially better specs, and this is independent of which tool you use.
 
-## The cycle isn't linear
+## The lifecycle isn't linear
 
 A final note almost always omitted in canonical descriptions: **the cycle is rarely linear in practice**. What really happens is in step 4 you discover something that invalidates a step-1 assumption, and you go back. Step 5 teaches you that the criterion you wrote wasn't verifiable and you have to rewrite it. Mid-task, you realize the spec has a hole.
 
@@ -82,4 +82,4 @@ This is **normal and desirable**. The difference between a healthy cycle and a p
 
 ## What comes next
 
-Chapter 6 is about the difference between static specs (the ones that age badly) and living specs (the ones that stay useful because implementation feeds back into the spec). It's the piece that turns this chapter's cycle into a sustainable process instead of a startup ritual.
+Chapter 6 is about the difference between static specs (the ones that age badly) and living specs (the ones that stay useful because implementation feeds back into the spec). It's the piece that turns the lifecycle described in this chapter into a sustainable process instead of a startup ritual.
