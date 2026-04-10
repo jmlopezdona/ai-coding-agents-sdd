@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="es" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,35 +12,35 @@
         <meta name="author" content="jmlopezdona">
       
       
-        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/02-specification-spectrum/">
+        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/08-architect-layers/">
       
       
-        <link rel="prev" href="../01-from-vibe-coding-to-sdd/">
+        <link rel="prev" href="../07-native-sdd-tools/">
       
       
-        <link rel="next" href="../03-anatomy-of-a-spec/">
+        <link rel="next" href="../09-patterns-of-application/">
       
       
         
-          <link rel="alternate" href="../../02-specification-spectrum/" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="./" hreflang="es">
+          <link rel="alternate" href="../es/08-architect-layers/" hreflang="es">
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>2. El espectro de la especificación - Spec-Driven Development</title>
+        <title>8. Architect layers over agents - Spec-Driven Development</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,7 +59,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -84,8 +84,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-el-espectro-de-la-especificacion" class="md-skip">
-          Saltar a contenido
+        <a href="#8-architect-layers-over-agents-traycer-and-the-wrapper-pattern" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -97,8 +97,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../" title="Spec-Driven Development" class="md-header__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spec-Driven Development" class="md-header__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2. El espectro de la especificación
+              8. Architect layers over agents
             
           </span>
         </div>
@@ -158,20 +158,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../02-specification-spectrum/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="es" class="md-select__link">
+            <a href="../es/08-architect-layers/" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
@@ -192,21 +192,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Buscar">
+      <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -219,7 +219,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Inicializando búsqueda
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -231,7 +231,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Ir al repositorio" class="md-source" data-md-component="source">
+        <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -252,7 +252,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -262,13 +262,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
     
   
-  Inicio
+  Home
 
       </a>
     </li>
@@ -289,7 +289,7 @@
   
     
   
-  Introducción
+  Introduction
 
         </a>
       </li>
@@ -311,7 +311,7 @@
   
     
   
-  El problema
+  The problem
 
         </a>
       </li>
@@ -323,19 +323,17 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../02-specification-spectrum/" class="md-tabs__link">
           
   
   
     
   
-  Fundamentos
+  Foundations
 
         </a>
       </li>
@@ -357,7 +355,7 @@
   
     
   
-  El ciclo
+  The cycle
 
         </a>
       </li>
@@ -369,17 +367,19 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../07-native-sdd-tools/" class="md-tabs__link">
           
   
   
     
   
-  Herramientas
+  Tooling
 
         </a>
       </li>
@@ -401,7 +401,7 @@
   
     
   
-  Práctica
+  Practice
 
         </a>
       </li>
@@ -423,7 +423,7 @@
   
     
   
-  Crítica
+  Critique
 
         </a>
       </li>
@@ -445,7 +445,7 @@
   
     
   
-  Errores comunes
+  Pitfalls
 
         </a>
       </li>
@@ -467,7 +467,7 @@
   
     
   
-  Puente
+  Bridge
 
         </a>
       </li>
@@ -495,9 +495,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../" title="Spec-Driven Development" class="md-nav__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
+    <a href=".." title="Spec-Driven Development" class="md-nav__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -507,7 +507,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Ir al repositorio" class="md-source" data-md-component="source">
+      <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -527,14 +527,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Inicio
+    Home
   
 
     
@@ -581,7 +581,7 @@
   <span class="md-ellipsis">
     
   
-    Introducción
+    Introduction
   
 
     
@@ -597,7 +597,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Introducción
+    Introduction
   
 
           </label>
@@ -617,7 +617,7 @@
   <span class="md-ellipsis">
     
   
-    Spec-Driven Development: producir software con intención
+    Spec-Driven Development: building software with intent
   
 
     
@@ -672,7 +672,7 @@
   <span class="md-ellipsis">
     
   
-    El problema
+    The problem
   
 
     
@@ -688,7 +688,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    El problema
+    The problem
   
 
           </label>
@@ -708,7 +708,7 @@
   <span class="md-ellipsis">
     
   
-    1. Del vibe coding al SDD
+    1. From vibe coding to SDD
   
 
     
@@ -733,10 +733,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -750,29 +748,26 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Fundamentos
+    Foundations
   
 
     
@@ -783,12 +778,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Fundamentos
+    Foundations
   
 
           </label>
@@ -798,44 +793,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2. El espectro de la especificación
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../02-specification-spectrum/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2. El espectro de la especificación
+    2. The specification spectrum
   
 
     
@@ -844,114 +812,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#nivel-1-spec-first" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Nivel 1 — Spec-First
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nivel-2-spec-anchored" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Nivel 2 — Spec-Anchored
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nivel-3-spec-as-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Nivel 3 — Spec-as-Source
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spec-anchored-vs-spec-as-source-la-diferencia-que-mas-confunde" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-Anchored vs Spec-as-Source: la diferencia que más confunde
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#como-saber-en-que-nivel-estas-de-verdad" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cómo saber en qué nivel estás de verdad
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#la-trampa-del-queremos-estar-en-spec-anchored" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        La trampa del "queremos estar en spec-anchored"
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#que-nivel-deberias-elegir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Qué nivel deberías elegir
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lo-que-viene-a-continuacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lo que viene a continuación
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -971,7 +831,7 @@
   <span class="md-ellipsis">
     
   
-    3. Anatomía de una buena especificación
+    3. Anatomy of a good spec
   
 
     
@@ -999,7 +859,7 @@
   <span class="md-ellipsis">
     
   
-    4. La spec en contexto
+    4. The spec in context
   
 
     
@@ -1056,7 +916,7 @@
   <span class="md-ellipsis">
     
   
-    El ciclo
+    The cycle
   
 
     
@@ -1072,7 +932,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    El ciclo
+    The cycle
   
 
           </label>
@@ -1092,7 +952,7 @@
   <span class="md-ellipsis">
     
   
-    5. Los ciclos SDD
+    5. The SDD cycles
   
 
     
@@ -1120,7 +980,7 @@
   <span class="md-ellipsis">
     
   
-    6. Especificaciones vivas
+    6. Living specs
   
 
     
@@ -1145,8 +1005,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1158,26 +1020,29 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Herramientas
+    Tooling
   
 
     
@@ -1188,12 +1053,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Herramientas
+    Tooling
   
 
           </label>
@@ -1213,7 +1078,7 @@
   <span class="md-ellipsis">
     
   
-    7. Herramientas SDD nativas
+    7. Native SDD tools
   
 
     
@@ -1231,17 +1096,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../08-architect-layers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Architect layers over agents
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Capas de arquitecto sobre agentes
+    8. Architect layers over agents
   
 
     
@@ -1250,6 +1142,153 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-question-this-category-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The question this category answers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-traycer-does-concretely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Traycer does concretely
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Traycer does concretely">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-elicitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Elicitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automatic-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automatic verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-general-pattern-beyond-traycer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The general pattern, beyond Traycer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-note-on-source-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A note on source bias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layers-vs-native-tools-how-to-choose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layers vs. native tools: how to choose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-architect-layers-dont-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What architect layers don't solve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-hook-to-the-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The hook to the harness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-comes-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What comes next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1296,7 +1335,7 @@
   <span class="md-ellipsis">
     
   
-    Práctica
+    Practice
   
 
     
@@ -1312,7 +1351,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Práctica
+    Practice
   
 
           </label>
@@ -1332,7 +1371,7 @@
   <span class="md-ellipsis">
     
   
-    9. Patrones de aplicación
+    9. Patterns of application
   
 
     
@@ -1389,7 +1428,7 @@
   <span class="md-ellipsis">
     
   
-    Crítica
+    Critique
   
 
     
@@ -1405,7 +1444,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Crítica
+    Critique
   
 
           </label>
@@ -1425,7 +1464,7 @@
   <span class="md-ellipsis">
     
   
-    10. La crítica honesta
+    10. The honest critique
   
 
     
@@ -1453,7 +1492,7 @@
   <span class="md-ellipsis">
     
   
-    11. Context engineering como alternativa
+    11. Context engineering as alternative
   
 
     
@@ -1508,7 +1547,7 @@
   <span class="md-ellipsis">
     
   
-    Errores comunes
+    Pitfalls
   
 
     
@@ -1524,7 +1563,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Errores comunes
+    Pitfalls
   
 
           </label>
@@ -1544,7 +1583,7 @@
   <span class="md-ellipsis">
     
   
-    12. Anti-patrones
+    12. Anti-patterns
   
 
     
@@ -1599,7 +1638,7 @@
   <span class="md-ellipsis">
     
   
-    Puente
+    Bridge
   
 
     
@@ -1615,7 +1654,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Puente
+    Bridge
   
 
           </label>
@@ -1635,7 +1674,7 @@
   <span class="md-ellipsis">
     
   
-    13. Del SDD al harness
+    13. From SDD to the harness
   
 
     
@@ -1669,7 +1708,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1678,15 +1717,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nivel-1-spec-first" class="md-nav__link">
+  <a href="#the-question-this-category-answers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nivel 1 — Spec-First
+        The question this category answers
       
     </span>
   </a>
@@ -1694,10 +1733,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nivel-2-spec-anchored" class="md-nav__link">
+  <a href="#what-traycer-does-concretely" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nivel 2 — Spec-Anchored
+        What Traycer does concretely
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Traycer does concretely">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-elicitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Elicitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automatic-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automatic verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-general-pattern-beyond-traycer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The general pattern, beyond Traycer
       
     </span>
   </a>
@@ -1705,10 +1794,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nivel-3-spec-as-source" class="md-nav__link">
+  <a href="#a-note-on-source-bias" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nivel 3 — Spec-as-Source
+        A note on source bias
       
     </span>
   </a>
@@ -1716,10 +1805,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#spec-anchored-vs-spec-as-source-la-diferencia-que-mas-confunde" class="md-nav__link">
+  <a href="#layers-vs-native-tools-how-to-choose" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Spec-Anchored vs Spec-as-Source: la diferencia que más confunde
+        Layers vs. native tools: how to choose
       
     </span>
   </a>
@@ -1727,10 +1816,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#como-saber-en-que-nivel-estas-de-verdad" class="md-nav__link">
+  <a href="#what-architect-layers-dont-solve" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cómo saber en qué nivel estás de verdad
+        What architect layers don't solve
       
     </span>
   </a>
@@ -1738,10 +1827,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#la-trampa-del-queremos-estar-en-spec-anchored" class="md-nav__link">
+  <a href="#the-hook-to-the-harness" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La trampa del "queremos estar en spec-anchored"
+        The hook to the harness
       
     </span>
   </a>
@@ -1749,21 +1838,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#que-nivel-deberias-elegir" class="md-nav__link">
+  <a href="#what-comes-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Qué nivel deberías elegir
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lo-que-viene-a-continuacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lo que viene a continuación
+        What comes next
       
     </span>
   </a>
@@ -1787,7 +1865,7 @@
 
 
   
-    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/es/02-specification-spectrum.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/en/08-architect-layers.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1795,168 +1873,87 @@
   
 
 
-<h1 id="2-el-espectro-de-la-especificacion">2. El espectro de la especificación<a class="headerlink" href="#2-el-espectro-de-la-especificacion" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>Una de las cosas más útiles que aporta el paper <em>Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants</em> (arXiv) es que se niega a presentar el SDD como una cosa única. Lo presenta como un <strong>espectro de tres niveles de compromiso</strong>, y entender en cuál de los tres niveles operas — y en cuál crees que operas — es probablemente la decisión más consecuente que vas a tomar en este curso.</p>
+<h1 id="8-architect-layers-over-agents-traycer-and-the-wrapper-pattern">8. Architect layers over agents: Traycer and the wrapper pattern<a class="headerlink" href="#8-architect-layers-over-agents-traycer-and-the-wrapper-pattern" title="Enlace permanente a esta sección">&para;</a></h1>
+<p>The previous chapter's tools share a feature: they're <strong>standalone</strong> SDD tools. You live inside them, their workflow is the workflow. There's another category growing in parallel that's worth understanding separately: tools that don't ask you to switch agent but <strong>sit on top of the agent you already use</strong>. We call them <em>architect layers</em>, and the most visible piece of this category today is <strong>Traycer</strong>.</p>
+<h2 id="the-question-this-category-answers">The question this category answers<a class="headerlink" href="#the-question-this-category-answers" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>When a team already uses Cursor, Claude Code, Codex or similar and knows them well, the friction of adopting Kiro or Spec-kit isn't only learning a new tool. It's <strong>abandoning the tool where the team has hours, shortcuts, configurations and muscle memory</strong>. For many teams, that cost is prohibitive even if the new tool is objectively better in some dimensions.</p>
+<p>Architect layers solve that friction by not asking for it. Your agent stays Cursor or Claude Code or whatever you use. The layer inserts itself in the workflow at two specific points: <strong>before</strong> the agent (planning) and <strong>after</strong> the agent (verifying). In the middle, the agent works as always.</p>
+<h2 id="what-traycer-does-concretely">What Traycer does concretely<a class="headerlink" href="#what-traycer-does-concretely" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>According to its material and community discussion, Traycer adds three things a bare agent doesn't:</p>
+<h3 id="1-elicitation">1. Elicitation<a class="headerlink" href="#1-elicitation" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Before letting you talk to your main agent, Traycer runs a round of <strong>questions</strong> to surface requirements you'd probably have forgotten to mention. It's the chapter 5 "iterative clarification" phase incorporated as automatic mechanism instead of mental reminder.</p>
+<p>The idea is direct: most prompts people give their agent are poorly specified, and most agent failures come from that poverty. If a tool automates the "wait, before we start tell me what should happen if...", the quality of everything after goes up.</p>
+<h3 id="2-planning">2. Planning<a class="headerlink" href="#2-planning" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Once the requirement is clarified, Traycer generates a <strong>detailed implementation plan</strong> — which files it touches, what dependencies between tasks, what order to follow — <em>before</em> the main agent writes code. The plan is reviewable. If it's wrong, you fix it. If it's right, you hand it down to the main agent as rich context, not as a loose prompt.</p>
+<p>This directly addresses the chapter 1 <em>context drift</em> problem: the plan forces explicit blast radius ahead of time, instead of discovering it after the agent has already broken things it didn't look at.</p>
+<h3 id="3-automatic-verification">3. Automatic verification<a class="headerlink" href="#3-automatic-verification" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>When the agent finishes, Traycer <strong>compares what the agent did against the original spec/plan</strong> and flags divergences. It's the chapter 5 validation phase, automated and mandatory, instead of "if I remember, I'll review it".</p>
+<p>This post-code verification is exactly the gap chapter 7 identifies as unsolved by native SDD tools. Traycer closes it.</p>
+<h2 id="the-general-pattern-beyond-traycer">The general pattern, beyond Traycer<a class="headerlink" href="#the-general-pattern-beyond-traycer" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Even if Traycer is the most visible piece today, the pattern is worth understanding abstracted from the concrete tool:</p>
 <blockquote>
-<p><em>La spec declara la intención. El código la realiza.</em>
-— Spec-Driven Development paper, arXiv</p>
+<p><strong>An architect layer wraps a coding agent with three things: requirement clarification before the prompt, explicit planning before the code, and automatic verification after the code.</strong></p>
 </blockquote>
-<p>Esta es la frase tesis del paper, y vale la pena tenerla delante mientras leemos los tres niveles.</p>
-<h2 id="nivel-1-spec-first">Nivel 1 — Spec-First<a class="headerlink" href="#nivel-1-spec-first" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>El nivel más ligero. Escribes una especificación <strong>antes</strong> de empezar a codificar, se la pasas al agente, el agente genera el código, y a partir de ahí la spec <strong>se abandona</strong>. El código toma vida propia. Cualquier cambio futuro se hace directamente sobre el código y la spec se queda fosilizada en su versión inicial.</p>
-<p>Es el modo en que la mayoría de equipos creen que están haciendo SDD. "Sí, escribimos un design doc antes de empezar la feature." Vale, pero ese doc es solo <em>spec-first</em>. No es nada más. Sirve para una cosa concreta — arrancar una feature con una intención clara — y para nada más.</p>
-<p><strong>Cuándo funciona:</strong></p>
-<ul>
-<li>Features nuevas con un alcance definido y un horizonte corto.</li>
-<li>Prototipos donde el código es desechable y la spec no necesita seguir viva.</li>
-<li>Equipos pequeños donde el conocimiento del cambio cabe en la cabeza de quien lo hace.</li>
-</ul>
-<p><strong>Cuándo se rompe:</strong></p>
-<ul>
-<li>En cuanto el código entra en mantenimiento.</li>
-<li>En cuanto otra persona (o agente) tiene que tocarlo seis meses después y la spec ya no describe la realidad.</li>
-<li>En cuanto la cantidad de drift entre spec y código es tal que la spec engaña en lugar de informar.</li>
-</ul>
-<p>El error más común con spec-first es <strong>creer que es spec-anchored</strong>. Un equipo escribe specs al principio de cada feature y cree que tiene SDD. No lo tiene. Tiene un ritual de arranque.</p>
-<h2 id="nivel-2-spec-anchored">Nivel 2 — Spec-Anchored<a class="headerlink" href="#nivel-2-spec-anchored" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>El nivel intermedio, y donde viven la mayoría de los equipos serios que adoptan SDD bien. Spec y código <strong>evolucionan a la par</strong>, como compañeros iguales, y existe algún mecanismo automático que detecta cuando se desincronizan. Tests que verifican comportamientos descritos en la spec, BDD frameworks tipo Cucumber, validadores que comparan firmas declaradas en la spec con firmas reales en el código, o agentes recurrentes que detectan drift entre uno y otro.</p>
-<p>Lo que distingue spec-anchored de spec-first no es la calidad de la spec inicial. Es que <strong>hay un coste tangible asociado a dejar que la spec se desactualice</strong>. Si el test falla, alguien tiene que decidir: ¿actualizo el código para que cumpla la spec, o actualizo la spec para reflejar lo que el código ahora hace? Esa decisión, hecha cien veces, es lo que mantiene la spec viva.</p>
-<p>El paper dice algo importante sobre este nivel:</p>
-<blockquote>
-<p><em>BDD frameworks like Cucumber exemplify this approach, making it the practical choice for most production systems.</em></p>
-</blockquote>
-<p>Es una pista honesta. Spec-anchored no es una invención nueva del SDD. Es BDD bien hecho, llevado al nivel de la intención arquitectónica en lugar del comportamiento de cara al usuario. Si tu equipo ya practica BDD con disciplina, está más cerca de SDD del que cree.</p>
-<p><strong>Cuándo funciona:</strong></p>
-<ul>
-<li>Sistemas en producción con vida larga.</li>
-<li>Equipos donde el código pasa por varias manos (incluidas manos artificiales).</li>
-<li>Dominios donde los invariantes son importantes y no negociables.</li>
-</ul>
-<p><strong>Cuándo se rompe:</strong></p>
-<ul>
-<li>Cuando el coste de mantener spec y código sincronizados se vuelve mayor que el beneficio. Esto es real y el capítulo 10 lo desarrolla con honestidad.</li>
-<li>Cuando los tests automáticos no cubren lo suficiente como para cumplir su rol de "anclaje".</li>
-</ul>
-<h2 id="nivel-3-spec-as-source">Nivel 3 — Spec-as-Source<a class="headerlink" href="#nivel-3-spec-as-source" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>El nivel más radical y, hoy por hoy, el menos viable en la mayoría de contextos. La spec <strong>es</strong> el código fuente. Los humanos solo editan la spec. El código se genera a partir de ella, siempre, y nunca se edita directamente. Si algo está mal en el código, se arregla la spec y se regenera.</p>
-<p>Tessl es el ejemplo más visible de esta filosofía hoy: genera código con un comentario <code>// GENERATED FROM SPEC - DO NOT EDIT</code> al principio de cada archivo. La promesa es que vuelves a tener una sola fuente de verdad, como en compilación clásica.</p>
-<p>El paper es claro sobre dónde funciona esto realmente:</p>
-<blockquote>
-<p><em>Currently viable mainly in mature domains like automotive embedded systems using tools such as Simulink.</em></p>
-</blockquote>
-<p><strong>Simulink</strong> es el ejemplo paradigmático y conviene entenderlo porque ilustra qué condiciones tiene que cumplir un dominio para que spec-as-source funcione de verdad. Es una herramienta de MathWorks (los mismos de MATLAB) en la que diseñas sistemas dibujando <strong>diagramas de bloques visuales</strong> — sensores, controladores, filtros, conexiones — y la herramienta <strong>genera automáticamente código C/C++ embebido</strong> a partir de ese diagrama. Los ingenieros editan el diagrama, no el código generado. Si hay un bug en el <code>.c</code>, se arregla el bloque y se regenera. Las industrias de automoción, aeroespacial y control industrial llevan décadas — desde los años 90 — produciendo firmware crítico de esta forma. No es teoría, es producción real a gran escala.</p>
-<p>Lo que hace que Simulink funcione, y que es exactamente lo que falta en software de propósito general, son tres condiciones:</p>
-<ol>
-<li><strong>Semántica formal estrecha</strong>: cada bloque tiene un significado matemático preciso (una integral, un PID, un filtro Kalman). No hay ambigüedad sobre qué hace.</li>
-<li><strong>Dominio acotado</strong>: sistemas de control, dinámica física, procesamiento de señales. Problemas con leyes bien establecidas.</li>
-<li><strong>Generación determinística</strong>: el mismo diagrama produce el mismo código. Siempre.</li>
-</ol>
-<p>Para software de propósito general — APIs web, frontends, scripts internos, todo lo que la mayoría de equipos hacen el 95% del tiempo — ninguna de las tres condiciones se cumple. Las specs están en lenguaje natural (ambigüedad), el dominio cambia con cada feature (no acotado), y los LLMs son no determinísticos por diseño. Por eso spec-as-source aplicado a este tipo de software sigue siendo más promesa que realidad. La razón fundamental es la misma que mató al Model-Driven Development en los años 2000, y el capítulo 10 vuelve sobre esto.</p>
-<p><strong>Cuándo funciona:</strong></p>
-<ul>
-<li>Dominios maduros con semántica formal (embedded, control, hardware/software co-design).</li>
-<li>Capas finas de glue code donde el mapeo spec→código es trivial.</li>
-</ul>
-<p><strong>Cuándo se rompe:</strong></p>
-<ul>
-<li>En la mayoría del software real. La traducción spec→código no es determinística cuando la spec está en lenguaje natural y el generador es un LLM, y ese no-determinismo es exactamente lo que rompe la promesa central del nivel.</li>
-</ul>
-<h2 id="spec-anchored-vs-spec-as-source-la-diferencia-que-mas-confunde">Spec-Anchored vs Spec-as-Source: la diferencia que más confunde<a class="headerlink" href="#spec-anchored-vs-spec-as-source-la-diferencia-que-mas-confunde" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>A primera vista parece que la diferencia entre los dos niveles es solo técnica — <em>"en los dos la spec es la fuente, ¿no?"</em>. A nivel filosófico sí. A nivel operacional, son modelos muy distintos, y entender la diferencia te ahorra elegir mal.</p>
-<p>La distinción clave es <strong>quién puede editar el código</strong>:</p>
-<ul>
-<li>
-<p><strong>En spec-anchored, el código se edita directamente</strong> (por un humano o por un agente). Spec y código son dos artefactos paralelos, los dos se mantienen, los dos pueden modificarse directamente. Lo que el "anclaje" añade es un mecanismo automático (tests, validadores, agentes recurrentes) que <strong>detecta cuándo se desincronizan</strong>. Cuando hay drift, alguien decide: actualizo el código para que cumpla la spec, o actualizo la spec para reflejar lo que el código hace ahora. Las dos direcciones son válidas. Un dev (o un agente) puede arreglar un bug puntual editando directamente un archivo, y el sensor abrirá un issue para reconciliar la spec después.</p>
-</li>
-<li>
-<p><strong>En spec-as-source, el código nunca se edita directamente.</strong> Está marcado como generado. Si hay un bug, no abres el <code>.c</code> y lo arreglas — tienes que cambiar la spec y regenerar. El código es <strong>solo lectura por contrato</strong>, como un binario compilado.</p>
-</li>
-</ul>
-<p>Esto tiene tres consecuencias prácticas que no son matices:</p>
-<ol>
-<li>
-<p><strong>No hay escape hatch en spec-as-source.</strong> Si la generación produce algo que no encaja con lo que necesitas, no puedes "tocar dos líneas para arreglarlo". Tienes que volver a la spec, refinarla, regenerar todo. En spec-anchored sí puedes tocar las dos líneas y luego actualizar la spec con la decisión.</p>
-</li>
-<li>
-<p><strong>Cambia quién puede contribuir.</strong> En spec-anchored, cualquiera que sepa el lenguaje de programación puede contribuir. En spec-as-source, tienes que aprender el formato de la spec y entender cómo el generador la interpreta. Es un skill nuevo y obligatorio.</p>
-</li>
-<li>
-<p><strong>El coste de los cambios pequeños sube.</strong> Un fix trivial en spec-anchored es trivial. En spec-as-source, hasta el fix más pequeño tiene que pasar por "edita la spec, regenera, valida que el resto del código no cambió de forma indeseada". Es exactamente el problema que mató al MDD en los 2000.</p>
-</li>
-</ol>
-<p>Resumido en una tabla:</p>
+<p>The pattern is independent of the tool and will appear in other forms. There will be more tools occupying this space. The architectural question for your team isn't "do I use Traycer?" — it's "is my flow missing any of these three hooks?". If the answer is yes, then it's worth looking for a layer that adds them, whether this one or others.</p>
+<h2 id="a-note-on-source-bias">A note on source bias<a class="headerlink" href="#a-note-on-source-bias" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>The most complete community discussion of Traycer comes from a r/vibecoding post that is <strong>clearly promotional</strong>. Its author declares it as "my best option" and the post structure is marketing's, not neutral analysis's. This doesn't mean the claims are false — the category exists and the pattern logic is solid — but it means it's worth tempering the original material's enthusiasm.</p>
+<p>The honest way to evaluate Traycer (or any tool of the pattern) is: spend a week of real work with it, measure how much rework you save and how many additional prompts you need to fix what the tool didn't anticipate. If the difference is notable, continue. If not, back out at no cost.</p>
+<h2 id="layers-vs-native-tools-how-to-choose">Layers vs. native tools: how to choose<a class="headerlink" href="#layers-vs-native-tools-how-to-choose" title="Enlace permanente a esta sección">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>Spec-First</th>
-<th>Spec-Anchored</th>
-<th>Spec-as-Source</th>
+<th>Question</th>
+<th>If your answer is…</th>
+<th>Look at…</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>¿Quién edita el código?</td>
-<td>Humanos / agentes directamente</td>
-<td>Humanos / agentes directamente</td>
-<td>Nadie — se genera</td>
+<td>Does your team already have years on Cursor/Claude Code?</td>
+<td>yes</td>
+<td>a layer (ch. 8)</td>
 </tr>
 <tr>
-<td>¿Dónde haces un cambio pequeño?</td>
-<td>Directamente en el código (la spec está abandonada)</td>
-<td>Spec o código, después sincronizas</td>
-<td>Solo spec, regeneras</td>
+<td>Does your workflow suffer more from lack of plan than lack of process?</td>
+<td>yes</td>
+<td>a layer (ch. 8)</td>
 </tr>
 <tr>
-<td>¿Hay escape hatch para casos raros?</td>
-<td>Siempre (no hay restricción)</td>
-<td>Sí (edita el código)</td>
-<td>No (refactoriza la spec)</td>
+<td>Want to adopt SDD from scratch with no preferred agent?</td>
+<td>yes</td>
+<td>native tool (ch. 7)</td>
 </tr>
 <tr>
-<td>Fuente única de verdad</td>
-<td>Ninguna — el código deriva de facto</td>
-<td>Dos artefactos sincronizados</td>
-<td>Una sola, el resto deriva</td>
+<td>Want a global constitution and checkpoint discipline?</td>
+<td>yes</td>
+<td>Spec-kit (ch. 7)</td>
 </tr>
 <tr>
-<td>Mecanismo de sincronización</td>
-<td>Ninguno</td>
-<td>Tests / validadores / agentes</td>
-<td>Generación</td>
+<td>Is your real problem organizing big features into steps?</td>
+<td>yes</td>
+<td>Kiro (ch. 7)</td>
 </tr>
 <tr>
-<td>Skill necesario</td>
-<td>Programar (+ escribir una spec inicial)</td>
-<td>Programar + escribir specs + diseñar el anclaje (tests, validadores)</td>
-<td>Escribir specs formales (la programación queda absorbida)</td>
+<td>Curious about pushing the spec-as-source frontier?</td>
+<td>yes</td>
+<td>Tessl (ch. 7)</td>
+</tr>
+<tr>
+<td>Is your bottleneck coordination between distinct roles?</td>
+<td>yes</td>
+<td>BMAD (ch. 7)</td>
 </tr>
 </tbody>
 </table>
-<p>Y ahí está exactamente por qué Simulink funciona en su dominio — semántica formal estrecha = la generación es predecible y rara vez necesitas el escape hatch — y por qué Tessl tiene difícil replicarlo en software de propósito general: la generación con LLMs no es determinística, así que el escape hatch se necesita constantemente, y prohibirlo te deja atascado.</p>
-<p>Una nota importante que el capítulo 3 desarrolla en detalle: <strong>el nivel de detalle apropiado de una spec no es el mismo en los tres niveles del espectro</strong>. Spec-first pide detalle ligero, spec-anchored pide detalle medio acotado por lo que el anclaje puede verificar, y spec-as-source pide detalle exhaustivo pero de naturaleza formal. Escribir una spec con el nivel de detalle equivocado para tu nivel del espectro es una de las patologías más comunes — y la sección <em>"El nivel de detalle depende del nivel del espectro"</em> del capítulo 3 explica por qué.</p>
-<h2 id="como-saber-en-que-nivel-estas-de-verdad">Cómo saber en qué nivel estás de verdad<a class="headerlink" href="#como-saber-en-que-nivel-estas-de-verdad" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Una pregunta diagnóstica simple: <strong>¿qué pasa cuando alguien cambia el código directamente sin tocar la spec?</strong></p>
-<ul>
-<li>Si la respuesta es "nada, la spec se queda como estaba" → estás en spec-first, aunque te llames SDD.</li>
-<li>Si la respuesta es "el CI falla, o un linter me avisa, o un test BDD se rompe" → estás en spec-anchored.</li>
-<li>Si la respuesta es "no se puede, el código está marcado como generado" → estás en spec-as-source.</li>
-</ul>
-<p>Si no puedes responder con seguridad, la respuesta operativa es la primera. Estás en spec-first. No es un drama, pero no te cuentes la historia de que estás en otro nivel.</p>
-<h2 id="la-trampa-del-queremos-estar-en-spec-anchored">La trampa del "queremos estar en spec-anchored"<a class="headerlink" href="#la-trampa-del-queremos-estar-en-spec-anchored" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>La trampa más cara que vemos en equipos que adoptan SDD es esta: aspiran a spec-anchored, escriben specs muy detalladas como si lo estuvieran, pero <strong>no invierten en el mecanismo de anclaje</strong>. No hay tests que comparen spec y código. No hay validador. No hay agente recurrente. Solo hay una carpeta <code>specs/</code> con markdowns que poco a poco se desactualizan.</p>
-<p>Eso es spec-first vestido de spec-anchored, y es peor que spec-first puro porque genera la falsa sensación de tener una fuente de verdad cuando lo que tienes es ficción documentada. El capítulo 10 vuelve sobre esto bajo el nombre de "ilusión de control".</p>
-<p>La regla operativa: <strong>no declares que haces spec-anchored hasta que tengas el mecanismo automático de anclaje funcionando</strong>. Sin ese mecanismo, lo que tienes es spec-first con más papeleo.</p>
-<h2 id="que-nivel-deberias-elegir">Qué nivel deberías elegir<a class="headerlink" href="#que-nivel-deberias-elegir" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>No hay una respuesta universal, pero hay una recomendación honesta:</p>
-<ul>
-<li><strong>Empieza por spec-first, sin disimular</strong>. Escribe specs antes de las features importantes. No te obligues a mantenerlas.</li>
-<li><strong>Promociona a spec-anchored solo lo que tenga vida larga</strong>. Las partes del sistema que vayan a sobrevivir años, donde el coste del anclaje se amortiza. No lo apliques al código que sabes que será reemplazado en seis meses.</li>
-<li><strong>No vayas a spec-as-source</strong> salvo que estés en uno de los dominios maduros donde funciona, o estés deliberadamente experimentando con Tessl en una superficie aislada.</li>
-</ul>
-<p>Esta progresión imita lo que la industria ha hecho con los tests: empezamos sin tests, luego con tests donde duele, luego con TDD donde el código es crítico, y nunca con TDD universal salvo en proyectos donde el rigor lo justifica. SDD sigue la misma curva, y entender eso te ahorra dos años de overcommit a un nivel que no necesitas.</p>
-<h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Una vez que sabes en qué nivel estás operando, la pregunta siguiente es muy concreta: <em>¿cómo se escribe una spec que de verdad sirva?</em> Ese es el contenido del <strong>capítulo 3</strong>. Vamos a hablar de qué partes tiene una buena spec, cuáles son las que de verdad mueven la aguja, y de los "por qués" — el ingrediente que la mayoría de specs olvidan y que es exactamente lo que las hace útiles a meses vista.</p>
+<p>The two categories aren't exclusive. A mature team can perfectly use Spec-kit for global constitution and boundaries discipline, and Traycer (or equivalent) over its daily agent for tactical plans and verifications. They're different layers of the same building.</p>
+<h2 id="what-architect-layers-dont-solve">What architect layers <strong>don't</strong> solve<a class="headerlink" href="#what-architect-layers-dont-solve" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>There's a real limit worth naming: architect layers <strong>don't solve</strong> the problem of keeping specs alive over months (chapter 6). They solve the tactical cycle of a concrete feature — clarify, plan, execute, verify — but not the sustained discipline of maintaining a spec updated as the code evolves and the team changes.</p>
+<p>For that, layers are insufficient by design. Their work unit is the session, not the module's lifecycle. Maintenance discipline remains team work, and that work has a real cost (chapter 10).</p>
+<h2 id="the-hook-to-the-harness">The hook to the harness<a class="headerlink" href="#the-hook-to-the-harness" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>There's a sentence worth carving down because it connects this chapter to the trilogy's next course. The "architect layer over agent" pattern is technically <strong>a piece of harness applied to SDD</strong>. What Traycer does — intercepting inputs, planning, verifying outputs — is exactly the kind of wrapper the harness course develops for many other dimensions (tests, sandboxes, sensors, hooks).</p>
+<p>Seen this way, Traycer isn't only an SDD tool: it's a concrete example of how a good harness improves SDD. And Kiro's hooks mentioned in chapter 7 are another example of the same principle: harness + SDD reinforce each other. Chapter 13 returns to this.</p>
+<h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Up to here we've seen the cycle (ch. 5), living specs (ch. 6), and two categories of tools (ch. 7 and 8). In <strong>Chapter 9</strong> we go down to practice: how all this applies to three different kinds of work — new features, refactors, and bug fixes — because the optimal process isn't the same in all three cases.</p>
 
 
 
@@ -1980,7 +1977,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Volver al principio
+  Back to top
 </button>
         
       </main>
@@ -1989,33 +1986,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../01-from-vibe-coding-to-sdd/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 1. Del vibe coding al SDD">
+          <a href="../07-native-sdd-tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7. Native SDD tools">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Anterior
+                Previous
               </span>
               <div class="md-ellipsis">
-                1. Del vibe coding al SDD
+                7. Native SDD tools
               </div>
             </div>
           </a>
         
         
           
-          <a href="../03-anatomy-of-a-spec/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 3. Anatomía de una buena especificación">
+          <a href="../09-patterns-of-application/" class="md-footer__link md-footer__link--next" aria-label="Next: 9. Patterns of application">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Siguiente
+                Next
               </span>
               <div class="md-ellipsis">
-                3. Anatomía de una buena especificación
+                9. Patterns of application
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2068,10 +2065,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -29,81 +29,81 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/02-specification-spectrum/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/03a-anatomy-of-a-spec/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/03-anatomy-of-a-spec/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/03a-anatomy-of-a-spec/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03a-anatomy-of-a-spec/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/03-anatomy-of-a-spec/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03-anatomy-of-a-spec/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/03b-spec-in-context/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/04-spec-in-context/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/03b-spec-in-context/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03b-spec-in-context/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/04-spec-in-context/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/04-spec-in-context/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/04-sdd-cycles/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-cycles/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/04-sdd-cycles/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/04-sdd-cycles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-cycles/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-cycles/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/05-living-specs/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/06-living-specs/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/05-living-specs/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-living-specs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/06-living-specs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/06-living-specs/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/06-native-sdd-tools/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/07-native-sdd-tools/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/06-native-sdd-tools/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/06-native-sdd-tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/07-native-sdd-tools/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/07-native-sdd-tools/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/07-architect-layers/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/08-architect-layers/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/07-architect-layers/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/07-architect-layers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/08-architect-layers/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/08-architect-layers/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/08-patterns-of-application/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/09-patterns-of-application/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/08-patterns-of-application/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/08-patterns-of-application/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/09-patterns-of-application/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/09-patterns-of-application/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/09-honest-critique/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/10-honest-critique/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/09-honest-critique/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/09-honest-critique/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/10-honest-critique/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/10-honest-critique/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/10-context-engineering/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/11-context-engineering/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/10-context-engineering/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/10-context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/11-context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/11-context-engineering/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/11-anti-patterns/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/12-anti-patterns/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/11-anti-patterns/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/11-anti-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/12-anti-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/12-anti-patterns/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/12-from-sdd-to-harness/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/13-from-sdd-to-harness/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/12-from-sdd-to-harness/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/12-from-sdd-to-harness/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/13-from-sdd-to-harness/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/13-from-sdd-to-harness/"/>
     </url>
     <url>
         <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/</loc>
@@ -134,80 +134,80 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/02-specification-spectrum/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03a-anatomy-of-a-spec/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03-anatomy-of-a-spec/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03a-anatomy-of-a-spec/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/03a-anatomy-of-a-spec/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03-anatomy-of-a-spec/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/03-anatomy-of-a-spec/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03b-spec-in-context/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/04-spec-in-context/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03b-spec-in-context/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/03b-spec-in-context/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/04-spec-in-context/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/04-spec-in-context/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/04-sdd-cycles/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-cycles/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/04-sdd-cycles/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/04-sdd-cycles/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-cycles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-cycles/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-living-specs/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/06-living-specs/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-living-specs/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/05-living-specs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/06-living-specs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/06-living-specs/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/06-native-sdd-tools/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/07-native-sdd-tools/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/06-native-sdd-tools/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/06-native-sdd-tools/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/07-native-sdd-tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/07-native-sdd-tools/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/07-architect-layers/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/08-architect-layers/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/07-architect-layers/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/07-architect-layers/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/08-architect-layers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/08-architect-layers/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/08-patterns-of-application/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/09-patterns-of-application/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/08-patterns-of-application/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/08-patterns-of-application/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/09-patterns-of-application/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/09-patterns-of-application/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/09-honest-critique/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/10-honest-critique/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/09-honest-critique/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/09-honest-critique/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/10-honest-critique/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/10-honest-critique/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/10-context-engineering/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/11-context-engineering/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/10-context-engineering/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/10-context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/11-context-engineering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/11-context-engineering/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/11-anti-patterns/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/12-anti-patterns/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/11-anti-patterns/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/11-anti-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/12-anti-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/12-anti-patterns/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/12-from-sdd-to-harness/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/13-from-sdd-to-harness/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/12-from-sdd-to-harness/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/12-from-sdd-to-harness/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/13-from-sdd-to-harness/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/13-from-sdd-to-harness/"/>
     </url>
 </urlset>
