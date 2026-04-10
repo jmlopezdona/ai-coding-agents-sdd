@@ -2056,11 +2056,11 @@
 <p>Notice how the <em>consumed</em> component has a much shorter block — it only describes <em>how this feature uses it</em>, not what the component does, because that lives in its own contract. And notice how the <em>modified</em> component declares explicitly what does <strong>not</strong> change. Those two habits are what distinguish a useful spec from an inflated one.</p>
 <h3 id="size-heuristic">Size heuristic<a class="headerlink" href="#size-heuristic" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>A practical rule that works: if a spec produces or modifies more than <strong>3-4 surfaces</strong>, you probably have one of three problems, and it's worth diagnosing before continuing:</p>
-<ul>
-<li><strong>(a)</strong> A feature too big that should be split into multiple specs (chapter 9 modulation).</li>
-<li><strong>(b)</strong> An architectural change disguised as a feature, which deserves its own ADR that this spec then hangs from.</li>
-<li><strong>&copy;</strong> A refactor camouflaged as a feature (also chapter 9 modulation): what you're changing is the <em>shape</em> of the system, not adding business capability.</li>
-</ul>
+<ol>
+<li>A feature too big that should be split into multiple specs (chapter 9 modulation).</li>
+<li>An architectural change disguised as a feature, which deserves its own ADR that this spec then hangs from.</li>
+<li>A refactor camouflaged as a feature (also chapter 9 modulation): what you're changing is the <em>shape</em> of the system, not adding business capability.</li>
+</ol>
 <p>The three have different treatments in the rest of the course, and the spec alone isn't the right artifact for any of them.</p>
 <h3 id="consolidated-summary-table">Consolidated summary table<a class="headerlink" href="#consolidated-summary-table" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Pulling this section together with the earlier subsection on upstream documents, this is the unified rule by relationship type:</p>

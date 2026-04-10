@@ -2056,11 +2056,11 @@
 <p>Nota cómo el componente <em>consumido</em> tiene un bloque mucho más corto — solo describe <em>cómo lo usa esta feature</em>, no lo que el componente hace, porque eso vive en su propio contrato. Y nota cómo el componente <em>modificado</em> declara explícitamente qué <strong>no</strong> cambia. Esos dos hábitos son los que distinguen una spec útil de una spec inflada.</p>
 <h3 id="heuristica-de-tamano">Heurística de tamaño<a class="headerlink" href="#heuristica-de-tamano" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Una regla práctica que funciona: si una spec produce o modifica más de <strong>3-4 superficies</strong>, probablemente tienes uno de tres problemas, y conviene diagnosticar antes de seguir:</p>
-<ul>
-<li><strong>(a)</strong> Una feature demasiado grande que debería partirse en varias specs (modulación del cap. 9).</li>
-<li><strong>(b)</strong> Un cambio arquitectónico disfrazado de feature, que merece un ADR separado del que esta spec luego cuelgue.</li>
-<li><strong>&copy;</strong> Un refactor camuflado de feature (también modulación del cap. 9): lo que estás cambiando es la <em>forma</em> del sistema, no añadiendo capacidad de negocio.</li>
-</ul>
+<ol>
+<li>Una feature demasiado grande que debería partirse en varias specs (modulación del cap. 9).</li>
+<li>Un cambio arquitectónico disfrazado de feature, que merece un ADR separado del que esta spec luego cuelgue.</li>
+<li>Un refactor camuflado de feature (también modulación del cap. 9): lo que estás cambiando es la <em>forma</em> del sistema, no añadiendo capacidad de negocio.</li>
+</ol>
 <p>Las tres tienen tratamiento distinto en el resto del curso, y la spec sola no es el artefacto correcto para ninguna.</p>
 <h3 id="tabla-resumen-consolidada">Tabla resumen consolidada<a class="headerlink" href="#tabla-resumen-consolidada" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Reuniendo esta sección con la subsección anterior sobre documentos upstream, esta es la regla unificada por tipo de relación:</p>
