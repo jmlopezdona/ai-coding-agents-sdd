@@ -1055,6 +1055,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#one-document-or-many-two-strategies-depending-on-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One document or many: two strategies depending on context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#step-1-specify-intent" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1778,6 +1789,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#one-document-or-many-two-strategies-depending-on-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One document or many: two strategies depending on context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#step-1-specify-intent" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1935,6 +1957,36 @@
 <p>For a PoC, a prototype, or a small greenfield project, that information fits in a single file — the chapter 3 spec is enough. But for an enterprise, brownfield, or sufficiently complex project, the spec <strong>is the sum</strong> of the SDD document plus the upstream functional and technical documentation that feeds it: client-validated requirements, architectural decisions, API contracts, documented business rules.</p>
 <p>If that upstream documentation doesn't exist or lacks the necessary rigor, the first step isn't writing the spec — it's <strong>getting that upstream in place</strong>. Skipping this step and trusting the agent to derive requirements from an informal conversation is exactly how you fall into the lack of rigor SDD is meant to prevent. Chapter 4 details <a href="../04-spec-in-context/#the-spec-and-its-external-sources-consume-produce-modify">how to consume, produce and reference those artifacts</a>.</p>
 </div>
+<h3 id="one-document-or-many-two-strategies-depending-on-context">One document or many: two strategies depending on context<a class="headerlink" href="#one-document-or-many-two-strategies-depending-on-context" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Steps 1, 2, and 3 produce artifacts — but <strong>do they live in a single file or in several?</strong> The answer isn't universal; it depends on the project's scale and whether upstream documentation already exists. There are two valid strategies:</p>
+<p><strong>Integrated document</strong> — The six blocks from chapter 3 plus the plan and tasks coexist in a single file. This is the natural option for PoCs, prototypes, greenfield projects, and small to medium changes. Its main advantage: the <a href="../06-living-specs/">bidirectional loop from chapter 6</a> updates a single location, with no risk of drift between artifacts. If your team is small and there are no stakeholders reviewing separate layers, this is the simplest and most sustainable strategy.</p>
+<p><strong>Separate artifacts</strong> — Each step produces its own document: requirements, technical design, task list. This is the model <a href="../07-native-sdd-tools/#kiro">Kiro</a> implements natively with its <strong>Requirements → Design → Tasks</strong> flow, and the one that fits enterprise teams where different people review different layers (product validates requirements, architecture validates design, the team validates tasks). The chapter 3 spec acts as the <strong>master document</strong> that references the others without duplicating them — exactly the <a href="../04-spec-in-context/#three-relationships-three-rules">reference without reimplementing</a> rule from chapter 4.</p>
+<p>The cost of separate artifacts isn't trivial: each additional document is a drift surface. <a href="../07-native-sdd-tools/#spec-kit-github">Spec-kit</a> suffered exactly this — Fowler observed that generated files were <em>"heavier to review than the code itself"</em>. If you choose this strategy, you need discipline or tooling to keep artifacts synchronized, and today <a href="../07-native-sdd-tools/#what-none-of-these-tools-solve">none of the native tools fully solve this</a>.</p>
+<p>In both cases, the <strong>conceptual "spec" is always one</strong> — it's the sum of everything the agent needs to implement with rigor. What changes is how it's physically distributed. And the deciding factor is usually the chapter 4 question: <strong>does validated upstream documentation exist?</strong> If yes, the spec consumes and references it (separate artifacts makes sense). If not, the spec must contain everything (integrated document is more natural).</p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>When it fits</th>
+<th>Reference framework</th>
+<th>Main risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Integrated document</strong></td>
+<td>PoC, greenfield, small teams, medium changes</td>
+<td>Manual with ch. 3 template</td>
+<td>Can grow too large for complex projects</td>
+</tr>
+<tr>
+<td><strong>Separate artifacts</strong></td>
+<td>Enterprise, brownfield, layered stakeholders, validated upstream</td>
+<td><a href="../07-native-sdd-tools/#kiro">Kiro</a>, <a href="../07-native-sdd-tools/#bmad">BMAD</a></td>
+<td>Drift between documents; maintenance tax</td>
+</tr>
+</tbody>
+</table>
 <h3 id="step-1-specify-intent">Step 1 — Specify intent<a class="headerlink" href="#step-1-specify-intent" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>You open a session with the agent. <strong>You don't ask it to write code</strong>. You ask it to help draft the spec using the chapter 3 template, <strong>feeding it with whatever upstream documentation</strong> you already have — functional requirements, acceptance criteria, prior technical decisions. You give the high-level objective and let it ask questions. If the agent doesn't ask questions, ask them yourself: "what parts of the system does this touch", "what edge cases am I forgetting", "what aren't we building that we should explicitly say".</p>
 <p>The output of this step is a file in <code>specs/</code> or wherever your project hosts them. Committed, reviewable, versioned.</p>

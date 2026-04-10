@@ -1055,6 +1055,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#un-documento-o-varios-dos-estrategias-segun-el-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un documento o varios: dos estrategias según el contexto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#paso-1-especificar-la-intencion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1778,6 +1789,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#un-documento-o-varios-dos-estrategias-segun-el-contexto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un documento o varios: dos estrategias según el contexto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#paso-1-especificar-la-intencion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1935,6 +1957,36 @@
 <p>En una PoC, un prototipo o un proyecto pequeño greenfield, esa información cabe en un solo archivo — la spec del capítulo 3 es suficiente. Pero en un proyecto enterprise, brownfield o de cierta complejidad, la spec <strong>es la suma</strong> del documento SDD más la documentación funcional y técnica upstream que lo alimenta: requisitos validados por el cliente, decisiones arquitectónicas, contratos de API, reglas de negocio documentadas.</p>
 <p>Si esa documentación upstream no existe o no tiene el rigor necesario, el primer paso no es escribir la spec — es <strong>conseguir ese upstream</strong>. Saltar este paso y confiar en que el agente derivará los requisitos a partir de una conversación informal es exactamente cómo se cae en la falta de rigor que SDD pretende evitar. El capítulo 4 detalla <a href="../04-spec-in-context/#la-spec-y-sus-fuentes-externas-consumir-producir-modificar">cómo consumir, producir y referenciar esos artefactos</a>.</p>
 </div>
+<h3 id="un-documento-o-varios-dos-estrategias-segun-el-contexto">Un documento o varios: dos estrategias según el contexto<a class="headerlink" href="#un-documento-o-varios-dos-estrategias-segun-el-contexto" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Los pasos 1, 2 y 3 producen artefactos — pero <strong>¿viven en un solo archivo o en varios?</strong> La respuesta no es universal; depende de la escala del proyecto y de si existe documentación upstream previa. Hay dos estrategias válidas:</p>
+<p><strong>Documento integrado</strong> — Los seis bloques del capítulo 3 más el plan y las tareas conviven en un solo archivo. Es la opción natural para PoCs, prototipos, proyectos greenfield y cambios pequeños o medianos. Su ventaja principal: el <a href="../06-living-specs/">bucle bidireccional del capítulo 6</a> actualiza un solo sitio, y no hay riesgo de drift entre artefactos. Si tu equipo es pequeño y no hay stakeholders que revisen por capas separadas, esta es la estrategia más simple y más sostenible.</p>
+<p><strong>Artefactos separados</strong> — Cada paso produce su propio documento: requisitos, diseño técnico, lista de tareas. Es el modelo que <a href="../07-native-sdd-tools/#kiro">Kiro</a> implementa nativamente con su flujo <strong>Requirements → Design → Tasks</strong>, y el que encaja con equipos enterprise donde distintas personas revisan distintas capas (producto valida requisitos, arquitectura valida diseño, el equipo valida tareas). La spec del capítulo 3 actúa como <strong>documento maestro</strong> que referencia los demás sin duplicarlos — exactamente la regla de <a href="../04-spec-in-context/#tres-relaciones-tres-reglas">consumir sin reimplementar</a> del capítulo 4.</p>
+<p>El coste de los artefactos separados no es trivial: cada documento adicional es una superficie de drift. <a href="../07-native-sdd-tools/#spec-kit-github">Spec-kit</a> sufrió exactamente esto — Fowler observó que los archivos generados eran <em>"más pesados de revisar que el propio código"</em>. Si eliges esta estrategia, necesitas disciplina o herramientas para mantener los artefactos sincronizados, y hoy <a href="../07-native-sdd-tools/#lo-que-ninguna-de-estas-herramientas-resuelve">ninguna de las herramientas nativas lo resuelve completamente</a>.</p>
+<p>En ambos casos, la <strong>"spec" conceptual es siempre una</strong> — es la suma de todo lo que el agente necesita para implementar con rigor. Lo que cambia es cómo se distribuye físicamente. Y el factor decisivo suele ser la pregunta del capítulo 4: <strong>¿existe documentación upstream validada?</strong> Si sí, la spec la consume y referencia (artefactos separados tiene sentido). Si no, la spec tiene que contenerlo todo (documento integrado es más natural).</p>
+<table>
+<thead>
+<tr>
+<th>Estrategia</th>
+<th>Cuándo encaja</th>
+<th>Framework de referencia</th>
+<th>Riesgo principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Documento integrado</strong></td>
+<td>PoC, greenfield, equipos pequeños, cambios medianos</td>
+<td>Manual con plantilla del cap. 3</td>
+<td>Puede crecer demasiado en proyectos complejos</td>
+</tr>
+<tr>
+<td><strong>Artefactos separados</strong></td>
+<td>Enterprise, brownfield, stakeholders por capas, upstream validado</td>
+<td><a href="../07-native-sdd-tools/#kiro">Kiro</a>, <a href="../07-native-sdd-tools/#bmad">BMAD</a></td>
+<td>Drift entre documentos; maintenance tax</td>
+</tr>
+</tbody>
+</table>
 <h3 id="paso-1-especificar-la-intencion">Paso 1 — Especificar la intención<a class="headerlink" href="#paso-1-especificar-la-intencion" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Abres una sesión con el agente. <strong>No le pides que escriba código</strong>. Le pides que te ayude a redactar la spec usando la plantilla del capítulo 3, <strong>alimentándola con la documentación upstream</strong> que ya tengas — requisitos funcionales, criterios de aceptación, decisiones técnicas previas. Le das el objetivo de alto nivel y dejas que te haga preguntas. Si el agente no te hace preguntas, hazlas tú: "qué partes del sistema toca esto", "qué casos límite estoy olvidando", "qué no estamos construyendo y deberíamos decir explícitamente".</p>
 <p>El output de este paso es un archivo en <code>specs/</code> o donde tu proyecto los aloje. Cometido al repo, revisable, versionado.</p>
