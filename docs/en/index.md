@@ -34,7 +34,8 @@ Two chapters are **not optional** even though they look negative: chapter 9 (the
 ### Part 2 — Foundations
 
 - [2. The specification spectrum](02-specification-spectrum.md)
-- [3. Anatomy of a good specification](03-anatomy-of-a-spec.md)
+- [3a. Anatomy of a good specification](03a-anatomy-of-a-spec.md)
+- [3b. The spec in context](03b-spec-in-context.md)
 
 ### Part 3 — The cycle
 

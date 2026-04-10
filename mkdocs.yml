@@ -51,7 +51,8 @@ nav:
       - "1. From vibe coding to SDD": 01-from-vibe-coding-to-sdd.md
   - Foundations:
       - "2. The specification spectrum": 02-specification-spectrum.md
-      - "3. Anatomy of a good spec": 03-anatomy-of-a-spec.md
+      - "3a. Anatomy of a good spec": 03a-anatomy-of-a-spec.md
+      - "3b. The spec in context": 03b-spec-in-context.md
   - The cycle:
       - "4. The SDD cycles": 04-sdd-cycles.md
       - "5. Living specs": 05-living-specs.md
@@ -122,7 +123,8 @@ plugins:
             "The problem": "El problema"
             "Foundations": "Fundamentos"
             "2. The specification spectrum": "2. El espectro de la especificación"
-            "3. Anatomy of a good spec": "3. Anatomía de una buena especificación"
+            "3a. Anatomy of a good spec": "3a. Anatomía de una buena especificación"
+            "3b. The spec in context": "3b. La spec en contexto"
             "The cycle": "El ciclo"
             "4. The SDD cycles": "4. Los ciclos SDD"
             "5. Living specs": "5. Especificaciones vivas"

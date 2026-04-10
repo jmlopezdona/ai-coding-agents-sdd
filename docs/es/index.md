@@ -34,7 +34,8 @@ Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 9 (la
 ### Parte 2 — Fundamentos
 
 - [2. El espectro de la especificación](02-specification-spectrum.md)
-- [3. Anatomía de una buena especificación](03-anatomy-of-a-spec.md)
+- [3a. Anatomía de una buena especificación](03a-anatomy-of-a-spec.md)
+- [3b. La spec en contexto](03b-spec-in-context.md)
 
 ### Parte 3 — El ciclo
 
