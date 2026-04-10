@@ -42,7 +42,7 @@ Si el harness completo te parece demasiado para empezar, una capa de arquitecto 
 
 ## Punto de acople 5 — Los anti-patrones que solo el harness resuelve
 
-Varios de los anti-patrones del capítulo 12 son específicamente difíciles de evitar sin harness:
+Varios de los [anti-patrones del capítulo 12](12-anti-patterns.md) son específicamente difíciles de evitar sin harness:
 
 - **Spec-as-Theatre** muere cuando hay un sensor automático que mide adhesión: si la spec no se respeta, el harness lo dice.
 - **La spec eterna** muere cuando hay un agente recurrente que detecta drift y abre issues automáticos.
@@ -57,7 +57,7 @@ No todos los equipos que adoptan SDD necesitan saltar al harness inmediatamente.
 
 - **El equipo aplica SDD con disciplina pero la sostenibilidad depende de individuos.** Si Alice se va una semana de vacaciones y las specs se desactualizan, necesitas mecanismo, no más disciplina.
 - **El bucle bidireccional del capítulo 6 funciona cuando alguien lo cuida y se rompe cuando nadie lo mira.** Eso es señal de que necesita pasar de proceso humano a infraestructura.
-- **Los anti-patrones del capítulo 12 reaparecen periódicamente** aunque el equipo los conoce. La conciencia individual no escala; la infraestructura sí.
+- **Los [anti-patrones del capítulo 12](12-anti-patterns.md) reaparecen periódicamente** aunque el equipo los conoce. La conciencia individual no escala; la infraestructura sí.
 - **Las herramientas del capítulo 7 se quedan cortas porque son únicas para una dimensión** y tu sistema necesita varias capas (sensors + hooks + sandboxes + observabilidad). Eso es un harness completo, no una herramienta más.
 
 Si reconoces dos o más, el siguiente curso de la trilogía es tu siguiente paso natural.

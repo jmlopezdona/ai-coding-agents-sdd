@@ -42,7 +42,7 @@ If the full harness seems too much to start with, an architect layer over your a
 
 ## Coupling point 5 — Anti-patterns that only the harness solves
 
-Several chapter 12 anti-patterns are specifically hard to avoid without harness:
+Several [chapter 12 anti-patterns](12-anti-patterns.md) are specifically hard to avoid without harness:
 
 - **Spec-as-Theatre** dies when there's an automatic sensor measuring adherence: if the spec isn't respected, the harness says so.
 - **The eternal spec** dies when there's a recurring agent detecting drift and opening automatic issues.
@@ -57,7 +57,7 @@ Not every team adopting SDD needs to jump to the harness immediately. There are 
 
 - **The team applies SDD with discipline but sustainability depends on individuals.** If Alice goes on vacation for a week and specs go out of date, you need mechanism, not more discipline.
 - **The chapter 6 bidirectional loop works when someone takes care of it and breaks when nobody looks.** That's a sign it needs to go from human process to infrastructure.
-- **Chapter 12 anti-patterns reappear periodically** even though the team knows them. Individual awareness doesn't scale; infrastructure does.
+- **[Chapter 12 anti-patterns](12-anti-patterns.md) reappear periodically** even though the team knows them. Individual awareness doesn't scale; infrastructure does.
 - **Chapter 7 tools fall short because they're single-dimension** and your system needs multiple layers (sensors + hooks + sandboxes + observability). That's a full harness, not one more tool.
 
 If you recognize two or more, the trilogy's next course is your natural next step.
