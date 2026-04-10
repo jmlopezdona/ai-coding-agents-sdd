@@ -1,4 +1,4 @@
-# 9. La crítica honesta: maintenance tax, MDD y la ilusión de control
+# 10. La crítica honesta: maintenance tax, MDD y la ilusión de control
 
 Hasta aquí el curso ha sido constructivo: por qué hace falta SDD, cómo se hace, con qué herramientas. Este capítulo no. Este capítulo es el contrapeso, y existe porque cualquier guía que solo te enseñe los patrones positivos te está dejando sin defensa contra el momento — que llegará — en que tu propio proceso se vuelva el cuello de botella.
 
@@ -10,11 +10,11 @@ La crítica más demoledora de Isoform es que las specs detalladas crean **deuda
 
 > *Comprehensive specifications create documentation debt disguised as engineering discipline.*
 
-La lógica es directa. Cuando el sistema tiene una spec viva (capítulo 5), cada cambio en el código pide un cambio en la spec. Cuando los requisitos cambian — y siempre cambian — pides cambios coordinados en ambos sitios. El coste sube. Y a diferencia del coste de mantenimiento del código, que es visible y se discute en sprint reviews, el coste de mantenimiento de las specs es invisible: no aparece en ningún burndown, nadie lo cuenta, y se acumula hasta que un día el equipo se da cuenta de que está dedicando una proporción incómoda de su tiempo a mantener documentación de un sistema en vez de a evolucionarlo.
+La lógica es directa. Cuando el sistema tiene una spec viva (capítulo 6), cada cambio en el código pide un cambio en la spec. Cuando los requisitos cambian — y siempre cambian — pides cambios coordinados en ambos sitios. El coste sube. Y a diferencia del coste de mantenimiento del código, que es visible y se discute en sprint reviews, el coste de mantenimiento de las specs es invisible: no aparece en ningún burndown, nadie lo cuenta, y se acumula hasta que un día el equipo se da cuenta de que está dedicando una proporción incómoda de su tiempo a mantener documentación de un sistema en vez de a evolucionarlo.
 
 Isoform lo dice así: el SDD no reduce el overhead, lo *traslada*. Lo que antes era código sin documentar ahora es código documentado, sí, pero el coste no desaparece — solo cambia de lugar. Y a veces ese nuevo lugar es peor, porque la spec se ha convertido en un segundo sistema que mantener, con su propia entropía, sus propios bugs (specs internamente contradictorias) y su propia carga cognitiva.
 
-**Cómo defenderte:** mide el coste. Honestamente, durante un sprint, anota cuántas horas el equipo dedicó a actualizar specs y cuántas a evolucionar código. Si el ratio sube por encima del 20% y la spec sigue desactualizada, **algo está mal en tu proceso**. O las specs son demasiado detalladas, o el bucle del capítulo 5 no está calibrado, o estás aplicando spec completa a sitios donde no lo necesitabas (capítulo 8). Cualquiera de las tres, paras y rediseñas.
+**Cómo defenderte:** mide el coste. Honestamente, durante un sprint, anota cuántas horas el equipo dedicó a actualizar specs y cuántas a evolucionar código. Si el ratio sube por encima del 20% y la spec sigue desactualizada, **algo está mal en tu proceso**. O las specs son demasiado detalladas, o el bucle del capítulo 6 no está calibrado, o estás aplicando spec completa a sitios donde no lo necesitabas (capítulo 9). Cualquiera de las tres, paras y rediseñas.
 
 ## Crítica 2 — La pérdida de los "por qués"
 
@@ -26,9 +26,9 @@ Isoform argumenta que las specs típicas se centran demasiado en los **cómos** 
 
 Y los por qués son justo lo que un agente (o un humano nuevo) necesita seis meses después para tomar decisiones inteligentes en los huecos que la spec no cubre. Una spec sin por qués envejece a la velocidad de las decisiones que la rodean, porque pierde la capacidad de explicarse a sí misma.
 
-El capítulo 3 ya intenta blindar contra esto haciendo de los "por qués" una sección obligatoria de la plantilla. Pero el blindaje es solo de proceso; en la práctica, los por qués son la sección que más fácilmente se omite cuando el equipo va con prisa, y la que peor se actualiza con el bucle bidireccional del capítulo 5. Si tienes que recortar tiempo de mantenimiento de la spec, casi todo el mundo recorta primero los por qués — y eso es exactamente lo peor que puedes recortar.
+El capítulo 3 ya intenta blindar contra esto haciendo de los "por qués" una sección obligatoria de la plantilla. Pero el blindaje es solo de proceso; en la práctica, los por qués son la sección que más fácilmente se omite cuando el equipo va con prisa, y la que peor se actualiza con el bucle bidireccional del capítulo 6. Si tienes que recortar tiempo de mantenimiento de la spec, casi todo el mundo recorta primero los por qués — y eso es exactamente lo peor que puedes recortar.
 
-**Cómo defenderte:** trata los por qués como tier 0 de la spec. Si una spec no tiene por qués, es spec incompleta. Si el bucle bidireccional del capítulo 5 no actualiza por qués, no es bidireccional de verdad — es half-loop.
+**Cómo defenderte:** trata los por qués como tier 0 de la spec. Si una spec no tiene por qués, es spec incompleta. Si el bucle bidireccional del capítulo 6 no actualiza por qués, no es bidireccional de verdad — es half-loop.
 
 ## Crítica 3 — La falsa ilusión de completitud
 
@@ -87,4 +87,4 @@ Si reconoces tu situación en cualquiera de las cinco, **el coste del SDD probab
 
 ## Lo que viene a continuación
 
-Las críticas dejan al lector con una pregunta legítima: *si SDD malhecho es esto, ¿qué hago entonces?* El capítulo 10 desarrolla la alternativa que propone Isoform: **context engineering**. No es "vibe coding pero peor"; es una propuesta deliberadamente distinta sobre dónde debe vivir la intención.
+Las críticas dejan al lector con una pregunta legítima: *si SDD malhecho es esto, ¿qué hago entonces?* El capítulo 11 desarrolla la alternativa que propone Isoform: **context engineering**. No es "vibe coding pero peor"; es una propuesta deliberadamente distinta sobre dónde debe vivir la intención.

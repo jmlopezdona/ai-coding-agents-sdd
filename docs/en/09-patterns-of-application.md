@@ -1,6 +1,6 @@
-# 8. Patterns of application: features, refactors and bug fixes
+# 9. Patterns of application: features, refactors and bug fixes
 
-One of the easiest traps to fall into with SDD is **applying the same process to everything**. It's the exact trap Fowler points out in Kiro in chapter 6: treating a three-line bug fix as a multi-story feature. The process doesn't scale uniformly because problems aren't uniform. This chapter walks through the three most common work patterns — new feature, refactor and bug fix — and describes **how to modulate the SDD cycle** for each.
+One of the easiest traps to fall into with SDD is **applying the same process to everything**. It's the exact trap Fowler points out in Kiro in chapter 7: treating a three-line bug fix as a multi-story feature. The process doesn't scale uniformly because problems aren't uniform. This chapter walks through the three most common work patterns — new feature, refactor and bug fix — and describes **how to modulate the SDD cycle** for each.
 
 The general rule to keep in front of you: **the spec's weight should be proportional to the cost of the change if it goes wrong**. A critical, broadly-scoped feature deserves a full spec. A trivial bug fix deserves, at most, a note.
 
@@ -59,7 +59,7 @@ This is the thesis question of SDD applied to refactors. Not "how does the code 
 
 ## Pattern 3 — Bug fix
 
-The bug fix is the pattern where full SDD is counterproductive. A three-line bug fix with full template, iterative clarification and formal plan is exactly the bureaucracy chapter 9 critiques. Don't do it.
+The bug fix is the pattern where full SDD is counterproductive. A three-line bug fix with full template, iterative clarification and formal plan is exactly the bureaucracy chapter 10 critiques. Don't do it.
 
 But "don't do it" doesn't mean "do vibe coding". It means the bug fix has its own very light version of the cycle, and it's worth naming it.
 
@@ -99,8 +99,8 @@ If you keep one idea from this chapter, let it be this: **before applying SDD, r
 
 The answers to those two questions, multiplied, tell you how much SDD you need. Lots × lots = pattern 1 with everything. Little × little = pattern 3 minimal. Intermediate combinations fall in pattern 2 variants.
 
-The chapter 6 tools (Kiro especially) tend to apply pattern 1 to everything, and that's why they sometimes feel heavy. The modulation criterion you're learning here is what no tool offers today: it's contributed by the engineer, and it's exactly the kind of judgment that distinguishes a team using SDD from one suffering it.
+The chapter 7 tools (Kiro especially) tend to apply pattern 1 to everything, and that's why they sometimes feel heavy. The modulation criterion you're learning here is what no tool offers today: it's contributed by the engineer, and it's exactly the kind of judgment that distinguishes a team using SDD from one suffering it.
 
 ## What comes next
 
-We arrive at the most uncomfortable chapter of the course. **Chapter 9** is the honest critique of SDD: where it fails, what it costs, why some critiques are fair, and what to do about it. If you've been reading the course convinced this discipline is the answer, that chapter is designed to unsettle you a little. It's deliberate and necessary.
+We arrive at the most uncomfortable chapter of the course. **Chapter 10** is the honest critique of SDD: where it fails, what it costs, why some critiques are fair, and what to do about it. If you've been reading the course convinced this discipline is the answer, that chapter is designed to unsettle you a little. It's deliberate and necessary.

@@ -1,4 +1,4 @@
-# 5. Living specs: the bidirectional loop
+# 6. Living specs: the bidirectional loop
 
 The problem that kills most Spec-Driven Development initiatives isn't writing the specs. It's what happens **after**. Specs age, code leaves them behind, and three months later you have a folder of markdowns describing a system that no longer exists. That's exactly the pattern Augment Code calls the **spec gap**, and this whole chapter is about how to avoid it.
 
@@ -33,7 +33,7 @@ Augment's framework breaks the bidirectional loop into four phases:
 
 ### Phase 1 — Specify initial intent
 
-Identical to phase 1 of the chapter 4 cycle. A minimum viable spec: objective, constraints, criteria, no-goals, whys. Nothing new.
+Identical to phase 1 of the chapter 5 cycle. A minimum viable spec: objective, constraints, criteria, no-goals, whys. Nothing new.
 
 ### Phase 2 — Implement against the spec
 
@@ -57,7 +57,7 @@ The spec, in this model, is a **document that learns**. It starts describing int
 
 ## Why phase 4 matters more than it seems
 
-One of the strongest critiques of SDD (chapter 9, Isoform) is that specs **lose real context** because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context **isn't lost** — it accumulates.
+One of the strongest critiques of SDD (chapter 10, Isoform) is that specs **lose real context** because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context **isn't lost** — it accumulates.
 
 It's the difference between a design doc and an operations manual. And for an agent arriving six months later to make a change, reading the spec with production feedback is radically more useful than reading the original spec.
 
@@ -70,7 +70,7 @@ The reason static specs win isn't ideological — it's entropic. Maintaining a l
 - **Treat implementation decisions as mini-PRs to the spec**. Every non-trivial commit asks: does this change anything the spec assumes? If yes, the commit includes a spec entry.
 - **Make the spec the first place the agent looks**. If your workflow takes the agent to the code before the spec, the agent will never learn to update the spec. If the spec is always the first document loaded, the loop closes.
 
-None of these mechanisms is free, and that's where SDD's real cost lives. Chapter 9 develops this cost honestly — the famous *maintenance tax* — and why it's not negligible.
+None of these mechanisms is free, and that's where SDD's real cost lives. Chapter 10 develops this cost honestly — the famous *maintenance tax* — and why it's not negligible.
 
 ## What distinguishes a healthy living spec from a dead one
 
@@ -89,4 +89,4 @@ The distinction isn't always sharp, and that's where the engineer's judgment mat
 
 ## What comes next
 
-Up to here we've talked about process. In **chapter 6** we land on concrete tools: the four native SDD tools defining the state of the art today — **Kiro, Spec-kit, Tessl and BMAD** — what they do well, what they do badly, and what kind of team each fits. And in chapter 7, a different category: tools that sit **on top** of your current agent, like Traycer.
+Up to here we've talked about process. In **Chapter 7** we land on concrete tools: the four native SDD tools defining the state of the art today — **Kiro, Spec-kit, Tessl and BMAD** — what they do well, what they do badly, and what kind of team each fits. And in chapter 8, a different category: tools that sit **on top** of your current agent, like Traycer.

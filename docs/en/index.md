@@ -19,7 +19,7 @@ This is the **second guide in a trilogy**: it comes after the [fundamentals guid
 
 Chapters are ordered **problem → foundations → cycle → tooling → practice → critique → bridge**, but each one stands on its own. If you already have the "why", jump to whichever chapter solves a concrete problem. If you're starting fresh, read in order.
 
-Two chapters are **not optional** even though they look negative: chapter 9 (the honest critique) and chapter 10 (context engineering as alternative). Without them, this course is marketing. With them, it gives judgment.
+Two chapters are **not optional** even though they look negative: chapter 10 (the honest critique) and chapter 11 (context engineering as alternative). Without them, this course is marketing. With them, it gives judgment.
 
 ## Index
 
@@ -34,41 +34,41 @@ Two chapters are **not optional** even though they look negative: chapter 9 (the
 ### Part 2 — Foundations
 
 - [2. The specification spectrum](02-specification-spectrum.md)
-- [3a. Anatomy of a good specification](03a-anatomy-of-a-spec.md)
-- [3b. The spec in context](03b-spec-in-context.md)
+- [3. Anatomy of a good specification](03-anatomy-of-a-spec.md)
+- [4. The spec in context](04-spec-in-context.md)
 
 ### Part 3 — The cycle
 
-- [4. The SDD cycles: two variants and when to use each](04-sdd-cycles.md)
-- [5. Living specs: the bidirectional loop](05-living-specs.md)
+- [5. The SDD cycles: two variants and when to use each](05-sdd-cycles.md)
+- [6. Living specs: the bidirectional loop](06-living-specs.md)
 
 ### Part 4 — Tooling
 
-- [6. Native SDD tools: Kiro, Spec-kit, Tessl, BMAD](06-native-sdd-tools.md)
-- [7. Architect layers over agents: Traycer and the wrapper pattern](07-architect-layers.md)
+- [7. Native SDD tools: Kiro, Spec-kit, Tessl, BMAD](07-native-sdd-tools.md)
+- [8. Architect layers over agents: Traycer and the wrapper pattern](08-architect-layers.md)
 
 ### Part 5 — Practice
 
-- [8. Patterns of application: features, refactors, bug fixes](08-patterns-of-application.md)
+- [9. Patterns of application: features, refactors, bug fixes](09-patterns-of-application.md)
 
 ### Part 6 — Critique
 
-- [9. The honest critique: maintenance tax, MDD and the illusion of control](09-honest-critique.md)
-- [10. Context engineering as alternative](10-context-engineering.md)
+- [10. The honest critique: maintenance tax, MDD and the illusion of control](10-honest-critique.md)
+- [11. Context engineering as alternative](11-context-engineering.md)
 
 ### Part 7 — Common mistakes
 
-- [11. SDD anti-patterns](11-anti-patterns.md)
+- [12. SDD anti-patterns](12-anti-patterns.md)
 
 ### Part 8 — Bridge to the harness
 
-- [12. From SDD to the harness: how the pieces fit](12-from-sdd-to-harness.md)
+- [13. From SDD to the harness: how the pieces fit](13-from-sdd-to-harness.md)
 
 ## What you *won't* find in this version
 
-- Exhaustive tool comparisons. The ecosystem turns over every quarter; chapter 6 is a map, not a buyer's guide.
-- Production-ready spec templates. There are skeletons in chapters 3 and 8, but useful specs are written against your domain, not against a generic template.
-- Productivity promises. If someone promises you 10×, they probably haven't read chapter 9.
+- Exhaustive tool comparisons. The ecosystem turns over every quarter; chapter 7 is a map, not a buyer's guide.
+- Production-ready spec templates. There are skeletons in chapters 3 and 9, but useful specs are written against your domain, not against a generic template.
+- Productivity promises. If someone promises you 10×, they probably haven't read chapter 10.
 
 ## Sources
 

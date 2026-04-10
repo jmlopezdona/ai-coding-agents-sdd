@@ -1,4 +1,4 @@
-# 10. Context engineering as alternative
+# 11. Context engineering as alternative
 
 The previous chapter closes with six serious critiques of SDD. It would be unfair to leave you there, in critique without alternative. Fortunately, the same critics — Isoform in particular — propose a different idea about where intent and *whys* should live. They call it **context engineering**, and this chapter presents it without sweetening but also without dramatizing the difference with SDD.
 
@@ -13,7 +13,7 @@ SDD puts intent **outside the code**, in specs the agent reads. Context engineer
 
 The difference looks small but has three deep consequences:
 
-1. **There's no second system to maintain.** Decisions live where the code lives, so you can't desynchronize them because they're the same thing. Chapter 9's *maintenance tax* disappears by construction.
+1. **There's no second system to maintain.** Decisions live where the code lives, so you can't desynchronize them because they're the same thing. Chapter 10's *maintenance tax* disappears by construction.
 2. **Whys aren't lost** because they're stuck to the code that implements them. Remove the logical unit and the why goes with it.
 3. **There's no false illusion of completeness** because there's no master document giving a sensation of coverage. Coverage is exactly the code's coverage.
 
@@ -87,7 +87,7 @@ And situations where context engineering falls short:
 One thing many teams discover after reading both positions is that **they aren't mutually exclusive**. The mature team ends up doing a mix:
 
 - **ADRs and rich commit messages as base layer**, always, for everything. This is pure context engineering and is free (or very cheap).
-- **Light specs in chapter 3 style** only for big features with broad scope and long life, following chapter 8's pattern 1.
+- **Light specs in chapter 3 style** only for big features with broad scope and long life, following chapter 9's pattern 1.
 - **Living specs with bidirectional loop** only for modules where the maintenance cost amortizes through criticality.
 - **None of that** for minor refactors and trivial bug fixes.
 
@@ -97,8 +97,8 @@ This may sound like "do whatever you want", and it's exactly the opposite. It's 
 
 The term is gaining traction precisely because it captures something SDD doesn't: the real battle isn't writing specs, it's **managing the context** that reaches the agent at the moment of action. And context can come from many places: specs, ADRs, commits, comments, AGENTS.md, codebase searches, RAG over the repo, and retrieval tools. Calling all of that "context engineering" is honest about what's really going on.
 
-SDD is a **concrete strategy** within context engineering: the strategy that picks external specs as the main mechanism. And like any strategy, it has contexts where it shines and contexts where it gets in the way. Seen this way, the chapter 9 and this chapter's positions aren't enemies: they're two points on the same spectrum of solutions to the same problem, and the choice depends on the team's context.
+SDD is a **concrete strategy** within context engineering: the strategy that picks external specs as the main mechanism. And like any strategy, it has contexts where it shines and contexts where it gets in the way. Seen this way, the chapter 10 and this chapter's positions aren't enemies: they're two points on the same spectrum of solutions to the same problem, and the choice depends on the team's context.
 
 ## What comes next
 
-**Chapter 11** is the shortest in the course and the most operative: a list of **anti-patterns** of SDD you'll see in real teams, with name, symptom and correction. It's the part you'll want to print and put on the team wall.
+**Chapter 12** is the shortest in the course and the most operative: a list of **anti-patterns** of SDD you'll see in real teams, with name, symptom and correction. It's the part you'll want to print and put on the team wall.

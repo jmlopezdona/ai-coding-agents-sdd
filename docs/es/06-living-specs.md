@@ -1,4 +1,4 @@
-# 5. Especificaciones vivas: el bucle bidireccional
+# 6. Especificaciones vivas: el bucle bidireccional
 
 El problema que mata a la mayoría de iniciativas de Spec-Driven Development no es escribir las specs. Es lo que pasa **después**. Las specs envejecen, el código las deja atrás, y dentro de tres meses tienes una carpeta de markdowns que describe un sistema que ya no existe. Ese es exactamente el patrón que la gente de Augment Code llama el **spec gap**, y todo este capítulo es sobre cómo evitarlo.
 
@@ -33,7 +33,7 @@ El framework de Augment descompone el bucle bidireccional en cuatro fases:
 
 ### Fase 1 — Especificar la intención inicial
 
-Idéntica a la fase 1 del ciclo del capítulo 4. Una spec mínima viable: objetivo, restricciones, criterios, no-goals, por qués. Nada nuevo aquí.
+Idéntica a la fase 1 del ciclo del capítulo 5. Una spec mínima viable: objetivo, restricciones, criterios, no-goals, por qués. Nada nuevo aquí.
 
 ### Fase 2 — Implementar contra la spec
 
@@ -57,7 +57,7 @@ La spec, en este modelo, es un **documento que aprende**. Empieza describiendo i
 
 ## Por qué esta fase 4 importa más de lo que parece
 
-Una de las críticas más fuertes a SDD (capítulo 9, Isoform) es que las specs **pierden el contexto real** porque solo capturan "lo que íbamos a hacer", no "lo que aprendimos al hacerlo". La fase 4 de las specs vivas es la respuesta directa a esa crítica. Si tu spec recoge production feedback, el contexto real **no se pierde** — se acumula.
+Una de las críticas más fuertes a SDD (capítulo 10, Isoform) es que las specs **pierden el contexto real** porque solo capturan "lo que íbamos a hacer", no "lo que aprendimos al hacerlo". La fase 4 de las specs vivas es la respuesta directa a esa crítica. Si tu spec recoge production feedback, el contexto real **no se pierde** — se acumula.
 
 Es la diferencia entre un documento de diseño y un manual de operación. Y para un agente que llega seis meses después a hacer un cambio, leer la spec con production feedback es radicalmente más útil que leer la spec original.
 
@@ -70,7 +70,7 @@ La razón por la que las specs estáticas se imponen no es ideológica — es en
 - **Tratar las decisiones de implementación como mini-PRs a la spec**. Cada commit no trivial pregunta: ¿esto cambia algo de lo que la spec asume? Si sí, el commit incluye una entrada en la spec.
 - **Hacer que la spec sea el primer lugar al que mira el agente**. Si tu workflow lleva al agente al código antes de la spec, el agente nunca aprenderá a actualizar la spec. Si la spec es siempre el primer documento que se carga, el bucle se cierra.
 
-Ninguno de estos mecanismos es gratis, y ahí está el coste real del SDD. El capítulo 9 desarrolla este coste con honestidad — el famoso *maintenance tax* — y por qué no es despreciable.
+Ninguno de estos mecanismos es gratis, y ahí está el coste real del SDD. El capítulo 10 desarrolla este coste con honestidad — el famoso *maintenance tax* — y por qué no es despreciable.
 
 ## Lo que distingue a una spec viva sana de una muerta
 
@@ -89,4 +89,4 @@ La distinción no siempre es nítida, y es ahí donde el juicio del ingeniero im
 
 ## Lo que viene a continuación
 
-Hasta aquí hemos hablado del proceso. En el **capítulo 6** vamos a aterrizar en herramientas concretas: las cuatro herramientas SDD nativas que están definiendo el estado del arte hoy — **Kiro, Spec-kit, Tessl y BMAD** — con qué hacen bien, qué hacen mal y para qué tipo de equipo encaja cada una. Y en el capítulo 7, una categoría distinta: las herramientas que se sitúan **encima** de tu agente actual, como Traycer.
+Hasta aquí hemos hablado del proceso. En el **capítulo 7** vamos a aterrizar en herramientas concretas: las cuatro herramientas SDD nativas que están definiendo el estado del arte hoy — **Kiro, Spec-kit, Tessl y BMAD** — con qué hacen bien, qué hacen mal y para qué tipo de equipo encaja cada una. Y en el capítulo 8, una categoría distinta: las herramientas que se sitúan **encima** de tu agente actual, como Traycer.

@@ -19,7 +19,7 @@ Es la **segunda guía de una trilogía**: viene después de la [guía de fundame
 
 Los capítulos están ordenados de **problema → fundamentos → ciclo → herramientas → práctica → crítica → puente**, pero cada uno se sostiene por sí solo. Si ya tienes claro el "por qué", salta al capítulo que te resuelva un problema concreto. Si vienes de cero, léelos en orden.
 
-Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 9 (la crítica honesta) y el 10 (context engineering como alternativa). Sin ellos, el curso es marketing. Con ellos, da criterio.
+Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 10 (la crítica honesta) y el 11 (context engineering como alternativa). Sin ellos, el curso es marketing. Con ellos, da criterio.
 
 ## Índice
 
@@ -34,41 +34,41 @@ Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 9 (la
 ### Parte 2 — Fundamentos
 
 - [2. El espectro de la especificación](02-specification-spectrum.md)
-- [3a. Anatomía de una buena especificación](03a-anatomy-of-a-spec.md)
-- [3b. La spec en contexto](03b-spec-in-context.md)
+- [3. Anatomía de una buena especificación](03-anatomy-of-a-spec.md)
+- [4. La spec en contexto](04-spec-in-context.md)
 
 ### Parte 3 — El ciclo
 
-- [4. Los ciclos SDD: dos variantes y cuándo usar cada una](04-sdd-cycles.md)
-- [5. Especificaciones vivas: el bucle bidireccional](05-living-specs.md)
+- [5. Los ciclos SDD: dos variantes y cuándo usar cada una](05-sdd-cycles.md)
+- [6. Especificaciones vivas: el bucle bidireccional](06-living-specs.md)
 
 ### Parte 4 — Herramientas
 
-- [6. Herramientas SDD nativas: Kiro, Spec-kit, Tessl, BMAD](06-native-sdd-tools.md)
-- [7. Capas de arquitecto sobre agentes: Traycer y el patrón de envoltura](07-architect-layers.md)
+- [7. Herramientas SDD nativas: Kiro, Spec-kit, Tessl, BMAD](07-native-sdd-tools.md)
+- [8. Capas de arquitecto sobre agentes: Traycer y el patrón de envoltura](08-architect-layers.md)
 
 ### Parte 5 — Práctica
 
-- [8. Patrones de aplicación: features, refactor, bugfix](08-patterns-of-application.md)
+- [9. Patrones de aplicación: features, refactor, bugfix](09-patterns-of-application.md)
 
 ### Parte 6 — Crítica
 
-- [9. La crítica honesta: maintenance tax, MDD y la ilusión de control](09-honest-critique.md)
-- [10. Context engineering como alternativa](10-context-engineering.md)
+- [10. La crítica honesta: maintenance tax, MDD y la ilusión de control](10-honest-critique.md)
+- [11. Context engineering como alternativa](11-context-engineering.md)
 
 ### Parte 7 — Errores comunes
 
-- [11. Anti-patrones del SDD](11-anti-patterns.md)
+- [12. Anti-patrones del SDD](12-anti-patterns.md)
 
 ### Parte 8 — Puente al harness
 
-- [12. Del SDD al harness: cómo encajan las piezas](12-from-sdd-to-harness.md)
+- [13. Del SDD al harness: cómo encajan las piezas](13-from-sdd-to-harness.md)
 
 ## Qué *no* encontrarás en esta versión
 
-- Comparativas exhaustivas de herramientas. El ecosistema cambia cada trimestre; el capítulo 6 es un mapa, no una guía de compra.
-- Plantillas de spec listas para producción. Hay esqueletos en los capítulos 3 y 8, pero la spec útil se escribe contra tu dominio, no contra una plantilla genérica.
-- Promesas de productividad. Si alguien te promete 10×, probablemente no ha leído el capítulo 9.
+- Comparativas exhaustivas de herramientas. El ecosistema cambia cada trimestre; el capítulo 7 es un mapa, no una guía de compra.
+- Plantillas de spec listas para producción. Hay esqueletos en los capítulos 3 y 9, pero la spec útil se escribe contra tu dominio, no contra una plantilla genérica.
+- Promesas de productividad. Si alguien te promete 10×, probablemente no ha leído el capítulo 10.
 
 ## Fuentes
 

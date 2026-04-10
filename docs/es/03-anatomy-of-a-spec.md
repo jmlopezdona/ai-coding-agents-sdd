@@ -1,4 +1,4 @@
-# 3a. Anatomía de una buena especificación
+# 3. Anatomía de una buena especificación
 
 Hay muchas formas de escribir una spec mal y bastantes pocas de escribirla bien. Este capítulo intenta destilar lo que distingue una spec útil para un agente de IA de una que es ceremonia disfrazada. La frase corta: una buena spec captura **intención, restricciones y los "por qués"** con la suficiente precisión para que el agente no tenga que adivinar, y con la suficiente brevedad para que un humano la siga leyendo dentro de seis meses.
 
@@ -40,9 +40,9 @@ Cómo sabes que está hecho. La palabra clave es **verificable**: una persona ex
 
 #### Reutilizar criterios de documentos upstream (user stories, contratos)
 
-Una pregunta inevitable: si la user story upstream **ya contiene criterios de aceptación**, ¿qué hago con ellos? La respuesta corta es **reescribir con traza** — ni copiar literal (importa la imprecisión del lenguaje de producto), ni referenciar a secas (`"ver JIRA-1234"` rompe la auto-contención del capítulo 1 y abre drift invisible). Reescribes los criterios en la spec al nivel de precisión que el validador del capítulo 5 necesita, y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*, no como contenedor del *qué hay que hacer*.
+Una pregunta inevitable: si la user story upstream **ya contiene criterios de aceptación**, ¿qué hago con ellos? La respuesta corta es **reescribir con traza** — ni copiar literal (importa la imprecisión del lenguaje de producto), ni referenciar a secas (`"ver JIRA-1234"` rompe la auto-contención del capítulo 1 y abre drift invisible). Reescribes los criterios en la spec al nivel de precisión que el validador del capítulo 6 necesita, y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*, no como contenedor del *qué hay que hacer*.
 
-La regla unificada: **la spec contiene su propia versión, precisa y verificable, de los criterios. El documento upstream se cita como fuente del por qué.** El anti-patrón a evitar — *fusionar user story y spec en un único archivo híbrido porque "dicen lo mismo"* — lo desarrollamos como anti-patrón #13 en el capítulo 11.
+La regla unificada: **la spec contiene su propia versión, precisa y verificable, de los criterios. El documento upstream se cita como fuente del por qué.** El anti-patrón a evitar — *fusionar user story y spec en un único archivo híbrido porque "dicen lo mismo"* — lo desarrollamos como anti-patrón #13 en el capítulo 12.
 
 **Una excepción legítima**: cuando el documento upstream es realmente autoritativo y vive bajo su propia disciplina de validación (un contrato OpenAPI/Protobuf con su propio CI, una política de seguridad corporativa, un RFC), la spec **resume las implicaciones** sin copiar el contenido. La distinción crítica: ese documento upstream tiene su *propia* validación operando sobre él. Una user story de Jira casi nunca tiene esa propiedad.
 
@@ -110,7 +110,7 @@ Una o dos frases. Resultado observable. Para quién.
 - ⚠️ Ask first: ...
 - 🚫 Never: ...
 
-## Superficies afectadas (recomendado siempre que la spec toque >1 componente; ver [sección 3b](03b-spec-in-context.md#la-spec-y-los-componentes-técnicos-consumir-producir-modificar))
+## Superficies afectadas (recomendado siempre que la spec toque >1 componente; ver [sección 4](04-spec-in-context.md#la-spec-y-los-componentes-técnicos-consumir-producir-modificar))
 ### [Componente] — [producido | modificado | consumido]
 - **Funcional:** ...
 - **No funcional:** ...
@@ -128,7 +128,7 @@ La razón tiene nombre. Addy Osmani, citando estudios académicos, la llama **th
 
 La estrategia ganadora, entonces, es dividir specs grandes en módulos pequeños y pasarle al agente solo el módulo relevante para la tarea actual.
 
-Esta es también una de las razones por las que las herramientas tipo Spec-kit y Kiro generan **muchos archivos pequeños** en vez de uno grande, y por las que esa proliferación, mal gestionada, se convierte en su propio problema (lo veremos en el capítulo 9).
+Esta es también una de las razones por las que las herramientas tipo Spec-kit y Kiro generan **muchos archivos pequeños** en vez de uno grande, y por las que esa proliferación, mal gestionada, se convierte en su propio problema (lo veremos en el capítulo 10).
 
 ## ¿Y si la spec la genera un agente?
 
@@ -150,9 +150,9 @@ Una buena spec opera en un nivel de abstracción **distinto** al código. Si men
 
 Cuando te encuentras con specs así — y, si dejas al agente en su modo por defecto, te las vas a encontrar — pagas dos costes que se refuerzan entre sí.
 
-**Implementas dos veces.** Has pagado el coste de pensar la implementación a nivel de clases y métodos en la spec, y vas a pagar otra vez el mismo coste cuando codifiques. Peor: cualquier cosa que descubras al implementar (y al implementar siempre se descubren cosas) te obliga a volver atrás y editar la spec, o a aceptar drift inmediato. Estás en la peor parte de la curva del capítulo 9: maintenance tax desde el día uno, sin haber escrito todavía una línea de código.
+**Implementas dos veces.** Has pagado el coste de pensar la implementación a nivel de clases y métodos en la spec, y vas a pagar otra vez el mismo coste cuando codifiques. Peor: cualquier cosa que descubras al implementar (y al implementar siempre se descubren cosas) te obliga a volver atrás y editar la spec, o a aceptar drift inmediato. Estás en la peor parte de la curva del capítulo 10: maintenance tax desde el día uno, sin haber escrito todavía una línea de código.
 
-**La revisión humana se vuelve tan cara como revisar código.** Esto es exactamente lo que Fowler reporta de Spec-kit en el capítulo 6 — que los archivos generados eran *más pesados de revisar que el propio código*. Y es peor que revisar código directamente, porque al menos el código se ejecuta y los tests lo verifican; el pseudocódigo en markdown no tiene ninguna red de seguridad. Estás revisando algo del nivel de detalle del código pero **sin las garantías del código**. El reviewer humano, cansado, lo lee por encima — y la "spec" pasa el filtro como si hubiera sido revisada.
+**La revisión humana se vuelve tan cara como revisar código.** Esto es exactamente lo que Fowler reporta de Spec-kit en el capítulo 7 — que los archivos generados eran *más pesados de revisar que el propio código*. Y es peor que revisar código directamente, porque al menos el código se ejecuta y los tests lo verifican; el pseudocódigo en markdown no tiene ninguna red de seguridad. Estás revisando algo del nivel de detalle del código pero **sin las garantías del código**. El reviewer humano, cansado, lo lee por encima — y la "spec" pasa el filtro como si hubiera sido revisada.
 
 La combinación de las dos es venenosa: doblas el trabajo y *además* lo revisas peor. Es casi siempre peor que no haber escrito ninguna spec.
 
@@ -169,14 +169,14 @@ Segundo, hay cosas que el agente **no puede** generar bien por mucha plantilla q
 Esto no significa que la generación con agente no sirva. Sirve, pero en un papel más estrecho del que la mayoría de la gente imagina:
 
 - **El agente puede arrancar bien**: el bloque de **objetivo**, los **criterios de aceptación verificables** (con cuidado), una primera lista de **no-goals candidatos** que el humano luego refina, y una propuesta de **boundaries** basada en patrones que ya ve en el repo.
-- **El humano tiene que poner sí o sí**: los **por qués**, los **no-goals reales** (especialmente los políticos o de scope que no están en ningún input), las **restricciones técnicas tácitas** del equipo, y la decisión de *cuánta* spec merece la tarea (lo que en el capítulo 8 llamaremos *modulación*: ajustar el peso de la spec a la complejidad y el riesgo reales de la feature). Y, sobre todo, tiene que **borrar** todo lo que el agente metió de pseudocódigo: clases, métodos, firmas, payloads. Si después de borrarlos la spec queda vacía, no necesitabas una spec; necesitabas escribir bien el código (capítulo 10, *context engineering*).
+- **El humano tiene que poner sí o sí**: los **por qués**, los **no-goals reales** (especialmente los políticos o de scope que no están en ningún input), las **restricciones técnicas tácitas** del equipo, y la decisión de *cuánta* spec merece la tarea (lo que en el capítulo 9 llamaremos *modulación*: ajustar el peso de la spec a la complejidad y el riesgo reales de la feature). Y, sobre todo, tiene que **borrar** todo lo que el agente metió de pseudocódigo: clases, métodos, firmas, payloads. Si después de borrarlos la spec queda vacía, no necesitabas una spec; necesitabas escribir bien el código (capítulo 11, *context engineering*).
 
 La regla práctica más útil: **si tu spec generada menciona una firma de función o un nombre de clase, bórrala**. La spec habla de qué garantías cumple el sistema, no de cómo se construye.
 
-Y la advertencia honesta: usar el agente como generador de drafts **no reduce el coste total** de hacer SDD bien. Lo que reduce es el coste de empezar el primer borrador, que para muchos equipos es la barrera psicológica que más pesa. El coste real — pensar la intención con precisión, capturar los por qués, mantener viva la spec — sigue estando ahí, sin atajo, y el agente no lo paga por ti. Si tu adopción de SDD depende de que la generación automática elimine ese coste, lo que vas a tener no es SDD — vas a tener el anti-patrón #12 del capítulo 11.
+Y la advertencia honesta: usar el agente como generador de drafts **no reduce el coste total** de hacer SDD bien. Lo que reduce es el coste de empezar el primer borrador, que para muchos equipos es la barrera psicológica que más pesa. El coste real — pensar la intención con precisión, capturar los por qués, mantener viva la spec — sigue estando ahí, sin atajo, y el agente no lo paga por ti. Si tu adopción de SDD depende de que la generación automática elimine ese coste, lo que vas a tener no es SDD — vas a tener el anti-patrón #12 del capítulo 12.
 
 ## Lo que viene a continuación
 
 Hasta aquí hemos visto qué poner dentro de una spec y las dos trampas más caras al escribirla: specs demasiado grandes y specs generadas por agentes sin supervisión. Pero la anatomía de una spec no termina en sus bloques — **el nivel de detalle apropiado depende del contexto**: del nivel del espectro en el que operas, de los componentes técnicos que tocas, y del tipo de validación que vas a aplicar.
 
-En la **[sección 3b](03b-spec-in-context.md)** abordamos exactamente eso: cómo calibrar la spec para que el detalle no sea ni desperdicio ni ceguera.
+En la **[sección 4](04-spec-in-context.md)** abordamos exactamente eso: cómo calibrar la spec para que el detalle no sea ni desperdicio ni ceguera.

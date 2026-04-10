@@ -1,4 +1,4 @@
-# 10. Context engineering como alternativa
+# 11. Context engineering como alternativa
 
 El capítulo anterior cierra con seis críticas serias al SDD. Sería tramposo dejarte ahí, en la crítica sin alternativa. Por suerte, los mismos críticos — Isoform en particular — proponen una idea distinta sobre dónde debe vivir la intención y los "por qués". La llaman **context engineering**, y este capítulo la presenta sin endulzarla pero también sin dramatizar la diferencia con SDD.
 
@@ -13,7 +13,7 @@ SDD pone la intención **fuera del código**, en specs que el agente lee. Contex
 
 La diferencia parece pequeña pero tiene tres consecuencias profundas:
 
-1. **No hay segundo sistema que mantener.** Las decisiones viven donde vive el código, así que no puedes desincronizarlas porque son la misma cosa. El *maintenance tax* del capítulo 9 desaparece por construcción.
+1. **No hay segundo sistema que mantener.** Las decisiones viven donde vive el código, así que no puedes desincronizarlas porque son la misma cosa. El *maintenance tax* del capítulo 10 desaparece por construcción.
 2. **Los por qués no se pierden** porque están adheridos al código que los implementa. Quitas la unidad lógica y se va con ella.
 3. **No hay falsa ilusión de completitud** porque no hay un documento maestro que dé sensación de cobertura. La cobertura es exactamente la del código.
 
@@ -87,7 +87,7 @@ Y hay situaciones donde context engineering se queda corto:
 Una de las cosas que más equipos descubren después de leer las dos posiciones es que **no son alternativas excluyentes**. El equipo maduro acaba haciendo una mezcla:
 
 - **ADRs y commit messages ricos como capa base**, siempre, para todo. Esto es context engineering puro y es gratis (o muy barato).
-- **Specs ligeras estilo capítulo 3** solo para features grandes con alcance amplio y vida larga, siguiendo el patrón 1 del capítulo 8.
+- **Specs ligeras estilo capítulo 3** solo para features grandes con alcance amplio y vida larga, siguiendo el patrón 1 del capítulo 9.
 - **Specs vivas con bucle bidireccional** solo para los módulos donde el coste de mantenimiento se amortiza por su criticidad.
 - **Nada de eso** para refactors menores y bug fixes triviales.
 
@@ -97,8 +97,8 @@ Esto puede sonar a "haz lo que te dé la gana", y es exactamente lo opuesto. Es 
 
 El término está ganando tracción precisamente porque captura algo que el SDD no: que la batalla real no es escribir specs, es **gestionar el contexto** que llega al agente en el momento de actuar. Y el contexto puede venir de muchos sitios: specs, ADRs, commits, comentarios, AGENTS.md, búsquedas en el código, RAG sobre el repo, y herramientas de retrieval. Llamar a todo eso "context engineering" es honesto sobre lo que realmente está pasando.
 
-SDD es una **estrategia concreta** dentro de context engineering: la estrategia que elige specs externas como mecanismo principal. Y como toda estrategia, tiene contextos donde brilla y contextos donde estorba. Visto así, las dos posiciones del capítulo 9 y este capítulo no son enemigos: son dos puntos del mismo espectro de soluciones para el mismo problema, y la elección depende del contexto del equipo.
+SDD es una **estrategia concreta** dentro de context engineering: la estrategia que elige specs externas como mecanismo principal. Y como toda estrategia, tiene contextos donde brilla y contextos donde estorba. Visto así, las dos posiciones del capítulo 10 y este capítulo no son enemigos: son dos puntos del mismo espectro de soluciones para el mismo problema, y la elección depende del contexto del equipo.
 
 ## Lo que viene a continuación
 
-El **capítulo 11** es el más corto del curso y el más operativo: una lista de **anti-patrones** del SDD que verás en equipos reales, con su nombre, su síntoma y la corrección. Es la parte que querrás imprimir y poner en la pared del equipo.
+El **capítulo 12** es el más corto del curso y el más operativo: una lista de **anti-patrones** del SDD que verás en equipos reales, con su nombre, su síntoma y la corrección. Es la parte que querrás imprimir y poner en la pared del equipo.

@@ -12,7 +12,7 @@ SDD isn't writing lots of documentation. It isn't waterfall in disguise. It isn'
 
 Two things change. First, **order**: you specify before asking the agent to code, not after. Second, **persistence**: the spec lives in the repository, versioned, and is updated as the code evolves. It's the difference between "I drop a ticket on the agent and see what comes out" and "I give it a contract I can compare its output against".
 
-What SDD isn't: a promise that the agent will get it right the first time, a guarantee that generated code will be correct, a substitute for reviewing what the agent produces, or a process that scales uniformly to any task — a three-line bug fix and a database migration don't ask for the same amount of spec, and forcing the opposite is one of the fastest ways to kill a team (chapter 9).
+What SDD isn't: a promise that the agent will get it right the first time, a guarantee that generated code will be correct, a substitute for reviewing what the agent produces, or a process that scales uniformly to any task — a three-line bug fix and a database migration don't ask for the same amount of spec, and forcing the opposite is one of the fastest ways to kill a team (chapter 10).
 
 ## Why we need a discipline
 
@@ -47,7 +47,7 @@ Most teams confuse what they're doing: they say "we're doing SDD" when they're a
 
 ## The critique that's also part of the course
 
-An honest guide on SDD has to accept that the discipline can also go wrong. Chapter 9 develops the strongest critiques — Isoform's *maintenance tax*, Martin Fowler's parallel with the old Model-Driven Development, the loss of the *whys*, the false illusion of control — and chapter 10 presents Isoform's alternative: *context engineering*, where intent and *whys* are preserved **inside the code** rather than in external specs.
+An honest guide on SDD has to accept that the discipline can also go wrong. Chapter 10 develops the strongest critiques — Isoform's *maintenance tax*, Martin Fowler's parallel with the old Model-Driven Development, the loss of the *whys*, the false illusion of control — and chapter 11 presents Isoform's alternative: *context engineering*, where intent and *whys* are preserved **inside the code** rather than in external specs.
 
 They aren't there for noise. They're there because misapplied, this discipline is indistinguishable from bureaucracy, and if the course only teaches you the positive patterns it leaves you defenseless against the moment — and it will come — when your own process becomes the bottleneck.
 
@@ -63,7 +63,7 @@ SDD exists because between knowing how to use an agent and knowing how to engine
 
 ## Where to go next
 
-If you want to understand the concrete pain SDD tries to solve, jump to **chapter 1**. If you already get it and want the conceptual model, start with **chapter 2** (the spectrum). If you came for tools, **chapters 6 and 7** are your shortcut. And if you came looking for judgment so you don't swallow the hype, read **chapter 9** first and come back to the start with new eyes.
+If you want to understand the concrete pain SDD tries to solve, jump to **Chapter 1**. If you already get it and want the conceptual model, start with **Chapter 2** (the spectrum). If you came for tools, **chapters 7 and 8** are your shortcut. And if you came looking for judgment so you don't swallow the hype, read **Chapter 10** first and come back to the start with new eyes.
 
 You don't have to read it cover to cover. You do have to not stop at the comfortable chapters.
 

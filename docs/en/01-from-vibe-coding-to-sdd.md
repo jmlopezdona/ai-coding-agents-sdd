@@ -73,4 +73,4 @@ It's not magic. It's simply moving what was implicit in your head to a place the
 
 ## What comes next
 
-If you accept that vibe coding has a ceiling and that moving the source of truth to the artifact resolves most symptoms, the next question is *what kind of spec* and *with how much commitment*. That's the question of **chapter 2**, where we introduce the specification spectrum: three levels of SDD adoption, with very different tradeoffs. Most teams believe they're at one level and are actually at another, and understanding that is the most important decision you'll make in this course.
+If you accept that vibe coding has a ceiling and that moving the source of truth to the artifact resolves most symptoms, the next question is *what kind of spec* and *with how much commitment*. That's the question of **Chapter 2**, where we introduce the specification spectrum: three levels of SDD adoption, with very different tradeoffs. Most teams believe they're at one level and are actually at another, and understanding that is the most important decision you'll make in this course.

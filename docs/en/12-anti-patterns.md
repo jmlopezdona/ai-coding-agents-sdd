@@ -1,4 +1,4 @@
-# 11. SDD anti-patterns
+# 12. SDD anti-patterns
 
 A short list of the most expensive errors seen in teams adopting Spec-Driven Development. They're not here to scare you but so when you recognize them in your own process — and you will — you know how to stop them before they become habit.
 
@@ -50,9 +50,9 @@ Each anti-pattern follows the same format: **name**, observable symptom, why it 
 
 **Symptom.** Every change — feature, refactor, three-line bug fix — goes through the same complete process: template spec, formal plan, task decomposition, validation. The team complains SDD "is too slow" and is right.
 
-**Why it happens.** Lack of modulation. Adoption was done without teaching the difference between chapter 8 patterns.
+**Why it happens.** Lack of modulation. Adoption was done without teaching the difference between chapter 9 patterns.
 
-**Correction.** Process proportional to risk. Trivial bug fixes don't deserve a spec; big features do. Chapter 8's rule — *spec weight proportional to the cost of the change if it goes wrong* — isn't optional, it's what makes the process sustainable.
+**Correction.** Process proportional to risk. Trivial bug fixes don't deserve a spec; big features do. Chapter 9's rule — *spec weight proportional to the cost of the change if it goes wrong* — isn't optional, it's what makes the process sustainable.
 
 ---
 
@@ -70,7 +70,7 @@ Each anti-pattern follows the same format: **name**, observable symptom, why it 
 
 **Symptom.** A spec is written at the start of the feature and never updated again. Code evolves, the spec stays. Six months later, reading the spec actively misleads: it says things the code no longer does.
 
-**Why it happens.** Absence of bidirectional loop (chapter 5). The definition of "done" doesn't include updating the spec, so the incentive is not to.
+**Why it happens.** Absence of bidirectional loop (chapter 6). The definition of "done" doesn't include updating the spec, so the incentive is not to.
 
 **Correction.** "Done" = "code merged **and** spec updated". Without the second, the task isn't done. This sounds harsh and it is, but it's the only way the bidirectional loop survives a team under pressure.
 
@@ -126,7 +126,7 @@ On top of this comes the team's own bias: a generated spec with 600 lines, class
 
 **Correction.** Three concrete rules:
 
-1. **If your spec mentions function signatures, class names or payload structures, delete them.** The spec talks about what guarantees the system must meet, not how it's built. If after deleting them the spec is empty, you didn't need a spec — you needed well-written code (ch. 10).
+1. **If your spec mentions function signatures, class names or payload structures, delete them.** The spec talks about what guarantees the system must meet, not how it's built. If after deleting them the spec is empty, you didn't need a spec — you needed well-written code (ch. 11).
 2. **Use the agent as a draft generator only for the *what*, not the *how*.** The agent can start the objective, acceptance criteria and a candidate list of non-goals. The human has to put in, no exceptions, the whys, the real non-goals and the tacit constraints. What the agent doesn't know, it invents or omits — and invented whys are worse than missing whys.
 3. **Measure the implementation-detail / intent-detail ratio of your specs.** If more than 30% of the spec describes code structures, you're writing pseudocode, not a spec. It's a sign that the generator agent (or you) has dropped a level of abstraction that breaks the document's purpose.
 
@@ -140,13 +140,13 @@ The simple test: a good spec survives **two different implementations** by the s
 
 **Why it happens.** It's very tempting, especially when product documentation lives in the same Git repo as the specs. The physical proximity makes the team ask "why have two files if they say the same thing?" — and the intuitive answer is to merge them. But the question is wrong: they don't say the same thing. The user story answers *what the user wants and why it matters to the business*. The spec answers *what observable guarantees the system must meet*. There's a 60-70% overlap, but they're not the same thing, and the overlap doesn't justify fusing them — each artifact serves a different audience and changes for different reasons.
 
-There's a more subtle cause too: the team confuses *traceability* with *unification*. It wants the link between product intent and technical contract to be explicit, and assumes the only way to achieve that is to put them in the same document. But traceability is achieved with references, traces and automatic sensors (chapter 5), not by fusing two artifacts with distinct purposes.
+There's a more subtle cause too: the team confuses *traceability* with *unification*. It wants the link between product intent and technical contract to be explicit, and assumes the only way to achieve that is to put them in the same document. But traceability is achieved with references, traces and automatic sensors (chapter 6), not by fusing two artifacts with distinct purposes.
 
 **Correction.** Three rules:
 
 1. **Keep the physical separation**, even when both files live in the same repo. The user story in `docs/product/`, the spec in `specs/`, each with its own history and its own audience. Proximity enables traceability and cross-validation — not fusion.
 2. **The author test**. If the file is edited by both the PM (for product reasons) and an engineer (for implementation reasons) without coordination, that's a sign you're maintaining two artifacts collapsed into one. Split them.
-3. **Enable a divergence sensor** between the two files instead of fusing them. A git hook or a chapter 5 recurring agent can watch for the user story changing without the spec being updated (or vice versa), and open an issue to reconcile them consciously. That preserves both audiences and makes the relationship between the two artifacts explicit.
+3. **Enable a divergence sensor** between the two files instead of fusing them. A git hook or a chapter 6 recurring agent can watch for the user story changing without the spec being updated (or vice versa), and open an issue to reconcile them consciously. That preserves both audiences and makes the relationship between the two artifacts explicit.
 
 Chapter 3 develops this in its section *"Reusing criteria from upstream documents"* — here we just flag why silent fusion is an anti-pattern in its own right. It's one of the pathologies that putting product documentation in the repo amplifies the most when done without thought: what was a good organizational idea becomes a new archetype of bad spec.
 
@@ -176,8 +176,8 @@ Chapter 3 develops this topic in its section *"The spec and technical components
 
 Once a quarter, in a retro, read this list aloud and ask the team: *do we recognize any of these in ourselves?* People, contrary to what ego promises, almost always recognize one or two. And recognizing them is half of stopping them.
 
-If you recognize three or more, **the problem isn't one of the anti-patterns; it's the whole adoption of SDD**. Go back to chapter 9 and 10 and rethink whether SDD is the right tool for your situation.
+If you recognize three or more, **the problem isn't one of the anti-patterns; it's the whole adoption of SDD**. Go back to chapter 10 and 11 and rethink whether SDD is the right tool for your situation.
 
 ## What comes next
 
-**Chapter 12** closes the course connecting SDD with the next step: the harness. The exact points where the discipline couples with harness engineering, and why the two together produce much more than the two apart.
+**Chapter 13** closes the course connecting SDD with the next step: the harness. The exact points where the discipline couples with harness engineering, and why the two together produce much more than the two apart.

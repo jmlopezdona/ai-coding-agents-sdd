@@ -1,4 +1,4 @@
-# 9. The honest critique: maintenance tax, MDD and the illusion of control
+# 10. The honest critique: maintenance tax, MDD and the illusion of control
 
 So far the course has been constructive: why SDD is needed, how to do it, with what tools. This chapter isn't. This chapter is the counterweight, and it exists because any guide that only teaches you the positive patterns leaves you defenseless against the moment — and it will come — when your own process becomes the bottleneck.
 
@@ -10,11 +10,11 @@ Isoform's most devastating critique is that detailed specs create **documentatio
 
 > *Comprehensive specifications create documentation debt disguised as engineering discipline.*
 
-The logic is direct. When the system has a living spec (chapter 5), every change in the code asks for a change in the spec. When requirements change — and they always change — you need coordinated changes in both places. Cost rises. And unlike the maintenance cost of code, which is visible and discussed in sprint reviews, the spec maintenance cost is invisible: it doesn't appear in any burndown, nobody counts it, and it accumulates until one day the team realizes it's spending an uncomfortable proportion of its time maintaining documentation of a system instead of evolving it.
+The logic is direct. When the system has a living spec (chapter 6), every change in the code asks for a change in the spec. When requirements change — and they always change — you need coordinated changes in both places. Cost rises. And unlike the maintenance cost of code, which is visible and discussed in sprint reviews, the spec maintenance cost is invisible: it doesn't appear in any burndown, nobody counts it, and it accumulates until one day the team realizes it's spending an uncomfortable proportion of its time maintaining documentation of a system instead of evolving it.
 
 Isoform puts it this way: SDD doesn't reduce overhead, it *displaces* it. What used to be undocumented code is now documented code, yes, but the cost doesn't disappear — it just changes location. And sometimes that new location is worse, because the spec has become a second system to maintain, with its own entropy, its own bugs (internally contradictory specs) and its own cognitive load.
 
-**How to defend yourself:** measure the cost. Honestly, during a sprint, log how many hours the team spent updating specs and how many evolving code. If the ratio rises above 20% and the spec is still out of date, **something is wrong with your process**. Either specs are too detailed, or the chapter 5 loop isn't calibrated, or you're applying full spec to places that didn't need it (chapter 8). Any of the three, stop and redesign.
+**How to defend yourself:** measure the cost. Honestly, during a sprint, log how many hours the team spent updating specs and how many evolving code. If the ratio rises above 20% and the spec is still out of date, **something is wrong with your process**. Either specs are too detailed, or the chapter 6 loop isn't calibrated, or you're applying full spec to places that didn't need it (chapter 9). Any of the three, stop and redesign.
 
 ## Critique 2 — The loss of the *whys*
 
@@ -26,9 +26,9 @@ Isoform argues typical specs focus too much on the **hows** — schemas, signatu
 
 And whys are exactly what an agent (or a new human) needs six months later to make smart decisions in the gaps the spec doesn't cover. A spec without whys ages at the speed of the decisions around it, because it loses the ability to explain itself.
 
-Chapter 3 already tries to shield against this by making whys a mandatory section of the template. But the shield is only process; in practice, whys are the section most easily skipped when the team is in a hurry, and the one worst updated by the chapter 5 bidirectional loop. If you have to cut spec maintenance time, almost everyone cuts whys first — and that's exactly the worst thing you can cut.
+Chapter 3 already tries to shield against this by making whys a mandatory section of the template. But the shield is only process; in practice, whys are the section most easily skipped when the team is in a hurry, and the one worst updated by the chapter 6 bidirectional loop. If you have to cut spec maintenance time, almost everyone cuts whys first — and that's exactly the worst thing you can cut.
 
-**How to defend yourself:** treat whys as tier 0 of the spec. If a spec has no whys, it's an incomplete spec. If the chapter 5 bidirectional loop doesn't update whys, it's not really bidirectional — it's half-loop.
+**How to defend yourself:** treat whys as tier 0 of the spec. If a spec has no whys, it's an incomplete spec. If the chapter 6 bidirectional loop doesn't update whys, it's not really bidirectional — it's half-loop.
 
 ## Critique 3 — The false illusion of completeness
 
@@ -87,4 +87,4 @@ If you recognize your situation in any of the five, **the cost of SDD probably e
 
 ## What comes next
 
-The critiques leave the reader with a legitimate question: *if bad SDD is this, what do I do then?* Chapter 10 develops the alternative Isoform proposes: **context engineering**. It's not "vibe coding but worse"; it's a deliberately different proposal about where intent should live.
+The critiques leave the reader with a legitimate question: *if bad SDD is this, what do I do then?* chapter 11 develops the alternative Isoform proposes: **context engineering**. It's not "vibe coding but worse"; it's a deliberately different proposal about where intent should live.

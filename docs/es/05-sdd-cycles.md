@@ -1,4 +1,4 @@
-# 4. Los ciclos SDD: dos variantes y cuándo usar cada una
+# 5. Los ciclos SDD: dos variantes y cuándo usar cada una
 
 Si lees tres artículos sobre Spec-Driven Development, encontrarás tres versiones distintas del "ciclo SDD". Eso no es un fallo de la disciplina; es señal de que la disciplina aún se está formando. Pero deja al lector con un problema concreto: *¿qué fases hay, en qué orden, y por qué dos fuentes serias dicen cosas distintas?*
 
@@ -50,7 +50,7 @@ El output de este paso es un archivo en `specs/` o donde tu proyecto los aloje. 
 
 Con la spec en mano, le pides al agente un **plan de implementación**: qué archivos toca, en qué orden, qué dependencias hay entre tareas, qué tests pretende escribir. El plan no es código; es un documento intermedio. Lo lees, lo discutes, lo corriges si el agente ha entendido mal alguna restricción.
 
-Este paso es donde las herramientas tipo Traycer aportan más valor (capítulo 7), porque la calidad del plan determina la calidad de todo lo que viene después.
+Este paso es donde las herramientas tipo Traycer aportan más valor (capítulo 8), porque la calidad del plan determina la calidad de todo lo que viene después.
 
 ### Paso 3 — Descomponer en tareas
 
@@ -82,4 +82,4 @@ Esto es **normal y deseable**. La diferencia entre un ciclo sano y uno patológi
 
 ## Lo que viene a continuación
 
-El capítulo 5 va sobre la diferencia entre specs estáticas (las que envejecen mal) y specs vivas (las que se mantienen útiles porque la implementación retroalimenta la spec). Es la pieza que convierte el ciclo de este capítulo en un proceso sostenible en lugar de un ritual de arranque.
+El capítulo 6 va sobre la diferencia entre specs estáticas (las que envejecen mal) y specs vivas (las que se mantienen útiles porque la implementación retroalimenta la spec). Es la pieza que convierte el ciclo de este capítulo en un proceso sostenible en lugar de un ritual de arranque.

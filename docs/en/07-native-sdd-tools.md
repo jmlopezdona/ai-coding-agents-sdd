@@ -1,4 +1,4 @@
-# 6. Native SDD tools: Kiro, Spec-kit, Tessl and BMAD
+# 7. Native SDD tools: Kiro, Spec-kit, Tessl and BMAD
 
 There are a handful of tools explicitly proposing themselves as infrastructure for doing Spec-Driven Development. We call them **native** because the spec is the center of their workflow, not an add-on. In this chapter we walk through the four most visible today — Kiro, Spec-kit, Tessl and BMAD — situating each in the chapter 2 spectrum and being honest about where each fits and where each breaks.
 
@@ -16,7 +16,7 @@ With that in front, we go one by one.
 
 ## Kiro
 
-Kiro is AWS's agentic IDE. Its workflow is probably the simplest of the four: three markdown documents — **Requirements → Design → Tasks** — generated in order to guide the agent through the cycle. It maps almost exactly to chapter 4's "variant B".
+Kiro is AWS's agentic IDE. Its workflow is probably the simplest of the four: three markdown documents — **Requirements → Design → Tasks** — generated in order to guide the agent through the cycle. It maps almost exactly to chapter 5's "variant B".
 
 **What it does well:**
 
@@ -66,7 +66,7 @@ Tessl is the most radical proposal of the four. It aims directly at the **Spec-a
 **What Fowler flags as problematic:**
 
 - **It's in private beta**, with all the limitations that implies (access, support, risk of disruptive changes, risk of disappearing).
-- **LLM non-determinism conflicts directly with the "regenerate and you get the same thing" promise**. If two generations of the same spec produce different code, the "single source of truth" promise deflates. This is almost exactly the problem that killed Model-Driven Development in the 2000s and that chapter 9 develops.
+- **LLM non-determinism conflicts directly with the "regenerate and you get the same thing" promise**. If two generations of the same spec produce different code, the "single source of truth" promise deflates. This is almost exactly the problem that killed Model-Driven Development in the 2000s and that chapter 10 develops.
 
 **Who it fits:**
 
@@ -109,8 +109,8 @@ An honest recommendation, knowing it'll age:
 
 There's a pattern worth naming that none of the four tools solves on its own: **post-code verification**. The four help you structure spec and plan; none verifies with sufficient rigor that the generated code **meets** the original spec. That verification, when done, is typically another round of manual prompting.
 
-That's exactly the gap where Traycer (chapter 7) and other tools in the "architect layer" pattern have positioned themselves.
+That's exactly the gap where Traycer (chapter 8) and other tools in the "architect layer" pattern have positioned themselves.
 
 ## What comes next
 
-Chapter 7 covers the **other category** of SDD tools: the ones that don't replace your agent but wrap it. It's an important distinction because it answers a different question. The tools in this chapter answer "which tool do I use?". The next chapter's answer "how do I improve the tool I'm already using?".
+Chapter 8 covers the **other category** of SDD tools: the ones that don't replace your agent but wrap it. It's an important distinction because it answers a different question. The tools in this chapter answer "which tool do I use?". The next chapter's answer "how do I improve the tool I'm already using?".

@@ -1,4 +1,4 @@
-# 7. Capas de arquitecto sobre agentes: Traycer y el patrón de envoltura
+# 8. Capas de arquitecto sobre agentes: Traycer y el patrón de envoltura
 
 Las herramientas del capítulo anterior comparten una característica: son herramientas SDD **autónomas**. Vives dentro de ellas, su workflow es el workflow. Hay otra categoría que está creciendo en paralelo y que vale la pena entender por separado: las herramientas que no te piden que cambies de agente, sino que **se sitúan encima del agente que ya usas**. Las llamamos *capas de arquitecto*, y la pieza más visible de esta categoría hoy es **Traycer**.
 
@@ -14,7 +14,7 @@ Según se describe en su material y en la discusión de la comunidad, Traycer ap
 
 ### 1. Elicitación
 
-Antes de dejarte hablar con tu agente principal, Traycer te hace una ronda de **preguntas** para sacar a la superficie requisitos que probablemente habrías olvidado mencionar. Es la fase de "clarificación iterativa" del capítulo 4 incorporada como mecanismo automático en lugar de como recordatorio mental.
+Antes de dejarte hablar con tu agente principal, Traycer te hace una ronda de **preguntas** para sacar a la superficie requisitos que probablemente habrías olvidado mencionar. Es la fase de "clarificación iterativa" del capítulo 5 incorporada como mecanismo automático en lugar de como recordatorio mental.
 
 La idea es directa: la mayoría de prompts que la gente le da a su agente son pobremente especificados, y la mayoría de fallos del agente vienen de esa pobreza. Si una herramienta automatiza el "espera, antes de empezar dime qué debería pasar si...", la calidad de todo lo que viene después sube.
 
@@ -26,9 +26,9 @@ Esto resuelve directamente el problema del *context drift* del capítulo 1: el p
 
 ### 3. Verificación automática
 
-Cuando el agente termina, Traycer **compara lo que el agente hizo con la spec/plan original** y señala las divergencias. Es la fase de validación del capítulo 4, automatizada y obligatoria, en lugar de "si me acuerdo, lo reviso".
+Cuando el agente termina, Traycer **compara lo que el agente hizo con la spec/plan original** y señala las divergencias. Es la fase de validación del capítulo 5, automatizada y obligatoria, en lugar de "si me acuerdo, lo reviso".
 
-Esta verificación post-código es exactamente la grieta que el capítulo 6 identifica como no resuelta por las herramientas SDD nativas. Traycer la cierra.
+Esta verificación post-código es exactamente la grieta que el capítulo 7 identifica como no resuelta por las herramientas SDD nativas. Traycer la cierra.
 
 ## El patrón general, más allá de Traycer
 
@@ -48,28 +48,28 @@ La forma honesta de evaluar Traycer (o cualquier herramienta del patrón) es: mo
 
 | Pregunta | Si tu respuesta es… | Mira… |
 |---|---|---|
-| ¿Tu equipo ya tiene años de uso de Cursor/Claude Code? | sí | una capa (cap. 7) |
-| ¿Tu workflow sufre más por falta de plan que por falta de proceso? | sí | una capa (cap. 7) |
-| ¿Quieres adoptar SDD desde cero, sin agente preferido? | sí | herramienta nativa (cap. 6) |
-| ¿Quieres una constitution global y disciplina de checkpoints? | sí | Spec-kit (cap. 6) |
-| ¿Tu problema real es organizar features grandes en pasos? | sí | Kiro (cap. 6) |
-| ¿Te interesa empujar la frontera de spec-as-source? | sí | Tessl (cap. 6) |
-| ¿Tu cuello de botella es la coordinación entre roles distintos? | sí | BMAD (cap. 6) |
+| ¿Tu equipo ya tiene años de uso de Cursor/Claude Code? | sí | una capa (cap. 8) |
+| ¿Tu workflow sufre más por falta de plan que por falta de proceso? | sí | una capa (cap. 8) |
+| ¿Quieres adoptar SDD desde cero, sin agente preferido? | sí | herramienta nativa (cap. 7) |
+| ¿Quieres una constitution global y disciplina de checkpoints? | sí | Spec-kit (cap. 7) |
+| ¿Tu problema real es organizar features grandes en pasos? | sí | Kiro (cap. 7) |
+| ¿Te interesa empujar la frontera de spec-as-source? | sí | Tessl (cap. 7) |
+| ¿Tu cuello de botella es la coordinación entre roles distintos? | sí | BMAD (cap. 7) |
 
 Las dos categorías no son excluyentes. Un equipo maduro puede perfectamente usar Spec-kit para la disciplina global de constitution y boundaries, y Traycer (o equivalente) sobre su agente diario para los planes y verificaciones tácticas. Son capas distintas del mismo edificio.
 
 ## Lo que las capas de arquitecto **no** resuelven
 
-Hay un límite real que conviene nombrar: las capas de arquitecto **no resuelven** el problema de mantener specs vivas a meses vista (capítulo 5). Resuelven el ciclo táctico de una feature concreta — clarificar, planificar, ejecutar, verificar — pero no la disciplina sostenida de mantener una spec actualizada cuando el código evoluciona y el equipo cambia.
+Hay un límite real que conviene nombrar: las capas de arquitecto **no resuelven** el problema de mantener specs vivas a meses vista (capítulo 6). Resuelven el ciclo táctico de una feature concreta — clarificar, planificar, ejecutar, verificar — pero no la disciplina sostenida de mantener una spec actualizada cuando el código evoluciona y el equipo cambia.
 
-Para esa parte, las capas son insuficientes por diseño. Su unidad de trabajo es la sesión, no el ciclo de vida del módulo. La disciplina de mantenimiento sigue siendo trabajo del equipo, y ese trabajo tiene un coste real (capítulo 9).
+Para esa parte, las capas son insuficientes por diseño. Su unidad de trabajo es la sesión, no el ciclo de vida del módulo. La disciplina de mantenimiento sigue siendo trabajo del equipo, y ese trabajo tiene un coste real (capítulo 10).
 
 ## El gancho con el harness
 
 Hay una frase que vale la pena dejar grabada porque conecta este capítulo con el siguiente curso de la trilogía. El patrón "capa de arquitecto sobre agente" es, técnicamente, **una pieza de harness aplicada a SDD**. Lo que Traycer hace — interceptar entradas, planificar, verificar salidas — es exactamente el tipo de envoltorio que el curso de harness desarrolla para muchísimas otras dimensiones (tests, sandboxes, sensores, hooks).
 
-Visto así, Traycer no es solo una herramienta SDD: es un ejemplo concreto de cómo un harness bien hecho mejora el SDD. Y los hooks de Kiro mencionados en el capítulo 6 son otro ejemplo del mismo principio: harness + SDD se refuerzan mutuamente. El capítulo 12 vuelve sobre esto.
+Visto así, Traycer no es solo una herramienta SDD: es un ejemplo concreto de cómo un harness bien hecho mejora el SDD. Y los hooks de Kiro mencionados en el capítulo 7 son otro ejemplo del mismo principio: harness + SDD se refuerzan mutuamente. El capítulo 13 vuelve sobre esto.
 
 ## Lo que viene a continuación
 
-Hasta aquí hemos visto el ciclo (cap. 4), las specs vivas (cap. 5), y dos categorías de herramientas (cap. 6 y 7). En el **capítulo 8** bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.
+Hasta aquí hemos visto el ciclo (cap. 5), las specs vivas (cap. 6), y dos categorías de herramientas (cap. 7 y 8). En el **capítulo 9** bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.

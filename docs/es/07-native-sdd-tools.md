@@ -1,4 +1,4 @@
-# 6. Herramientas SDD nativas: Kiro, Spec-kit, Tessl y BMAD
+# 7. Herramientas SDD nativas: Kiro, Spec-kit, Tessl y BMAD
 
 Hay un puñado de herramientas que se han propuesto explícitamente como infraestructura para hacer Spec-Driven Development. Las llamamos **nativas** porque la spec es el centro de su workflow, no un complemento. En este capítulo las recorremos las cuatro más visibles hoy — Kiro, Spec-kit, Tessl y BMAD — situándolas en el espectro del capítulo 2 y siendo honestos sobre dónde encaja cada una y dónde se rompe.
 
@@ -16,7 +16,7 @@ Con eso delante, vamos una por una.
 
 ## Kiro
 
-Kiro es el IDE agéntico de AWS. Su workflow es probablemente el más simple del cuarteto: tres documentos markdown — **Requirements → Design → Tasks** — que se generan en orden y guían al agente a través del ciclo. Encaja casi exactamente con la "variante B" del ciclo del capítulo 4.
+Kiro es el IDE agéntico de AWS. Su workflow es probablemente el más simple del cuarteto: tres documentos markdown — **Requirements → Design → Tasks** — que se generan en orden y guían al agente a través del ciclo. Encaja casi exactamente con la "variante B" del ciclo del capítulo 5.
 
 **Lo que hace bien:**
 
@@ -66,7 +66,7 @@ Tessl es la propuesta más radical del cuarteto. Apunta directamente al nivel **
 **Lo que Fowler señala como problemático:**
 
 - **Está en beta privada**, con todas las limitaciones que eso implica (acceso, soporte, riesgo de cambios disruptivos, riesgo de desaparecer).
-- **El no-determinismo de los LLMs entra en conflicto directo con la promesa de "regenera y obtienes lo mismo"**. Si dos generaciones del mismo spec producen código distinto, la promesa de "una sola fuente de verdad" se desinfla. Esto es casi exactamente el problema que mató al Model-Driven Development en los 2000 y que el capítulo 9 desarrolla.
+- **El no-determinismo de los LLMs entra en conflicto directo con la promesa de "regenera y obtienes lo mismo"**. Si dos generaciones del mismo spec producen código distinto, la promesa de "una sola fuente de verdad" se desinfla. Esto es casi exactamente el problema que mató al Model-Driven Development en los 2000 y que el capítulo 10 desarrolla.
 
 **Para quién encaja:**
 
@@ -109,8 +109,8 @@ Una recomendación honesta, sabiendo que envejecerá:
 
 Hay un patrón que vale la pena nombrar y que ninguna de las cuatro herramientas resuelve por sí sola: **el problema de la verificación post-código**. Las cuatro te ayudan a estructurar la spec y el plan; ninguna verifica con suficiente rigor que el código generado **cumple** la spec original. Esa verificación, cuando se hace, es típicamente otra ronda de prompt manual.
 
-Esa es exactamente la grieta donde Traycer (capítulo 7) y otras herramientas del patrón "capa de arquitecto" se han posicionado.
+Esa es exactamente la grieta donde Traycer (capítulo 8) y otras herramientas del patrón "capa de arquitecto" se han posicionado.
 
 ## Lo que viene a continuación
 
-El capítulo 7 cubre la **otra categoría** de herramientas SDD: las que no reemplazan tu agente sino que lo envuelven. Es una distinción importante porque responde a una pregunta distinta. Las herramientas de este capítulo responden a "¿qué herramienta uso?". Las del próximo responden a "¿cómo mejoro la herramienta que ya estoy usando?".
+El capítulo 8 cubre la **otra categoría** de herramientas SDD: las que no reemplazan tu agente sino que lo envuelven. Es una distinción importante porque responde a una pregunta distinta. Las herramientas de este capítulo responden a "¿qué herramienta uso?". Las del próximo responden a "¿cómo mejoro la herramienta que ya estoy usando?".

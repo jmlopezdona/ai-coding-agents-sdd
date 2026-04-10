@@ -12,7 +12,7 @@ SDD no es escribir mucha documentación. No es waterfall disfrazado. No es cerem
 
 Cambian dos cosas. Primero, **el orden**: especificas antes de pedirle al agente que codifique, no después. Segundo, **la persistencia**: la especificación queda en el repositorio, versionada, y se actualiza cuando el código evoluciona. Es la diferencia entre "le pongo un ticket al agente y veo qué sale" y "le doy un contrato con el que comparar lo que produce".
 
-Lo que SDD no es: una promesa de que el agente acertará a la primera, una garantía de que el código generado será correcto, un sustituto de revisar lo que sale, ni un proceso que escala uniformemente a cualquier tarea — un bug fix de tres líneas y una migración de base de datos no piden la misma cantidad de spec, y forzar lo contrario es una de las cosas más rápidas de matar un equipo (capítulo 9).
+Lo que SDD no es: una promesa de que el agente acertará a la primera, una garantía de que el código generado será correcto, un sustituto de revisar lo que sale, ni un proceso que escala uniformemente a cualquier tarea — un bug fix de tres líneas y una migración de base de datos no piden la misma cantidad de spec, y forzar lo contrario es una de las cosas más rápidas de matar un equipo (capítulo 10).
 
 ## Por qué hace falta una disciplina
 
@@ -47,7 +47,7 @@ La mayoría de los equipos confunden lo que están haciendo: dicen "estamos haci
 
 ## La crítica que también es parte del curso
 
-Una guía honesta sobre SDD tiene que aceptar que la disciplina también puede salir mal. El capítulo 9 desarrolla las críticas más fuertes — el *maintenance tax* de Isoform, el paralelo con el viejo Model-Driven Development de Martin Fowler, la pérdida de los "por qués", la falsa ilusión de control — y el capítulo 10 presenta la alternativa que propone Isoform: *context engineering*, donde la intención y los "por qués" se preservan **dentro del código** en vez de en specs externas.
+Una guía honesta sobre SDD tiene que aceptar que la disciplina también puede salir mal. El capítulo 10 desarrolla las críticas más fuertes — el *maintenance tax* de Isoform, el paralelo con el viejo Model-Driven Development de Martin Fowler, la pérdida de los "por qués", la falsa ilusión de control — y el capítulo 11 presenta la alternativa que propone Isoform: *context engineering*, donde la intención y los "por qués" se preservan **dentro del código** en vez de en specs externas.
 
 No están ahí para hacer ruido. Están porque mal aplicada esta disciplina es indistinguible de la burocracia, y si el curso solo te enseña los patrones positivos te va a dejar sin defensa contra el momento — que llegará — en el que tu propio proceso se convierta en el cuello de botella.
 
@@ -63,7 +63,7 @@ SDD existe porque entre saber usar un agente y saber montarle un harness complet
 
 ## Por dónde seguir
 
-Si quieres entender el dolor concreto que SDD intenta resolver, salta al **capítulo 1**. Si ya lo tienes claro y quieres el modelo conceptual, empieza por el **capítulo 2** (el espectro). Si vienes a por herramientas, los capítulos **6 y 7** son tu ruta corta. Y si vienes a buscar criterio para no tragarte el hype, lee primero el **capítulo 9** y vuelve al principio con otros ojos.
+Si quieres entender el dolor concreto que SDD intenta resolver, salta al **capítulo 1**. Si ya lo tienes claro y quieres el modelo conceptual, empieza por el **capítulo 2** (el espectro). Si vienes a por herramientas, los capítulos **7 y 8** son tu ruta corta. Y si vienes a buscar criterio para no tragarte el hype, lee primero el **capítulo 10** y vuelve al principio con otros ojos.
 
 Lo que no hace falta es leerla en orden de tapa a tapa. Lo que sí hace falta es no quedarse solo con los capítulos cómodos.
 

@@ -1,4 +1,4 @@
-# 3a. Anatomy of a good specification
+# 3. Anatomy of a good specification
 
 There are many ways to write a spec badly and rather few to write one well. This chapter tries to distill what distinguishes a useful spec for an AI agent from one that's ceremony in disguise. Short version: a good spec captures **intent, constraints, and the *whys*** with enough precision that the agent doesn't have to guess, and with enough brevity that a human will still read it six months from now.
 
@@ -40,9 +40,9 @@ How you know it's done. The keyword is **verifiable**: an outsider, reading only
 
 #### Reusing criteria from upstream documents (user stories, contracts)
 
-An unavoidable question: if the upstream user story **already contains acceptance criteria**, what do I do with them? The short answer is **rewrite with traceability** — neither copy verbatim (it imports the imprecision of product language), nor reference-only (`"see JIRA-1234"` breaks the self-containment of chapter 1 and opens invisible drift). You rewrite the criteria in the spec at the level of precision the chapter 5 validator needs, and cite the user story in the "whys" section as the source of *what motivated the decision*, not as the container of *what to do*.
+An unavoidable question: if the upstream user story **already contains acceptance criteria**, what do I do with them? The short answer is **rewrite with traceability** — neither copy verbatim (it imports the imprecision of product language), nor reference-only (`"see JIRA-1234"` breaks the self-containment of chapter 1 and opens invisible drift). You rewrite the criteria in the spec at the level of precision the chapter 6 validator needs, and cite the user story in the "whys" section as the source of *what motivated the decision*, not as the container of *what to do*.
 
-The unified rule: **the spec contains its own precise, verifiable version of the criteria. The upstream document is cited as the source of the why.** The anti-pattern to avoid — *fusing user story and spec into a single hybrid file because "they say the same thing"* — we develop as anti-pattern #13 in chapter 11.
+The unified rule: **the spec contains its own precise, verifiable version of the criteria. The upstream document is cited as the source of the why.** The anti-pattern to avoid — *fusing user story and spec into a single hybrid file because "they say the same thing"* — we develop as anti-pattern #13 in chapter 12.
 
 **One legitimate exception**: when the upstream document is genuinely authoritative and lives under its own validation discipline (an OpenAPI/Protobuf contract with its own CI, a corporate security policy, an RFC), the spec **summarizes the implications** without copying the content. The critical distinction: that upstream document has its *own* validation operating on it. A Jira user story almost never has that property.
 
@@ -110,7 +110,7 @@ One or two sentences. Observable result. For whom.
 - ⚠️ Ask first: ...
 - 🚫 Never: ...
 
-## Affected surfaces (recommended whenever the spec touches >1 component; see [section 3b](03b-spec-in-context.md#the-spec-and-technical-components-consume-produce-modify))
+## Affected surfaces (recommended whenever the spec touches >1 component; see [section 4](04-spec-in-context.md#the-spec-and-technical-components-consume-produce-modify))
 ### [Component] — [produced | modified | consumed]
 - **Functional:** ...
 - **Non-functional:** ...
@@ -128,7 +128,7 @@ The reason has a name. Addy Osmani, citing academic studies, calls it **the curs
 
 The winning strategy, then, is to break large specs into small modules and pass the agent only the module relevant to the current task.
 
-This is also one of the reasons tools like Spec-kit and Kiro generate **many small files** instead of one big one, and why that proliferation, mismanaged, becomes its own problem (we'll see this in chapter 9).
+This is also one of the reasons tools like Spec-kit and Kiro generate **many small files** instead of one big one, and why that proliferation, mismanaged, becomes its own problem (we'll see this in chapter 10).
 
 ## What if a generator agent writes the spec?
 
@@ -150,9 +150,9 @@ A good spec operates at a **different abstraction level** from the code. If it m
 
 When you end up with specs like this — and, if you leave the agent in its default mode, you will — you pay two costs that reinforce each other.
 
-**You implement twice.** You've already paid the cost of thinking through the implementation at the level of classes and methods in the spec, and you're going to pay the same cost again when you code. Worse: anything you discover while implementing (and implementing always reveals something) forces you to go back and edit the spec, or accept drift on day one. You're at the worst point on the chapter 9 curve: maintenance tax from day one, before you've written a single line of code.
+**You implement twice.** You've already paid the cost of thinking through the implementation at the level of classes and methods in the spec, and you're going to pay the same cost again when you code. Worse: anything you discover while implementing (and implementing always reveals something) forces you to go back and edit the spec, or accept drift on day one. You're at the worst point on the chapter 10 curve: maintenance tax from day one, before you've written a single line of code.
 
-**Human review becomes as expensive as code review.** This is exactly what Fowler reports about Spec-kit in chapter 6 — that the generated files were *heavier to review than the code itself*. And it's worse than reviewing code directly, because at least code runs and tests verify it; pseudocode in markdown has no safety net. You're reviewing something at code-level detail but **without code's guarantees**. The tired reviewer skims it — and the "spec" passes the filter as if it had been reviewed.
+**Human review becomes as expensive as code review.** This is exactly what Fowler reports about Spec-kit in chapter 7 — that the generated files were *heavier to review than the code itself*. And it's worse than reviewing code directly, because at least code runs and tests verify it; pseudocode in markdown has no safety net. You're reviewing something at code-level detail but **without code's guarantees**. The tired reviewer skims it — and the "spec" passes the filter as if it had been reviewed.
 
 The combination of the two is poisonous: you double the work *and* review it worse. It's almost always worse than not having written a spec at all.
 
@@ -169,14 +169,14 @@ Second, there are things the agent **can't** generate well no matter what templa
 This doesn't mean agent-generated specs are useless. They're useful, but in a narrower role than most people imagine:
 
 - **The agent can start well**: the **objective** block, the **verifiable acceptance criteria** (carefully), a first list of **candidate non-goals** that the human then refines, and a proposal for **boundaries** based on patterns it already sees in the repo.
-- **The human has to put in, no exceptions**: the **whys**, the **real non-goals** (especially political or scope ones that aren't in any input), the team's **tacit technical constraints**, and the decision of *how much* spec the task deserves (what chapter 8 will call *modulation*: matching the weight of the spec to the actual complexity and risk of the feature). And, above all, the human has to **delete** anything the agent injected as pseudocode: classes, methods, signatures, payloads. If after deleting all that the spec is empty, you didn't need a spec; you needed well-written code (chapter 10, *context engineering*).
+- **The human has to put in, no exceptions**: the **whys**, the **real non-goals** (especially political or scope ones that aren't in any input), the team's **tacit technical constraints**, and the decision of *how much* spec the task deserves (what chapter 9 will call *modulation*: matching the weight of the spec to the actual complexity and risk of the feature). And, above all, the human has to **delete** anything the agent injected as pseudocode: classes, methods, signatures, payloads. If after deleting all that the spec is empty, you didn't need a spec; you needed well-written code (chapter 11, *context engineering*).
 
 The most useful practical rule: **if your generated spec mentions a function signature or a class name, delete it**. The spec talks about what guarantees the system meets, not how it's built.
 
-And the honest warning: using the agent as a draft generator **doesn't reduce the total cost** of doing SDD well. What it reduces is the cost of starting the first draft, which for many teams is the psychological barrier that weighs the most. The real cost — thinking intent precisely, capturing whys, keeping the spec alive — is still there, with no shortcut, and the agent doesn't pay it for you. If your SDD adoption depends on automatic generation eliminating that cost, what you'll have isn't SDD — you'll have anti-pattern #12 from chapter 11.
+And the honest warning: using the agent as a draft generator **doesn't reduce the total cost** of doing SDD well. What it reduces is the cost of starting the first draft, which for many teams is the psychological barrier that weighs the most. The real cost — thinking intent precisely, capturing whys, keeping the spec alive — is still there, with no shortcut, and the agent doesn't pay it for you. If your SDD adoption depends on automatic generation eliminating that cost, what you'll have isn't SDD — you'll have anti-pattern #12 from chapter 12.
 
 ## What comes next
 
 Up to here we've seen what to put inside a spec and the two most expensive traps when writing one: specs that are too large and specs generated by agents without supervision. But a spec's anatomy doesn't end with its blocks — **the right level of detail depends on context**: the spectrum level you're operating at, the technical components you touch, and the kind of validation you'll apply.
 
-In **[section 3b](03b-spec-in-context.md)** we tackle exactly that: how to calibrate the spec so that detail is neither waste nor blindness.
+In **[section 4](04-spec-in-context.md)** we tackle exactly that: how to calibrate the spec so that detail is neither waste nor blindness.

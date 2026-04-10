@@ -1,6 +1,6 @@
-# 3b. The spec in context: detail, components and calibration
+# 4. The spec in context: detail, components and calibration
 
-In the [previous section](03a-anatomy-of-a-spec.md) we saw what to put inside a spec — the six blocks, the template, the curse of instructions, and the traps of agent generation. Now comes the follow-up question: **how much detail**, and **how does the spec relate to the technical components** of the system it touches.
+In the [previous section](03-anatomy-of-a-spec.md) we saw what to put inside a spec — the six blocks, the template, the curse of instructions, and the traps of agent generation. Now comes the follow-up question: **how much detail**, and **how does the spec relate to the technical components** of the system it touches.
 
 ## The right level of detail depends on the spectrum level
 
@@ -10,7 +10,7 @@ So far we've talked about a spec's anatomy as if it were a single thing. It isn'
 
 In spec-first the spec is read once, when the feature kicks off, and from then on the code drifts freely. Its only function is to **align team and agent at the start**. Nothing is going to read it again, so every extra line you write is work no one will ever recover.
 
-The right amount of detail: objective, non-goals, acceptance criteria, the critical whys, and little else. If your spec-first runs longer than a screen, it's almost always because you're writing *aspirational* spec-anchored (anti-pattern #4 in chapter 11) or because you've fallen into pseudocode (anti-pattern #12). The optimal spec-first is the minimum viable to start with clear intent.
+The right amount of detail: objective, non-goals, acceptance criteria, the critical whys, and little else. If your spec-first runs longer than a screen, it's almost always because you're writing *aspirational* spec-anchored (anti-pattern #4 in chapter 12) or because you've fallen into pseudocode (anti-pattern #12). The optimal spec-first is the minimum viable to start with clear intent.
 
 ### Spec-anchored → medium detail, bounded by what the anchoring can verify
 
@@ -26,7 +26,7 @@ This is where the conversation gets interesting. Spec-as-source does need maximu
 
 It's **formal or semi-formal** detail: type signatures, contracts, invariants, grammars, transformation rules. It's **generator-friendly** detail: designed so a generator (LLM or otherwise) can produce deterministic code from it. And it's legitimate for signatures, schemas and concrete structures to appear — because at this level **the spec is the source code, just in a different notation**.
 
-Here's the uncomfortable connection with the [previous section](03a-anatomy-of-a-spec.md#what-if-a-generator-agent-writes-the-spec): an agent-generated "spec" that is pseudocode in disguise *looks* superficially like a spec-as-source. It has classes, methods, payloads, rules. But there's a critical difference: **a legitimate spec-as-source comes with a deterministic generator that produces the code**. Without that generator, what you have is the worst possible combination: spec-as-source's exhaustive detail with spec-first's non-determinism. It's the conceptual equivalent of writing XML+OCL in the 2000s without an MDA compiler behind it. Fowler would know exactly what to call it.
+Here's the uncomfortable connection with the [previous section](03-anatomy-of-a-spec.md#what-if-a-generator-agent-writes-the-spec): an agent-generated "spec" that is pseudocode in disguise *looks* superficially like a spec-as-source. It has classes, methods, payloads, rules. But there's a critical difference: **a legitimate spec-as-source comes with a deterministic generator that produces the code**. Without that generator, what you have is the worst possible combination: spec-as-source's exhaustive detail with spec-first's non-determinism. It's the conceptual equivalent of writing XML+OCL in the 2000s without an MDA compiler behind it. Fowler would know exactly what to call it.
 
 ### The unifying rule
 
@@ -36,7 +36,7 @@ If you have to distill all of the above into a single sentence:
 
 In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.
 
-Almost every pathology we'll see in chapter 11 comes from **misaligning these three things**: writing spec-anchored without anchoring (#4), writing spec-as-source without a generator (#9 + #12), or writing spec-first with spec-as-source-level detail (#2 + #12). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.
+Almost every pathology we'll see in chapter 12 comes from **misaligning these three things**: writing spec-anchored without anchoring (#4), writing spec-as-source without a generator (#9 + #12), or writing spec-first with spec-as-source-level detail (#2 + #12). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.
 
 ## The spec and technical components: consume, produce, modify
 
@@ -79,16 +79,16 @@ For each dimension, an **optional reference to the deeper document** if it exist
 Three important clarifications about this pattern:
 
 1. **If a dimension doesn't add anything, omit it.** Don't force three lines per component for symmetry. Absence is informative: it says that dimension doesn't change.
-2. **What goes in the spec is what's load-bearing**: what the chapter 5 validator can compare against the code, and what the team wants to be contractual. Finer detail lives in the component's documentation, which has its own validation mechanism (tests, type checks, versioned contracts).
+2. **What goes in the spec is what's load-bearing**: what the chapter 6 validator can compare against the code, and what the team wants to be contractual. Finer detail lives in the component's documentation, which has its own validation mechanism (tests, type checks, versioned contracts).
 3. **The term "non-functional" is classical but contested** (Fowler argues everything is functional, just along different dimensions). For the purposes of this chapter we use it as an operational category — three different questions to ask about each component — not as ontology. If your team prefers calling them *behavior*, *qualities*, *contracts*, it makes no difference. What matters is that they are **three different questions**, not one.
 
 > **The three dimensions in one line**: *functional* describes observable behavior; *non-functional* the cross-cutting constraints; *technical* the contract and integration decisions. Only the load-bearing parts go in the spec; the rest gets referenced.
 
 ### The "Affected surfaces" block
 
-When a spec touches multiple components, it's worth having an explicit block at the start that **enumerates the affected surfaces with their relationship type**. It's not work breakdown (it doesn't enumerate tasks, doesn't mention files, doesn't assign order — that lives in the planning phase of chapter 4). It's **surface mapping**, and it does three things no other part of the spec does well:
+When a spec touches multiple components, it's worth having an explicit block at the start that **enumerates the affected surfaces with their relationship type**. It's not work breakdown (it doesn't enumerate tasks, doesn't mention files, doesn't assign order — that lives in the planning phase of chapter 5). It's **surface mapping**, and it does three things no other part of the spec does well:
 
-1. It gives the agent and the chapter 5 validator an **enumerable list** of the change's blast radius, which in chapter 1 was invisible.
+1. It gives the agent and the chapter 6 validator an **enumerable list** of the change's blast radius, which in chapter 1 was invisible.
 2. It gives the human a **signal of the spec's size**: if the list has 12 entries, the spec is almost certainly *two features* badly stitched together, or a refactor masquerading as a feature.
 3. **It isn't work breakdown**, which keeps it on the "what" side rather than the "how".
 
@@ -129,9 +129,9 @@ Notice how the *consumed* component has a much shorter block — it only describ
 
 A practical rule that works: if a spec produces or modifies more than **3-4 surfaces**, you probably have one of three problems, and it's worth diagnosing before continuing:
 
-- **(a)** A feature too big that should be split into multiple specs (chapter 8 modulation).
+- **(a)** A feature too big that should be split into multiple specs (chapter 9 modulation).
 - **(b)** An architectural change disguised as a feature, which deserves its own ADR that this spec then hangs from.
-- **(c)** A refactor camouflaged as a feature (also chapter 8 modulation): what you're changing is the *shape* of the system, not adding business capability.
+- **(c)** A refactor camouflaged as a feature (also chapter 9 modulation): what you're changing is the *shape* of the system, not adding business capability.
 
 The three have different treatments in the rest of the course, and the spec alone isn't the right artifact for any of them.
 
@@ -149,7 +149,7 @@ Pulling this section together with the earlier subsection on upstream documents,
 | **Feature brief / product doc** | Extract the cardinal whys | Whys | Importing vague product language |
 | **User story** | Rewrite criteria with traceability | Criteria + Whys | Verbatim copy or opaque reference |
 
-And a new anti-pattern that appears when references accumulate without discipline: **reference soup** — a spec where its own content gets buried under a long list of citations to ADRs, contracts, briefs and components, all without prioritization. The agent and the human don't know which are load-bearing and which are tangential, and they end up ignoring all of them. It's the inverse of the *curse of instructions* — a spec drowned by its own citations — and we develop it as anti-pattern #14 in chapter 11. The preventive rule: **reference only what the agent or the human needs for this task, and annotate the why of each reference**.
+And a new anti-pattern that appears when references accumulate without discipline: **reference soup** — a spec where its own content gets buried under a long list of citations to ADRs, contracts, briefs and components, all without prioritization. The agent and the human don't know which are load-bearing and which are tangential, and they end up ignoring all of them. It's the inverse of the *curse of instructions* — a spec drowned by its own citations — and we develop it as anti-pattern #14 in chapter 12. The preventive rule: **reference only what the agent or the human needs for this task, and annotate the why of each reference**.
 
 ## In summary: what distinguishes a good spec from a mediocre one
 
@@ -181,4 +181,4 @@ The good one fits in roughly the same space as the mediocre one, but it captures
 
 Up to here we've seen what's *inside* a spec and how to calibrate its detail for context. The unifying rule: **write only the detail your validation mechanism knows how to consume**. If anatomy answers the *what*, what comes next is the *when* and the *how it's validated*: the moment a spec stops being a document and starts behaving like a contract.
 
-In **chapter 4** we'll see the cycle a spec lives in: the four phases of the SDD process (with their two variants in the literature), how to chain them with an agent, and where the verification that prevents code from drifting away from the spec fits.
+In **Chapter 5** we'll see the cycle a spec lives in: the four phases of the SDD process (with their two variants in the literature), how to chain them with an agent, and where the verification that prevents code from drifting away from the spec fits.

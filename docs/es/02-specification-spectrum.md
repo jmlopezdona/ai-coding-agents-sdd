@@ -47,7 +47,7 @@ Es una pista honesta. Spec-anchored no es una invención nueva del SDD. Es BDD b
 
 **Cuándo se rompe:**
 
-- Cuando el coste de mantener spec y código sincronizados se vuelve mayor que el beneficio. Esto es real y el capítulo 9 lo desarrolla con honestidad.
+- Cuando el coste de mantener spec y código sincronizados se vuelve mayor que el beneficio. Esto es real y el capítulo 10 lo desarrolla con honestidad.
 - Cuando los tests automáticos no cubren lo suficiente como para cumplir su rol de "anclaje".
 
 ## Nivel 3 — Spec-as-Source
@@ -68,7 +68,7 @@ Lo que hace que Simulink funcione, y que es exactamente lo que falta en software
 2. **Dominio acotado**: sistemas de control, dinámica física, procesamiento de señales. Problemas con leyes bien establecidas.
 3. **Generación determinística**: el mismo diagrama produce el mismo código. Siempre.
 
-Para software de propósito general — APIs web, frontends, scripts internos, todo lo que la mayoría de equipos hacen el 95% del tiempo — ninguna de las tres condiciones se cumple. Las specs están en lenguaje natural (ambigüedad), el dominio cambia con cada feature (no acotado), y los LLMs son no determinísticos por diseño. Por eso spec-as-source aplicado a este tipo de software sigue siendo más promesa que realidad. La razón fundamental es la misma que mató al Model-Driven Development en los años 2000, y el capítulo 9 vuelve sobre esto.
+Para software de propósito general — APIs web, frontends, scripts internos, todo lo que la mayoría de equipos hacen el 95% del tiempo — ninguna de las tres condiciones se cumple. Las specs están en lenguaje natural (ambigüedad), el dominio cambia con cada feature (no acotado), y los LLMs son no determinísticos por diseño. Por eso spec-as-source aplicado a este tipo de software sigue siendo más promesa que realidad. La razón fundamental es la misma que mató al Model-Driven Development en los años 2000, y el capítulo 10 vuelve sobre esto.
 
 **Cuándo funciona:**
 
@@ -126,7 +126,7 @@ Si no puedes responder con seguridad, la respuesta operativa es la primera. Est�
 
 La trampa más cara que vemos en equipos que adoptan SDD es esta: aspiran a spec-anchored, escriben specs muy detalladas como si lo estuvieran, pero **no invierten en el mecanismo de anclaje**. No hay tests que comparen spec y código. No hay validador. No hay agente recurrente. Solo hay una carpeta `specs/` con markdowns que poco a poco se desactualizan.
 
-Eso es spec-first vestido de spec-anchored, y es peor que spec-first puro porque genera la falsa sensación de tener una fuente de verdad cuando lo que tienes es ficción documentada. El capítulo 9 vuelve sobre esto bajo el nombre de "ilusión de control".
+Eso es spec-first vestido de spec-anchored, y es peor que spec-first puro porque genera la falsa sensación de tener una fuente de verdad cuando lo que tienes es ficción documentada. El capítulo 10 vuelve sobre esto bajo el nombre de "ilusión de control".
 
 La regla operativa: **no declares que haces spec-anchored hasta que tengas el mecanismo automático de anclaje funcionando**. Sin ese mecanismo, lo que tienes es spec-first con más papeleo.
 

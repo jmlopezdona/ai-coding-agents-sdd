@@ -1,4 +1,4 @@
-# 11. Anti-patrones del SDD
+# 12. Anti-patrones del SDD
 
 Una lista corta de los errores más caros que se ven en equipos que adoptan Spec-Driven Development. No están aquí para asustarte sino para que cuando los reconozcas en tu propio proceso — y los vas a reconocer — sepas pararlos antes de que se conviertan en hábito.
 
@@ -50,9 +50,9 @@ Cada anti-patrón sigue el mismo formato: **nombre**, síntoma observable, por q
 
 **Síntoma.** Cada cambio — feature, refactor, bug fix de tres líneas — pasa por el mismo proceso completo: spec con plantilla, plan formal, descomposición en tareas, validación. El equipo se queja de que SDD "es muy lento" y tiene razón.
 
-**Por qué pasa.** Falta de modulación. La adopción se hizo sin enseñar la diferencia entre los patrones del capítulo 8.
+**Por qué pasa.** Falta de modulación. La adopción se hizo sin enseñar la diferencia entre los patrones del capítulo 9.
 
-**Corrección.** Proceso proporcional al riesgo. Bug fixes triviales no merecen spec; features grandes sí. La regla del capítulo 8 — *el peso de la spec proporcional al coste del cambio si sale mal* — no es opcional, es lo que hace al proceso sostenible.
+**Corrección.** Proceso proporcional al riesgo. Bug fixes triviales no merecen spec; features grandes sí. La regla del capítulo 9 — *el peso de la spec proporcional al coste del cambio si sale mal* — no es opcional, es lo que hace al proceso sostenible.
 
 ---
 
@@ -70,7 +70,7 @@ Cada anti-patrón sigue el mismo formato: **nombre**, síntoma observable, por q
 
 **Síntoma.** Una spec se escribe al inicio de la feature y nunca más se actualiza. El código evoluciona, la spec se queda. Seis meses después, leer la spec engaña activamente: dice cosas que el código ya no hace.
 
-**Por qué pasa.** Ausencia de bucle bidireccional (capítulo 5). La definición de "hecho" no incluye actualizar la spec, así que el incentivo es no hacerlo.
+**Por qué pasa.** Ausencia de bucle bidireccional (capítulo 6). La definición de "hecho" no incluye actualizar la spec, así que el incentivo es no hacerlo.
 
 **Corrección.** "Hecho" = "código mergeado **y** spec actualizada". Sin lo segundo, la tarea no está hecha. Esto suena duro y lo es, pero es la única forma en que el bucle bidireccional sobrevive a un equipo bajo presión.
 
@@ -126,7 +126,7 @@ A esto se suma el sesgo del equipo: una spec generada que tiene 600 líneas, cla
 
 **Corrección.** Tres reglas concretas:
 
-1. **Si tu spec menciona firmas de función, nombres de clase o estructuras de payload, bórralas.** La spec habla de qué garantías tiene que cumplir el sistema, no de cómo se construye. Si después de borrarlas la spec queda vacía, no necesitabas una spec — necesitabas código bien escrito (cap. 10).
+1. **Si tu spec menciona firmas de función, nombres de clase o estructuras de payload, bórralas.** La spec habla de qué garantías tiene que cumplir el sistema, no de cómo se construye. Si después de borrarlas la spec queda vacía, no necesitabas una spec — necesitabas código bien escrito (cap. 11).
 2. **Usa el agente como draft generator solo del *qué*, no del *cómo*.** El agente puede arrancar bien el objetivo, los criterios de aceptación y una lista candidata de no-goals. El humano tiene que poner sí o sí los por qués, los no-goals reales y las restricciones tácitas. Lo que el agente no sabe, lo inventa o lo omite — y los por qués inventados son peores que los por qués ausentes.
 3. **Mide la ratio detalle-implementación / detalle-intención de tus specs.** Si más del 30% de la spec describe estructuras de código, estás escribiendo pseudocódigo, no una spec. Es señal de que el agente generador (o tú mismo) ha bajado un nivel de abstracción que rompe el propósito del documento.
 
@@ -140,13 +140,13 @@ El test sencillo: una buena spec sobrevive a **dos implementaciones distintas** 
 
 **Por qué pasa.** Es muy tentador, especialmente cuando la documentación de producto vive en el mismo repo Git que las specs. La proximidad física hace que el equipo pregunte "¿para qué tener dos archivos si dicen lo mismo?" — y la respuesta intuitiva es fusionarlos. Pero la pregunta está mal planteada: no dicen lo mismo. La user story responde a *qué quiere el usuario y por qué le importa al negocio*. La spec responde a *qué garantías observables tiene que cumplir el sistema*. Tienen un solapamiento del 60-70%, pero no son la misma cosa, y el solapamiento no justifica fundirlas — cada artefacto sirve a una audiencia distinta y cambia por motivos distintos.
 
-A esto se suma una causa más sutil: el equipo confunde *trazabilidad* con *unificación*. Quiere que el lazo entre intención de producto y contrato técnico sea explícito, y asume que la única forma de lograrlo es ponerlos en el mismo documento. Pero la trazabilidad se consigue con referencias, traces y sensores automáticos (capítulo 5), no fundiendo dos artefactos con propósitos distintos.
+A esto se suma una causa más sutil: el equipo confunde *trazabilidad* con *unificación*. Quiere que el lazo entre intención de producto y contrato técnico sea explícito, y asume que la única forma de lograrlo es ponerlos en el mismo documento. Pero la trazabilidad se consigue con referencias, traces y sensores automáticos (capítulo 6), no fundiendo dos artefactos con propósitos distintos.
 
 **Corrección.** Tres reglas:
 
 1. **Mantén la separación física**, incluso cuando los dos archivos vivan en el mismo repo. La user story en `docs/product/`, la spec en `specs/`, cada una con su propia historia de cambios y su propia audiencia. La proximidad facilita la trazabilidad y la validación cruzada — no la fusión.
 2. **El test del autor**. Si el archivo lo edita tanto el PM (por razones de producto) como un ingeniero (por razones de implementación) sin coordinación, es señal de que estás manteniendo dos artefactos colapsados en uno. Sepáralos.
-3. **Habilita un sensor de divergencia** entre ambos archivos en lugar de fusionarlos. Un git hook o un agente recurrente del capítulo 5 puede vigilar cuando la user story cambie sin que la spec se actualice (o al revés), y abrir un issue para reconciliarlas conscientemente. Eso preserva las dos audiencias y hace explícita la relación entre los dos artefactos.
+3. **Habilita un sensor de divergencia** entre ambos archivos en lugar de fusionarlos. Un git hook o un agente recurrente del capítulo 6 puede vigilar cuando la user story cambie sin que la spec se actualice (o al revés), y abrir un issue para reconciliarlas conscientemente. Eso preserva las dos audiencias y hace explícita la relación entre los dos artefactos.
 
 El capítulo 3 desarrolla este tema en su sección *"Reutilizar criterios de documentos upstream"* — aquí solo señalamos por qué la fusión silenciosa es un anti-patrón con nombre propio. Es una de las patologías que más amplifica meter la documentación de producto en el repo sin pensar: lo que era una buena idea organizativa se convierte en un arquetipo nuevo de spec malhecha.
 
@@ -176,8 +176,8 @@ El capítulo 3 desarrolla este tema en su sección *"La spec y los componentes t
 
 Una vez al trimestre, durante una retrospectiva, lee esta lista en voz alta y pregunta al equipo: *¿reconocemos alguno de estos en nosotros?* La gente, contra lo que el ego promete, casi siempre reconoce uno o dos. Y reconocerlos es la mitad de pararlos.
 
-Si reconoces tres o más, **el problema no es uno de los anti-patrones; es la adopción entera de SDD**. Vuelve al capítulo 9 y al 10 y replantea si SDD es la herramienta correcta para tu situación.
+Si reconoces tres o más, **el problema no es uno de los anti-patrones; es la adopción entera de SDD**. Vuelve al capítulo 10 y al 11 y replantea si SDD es la herramienta correcta para tu situación.
 
 ## Lo que viene a continuación
 
-El **capítulo 12** cierra el curso conectando SDD con el siguiente paso: el harness. Cuáles son los puntos exactos donde la disciplina se acopla con la ingeniería del harness, y por qué los dos juntos producen mucho más que los dos por separado.
+El **capítulo 13** cierra el curso conectando SDD con el siguiente paso: el harness. Cuáles son los puntos exactos donde la disciplina se acopla con la ingeniería del harness, y por qué los dos juntos producen mucho más que los dos por separado.
