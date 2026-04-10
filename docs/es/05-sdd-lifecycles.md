@@ -40,9 +40,17 @@ En la práctica, los equipos maduros acaban combinando: usan los nombres del enf
 
 Lo que sigue es una **síntesis práctica de ambos enfoques** — un flujo de cinco pasos que toma lo mejor de cada uno. No es ninguno de los dos en estado puro, sino cómo se ve el proceso cuando lo haces de verdad.
 
+!!! warning "Qué significa «spec» en este ciclo de vida"
+
+    Cuando este capítulo dice *"la spec"*, no se refiere necesariamente a un único documento. Se refiere a **todo lo que el agente necesita para tener completitud y rigor**: qué implementar, qué no implementar, por qué, por qué no, y cómo validarlo.
+
+    En una PoC, un prototipo o un proyecto pequeño greenfield, esa información cabe en un solo archivo — la spec del capítulo 3 es suficiente. Pero en un proyecto enterprise, brownfield o de cierta complejidad, la spec **es la suma** del documento SDD más la documentación funcional y técnica upstream que lo alimenta: requisitos validados por el cliente, decisiones arquitectónicas, contratos de API, reglas de negocio documentadas.
+
+    Si esa documentación upstream no existe o no tiene el rigor necesario, el primer paso no es escribir la spec — es **conseguir ese upstream**. Saltar este paso y confiar en que el agente derivará los requisitos a partir de una conversación informal es exactamente cómo se cae en la falta de rigor que SDD pretende evitar. El capítulo 4 detalla [cómo consumir, producir y referenciar esos artefactos](04-spec-in-context.md#la-spec-y-sus-fuentes-externas-consumir-producir-modificar).
+
 ### Paso 1 — Especificar la intención
 
-Abres una sesión con el agente. **No le pides que escriba código**. Le pides que te ayude a redactar la spec usando la plantilla del capítulo 3. Le das el objetivo de alto nivel y dejas que te haga preguntas. Si el agente no te hace preguntas, hazlas tú: "qué partes del sistema toca esto", "qué casos límite estoy olvidando", "qué no estamos construyendo y deberíamos decir explícitamente".
+Abres una sesión con el agente. **No le pides que escriba código**. Le pides que te ayude a redactar la spec usando la plantilla del capítulo 3, **alimentándola con la documentación upstream** que ya tengas — requisitos funcionales, criterios de aceptación, decisiones técnicas previas. Le das el objetivo de alto nivel y dejas que te haga preguntas. Si el agente no te hace preguntas, hazlas tú: "qué partes del sistema toca esto", "qué casos límite estoy olvidando", "qué no estamos construyendo y deberíamos decir explícitamente".
 
 El output de este paso es un archivo en `specs/` o donde tu proyecto los aloje. Cometido al repo, revisable, versionado.
 

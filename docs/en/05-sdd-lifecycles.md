@@ -40,9 +40,17 @@ In practice, mature teams end up combining: they use approach B's names in daily
 
 What follows is a **practical synthesis of both approaches** — a five-step flow that takes the best of each. It's neither in its pure form, but rather how the process looks when you actually do it.
 
+!!! warning "What «spec» means in this lifecycle"
+
+    When this chapter says *"the spec"*, it doesn't necessarily mean a single document. It means **everything the agent needs for completeness and rigor**: what to implement, what not to implement, why, why not, and how to validate it.
+
+    For a PoC, a prototype, or a small greenfield project, that information fits in a single file — the chapter 3 spec is enough. But for an enterprise, brownfield, or sufficiently complex project, the spec **is the sum** of the SDD document plus the upstream functional and technical documentation that feeds it: client-validated requirements, architectural decisions, API contracts, documented business rules.
+
+    If that upstream documentation doesn't exist or lacks the necessary rigor, the first step isn't writing the spec — it's **getting that upstream in place**. Skipping this step and trusting the agent to derive requirements from an informal conversation is exactly how you fall into the lack of rigor SDD is meant to prevent. Chapter 4 details [how to consume, produce and reference those artifacts](04-spec-in-context.md#the-spec-and-its-external-sources-consume-produce-modify).
+
 ### Step 1 — Specify intent
 
-You open a session with the agent. **You don't ask it to write code**. You ask it to help draft the spec using the chapter 3 template. You give the high-level objective and let it ask questions. If the agent doesn't ask questions, ask them yourself: "what parts of the system does this touch", "what edge cases am I forgetting", "what aren't we building that we should explicitly say".
+You open a session with the agent. **You don't ask it to write code**. You ask it to help draft the spec using the chapter 3 template, **feeding it with whatever upstream documentation** you already have — functional requirements, acceptance criteria, prior technical decisions. You give the high-level objective and let it ask questions. If the agent doesn't ask questions, ask them yourself: "what parts of the system does this touch", "what edge cases am I forgetting", "what aren't we building that we should explicitly say".
 
 The output of this step is a file in `specs/` or wherever your project hosts them. Committed, reviewable, versioned.
 
