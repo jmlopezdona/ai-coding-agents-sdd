@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#5-los-ciclos-de-vida-sdd-dos-variantes-y-cuando-usar-cada-una" class="md-skip">
+        <a href="#5-los-ciclos-de-vida-sdd-dos-enfoques-y-cuando-usar-cada-uno" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1010,10 +1010,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variante-a" class="md-nav__link">
+  <a href="#enfoque-a" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variante A
+        Enfoque A
       
     </span>
   </a>
@@ -1021,10 +1021,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variante-b" class="md-nav__link">
+  <a href="#enfoque-b" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variante B
+        Enfoque B
       
     </span>
   </a>
@@ -1733,10 +1733,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variante-a" class="md-nav__link">
+  <a href="#enfoque-a" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variante A
+        Enfoque A
       
     </span>
   </a>
@@ -1744,10 +1744,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variante-b" class="md-nav__link">
+  <a href="#enfoque-b" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variante B
+        Enfoque B
       
     </span>
   </a>
@@ -1895,10 +1895,10 @@
   
 
 
-<h1 id="5-los-ciclos-de-vida-sdd-dos-variantes-y-cuando-usar-cada-una">5. Los ciclos de vida SDD: dos variantes y cuándo usar cada una<a class="headerlink" href="#5-los-ciclos-de-vida-sdd-dos-variantes-y-cuando-usar-cada-una" title="Enlace permanente a esta sección">&para;</a></h1>
+<h1 id="5-los-ciclos-de-vida-sdd-dos-enfoques-y-cuando-usar-cada-uno">5. Los ciclos de vida SDD: dos enfoques y cuándo usar cada uno<a class="headerlink" href="#5-los-ciclos-de-vida-sdd-dos-enfoques-y-cuando-usar-cada-uno" title="Enlace permanente a esta sección">&para;</a></h1>
 <p>Si lees tres artículos sobre Spec-Driven Development, encontrarás tres versiones distintas del "ciclo de vida SDD". Eso no es un fallo de la disciplina; es señal de que la disciplina aún se está formando. Pero deja al lector con un problema concreto: <em>¿qué fases hay, en qué orden, y por qué dos fuentes serias dicen cosas distintas?</em></p>
-<p>Este capítulo desambigua. Hay <strong>dos variantes principales</strong> del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellas dice algo sobre el tipo de proyecto en el que estás.</p>
-<h2 id="variante-a">Variante A<a class="headerlink" href="#variante-a" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Este capítulo desambigua. Hay <strong>dos enfoques principales</strong> del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellas dice algo sobre el tipo de proyecto en el que estás.</p>
+<h2 id="enfoque-a">Enfoque A<a class="headerlink" href="#enfoque-a" title="Enlace permanente a esta sección">&para;</a></h2>
 <p><a href="https://arxiv.org/html/2602.00180">El paper de arXiv sobre SDD</a> propone un ciclo de cuatro fases:</p>
 <ol>
 <li><strong>Specify</strong> — definir qué tiene que hacer el software a través de descripciones de comportamiento, criterios de aceptación y requisitos. Sin prescribir cómo se implementa.</li>
@@ -1906,8 +1906,8 @@
 <li><strong>Implement</strong> — producir código que realiza la spec según el plan, en incrementos pequeños y validados.</li>
 <li><strong>Validate</strong> — verificar que el código realmente cumple la spec mediante tests automáticos, escenarios BDD, aceptación de stakeholders.</li>
 </ol>
-<p>Lo característico de esta variante es que la <strong>validación es una fase explícita y separada</strong>. La verificación no es algo que pasa "al final si hay tiempo"; es uno de los cuatro vértices del ciclo, con el mismo peso que la implementación.</p>
-<h2 id="variante-b">Variante B<a class="headerlink" href="#variante-b" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Lo característico de este enfoque es que la <strong>validación es una fase explícita y separada</strong>. La verificación no es algo que pasa "al final si hay tiempo"; es uno de los cuatro vértices del ciclo, con el mismo peso que la implementación.</p>
+<h2 id="enfoque-b">Enfoque B<a class="headerlink" href="#enfoque-b" title="Enlace permanente a esta sección">&para;</a></h2>
 <p><a href="https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788">El artículo más práctico sobre cómo usar SDD en el día a día</a> propone un ciclo distinto, también de cuatro fases, pero con nombres y fronteras diferentes:</p>
 <ol>
 <li><strong>Requirements</strong> — qué se construye, incluyendo user stories, casos límite, requisitos de seguridad y <em>no-goals</em> explícitos.</li>
@@ -1915,20 +1915,20 @@
 <li><strong>Tasks</strong> — descomponer el diseño en pasos discretos, ordenados por dependencias, lo bastante pequeños para una sesión enfocada del agente, cada uno con tests.</li>
 <li><strong>Implementation</strong> — el agente escribe código tarea a tarea, guiado por el contexto completo de las fases anteriores, con TDD verificando cada paso.</li>
 </ol>
-<p>La diferencia importante con la variante A es que aquí <strong>la validación está embebida en la fase de tareas</strong> (cada tarea trae sus tests) y no aparece como fase autónoma. A cambio, hay una fase explícita — <em>Tasks</em> — que en la variante A no existe como tal y vive escondida dentro de "Plan".</p>
+<p>La diferencia importante con el enfoque A es que aquí <strong>la validación está embebida en la fase de tareas</strong> (cada tarea trae sus tests) y no aparece como fase autónoma. A cambio, hay una fase explícita — <em>Tasks</em> — que en el enfoque A no existe como tal y vive escondida dentro de "Plan".</p>
 <h2 id="cual-es-la-correcta">¿Cuál es la "correcta"?<a class="headerlink" href="#cual-es-la-correcta" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Ninguna. Son dos puntos de vista distintos sobre el mismo proceso, optimizados para situaciones distintas:</p>
 <ul>
 <li>
-<p><strong>La variante A (Specify → Plan → Implement → Validate) es mejor cuando el sistema tiene invariantes fuertes que necesitan validación explícita y formal.</strong> APIs públicas, sistemas regulados, código que cruza fronteras de equipos. Si la verificación es un evento social y técnico que merece su propia fase, esta es tu variante.</p>
+<p><strong>El enfoque A (Specify → Plan → Implement → Validate) es mejor cuando el sistema tiene invariantes fuertes que necesitan validación explícita y formal.</strong> APIs públicas, sistemas regulados, código que cruza fronteras de equipos. Si la verificación es un evento social y técnico que merece su propia fase, este es tu enfoque.</p>
 </li>
 <li>
-<p><strong>La variante B (Requirements → Design → Tasks → Implementation) es mejor cuando el cuello de botella es la descomposición en trozos digeribles para el agente.</strong> Features grandes que un humano podría hacer pero un agente sin ayuda no, porque el blast radius de los cambios excede su ventana de atención. Si tu problema es "el agente se pierde en mi repo de 200 archivos", esta es tu variante.</p>
+<p><strong>El enfoque B (Requirements → Design → Tasks → Implementation) es mejor cuando el cuello de botella es la descomposición en trozos digeribles para el agente.</strong> Features grandes que un humano podría hacer pero un agente sin ayuda no, porque el blast radius de los cambios excede su ventana de atención. Si tu problema es "el agente se pierde en mi repo de 200 archivos", este es tu enfoque.</p>
 </li>
 </ul>
-<p>En la práctica, los equipos maduros acaban combinando: usan los nombres de la variante B en el flujo diario y separan una fase de validación (variante A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.</p>
+<p>En la práctica, los equipos maduros acaban combinando: usan los nombres de el enfoque B en el flujo diario y separan una fase de validación (enfoque A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.</p>
 <h2 id="el-ciclo-de-vida-paso-a-paso-con-un-agente-real">El ciclo de vida, paso a paso, con un agente real<a class="headerlink" href="#el-ciclo-de-vida-paso-a-paso-con-un-agente-real" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Te lo cuento como flujo concreto, neutral respecto a la variante, que es cómo se ve cuando lo haces de verdad.</p>
+<p>Te lo cuento como flujo concreto, neutral respecto al enfoque, que es cómo se ve cuando lo haces de verdad.</p>
 <h3 id="paso-1-especificar-la-intencion">Paso 1 — Especificar la intención<a class="headerlink" href="#paso-1-especificar-la-intencion" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Abres una sesión con el agente. <strong>No le pides que escriba código</strong>. Le pides que te ayude a redactar la spec usando la plantilla del capítulo 3. Le das el objetivo de alto nivel y dejas que te haga preguntas. Si el agente no te hace preguntas, hazlas tú: "qué partes del sistema toca esto", "qué casos límite estoy olvidando", "qué no estamos construyendo y deberíamos decir explícitamente".</p>
 <p>El output de este paso es un archivo en <code>specs/</code> o donde tu proyecto los aloje. Cometido al repo, revisable, versionado.</p>
@@ -1944,7 +1944,7 @@
 <h3 id="paso-5-validar-contra-la-spec-original">Paso 5 — Validar contra la spec original<a class="headerlink" href="#paso-5-validar-contra-la-spec-original" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Cuando todas las tareas están hechas, el agente (o tú, o un segundo agente revisor) toma la spec original y verifica que todo lo que la spec pedía está hecho, y que no se ha hecho nada que la spec no pedía. Esta fase es la que más fácilmente se salta y la más importante: es donde los criterios de aceptación dejan de ser texto y se convierten en una checklist tachada o no tachada.</p>
 <h2 id="clarificacion-iterativa-lo-que-el-survey-de-arxiv-anade">Clarificación iterativa: lo que el survey de arXiv añade<a class="headerlink" href="#clarificacion-iterativa-lo-que-el-survey-de-arxiv-anade" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Hay un detalle que el survey de <a href="https://arxiv.org/html/2508.00083v1"><em>Code Generation with LLM-based Agents</em></a> documenta y que merece estar en este ciclo aunque no aparezca explícitamente en ninguna de las dos variantes anteriores. Sistemas como <strong>ClarifyGPT</strong> y <strong>TiCoder</strong> introducen una fase <strong>previa</strong> a la spec: el agente, en lugar de tomar el primer prompt como verdad, hace preguntas iterativas para sacar a la superficie ambigüedades y huecos antes de que se materialicen como código equivocado.</p>
+<p>Hay un detalle que el survey de <a href="https://arxiv.org/html/2508.00083v1"><em>Code Generation with LLM-based Agents</em></a> documenta y que merece estar en este ciclo aunque no aparezca explícitamente en ninguna de los dos enfoques anteriores. Sistemas como <strong>ClarifyGPT</strong> y <strong>TiCoder</strong> introducen una fase <strong>previa</strong> a la spec: el agente, en lugar de tomar el primer prompt como verdad, hace preguntas iterativas para sacar a la superficie ambigüedades y huecos antes de que se materialicen como código equivocado.</p>
 <p>En la práctica, esto significa que tu fase 1 del ciclo (especificar) <strong>no es lineal</strong>. Es un mini-bucle dentro del bucle: prompt → preguntas del agente → respuestas → spec borrador → más preguntas → spec final. Los equipos que tratan la fase 1 como un ping-pong en lugar de un dictado obtienen specs sustancialmente mejores, y esto es independiente de qué herramienta uses.</p>
 <h2 id="el-ciclo-de-vida-no-es-lineal">El ciclo de vida no es lineal<a class="headerlink" href="#el-ciclo-de-vida-no-es-lineal" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una nota final que casi siempre se omite en las descripciones canónicas: <strong>el ciclo es raramente lineal en la práctica</strong>. Lo que pasa de verdad es que en el paso 4 descubres algo que invalida una asunción del paso 1, y vuelves atrás. El paso 5 te enseña que el criterio que escribiste no era verificable y tienes que reescribirlo. A mitad de una tarea, te das cuenta de que la spec tiene un hueco.</p>
