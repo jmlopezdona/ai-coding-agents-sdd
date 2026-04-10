@@ -104,15 +104,16 @@ But they're not the only ones. Depending on the domain and the change, other dim
 
 For each dimension, an **optional reference to the deeper document** if it exists. If a dimension doesn't add anything, omit it — absence is informative.
 
-One clarification: **what goes in the spec is what's load-bearing** — what the chapter 6 validator can compare against the code. Finer detail lives in the artifact's documentation.
+!!! tip "Clarification"
+    What goes in the spec is what's **load-bearing** — what the chapter 6 validator can compare against the code. Finer detail lives in the artifact's documentation.
 
 ### Where this information goes in the six blocks
 
-The consume/produce/modify taxonomy and the three dimensions don't create a new section in the spec — they help you write the sections you already have better:
+The consume/produce/modify taxonomy and the dimensions don't create a new section in the spec — they help you write the sections you already have better:
 
 - **Consumed artifacts** (components, ADRs, contracts, user stories) → go in **technical constraints** (the bounds) and in **whys** (the motivation derived from upstream).
 - **Produced or modified artifacts** → their observable guarantees go in **acceptance criteria**; their design bounds go in **technical constraints**.
-- **The three dimensions** are the questions you ask when writing each criterion or constraint, not subsections within the spec.
+- **The dimensions** are the questions you ask when writing each criterion or constraint, not subsections within the spec.
 
 ### Size heuristic: when the spec needs splitting
 
@@ -178,4 +179,4 @@ The good one fits in roughly the same space as the mediocre one, but it captures
 
 Up to here we've seen what's *inside* a spec and how to calibrate its detail for context. The unifying rule: **write only the detail your validation mechanism knows how to consume**. If anatomy answers the *what*, what comes next is the *when* and the *how it's validated*: the moment a spec stops being a document and starts behaving like a contract.
 
-In **Chapter 5** we'll see the cycle a spec lives in: the four phases of the SDD process (with their two variants in the literature), how to chain them with an agent, and where the verification that prevents code from drifting away from the spec fits.
+In **Chapter 5** we'll see the **lifecycle** of a spec: the four phases of the SDD process (with their two variants in the literature), how to chain them with an agent, and where the verification that prevents code from drifting away from the spec fits.

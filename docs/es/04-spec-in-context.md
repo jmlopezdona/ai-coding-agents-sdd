@@ -104,15 +104,16 @@ Pero no son las únicas. Dependiendo del dominio y del cambio, otras dimensiones
 
 Para cada dimensión, una **referencia opcional al documento más profundo** si existe. Si una dimensión no aporta, omítela — la ausencia es informativa.
 
-Una aclaración: **lo que va en la spec es lo load-bearing** — lo que el validador del cap. 6 puede comparar contra el código. El detalle más fino vive en la documentación del artefacto.
+!!! tip "Aclaración"
+    Lo que va en la spec es lo **load-bearing** — lo que el validador del cap. 6 puede comparar contra el código. El detalle más fino vive en la documentación del artefacto.
 
 ### Dónde va esta información en los seis bloques
 
-La taxonomía consumir/producir/modificar y las tres dimensiones no crean una sección nueva en la spec — ayudan a escribir mejor las secciones que ya existen:
+La taxonomía consumir/producir/modificar y las dimensiones no crean una sección nueva en la spec — ayudan a escribir mejor las secciones que ya existen:
 
 - **Artefactos consumidos** (componentes, ADRs, contratos, user stories) → van en **restricciones técnicas** (los límites) y en **por qués** (la motivación derivada del upstream).
 - **Artefactos producidos o modificados** → sus garantías observables van en **criterios de aceptación**; sus límites de diseño van en **restricciones técnicas**.
-- **Las tres dimensiones** son las preguntas que te haces al escribir cada criterio o restricción, no subsecciones dentro de la spec.
+- **Las dimensiones** son las preguntas que te haces al escribir cada criterio o restricción, no subsecciones dentro de la spec.
 
 ### Heurística de tamaño: cuándo la spec necesita partirse
 
@@ -178,4 +179,4 @@ La buena cabe en la misma extensión que la mediocre, pero captura intención, r
 
 Hasta aquí hemos visto qué hay *dentro* de una spec y cómo calibrar su detalle según el contexto. La regla unificadora: **escribe solo el detalle que tu mecanismo de validación sabe consumir**. Si la anatomía responde al *qué*, lo siguiente es el *cuándo* y el *cómo se valida*: el momento en que una spec deja de ser documento y empieza a comportarse como contrato.
 
-En el **capítulo 5** vamos a ver el ciclo en el que una spec vive: las cuatro fases del proceso SDD (con sus dos variantes en la literatura), cómo encadenarlas con un agente, y dónde encaja la verificación que evita que el código se aleje de la spec.
+En el **capítulo 5** vamos a ver el **ciclo de vida** de una spec: las cuatro fases del proceso SDD (con sus dos variantes en la literatura), cómo encadenarlas con un agente, y dónde encaja la verificación que evita que el código se aleje de la spec.

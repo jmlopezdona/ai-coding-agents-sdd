@@ -53,7 +53,7 @@ nav:
       - "2. The specification spectrum": 02-specification-spectrum.md
       - "3. Anatomy of a good spec": 03-anatomy-of-a-spec.md
       - "4. The spec in context": 04-spec-in-context.md
-  - The cycle:
+  - Lifecycle:
       - "5. The SDD cycles": 05-sdd-cycles.md
       - "6. Living specs": 06-living-specs.md
   - Tooling:
@@ -125,7 +125,7 @@ plugins:
             "2. The specification spectrum": "2. El espectro de la especificación"
             "3. Anatomy of a good spec": "3. Anatomía de una buena especificación"
             "4. The spec in context": "4. La spec en contexto"
-            "The cycle": "El ciclo"
+            "Lifecycle": "Ciclo de vida"
             "5. The SDD cycles": "5. Los ciclos SDD"
             "6. Living specs": "6. Especificaciones vivas"
             "Tooling": "Herramientas"
