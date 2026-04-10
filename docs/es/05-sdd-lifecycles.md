@@ -1,10 +1,10 @@
-# 5. Los ciclos de vida SDD: dos variantes y cuándo usar cada una
+# 5. Los ciclos de vida SDD: dos enfoques y cuándo usar cada uno
 
 Si lees tres artículos sobre Spec-Driven Development, encontrarás tres versiones distintas del "ciclo de vida SDD". Eso no es un fallo de la disciplina; es señal de que la disciplina aún se está formando. Pero deja al lector con un problema concreto: *¿qué fases hay, en qué orden, y por qué dos fuentes serias dicen cosas distintas?*
 
-Este capítulo desambigua. Hay **dos variantes principales** del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellas dice algo sobre el tipo de proyecto en el que estás.
+Este capítulo desambigua. Hay **dos enfoques principales** del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellas dice algo sobre el tipo de proyecto en el que estás.
 
-## Variante A
+## Enfoque A
 
 [El paper de arXiv sobre SDD](https://arxiv.org/html/2602.00180) propone un ciclo de cuatro fases:
 
@@ -13,9 +13,9 @@ Este capítulo desambigua. Hay **dos variantes principales** del ciclo de vida S
 3. **Implement** — producir código que realiza la spec según el plan, en incrementos pequeños y validados.
 4. **Validate** — verificar que el código realmente cumple la spec mediante tests automáticos, escenarios BDD, aceptación de stakeholders.
 
-Lo característico de esta variante es que la **validación es una fase explícita y separada**. La verificación no es algo que pasa "al final si hay tiempo"; es uno de los cuatro vértices del ciclo, con el mismo peso que la implementación.
+Lo característico de este enfoque es que la **validación es una fase explícita y separada**. La verificación no es algo que pasa "al final si hay tiempo"; es uno de los cuatro vértices del ciclo, con el mismo peso que la implementación.
 
-## Variante B
+## Enfoque B
 
 [El artículo más práctico sobre cómo usar SDD en el día a día](https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788) propone un ciclo distinto, también de cuatro fases, pero con nombres y fronteras diferentes:
 
@@ -24,21 +24,21 @@ Lo característico de esta variante es que la **validación es una fase explíci
 3. **Tasks** — descomponer el diseño en pasos discretos, ordenados por dependencias, lo bastante pequeños para una sesión enfocada del agente, cada uno con tests.
 4. **Implementation** — el agente escribe código tarea a tarea, guiado por el contexto completo de las fases anteriores, con TDD verificando cada paso.
 
-La diferencia importante con la variante A es que aquí **la validación está embebida en la fase de tareas** (cada tarea trae sus tests) y no aparece como fase autónoma. A cambio, hay una fase explícita — *Tasks* — que en la variante A no existe como tal y vive escondida dentro de "Plan".
+La diferencia importante con el enfoque A es que aquí **la validación está embebida en la fase de tareas** (cada tarea trae sus tests) y no aparece como fase autónoma. A cambio, hay una fase explícita — *Tasks* — que en el enfoque A no existe como tal y vive escondida dentro de "Plan".
 
 ## ¿Cuál es la "correcta"?
 
 Ninguna. Son dos puntos de vista distintos sobre el mismo proceso, optimizados para situaciones distintas:
 
-- **La variante A (Specify → Plan → Implement → Validate) es mejor cuando el sistema tiene invariantes fuertes que necesitan validación explícita y formal.** APIs públicas, sistemas regulados, código que cruza fronteras de equipos. Si la verificación es un evento social y técnico que merece su propia fase, esta es tu variante.
+- **El enfoque A (Specify → Plan → Implement → Validate) es mejor cuando el sistema tiene invariantes fuertes que necesitan validación explícita y formal.** APIs públicas, sistemas regulados, código que cruza fronteras de equipos. Si la verificación es un evento social y técnico que merece su propia fase, este es tu enfoque.
 
-- **La variante B (Requirements → Design → Tasks → Implementation) es mejor cuando el cuello de botella es la descomposición en trozos digeribles para el agente.** Features grandes que un humano podría hacer pero un agente sin ayuda no, porque el blast radius de los cambios excede su ventana de atención. Si tu problema es "el agente se pierde en mi repo de 200 archivos", esta es tu variante.
+- **El enfoque B (Requirements → Design → Tasks → Implementation) es mejor cuando el cuello de botella es la descomposición en trozos digeribles para el agente.** Features grandes que un humano podría hacer pero un agente sin ayuda no, porque el blast radius de los cambios excede su ventana de atención. Si tu problema es "el agente se pierde en mi repo de 200 archivos", este es tu enfoque.
 
-En la práctica, los equipos maduros acaban combinando: usan los nombres de la variante B en el flujo diario y separan una fase de validación (variante A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.
+En la práctica, los equipos maduros acaban combinando: usan los nombres de el enfoque B en el flujo diario y separan una fase de validación (enfoque A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.
 
 ## El ciclo de vida, paso a paso, con un agente real
 
-Te lo cuento como flujo concreto, neutral respecto a la variante, que es cómo se ve cuando lo haces de verdad.
+Te lo cuento como flujo concreto, neutral respecto al enfoque, que es cómo se ve cuando lo haces de verdad.
 
 ### Paso 1 — Especificar la intención
 
@@ -70,7 +70,7 @@ Cuando todas las tareas están hechas, el agente (o tú, o un segundo agente rev
 
 ## Clarificación iterativa: lo que el survey de arXiv añade
 
-Hay un detalle que el survey de [*Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1) documenta y que merece estar en este ciclo aunque no aparezca explícitamente en ninguna de las dos variantes anteriores. Sistemas como **ClarifyGPT** y **TiCoder** introducen una fase **previa** a la spec: el agente, en lugar de tomar el primer prompt como verdad, hace preguntas iterativas para sacar a la superficie ambigüedades y huecos antes de que se materialicen como código equivocado.
+Hay un detalle que el survey de [*Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1) documenta y que merece estar en este ciclo aunque no aparezca explícitamente en ninguna de los dos enfoques anteriores. Sistemas como **ClarifyGPT** y **TiCoder** introducen una fase **previa** a la spec: el agente, en lugar de tomar el primer prompt como verdad, hace preguntas iterativas para sacar a la superficie ambigüedades y huecos antes de que se materialicen como código equivocado.
 
 En la práctica, esto significa que tu fase 1 del ciclo (especificar) **no es lineal**. Es un mini-bucle dentro del bucle: prompt → preguntas del agente → respuestas → spec borrador → más preguntas → spec final. Los equipos que tratan la fase 1 como un ping-pong en lugar de un dictado obtienen specs sustancialmente mejores, y esto es independiente de qué herramienta uses.
 

@@ -1,10 +1,10 @@
-# 5. The SDD lifecycles: two variants and when to use each
+# 5. The SDD lifecycles: two approaches and when to use each
 
 If you read three articles about Spec-Driven Development, you'll find three different versions of the "SDD lifecycle". That's not a flaw of the discipline; it's a sign the discipline is still forming. But it leaves the reader with a concrete problem: *what phases are there, in what order, and why do two serious sources say different things?*
 
-This chapter disambiguates. There are **two main variants** of the lifecycle in the literature, they aren't interchangeable, and the choice between them says something about what kind of project you're in.
+This chapter disambiguates. There are **two main approaches** of the lifecycle in the literature, they aren't interchangeable, and the choice between them says something about what kind of project you're in.
 
-## Variant A
+## Approach A
 
 [The arXiv SDD paper](https://arxiv.org/html/2602.00180) proposes a four-phase cycle:
 
@@ -13,9 +13,9 @@ This chapter disambiguates. There are **two main variants** of the lifecycle in 
 3. **Implement** — produce code that realizes the spec according to the plan, in small validated increments.
 4. **Validate** — verify that the code actually meets the spec via automated tests, BDD scenarios, stakeholder acceptance.
 
-What characterizes this variant is that **validation is an explicit, separate phase**. Verification isn't something that happens "at the end if there's time"; it's one of the four corners of the cycle, with the same weight as implementation.
+What characterizes this approach is that **validation is an explicit, separate phase**. Verification isn't something that happens "at the end if there's time"; it's one of the four corners of the cycle, with the same weight as implementation.
 
-## Variant B
+## Approach B
 
 [The most practical article on day-to-day SDD use](https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788) proposes a different cycle, also four phases, but with different names and boundaries:
 
@@ -24,21 +24,21 @@ What characterizes this variant is that **validation is an explicit, separate ph
 3. **Tasks** — break the design into discrete steps, dependency-ordered, small enough for a focused agent session, each with tests.
 4. **Implementation** — the agent writes code task by task, guided by the full context of previous phases, with TDD verifying each step.
 
-The important difference from variant A is that here **validation is embedded inside the task phase** (each task brings its tests) and doesn't appear as a standalone phase. In exchange, there's an explicit *Tasks* phase that doesn't exist as such in variant A and lives hidden inside "Plan".
+The important difference from approach A is that here **validation is embedded inside the task phase** (each task brings its tests) and doesn't appear as a standalone phase. In exchange, there's an explicit *Tasks* phase that doesn't exist as such in approach A and lives hidden inside "Plan".
 
 ## Which is "correct"?
 
 Neither. They're two different views of the same process, optimized for different situations:
 
-- **Variant A (Specify → Plan → Implement → Validate) is better when the system has strong invariants needing explicit and formal validation.** Public APIs, regulated systems, code crossing team boundaries. If verification is a social and technical event deserving its own phase, this is your variant.
+- **Approach A (Specify → Plan → Implement → Validate) is better when the system has strong invariants needing explicit and formal validation.** Public APIs, regulated systems, code crossing team boundaries. If verification is a social and technical event deserving its own phase, this is your approach.
 
-- **Variant B (Requirements → Design → Tasks → Implementation) is better when the bottleneck is decomposing into chunks digestible by the agent.** Big features a human could do but an unaided agent can't, because the blast radius of changes exceeds the attention window. If your problem is "the agent gets lost in my 200-file repo", this is your variant.
+- **Approach B (Requirements → Design → Tasks → Implementation) is better when the bottleneck is decomposing into chunks digestible by the agent.** Big features a human could do but an unaided agent can't, because the blast radius of changes exceeds the attention window. If your problem is "the agent gets lost in my 200-file repo", this is your approach.
 
-In practice, mature teams end up combining: they use variant B's names in daily flow and break out a separate validation phase (variant A) when the feature touches something critical. That's not contradictory. It's choosing the right tool for the change's risk.
+In practice, mature teams end up combining: they use approach B's names in daily flow and break out a separate validation phase (approach A) when the feature touches something critical. That's not contradictory. It's choosing the right tool for the change's risk.
 
 ## The lifecycle, step by step, with a real agent
 
-I'll tell you as a concrete flow, neutral with respect to the variant, which is how it looks when you actually do it.
+I'll tell you as a concrete flow, neutral with respect to the approach, which is how it looks when you actually do it.
 
 ### Step 1 — Specify intent
 
@@ -70,7 +70,7 @@ When all tasks are done, the agent (or you, or a second reviewer agent) takes th
 
 ## Iterative clarification: what the arXiv survey adds
 
-There's a detail the [*Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1) survey documents that's worth being in this cycle even though it doesn't appear explicitly in either of the two variants above. Systems like **ClarifyGPT** and **TiCoder** introduce a phase **prior** to the spec: instead of taking the first prompt as truth, the agent asks iterative questions to surface ambiguities and gaps before they materialize as wrong code.
+There's a detail the [*Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1) survey documents that's worth being in this cycle even though it doesn't appear explicitly in either of the two approaches above. Systems like **ClarifyGPT** and **TiCoder** introduce a phase **prior** to the spec: instead of taking the first prompt as truth, the agent asks iterative questions to surface ambiguities and gaps before they materialize as wrong code.
 
 In practice, this means your phase 1 of the cycle **isn't linear**. It's a mini-loop within the loop: prompt → agent questions → answers → draft spec → more questions → final spec. Teams that treat phase 1 as ping-pong instead of dictation get substantially better specs, and this is independent of which tool you use.
 

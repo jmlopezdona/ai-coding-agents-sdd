@@ -39,7 +39,7 @@ Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 10 (l
 
 ### Parte 3 — Ciclo de vida
 
-- [5. Los ciclos de vida SDD: dos variantes y cuándo usar cada una](05-sdd-lifecycles.md)
+- [5. Los ciclos de vida SDD: dos enfoques y cuándo usar cada uno](05-sdd-lifecycles.md)
 - [6. Especificaciones vivas: el bucle bidireccional](06-living-specs.md)
 
 ### Parte 4 — Herramientas
