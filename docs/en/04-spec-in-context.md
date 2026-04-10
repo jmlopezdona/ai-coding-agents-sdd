@@ -52,6 +52,8 @@ An important nuance: **cite the specific invariant this spec depends on, not the
 
 The right form: the spec describes the **observable contract** the new artifact must offer, not its internal structure. *"There must be a capability to accept authenticated avatar uploads (JPEG/PNG, ≤10 MB) and return a retrievable URL"* is observable contract. *"Create `AvatarUploadService` with method `upload(file, user_id) -> AvatarMetadata`"* is pseudocode.
 
+**When a prior design document already exists** (a tech design, an interface document, an API contract designed before implementation), the component at the code level is *produced*, but at the design level it's *consumed*. In that case, the spec references the design document and describes only the implications for this feature — exactly as with any consumed artifact. The "define the observable contract" rule applies only when no prior design already does so.
+
 A conceptually important nuance: a spec that produces a new artifact is **the transient source of truth that hands off**. Once the artifact exists, **its own documentation** becomes the operational source, and the spec becomes the *"why it was built this way"* — historical intent, not living contract. Confusing the two roles leads to the silent fusion of [anti-pattern #13](12-anti-patterns.md#13-fusing-user-story-and-spec-into-a-single-file).
 
 **3. Modified (it exists; the spec adds, changes or removes capabilities).** The rule is **describe the observable delta, not the full state**. The spec doesn't have to re-document how `User` works; it has to say *"add the `avatar_url` field (optional). Updated when an avatar is uploaded; cleared when deleted. No other model behavior changes."*
