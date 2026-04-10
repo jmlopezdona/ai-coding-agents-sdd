@@ -10,7 +10,7 @@ Hasta aquí hemos hablado de la anatomía de una spec como si fuera una sola cos
 
 En spec-first la spec se lee una vez, al arrancar la feature, y a partir de ahí el código deriva libremente. Su única función es **alinear al equipo y al agente al principio**. Nadie la va a leer de vuelta, así que cada línea extra que escribas es trabajo que nadie va a recuperar.
 
-El detalle apropiado: objetivo, no-goals, criterios de aceptación, los por qués críticos, y poco más. Si tu spec-first ocupa más de una pantalla, casi siempre es porque estás escribiendo spec-anchored *aspiracional* ([anti-patrón #4](12-anti-patterns.md#4-spec-teatral-con-anclaje-fingido) del capítulo 12) o porque caíste en pseudocódigo ([anti-patrón #12](12-anti-patterns.md#12-spec-generada-que-es-pseudocódigo-disfrazado)). La spec-first óptima es la mínima viable para arrancar con intención clara.
+El detalle apropiado: objetivo, no-goals, criterios de aceptación, los por qués críticos, y poco más. Si tu spec-first ocupa más de una pantalla, casi siempre es porque estás escribiendo spec-anchored *aspiracional* ([anti-patrón #4](12-anti-patterns.md#4-spec-teatral-con-anclaje-fingido) del capítulo 12) o porque caíste en pseudocódigo ([anti-patrón #12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado)). La spec-first óptima es la mínima viable para arrancar con intención clara.
 
 ### Spec-anchored → detalle medio, acotado por lo que el anclaje puede verificar
 
@@ -36,7 +36,7 @@ Si tienes que destilar todo lo anterior a una sola frase:
 
 En spec-first el "validador" es el equipo en una sola lectura inicial, así que el detalle apropiado es lo que cabe en esa lectura. En spec-anchored el validador es el mecanismo de anclaje, así que el detalle apropiado es lo que el anclaje sabe comparar. En spec-as-source el validador es el generador, así que el detalle apropiado es lo que el generador necesita para producir código sin ambigüedad.
 
-Casi todas las patologías que veremos en el capítulo 12 vienen de **desalinear estas tres cosas**: escribir spec-anchored sin anclaje ([#4](12-anti-patterns.md#4-spec-teatral-con-anclaje-fingido)), escribir spec-as-source sin generador ([#9](12-anti-patterns.md#9-promocionar-prematuramente-a-spec-as-source) + [#12](12-anti-patterns.md#12-spec-generada-que-es-pseudocódigo-disfrazado)), o escribir spec-first con el detalle de spec-as-source ([#2](12-anti-patterns.md#2-big-spec-up-front) + [#12](12-anti-patterns.md#12-spec-generada-que-es-pseudocódigo-disfrazado)). La anatomía no es absoluta — es relativa a qué tipo de validación se va a hacer sobre lo que escribes.
+Casi todas las patologías que veremos en el capítulo 12 vienen de **desalinear estas tres cosas**: escribir spec-anchored sin anclaje ([#4](12-anti-patterns.md#4-spec-teatral-con-anclaje-fingido)), escribir spec-as-source sin generador ([#9](12-anti-patterns.md#9-promocionar-prematuramente-a-spec-as-source) + [#12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado)), o escribir spec-first con el detalle de spec-as-source ([#2](12-anti-patterns.md#2-big-spec-up-front) + [#12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado)). La anatomía no es absoluta — es relativa a qué tipo de validación se va a hacer sobre lo que escribes.
 
 ## Reutilizar criterios de documentos upstream (user stories, contratos)
 
@@ -64,7 +64,7 @@ Una spec puede tener tres relaciones distintas con cada componente que toca:
 
 Si el componente es un ADR, una API contract, una política de seguridad o un estándar externo, la regla es la misma con un matiz: **cita el invariante específico que esta spec depende, no el documento entero**. *"Esta spec respeta ADR-007 (single Postgres instance) y ADR-012 (no llamadas síncronas entre servicios)"* es útil. *"Relacionado: ADR-007"* es ruido.
 
-**2. Producido (no existe; la spec lo crea).** Es el caso típico de una feature nueva: *"esta spec crea un nuevo endpoint / un nuevo servicio / un nuevo módulo"*. Aquí la trampa es obvia y peligrosa: como el componente no existe todavía, sientes que tienes que "definirlo" en la spec, y casi siempre acabas describiéndolo con clases, métodos, firmas y payloads. Eso es exactamente el [anti-patrón #12](12-anti-patterns.md#12-spec-generada-que-es-pseudocódigo-disfrazado) (pseudocódigo disfrazado de spec).
+**2. Producido (no existe; la spec lo crea).** Es el caso típico de una feature nueva: *"esta spec crea un nuevo endpoint / un nuevo servicio / un nuevo módulo"*. Aquí la trampa es obvia y peligrosa: como el componente no existe todavía, sientes que tienes que "definirlo" en la spec, y casi siempre acabas describiéndolo con clases, métodos, firmas y payloads. Eso es exactamente el [anti-patrón #12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado) (pseudocódigo disfrazado de spec).
 
 La forma correcta: la spec describe el **contrato observable** que el componente nuevo tiene que ofrecer, no su estructura interna. *"Tras esta spec, debe existir una capacidad para aceptar uploads de avatares autenticados (JPEG/PNG, ≤10 MB) y devolver una URL recuperable"* es contrato observable. *"Crear `AvatarUploadService` con método `upload(file, user_id) -> AvatarMetadata`"* es pseudocódigo.
 
