@@ -1899,7 +1899,7 @@
 <p>If you read three articles about Spec-Driven Development, you'll find three different versions of the "SDD cycle". That's not a flaw of the discipline; it's a sign the discipline is still forming. But it leaves the reader with a concrete problem: <em>what phases are there, in what order, and why do two serious sources say different things?</em></p>
 <p>This chapter disambiguates. There are <strong>two main variants</strong> of the cycle in the literature, they aren't interchangeable, and the choice between them says something about what kind of project you're in.</p>
 <h2 id="variant-a-the-arxiv-paper-version">Variant A — The arXiv paper version<a class="headerlink" href="#variant-a-the-arxiv-paper-version" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>The arXiv SDD paper proposes a four-phase cycle:</p>
+<p><a href="https://arxiv.org/html/2602.00180">The arXiv SDD paper</a> proposes a four-phase cycle:</p>
 <ol>
 <li><strong>Specify</strong> — define what the software has to do through behavior descriptions, acceptance criteria and requirements. Without prescribing implementation.</li>
 <li><strong>Plan</strong> — decide how it's built: technologies, architecture, data models, interfaces.</li>
@@ -1908,7 +1908,7 @@
 </ol>
 <p>What characterizes this variant is that <strong>validation is an explicit, separate phase</strong>. Verification isn't something that happens "at the end if there's time"; it's one of the four corners of the cycle, with the same weight as implementation.</p>
 <h2 id="variant-b-the-devto-pockit-article-version">Variant B — The DEV.to (Pockit) article version<a class="headerlink" href="#variant-b-the-devto-pockit-article-version" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>The most practical article on day-to-day SDD use proposes a different cycle, also four phases, but with different names and boundaries:</p>
+<p><a href="https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788">The most practical article on day-to-day SDD use</a> proposes a different cycle, also four phases, but with different names and boundaries:</p>
 <ol>
 <li><strong>Requirements</strong> — what's being built, including user stories, edge cases, security requirements and explicit <em>no-goals</em>.</li>
 <li><strong>Design</strong> — translate requirements into technical decisions: database schema, endpoints, architecture, error handling.</li>
@@ -1944,7 +1944,7 @@
 <h3 id="step-5-validate-against-the-original-spec">Step 5 — Validate against the original spec<a class="headerlink" href="#step-5-validate-against-the-original-spec" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>When all tasks are done, the agent (or you, or a second reviewer agent) takes the original spec and verifies that everything the spec asked is done, and that nothing the spec didn't ask for has been done. This phase is the easiest to skip and the most important: it's where acceptance criteria stop being text and become a checked-or-unchecked checklist.</p>
 <h2 id="iterative-clarification-what-the-arxiv-survey-adds">Iterative clarification: what the arXiv survey adds<a class="headerlink" href="#iterative-clarification-what-the-arxiv-survey-adds" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>There's a detail the <em>Code Generation with LLM-based Agents</em> survey documents that's worth being in this cycle even though it doesn't appear explicitly in either of the two variants above. Systems like <strong>ClarifyGPT</strong> and <strong>TiCoder</strong> introduce a phase <strong>prior</strong> to the spec: instead of taking the first prompt as truth, the agent asks iterative questions to surface ambiguities and gaps before they materialize as wrong code.</p>
+<p>There's a detail the <a href="https://arxiv.org/html/2508.00083v1"><em>Code Generation with LLM-based Agents</em></a> survey documents that's worth being in this cycle even though it doesn't appear explicitly in either of the two variants above. Systems like <strong>ClarifyGPT</strong> and <strong>TiCoder</strong> introduce a phase <strong>prior</strong> to the spec: instead of taking the first prompt as truth, the agent asks iterative questions to surface ambiguities and gaps before they materialize as wrong code.</p>
 <p>In practice, this means your phase 1 of the cycle <strong>isn't linear</strong>. It's a mini-loop within the loop: prompt → agent questions → answers → draft spec → more questions → final spec. Teams that treat phase 1 as ping-pong instead of dictation get substantially better specs, and this is independent of which tool you use.</p>
 <h2 id="the-cycle-isnt-linear">The cycle isn't linear<a class="headerlink" href="#the-cycle-isnt-linear" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>A final note almost always omitted in canonical descriptions: <strong>the cycle is rarely linear in practice</strong>. What really happens is in step 4 you discover something that invalidates a step-1 assumption, and you go back. Step 5 teaches you that the criterion you wrote wasn't verifiable and you have to rewrite it. Mid-task, you realize the spec has a hole.</p>

@@ -1896,7 +1896,7 @@
 
 
 <h1 id="6-especificaciones-vivas-el-bucle-bidireccional">6. Especificaciones vivas: el bucle bidireccional<a class="headerlink" href="#6-especificaciones-vivas-el-bucle-bidireccional" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>El problema que mata a la mayoría de iniciativas de Spec-Driven Development no es escribir las specs. Es lo que pasa <strong>después</strong>. Las specs envejecen, el código las deja atrás, y dentro de tres meses tienes una carpeta de markdowns que describe un sistema que ya no existe. Ese es exactamente el patrón que la gente de Augment Code llama el <strong>spec gap</strong>, y todo este capítulo es sobre cómo evitarlo.</p>
+<p>El problema que mata a la mayoría de iniciativas de Spec-Driven Development no es escribir las specs. Es lo que pasa <strong>después</strong>. Las specs envejecen, el código las deja atrás, y dentro de tres meses tienes una carpeta de markdowns que describe un sistema que ya no existe. Ese es exactamente el patrón que la gente de <a href="https://www.augmentcode.com/guides/living-specs-for-ai-agent-development">Augment Code</a> llama el <strong>spec gap</strong>, y todo este capítulo es sobre cómo evitarlo.</p>
 <h2 id="el-problema-del-flujo-unidireccional">El problema del flujo unidireccional<a class="headerlink" href="#el-problema-del-flujo-unidireccional" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una spec estática funciona así:</p>
 <ol>
@@ -1918,7 +1918,7 @@
 </blockquote>
 <p>La diferencia con una spec estática no es la primera versión del documento. Las dos pueden empezar idénticas. La diferencia es lo que pasa el día 30, el día 90 y el día 365.</p>
 <h2 id="las-cuatro-fases-del-bucle-vivo">Las cuatro fases del bucle vivo<a class="headerlink" href="#las-cuatro-fases-del-bucle-vivo" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>El framework de Augment descompone el bucle bidireccional en cuatro fases:</p>
+<p>El framework de <a href="https://www.augmentcode.com/guides/living-specs-for-ai-agent-development">Augment</a> descompone el bucle bidireccional en cuatro fases:</p>
 <h3 id="fase-1-especificar-la-intencion-inicial">Fase 1 — Especificar la intención inicial<a class="headerlink" href="#fase-1-especificar-la-intencion-inicial" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Idéntica a la fase 1 del ciclo del capítulo 5. Una spec mínima viable: objetivo, restricciones, criterios, no-goals, por qués. Nada nuevo aquí.</p>
 <h3 id="fase-2-implementar-contra-la-spec">Fase 2 — Implementar contra la spec<a class="headerlink" href="#fase-2-implementar-contra-la-spec" title="Enlace permanente a esta sección">&para;</a></h3>
@@ -1934,7 +1934,7 @@
 <p>Esta es la fase que añade Augment respecto a casi cualquier otra descripción del proceso SDD, y es brillante. Una vez que el código está en producción, <strong>las métricas, incidentes y aprendizajes operacionales también se reescriben en la spec</strong>. Si una asunción de la spec resulta ser falsa en producción ("creíamos que las imágenes serían de menos de 5 MB de media, en realidad son de 12"), eso vuelve a la spec como nota de hallazgo. Si un incidente revela un caso límite que la spec no contemplaba, ese caso límite se añade.</p>
 <p>La spec, en este modelo, es un <strong>documento que aprende</strong>. Empieza describiendo intención, atraviesa decisiones de implementación, y acaba conteniendo las cicatrices de lo que la realidad le ha enseñado al sistema.</p>
 <h2 id="por-que-esta-fase-4-importa-mas-de-lo-que-parece">Por qué esta fase 4 importa más de lo que parece<a class="headerlink" href="#por-que-esta-fase-4-importa-mas-de-lo-que-parece" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Una de las críticas más fuertes a SDD (capítulo 10, Isoform) es que las specs <strong>pierden el contexto real</strong> porque solo capturan "lo que íbamos a hacer", no "lo que aprendimos al hacerlo". La fase 4 de las specs vivas es la respuesta directa a esa crítica. Si tu spec recoge production feedback, el contexto real <strong>no se pierde</strong> — se acumula.</p>
+<p>Una de las críticas más fuertes a SDD (capítulo 10, <a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a>) es que las specs <strong>pierden el contexto real</strong> porque solo capturan "lo que íbamos a hacer", no "lo que aprendimos al hacerlo". La fase 4 de las specs vivas es la respuesta directa a esa crítica. Si tu spec recoge production feedback, el contexto real <strong>no se pierde</strong> — se acumula.</p>
 <p>Es la diferencia entre un documento de diseño y un manual de operación. Y para un agente que llega seis meses después a hacer un cambio, leer la spec con production feedback es radicalmente más útil que leer la spec original.</p>
 <h2 id="mecanismos-para-que-el-bucle-no-muera">Mecanismos para que el bucle no muera<a class="headerlink" href="#mecanismos-para-que-el-bucle-no-muera" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>La razón por la que las specs estáticas se imponen no es ideológica — es entrópica. Mantener una spec viva requiere disciplina, y la disciplina sin mecanismo se evapora. Aquí van los mecanismos que de verdad funcionan:</p>

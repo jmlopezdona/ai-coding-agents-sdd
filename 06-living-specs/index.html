@@ -1896,7 +1896,7 @@
 
 
 <h1 id="6-living-specs-the-bidirectional-loop">6. Living specs: the bidirectional loop<a class="headerlink" href="#6-living-specs-the-bidirectional-loop" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>The problem that kills most Spec-Driven Development initiatives isn't writing the specs. It's what happens <strong>after</strong>. Specs age, code leaves them behind, and three months later you have a folder of markdowns describing a system that no longer exists. That's exactly the pattern Augment Code calls the <strong>spec gap</strong>, and this whole chapter is about how to avoid it.</p>
+<p>The problem that kills most Spec-Driven Development initiatives isn't writing the specs. It's what happens <strong>after</strong>. Specs age, code leaves them behind, and three months later you have a folder of markdowns describing a system that no longer exists. That's exactly the pattern <a href="https://www.augmentcode.com/guides/living-specs-for-ai-agent-development">Augment Code</a> calls the <strong>spec gap</strong>, and this whole chapter is about how to avoid it.</p>
 <h2 id="the-unidirectional-flow-problem">The unidirectional flow problem<a class="headerlink" href="#the-unidirectional-flow-problem" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>A static spec works like this:</p>
 <ol>
@@ -1906,7 +1906,7 @@
 <li>The spec stays where it was.</li>
 </ol>
 <p>Information flows in one direction: spec → code. And that means any decision made during implementation — and many always are: trade-offs, discoveries, edge cases that show up while typing — <strong>doesn't go back to the spec</strong>. The spec describes initial intent; the code describes current reality; between them grows a crack with every commit.</p>
-<p>Augment puts it with uncomfortable precision:</p>
+<p><a href="https://www.augmentcode.com/guides/living-specs-for-ai-agent-development">Augment</a> puts it with uncomfortable precision:</p>
 <blockquote>
 <p><em>Gaps in the specification widen with direct code changes and keep resurfacing because AI generation is non-deterministic.</em></p>
 </blockquote>
@@ -1934,7 +1934,7 @@
 <p>This is the phase Augment adds compared to almost any other description of the SDD process, and it's brilliant. Once the code is in production, <strong>metrics, incidents and operational learnings also get written back into the spec</strong>. If a spec assumption turns out to be false in production ("we thought images would average less than 5 MB, in reality they're 12"), that goes back to the spec as a finding. If an incident reveals an edge case the spec didn't contemplate, that case is added.</p>
 <p>The spec, in this model, is a <strong>document that learns</strong>. It starts describing intent, passes through implementation decisions, and ends containing the scars of what reality has taught the system.</p>
 <h2 id="why-phase-4-matters-more-than-it-seems">Why phase 4 matters more than it seems<a class="headerlink" href="#why-phase-4-matters-more-than-it-seems" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>One of the strongest critiques of SDD (chapter 10, Isoform) is that specs <strong>lose real context</strong> because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context <strong>isn't lost</strong> — it accumulates.</p>
+<p>One of the strongest critiques of SDD (chapter 10, <a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a>) is that specs <strong>lose real context</strong> because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context <strong>isn't lost</strong> — it accumulates.</p>
 <p>It's the difference between a design doc and an operations manual. And for an agent arriving six months later to make a change, reading the spec with production feedback is radically more useful than reading the original spec.</p>
 <h2 id="mechanisms-so-the-loop-doesnt-die">Mechanisms so the loop doesn't die<a class="headerlink" href="#mechanisms-so-the-loop-doesnt-die" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>The reason static specs win isn't ideological — it's entropic. Maintaining a living spec requires discipline, and discipline without mechanism evaporates. Here are the mechanisms that actually work:</p>
