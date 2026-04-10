@@ -1,6 +1,6 @@
 # 4. La spec en contexto: detalle, componentes y calibración
 
-En la [sección anterior](03-anatomy-of-a-spec.md) vimos qué poner dentro de una spec — los seis bloques, la plantilla, la maldición de las instrucciones y las trampas de la generación con agente. Ahora toca la pregunta que sigue: **cuánto detalle**, **cómo incorporar información de documentos upstream**, y **cómo se relaciona la spec con los componentes técnicos** del sistema que toca.
+En la [sección anterior](03-anatomy-of-a-spec.md) vimos qué poner dentro de una spec — los seis bloques, la plantilla, la maldición de las instrucciones y las trampas de la generación con agente. Ahora toca la pregunta que sigue: **cuánto detalle**, y **cómo se relaciona la spec con sus fuentes externas** — documentos de producto, decisiones arquitectónicas, componentes de código.
 
 ## El nivel de detalle depende del nivel del espectro
 
@@ -38,112 +38,90 @@ En spec-first el "validador" es el equipo en una sola lectura inicial, así que 
 
 Casi todas las patologías que veremos en el capítulo 12 vienen de **desalinear estas tres cosas**: escribir spec-anchored sin anclaje ([#4](12-anti-patterns.md#4-spec-teatral-con-anclaje-fingido)), escribir spec-as-source sin generador ([#9](12-anti-patterns.md#9-promocionar-prematuramente-a-spec-as-source) + [#12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado)), o escribir spec-first con el detalle de spec-as-source ([#2](12-anti-patterns.md#2-big-spec-up-front)). La anatomía no es absoluta — es relativa a qué tipo de validación se va a hacer sobre lo que escribes.
 
-## Reutilizar criterios de documentos upstream (user stories, contratos)
+## La spec y sus fuentes externas: consumir, producir, modificar
 
-Una pregunta inevitable: si la user story upstream **ya contiene criterios de aceptación**, ¿qué hago con ellos? La respuesta depende de si el agente puede acceder al documento original o no, pero en ambos casos hay una constante: **la spec necesita sus propios criterios al nivel de precisión de ingeniería**, no al nivel de producto. Una user story dice *"el usuario puede subir una foto fácilmente"*; la spec necesita *"JPEG/PNG ≤10 MB, falla con 413/415 con mensaje legible"*. Eso no es copiar — es derivar criterios de ingeniería a partir de criterios de producto.
-
-### Cuando el agente no tiene acceso al documento upstream
-
-Si la user story vive en un sistema externo sin integración (Jira sin MCP, Notion sin API, un documento suelto), la regla es **derivar con traza**: escribes tus propios criterios precisos en la spec y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*. Referenciar a secas (`"ver JIRA-1234"`) rompe la auto-contención del capítulo 1 y abre drift invisible — el agente no puede leer ese enlace, y la user story puede cambiar sin que nadie lo detecte.
-
-### Cuando el agente sí tiene acceso (mismo repo o MCP)
-
-Si la user story vive en el mismo repo Git o es accesible vía MCP (Jira, Linear, Notion con integración), el agente ya puede leer el contenido original. Aquí no necesitas copiar nada — pero sí necesitas **derivar tus propios criterios al nivel de precisión de la spec** y referenciar el origen. La user story sigue sin hablar el idioma de la spec: responde al *qué quiere el usuario*; la spec responde al *qué garantías cumple el sistema*.
-
-En este escenario, la auto-contención se conserva (el agente accede al upstream), el drift deja de ser invisible (queda un commit si está en git, o un timestamp si viene vía MCP), y aparece la posibilidad de un **sensor automático** (hook o agente recurrente) que detecte cuando la user story cambia sin que la spec se actualice.
-
-Un riesgo concreto: la tentación de editar ambos documentos con frecuencia sin que cada cambio esté plenamente justificado. Cada edición cruzada es una oportunidad de desalineamiento. La traza (la referencia explícita que conecta un criterio de la spec con su origen en la user story) cumple un doble propósito: sirve como **punto de comprobación en el momento del cambio** (el humano o el agente que edita la spec puede verificar que el origen sigue siendo válido) y como **material de auditoría posterior** para un agente de doc-gathering que busque discrepancias de forma recurrente.
-
-### La regla unificada
-
-**La spec siempre contiene sus propios criterios, derivados al nivel de precisión que la validación necesita. El documento upstream se cita como fuente del por qué, no como contenedor del qué.** Lo que cambia según el acceso es si necesitas copiar el contenido upstream (sin acceso) o solo referenciarlo y derivar (con acceso). El anti-patrón a evitar en ambos casos — *fusionar user story y spec en un único archivo híbrido porque "dicen lo mismo"* — lo desarrollamos como [anti-patrón #13](12-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo) en el capítulo 12.
-
-### Excepción: documentos con validación automática contra el código
-
-Cuando el documento upstream se valida automáticamente contra el código de forma continua (un contrato OpenAPI con CI, un esquema Protobuf con checks de compatibilidad), basta con referenciar y resumir las implicaciones para tu feature. Una user story de Jira no tiene validación automática contra el código — su consistencia depende de disciplina humana puntual, lo que la hace vulnerable a drift silencioso.
-
-## La spec y los componentes técnicos: consumir, producir, modificar
-
-La anatomía no vive en el vacío: toda spec aterriza sobre código que ya existe. Y en la práctica, casi todas las specs reales **tocan varios componentes a la vez** — alguno se construye nuevo, otro se modifica, y varios se consumen sin tocarse. Cada una de esas relaciones tiene reglas distintas, y mezclarlas en un mismo lenguaje es una de las formas más rápidas de inflar la spec sin ganar precisión.
-
-Esta sección extiende la anterior sobre documentos upstream — donde tratamos el caso de las user stories — a la pregunta más general: ¿qué dice una spec sobre los componentes técnicos del sistema con los que se relaciona?
+Toda spec se relaciona con artefactos que ya existen — documentos de producto, decisiones arquitectónicas, componentes de código. La taxonomía es siempre la misma: **¿lo consumes, lo produces o lo modificas?** Entender qué relación tienes con cada artefacto externo determina qué va en la spec, cuánto detalle pones, y dónde cae dentro de los seis bloques.
 
 ### Tres relaciones, tres reglas
 
-Una spec puede tener tres relaciones distintas con cada componente que toca:
+**1. Consumido (existe; la spec lo usa sin modificarlo).** Aplica tanto a componentes de código (un servicio existente, una librería) como a documentos (una user story, un ADR, un contrato de API). La regla es **referencia el contrato o el artefacto, no lo reimplementes**. La spec documenta *cómo* lo usa esta feature, no lo que el artefacto hace por sí mismo — eso vive en su propia fuente de verdad.
 
-**1. Consumido (existe; la spec lo usa).** El componente ya está construido, tiene su propio contrato (API, módulo, librería), y la spec se apoya en él sin modificarlo. La regla es **referencia el contrato, no lo reimplementes**. La spec documenta *cómo* se usa el componente — qué endpoints llama, qué errores espera manejar — pero no documenta lo que el componente hace por sí mismo. Eso vive en el contrato del componente, que es su propia fuente de verdad.
+Un matiz importante: **cita el invariante específico del que esta spec depende, no el documento entero**. *"Esta spec respeta ADR-007 (single Postgres instance) y ADR-012 (no llamadas síncronas entre servicios)"* es útil. *"Relacionado: ADR-007"* es ruido.
 
-Si el componente es un ADR, una API contract, una política de seguridad o un estándar externo, la regla es la misma con un matiz: **cita el invariante específico que esta spec depende, no el documento entero**. *"Esta spec respeta ADR-007 (single Postgres instance) y ADR-012 (no llamadas síncronas entre servicios)"* es útil. *"Relacionado: ADR-007"* es ruido.
+**2. Producido (no existe; la spec lo crea).** Es el caso típico de una feature nueva: *"esta spec crea un nuevo endpoint / un nuevo servicio / un nuevo módulo"*. Aquí la trampa es obvia: como no existe todavía, sientes que tienes que "definirlo" en la spec, y casi siempre acabas describiéndolo con clases, métodos, firmas y payloads. Eso es exactamente el [anti-patrón #12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado) (pseudocódigo disfrazado de spec).
 
-**2. Producido (no existe; la spec lo crea).** Es el caso típico de una feature nueva: *"esta spec crea un nuevo endpoint / un nuevo servicio / un nuevo módulo"*. Aquí la trampa es obvia y peligrosa: como el componente no existe todavía, sientes que tienes que "definirlo" en la spec, y casi siempre acabas describiéndolo con clases, métodos, firmas y payloads. Eso es exactamente el [anti-patrón #12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado) (pseudocódigo disfrazado de spec).
+La forma correcta: la spec describe el **contrato observable** que el artefacto nuevo tiene que ofrecer, no su estructura interna. *"Debe existir una capacidad para aceptar uploads de avatares autenticados (JPEG/PNG, ≤10 MB) y devolver una URL recuperable"* es contrato observable. *"Crear `AvatarUploadService` con método `upload(file, user_id) -> AvatarMetadata`"* es pseudocódigo.
 
-La forma correcta: la spec describe el **contrato observable** que el componente nuevo tiene que ofrecer, no su estructura interna. *"Tras esta spec, debe existir una capacidad para aceptar uploads de avatares autenticados (JPEG/PNG, ≤10 MB) y devolver una URL recuperable"* es contrato observable. *"Crear `AvatarUploadService` con método `upload(file, user_id) -> AvatarMetadata`"* es pseudocódigo.
+Un matiz conceptualmente importante: una spec que produce un artefacto nuevo es **la fuente de verdad transitoria que hace handoff**. En cuanto el artefacto existe, **su propia documentación** se vuelve la fuente operacional, y la spec pasa a ser el *"por qué se construyó así"* — intención histórica, no contrato vivo. Confundir los dos roles lleva a la fusión silenciosa del [anti-patrón #13](12-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo).
 
-Hay un matiz conceptualmente importante: una spec que produce un componente nuevo es **la fuente de verdad transitoria que hace handoff**. Mientras el componente no existe, la spec es lo único que lo describe. En cuanto el componente existe, **su propia documentación** (su README, su contrato OpenAPI, sus tests, su propio código) se vuelve la fuente operacional, y la spec original pasa a ser el *"por qué se construyó así"* — intención histórica, no contrato vivo. Si confundes los dos roles, acabas con dos artefactos compitiendo por ser la fuente de verdad del mismo componente, y vuelves a la fusión silenciosa del [anti-patrón #13](12-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo).
+**3. Modificado (existe; la spec añade, cambia o quita capacidades).** La regla es **describe el delta observable, no el estado completo**. La spec no tiene que volver a documentar cómo funciona `User`; tiene que decir *"añade el campo `avatar_url` (opcional). Se actualiza al subir un avatar y se borra al borrarlo. Ningún otro comportamiento del modelo cambia."*
 
-**3. Modificado (existe; la spec añade, cambia o quita capacidades).** Aquí la regla es **describe el delta observable, no el estado completo del componente**. La spec no tiene que volver a documentar cómo funciona `User`; tiene que decir *"añade el campo `avatar_url` (opcional, URL del avatar actual o ausente). Se actualiza al subir un avatar y se borra al borrarlo. Ningún otro comportamiento del modelo cambia."*
+La parte de **"ningún otro comportamiento cambia"** es lo que salva a la spec de inflarse. El delta es la spec; el resto vive en su propia documentación.
 
-La parte de **"ningún otro comportamiento cambia"** es lo que salva a la spec de inflarse. Sin ella, el equipo tiende a reescribir el componente entero "para que la spec sea completa". El delta es la spec; el resto del componente vive en su propia documentación.
+> **En resumen**: *consumido* = referencia y describe solo el uso; *producido* = define el contrato observable y prepara el handoff; *modificado* = describe el delta y declara el resto invariante.
 
-> **En resumen de las tres relaciones**: *consumido* = referencia el contrato y describe solo el uso; *producido* = define el contrato observable y prepara el handoff a la doc del componente; *modificado* = describe el delta y declara el resto invariante.
+### Caso especial: documentos de producto (user stories, briefs)
 
-### Capturar lo fundamental en tres dimensiones
+Los documentos de producto se *consumen* — la spec se alimenta de ellos pero no los modifica. Sin embargo, tienen una particularidad: **hablan un idioma distinto al de la spec**. Una user story dice *"el usuario puede subir una foto fácilmente"*; la spec necesita *"JPEG/PNG ≤10 MB, falla con 413/415 con mensaje legible"*. Consumir un documento de producto no es copiar — es **derivar criterios de ingeniería** a partir de criterios de producto.
 
-Para cada componente que la spec produce o modifica, la pregunta inmediata es *"¿cuánto detalle pongo?"*. La respuesta vaga lleva al pseudocódigo. La respuesta útil es decomponer en **tres dimensiones explícitas** y, para cada una, capturar solo lo load-bearing — y referenciar a docs más profundas cuando existan.
+Cómo hacerlo depende de si el agente puede acceder al documento original:
 
-Las tres dimensiones, aplicadas al **delta** del componente:
+**Sin acceso** (Jira sin MCP, Notion sin API, un documento suelto): **derivar con traza**. Escribes tus propios criterios precisos en la spec y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*. Referenciar a secas (`"ver JIRA-1234"`) rompe la auto-contención del capítulo 1 — el agente no puede leer ese enlace, y la user story puede cambiar sin que nadie lo detecte.
+
+**Con acceso** (mismo repo Git o MCP a Jira/Linear/Notion): no necesitas copiar — pero sí necesitas **derivar tus propios criterios al nivel de precisión de la spec** y referenciar el origen. En este escenario el drift deja de ser invisible (queda un commit o un timestamp), y aparece la posibilidad de un **sensor automático** que detecte cuando la user story cambia sin que la spec se actualice.
+
+Un riesgo concreto en ambos casos: la tentación de editar ambos documentos con frecuencia sin que cada cambio esté plenamente justificado. Cada edición cruzada es una oportunidad de desalineamiento. La traza cumple un doble propósito: **punto de comprobación en el momento del cambio** y **material de auditoría** para un agente de doc-gathering que busque discrepancias de forma recurrente.
+
+La regla: **la spec siempre contiene sus propios criterios, derivados al nivel de precisión que la validación necesita. El documento upstream se cita como fuente del por qué, no como contenedor del qué.** El anti-patrón a evitar — *fusionar user story y spec en un híbrido* — lo desarrollamos como [anti-patrón #13](12-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo) en el capítulo 12.
+
+### Caso especial: documentos con validación automática contra el código
+
+Cuando el artefacto consumido se valida automáticamente contra el código de forma continua (un contrato OpenAPI con CI, un esquema Protobuf con checks de compatibilidad), basta con referenciar y resumir las implicaciones para tu feature. Una user story de Jira no tiene validación automática contra el código — su consistencia depende de disciplina humana puntual, lo que la hace vulnerable a drift silencioso.
+
+### Cuánto detalle poner: tres dimensiones
+
+Para cada artefacto que la spec produce o modifica, la pregunta es *"¿cuánto detalle?"*. La respuesta útil es hacerse **tres preguntas explícitas** y capturar solo lo load-bearing:
 
 - **Funcional** — qué cambia en el comportamiento observable. *"El modelo `User` ahora puede tener un avatar; el campo es opcional; se actualiza al subir y se elimina al borrar."*
-- **No funcional** — qué restricciones cruzadas tiene que respetar el cambio. Performance, seguridad, compatibilidad, observabilidad, datos. *"La migración no debe requerir downtime; el campo no debe romper la serialización existente del modelo."*
-- **Técnico** — qué decisiones de contrato/integración el cambio cierra explícitamente. *"El campo es indexado por `user_id`; la URL del avatar pasa por el CDN existente, no por el bucket directamente."*
+- **No funcional** — qué restricciones cruzadas tiene que respetar el cambio. *"La migración no debe requerir downtime; el campo no debe romper la serialización existente."*
+- **Técnico** — qué decisiones de contrato/integración el cambio cierra explícitamente. *"El campo es indexado por `user_id`; la URL pasa por el CDN existente."*
 
-Para cada dimensión, una **referencia opcional al documento más profundo** si existe: *"Más detalle de la migración en `docs/db/migrations/0042-add-avatar.md`. Política de CDN en `infra/cdn/policy.md`."*
+Para cada dimensión, una **referencia opcional al documento más profundo** si existe. Si una dimensión no aporta, omítela — la ausencia es informativa.
 
-Tres aclaraciones importantes sobre este patrón:
+Dos aclaraciones:
 
-1. **Si una dimensión no aporta, omítela.** No fuerces tres líneas por componente por simetría. La ausencia es informativa: dice que esa dimensión no cambia.
-2. **Lo que va en la spec es lo load-bearing**: lo que el validador del cap. 6 puede comparar contra el código y lo que el equipo quiere que sea contractual. El detalle más fino vive en la documentación del componente, que tiene su propio mecanismo de validación (tests, type checks, contratos versionados).
-3. **El término "no funcional" es clásico pero contestado** ([Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) argumenta que todo es funcional, solo cambia la dimensión). Para los efectos de este capítulo lo usamos como categoría operativa — tres preguntas distintas que hacerle a cada componente — no como ontología. Si a tu equipo le encaja mejor llamarlas *comportamiento*, *cualidades*, *contratos*, da exactamente igual. Lo que importa es que sean **tres preguntas distintas**, no una sola.
-
-> **En resumen de las tres dimensiones**: *funcional* describe el comportamiento observable; *no funcional* las restricciones cruzadas; *técnico* las decisiones de contrato e integración. Solo lo load-bearing entra en la spec; el resto se referencia.
+1. **Lo que va en la spec es lo load-bearing**: lo que el validador del cap. 6 puede comparar contra el código. El detalle más fino vive en la documentación del artefacto.
+2. **El término "no funcional" es clásico pero contestado** ([Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) argumenta que todo es funcional, solo cambia la dimensión). Lo usamos como categoría operativa — tres preguntas distintas — no como ontología.
 
 ### Dónde va esta información en los seis bloques
 
 La taxonomía consumir/producir/modificar y las tres dimensiones no crean una sección nueva en la spec — ayudan a escribir mejor las secciones que ya existen:
 
-- **Componentes consumidos** → van en **restricciones técnicas**: "la auth pasa por `requireAuth`; `avatar-storage` se usa vía `POST /upload`, manejando 413 y 415 explícitamente".
-- **Componentes producidos o modificados** → sus garantías observables van en **criterios de aceptación**: "acepta uploads JPEG/PNG ≤10 MB; devuelve URL; falla con 413/415 con mensaje legible". Sus límites de diseño van en **restricciones técnicas**: "no se crea tabla nueva; el avatar es un campo en `User`".
-- **Las tres dimensiones** (funcional, no funcional, técnico) son las tres preguntas que te haces al escribir cada criterio o restricción, no tres subsecciones dentro de la spec.
-- **Los por qués** de cada decisión van, como siempre, en **por qués**.
-
-Cuando un componente se consume, la spec es más corta para él — solo describe *cómo lo usa esta feature*, no lo que el componente hace (eso vive en su propio contrato). Cuando un componente se modifica, la spec declara explícitamente qué **no** cambia — eso es lo que salva a la spec de inflarse. Esos dos hábitos son los que distinguen una spec útil de una spec inflada.
+- **Artefactos consumidos** (componentes, ADRs, contratos, user stories) → van en **restricciones técnicas** (los límites) y en **por qués** (la motivación derivada del upstream).
+- **Artefactos producidos o modificados** → sus garantías observables van en **criterios de aceptación**; sus límites de diseño van en **restricciones técnicas**.
+- **Las tres dimensiones** son las preguntas que te haces al escribir cada criterio o restricción, no subsecciones dentro de la spec.
 
 ### Heurística de tamaño: cuándo la spec necesita partirse
 
-Una regla práctica que funciona: si al escribir restricciones y criterios descubres que la spec produce o modifica más de **3-4 componentes**, probablemente tienes uno de tres problemas, y conviene diagnosticar antes de seguir:
+Si al escribir restricciones y criterios descubres que la spec produce o modifica más de **3-4 artefactos**, probablemente tienes uno de tres problemas:
 
 1. Una feature demasiado grande que debería partirse en varias specs (modulación del cap. 9).
-2. Un cambio arquitectónico disfrazado de feature, que merece un ADR separado del que esta spec luego cuelgue.
+2. Un cambio arquitectónico disfrazado de feature, que merece un ADR separado.
 3. Un refactor camuflado de feature (también modulación del cap. 9): lo que estás cambiando es la *forma* del sistema, no añadiendo capacidad de negocio.
 
-Las tres tienen tratamiento distinto en el resto del curso, y la spec sola no es el artefacto correcto para ninguna.
-
-### Tabla resumen consolidada
-
-Reuniendo esta sección con la subsección anterior sobre documentos upstream, esta es la regla unificada por tipo de relación:
+### Tabla resumen por tipo de relación
 
 | Relación | Regla principal | Sección de la spec | Trampa típica |
 |---|---|---|---|
 | **Componente consumido** | Referencia el contrato; documenta el uso | Restricciones técnicas | Re-documentar el componente |
-| **Componente producido** | Define contrato observable, no estructura | Criterios + Restricciones | Pseudocódigo (#12); no marcar el handoff a la doc del componente |
+| **Componente producido** | Define contrato observable, no estructura | Criterios + Restricciones | Pseudocódigo (#12); no marcar el handoff |
 | **Componente modificado** | Describe el delta, declara el resto invariante | Criterios + Restricciones | Reescribir el componente entero |
 | **ADR / arquitectura** | Cita invariantes específicos | Restricciones técnicas | Copiar invariantes (drift garantizado) |
-| **API contract / estándar externo** | Referencia + resumen de implicaciones | Restricciones técnicas | Re-documentar el contrato |
-| **Feature brief / doc de producto** | Extrae los por qués cardinales | Por qués | Importar el lenguaje vago de producto |
-| **User story** | Reescribir criterios con traza | Criterios + Por qués | Copia literal o referencia opaca |
+| **API contract / estándar** | Referencia + resumen de implicaciones | Restricciones técnicas | Re-documentar el contrato |
+| **Doc de producto / brief** | Extrae los por qués cardinales | Por qués | Importar lenguaje vago de producto |
+| **User story** | Derivar criterios con traza | Criterios + Por qués | Copia literal o referencia opaca |
 
-Y un anti-patrón nuevo que aparece cuando las referencias se acumulan sin disciplina: **sopa de referencias** — una spec donde el contenido propio queda enterrado bajo una lista larga de citas a ADRs, contratos, briefs y componentes, todos sin priorización. El agente y el humano no saben cuáles son load-bearing y cuáles son tangenciales, y acaban ignorándolos a todos. Es el inverso de la *maldición de las instrucciones*, — una spec ahogada por sus propias citas — y lo desarrollamos como [anti-patrón #14](12-anti-patterns.md#14-sopa-de-referencias) en el capítulo 12. La regla preventiva: **referencia solo lo que el agente o el humano necesita para esta tarea, y anota el porqué de cada referencia**.
+Y un anti-patrón que aparece cuando las referencias se acumulan sin disciplina: **sopa de referencias** — una spec ahogada por sus propias citas, donde el agente y el humano no saben cuáles son load-bearing y acaban ignorándolas todas. Lo desarrollamos como [anti-patrón #14](12-anti-patterns.md#14-sopa-de-referencias) en el capítulo 12. La regla preventiva: **referencia solo lo que el agente o el humano necesita para esta tarea, y anota el porqué de cada referencia**.
 
 ## En resumen: lo que distingue una spec buena de una mediocre
 

@@ -38,7 +38,7 @@ How you know it's done. The keyword is **verifiable**: an outsider, reading only
 
 "Works well" isn't an acceptance criterion. "Returns 413 with a readable message if the file exceeds 10 MB" is.
 
-When acceptance criteria come from upstream documents (user stories, contracts, ADRs), the rule is **rewrite with traceability**, not copy or reference blindly. The detail of how to do this — including the special case of documents living in the same repo — is developed in [section 4](04-spec-in-context.md#reusing-criteria-from-upstream-documents-user-stories-contracts).
+When acceptance criteria come from upstream documents (user stories, contracts, ADRs), the rule is **rewrite with traceability**, not copy or reference blindly. The detail of how to do this — including the special case of documents living in the same repo — is developed in [section 4](04-spec-in-context.md#the-spec-and-its-external-sources-consume-produce-modify).
 
 ### 5. The *whys*
 
@@ -107,7 +107,7 @@ One or two sentences. Observable result. For whom.
 
 This template fits in less than a screen and covers 80% of the value a spec can deliver. The other 20% are domain-specific details — state diagrams, API contracts, concrete input/output examples — that you add when the domain demands them, not by default.
 
-It's normal for a spec to touch more than one component. Information about those components fits in the six blocks themselves: components consumed without modification go in **technical constraints**, guarantees of what's produced or modified go in **acceptance criteria**, and the reasoning behind each decision goes in **whys**. If you struggle to fit that information into the six blocks, the spec is probably too large and should be split. [Section 4](04-spec-in-context.md#the-spec-and-technical-components-consume-produce-modify) develops how to think about the spec's relationship with system components.
+It's normal for a spec to touch more than one component. Information about those components fits in the six blocks themselves: components consumed without modification go in **technical constraints**, guarantees of what's produced or modified go in **acceptance criteria**, and the reasoning behind each decision goes in **whys**. If you struggle to fit that information into the six blocks, the spec is probably too large and should be split. [Section 4](04-spec-in-context.md#the-spec-and-its-external-sources-consume-produce-modify) develops how to think about the spec's relationship with its external sources.
 
 ## The curse of instructions
 

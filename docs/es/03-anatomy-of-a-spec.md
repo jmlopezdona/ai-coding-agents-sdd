@@ -38,7 +38,7 @@ Cómo sabes que está hecho. La palabra clave es **verificable**: una persona ex
 
 "Funciona bien" no es un criterio de aceptación. "Devuelve 413 con mensaje legible si el archivo supera los 10 MB" sí lo es.
 
-Cuando los criterios de aceptación vienen de documentos upstream (user stories, contratos, ADRs), la regla es **reescribir con traza**, no copiar ni referenciar a secas. El detalle de cómo hacerlo — incluido el caso especial de documentos que viven en el mismo repo — se desarrolla en la [sección 4](04-spec-in-context.md#reutilizar-criterios-de-documentos-upstream-user-stories-contratos).
+Cuando los criterios de aceptación vienen de documentos upstream (user stories, contratos, ADRs), la regla es **reescribir con traza**, no copiar ni referenciar a secas. El detalle de cómo hacerlo — incluido el caso especial de documentos que viven en el mismo repo — se desarrolla en la [sección 4](04-spec-in-context.md#la-spec-y-sus-fuentes-externas-consumir-producir-modificar).
 
 ### 5. Los "por qués"
 
@@ -107,7 +107,7 @@ Una o dos frases. Resultado observable. Para quién.
 
 Esta plantilla cabe en menos de una pantalla y cubre el 80% del valor que una spec puede aportar. El otro 20% son detalles específicos del dominio — diagramas de estado, contratos de API, ejemplos concretos de input/output — que se añaden cuando el dominio los pide, no por defecto.
 
-Es normal que una spec toque más de un componente. La información sobre esos componentes se reparte en los propios seis bloques: los componentes que se consumen sin modificar van en **restricciones técnicas**, las garantías de lo que se produce o modifica van en **criterios de aceptación**, y las razones de cada decisión van en **por qués**. Si te cuesta encajar esa información en los seis bloques, probablemente la spec es demasiado grande y debería partirse. La [sección 4](04-spec-in-context.md#la-spec-y-los-componentes-técnicos-consumir-producir-modificar) desarrolla cómo pensar sobre la relación de la spec con los componentes del sistema.
+Es normal que una spec toque más de un componente. La información sobre esos componentes se reparte en los propios seis bloques: los componentes que se consumen sin modificar van en **restricciones técnicas**, las garantías de lo que se produce o modifica van en **criterios de aceptación**, y las razones de cada decisión van en **por qués**. Si te cuesta encajar esa información en los seis bloques, probablemente la spec es demasiado grande y debería partirse. La [sección 4](04-spec-in-context.md#la-spec-y-sus-fuentes-externas-consumir-producir-modificar) desarrolla cómo pensar sobre la relación de la spec con sus fuentes externas.
 
 ## La maldición de las instrucciones
 
