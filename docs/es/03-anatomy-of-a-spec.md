@@ -117,7 +117,7 @@ Una o dos frases. Resultado observable. Para quién.
 
 Esta plantilla cabe en menos de una pantalla y cubre el 80% del valor que una spec puede aportar. El otro 20% son detalles específicos del dominio — diagramas de estado, contratos de API, ejemplos concretos de input/output — que se añaden cuando el dominio los pide, no por defecto.
 
-Cuando la spec toca más de un componente, la plantilla se extiende con un bloque de **superficies afectadas** que enumera qué componentes se consumen, producen o modifican. Las reglas de ese bloque se desarrollan en la [sección 4](04-spec-in-context.md#la-spec-y-los-componentes-técnicos-consumir-producir-modificar).
+Es normal que una spec toque más de un componente. La información sobre esos componentes se reparte en los propios seis bloques: los componentes que se consumen sin modificar van en **restricciones técnicas**, las garantías de lo que se produce o modifica van en **criterios de aceptación**, y las razones de cada decisión van en **por qués**. Si te cuesta encajar esa información en los seis bloques, probablemente la spec es demasiado grande y debería partirse. La [sección 4](04-spec-in-context.md#la-spec-y-los-componentes-técnicos-consumir-producir-modificar) desarrolla cómo pensar sobre la relación de la spec con los componentes del sistema.
 
 ## La maldición de las instrucciones
 

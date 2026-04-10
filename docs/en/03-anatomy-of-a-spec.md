@@ -117,7 +117,7 @@ One or two sentences. Observable result. For whom.
 
 This template fits in less than a screen and covers 80% of the value a spec can deliver. The other 20% are domain-specific details — state diagrams, API contracts, concrete input/output examples — that you add when the domain demands them, not by default.
 
-When the spec touches more than one component, the template extends with an **affected surfaces** block that lists which components are consumed, produced or modified. The rules for that block are developed in [section 4](04-spec-in-context.md#the-spec-and-technical-components-consume-produce-modify).
+It's normal for a spec to touch more than one component. Information about those components fits in the six blocks themselves: components consumed without modification go in **technical constraints**, guarantees of what's produced or modified go in **acceptance criteria**, and the reasoning behind each decision goes in **whys**. If you struggle to fit that information into the six blocks, the spec is probably too large and should be split. [Section 4](04-spec-in-context.md#the-spec-and-technical-components-consume-produce-modify) develops how to think about the spec's relationship with system components.
 
 ## The curse of instructions
 

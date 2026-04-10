@@ -84,50 +84,20 @@ Three important clarifications about this pattern:
 
 > **The three dimensions in one line**: *functional* describes observable behavior; *non-functional* the cross-cutting constraints; *technical* the contract and integration decisions. Only the load-bearing parts go in the spec; the rest gets referenced.
 
-### The "Affected surfaces" block
+### Where this information goes in the six blocks
 
-When a spec touches multiple components, it's worth having an explicit block at the start that **enumerates the affected surfaces with their relationship type**. It's not work breakdown (it doesn't enumerate tasks, doesn't mention files, doesn't assign order — that lives in the planning phase of chapter 5). It's **surface mapping**, and it does three things no other part of the spec does well:
+The consume/produce/modify taxonomy and the three dimensions don't create a new section in the spec — they help you write the sections you already have better:
 
-1. It gives the agent and the chapter 6 validator an **enumerable list** of the change's blast radius, which in chapter 1 was invisible.
-2. It gives the human a **signal of the spec's size**: if the list has 12 entries, the spec is almost certainly *two features* badly stitched together, or a refactor masquerading as a feature.
-3. **It isn't work breakdown**, which keeps it on the "what" side rather than the "how".
+- **Consumed components** → go in **technical constraints**: "auth goes through `requireAuth`; `avatar-storage` is used via `POST /upload`, handling 413 and 415 explicitly".
+- **Produced or modified components** → their observable guarantees go in **acceptance criteria**: "accepts JPEG/PNG uploads ≤10 MB; returns URL; fails with 413/415 with readable message". Their design bounds go in **technical constraints**: "no new table; the avatar is a field on `User`".
+- **The three dimensions** (functional, non-functional, technical) are the three questions you ask yourself when writing each criterion or constraint, not three subsections within the spec.
+- **The whys** behind each decision go, as always, in **whys**.
 
-An example of the block enriched with the three dimensions:
+When a component is consumed, the spec is shorter for it — it only describes *how this feature uses it*, not what the component does (that lives in its own contract). When a component is modified, the spec explicitly declares what does **not** change — that's what saves the spec from inflating. Those two habits are what distinguish a useful spec from an inflated one.
 
-```markdown
-## Affected surfaces
+### Size heuristic: when the spec needs splitting
 
-### `User` model — modified
-
-- **Functional:** adds `avatar_url` (optional, current avatar URL or absent).
-  Updated on upload; cleared on delete. Rest of the model invariant.
-- **Non-functional:** the migration must not require downtime; existing
-  serialization can't break (test `test_user_serialization_back_compat`).
-- **Technical:** field indexed by `user_id`. Permission schema unchanged.
-- **More detail:** `docs/db/migrations/0042-add-avatar.md` (once created).
-
-### `POST /api/avatar` endpoint — produced
-
-- **Functional:** accepts authenticated uploads (JPEG/PNG, ≤10 MB), returns URL.
-  Errors: 401 unauthenticated, 413 if oversize, 415 if invalid type.
-- **Non-functional:** existing API gateway rate limit applies unchanged.
-- **Technical:** consumes `services/avatar-storage` (current contract, unchanged)
-  and `auth-middleware` (current contract, unchanged).
-- **More detail:** this block is the transient source; after implementation,
-  operational doc lives in the new service's README.
-
-### `services/avatar-storage` — consumed
-
-- **Functional:** calls `POST /upload`; handles 413 and 415 explicitly,
-  propagates 5xx to the caller.
-- Rest: see `services/avatar-storage/contract.openapi.yaml@v2`.
-```
-
-Notice how the *consumed* component has a much shorter block — it only describes *how this feature uses it*, not what the component does, because that lives in its own contract. And notice how the *modified* component declares explicitly what does **not** change. Those two habits are what distinguish a useful spec from an inflated one.
-
-### Size heuristic
-
-A practical rule that works: if a spec produces or modifies more than **3-4 surfaces**, you probably have one of three problems, and it's worth diagnosing before continuing:
+A practical rule that works: if while writing constraints and criteria you discover the spec produces or modifies more than **3-4 components**, you probably have one of three problems, and it's worth diagnosing before continuing:
 
 1. A feature too big that should be split into multiple specs (chapter 9 modulation).
 2. An architectural change disguised as a feature, which deserves its own ADR that this spec then hangs from.
@@ -142,8 +112,8 @@ Pulling this section together with the earlier subsection on upstream documents,
 | Relationship | Main rule | Spec section | Typical trap |
 |---|---|---|---|
 | **Consumed component** | Reference the contract; document the use | Technical constraints | Re-documenting the component |
-| **Produced component** | Define observable contract, not structure | Affected surfaces + Criteria | Pseudocode (#12); failing to mark the handoff to the component's doc |
-| **Modified component** | Describe the delta, declare the rest invariant | Affected surfaces + Criteria | Rewriting the entire component |
+| **Produced component** | Define observable contract, not structure | Criteria + Constraints | Pseudocode (#12); failing to mark the handoff to the component's doc |
+| **Modified component** | Describe the delta, declare the rest invariant | Criteria + Constraints | Rewriting the entire component |
 | **ADR / architecture** | Cite specific invariants | Technical constraints | Copying invariants (drift guaranteed) |
 | **API contract / external standard** | Reference + summary of implications | Technical constraints | Re-documenting the contract |
 | **Feature brief / product doc** | Extract the cardinal whys | Whys | Importing vague product language |

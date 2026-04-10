@@ -84,50 +84,20 @@ Tres aclaraciones importantes sobre este patrón:
 
 > **En resumen de las tres dimensiones**: *funcional* describe el comportamiento observable; *no funcional* las restricciones cruzadas; *técnico* las decisiones de contrato e integración. Solo lo load-bearing entra en la spec; el resto se referencia.
 
-### El bloque "Superficies afectadas"
+### Dónde va esta información en los seis bloques
 
-Cuando una spec toca varios componentes, conviene un bloque explícito al principio que **enumere las superficies afectadas con su tipo de relación**. No es work breakdown (no enumera tareas, no menciona archivos, no asigna orden — eso vive en la fase de plan del cap. 5). Es **mapeo de superficie**, y hace tres cosas que ninguna otra parte de la spec hace bien:
+La taxonomía consumir/producir/modificar y las tres dimensiones no crean una sección nueva en la spec — ayudan a escribir mejor las secciones que ya existen:
 
-1. Le da al agente y al validador del cap. 6 una **lista enumerable** del blast radius del cambio, que en el cap. 1 era invisible.
-2. Le da al humano una **señal del tamaño de la spec**: si la lista tiene 12 entradas, casi seguro la spec son realmente *dos features* mal cosidas o un refactor camuflado de feature.
-3. **No es work breakdown**, lo cual la mantiene del lado del "qué" en vez del "cómo".
+- **Componentes consumidos** → van en **restricciones técnicas**: "la auth pasa por `requireAuth`; `avatar-storage` se usa vía `POST /upload`, manejando 413 y 415 explícitamente".
+- **Componentes producidos o modificados** → sus garantías observables van en **criterios de aceptación**: "acepta uploads JPEG/PNG ≤10 MB; devuelve URL; falla con 413/415 con mensaje legible". Sus límites de diseño van en **restricciones técnicas**: "no se crea tabla nueva; el avatar es un campo en `User`".
+- **Las tres dimensiones** (funcional, no funcional, técnico) son las tres preguntas que te haces al escribir cada criterio o restricción, no tres subsecciones dentro de la spec.
+- **Los por qués** de cada decisión van, como siempre, en **por qués**.
 
-Un ejemplo del bloque enriquecido con las tres dimensiones:
+Cuando un componente se consume, la spec es más corta para él — solo describe *cómo lo usa esta feature*, no lo que el componente hace (eso vive en su propio contrato). Cuando un componente se modifica, la spec declara explícitamente qué **no** cambia — eso es lo que salva a la spec de inflarse. Esos dos hábitos son los que distinguen una spec útil de una spec inflada.
 
-```markdown
-## Superficies afectadas
+### Heurística de tamaño: cuándo la spec necesita partirse
 
-### Modelo `User` — modificado
-
-- **Funcional:** añade `avatar_url` (opcional, URL del avatar actual o ausente).
-  Se actualiza al subir avatar; se borra al borrarlo. Resto del modelo invariante.
-- **No funcional:** la migración no debe requerir downtime; serialización existente
-  no puede romperse (test `test_user_serialization_back_compat`).
-- **Técnico:** campo indexado por `user_id`. No cambia el esquema de permisos.
-- **Más detalle:** `docs/db/migrations/0042-add-avatar.md` (cuando se cree).
-
-### Endpoint `POST /api/avatar` — producido
-
-- **Funcional:** acepta uploads autenticados (JPEG/PNG, ≤10 MB), devuelve URL.
-  Errores: 401 sin auth, 413 si excede tamaño, 415 si tipo inválido.
-- **No funcional:** rate limit existente del API gateway aplica sin cambios.
-- **Técnico:** consume `services/avatar-storage` (contrato actual, sin cambios)
-  y `auth-middleware` (contrato actual, sin cambios).
-- **Más detalle:** este bloque es la fuente transitoria; tras la implementación,
-  la doc operacional vive en el README del nuevo servicio.
-
-### `services/avatar-storage` — consumido
-
-- **Funcional:** se llama a `POST /upload`; se manejan 413 y 415 explícitamente,
-  los 5xx se propagan al caller.
-- Resto: ver `services/avatar-storage/contract.openapi.yaml@v2`.
-```
-
-Nota cómo el componente *consumido* tiene un bloque mucho más corto — solo describe *cómo lo usa esta feature*, no lo que el componente hace, porque eso vive en su propio contrato. Y nota cómo el componente *modificado* declara explícitamente qué **no** cambia. Esos dos hábitos son los que distinguen una spec útil de una spec inflada.
-
-### Heurística de tamaño
-
-Una regla práctica que funciona: si una spec produce o modifica más de **3-4 superficies**, probablemente tienes uno de tres problemas, y conviene diagnosticar antes de seguir:
+Una regla práctica que funciona: si al escribir restricciones y criterios descubres que la spec produce o modifica más de **3-4 componentes**, probablemente tienes uno de tres problemas, y conviene diagnosticar antes de seguir:
 
 1. Una feature demasiado grande que debería partirse en varias specs (modulación del cap. 9).
 2. Un cambio arquitectónico disfrazado de feature, que merece un ADR separado del que esta spec luego cuelgue.
@@ -142,8 +112,8 @@ Reuniendo esta sección con la subsección anterior sobre documentos upstream, e
 | Relación | Regla principal | Sección de la spec | Trampa típica |
 |---|---|---|---|
 | **Componente consumido** | Referencia el contrato; documenta el uso | Restricciones técnicas | Re-documentar el componente |
-| **Componente producido** | Define contrato observable, no estructura | Superficies afectadas + Criterios | Pseudocódigo (#12); no marcar el handoff a la doc del componente |
-| **Componente modificado** | Describe el delta, declara el resto invariante | Superficies afectadas + Criterios | Reescribir el componente entero |
+| **Componente producido** | Define contrato observable, no estructura | Criterios + Restricciones | Pseudocódigo (#12); no marcar el handoff a la doc del componente |
+| **Componente modificado** | Describe el delta, declara el resto invariante | Criterios + Restricciones | Reescribir el componente entero |
 | **ADR / arquitectura** | Cita invariantes específicos | Restricciones técnicas | Copiar invariantes (drift garantizado) |
 | **API contract / estándar externo** | Referencia + resumen de implicaciones | Restricciones técnicas | Re-documentar el contrato |
 | **Feature brief / doc de producto** | Extrae los por qués cardinales | Por qués | Importar el lenguaje vago de producto |
