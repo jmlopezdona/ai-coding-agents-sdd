@@ -171,7 +171,19 @@ Habla del *qué* en términos de implementación, no menciona ningún *por qué*
 
 **Buena** (corta, intencional, envejece):
 
-> *Spec: Avatar upload. **Objetivo:** permitir a un usuario autenticado subir una foto de perfil visible para sus seguidores y eliminable solo por él. **No-goals:** no se soporta GIF animado; no se comprime automáticamente; la moderación de contenido vive en otra spec. **Restricciones:** se sirve desde el bucket S3 existente; auth pasa por `requireAuth`; errores siguen el patrón `Result<T, AppError>`. **Criterios:** un usuario autenticado puede subir JPEG o PNG ≤10 MB; falla con 413 si excede tamaño y 415 si tipo inválido, ambos con mensaje legible; solo el dueño puede borrar; un test de integración cubre los tres casos. **Por qués:** no comprimimos porque diseño quiere preservar calidad para cuentas verificadas (sept-2025, @maria); solo el dueño borra porque añadir moderación cambiaría el modelo de permisos y queremos esta iteración mínima. **Boundaries:** ✅ ejecutar tests antes de declarar terminado; ⚠️ preguntar antes de tocar el esquema de `User`; 🚫 nunca deshabilitar tests existentes ni commitear secretos.*
+> **Spec: Avatar upload**
+>
+> **Objetivo:** permitir a un usuario autenticado subir una foto de perfil visible para sus seguidores y eliminable solo por él.
+>
+> **No-goals:** no se soporta GIF animado; no se comprime automáticamente; la moderación de contenido vive en otra spec.
+>
+> **Restricciones:** se sirve desde el bucket S3 existente; auth pasa por `requireAuth`; errores siguen el patrón `Result<T, AppError>`.
+>
+> **Criterios:** un usuario autenticado puede subir JPEG o PNG ≤10 MB; falla con 413 si excede tamaño y 415 si tipo inválido, ambos con mensaje legible; solo el dueño puede borrar; un test de integración cubre los tres casos.
+>
+> **Por qués:** no comprimimos porque diseño quiere preservar calidad para cuentas verificadas (sept-2025, @maria); solo el dueño borra porque añadir moderación cambiaría el modelo de permisos y queremos esta iteración mínima.
+>
+> **Boundaries:** ✅ ejecutar tests antes de declarar terminado · ⚠️ preguntar antes de tocar el esquema de `User` · 🚫 nunca deshabilitar tests existentes ni commitear secretos.
 
 La buena cabe en la misma extensión que la mediocre, pero captura intención, restricciones, criterios verificables y los por qués que la harán sobrevivir a las decisiones que la rodean.
 

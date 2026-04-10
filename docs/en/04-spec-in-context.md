@@ -171,7 +171,19 @@ It talks about the *what* in implementation terms, mentions no *why*, has no non
 
 **Good** (short, intentional, ages well):
 
-> *Spec: Avatar upload. **Objective:** allow an authenticated user to upload a profile photo visible to followers and deletable only by them. **Non-goals:** no animated GIF support; no automatic compression; content moderation lives in another spec. **Constraints:** served from the existing S3 bucket; auth goes through `requireAuth`; errors follow the `Result<T, AppError>` pattern. **Criteria:** an authenticated user can upload JPEG or PNG ≤10 MB; fails with 413 if oversize and 415 if invalid type, both with a readable message; only the owner can delete; an integration test covers all three cases. **Whys:** we don't compress because design wants to preserve quality for verified accounts (Sept-2025, @maria); only the owner deletes because adding moderation would change the permission model and we want this iteration minimal. **Boundaries:** ✅ run tests before declaring done; ⚠️ ask before touching the `User` schema; 🚫 never disable existing tests or commit secrets.*
+> **Spec: Avatar upload**
+>
+> **Objective:** allow an authenticated user to upload a profile photo visible to followers and deletable only by them.
+>
+> **Non-goals:** no animated GIF support; no automatic compression; content moderation lives in another spec.
+>
+> **Constraints:** served from the existing S3 bucket; auth goes through `requireAuth`; errors follow the `Result<T, AppError>` pattern.
+>
+> **Criteria:** an authenticated user can upload JPEG or PNG ≤10 MB; fails with 413 if oversize and 415 if invalid type, both with a readable message; only the owner can delete; an integration test covers all three cases.
+>
+> **Whys:** we don't compress because design wants to preserve quality for verified accounts (Sept-2025, @maria); only the owner deletes because adding moderation would change the permission model and we want this iteration minimal.
+>
+> **Boundaries:** ✅ run tests before declaring done · ⚠️ ask before touching the `User` schema · 🚫 never disable existing tests or commit secrets.
 
 The good one fits in roughly the same space as the mediocre one, but it captures intent, constraints, verifiable criteria, and the whys that will let it survive the decisions surrounding it.
 
