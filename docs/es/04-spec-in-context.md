@@ -68,9 +68,13 @@ Ese delta explícito es también una traza para un doc-gathering agent: puede co
 
 ### Caso especial: documentos de producto (user stories, briefs)
 
-Los documentos de producto se *consumen* — la spec se alimenta de ellos pero no los modifica. Sin embargo, tienen una particularidad: **hablan un idioma distinto al de la spec**. Una user story dice *"el usuario puede subir una foto fácilmente"*; la spec necesita *"JPEG/PNG ≤10 MB, falla con 413/415 con mensaje legible"*. Consumir un documento de producto no es copiar — es **derivar criterios de ingeniería** a partir de criterios de producto.
+Los documentos de producto se *consumen* — la spec se alimenta de ellos pero no los modifica. La pregunta es **cuánto gap hay entre el upstream y lo que la spec necesita**, y eso depende del rigor con el que se hayan elaborado los requisitos funcionales.
 
-Cómo hacerlo depende de si el agente puede acceder al documento original:
+En un extremo, una user story dice *"el usuario puede subir una foto fácilmente"* — la spec tiene que derivar criterios de ingeniería completos: tipos de archivo, tamaño máximo, códigos de error, edge cases. En el otro extremo, unos criterios de aceptación bien elaborados ya cubren las reglas de negocio, los casos no felices y los límites funcionales — la spec solo necesita referenciarlos y añadir las restricciones técnicas que el upstream no cubre (qué middleware usar, qué componentes no tocar, qué patrones respetar).
+
+En el contexto de trabajo ágil, la user story y los criterios de aceptación son el **inicio de la conversación** con los desarrolladores para refinar el detalle funcional. SDD no cambia eso — lo que cambia es que el gap, sea del tamaño que sea, tiene que quedar cubierto **explícitamente** en algún sitio (la spec), no implícitamente en la cabeza del desarrollador. Cuanto más rigor haya en los requisitos funcionales upstream, menos trabajo de derivación necesitará la spec.
+
+Cómo incorporar el upstream depende de si el agente puede acceder al documento original:
 
 **Sin acceso** (Jira sin MCP, Notion sin API, un documento suelto): **derivar con traza**. Escribes tus propios criterios precisos en la spec y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*. Referenciar a secas (`"ver JIRA-1234"`) rompe la auto-contención del capítulo 1 — el agente no puede leer ese enlace, y la user story puede cambiar sin que nadie lo detecte.
 

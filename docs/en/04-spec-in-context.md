@@ -68,9 +68,13 @@ That explicit delta is also a trace for a doc-gathering agent: it can compare wh
 
 ### Special case: product documents (user stories, briefs)
 
-Product documents are *consumed* — the spec feeds on them but doesn't modify them. However, they have a particularity: **they speak a different language from the spec**. A user story says *"the user can easily upload a photo"*; the spec needs *"JPEG/PNG ≤10 MB, fails with 413/415 with readable message"*. Consuming a product document isn't copying — it's **deriving engineering criteria** from product criteria.
+Product documents are *consumed* — the spec feeds on them but doesn't modify them. The question is **how much gap exists between the upstream and what the spec needs**, and that depends on the rigor with which the functional requirements were elaborated.
 
-How to do it depends on whether the agent can access the original document:
+At one extreme, a user story says *"the user can easily upload a photo"* — the spec has to derive complete engineering criteria: file types, maximum size, error codes, edge cases. At the other extreme, well-crafted acceptance criteria already cover business rules, unhappy paths and functional boundaries — the spec only needs to reference them and add the technical constraints the upstream doesn't cover (which middleware to use, which components not to touch, which patterns to respect).
+
+In an agile context, the user story and acceptance criteria are the **start of the conversation** with developers to refine functional detail. SDD doesn't change that — what changes is that the gap, whatever its size, has to be covered **explicitly** somewhere (the spec), not implicitly in the developer's head. The more rigor there is in the upstream functional requirements, the less derivation work the spec will need.
+
+How to incorporate the upstream depends on whether the agent can access the original document:
 
 **Without access** (Jira without MCP, Notion without API, a standalone document): **derive with traceability**. Write your own precise criteria in the spec and cite the user story in the "whys" section as the source of *what motivated the decision*. A bare reference (`"see JIRA-1234"`) breaks the self-containment of chapter 1 — the agent can't read that link, and the user story can change without anyone noticing.
 
