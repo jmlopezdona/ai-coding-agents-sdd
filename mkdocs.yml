@@ -66,7 +66,7 @@ nav:
       - "11. Context engineering as alternative": 11-context-engineering.md
   - Pitfalls:
       - "12. Anti-patterns": 12-anti-patterns.md
-  - Bridge:
+  - Industrialization:
       - "13. From SDD to the harness": 13-from-sdd-to-harness.md
 
 markdown_extensions:
@@ -138,7 +138,7 @@ plugins:
             "11. Context engineering as alternative": "11. Context engineering como alternativa"
             "Pitfalls": "Errores comunes"
             "12. Anti-patterns": "12. Anti-patrones"
-            "Bridge": "Puente"
+            "Industrialization": "Industrialización"
             "13. From SDD to the harness": "13. Del SDD al harness"
 
 extra:

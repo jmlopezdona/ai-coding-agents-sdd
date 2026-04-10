@@ -60,7 +60,7 @@ Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 10 (l
 
 - [12. Anti-patrones del SDD](12-anti-patterns.md)
 
-### Parte 8 — Puente al harness
+### Parte 8 — Industrialización
 
 - [13. Del SDD al harness: cómo encajan las piezas](13-from-sdd-to-harness.md)
 

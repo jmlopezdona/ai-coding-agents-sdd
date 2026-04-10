@@ -60,7 +60,7 @@ Two chapters are **not optional** even though they look negative: chapter 10 (th
 
 - [12. SDD anti-patterns](12-anti-patterns.md)
 
-### Part 8 — Bridge to the harness
+### Part 8 — Industrialization
 
 - [13. From SDD to the harness: how the pieces fit](13-from-sdd-to-harness.md)
 
