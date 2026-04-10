@@ -129,9 +129,9 @@ Nota cómo el componente *consumido* tiene un bloque mucho más corto — solo d
 
 Una regla práctica que funciona: si una spec produce o modifica más de **3-4 superficies**, probablemente tienes uno de tres problemas, y conviene diagnosticar antes de seguir:
 
-- **(a)** Una feature demasiado grande que debería partirse en varias specs (modulación del cap. 9).
-- **(b)** Un cambio arquitectónico disfrazado de feature, que merece un ADR separado del que esta spec luego cuelgue.
-- **(c)** Un refactor camuflado de feature (también modulación del cap. 9): lo que estás cambiando es la *forma* del sistema, no añadiendo capacidad de negocio.
+1. Una feature demasiado grande que debería partirse en varias specs (modulación del cap. 9).
+2. Un cambio arquitectónico disfrazado de feature, que merece un ADR separado del que esta spec luego cuelgue.
+3. Un refactor camuflado de feature (también modulación del cap. 9): lo que estás cambiando es la *forma* del sistema, no añadiendo capacidad de negocio.
 
 Las tres tienen tratamiento distinto en el resto del curso, y la spec sola no es el artefacto correcto para ninguna.
 

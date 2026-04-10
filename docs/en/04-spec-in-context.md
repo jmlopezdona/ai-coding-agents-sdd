@@ -129,9 +129,9 @@ Notice how the *consumed* component has a much shorter block — it only describ
 
 A practical rule that works: if a spec produces or modifies more than **3-4 surfaces**, you probably have one of three problems, and it's worth diagnosing before continuing:
 
-- **(a)** A feature too big that should be split into multiple specs (chapter 9 modulation).
-- **(b)** An architectural change disguised as a feature, which deserves its own ADR that this spec then hangs from.
-- **(c)** A refactor camouflaged as a feature (also chapter 9 modulation): what you're changing is the *shape* of the system, not adding business capability.
+1. A feature too big that should be split into multiple specs (chapter 9 modulation).
+2. An architectural change disguised as a feature, which deserves its own ADR that this spec then hangs from.
+3. A refactor camouflaged as a feature (also chapter 9 modulation): what you're changing is the *shape* of the system, not adding business capability.
 
 The three have different treatments in the rest of the course, and the spec alone isn't the right artifact for any of them.
 
