@@ -357,7 +357,7 @@
   
     
   
-  El ciclo
+  Ciclo de vida
 
         </a>
       </li>
@@ -1162,7 +1162,7 @@
   <span class="md-ellipsis">
     
   
-    El ciclo
+    Ciclo de vida
   
 
     
@@ -1178,7 +1178,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    El ciclo
+    Ciclo de vida
   
 
           </label>
@@ -2075,13 +2075,16 @@
 </ul>
 <p>Pero no son las únicas. Dependiendo del dominio y del cambio, otras dimensiones pueden ser igual de relevantes: <strong>seguridad</strong> (qué superficie de ataque abre o cierra el cambio), <strong>privacidad de datos</strong> (qué datos personales se tocan y bajo qué política), <strong>observabilidad</strong> (qué métricas o logs necesita el cambio para ser operable), <strong>migración/rollback</strong> (qué pasa si hay que revertir). El principio no es "hay exactamente tres dimensiones" — es <strong>hacerse preguntas distintas sobre cada aspecto del cambio</strong> y documentar solo lo que es load-bearing para la validación.</p>
 <p>Para cada dimensión, una <strong>referencia opcional al documento más profundo</strong> si existe. Si una dimensión no aporta, omítela — la ausencia es informativa.</p>
-<p>Una aclaración: <strong>lo que va en la spec es lo load-bearing</strong> — lo que el validador del cap. 6 puede comparar contra el código. El detalle más fino vive en la documentación del artefacto.</p>
+<div class="admonition tip">
+<p class="admonition-title">Aclaración</p>
+<p>Lo que va en la spec es lo <strong>load-bearing</strong> — lo que el validador del cap. 6 puede comparar contra el código. El detalle más fino vive en la documentación del artefacto.</p>
+</div>
 <h3 id="donde-va-esta-informacion-en-los-seis-bloques">Dónde va esta información en los seis bloques<a class="headerlink" href="#donde-va-esta-informacion-en-los-seis-bloques" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>La taxonomía consumir/producir/modificar y las tres dimensiones no crean una sección nueva en la spec — ayudan a escribir mejor las secciones que ya existen:</p>
+<p>La taxonomía consumir/producir/modificar y las dimensiones no crean una sección nueva en la spec — ayudan a escribir mejor las secciones que ya existen:</p>
 <ul>
 <li><strong>Artefactos consumidos</strong> (componentes, ADRs, contratos, user stories) → van en <strong>restricciones técnicas</strong> (los límites) y en <strong>por qués</strong> (la motivación derivada del upstream).</li>
 <li><strong>Artefactos producidos o modificados</strong> → sus garantías observables van en <strong>criterios de aceptación</strong>; sus límites de diseño van en <strong>restricciones técnicas</strong>.</li>
-<li><strong>Las tres dimensiones</strong> son las preguntas que te haces al escribir cada criterio o restricción, no subsecciones dentro de la spec.</li>
+<li><strong>Las dimensiones</strong> son las preguntas que te haces al escribir cada criterio o restricción, no subsecciones dentro de la spec.</li>
 </ul>
 <h3 id="heuristica-de-tamano-cuando-la-spec-necesita-partirse">Heurística de tamaño: cuándo la spec necesita partirse<a class="headerlink" href="#heuristica-de-tamano-cuando-la-spec-necesita-partirse" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Si al escribir restricciones y criterios descubres que la spec produce o modifica más de <strong>3-4 artefactos</strong>, probablemente tienes uno de tres problemas:</p>
@@ -2174,7 +2177,7 @@
 <p><strong>La regla final</strong>: las specs malas enumeran trivialidades técnicas y no dicen nada de la intención. Las specs mediocres dicen mucho del <em>qué</em> y nada del <em>por qué</em>. Las specs buenas son cortas, dicen <em>qué</em>, <em>por qué</em> y <em>qué no</em>, y se pueden leer en cinco minutos sin perder nada importante.</p>
 <h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Hasta aquí hemos visto qué hay <em>dentro</em> de una spec y cómo calibrar su detalle según el contexto. La regla unificadora: <strong>escribe solo el detalle que tu mecanismo de validación sabe consumir</strong>. Si la anatomía responde al <em>qué</em>, lo siguiente es el <em>cuándo</em> y el <em>cómo se valida</em>: el momento en que una spec deja de ser documento y empieza a comportarse como contrato.</p>
-<p>En el <strong>capítulo 5</strong> vamos a ver el ciclo en el que una spec vive: las cuatro fases del proceso SDD (con sus dos variantes en la literatura), cómo encadenarlas con un agente, y dónde encaja la verificación que evita que el código se aleje de la spec.</p>
+<p>En el <strong>capítulo 5</strong> vamos a ver el <strong>ciclo de vida</strong> de una spec: las cuatro fases del proceso SDD (con sus dos variantes en la literatura), cómo encadenarlas con un agente, y dónde encaja la verificación que evita que el código se aleje de la spec.</p>
 
 
 

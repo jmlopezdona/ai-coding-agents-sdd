@@ -357,7 +357,7 @@
   
     
   
-  The cycle
+  Lifecycle
 
         </a>
       </li>
@@ -1162,7 +1162,7 @@
   <span class="md-ellipsis">
     
   
-    The cycle
+    Lifecycle
   
 
     
@@ -1178,7 +1178,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    The cycle
+    Lifecycle
   
 
           </label>
@@ -2075,13 +2075,16 @@
 </ul>
 <p>But they're not the only ones. Depending on the domain and the change, other dimensions can be just as relevant: <strong>security</strong> (what attack surface the change opens or closes), <strong>data privacy</strong> (what personal data is touched and under what policy), <strong>observability</strong> (what metrics or logs the change needs to be operable), <strong>migration/rollback</strong> (what happens if it needs to be reverted). The principle isn't "there are exactly three dimensions" — it's <strong>asking distinct questions about each aspect of the change</strong> and documenting only what's load-bearing for validation.</p>
 <p>For each dimension, an <strong>optional reference to the deeper document</strong> if it exists. If a dimension doesn't add anything, omit it — absence is informative.</p>
-<p>One clarification: <strong>what goes in the spec is what's load-bearing</strong> — what the chapter 6 validator can compare against the code. Finer detail lives in the artifact's documentation.</p>
+<div class="admonition tip">
+<p class="admonition-title">Clarification</p>
+<p>What goes in the spec is what's <strong>load-bearing</strong> — what the chapter 6 validator can compare against the code. Finer detail lives in the artifact's documentation.</p>
+</div>
 <h3 id="where-this-information-goes-in-the-six-blocks">Where this information goes in the six blocks<a class="headerlink" href="#where-this-information-goes-in-the-six-blocks" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>The consume/produce/modify taxonomy and the three dimensions don't create a new section in the spec — they help you write the sections you already have better:</p>
+<p>The consume/produce/modify taxonomy and the dimensions don't create a new section in the spec — they help you write the sections you already have better:</p>
 <ul>
 <li><strong>Consumed artifacts</strong> (components, ADRs, contracts, user stories) → go in <strong>technical constraints</strong> (the bounds) and in <strong>whys</strong> (the motivation derived from upstream).</li>
 <li><strong>Produced or modified artifacts</strong> → their observable guarantees go in <strong>acceptance criteria</strong>; their design bounds go in <strong>technical constraints</strong>.</li>
-<li><strong>The three dimensions</strong> are the questions you ask when writing each criterion or constraint, not subsections within the spec.</li>
+<li><strong>The dimensions</strong> are the questions you ask when writing each criterion or constraint, not subsections within the spec.</li>
 </ul>
 <h3 id="size-heuristic-when-the-spec-needs-splitting">Size heuristic: when the spec needs splitting<a class="headerlink" href="#size-heuristic-when-the-spec-needs-splitting" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>If while writing constraints and criteria you discover the spec produces or modifies more than <strong>3-4 artifacts</strong>, you probably have one of three problems:</p>
@@ -2174,7 +2177,7 @@
 <p><strong>The final rule</strong>: bad specs enumerate technical trivia and say nothing about intent. Mediocre specs say a lot about <em>what</em> and nothing about <em>why</em>. Good specs are short, say <em>what</em>, <em>why</em> and <em>what not</em>, and can be read in five minutes without losing anything important.</p>
 <h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Up to here we've seen what's <em>inside</em> a spec and how to calibrate its detail for context. The unifying rule: <strong>write only the detail your validation mechanism knows how to consume</strong>. If anatomy answers the <em>what</em>, what comes next is the <em>when</em> and the <em>how it's validated</em>: the moment a spec stops being a document and starts behaving like a contract.</p>
-<p>In <strong>Chapter 5</strong> we'll see the cycle a spec lives in: the four phases of the SDD process (with their two variants in the literature), how to chain them with an agent, and where the verification that prevents code from drifting away from the spec fits.</p>
+<p>In <strong>Chapter 5</strong> we'll see the <strong>lifecycle</strong> of a spec: the four phases of the SDD process (with their two variants in the literature), how to chain them with an agent, and where the verification that prevents code from drifting away from the spec fits.</p>
 
 
 
