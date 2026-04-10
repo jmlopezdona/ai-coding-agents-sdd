@@ -1012,10 +1012,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#el-bloque-superficies-afectadas" class="md-nav__link">
+  <a href="#donde-va-esta-informacion-en-los-seis-bloques" class="md-nav__link">
     <span class="md-ellipsis">
       
-        El bloque "Superficies afectadas"
+        Dónde va esta información en los seis bloques
       
     </span>
   </a>
@@ -1023,10 +1023,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#heuristica-de-tamano" class="md-nav__link">
+  <a href="#heuristica-de-tamano-cuando-la-spec-necesita-partirse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Heurística de tamaño
+        Heurística de tamaño: cuándo la spec necesita partirse
       
     </span>
   </a>
@@ -1862,10 +1862,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#el-bloque-superficies-afectadas" class="md-nav__link">
+  <a href="#donde-va-esta-informacion-en-los-seis-bloques" class="md-nav__link">
     <span class="md-ellipsis">
       
-        El bloque "Superficies afectadas"
+        Dónde va esta información en los seis bloques
       
     </span>
   </a>
@@ -1873,10 +1873,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#heuristica-de-tamano" class="md-nav__link">
+  <a href="#heuristica-de-tamano-cuando-la-spec-necesita-partirse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Heurística de tamaño
+        Heurística de tamaño: cuándo la spec necesita partirse
       
     </span>
   </a>
@@ -2018,44 +2018,17 @@
 <blockquote>
 <p><strong>En resumen de las tres dimensiones</strong>: <em>funcional</em> describe el comportamiento observable; <em>no funcional</em> las restricciones cruzadas; <em>técnico</em> las decisiones de contrato e integración. Solo lo load-bearing entra en la spec; el resto se referencia.</p>
 </blockquote>
-<h3 id="el-bloque-superficies-afectadas">El bloque "Superficies afectadas"<a class="headerlink" href="#el-bloque-superficies-afectadas" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Cuando una spec toca varios componentes, conviene un bloque explícito al principio que <strong>enumere las superficies afectadas con su tipo de relación</strong>. No es work breakdown (no enumera tareas, no menciona archivos, no asigna orden — eso vive en la fase de plan del cap. 5). Es <strong>mapeo de superficie</strong>, y hace tres cosas que ninguna otra parte de la spec hace bien:</p>
-<ol>
-<li>Le da al agente y al validador del cap. 6 una <strong>lista enumerable</strong> del blast radius del cambio, que en el cap. 1 era invisible.</li>
-<li>Le da al humano una <strong>señal del tamaño de la spec</strong>: si la lista tiene 12 entradas, casi seguro la spec son realmente <em>dos features</em> mal cosidas o un refactor camuflado de feature.</li>
-<li><strong>No es work breakdown</strong>, lo cual la mantiene del lado del "qué" en vez del "cómo".</li>
-</ol>
-<p>Un ejemplo del bloque enriquecido con las tres dimensiones:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gu">## Superficies afectadas</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gu">### Modelo `User` — modificado</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Funcional:**</span> añade <span class="sb">`avatar_url`</span> (opcional, URL del avatar actual o ausente).
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  Se actualiza al subir avatar; se borra al borrarlo. Resto del modelo invariante.
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">-</span><span class="w"> </span><span class="gs">**No funcional:**</span> la migración no debe requerir downtime; serialización existente
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  no puede romperse (test <span class="sb">`test_user_serialization_back_compat`</span>).
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Técnico:**</span> campo indexado por <span class="sb">`user_id`</span>. No cambia el esquema de permisos.
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Más detalle:**</span> <span class="sb">`docs/db/migrations/0042-add-avatar.md`</span> (cuando se cree).
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="gu">### Endpoint `POST /api/avatar` — producido</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Funcional:**</span> acepta uploads autenticados (JPEG/PNG, ≤10 MB), devuelve URL.
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  Errores: 401 sin auth, 413 si excede tamaño, 415 si tipo inválido.
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">-</span><span class="w"> </span><span class="gs">**No funcional:**</span> rate limit existente del API gateway aplica sin cambios.
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Técnico:**</span> consume <span class="sb">`services/avatar-storage`</span> (contrato actual, sin cambios)
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  y <span class="sb">`auth-middleware`</span> (contrato actual, sin cambios).
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Más detalle:**</span> este bloque es la fuente transitoria; tras la implementación,
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  la doc operacional vive en el README del nuevo servicio.
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="gu">### `services/avatar-storage` — consumido</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Funcional:**</span> se llama a <span class="sb">`POST /upload`</span>; se manejan 413 y 415 explícitamente,
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  los 5xx se propagan al caller.
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="k">-</span><span class="w"> </span>Resto: ver <span class="sb">`services/avatar-storage/contract.openapi.yaml@v2`</span>.
-</span></code></pre></div>
-<p>Nota cómo el componente <em>consumido</em> tiene un bloque mucho más corto — solo describe <em>cómo lo usa esta feature</em>, no lo que el componente hace, porque eso vive en su propio contrato. Y nota cómo el componente <em>modificado</em> declara explícitamente qué <strong>no</strong> cambia. Esos dos hábitos son los que distinguen una spec útil de una spec inflada.</p>
-<h3 id="heuristica-de-tamano">Heurística de tamaño<a class="headerlink" href="#heuristica-de-tamano" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Una regla práctica que funciona: si una spec produce o modifica más de <strong>3-4 superficies</strong>, probablemente tienes uno de tres problemas, y conviene diagnosticar antes de seguir:</p>
+<h3 id="donde-va-esta-informacion-en-los-seis-bloques">Dónde va esta información en los seis bloques<a class="headerlink" href="#donde-va-esta-informacion-en-los-seis-bloques" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>La taxonomía consumir/producir/modificar y las tres dimensiones no crean una sección nueva en la spec — ayudan a escribir mejor las secciones que ya existen:</p>
+<ul>
+<li><strong>Componentes consumidos</strong> → van en <strong>restricciones técnicas</strong>: "la auth pasa por <code>requireAuth</code>; <code>avatar-storage</code> se usa vía <code>POST /upload</code>, manejando 413 y 415 explícitamente".</li>
+<li><strong>Componentes producidos o modificados</strong> → sus garantías observables van en <strong>criterios de aceptación</strong>: "acepta uploads JPEG/PNG ≤10 MB; devuelve URL; falla con 413/415 con mensaje legible". Sus límites de diseño van en <strong>restricciones técnicas</strong>: "no se crea tabla nueva; el avatar es un campo en <code>User</code>".</li>
+<li><strong>Las tres dimensiones</strong> (funcional, no funcional, técnico) son las tres preguntas que te haces al escribir cada criterio o restricción, no tres subsecciones dentro de la spec.</li>
+<li><strong>Los por qués</strong> de cada decisión van, como siempre, en <strong>por qués</strong>.</li>
+</ul>
+<p>Cuando un componente se consume, la spec es más corta para él — solo describe <em>cómo lo usa esta feature</em>, no lo que el componente hace (eso vive en su propio contrato). Cuando un componente se modifica, la spec declara explícitamente qué <strong>no</strong> cambia — eso es lo que salva a la spec de inflarse. Esos dos hábitos son los que distinguen una spec útil de una spec inflada.</p>
+<h3 id="heuristica-de-tamano-cuando-la-spec-necesita-partirse">Heurística de tamaño: cuándo la spec necesita partirse<a class="headerlink" href="#heuristica-de-tamano-cuando-la-spec-necesita-partirse" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Una regla práctica que funciona: si al escribir restricciones y criterios descubres que la spec produce o modifica más de <strong>3-4 componentes</strong>, probablemente tienes uno de tres problemas, y conviene diagnosticar antes de seguir:</p>
 <ol>
 <li>Una feature demasiado grande que debería partirse en varias specs (modulación del cap. 9).</li>
 <li>Un cambio arquitectónico disfrazado de feature, que merece un ADR separado del que esta spec luego cuelgue.</li>
@@ -2083,13 +2056,13 @@
 <tr>
 <td><strong>Componente producido</strong></td>
 <td>Define contrato observable, no estructura</td>
-<td>Superficies afectadas + Criterios</td>
+<td>Criterios + Restricciones</td>
 <td>Pseudocódigo (#12); no marcar el handoff a la doc del componente</td>
 </tr>
 <tr>
 <td><strong>Componente modificado</strong></td>
 <td>Describe el delta, declara el resto invariante</td>
-<td>Superficies afectadas + Criterios</td>
+<td>Criterios + Restricciones</td>
 <td>Reescribir el componente entero</td>
 </tr>
 <tr>
