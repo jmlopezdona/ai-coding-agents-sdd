@@ -40,15 +40,27 @@ Almost every pathology we'll see in chapter 12 comes from **misaligning these th
 
 ## Reusing criteria from upstream documents (user stories, contracts)
 
-An unavoidable question: if the upstream user story **already contains acceptance criteria**, what do I do with them? The short answer is **rewrite with traceability** — neither copy verbatim (it imports the imprecision of product language), nor reference-only (`"see JIRA-1234"` breaks the self-containment of chapter 1 and opens invisible drift). You rewrite the criteria in the spec at the level of precision the chapter 6 validator needs, and cite the user story in the "whys" section as the source of *what motivated the decision*, not as the container of *what to do*.
+An unavoidable question: if the upstream user story **already contains acceptance criteria**, what do I do with them? The answer depends on whether the agent can access the original document, but in both cases there's a constant: **the spec needs its own criteria at the level of engineering precision**, not at the product level. A user story says *"the user can easily upload a photo"*; the spec needs *"JPEG/PNG ≤10 MB, fails with 413/415 with readable message"*. That's not copying — it's deriving engineering criteria from product criteria.
 
-The unified rule: **the spec contains its own precise, verifiable version of the criteria. The upstream document is cited as the source of the why.** The anti-pattern to avoid — *fusing user story and spec into a single hybrid file because "they say the same thing"* — we develop as [anti-pattern #13](12-anti-patterns.md#13-fusing-user-story-and-spec-into-a-single-file) in chapter 12.
+### When the agent has no access to the upstream document
 
-**When the user story lives in the same repo as the spec**, the most serious objections go away: self-containment is preserved (everything is in git), drift stops being invisible (there's a commit), and a new possibility appears — an automatic sensor (hook or recurring agent) that detects when the user story changes without the spec being updated. But the "rewrite with traceability" rule still holds: they remain two artifacts with different purposes (the user story answers *what the user wants*; the spec, *what guarantees the system must meet*), and each changes for different reasons.
+If the user story lives in an external system without integration (Jira without MCP, Notion without API, a standalone document), the rule is **derive with traceability**: write your own precise criteria in the spec and cite the user story in the "whys" section as the source of *what motivated the decision*. A bare reference (`"see JIRA-1234"`) breaks the self-containment of chapter 1 and opens invisible drift — the agent can't read that link, and the user story can change without anyone noticing.
 
-A concrete risk in this scenario: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment — and the more there are, the harder it is to know which of the two reflects the current truth. The trace (the explicit reference connecting a spec criterion to its origin in the user story) serves a dual purpose: it acts as a **checkpoint at the time of change** (the human or agent editing the spec can verify that the origin is still valid) and as **audit material** for a doc-gathering agent that scans for discrepancies between both documents on a recurring basis.
+### When the agent does have access (same repo or MCP)
 
-**One legitimate exception**: when the upstream document is genuinely authoritative and lives under its own validation discipline (an OpenAPI/Protobuf contract with its own CI, a corporate security policy, an RFC), the spec **summarizes the implications** without copying the content. The critical distinction: that upstream document has its *own* validation operating on it. A Jira user story almost never has that property.
+If the user story lives in the same Git repo or is accessible via MCP (Jira, Linear, Notion with integration), the agent can already read the original content. Here you don't need to copy anything — but you still need to **derive your own criteria at the spec's level of precision** and reference the origin. The user story still doesn't speak the spec's language: it answers *what the user wants*; the spec answers *what guarantees the system must meet*.
+
+In this scenario, self-containment is preserved (the agent accesses the upstream), drift stops being invisible (there's a commit if it's in git, or a timestamp if it comes via MCP), and an **automatic sensor** (hook or recurring agent) can detect when the user story changes without the spec being updated.
+
+A concrete risk: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment. The trace (the explicit reference connecting a spec criterion to its origin in the user story) serves a dual purpose: it acts as a **checkpoint at the time of change** (the human or agent editing the spec can verify that the origin is still valid) and as **audit material** for a doc-gathering agent that scans for discrepancies on a recurring basis.
+
+### The unified rule
+
+**The spec always contains its own criteria, derived at the level of precision validation needs. The upstream document is cited as the source of the why, not as the container of the what.** What changes based on access is whether you need to copy upstream content (no access) or just reference it and derive (with access). The anti-pattern to avoid in both cases — *fusing user story and spec into a single hybrid file because "they say the same thing"* — we develop as [anti-pattern #13](12-anti-patterns.md#13-fusing-user-story-and-spec-into-a-single-file) in chapter 12.
+
+### Exception: documents with automatic validation against code
+
+When the upstream document is automatically validated against code on an ongoing basis (an OpenAPI contract with CI, a Protobuf schema with compatibility checks), it's enough to reference it and summarize the implications for your feature. A Jira user story has no automatic validation against code — its consistency depends on occasional human discipline, which makes it vulnerable to silent drift.
 
 ## The spec and technical components: consume, produce, modify
 
