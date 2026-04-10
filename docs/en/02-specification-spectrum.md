@@ -1,6 +1,6 @@
 # 2. The specification spectrum
 
-One of the most useful things the paper [*Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants*](https://arxiv.org/html/2602.00180) (arXiv) contributes is that it refuses to present SDD as one thing. It presents it as a **spectrum of three commitment levels**, and understanding which of the three levels you operate at — and which one you *think* you operate at — is probably the most consequential decision you'll make in this course.
+One of the most useful things the paper [*Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants*](https://arxiv.org/html/2602.00180) contributes is that it refuses to present SDD as one thing. It presents it as a **spectrum of three commitment levels**, and understanding which of the three levels you operate at — and which one you *think* you operate at — is probably the most consequential decision you'll make in this course.
 
 > *The spec declares intent. The code realizes it.*
 > — [Spec-Driven Development paper, arXiv](https://arxiv.org/html/2602.00180)
