@@ -8,7 +8,7 @@ Hasta aquí hemos hablado de la anatomía de una spec como si fuera una sola cos
 
 ### Spec-first → detalle ligero, intencional, no exhaustivo
 
-En spec-first la spec se lee una vez, al arrancar la feature, y a partir de ahí el código deriva libremente. Su única función es **alinear al equipo y al agente al principio**. Nada la va a leer de vuelta, así que cada línea extra que escribas es trabajo que nadie va a recuperar.
+En spec-first la spec se lee una vez, al arrancar la feature, y a partir de ahí el código deriva libremente. Su única función es **alinear al equipo y al agente al principio**. Nadie la va a leer de vuelta, así que cada línea extra que escribas es trabajo que nadie va a recuperar.
 
 El detalle apropiado: objetivo, no-goals, criterios de aceptación, los por qués críticos, y poco más. Si tu spec-first ocupa más de una pantalla, casi siempre es porque estás escribiendo spec-anchored *aspiracional* (anti-patrón #4 del capítulo 12) o porque caíste en pseudocódigo (anti-patrón #12). La spec-first óptima es la mínima viable para arrancar con intención clara.
 

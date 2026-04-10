@@ -8,7 +8,7 @@ So far we've talked about a spec's anatomy as if it were a single thing. It isn'
 
 ### Spec-first → light, intentional, non-exhaustive detail
 
-In spec-first the spec is read once, when the feature kicks off, and from then on the code drifts freely. Its only function is to **align team and agent at the start**. Nothing is going to read it again, so every extra line you write is work no one will ever recover.
+In spec-first the spec is read once, when the feature kicks off, and from then on the code drifts freely. Its only function is to **align team and agent at the start**. No one is going to read it again, so every extra line you write is work no one will ever recover.
 
 The right amount of detail: objective, non-goals, acceptance criteria, the critical whys, and little else. If your spec-first runs longer than a screen, it's almost always because you're writing *aspirational* spec-anchored (anti-pattern #4 in chapter 12) or because you've fallen into pseudocode (anti-pattern #12). The optimal spec-first is the minimum viable to start with clear intent.
 
