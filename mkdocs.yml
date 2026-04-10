@@ -54,7 +54,7 @@ nav:
       - "3. Anatomy of a good spec": 03-anatomy-of-a-spec.md
       - "4. The spec in context": 04-spec-in-context.md
   - Lifecycle:
-      - "5. The SDD lifecycles": 05-sdd-lifecycles.md
+      - "5. Possible lifecycle approaches": 05-sdd-lifecycles.md
       - "6. Living specs": 06-living-specs.md
   - Tooling:
       - "7. Native SDD tools": 07-native-sdd-tools.md
@@ -126,7 +126,7 @@ plugins:
             "3. Anatomy of a good spec": "3. Anatomía de una buena especificación"
             "4. The spec in context": "4. La spec en contexto"
             "Lifecycle": "Ciclo de vida"
-            "5. The SDD lifecycles": "5. Los ciclos de vida SDD"
+            "5. Possible lifecycle approaches": "5. Posibles enfoques del ciclo de vida"
             "6. Living specs": "6. Especificaciones vivas"
             "Tooling": "Herramientas"
             "7. Native SDD tools": "7. Herramientas SDD nativas"

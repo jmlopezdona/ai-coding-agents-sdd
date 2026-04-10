@@ -39,7 +39,7 @@ Two chapters are **not optional** even though they look negative: chapter 10 (th
 
 ### Part 3 — Lifecycle
 
-- [5. The SDD lifecycles: two approaches and when to use each](05-sdd-lifecycles.md)
+- [5. Possible lifecycle approaches](05-sdd-lifecycles.md)
 - [6. Living specs: the bidirectional loop](06-living-specs.md)
 
 ### Part 4 — Tooling

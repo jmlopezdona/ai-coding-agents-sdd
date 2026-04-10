@@ -1,4 +1,4 @@
-# 5. The SDD lifecycles: two approaches and when to use each
+# 5. Possible lifecycle approaches
 
 If you read three articles about Spec-Driven Development, you'll find three different versions of the "SDD lifecycle". That's not a flaw of the discipline; it's a sign the discipline is still forming. But it leaves the reader with a concrete problem: *what phases are there, in what order, and why do two serious sources say different things?*
 
@@ -38,7 +38,7 @@ In practice, mature teams end up combining: they use approach B's names in daily
 
 ## The lifecycle, step by step, with a real agent
 
-I'll tell you as a concrete flow, neutral with respect to the approach, which is how it looks when you actually do it.
+What follows is a **practical synthesis of both approaches** — a five-step flow that takes the best of each. It's neither in its pure form, but rather how the process looks when you actually do it.
 
 ### Step 1 — Specify intent
 
@@ -73,6 +73,8 @@ When all tasks are done, the agent (or you, or a second reviewer agent) takes th
 There's a detail the [*Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1) survey documents that's worth being in this cycle even though it doesn't appear explicitly in either of the two approaches above. Systems like **ClarifyGPT** and **TiCoder** introduce a phase **prior** to the spec: instead of taking the first prompt as truth, the agent asks iterative questions to surface ambiguities and gaps before they materialize as wrong code.
 
 In practice, this means your phase 1 of the cycle **isn't linear**. It's a mini-loop within the loop: prompt → agent questions → answers → draft spec → more questions → final spec. Teams that treat phase 1 as ping-pong instead of dictation get substantially better specs, and this is independent of which tool you use.
+
+This clarification phase connects directly with chapter 3's **boundaries** — particularly the *"ask first"* category: the questions the agent should ask before acting. The difference is that here the questions happen before the spec exists, not after.
 
 ## The lifecycle isn't linear
 

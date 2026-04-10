@@ -1,8 +1,8 @@
-# 5. Los ciclos de vida SDD: dos enfoques y cuándo usar cada uno
+# 5. Posibles enfoques del ciclo de vida
 
 Si lees tres artículos sobre Spec-Driven Development, encontrarás tres versiones distintas del "ciclo de vida SDD". Eso no es un fallo de la disciplina; es señal de que la disciplina aún se está formando. Pero deja al lector con un problema concreto: *¿qué fases hay, en qué orden, y por qué dos fuentes serias dicen cosas distintas?*
 
-Este capítulo desambigua. Hay **dos enfoques principales** del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellas dice algo sobre el tipo de proyecto en el que estás.
+Este capítulo desambigua. Hay **dos enfoques principales** del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellos dice algo sobre el tipo de proyecto en el que estás.
 
 ## Enfoque A
 
@@ -34,11 +34,11 @@ Ninguna. Son dos puntos de vista distintos sobre el mismo proceso, optimizados p
 
 - **El enfoque B (Requirements → Design → Tasks → Implementation) es mejor cuando el cuello de botella es la descomposición en trozos digeribles para el agente.** Features grandes que un humano podría hacer pero un agente sin ayuda no, porque el blast radius de los cambios excede su ventana de atención. Si tu problema es "el agente se pierde en mi repo de 200 archivos", este es tu enfoque.
 
-En la práctica, los equipos maduros acaban combinando: usan los nombres de el enfoque B en el flujo diario y separan una fase de validación (enfoque A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.
+En la práctica, los equipos maduros acaban combinando: usan los nombres del enfoque B en el flujo diario y separan una fase de validación (enfoque A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.
 
 ## El ciclo de vida, paso a paso, con un agente real
 
-Te lo cuento como flujo concreto, neutral respecto al enfoque, que es cómo se ve cuando lo haces de verdad.
+Lo que sigue es una **síntesis práctica de ambos enfoques** — un flujo de cinco pasos que toma lo mejor de cada uno. No es ninguno de los dos en estado puro, sino cómo se ve el proceso cuando lo haces de verdad.
 
 ### Paso 1 — Especificar la intención
 
@@ -62,7 +62,7 @@ La regla heurística: si no puedes describir el estado "después de la tarea" en
 
 El agente ejecuta las tareas de una en una. Para cada tarea: lee la spec, lee la tarea, escribe los tests que la tarea pide, escribe el código, ejecuta los tests, verifica. Si los tests no pasan, itera. Si pasan, marca la tarea como hecha y pasa a la siguiente.
 
-Lo importante aquí es que **cada tarea es atomic respecto a la spec**: o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra".
+Lo importante aquí es que **cada tarea es atómica respecto a la spec**: o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra".
 
 ### Paso 5 — Validar contra la spec original
 
@@ -70,9 +70,11 @@ Cuando todas las tareas están hechas, el agente (o tú, o un segundo agente rev
 
 ## Clarificación iterativa: lo que el survey de arXiv añade
 
-Hay un detalle que el survey de [*Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1) documenta y que merece estar en este ciclo aunque no aparezca explícitamente en ninguna de los dos enfoques anteriores. Sistemas como **ClarifyGPT** y **TiCoder** introducen una fase **previa** a la spec: el agente, en lugar de tomar el primer prompt como verdad, hace preguntas iterativas para sacar a la superficie ambigüedades y huecos antes de que se materialicen como código equivocado.
+Hay un detalle que el survey de [*Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1) documenta y que merece estar en este ciclo aunque no aparezca explícitamente en ninguno de los dos enfoques anteriores. Sistemas como **ClarifyGPT** y **TiCoder** introducen una fase **previa** a la spec: el agente, en lugar de tomar el primer prompt como verdad, hace preguntas iterativas para sacar a la superficie ambigüedades y huecos antes de que se materialicen como código equivocado.
 
 En la práctica, esto significa que tu fase 1 del ciclo (especificar) **no es lineal**. Es un mini-bucle dentro del bucle: prompt → preguntas del agente → respuestas → spec borrador → más preguntas → spec final. Los equipos que tratan la fase 1 como un ping-pong en lugar de un dictado obtienen specs sustancialmente mejores, y esto es independiente de qué herramienta uses.
+
+Esta fase de clarificación conecta directamente con los **boundaries** del capítulo 3 — en particular con la categoría *"ask first"*: las preguntas que el agente debe hacer antes de actuar. La diferencia es que aquí las preguntas ocurren antes de que la spec exista, no después.
 
 ## El ciclo de vida no es lineal
 
