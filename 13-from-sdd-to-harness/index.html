@@ -1839,7 +1839,7 @@
 <p>The chapter 8 tools — Traycer and similar — are technically <strong>harness applied to SDD</strong>. What they do — intercepting inputs, planning, verifying outputs — is exactly the harness guides-and-sensors dynamic, applied to the concrete cycle of a session with an agent.</p>
 <p>If the full harness seems too much to start with, an architect layer over your agent is the miniature version of the idea: try what it feels like to have guides and sensors wrapping the agent, before committing to building your own harness. And when you're ready for the full harness, you'll discover Traycer's logic is a particular case of the general pattern — because it is.</p>
 <h2 id="coupling-point-5-anti-patterns-that-only-the-harness-solves">Coupling point 5 — Anti-patterns that only the harness solves<a class="headerlink" href="#coupling-point-5-anti-patterns-that-only-the-harness-solves" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Several chapter 12 anti-patterns are specifically hard to avoid without harness:</p>
+<p>Several <a href="../12-anti-patterns/">chapter 12 anti-patterns</a> are specifically hard to avoid without harness:</p>
 <ul>
 <li><strong>Spec-as-Theatre</strong> dies when there's an automatic sensor measuring adherence: if the spec isn't respected, the harness says so.</li>
 <li><strong>The eternal spec</strong> dies when there's a recurring agent detecting drift and opening automatic issues.</li>
@@ -1852,7 +1852,7 @@
 <ul>
 <li><strong>The team applies SDD with discipline but sustainability depends on individuals.</strong> If Alice goes on vacation for a week and specs go out of date, you need mechanism, not more discipline.</li>
 <li><strong>The chapter 6 bidirectional loop works when someone takes care of it and breaks when nobody looks.</strong> That's a sign it needs to go from human process to infrastructure.</li>
-<li><strong>Chapter 12 anti-patterns reappear periodically</strong> even though the team knows them. Individual awareness doesn't scale; infrastructure does.</li>
+<li><strong><a href="../12-anti-patterns/">Chapter 12 anti-patterns</a> reappear periodically</strong> even though the team knows them. Individual awareness doesn't scale; infrastructure does.</li>
 <li><strong>Chapter 7 tools fall short because they're single-dimension</strong> and your system needs multiple layers (sensors + hooks + sandboxes + observability). That's a full harness, not one more tool.</li>
 </ul>
 <p>If you recognize two or more, the trilogy's next course is your natural next step.</p>

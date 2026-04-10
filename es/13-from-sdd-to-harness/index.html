@@ -1839,7 +1839,7 @@
 <p>Las herramientas del capítulo 8 — Traycer y similares — son, técnicamente, <strong>harness aplicado a SDD</strong>. Lo que hacen — interceptar entradas, planificar, verificar salidas — es exactamente la dinámica de guías y sensores del harness, aplicada al ciclo concreto de una sesión con un agente.</p>
 <p>Si el harness completo te parece demasiado para empezar, una capa de arquitecto sobre tu agente es la versión miniatura de la idea: prueba qué se siente tener guías y sensores envolviendo al agente, antes de comprometerte a montar harness propio. Y cuando estés listo para el harness completo, descubrirás que la lógica de Traycer es un caso particular del patrón general — porque lo es.</p>
 <h2 id="punto-de-acople-5-los-anti-patrones-que-solo-el-harness-resuelve">Punto de acople 5 — Los anti-patrones que solo el harness resuelve<a class="headerlink" href="#punto-de-acople-5-los-anti-patrones-que-solo-el-harness-resuelve" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Varios de los anti-patrones del capítulo 12 son específicamente difíciles de evitar sin harness:</p>
+<p>Varios de los <a href="../12-anti-patterns/">anti-patrones del capítulo 12</a> son específicamente difíciles de evitar sin harness:</p>
 <ul>
 <li><strong>Spec-as-Theatre</strong> muere cuando hay un sensor automático que mide adhesión: si la spec no se respeta, el harness lo dice.</li>
 <li><strong>La spec eterna</strong> muere cuando hay un agente recurrente que detecta drift y abre issues automáticos.</li>
@@ -1852,7 +1852,7 @@
 <ul>
 <li><strong>El equipo aplica SDD con disciplina pero la sostenibilidad depende de individuos.</strong> Si Alice se va una semana de vacaciones y las specs se desactualizan, necesitas mecanismo, no más disciplina.</li>
 <li><strong>El bucle bidireccional del capítulo 6 funciona cuando alguien lo cuida y se rompe cuando nadie lo mira.</strong> Eso es señal de que necesita pasar de proceso humano a infraestructura.</li>
-<li><strong>Los anti-patrones del capítulo 12 reaparecen periódicamente</strong> aunque el equipo los conoce. La conciencia individual no escala; la infraestructura sí.</li>
+<li><strong>Los <a href="../12-anti-patterns/">anti-patrones del capítulo 12</a> reaparecen periódicamente</strong> aunque el equipo los conoce. La conciencia individual no escala; la infraestructura sí.</li>
 <li><strong>Las herramientas del capítulo 7 se quedan cortas porque son únicas para una dimensión</strong> y tu sistema necesita varias capas (sensors + hooks + sandboxes + observabilidad). Eso es un harness completo, no una herramienta más.</li>
 </ul>
 <p>Si reconoces dos o más, el siguiente curso de la trilogía es tu siguiente paso natural.</p>
