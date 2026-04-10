@@ -37,7 +37,7 @@ It's less artisanal and more architectural work. The hard part stops being typin
 
 ## The specification spectrum, in one idea
 
-One useful contribution of the paper *Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants* (arXiv) is that it doesn't present SDD as one thing. It presents it as a spectrum of three commitment levels:
+One useful contribution of the paper [*Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants*](https://arxiv.org/html/2602.00180) (arXiv) is that it doesn't present SDD as one thing. It presents it as a spectrum of three commitment levels:
 
 - **Spec-First**: you write a spec before coding; useful to start; then the code diverges freely.
 - **Spec-Anchored**: spec and code evolve together; automatic tests guarantee alignment; this is where serious teams live.
@@ -47,7 +47,7 @@ Most teams confuse what they're doing: they say "we're doing SDD" when they're a
 
 ## The critique that's also part of the course
 
-An honest guide on SDD has to accept that the discipline can also go wrong. Chapter 10 develops the strongest critiques — Isoform's *maintenance tax*, Martin Fowler's parallel with the old Model-Driven Development, the loss of the *whys*, the false illusion of control — and chapter 11 presents Isoform's alternative: *context engineering*, where intent and *whys* are preserved **inside the code** rather than in external specs.
+An honest guide on SDD has to accept that the discipline can also go wrong. Chapter 10 develops the strongest critiques — [Isoform's](https://isoform.ai/blog/the-limits-of-spec-driven-development) *maintenance tax*, [Martin Fowler's](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) parallel with the old Model-Driven Development, the loss of the *whys*, the false illusion of control — and chapter 11 presents [Isoform's](https://isoform.ai/blog/the-limits-of-spec-driven-development) alternative: *context engineering*, where intent and *whys* are preserved **inside the code** rather than in external specs.
 
 They aren't there for noise. They're there because misapplied, this discipline is indistinguishable from bureaucracy, and if the course only teaches you the positive patterns it leaves you defenseless against the moment — and it will come — when your own process becomes the bottleneck.
 

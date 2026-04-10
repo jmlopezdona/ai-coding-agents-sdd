@@ -1,6 +1,6 @@
 # 9. Patrones de aplicación: features, refactors y bug fixes
 
-Una de las trampas más fáciles de caer en SDD es **aplicar el mismo proceso a todo**. Es la trampa exacta que Fowler le señala a Kiro en el capítulo 7: tratar un bug fix de tres líneas como una feature multi-historia. El proceso no escala uniformemente porque los problemas no son uniformes. Este capítulo recorre los tres patrones de trabajo más comunes — feature nueva, refactor y bug fix — y describe **cómo modular el ciclo SDD** para cada uno.
+Una de las trampas más fáciles de caer en SDD es **aplicar el mismo proceso a todo**. Es la trampa exacta que [Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) le señala a Kiro en el capítulo 7: tratar un bug fix de tres líneas como una feature multi-historia. El proceso no escala uniformemente porque los problemas no son uniformes. Este capítulo recorre los tres patrones de trabajo más comunes — feature nueva, refactor y bug fix — y describe **cómo modular el ciclo SDD** para cada uno.
 
 La regla general que conviene tener delante: **el peso de la spec debe ser proporcional al coste del cambio si sale mal**. Una feature crítica con alcance amplio merece spec completa. Un bug fix trivial merece, como mucho, una nota.
 

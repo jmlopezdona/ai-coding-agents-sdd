@@ -6,7 +6,7 @@ This chapter disambiguates. There are **two main variants** of the cycle in the 
 
 ## Variant A — The arXiv paper version
 
-The arXiv SDD paper proposes a four-phase cycle:
+[The arXiv SDD paper](https://arxiv.org/html/2602.00180) proposes a four-phase cycle:
 
 1. **Specify** — define what the software has to do through behavior descriptions, acceptance criteria and requirements. Without prescribing implementation.
 2. **Plan** — decide how it's built: technologies, architecture, data models, interfaces.
@@ -17,7 +17,7 @@ What characterizes this variant is that **validation is an explicit, separate ph
 
 ## Variant B — The DEV.to (Pockit) article version
 
-The most practical article on day-to-day SDD use proposes a different cycle, also four phases, but with different names and boundaries:
+[The most practical article on day-to-day SDD use](https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788) proposes a different cycle, also four phases, but with different names and boundaries:
 
 1. **Requirements** — what's being built, including user stories, edge cases, security requirements and explicit *no-goals*.
 2. **Design** — translate requirements into technical decisions: database schema, endpoints, architecture, error handling.
@@ -70,7 +70,7 @@ When all tasks are done, the agent (or you, or a second reviewer agent) takes th
 
 ## Iterative clarification: what the arXiv survey adds
 
-There's a detail the *Code Generation with LLM-based Agents* survey documents that's worth being in this cycle even though it doesn't appear explicitly in either of the two variants above. Systems like **ClarifyGPT** and **TiCoder** introduce a phase **prior** to the spec: instead of taking the first prompt as truth, the agent asks iterative questions to surface ambiguities and gaps before they materialize as wrong code.
+There's a detail the [*Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1) survey documents that's worth being in this cycle even though it doesn't appear explicitly in either of the two variants above. Systems like **ClarifyGPT** and **TiCoder** introduce a phase **prior** to the spec: instead of taking the first prompt as truth, the agent asks iterative questions to surface ambiguities and gaps before they materialize as wrong code.
 
 In practice, this means your phase 1 of the cycle **isn't linear**. It's a mini-loop within the loop: prompt → agent questions → answers → draft spec → more questions → final spec. Teams that treat phase 1 as ping-pong instead of dictation get substantially better specs, and this is independent of which tool you use.
 

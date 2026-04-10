@@ -1,6 +1,6 @@
 # 6. Especificaciones vivas: el bucle bidireccional
 
-El problema que mata a la mayoría de iniciativas de Spec-Driven Development no es escribir las specs. Es lo que pasa **después**. Las specs envejecen, el código las deja atrás, y dentro de tres meses tienes una carpeta de markdowns que describe un sistema que ya no existe. Ese es exactamente el patrón que la gente de Augment Code llama el **spec gap**, y todo este capítulo es sobre cómo evitarlo.
+El problema que mata a la mayoría de iniciativas de Spec-Driven Development no es escribir las specs. Es lo que pasa **después**. Las specs envejecen, el código las deja atrás, y dentro de tres meses tienes una carpeta de markdowns que describe un sistema que ya no existe. Ese es exactamente el patrón que la gente de [Augment Code](https://www.augmentcode.com/guides/living-specs-for-ai-agent-development) llama el **spec gap**, y todo este capítulo es sobre cómo evitarlo.
 
 ## El problema del flujo unidireccional
 
@@ -29,7 +29,7 @@ La diferencia con una spec estática no es la primera versión del documento. La
 
 ## Las cuatro fases del bucle vivo
 
-El framework de Augment descompone el bucle bidireccional en cuatro fases:
+El framework de [Augment](https://www.augmentcode.com/guides/living-specs-for-ai-agent-development) descompone el bucle bidireccional en cuatro fases:
 
 ### Fase 1 — Especificar la intención inicial
 
@@ -57,7 +57,7 @@ La spec, en este modelo, es un **documento que aprende**. Empieza describiendo i
 
 ## Por qué esta fase 4 importa más de lo que parece
 
-Una de las críticas más fuertes a SDD (capítulo 10, Isoform) es que las specs **pierden el contexto real** porque solo capturan "lo que íbamos a hacer", no "lo que aprendimos al hacerlo". La fase 4 de las specs vivas es la respuesta directa a esa crítica. Si tu spec recoge production feedback, el contexto real **no se pierde** — se acumula.
+Una de las críticas más fuertes a SDD (capítulo 10, [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development)) es que las specs **pierden el contexto real** porque solo capturan "lo que íbamos a hacer", no "lo que aprendimos al hacerlo". La fase 4 de las specs vivas es la respuesta directa a esa crítica. Si tu spec recoge production feedback, el contexto real **no se pierde** — se acumula.
 
 Es la diferencia entre un documento de diseño y un manual de operación. Y para un agente que llega seis meses después a hacer un cambio, leer la spec con production feedback es radicalmente más útil que leer la spec original.
 

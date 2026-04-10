@@ -2,7 +2,7 @@
 
 Hasta aquí el curso ha sido constructivo: por qué hace falta SDD, cómo se hace, con qué herramientas. Este capítulo no. Este capítulo es el contrapeso, y existe porque cualquier guía que solo te enseñe los patrones positivos te está dejando sin defensa contra el momento — que llegará — en que tu propio proceso se vuelva el cuello de botella.
 
-Las críticas que vamos a recoger no son objeciones marginales. Vienen de dos fuentes que conviene leer enteras: **Isoform** (*The Limits of Spec-Driven Development*) y **Martin Fowler / Thoughtworks** (*Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl*). Las dos están escritas por gente que ha probado SDD en serio y ha decidido publicar lo que vio.
+Las críticas que vamos a recoger no son objeciones marginales. Vienen de dos fuentes que conviene leer enteras: **[Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development)** (*The Limits of Spec-Driven Development*) y **[Martin Fowler / Thoughtworks](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html)** (*Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl*). Las dos están escritas por gente que ha probado SDD en serio y ha decidido publicar lo que vio.
 
 ## Crítica 1 — El maintenance tax
 

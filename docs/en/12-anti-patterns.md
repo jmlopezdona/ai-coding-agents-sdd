@@ -60,7 +60,7 @@ Each anti-pattern follows the same format: **name**, observable symptom, why it 
 
 **Symptom.** PRs include so many markdown changes (specs, plans, tasks, checklists) that reviewing the code itself gets buried. Reviewers read markdown for 20 minutes and look at the code diff for 3.
 
-**Why it happens.** Fowler identifies this as one of Spec-kit's specific problems: the process generates more artifacts to review than real code. If unbounded, "review" turns into "review markdown".
+**Why it happens.** [Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) identifies this as one of Spec-kit's specific problems: the process generates more artifacts to review than real code. If unbounded, "review" turns into "review markdown".
 
 **Correction.** Measure markdown/code ratio in PRs over a sprint. If markdown systematically wins, simplify templates or automate generation of repetitive artifacts. Human review should focus where judgment adds value — code and new decisions — not where a linter could pass.
 

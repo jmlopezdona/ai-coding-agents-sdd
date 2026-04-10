@@ -37,7 +37,7 @@ Es un trabajo menos artesanal y más arquitectónico. Lo difícil deja de ser te
 
 ## El espectro de la especificación, en una sola idea
 
-Una de las contribuciones útiles del paper *Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants* (arXiv) es que no presenta el SDD como una cosa única, sino como un espectro de tres niveles de compromiso:
+Una de las contribuciones útiles del paper [*Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants*](https://arxiv.org/html/2602.00180) (arXiv) es que no presenta el SDD como una cosa única, sino como un espectro de tres niveles de compromiso:
 
 - **Spec-First**: escribes una spec antes de codificar; sirve para arrancar; luego el código diverge libremente.
 - **Spec-Anchored**: spec y código evolucionan a la par; tests automáticos garantizan la alineación; es donde viven los equipos serios.
@@ -47,7 +47,7 @@ La mayoría de los equipos confunden lo que están haciendo: dicen "estamos haci
 
 ## La crítica que también es parte del curso
 
-Una guía honesta sobre SDD tiene que aceptar que la disciplina también puede salir mal. El capítulo 10 desarrolla las críticas más fuertes — el *maintenance tax* de Isoform, el paralelo con el viejo Model-Driven Development de Martin Fowler, la pérdida de los "por qués", la falsa ilusión de control — y el capítulo 11 presenta la alternativa que propone Isoform: *context engineering*, donde la intención y los "por qués" se preservan **dentro del código** en vez de en specs externas.
+Una guía honesta sobre SDD tiene que aceptar que la disciplina también puede salir mal. El capítulo 10 desarrolla las críticas más fuertes — el *maintenance tax* de [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development), el paralelo con el viejo Model-Driven Development de [Martin Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html), la pérdida de los "por qués", la falsa ilusión de control — y el capítulo 11 presenta la alternativa que propone [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development): *context engineering*, donde la intención y los "por qués" se preservan **dentro del código** en vez de en specs externas.
 
 No están ahí para hacer ruido. Están porque mal aplicada esta disciplina es indistinguible de la burocracia, y si el curso solo te enseña los patrones positivos te va a dejar sin defensa contra el momento — que llegará — en el que tu propio proceso se convierta en el cuello de botella.
 

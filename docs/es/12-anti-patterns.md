@@ -60,7 +60,7 @@ Cada anti-patrón sigue el mismo formato: **nombre**, síntoma observable, por q
 
 **Síntoma.** Los PRs incluyen tantos cambios de markdown (specs, plans, tasks, checklists) que la revisión del propio código queda enterrada. Los reviewers leen markdown durante 20 minutos y miran el diff de código durante 3.
 
-**Por qué pasa.** Fowler lo identifica como uno de los problemas concretos de Spec-kit: el proceso genera más artefactos para revisar que código real. Si no se acota, el "revisar" se vuelve "revisar markdown".
+**Por qué pasa.** [Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) lo identifica como uno de los problemas concretos de Spec-kit: el proceso genera más artefactos para revisar que código real. Si no se acota, el "revisar" se vuelve "revisar markdown".
 
 **Corrección.** Medir la ratio markdown/código de los PRs durante un sprint. Si el markdown gana sistemáticamente, simplifica las plantillas o automatiza la generación de los artefactos repetitivos. La revisión humana debe concentrarse donde el juicio aporta valor — el código y las decisiones nuevas — no donde un linter podría pasar.
 

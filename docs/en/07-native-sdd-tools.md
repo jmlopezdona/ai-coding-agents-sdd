@@ -6,7 +6,7 @@ There are a handful of tools explicitly proposing themselves as infrastructure f
 
 ## Fowler's warning
 
-Before going tool by tool, it's worth keeping in mind the conclusion Martin Fowler reaches after evaluating the three main ones:
+Before going tool by tool, it's worth keeping in mind the conclusion [Martin Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) reaches after evaluating the three main ones:
 
 > *Neither of them is suitable for the majority of real life coding problems.*
 
@@ -80,7 +80,7 @@ BMAD is the most distinct case of the four, which is why I left it for last. Ins
 **What it does well:**
 
 - Role specialization helps with chapter 3's *curse of instructions*. Each agent only sees the instructions relevant to its role, instead of a megaprompt mixing everything.
-- It fits what the academic arXiv survey (*A Survey on Code Generation with LLM-based Agents*) describes as the family of **multi-agent role-playing systems** (alongside ChatDev and MetaGPT on the more academic side).
+- It fits what the academic arXiv survey ([*A Survey on Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1)) describes as the family of **multi-agent role-playing systems** (alongside ChatDev and MetaGPT on the more academic side).
 - For teams already thinking in agile-role terms, the mental model translation is trivial.
 
 **What to look at carefully:**

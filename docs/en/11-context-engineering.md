@@ -1,9 +1,9 @@
 # 11. Context engineering as alternative
 
-The previous chapter closes with six serious critiques of SDD. It would be unfair to leave you there, in critique without alternative. Fortunately, the same critics — Isoform in particular — propose a different idea about where intent and *whys* should live. They call it **context engineering**, and this chapter presents it without sweetening but also without dramatizing the difference with SDD.
+The previous chapter closes with six serious critiques of SDD. It would be unfair to leave you there, in critique without alternative. Fortunately, the same critics — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development) in particular — propose a different idea about where intent and *whys* should live. They call it **context engineering**, and this chapter presents it without sweetening but also without dramatizing the difference with SDD.
 
 > *Capture intent and constraints from discussions, update context iteratively as understanding evolves, and explicitly preserve decision rationales within code itself.*
-> — Isoform, *The Limits of Spec-Driven Development*
+> — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development), *The Limits of Spec-Driven Development*
 
 That sentence sums up the shift.
 

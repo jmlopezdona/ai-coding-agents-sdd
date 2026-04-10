@@ -6,7 +6,7 @@ Hay un puñado de herramientas que se han propuesto explícitamente como infraes
 
 ## La advertencia de Fowler
 
-Antes de entrar herramienta por herramienta, conviene tener presente la conclusión a la que llega Martin Fowler tras evaluar las tres principales:
+Antes de entrar herramienta por herramienta, conviene tener presente la conclusión a la que llega [Martin Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) tras evaluar las tres principales:
 
 > *Neither of them is suitable for the majority of real life coding problems.*
 
@@ -80,7 +80,7 @@ BMAD es el caso más distinto del cuarteto, y por eso lo dejo para el final. En 
 **Lo que hace bien:**
 
 - La especialización por roles ayuda con la *curse of instructions* del capítulo 3. Cada agente solo ve las instrucciones relevantes para su rol, en lugar de un megaprompt que mezcla todo.
-- Encaja con lo que el survey académico de arXiv (*A Survey on Code Generation with LLM-based Agents*) describe como la familia de **multi-agent role-playing systems** (junto a ChatDev y MetaGPT en el lado más académico).
+- Encaja con lo que el survey académico de arXiv ([*A Survey on Code Generation with LLM-based Agents*](https://arxiv.org/html/2508.00083v1)) describe como la familia de **multi-agent role-playing systems** (junto a ChatDev y MetaGPT en el lado más académico).
 - Para equipos que ya piensan en términos de roles ágiles, la mental model translation es trivial.
 
 **Lo que hay que mirar con cuidado:**

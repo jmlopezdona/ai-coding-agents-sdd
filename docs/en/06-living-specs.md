@@ -1,6 +1,6 @@
 # 6. Living specs: the bidirectional loop
 
-The problem that kills most Spec-Driven Development initiatives isn't writing the specs. It's what happens **after**. Specs age, code leaves them behind, and three months later you have a folder of markdowns describing a system that no longer exists. That's exactly the pattern Augment Code calls the **spec gap**, and this whole chapter is about how to avoid it.
+The problem that kills most Spec-Driven Development initiatives isn't writing the specs. It's what happens **after**. Specs age, code leaves them behind, and three months later you have a folder of markdowns describing a system that no longer exists. That's exactly the pattern [Augment Code](https://www.augmentcode.com/guides/living-specs-for-ai-agent-development) calls the **spec gap**, and this whole chapter is about how to avoid it.
 
 ## The unidirectional flow problem
 
@@ -13,7 +13,7 @@ A static spec works like this:
 
 Information flows in one direction: spec → code. And that means any decision made during implementation — and many always are: trade-offs, discoveries, edge cases that show up while typing — **doesn't go back to the spec**. The spec describes initial intent; the code describes current reality; between them grows a crack with every commit.
 
-Augment puts it with uncomfortable precision:
+[Augment](https://www.augmentcode.com/guides/living-specs-for-ai-agent-development) puts it with uncomfortable precision:
 
 > *Gaps in the specification widen with direct code changes and keep resurfacing because AI generation is non-deterministic.*
 
@@ -57,7 +57,7 @@ The spec, in this model, is a **document that learns**. It starts describing int
 
 ## Why phase 4 matters more than it seems
 
-One of the strongest critiques of SDD (chapter 10, Isoform) is that specs **lose real context** because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context **isn't lost** — it accumulates.
+One of the strongest critiques of SDD (chapter 10, [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development)) is that specs **lose real context** because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context **isn't lost** — it accumulates.
 
 It's the difference between a design doc and an operations manual. And for an agent arriving six months later to make a change, reading the spec with production feedback is radically more useful than reading the original spec.
 

@@ -1,6 +1,6 @@
 # 9. Patterns of application: features, refactors and bug fixes
 
-One of the easiest traps to fall into with SDD is **applying the same process to everything**. It's the exact trap Fowler points out in Kiro in chapter 7: treating a three-line bug fix as a multi-story feature. The process doesn't scale uniformly because problems aren't uniform. This chapter walks through the three most common work patterns — new feature, refactor and bug fix — and describes **how to modulate the SDD cycle** for each.
+One of the easiest traps to fall into with SDD is **applying the same process to everything**. It's the exact trap [Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) points out in Kiro in chapter 7: treating a three-line bug fix as a multi-story feature. The process doesn't scale uniformly because problems aren't uniform. This chapter walks through the three most common work patterns — new feature, refactor and bug fix — and describes **how to modulate the SDD cycle** for each.
 
 The general rule to keep in front of you: **the spec's weight should be proportional to the cost of the change if it goes wrong**. A critical, broadly-scoped feature deserves a full spec. A trivial bug fix deserves, at most, a note.
 
