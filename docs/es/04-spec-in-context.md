@@ -62,6 +62,8 @@ Un ejemplo concreto de este handoff: las APIs. Cuando una API está por implemen
 
 La parte de **"ningún otro comportamiento cambia"** es lo que salva a la spec de inflarse. El delta es la spec; el resto vive en su propia documentación.
 
+Ese delta explícito es también una traza para un doc-gathering agent: puede comparar lo que la spec declaró contra el estado real del componente y detectar dos tipos de deriva — que el código cambió más de lo que la spec declaró, o que la documentación del componente no se actualizó para reflejar el delta.
+
 > **En resumen**: *consumido* = referencia y describe solo el uso; *producido* = define el contrato observable y prepara el handoff; *modificado* = describe el delta y declara el resto invariante.
 
 ### Caso especial: documentos de producto (user stories, briefs)

@@ -62,6 +62,8 @@ A concrete example of this handoff: APIs. When an API is yet to be implemented, 
 
 The **"no other behavior changes"** part is what saves the spec from inflating. The delta is the spec; the rest lives in its own documentation.
 
+That explicit delta is also a trace for a doc-gathering agent: it can compare what the spec declared against the component's actual state and detect two kinds of drift — code that changed more than the spec declared, or component documentation that wasn't updated to reflect the delta.
+
 > **In summary**: *consumed* = reference and describe only the use; *produced* = define the observable contract and prepare the handoff; *modified* = describe the delta and declare the rest invariant.
 
 ### Special case: product documents (user stories, briefs)
