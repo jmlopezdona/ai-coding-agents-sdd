@@ -58,7 +58,7 @@ This is where ordinary specs die and good ones separate from the rest. Almost al
 >
 > *Only the owner can delete because adding moderation would change the permissions model and we want to keep this iteration's spec minimal.*
 
-Whys are the ingredient Isoform's critique identifies as what bad SDD loses, and the main reason specs become useless months later. A spec without whys ages at the speed of the decisions around it. A spec with whys outlives those decisions because it explains them.
+Whys are the ingredient [Isoform's critique](https://isoform.ai/blog/the-limits-of-spec-driven-development) identifies as what bad SDD loses, and the main reason specs become useless months later. A spec without whys ages at the speed of the decisions around it. A spec with whys outlives those decisions because it explains them.
 
 ### 6. Boundaries — the three-tier system
 

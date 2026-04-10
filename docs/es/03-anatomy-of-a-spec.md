@@ -58,7 +58,7 @@ Aquí es donde las specs ordinarias mueren y las buenas se separan del resto. Ca
 >
 > *Solo el dueño puede borrar porque añadir moderación cambiaría el modelo de permisos y queremos mantener la spec mínima en esta iteración.*
 
-Los por qués son el ingrediente que la crítica de Isoform identifica como lo que el SDD malhecho pierde, y es la razón principal por la que las specs se vuelven inútiles a meses vista. Una spec sin por qués envejece a la velocidad de las decisiones que la rodean. Una spec con por qués sobrevive a esas decisiones porque las explica.
+Los por qués son el ingrediente que [la crítica de Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development) identifica como lo que el SDD malhecho pierde, y es la razón principal por la que las specs se vuelven inútiles a meses vista. Una spec sin por qués envejece a la velocidad de las decisiones que la rodean. Una spec con por qués sobrevive a esas decisiones porque las explica.
 
 ### 6. Boundaries — el sistema de tres niveles
 
