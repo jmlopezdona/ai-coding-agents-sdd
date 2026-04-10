@@ -12,19 +12,19 @@
         <meta name="author" content="jmlopezdona">
       
       
-        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/03-anatomy-of-a-spec/">
+        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/03a-anatomy-of-a-spec/">
       
       
         <link rel="prev" href="../02-specification-spectrum/">
       
       
-        <link rel="next" href="../04-sdd-cycles/">
+        <link rel="next" href="../03b-spec-in-context/">
       
       
         
           <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="../es/03-anatomy-of-a-spec/" hreflang="es">
+          <link rel="alternate" href="../es/03a-anatomy-of-a-spec/" hreflang="es">
         
       
       
@@ -33,7 +33,7 @@
     
     
       
-        <title>3. Anatomy of a good spec - Spec-Driven Development</title>
+        <title>3a. Anatomy of a good spec - Spec-Driven Development</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3-anatomy-of-a-good-specification" class="md-skip">
+        <a href="#3a-anatomy-of-a-good-specification" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Anatomy of a good spec
+              3a. Anatomy of a good spec
             
           </span>
         </div>
@@ -171,7 +171,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../es/03-anatomy-of-a-spec/" hreflang="es" class="md-select__link">
+            <a href="../es/03a-anatomy-of-a-spec/" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
@@ -744,6 +744,8 @@
       
         
       
+        
+      
     
     
     
@@ -843,7 +845,7 @@
   <span class="md-ellipsis">
     
   
-    3. Anatomy of a good spec
+    3a. Anatomy of a good spec
   
 
     
@@ -861,7 +863,7 @@
   <span class="md-ellipsis">
     
   
-    3. Anatomy of a good spec
+    3a. Anatomy of a good spec
   
 
     
@@ -1087,167 +1089,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-right-level-of-detail-depends-on-the-spectrum-level" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The right level of detail depends on the spectrum level
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The right level of detail depends on the spectrum level">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#spec-first-light-intentional-non-exhaustive-detail" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-first → light, intentional, non-exhaustive detail
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spec-anchored-medium-detail-bounded-by-what-the-anchoring-can-verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-anchored → medium detail, bounded by what the anchoring can verify
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spec-as-source-exhaustive-detail-but-of-a-different-kind" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-as-source → exhaustive detail, but of a different kind
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-unifying-rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The unifying rule
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-spec-and-technical-components-consume-produce-modify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The spec and technical components: consume, produce, modify
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The spec and technical components: consume, produce, modify">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#three-relationships-three-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Three relationships, three rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturing-the-load-bearing-essentials-in-three-dimensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Capturing the load-bearing essentials in three dimensions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-affected-surfaces-block" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The "Affected surfaces" block
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#size-heuristic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Size heuristic
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#consolidated-summary-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Consolidated summary table
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#in-summary-what-distinguishes-a-good-spec-from-a-mediocre-one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        In summary: what distinguishes a good spec from a mediocre one
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="In summary: what distinguishes a good spec from a mediocre one">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mediocre-vs-good-side-by-side" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mediocre vs good, side by side
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#what-comes-next" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1262,6 +1103,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03b-spec-in-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3b. The spec in context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2137,167 +2006,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-right-level-of-detail-depends-on-the-spectrum-level" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The right level of detail depends on the spectrum level
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The right level of detail depends on the spectrum level">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#spec-first-light-intentional-non-exhaustive-detail" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-first → light, intentional, non-exhaustive detail
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spec-anchored-medium-detail-bounded-by-what-the-anchoring-can-verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-anchored → medium detail, bounded by what the anchoring can verify
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spec-as-source-exhaustive-detail-but-of-a-different-kind" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-as-source → exhaustive detail, but of a different kind
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-unifying-rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The unifying rule
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-spec-and-technical-components-consume-produce-modify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The spec and technical components: consume, produce, modify
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The spec and technical components: consume, produce, modify">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#three-relationships-three-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Three relationships, three rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturing-the-load-bearing-essentials-in-three-dimensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Capturing the load-bearing essentials in three dimensions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-affected-surfaces-block" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The "Affected surfaces" block
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#size-heuristic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Size heuristic
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#consolidated-summary-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Consolidated summary table
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#in-summary-what-distinguishes-a-good-spec-from-a-mediocre-one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        In summary: what distinguishes a good spec from a mediocre one
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="In summary: what distinguishes a good spec from a mediocre one">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mediocre-vs-good-side-by-side" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mediocre vs good, side by side
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#what-comes-next" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2325,7 +2033,7 @@
 
 
   
-    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/en/03-anatomy-of-a-spec.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/en/03a-anatomy-of-a-spec.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2333,9 +2041,8 @@
   
 
 
-<h1 id="3-anatomy-of-a-good-specification">3. Anatomy of a good specification<a class="headerlink" href="#3-anatomy-of-a-good-specification" title="Enlace permanente a esta sección">&para;</a></h1>
+<h1 id="3a-anatomy-of-a-good-specification">3a. Anatomy of a good specification<a class="headerlink" href="#3a-anatomy-of-a-good-specification" title="Enlace permanente a esta sección">&para;</a></h1>
 <p>There are many ways to write a spec badly and rather few to write one well. This chapter tries to distill what distinguishes a useful spec for an AI agent from one that's ceremony in disguise. Short version: a good spec captures <strong>intent, constraints, and the <em>whys</em></strong> with enough precision that the agent doesn't have to guess, and with enough brevity that a human will still read it six months from now.</p>
-<p><strong>Chapter map.</strong> We start with the <strong>six blocks</strong> every minimum spec should have and a <strong>template</strong> that fits on one screen. Then we tackle the three most expensive traps: the <strong>curse of instructions</strong> (large specs perform worse than small modules), <strong>agent generation</strong> (which almost always produces pseudocode in disguise), and the <strong>wrong level of detail</strong> for your spectrum level. We then open a section on how a spec relates to the <strong>technical components</strong> of the system (consume, produce, modify), close with an <strong>end-to-end contrast</strong> between a mediocre and a good spec, and wrap up with the three things that separate them.</p>
 <h2 id="what-needs-to-be-in-it">What needs to be in it<a class="headerlink" href="#what-needs-to-be-in-it" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>A minimum useful spec has six blocks. Not all six need to be long, but all six need to be there.</p>
 <h3 id="1-objective">1. Objective<a class="headerlink" href="#1-objective" title="Enlace permanente a esta sección">&para;</a></h3>
@@ -2454,7 +2161,7 @@
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">-</span><span class="w"> </span>⚠️ Ask first: ...
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="k">-</span><span class="w"> </span>🚫 Never: ...
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="gu">## Affected surfaces (recommended whenever the spec touches &gt;1 component; see dedicated section below)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="gu">## Affected surfaces (recommended whenever the spec touches &gt;1 component; see [section 3b](03b-spec-in-context.md#the-spec-and-technical-components-consume-produce-modify))</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="gu">### [Component] — [produced | modified | consumed]</span>
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Functional:**</span> ...
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Non-functional:**</span> ...
@@ -2492,183 +2199,9 @@
 </ul>
 <p>The most useful practical rule: <strong>if your generated spec mentions a function signature or a class name, delete it</strong>. The spec talks about what guarantees the system meets, not how it's built.</p>
 <p>And the honest warning: using the agent as a draft generator <strong>doesn't reduce the total cost</strong> of doing SDD well. What it reduces is the cost of starting the first draft, which for many teams is the psychological barrier that weighs the most. The real cost — thinking intent precisely, capturing whys, keeping the spec alive — is still there, with no shortcut, and the agent doesn't pay it for you. If your SDD adoption depends on automatic generation eliminating that cost, what you'll have isn't SDD — you'll have anti-pattern #12 from chapter 11.</p>
-<h2 id="the-right-level-of-detail-depends-on-the-spectrum-level">The right level of detail depends on the spectrum level<a class="headerlink" href="#the-right-level-of-detail-depends-on-the-spectrum-level" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>So far we've talked about a spec's anatomy as if it were a single thing. It isn't. <strong>The appropriate level of detail depends on which level of the chapter 2 spectrum you're operating at</strong>, and writing a spec at the wrong level of detail for your spectrum level is one of the most common — and most expensive — ways to suffer bad SDD.</p>
-<h3 id="spec-first-light-intentional-non-exhaustive-detail">Spec-first → light, intentional, non-exhaustive detail<a class="headerlink" href="#spec-first-light-intentional-non-exhaustive-detail" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>In spec-first the spec is read once, when the feature kicks off, and from then on the code drifts freely. Its only function is to <strong>align team and agent at the start</strong>. Nothing is going to read it again, so every extra line you write is work no one will ever recover.</p>
-<p>The right amount of detail: objective, non-goals, acceptance criteria, the critical whys, and little else. If your spec-first runs longer than a screen, it's almost always because you're writing <em>aspirational</em> spec-anchored (anti-pattern #4 in chapter 11) or because you've fallen into pseudocode (anti-pattern #12). The optimal spec-first is the minimum viable to start with clear intent.</p>
-<h3 id="spec-anchored-medium-detail-bounded-by-what-the-anchoring-can-verify">Spec-anchored → medium detail, bounded by what the anchoring can verify<a class="headerlink" href="#spec-anchored-medium-detail-bounded-by-what-the-anchoring-can-verify" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>The logic shifts here. The spec <em>is</em> going to be read again — by validators, by tests, by recurring agents that detect drift. Detail is no longer optional: it has to be <strong>enough for the anchoring mechanism to compare against</strong>.</p>
-<p>But there's a counterintuitive upper bound: <strong>detail should not go beyond what your anchoring knows how to verify</strong>. If your validator checks API contracts and your spec describes UI rules, the UI part isn't anchored — it's spec-first disguised as spec-anchored. And because that piece isn't verified, it drifts freely.</p>
-<p>The operating rule: the detail of a spec-anchored spec is measured against the <strong>scope of the anchoring</strong>, not against an abstract notion of "completeness". If what you write can't be verified automatically, writing it doesn't give you more anchoring — it just gives you more maintenance tax.</p>
-<h3 id="spec-as-source-exhaustive-detail-but-of-a-different-kind">Spec-as-source → exhaustive detail, but of a different kind<a class="headerlink" href="#spec-as-source-exhaustive-detail-but-of-a-different-kind" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>This is where the conversation gets interesting. Spec-as-source does need maximum detail, because the code is generated from the spec. But that detail is of <strong>a different nature</strong> from the other two levels.</p>
-<p>It's <strong>formal or semi-formal</strong> detail: type signatures, contracts, invariants, grammars, transformation rules. It's <strong>generator-friendly</strong> detail: designed so a generator (LLM or otherwise) can produce deterministic code from it. And it's legitimate for signatures, schemas and concrete structures to appear — because at this level <strong>the spec is the source code, just in a different notation</strong>.</p>
-<p>Here's the uncomfortable connection with the previous section: an agent-generated "spec" that is pseudocode in disguise <em>looks</em> superficially like a spec-as-source. It has classes, methods, payloads, rules. But there's a critical difference: <strong>a legitimate spec-as-source comes with a deterministic generator that produces the code</strong>. Without that generator, what you have is the worst possible combination: spec-as-source's exhaustive detail with spec-first's non-determinism. It's the conceptual equivalent of writing XML+OCL in the 2000s without an MDA compiler behind it. Fowler would know exactly what to call it.</p>
-<h3 id="the-unifying-rule">The unifying rule<a class="headerlink" href="#the-unifying-rule" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>If you have to distill all of the above into a single sentence:</p>
-<blockquote>
-<p><strong>The right level of detail for a spec is the one your validation mechanism — human, automatic, or generative — knows how to consume. More than that is waste; less than that is blindness.</strong></p>
-</blockquote>
-<p>In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.</p>
-<p>Almost every pathology we'll see in chapter 11 comes from <strong>misaligning these three things</strong>: writing spec-anchored without anchoring (#4), writing spec-as-source without a generator (#9 + #12), or writing spec-first with spec-as-source-level detail (#2 + #12). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.</p>
-<h2 id="the-spec-and-technical-components-consume-produce-modify">The spec and technical components: consume, produce, modify<a class="headerlink" href="#the-spec-and-technical-components-consume-produce-modify" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Anatomy doesn't live in a vacuum: every spec lands on code that already exists. And in practice, almost every real spec <strong>touches multiple components at once</strong> — one is built new, another is modified, and several are consumed without being touched. Each of those relationships has different rules, and mixing them in a single language is one of the fastest ways to inflate a spec without gaining precision.</p>
-<p>This section extends the earlier subsection on <em>"Reusing criteria from upstream documents"</em> — where we covered the user-story case — to the more general question: what does a spec say about the technical components it relates to?</p>
-<h3 id="three-relationships-three-rules">Three relationships, three rules<a class="headerlink" href="#three-relationships-three-rules" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>A spec can have three distinct relationships with each component it touches:</p>
-<p><strong>1. Consumed (it exists; the spec uses it).</strong> The component is already built, has its own contract (API, module, library), and the spec leans on it without modifying it. The rule is <strong>reference the contract, don't reimplement it</strong>. The spec documents <em>how</em> the component is used — which endpoints it calls, which errors it expects to handle — but it doesn't document what the component does on its own. That lives in the component's contract, which is its own source of truth.</p>
-<p>If the component is an ADR, an API contract, a security policy or an external standard, the rule is the same with one nuance: <strong>cite the specific invariant this spec depends on, not the entire document</strong>. <em>"This spec respects ADR-007 (single Postgres instance) and ADR-012 (no synchronous calls between services)"</em> is useful. <em>"Related: ADR-007"</em> is noise.</p>
-<p><strong>2. Produced (it doesn't exist; the spec creates it).</strong> This is the typical case for a new feature: <em>"this spec creates a new endpoint / a new service / a new module"</em>. Here the trap is obvious and dangerous: because the component doesn't exist yet, you feel you have to "define it" in the spec, and you almost always end up describing it with classes, methods, signatures and payloads. That's exactly anti-pattern #12 (pseudocode dressed up as spec).</p>
-<p>The right form: the spec describes the <strong>observable contract</strong> the new component must offer, not its internal structure. <em>"After this spec, there must be a capability to accept authenticated avatar uploads (JPEG/PNG, ≤10 MB) and return a retrievable URL"</em> is observable contract. <em>"Create <code>AvatarUploadService</code> with method <code>upload(file, user_id) -&gt; AvatarMetadata</code>"</em> is pseudocode.</p>
-<p>There's a conceptually important nuance: a spec that produces a new component is <strong>the transient source of truth that hands off</strong>. While the component doesn't exist, the spec is the only thing describing it. Once the component exists, <strong>its own documentation</strong> (its README, its OpenAPI contract, its tests, its own code) becomes the operational source, and the original spec becomes the <em>"why it was built this way"</em> — historical intent, not living contract. If you confuse the two roles, you end up with two artifacts competing to be the source of truth for the same component, and you fall back into the silent fusion of anti-pattern #13.</p>
-<p><strong>3. Modified (it exists; the spec adds, changes or removes capabilities).</strong> Here the rule is <strong>describe the observable delta, not the component's full state</strong>. The spec doesn't have to re-document how <code>User</code> works; it has to say <em>"add the <code>avatar_url</code> field (optional, current avatar URL or absent). Updated when an avatar is uploaded; cleared when deleted. No other model behavior changes."</em></p>
-<p>The <strong>"no other behavior changes"</strong> part is what saves the spec from inflating. Without it, the team tends to rewrite the entire component "to make the spec complete". The delta is the spec; the rest of the component lives in its own documentation.</p>
-<blockquote>
-<p><strong>The three relationships in one line</strong>: <em>consumed</em> = reference the contract and describe only the use; <em>produced</em> = define the observable contract and prepare the handoff to the component's doc; <em>modified</em> = describe the delta and declare the rest invariant.</p>
-</blockquote>
-<h3 id="capturing-the-load-bearing-essentials-in-three-dimensions">Capturing the load-bearing essentials in three dimensions<a class="headerlink" href="#capturing-the-load-bearing-essentials-in-three-dimensions" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>For each component the spec produces or modifies, the immediate question is <em>"how much detail do I include?"</em>. The vague answer leads to pseudocode. The useful answer is to decompose into <strong>three explicit dimensions</strong> and, for each, capture only what's load-bearing — and reference deeper docs when they exist.</p>
-<p>The three dimensions, applied to the component's <strong>delta</strong>:</p>
-<ul>
-<li><strong>Functional</strong> — what changes in observable behavior. <em>"The <code>User</code> model can now have an avatar; the field is optional; updated on upload, cleared on delete."</em></li>
-<li><strong>Non-functional</strong> — which cross-cutting constraints the change must respect. Performance, security, compatibility, observability, data. <em>"The migration must not require downtime; the field must not break existing model serialization."</em></li>
-<li><strong>Technical</strong> — which contract/integration decisions the change explicitly closes. <em>"The field is indexed by <code>user_id</code>; the avatar URL goes through the existing CDN, not directly through the bucket."</em></li>
-</ul>
-<p>For each dimension, an <strong>optional reference to the deeper document</strong> if it exists: <em>"Migration detail in <code>docs/db/migrations/0042-add-avatar.md</code>. CDN policy in <code>infra/cdn/policy.md</code>."</em></p>
-<p>Three important clarifications about this pattern:</p>
-<ol>
-<li><strong>If a dimension doesn't add anything, omit it.</strong> Don't force three lines per component for symmetry. Absence is informative: it says that dimension doesn't change.</li>
-<li><strong>What goes in the spec is what's load-bearing</strong>: what the chapter 5 validator can compare against the code, and what the team wants to be contractual. Finer detail lives in the component's documentation, which has its own validation mechanism (tests, type checks, versioned contracts).</li>
-<li><strong>The term "non-functional" is classical but contested</strong> (Fowler argues everything is functional, just along different dimensions). For the purposes of this chapter we use it as an operational category — three different questions to ask about each component — not as ontology. If your team prefers calling them <em>behavior</em>, <em>qualities</em>, <em>contracts</em>, it makes no difference. What matters is that they are <strong>three different questions</strong>, not one.</li>
-</ol>
-<blockquote>
-<p><strong>The three dimensions in one line</strong>: <em>functional</em> describes observable behavior; <em>non-functional</em> the cross-cutting constraints; <em>technical</em> the contract and integration decisions. Only the load-bearing parts go in the spec; the rest gets referenced.</p>
-</blockquote>
-<h3 id="the-affected-surfaces-block">The "Affected surfaces" block<a class="headerlink" href="#the-affected-surfaces-block" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>When a spec touches multiple components, it's worth having an explicit block at the start that <strong>enumerates the affected surfaces with their relationship type</strong>. It's not work breakdown (it doesn't enumerate tasks, doesn't mention files, doesn't assign order — that lives in the planning phase of chapter 4). It's <strong>surface mapping</strong>, and it does three things no other part of the spec does well:</p>
-<ol>
-<li>It gives the agent and the chapter 5 validator an <strong>enumerable list</strong> of the change's blast radius, which in chapter 1 was invisible.</li>
-<li>It gives the human a <strong>signal of the spec's size</strong>: if the list has 12 entries, the spec is almost certainly <em>two features</em> badly stitched together, or a refactor masquerading as a feature.</li>
-<li><strong>It isn't work breakdown</strong>, which keeps it on the "what" side rather than the "how".</li>
-</ol>
-<p>An example of the block enriched with the three dimensions:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gu">## Affected surfaces</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gu">### `User` model — modified</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Functional:**</span> adds <span class="sb">`avatar_url`</span> (optional, current avatar URL or absent).
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  Updated on upload; cleared on delete. Rest of the model invariant.
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Non-functional:**</span> the migration must not require downtime; existing
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  serialization can&#39;t break (test <span class="sb">`test_user_serialization_back_compat`</span>).
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Technical:**</span> field indexed by <span class="sb">`user_id`</span>. Permission schema unchanged.
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">-</span><span class="w"> </span><span class="gs">**More detail:**</span> <span class="sb">`docs/db/migrations/0042-add-avatar.md`</span> (once created).
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="gu">### `POST /api/avatar` endpoint — produced</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Functional:**</span> accepts authenticated uploads (JPEG/PNG, ≤10 MB), returns URL.
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>  Errors: 401 unauthenticated, 413 if oversize, 415 if invalid type.
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Non-functional:**</span> existing API gateway rate limit applies unchanged.
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Technical:**</span> consumes <span class="sb">`services/avatar-storage`</span> (current contract, unchanged)
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  and <span class="sb">`auth-middleware`</span> (current contract, unchanged).
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">-</span><span class="w"> </span><span class="gs">**More detail:**</span> this block is the transient source; after implementation,
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  operational doc lives in the new service&#39;s README.
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="gu">### `services/avatar-storage` — consumed</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Functional:**</span> calls <span class="sb">`POST /upload`</span>; handles 413 and 415 explicitly,
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>  propagates 5xx to the caller.
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="k">-</span><span class="w"> </span>Rest: see <span class="sb">`services/avatar-storage/contract.openapi.yaml@v2`</span>.
-</span></code></pre></div>
-<p>Notice how the <em>consumed</em> component has a much shorter block — it only describes <em>how this feature uses it</em>, not what the component does, because that lives in its own contract. And notice how the <em>modified</em> component declares explicitly what does <strong>not</strong> change. Those two habits are what distinguish a useful spec from an inflated one.</p>
-<h3 id="size-heuristic">Size heuristic<a class="headerlink" href="#size-heuristic" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>A practical rule that works: if a spec produces or modifies more than <strong>3-4 surfaces</strong>, you probably have one of three problems, and it's worth diagnosing before continuing:</p>
-<ul>
-<li><strong>(a)</strong> A feature too big that should be split into multiple specs (chapter 8 modulation).</li>
-<li><strong>(b)</strong> An architectural change disguised as a feature, which deserves its own ADR that this spec then hangs from.</li>
-<li><strong>&copy;</strong> A refactor camouflaged as a feature (also chapter 8 modulation): what you're changing is the <em>shape</em> of the system, not adding business capability.</li>
-</ul>
-<p>The three have different treatments in the rest of the course, and the spec alone isn't the right artifact for any of them.</p>
-<h3 id="consolidated-summary-table">Consolidated summary table<a class="headerlink" href="#consolidated-summary-table" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Pulling this section together with the earlier subsection on upstream documents, this is the unified rule by relationship type:</p>
-<table>
-<thead>
-<tr>
-<th>Relationship</th>
-<th>Main rule</th>
-<th>Spec section</th>
-<th>Typical trap</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Consumed component</strong></td>
-<td>Reference the contract; document the use</td>
-<td>Technical constraints</td>
-<td>Re-documenting the component</td>
-</tr>
-<tr>
-<td><strong>Produced component</strong></td>
-<td>Define observable contract, not structure</td>
-<td>Affected surfaces + Criteria</td>
-<td>Pseudocode (#12); failing to mark the handoff to the component's doc</td>
-</tr>
-<tr>
-<td><strong>Modified component</strong></td>
-<td>Describe the delta, declare the rest invariant</td>
-<td>Affected surfaces + Criteria</td>
-<td>Rewriting the entire component</td>
-</tr>
-<tr>
-<td><strong>ADR / architecture</strong></td>
-<td>Cite specific invariants</td>
-<td>Technical constraints</td>
-<td>Copying invariants (drift guaranteed)</td>
-</tr>
-<tr>
-<td><strong>API contract / external standard</strong></td>
-<td>Reference + summary of implications</td>
-<td>Technical constraints</td>
-<td>Re-documenting the contract</td>
-</tr>
-<tr>
-<td><strong>Feature brief / product doc</strong></td>
-<td>Extract the cardinal whys</td>
-<td>Whys</td>
-<td>Importing vague product language</td>
-</tr>
-<tr>
-<td><strong>User story</strong></td>
-<td>Rewrite criteria with traceability</td>
-<td>Criteria + Whys</td>
-<td>Verbatim copy or opaque reference</td>
-</tr>
-</tbody>
-</table>
-<p>And a new anti-pattern that appears when references accumulate without discipline: <strong>reference soup</strong> — a spec where its own content gets buried under a long list of citations to ADRs, contracts, briefs and components, all without prioritization. The agent and the human don't know which are load-bearing and which are tangential, and they end up ignoring all of them. It's the inverse of the <em>curse of instructions</em> — a spec drowned by its own citations — and we develop it as anti-pattern #14 in chapter 11. The preventive rule: <strong>reference only what the agent or the human needs for this task, and annotate the why of each reference</strong>.</p>
-<h2 id="in-summary-what-distinguishes-a-good-spec-from-a-mediocre-one">In summary: what distinguishes a good spec from a mediocre one<a class="headerlink" href="#in-summary-what-distinguishes-a-good-spec-from-a-mediocre-one" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>If you have to remember three things from this chapter, let them be these:</p>
-<ol>
-<li><strong>Non-goals save you more drift than any other section</strong>. Always write them.</li>
-<li><strong>Whys are what age well</strong>. Without them, the spec lasts weeks. With them, it lasts years.</li>
-<li><strong>"Ask first" is the missing category in almost every spec</strong>. It's where real collaboration with the agent lives.</li>
-</ol>
-<h3 id="mediocre-vs-good-side-by-side">Mediocre vs good, side by side<a class="headerlink" href="#mediocre-vs-good-side-by-side" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>The difference is best seen in contrast. Same feature, two specs:</p>
-<p><strong>Mediocre</strong> (looks complete, isn't):</p>
-<blockquote>
-<p><em>Spec: Avatar upload. The system will allow users to upload an avatar. A <code>POST /api/avatar</code> endpoint will be created that receives the file and stores it. The file will be validated to be an image. The URL of the saved avatar will be returned. An <code>avatar_url</code> field will be added to the <code>User</code> model. Tests will be implemented.</em></p>
-</blockquote>
-<p>It talks about the <em>what</em> in implementation terms, mentions no <em>why</em>, has no non-goals, no boundaries, the criteria aren't verifiable ("the file will be validated to be an image" — which types? which size? which error?), and it leaks code-level decisions (<code>POST /api/avatar</code>, <code>avatar_url</code>) that are implementation, not contract.</p>
-<p><strong>Good</strong> (short, intentional, ages well):</p>
-<blockquote>
-<p><em>Spec: Avatar upload. </em><em>Objective:</em><em> allow an authenticated user to upload a profile photo visible to followers and deletable only by them. </em><em>Non-goals:</em><em> no animated GIF support; no automatic compression; content moderation lives in another spec. </em><em>Constraints:</em><em> served from the existing S3 bucket; auth goes through <code>requireAuth</code>; errors follow the <code>Result&lt;T, AppError&gt;</code> pattern. </em><em>Criteria:</em><em> an authenticated user can upload JPEG or PNG ≤10 MB; fails with 413 if oversize and 415 if invalid type, both with a readable message; only the owner can delete; an integration test covers all three cases. </em><em>Whys:</em><em> we don't compress because design wants to preserve quality for verified accounts (Sept-2025, @maria); only the owner deletes because adding moderation would change the permission model and we want this iteration minimal. </em><em>Boundaries:</em><em> ✅ run tests before declaring done; ⚠️ ask before touching the <code>User</code> schema; 🚫 never disable existing tests or commit secrets.</em></p>
-</blockquote>
-<p>The good one fits in roughly the same space as the mediocre one, but it captures intent, constraints, verifiable criteria, and the whys that will let it survive the decisions surrounding it.</p>
-<p><strong>The final rule</strong>: bad specs enumerate technical trivia and say nothing about intent. Mediocre specs say a lot about <em>what</em> and nothing about <em>why</em>. Good specs are short, say <em>what</em>, <em>why</em> and <em>what not</em>, and can be read in five minutes without losing anything important.</p>
 <h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Up to here we've seen what's <em>inside</em> a spec, and the unifying rule that runs through the whole chapter: <strong>the right level of detail is what your validation mechanism knows how to consume</strong> — no more, no less. If anatomy answers the <em>what</em>, what comes next is the <em>when</em> and the <em>how it's validated</em>: the moment a spec stops being a document and starts behaving like a contract.</p>
-<p>In <strong>chapter 4</strong> we'll see the cycle a spec lives in: the four phases of the SDD process (with their two variants in the literature), how to chain them with an agent, and where the verification that prevents code from drifting away from the spec fits.</p>
+<p>Up to here we've seen what to put inside a spec and the two most expensive traps when writing one: specs that are too large and specs generated by agents without supervision. But a spec's anatomy doesn't end with its blocks — <strong>the right level of detail depends on context</strong>: the spectrum level you're operating at, the technical components you touch, and the kind of validation you'll apply.</p>
+<p>In <strong><a href="../03b-spec-in-context/">section 3b</a></strong> we tackle exactly that: how to calibrate the spec so that detail is neither waste nor blindness.</p>
 
 
 
@@ -2721,13 +2254,13 @@
         
         
           
-          <a href="../04-sdd-cycles/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. The SDD cycles">
+          <a href="../03b-spec-in-context/" class="md-footer__link md-footer__link--next" aria-label="Next: 3b. The spec in context">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                4. The SDD cycles
+                3b. The spec in context
               </div>
             </div>
             <div class="md-footer__button md-icon">

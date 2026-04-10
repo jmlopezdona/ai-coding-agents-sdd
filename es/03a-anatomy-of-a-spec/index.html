@@ -12,17 +12,17 @@
         <meta name="author" content="jmlopezdona">
       
       
-        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03-anatomy-of-a-spec/">
+        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/03a-anatomy-of-a-spec/">
       
       
         <link rel="prev" href="../02-specification-spectrum/">
       
       
-        <link rel="next" href="../04-sdd-cycles/">
+        <link rel="next" href="../03b-spec-in-context/">
       
       
         
-          <link rel="alternate" href="../../03-anatomy-of-a-spec/" hreflang="en">
+          <link rel="alternate" href="../../03a-anatomy-of-a-spec/" hreflang="en">
         
           <link rel="alternate" href="./" hreflang="es">
         
@@ -33,7 +33,7 @@
     
     
       
-        <title>3. Anatomía de una buena especificación - Spec-Driven Development</title>
+        <title>3a. Anatomía de una buena especificación - Spec-Driven Development</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3-anatomia-de-una-buena-especificacion" class="md-skip">
+        <a href="#3a-anatomia-de-una-buena-especificacion" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Anatomía de una buena especificación
+              3a. Anatomía de una buena especificación
             
           </span>
         </div>
@@ -165,7 +165,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../03-anatomy-of-a-spec/" hreflang="en" class="md-select__link">
+            <a href="../../03a-anatomy-of-a-spec/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -744,6 +744,8 @@
       
         
       
+        
+      
     
     
     
@@ -843,7 +845,7 @@
   <span class="md-ellipsis">
     
   
-    3. Anatomía de una buena especificación
+    3a. Anatomía de una buena especificación
   
 
     
@@ -861,7 +863,7 @@
   <span class="md-ellipsis">
     
   
-    3. Anatomía de una buena especificación
+    3a. Anatomía de una buena especificación
   
 
     
@@ -1087,167 +1089,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#el-nivel-de-detalle-depende-del-nivel-del-espectro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        El nivel de detalle depende del nivel del espectro
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="El nivel de detalle depende del nivel del espectro">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#spec-first-detalle-ligero-intencional-no-exhaustivo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-first → detalle ligero, intencional, no exhaustivo
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spec-anchored-detalle-medio-acotado-por-lo-que-el-anclaje-puede-verificar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-anchored → detalle medio, acotado por lo que el anclaje puede verificar
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spec-as-source-detalle-exhaustivo-pero-de-un-tipo-distinto" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-as-source → detalle exhaustivo, pero de un tipo distinto
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#la-regla-unificadora" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        La regla unificadora
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#la-spec-y-los-componentes-tecnicos-consumir-producir-modificar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        La spec y los componentes técnicos: consumir, producir, modificar
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="La spec y los componentes técnicos: consumir, producir, modificar">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tres-relaciones-tres-reglas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tres relaciones, tres reglas
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturar-lo-fundamental-en-tres-dimensiones" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Capturar lo fundamental en tres dimensiones
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#el-bloque-superficies-afectadas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        El bloque "Superficies afectadas"
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#heuristica-de-tamano" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Heurística de tamaño
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tabla-resumen-consolidada" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tabla resumen consolidada
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#en-resumen-lo-que-distingue-una-spec-buena-de-una-mediocre" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        En resumen: lo que distingue una spec buena de una mediocre
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="En resumen: lo que distingue una spec buena de una mediocre">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mediocre-vs-buena-lado-a-lado" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mediocre vs buena, lado a lado
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#lo-que-viene-a-continuacion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1262,6 +1103,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03b-spec-in-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3b. La spec en contexto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2137,167 +2006,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#el-nivel-de-detalle-depende-del-nivel-del-espectro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        El nivel de detalle depende del nivel del espectro
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="El nivel de detalle depende del nivel del espectro">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#spec-first-detalle-ligero-intencional-no-exhaustivo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-first → detalle ligero, intencional, no exhaustivo
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spec-anchored-detalle-medio-acotado-por-lo-que-el-anclaje-puede-verificar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-anchored → detalle medio, acotado por lo que el anclaje puede verificar
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spec-as-source-detalle-exhaustivo-pero-de-un-tipo-distinto" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spec-as-source → detalle exhaustivo, pero de un tipo distinto
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#la-regla-unificadora" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        La regla unificadora
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#la-spec-y-los-componentes-tecnicos-consumir-producir-modificar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        La spec y los componentes técnicos: consumir, producir, modificar
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="La spec y los componentes técnicos: consumir, producir, modificar">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tres-relaciones-tres-reglas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tres relaciones, tres reglas
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#capturar-lo-fundamental-en-tres-dimensiones" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Capturar lo fundamental en tres dimensiones
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#el-bloque-superficies-afectadas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        El bloque "Superficies afectadas"
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#heuristica-de-tamano" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Heurística de tamaño
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tabla-resumen-consolidada" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tabla resumen consolidada
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#en-resumen-lo-que-distingue-una-spec-buena-de-una-mediocre" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        En resumen: lo que distingue una spec buena de una mediocre
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="En resumen: lo que distingue una spec buena de una mediocre">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mediocre-vs-buena-lado-a-lado" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mediocre vs buena, lado a lado
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#lo-que-viene-a-continuacion" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2325,7 +2033,7 @@
 
 
   
-    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/es/03-anatomy-of-a-spec.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/es/03a-anatomy-of-a-spec.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2333,9 +2041,8 @@
   
 
 
-<h1 id="3-anatomia-de-una-buena-especificacion">3. Anatomía de una buena especificación<a class="headerlink" href="#3-anatomia-de-una-buena-especificacion" title="Enlace permanente a esta sección">&para;</a></h1>
+<h1 id="3a-anatomia-de-una-buena-especificacion">3a. Anatomía de una buena especificación<a class="headerlink" href="#3a-anatomia-de-una-buena-especificacion" title="Enlace permanente a esta sección">&para;</a></h1>
 <p>Hay muchas formas de escribir una spec mal y bastantes pocas de escribirla bien. Este capítulo intenta destilar lo que distingue una spec útil para un agente de IA de una que es ceremonia disfrazada. La frase corta: una buena spec captura <strong>intención, restricciones y los "por qués"</strong> con la suficiente precisión para que el agente no tenga que adivinar, y con la suficiente brevedad para que un humano la siga leyendo dentro de seis meses.</p>
-<p><strong>Mapa del capítulo.</strong> Empezamos por los <strong>seis bloques</strong> que toda spec mínima debería tener y una <strong>plantilla</strong> que cabe en una pantalla. Después atacamos las tres trampas más caras: la <strong>maldición de las instrucciones</strong> (specs grandes rinden peor que módulos pequeños), la <strong>generación con agente</strong> (que casi siempre produce pseudocódigo disfrazado), y el <strong>nivel de detalle equivocado</strong> para tu nivel del espectro. Luego abrimos una sección sobre cómo una spec se relaciona con los <strong>componentes técnicos</strong> del sistema (consumir, producir, modificar), cerramos con un <strong>ejemplo end-to-end</strong> de spec real, y rematamos con las tres cosas que separan una spec buena de una mediocre.</p>
 <h2 id="lo-que-tiene-que-estar-dentro">Lo que tiene que estar dentro<a class="headerlink" href="#lo-que-tiene-que-estar-dentro" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una spec mínima útil tiene seis bloques. No todos los seis tienen que ser largos, pero los seis tienen que estar.</p>
 <h3 id="1-objetivo">1. Objetivo<a class="headerlink" href="#1-objetivo" title="Enlace permanente a esta sección">&para;</a></h3>
@@ -2454,7 +2161,7 @@
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">-</span><span class="w"> </span>⚠️ Ask first: ...
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="k">-</span><span class="w"> </span>🚫 Never: ...
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="gu">## Superficies afectadas (recomendado siempre que la spec toque &gt;1 componente; ver sección dedicada más abajo)</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="gu">## Superficies afectadas (recomendado siempre que la spec toque &gt;1 componente; ver [sección 3b](03b-spec-in-context.md#la-spec-y-los-componentes-técnicos-consumir-producir-modificar))</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="gu">### [Componente] — [producido | modificado | consumido]</span>
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Funcional:**</span> ...
 </span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="k">-</span><span class="w"> </span><span class="gs">**No funcional:**</span> ...
@@ -2492,183 +2199,9 @@
 </ul>
 <p>La regla práctica más útil: <strong>si tu spec generada menciona una firma de función o un nombre de clase, bórrala</strong>. La spec habla de qué garantías cumple el sistema, no de cómo se construye.</p>
 <p>Y la advertencia honesta: usar el agente como generador de drafts <strong>no reduce el coste total</strong> de hacer SDD bien. Lo que reduce es el coste de empezar el primer borrador, que para muchos equipos es la barrera psicológica que más pesa. El coste real — pensar la intención con precisión, capturar los por qués, mantener viva la spec — sigue estando ahí, sin atajo, y el agente no lo paga por ti. Si tu adopción de SDD depende de que la generación automática elimine ese coste, lo que vas a tener no es SDD — vas a tener el anti-patrón #12 del capítulo 11.</p>
-<h2 id="el-nivel-de-detalle-depende-del-nivel-del-espectro">El nivel de detalle depende del nivel del espectro<a class="headerlink" href="#el-nivel-de-detalle-depende-del-nivel-del-espectro" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Hasta aquí hemos hablado de la anatomía de una spec como si fuera una sola cosa. No lo es. <strong>El nivel de detalle apropiado depende de en qué nivel del espectro del capítulo 2 estés operando</strong>, y escribir una spec con el nivel de detalle equivocado para tu nivel del espectro es una de las formas más comunes — y más caras — de sufrir SDD malhecho.</p>
-<h3 id="spec-first-detalle-ligero-intencional-no-exhaustivo">Spec-first → detalle ligero, intencional, no exhaustivo<a class="headerlink" href="#spec-first-detalle-ligero-intencional-no-exhaustivo" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>En spec-first la spec se lee una vez, al arrancar la feature, y a partir de ahí el código deriva libremente. Su única función es <strong>alinear al equipo y al agente al principio</strong>. Nada la va a leer de vuelta, así que cada línea extra que escribas es trabajo que nadie va a recuperar.</p>
-<p>El detalle apropiado: objetivo, no-goals, criterios de aceptación, los por qués críticos, y poco más. Si tu spec-first ocupa más de una pantalla, casi siempre es porque estás escribiendo spec-anchored <em>aspiracional</em> (anti-patrón #4 del capítulo 11) o porque caíste en pseudocódigo (anti-patrón #12). La spec-first óptima es la mínima viable para arrancar con intención clara.</p>
-<h3 id="spec-anchored-detalle-medio-acotado-por-lo-que-el-anclaje-puede-verificar">Spec-anchored → detalle medio, acotado por lo que el anclaje puede verificar<a class="headerlink" href="#spec-anchored-detalle-medio-acotado-por-lo-que-el-anclaje-puede-verificar" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Aquí cambia la lógica. La spec sí se va a leer otra vez — por los validadores, por los tests, por los agentes recurrentes que detectan drift. El detalle ya no es opcional: tiene que ser <strong>suficiente para que el mecanismo de anclaje pueda comparar</strong>.</p>
-<p>Pero hay un tope superior contraintuitivo: <strong>el detalle no debe ir más allá de lo que tu anclaje sabe verificar</strong>. Si tu validador comprueba contratos de API y tu spec describe reglas de UI, la parte de UI no está anclada — es spec-first disfrazada de spec-anchored. Y como ese trozo no se verifica, drifta libre.</p>
-<p>La regla operativa: el detalle de una spec-anchored se mide contra el <strong>alcance del anclaje</strong>, no contra una idea abstracta de "completitud". Si lo que escribes no se puede verificar automáticamente, escribirlo no te aporta más anclaje — solo te aporta más maintenance tax.</p>
-<h3 id="spec-as-source-detalle-exhaustivo-pero-de-un-tipo-distinto">Spec-as-source → detalle exhaustivo, pero de un tipo distinto<a class="headerlink" href="#spec-as-source-detalle-exhaustivo-pero-de-un-tipo-distinto" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Aquí es donde la conversación se vuelve interesante. Spec-as-source sí necesita el máximo detalle, porque el código se genera a partir de la spec. Pero el detalle es de <strong>una naturaleza diferente</strong> del de los otros dos niveles.</p>
-<p>Es detalle <strong>formal o semi-formal</strong>: signaturas de tipos, contratos, invariantes, gramáticas, reglas de transformación. Es detalle <strong>generator-friendly</strong>: pensado para que un generador (LLM o no) pueda producir código determinista a partir de él. Y es legítimo que aparezcan firmas, esquemas y estructuras concretas — porque en este nivel <strong>la spec es el código fuente, solo que en otra notación</strong>.</p>
-<p>Aquí está la conexión incómoda con la sección anterior: la "spec" generada por un agente que es pseudocódigo disfrazado se <em>parece</em> superficialmente a una spec-as-source. Tiene clases, métodos, payloads, reglas. Pero hay una diferencia crítica: <strong>una spec-as-source legítima viene acompañada de un generador determinista que produce el código</strong>. Sin ese generador, lo que tienes es la peor combinación posible: el detalle exhaustivo de spec-as-source con el no-determinismo de spec-first. Es el equivalente, en lo conceptual, de escribir XML+OCL en los 2000 sin tener un compilador MDA detrás. Fowler sabría exactamente cómo se llama.</p>
-<h3 id="la-regla-unificadora">La regla unificadora<a class="headerlink" href="#la-regla-unificadora" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Si tienes que destilar todo lo anterior a una sola frase:</p>
-<blockquote>
-<p><strong>El nivel de detalle apropiado de una spec es el que tu mecanismo de validación — humano, automático o generativo — sabe consumir. Más detalle que eso es desperdicio; menos detalle es ceguera.</strong></p>
-</blockquote>
-<p>En spec-first el "validador" es el equipo en una sola lectura inicial, así que el detalle apropiado es lo que cabe en esa lectura. En spec-anchored el validador es el mecanismo de anclaje, así que el detalle apropiado es lo que el anclaje sabe comparar. En spec-as-source el validador es el generador, así que el detalle apropiado es lo que el generador necesita para producir código sin ambigüedad.</p>
-<p>Casi todas las patologías que veremos en el capítulo 11 vienen de <strong>desalinear estas tres cosas</strong>: escribir spec-anchored sin anclaje (#4), escribir spec-as-source sin generador (#9 + #12), o escribir spec-first con el detalle de spec-as-source (#2 + #12). La anatomía no es absoluta — es relativa a qué tipo de validación se va a hacer sobre lo que escribes.</p>
-<h2 id="la-spec-y-los-componentes-tecnicos-consumir-producir-modificar">La spec y los componentes técnicos: consumir, producir, modificar<a class="headerlink" href="#la-spec-y-los-componentes-tecnicos-consumir-producir-modificar" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>La anatomía no vive en el vacío: toda spec aterriza sobre código que ya existe. Y en la práctica, casi todas las specs reales <strong>tocan varios componentes a la vez</strong> — alguno se construye nuevo, otro se modifica, y varios se consumen sin tocarse. Cada una de esas relaciones tiene reglas distintas, y mezclarlas en un mismo lenguaje es una de las formas más rápidas de inflar la spec sin ganar precisión.</p>
-<p>Esta sección extiende la subsección anterior sobre <em>"Reutilizar criterios de documentos upstream"</em> — donde tratamos el caso de las user stories — a la pregunta más general: ¿qué dice una spec sobre los componentes técnicos del sistema con los que se relaciona?</p>
-<h3 id="tres-relaciones-tres-reglas">Tres relaciones, tres reglas<a class="headerlink" href="#tres-relaciones-tres-reglas" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Una spec puede tener tres relaciones distintas con cada componente que toca:</p>
-<p><strong>1. Consumido (existe; la spec lo usa).</strong> El componente ya está construido, tiene su propio contrato (API, módulo, librería), y la spec se apoya en él sin modificarlo. La regla es <strong>referencia el contrato, no lo reimplementes</strong>. La spec documenta <em>cómo</em> se usa el componente — qué endpoints llama, qué errores espera manejar — pero no documenta lo que el componente hace por sí mismo. Eso vive en el contrato del componente, que es su propia fuente de verdad.</p>
-<p>Si el componente es un ADR, una API contract, una política de seguridad o un estándar externo, la regla es la misma con un matiz: <strong>cita el invariante específico que esta spec depende, no el documento entero</strong>. <em>"Esta spec respeta ADR-007 (single Postgres instance) y ADR-012 (no llamadas síncronas entre servicios)"</em> es útil. <em>"Relacionado: ADR-007"</em> es ruido.</p>
-<p><strong>2. Producido (no existe; la spec lo crea).</strong> Es el caso típico de una feature nueva: <em>"esta spec crea un nuevo endpoint / un nuevo servicio / un nuevo módulo"</em>. Aquí la trampa es obvia y peligrosa: como el componente no existe todavía, sientes que tienes que "definirlo" en la spec, y casi siempre acabas describiéndolo con clases, métodos, firmas y payloads. Eso es exactamente el anti-patrón #12 (pseudocódigo disfrazado de spec).</p>
-<p>La forma correcta: la spec describe el <strong>contrato observable</strong> que el componente nuevo tiene que ofrecer, no su estructura interna. <em>"Tras esta spec, debe existir una capacidad para aceptar uploads de avatares autenticados (JPEG/PNG, ≤10 MB) y devolver una URL recuperable"</em> es contrato observable. <em>"Crear <code>AvatarUploadService</code> con método <code>upload(file, user_id) -&gt; AvatarMetadata</code>"</em> es pseudocódigo.</p>
-<p>Hay un matiz conceptualmente importante: una spec que produce un componente nuevo es <strong>la fuente de verdad transitoria que hace handoff</strong>. Mientras el componente no existe, la spec es lo único que lo describe. En cuanto el componente existe, <strong>su propia documentación</strong> (su README, su contrato OpenAPI, sus tests, su propio código) se vuelve la fuente operacional, y la spec original pasa a ser el <em>"por qué se construyó así"</em> — intención histórica, no contrato vivo. Si confundes los dos roles, acabas con dos artefactos compitiendo por ser la fuente de verdad del mismo componente, y vuelves a la fusión silenciosa del anti-patrón #13.</p>
-<p><strong>3. Modificado (existe; la spec añade, cambia o quita capacidades).</strong> Aquí la regla es <strong>describe el delta observable, no el estado completo del componente</strong>. La spec no tiene que volver a documentar cómo funciona <code>User</code>; tiene que decir <em>"añade el campo <code>avatar_url</code> (opcional, URL del avatar actual o ausente). Se actualiza al subir un avatar y se borra al borrarlo. Ningún otro comportamiento del modelo cambia."</em></p>
-<p>La parte de <strong>"ningún otro comportamiento cambia"</strong> es lo que salva a la spec de inflarse. Sin ella, el equipo tiende a reescribir el componente entero "para que la spec sea completa". El delta es la spec; el resto del componente vive en su propia documentación.</p>
-<blockquote>
-<p><strong>En resumen de las tres relaciones</strong>: <em>consumido</em> = referencia el contrato y describe solo el uso; <em>producido</em> = define el contrato observable y prepara el handoff a la doc del componente; <em>modificado</em> = describe el delta y declara el resto invariante.</p>
-</blockquote>
-<h3 id="capturar-lo-fundamental-en-tres-dimensiones">Capturar lo fundamental en tres dimensiones<a class="headerlink" href="#capturar-lo-fundamental-en-tres-dimensiones" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Para cada componente que la spec produce o modifica, la pregunta inmediata es <em>"¿cuánto detalle pongo?"</em>. La respuesta vaga lleva al pseudocódigo. La respuesta útil es decomponer en <strong>tres dimensiones explícitas</strong> y, para cada una, capturar solo lo load-bearing — y referenciar a docs más profundas cuando existan.</p>
-<p>Las tres dimensiones, aplicadas al <strong>delta</strong> del componente:</p>
-<ul>
-<li><strong>Funcional</strong> — qué cambia en el comportamiento observable. <em>"El modelo <code>User</code> ahora puede tener un avatar; el campo es opcional; se actualiza al subir y se elimina al borrar."</em></li>
-<li><strong>No funcional</strong> — qué restricciones cruzadas tiene que respetar el cambio. Performance, seguridad, compatibilidad, observabilidad, datos. <em>"La migración no debe requerir downtime; el campo no debe romper la serialización existente del modelo."</em></li>
-<li><strong>Técnico</strong> — qué decisiones de contrato/integración el cambio cierra explícitamente. <em>"El campo es indexado por <code>user_id</code>; la URL del avatar pasa por el CDN existente, no por el bucket directamente."</em></li>
-</ul>
-<p>Para cada dimensión, una <strong>referencia opcional al documento más profundo</strong> si existe: <em>"Más detalle de la migración en <code>docs/db/migrations/0042-add-avatar.md</code>. Política de CDN en <code>infra/cdn/policy.md</code>."</em></p>
-<p>Tres aclaraciones importantes sobre este patrón:</p>
-<ol>
-<li><strong>Si una dimensión no aporta, omítela.</strong> No fuerces tres líneas por componente por simetría. La ausencia es informativa: dice que esa dimensión no cambia.</li>
-<li><strong>Lo que va en la spec es lo load-bearing</strong>: lo que el validador del cap. 5 puede comparar contra el código y lo que el equipo quiere que sea contractual. El detalle más fino vive en la documentación del componente, que tiene su propio mecanismo de validación (tests, type checks, contratos versionados).</li>
-<li><strong>El término "no funcional" es clásico pero contestado</strong> (Fowler argumenta que todo es funcional, solo cambia la dimensión). Para los efectos de este capítulo lo usamos como categoría operativa — tres preguntas distintas que hacerle a cada componente — no como ontología. Si a tu equipo le encaja mejor llamarlas <em>comportamiento</em>, <em>cualidades</em>, <em>contratos</em>, da exactamente igual. Lo que importa es que sean <strong>tres preguntas distintas</strong>, no una sola.</li>
-</ol>
-<blockquote>
-<p><strong>En resumen de las tres dimensiones</strong>: <em>funcional</em> describe el comportamiento observable; <em>no funcional</em> las restricciones cruzadas; <em>técnico</em> las decisiones de contrato e integración. Solo lo load-bearing entra en la spec; el resto se referencia.</p>
-</blockquote>
-<h3 id="el-bloque-superficies-afectadas">El bloque "Superficies afectadas"<a class="headerlink" href="#el-bloque-superficies-afectadas" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Cuando una spec toca varios componentes, conviene un bloque explícito al principio que <strong>enumere las superficies afectadas con su tipo de relación</strong>. No es work breakdown (no enumera tareas, no menciona archivos, no asigna orden — eso vive en la fase de plan del cap. 4). Es <strong>mapeo de superficie</strong>, y hace tres cosas que ninguna otra parte de la spec hace bien:</p>
-<ol>
-<li>Le da al agente y al validador del cap. 5 una <strong>lista enumerable</strong> del blast radius del cambio, que en el cap. 1 era invisible.</li>
-<li>Le da al humano una <strong>señal del tamaño de la spec</strong>: si la lista tiene 12 entradas, casi seguro la spec son realmente <em>dos features</em> mal cosidas o un refactor camuflado de feature.</li>
-<li><strong>No es work breakdown</strong>, lo cual la mantiene del lado del "qué" en vez del "cómo".</li>
-</ol>
-<p>Un ejemplo del bloque enriquecido con las tres dimensiones:</p>
-<div class="language-markdown highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gu">## Superficies afectadas</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gu">### Modelo `User` — modificado</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Funcional:**</span> añade <span class="sb">`avatar_url`</span> (opcional, URL del avatar actual o ausente).
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  Se actualiza al subir avatar; se borra al borrarlo. Resto del modelo invariante.
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">-</span><span class="w"> </span><span class="gs">**No funcional:**</span> la migración no debe requerir downtime; serialización existente
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  no puede romperse (test <span class="sb">`test_user_serialization_back_compat`</span>).
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Técnico:**</span> campo indexado por <span class="sb">`user_id`</span>. No cambia el esquema de permisos.
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Más detalle:**</span> <span class="sb">`docs/db/migrations/0042-add-avatar.md`</span> (cuando se cree).
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="gu">### Endpoint `POST /api/avatar` — producido</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Funcional:**</span> acepta uploads autenticados (JPEG/PNG, ≤10 MB), devuelve URL.
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>  Errores: 401 sin auth, 413 si excede tamaño, 415 si tipo inválido.
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="k">-</span><span class="w"> </span><span class="gs">**No funcional:**</span> rate limit existente del API gateway aplica sin cambios.
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Técnico:**</span> consume <span class="sb">`services/avatar-storage`</span> (contrato actual, sin cambios)
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  y <span class="sb">`auth-middleware`</span> (contrato actual, sin cambios).
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Más detalle:**</span> este bloque es la fuente transitoria; tras la implementación,
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  la doc operacional vive en el README del nuevo servicio.
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="gu">### `services/avatar-storage` — consumido</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Funcional:**</span> se llama a <span class="sb">`POST /upload`</span>; se manejan 413 y 415 explícitamente,
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>  los 5xx se propagan al caller.
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="k">-</span><span class="w"> </span>Resto: ver <span class="sb">`services/avatar-storage/contract.openapi.yaml@v2`</span>.
-</span></code></pre></div>
-<p>Nota cómo el componente <em>consumido</em> tiene un bloque mucho más corto — solo describe <em>cómo lo usa esta feature</em>, no lo que el componente hace, porque eso vive en su propio contrato. Y nota cómo el componente <em>modificado</em> declara explícitamente qué <strong>no</strong> cambia. Esos dos hábitos son los que distinguen una spec útil de una spec inflada.</p>
-<h3 id="heuristica-de-tamano">Heurística de tamaño<a class="headerlink" href="#heuristica-de-tamano" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Una regla práctica que funciona: si una spec produce o modifica más de <strong>3-4 superficies</strong>, probablemente tienes uno de tres problemas, y conviene diagnosticar antes de seguir:</p>
-<ul>
-<li><strong>(a)</strong> Una feature demasiado grande que debería partirse en varias specs (modulación del cap. 8).</li>
-<li><strong>(b)</strong> Un cambio arquitectónico disfrazado de feature, que merece un ADR separado del que esta spec luego cuelgue.</li>
-<li><strong>&copy;</strong> Un refactor camuflado de feature (también modulación del cap. 8): lo que estás cambiando es la <em>forma</em> del sistema, no añadiendo capacidad de negocio.</li>
-</ul>
-<p>Las tres tienen tratamiento distinto en el resto del curso, y la spec sola no es el artefacto correcto para ninguna.</p>
-<h3 id="tabla-resumen-consolidada">Tabla resumen consolidada<a class="headerlink" href="#tabla-resumen-consolidada" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Reuniendo esta sección con la subsección anterior sobre documentos upstream, esta es la regla unificada por tipo de relación:</p>
-<table>
-<thead>
-<tr>
-<th>Relación</th>
-<th>Regla principal</th>
-<th>Sección de la spec</th>
-<th>Trampa típica</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Componente consumido</strong></td>
-<td>Referencia el contrato; documenta el uso</td>
-<td>Restricciones técnicas</td>
-<td>Re-documentar el componente</td>
-</tr>
-<tr>
-<td><strong>Componente producido</strong></td>
-<td>Define contrato observable, no estructura</td>
-<td>Superficies afectadas + Criterios</td>
-<td>Pseudocódigo (#12); no marcar el handoff a la doc del componente</td>
-</tr>
-<tr>
-<td><strong>Componente modificado</strong></td>
-<td>Describe el delta, declara el resto invariante</td>
-<td>Superficies afectadas + Criterios</td>
-<td>Reescribir el componente entero</td>
-</tr>
-<tr>
-<td><strong>ADR / arquitectura</strong></td>
-<td>Cita invariantes específicos</td>
-<td>Restricciones técnicas</td>
-<td>Copiar invariantes (drift garantizado)</td>
-</tr>
-<tr>
-<td><strong>API contract / estándar externo</strong></td>
-<td>Referencia + resumen de implicaciones</td>
-<td>Restricciones técnicas</td>
-<td>Re-documentar el contrato</td>
-</tr>
-<tr>
-<td><strong>Feature brief / doc de producto</strong></td>
-<td>Extrae los por qués cardinales</td>
-<td>Por qués</td>
-<td>Importar el lenguaje vago de producto</td>
-</tr>
-<tr>
-<td><strong>User story</strong></td>
-<td>Reescribir criterios con traza</td>
-<td>Criterios + Por qués</td>
-<td>Copia literal o referencia opaca</td>
-</tr>
-</tbody>
-</table>
-<p>Y un anti-patrón nuevo que aparece cuando las referencias se acumulan sin disciplina: <strong>sopa de referencias</strong> — una spec donde el contenido propio queda enterrado bajo una lista larga de citas a ADRs, contratos, briefs y componentes, todos sin priorización. El agente y el humano no saben cuáles son load-bearing y cuáles son tangenciales, y acaban ignorándolos a todos. Es el inverso de la <em>maldición de las instrucciones</em>, — una spec ahogada por sus propias citas — y lo desarrollamos como anti-patrón #14 en el capítulo 11. La regla preventiva: <strong>referencia solo lo que el agente o el humano necesita para esta tarea, y anota el porqué de cada referencia</strong>.</p>
-<h2 id="en-resumen-lo-que-distingue-una-spec-buena-de-una-mediocre">En resumen: lo que distingue una spec buena de una mediocre<a class="headerlink" href="#en-resumen-lo-que-distingue-una-spec-buena-de-una-mediocre" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Si tienes que recordar tres cosas de este capítulo, que sean estas:</p>
-<ol>
-<li><strong>Los no-goals te ahorran más drift que cualquier otra sección</strong>. Escríbelos siempre.</li>
-<li><strong>Los por qués son lo que envejece bien</strong>. Sin ellos, la spec dura semanas. Con ellos, dura años.</li>
-<li><strong>El "ask first" es la categoría que falta en casi todas las specs</strong>. Es donde vive la colaboración real con el agente.</li>
-</ol>
-<h3 id="mediocre-vs-buena-lado-a-lado">Mediocre vs buena, lado a lado<a class="headerlink" href="#mediocre-vs-buena-lado-a-lado" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>La diferencia se ve mejor en contraste. Misma feature, dos specs:</p>
-<p><strong>Mediocre</strong> (parece completa, no lo es):</p>
-<blockquote>
-<p><em>Spec: Avatar upload. El sistema permitirá a los usuarios subir un avatar. Se creará un endpoint <code>POST /api/avatar</code> que recibirá el archivo y lo guardará. Se validará que el archivo sea una imagen. Se devolverá la URL del avatar guardado. Se añadirá un campo <code>avatar_url</code> al modelo <code>User</code>. Se implementarán tests.</em></p>
-</blockquote>
-<p>Habla del <em>qué</em> en términos de implementación, no menciona ningún <em>por qué</em>, no hay no-goals, no hay boundaries, los criterios no son verificables ("se validará que el archivo sea una imagen" — ¿qué tipos? ¿qué tamaño? ¿qué error?), y menciona detalles de código (<code>POST /api/avatar</code>, <code>avatar_url</code>) que son decisiones de implementación, no contrato.</p>
-<p><strong>Buena</strong> (corta, intencional, envejece):</p>
-<blockquote>
-<p><em>Spec: Avatar upload. </em><em>Objetivo:</em><em> permitir a un usuario autenticado subir una foto de perfil visible para sus seguidores y eliminable solo por él. </em><em>No-goals:</em><em> no se soporta GIF animado; no se comprime automáticamente; la moderación de contenido vive en otra spec. </em><em>Restricciones:</em><em> se sirve desde el bucket S3 existente; auth pasa por <code>requireAuth</code>; errores siguen el patrón <code>Result&lt;T, AppError&gt;</code>. </em><em>Criterios:</em><em> un usuario autenticado puede subir JPEG o PNG ≤10 MB; falla con 413 si excede tamaño y 415 si tipo inválido, ambos con mensaje legible; solo el dueño puede borrar; un test de integración cubre los tres casos. </em><em>Por qués:</em><em> no comprimimos porque diseño quiere preservar calidad para cuentas verificadas (sept-2025, @maria); solo el dueño borra porque añadir moderación cambiaría el modelo de permisos y queremos esta iteración mínima. </em><em>Boundaries:</em><em> ✅ ejecutar tests antes de declarar terminado; ⚠️ preguntar antes de tocar el esquema de <code>User</code>; 🚫 nunca deshabilitar tests existentes ni commitear secretos.</em></p>
-</blockquote>
-<p>La buena cabe en la misma extensión que la mediocre, pero captura intención, restricciones, criterios verificables y los por qués que la harán sobrevivir a las decisiones que la rodean.</p>
-<p><strong>La regla final</strong>: las specs malas enumeran trivialidades técnicas y no dicen nada de la intención. Las specs mediocres dicen mucho del <em>qué</em> y nada del <em>por qué</em>. Las specs buenas son cortas, dicen <em>qué</em>, <em>por qué</em> y <em>qué no</em>, y se pueden leer en cinco minutos sin perder nada importante.</p>
 <h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Hasta aquí hemos visto qué hay <em>dentro</em> de una spec, y la regla unificadora que recorre todo el capítulo: <strong>el detalle apropiado es el que tu mecanismo de validación sabe consumir</strong> — ni más, ni menos. Si la anatomía responde al <em>qué</em>, lo siguiente es el <em>cuándo</em> y el <em>cómo se valida</em>: el momento en que una spec deja de ser documento y empieza a comportarse como contrato.</p>
-<p>En el <strong>capítulo 4</strong> vamos a ver el ciclo en el que una spec vive: las cuatro fases del proceso SDD (con sus dos variantes en la literatura), cómo encadenarlas con un agente, y dónde encaja la verificación que evita que el código se aleje de la spec.</p>
+<p>Hasta aquí hemos visto qué poner dentro de una spec y las dos trampas más caras al escribirla: specs demasiado grandes y specs generadas por agentes sin supervisión. Pero la anatomía de una spec no termina en sus bloques — <strong>el nivel de detalle apropiado depende del contexto</strong>: del nivel del espectro en el que operas, de los componentes técnicos que tocas, y del tipo de validación que vas a aplicar.</p>
+<p>En la <strong><a href="../03b-spec-in-context/">sección 3b</a></strong> abordamos exactamente eso: cómo calibrar la spec para que el detalle no sea ni desperdicio ni ceguera.</p>
 
 
 
@@ -2721,13 +2254,13 @@
         
         
           
-          <a href="../04-sdd-cycles/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 4. Los ciclos SDD">
+          <a href="../03b-spec-in-context/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 3b. La spec en contexto">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                4. Los ciclos SDD
+                3b. La spec en contexto
               </div>
             </div>
             <div class="md-footer__button md-icon">
