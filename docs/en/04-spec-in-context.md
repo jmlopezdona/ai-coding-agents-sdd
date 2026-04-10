@@ -32,7 +32,7 @@ Here's the uncomfortable connection with the [previous section](03-anatomy-of-a-
 
 If you have to distill all of the above into a single sentence:
 
-> **The right level of detail for a spec is the one your validation mechanism — human, automatic, or generative — knows how to consume. More than that is waste; less than that is blindness.**
+> **The right level of detail for a spec is the one your validation mechanism — human, deterministic, or generative — knows how to consume. More than that is waste; less than that is blindness.**
 
 In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.
 

@@ -32,7 +32,7 @@ Aquí está la conexión incómoda con la [sección anterior](03-anatomy-of-a-sp
 
 Si tienes que destilar todo lo anterior a una sola frase:
 
-> **El nivel de detalle apropiado de una spec es el que tu mecanismo de validación — humano, automático o generativo — sabe consumir. Más detalle que eso es desperdicio; menos detalle es ceguera.**
+> **El nivel de detalle apropiado de una spec es el que tu mecanismo de validación — humano, determinista o generativo — sabe consumir. Más detalle que eso es desperdicio; menos detalle es ceguera.**
 
 En spec-first el "validador" es el equipo en una sola lectura inicial, así que el detalle apropiado es lo que cabe en esa lectura. En spec-anchored el validador es el mecanismo de anclaje, así que el detalle apropiado es lo que el anclaje sabe comparar. En spec-as-source el validador es el generador, así que el detalle apropiado es lo que el generador necesita para producir código sin ambigüedad.
 
