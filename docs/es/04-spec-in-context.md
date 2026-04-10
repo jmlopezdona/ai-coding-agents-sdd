@@ -1,6 +1,6 @@
 # 4. La spec en contexto: detalle, componentes y calibración
 
-En la [sección anterior](03-anatomy-of-a-spec.md) vimos qué poner dentro de una spec — los seis bloques, la plantilla, la maldición de las instrucciones y las trampas de la generación con agente. Ahora toca la pregunta que sigue: **cuánto detalle**, y **cómo se relaciona la spec con los componentes técnicos** del sistema que toca.
+En la [sección anterior](03-anatomy-of-a-spec.md) vimos qué poner dentro de una spec — los seis bloques, la plantilla, la maldición de las instrucciones y las trampas de la generación con agente. Ahora toca la pregunta que sigue: **cuánto detalle**, **cómo incorporar información de documentos upstream**, y **cómo se relaciona la spec con los componentes técnicos** del sistema que toca.
 
 ## El nivel de detalle depende del nivel del espectro
 
@@ -38,11 +38,23 @@ En spec-first el "validador" es el equipo en una sola lectura inicial, así que 
 
 Casi todas las patologías que veremos en el capítulo 12 vienen de **desalinear estas tres cosas**: escribir spec-anchored sin anclaje (#4), escribir spec-as-source sin generador (#9 + #12), o escribir spec-first con el detalle de spec-as-source (#2 + #12). La anatomía no es absoluta — es relativa a qué tipo de validación se va a hacer sobre lo que escribes.
 
+## Reutilizar criterios de documentos upstream (user stories, contratos)
+
+Una pregunta inevitable: si la user story upstream **ya contiene criterios de aceptación**, ¿qué hago con ellos? La respuesta corta es **reescribir con traza** — ni copiar literal (importa la imprecisión del lenguaje de producto), ni referenciar a secas (`"ver JIRA-1234"` rompe la auto-contención del capítulo 1 y abre drift invisible). Reescribes los criterios en la spec al nivel de precisión que el validador del capítulo 6 necesita, y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*, no como contenedor del *qué hay que hacer*.
+
+La regla unificada: **la spec contiene su propia versión, precisa y verificable, de los criterios. El documento upstream se cita como fuente del por qué.** El anti-patrón a evitar — *fusionar user story y spec en un único archivo híbrido porque "dicen lo mismo"* — lo desarrollamos como anti-patrón #13 en el capítulo 12.
+
+**Cuando la user story vive en el mismo repo que la spec**, las objeciones más graves se desactivan: la auto-contención se conserva (todo está en git), el drift deja de ser invisible (queda un commit), y aparece una posibilidad nueva — un sensor automático (hook o agente recurrente) que detecte cuando la user story cambia sin que la spec se actualice. Pero la regla de "reescribir con traza" sigue siendo correcta: siguen siendo dos artefactos con propósitos distintos (la user story responde al *qué quiere el usuario*; la spec, al *qué garantías cumple el sistema*), y cada uno cambia por razones diferentes.
+
+Un riesgo concreto de este escenario: la tentación de editar ambos documentos con frecuencia sin que cada cambio esté plenamente justificado. Cada edición cruzada es una oportunidad de desalineamiento — y cuantas más haya, más difícil es saber cuál de los dos refleja la verdad actual. La traza (la referencia explícita que conecta un criterio de la spec con su origen en la user story) cumple un doble propósito: sirve como **punto de comprobación en el momento del cambio** (el humano o el agente que edita la spec puede verificar que el origen sigue siendo válido) y como **material de auditoría posterior** para un agente de doc-gathering que busque discrepancias entre ambos documentos de forma recurrente.
+
+**Una excepción legítima**: cuando el documento upstream es realmente autoritativo y vive bajo su propia disciplina de validación (un contrato OpenAPI/Protobuf con su propio CI, una política de seguridad corporativa, un RFC), la spec **resume las implicaciones** sin copiar el contenido. La distinción crítica: ese documento upstream tiene su *propia* validación operando sobre él. Una user story de Jira casi nunca tiene esa propiedad.
+
 ## La spec y los componentes técnicos: consumir, producir, modificar
 
 La anatomía no vive en el vacío: toda spec aterriza sobre código que ya existe. Y en la práctica, casi todas las specs reales **tocan varios componentes a la vez** — alguno se construye nuevo, otro se modifica, y varios se consumen sin tocarse. Cada una de esas relaciones tiene reglas distintas, y mezclarlas en un mismo lenguaje es una de las formas más rápidas de inflar la spec sin ganar precisión.
 
-Esta sección extiende la subsección anterior sobre *"Reutilizar criterios de documentos upstream"* — donde tratamos el caso de las user stories — a la pregunta más general: ¿qué dice una spec sobre los componentes técnicos del sistema con los que se relaciona?
+Esta sección extiende la anterior sobre documentos upstream — donde tratamos el caso de las user stories — a la pregunta más general: ¿qué dice una spec sobre los componentes técnicos del sistema con los que se relaciona?
 
 ### Tres relaciones, tres reglas
 

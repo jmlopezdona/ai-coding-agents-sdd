@@ -1,6 +1,6 @@
 # 4. The spec in context: detail, components and calibration
 
-In the [previous section](03-anatomy-of-a-spec.md) we saw what to put inside a spec — the six blocks, the template, the curse of instructions, and the traps of agent generation. Now comes the follow-up question: **how much detail**, and **how does the spec relate to the technical components** of the system it touches.
+In the [previous section](03-anatomy-of-a-spec.md) we saw what to put inside a spec — the six blocks, the template, the curse of instructions, and the traps of agent generation. Now comes the follow-up question: **how much detail**, **how to incorporate information from upstream documents**, and **how does the spec relate to the technical components** of the system it touches.
 
 ## The right level of detail depends on the spectrum level
 
@@ -38,11 +38,23 @@ In spec-first the "validator" is the team in a single initial reading, so the ri
 
 Almost every pathology we'll see in chapter 12 comes from **misaligning these three things**: writing spec-anchored without anchoring (#4), writing spec-as-source without a generator (#9 + #12), or writing spec-first with spec-as-source-level detail (#2 + #12). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.
 
+## Reusing criteria from upstream documents (user stories, contracts)
+
+An unavoidable question: if the upstream user story **already contains acceptance criteria**, what do I do with them? The short answer is **rewrite with traceability** — neither copy verbatim (it imports the imprecision of product language), nor reference-only (`"see JIRA-1234"` breaks the self-containment of chapter 1 and opens invisible drift). You rewrite the criteria in the spec at the level of precision the chapter 6 validator needs, and cite the user story in the "whys" section as the source of *what motivated the decision*, not as the container of *what to do*.
+
+The unified rule: **the spec contains its own precise, verifiable version of the criteria. The upstream document is cited as the source of the why.** The anti-pattern to avoid — *fusing user story and spec into a single hybrid file because "they say the same thing"* — we develop as anti-pattern #13 in chapter 12.
+
+**When the user story lives in the same repo as the spec**, the most serious objections go away: self-containment is preserved (everything is in git), drift stops being invisible (there's a commit), and a new possibility appears — an automatic sensor (hook or recurring agent) that detects when the user story changes without the spec being updated. But the "rewrite with traceability" rule still holds: they remain two artifacts with different purposes (the user story answers *what the user wants*; the spec, *what guarantees the system must meet*), and each changes for different reasons.
+
+A concrete risk in this scenario: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment — and the more there are, the harder it is to know which of the two reflects the current truth. The trace (the explicit reference connecting a spec criterion to its origin in the user story) serves a dual purpose: it acts as a **checkpoint at the time of change** (the human or agent editing the spec can verify that the origin is still valid) and as **audit material** for a doc-gathering agent that scans for discrepancies between both documents on a recurring basis.
+
+**One legitimate exception**: when the upstream document is genuinely authoritative and lives under its own validation discipline (an OpenAPI/Protobuf contract with its own CI, a corporate security policy, an RFC), the spec **summarizes the implications** without copying the content. The critical distinction: that upstream document has its *own* validation operating on it. A Jira user story almost never has that property.
+
 ## The spec and technical components: consume, produce, modify
 
 Anatomy doesn't live in a vacuum: every spec lands on code that already exists. And in practice, almost every real spec **touches multiple components at once** — one is built new, another is modified, and several are consumed without being touched. Each of those relationships has different rules, and mixing them in a single language is one of the fastest ways to inflate a spec without gaining precision.
 
-This section extends the earlier subsection on *"Reusing criteria from upstream documents"* — where we covered the user-story case — to the more general question: what does a spec say about the technical components it relates to?
+This section extends the previous one on upstream documents — where we covered the user-story case — to the more general question: what does a spec say about the technical components it relates to?
 
 ### Three relationships, three rules
 

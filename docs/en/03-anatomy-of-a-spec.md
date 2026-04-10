@@ -38,17 +38,7 @@ How you know it's done. The keyword is **verifiable**: an outsider, reading only
 
 "Works well" isn't an acceptance criterion. "Returns 413 with a readable message if the file exceeds 10 MB" is.
 
-#### Reusing criteria from upstream documents (user stories, contracts)
-
-An unavoidable question: if the upstream user story **already contains acceptance criteria**, what do I do with them? The short answer is **rewrite with traceability** — neither copy verbatim (it imports the imprecision of product language), nor reference-only (`"see JIRA-1234"` breaks the self-containment of chapter 1 and opens invisible drift). You rewrite the criteria in the spec at the level of precision the chapter 6 validator needs, and cite the user story in the "whys" section as the source of *what motivated the decision*, not as the container of *what to do*.
-
-The unified rule: **the spec contains its own precise, verifiable version of the criteria. The upstream document is cited as the source of the why.** The anti-pattern to avoid — *fusing user story and spec into a single hybrid file because "they say the same thing"* — we develop as anti-pattern #13 in chapter 12.
-
-**When the user story lives in the same repo as the spec**, the most serious objections go away: self-containment is preserved (everything is in git), drift stops being invisible (there's a commit), and a new possibility appears — an automatic sensor (hook or recurring agent) that detects when the user story changes without the spec being updated. But the "rewrite with traceability" rule still holds: they remain two artifacts with different purposes (the user story answers *what the user wants*; the spec, *what guarantees the system must meet*), and each changes for different reasons.
-
-A concrete risk in this scenario: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment — and the more there are, the harder it is to know which of the two reflects the current truth. The trace (the explicit reference connecting a spec criterion to its origin in the user story) serves a dual purpose: it acts as a **checkpoint at the time of change** (the human or agent editing the spec can verify that the origin is still valid) and as **audit material** for a doc-gathering agent that scans for discrepancies between both documents on a recurring basis.
-
-**One legitimate exception**: when the upstream document is genuinely authoritative and lives under its own validation discipline (an OpenAPI/Protobuf contract with its own CI, a corporate security policy, an RFC), the spec **summarizes the implications** without copying the content. The critical distinction: that upstream document has its *own* validation operating on it. A Jira user story almost never has that property.
+When acceptance criteria come from upstream documents (user stories, contracts, ADRs), the rule is **rewrite with traceability**, not copy or reference blindly. The detail of how to do this — including the special case of documents living in the same repo — is developed in [section 4](04-spec-in-context.md#reusing-criteria-from-upstream-documents-user-stories-contracts).
 
 ### 5. The *whys*
 

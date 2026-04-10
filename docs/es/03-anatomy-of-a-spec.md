@@ -38,17 +38,7 @@ Cómo sabes que está hecho. La palabra clave es **verificable**: una persona ex
 
 "Funciona bien" no es un criterio de aceptación. "Devuelve 413 con mensaje legible si el archivo supera los 10 MB" sí lo es.
 
-#### Reutilizar criterios de documentos upstream (user stories, contratos)
-
-Una pregunta inevitable: si la user story upstream **ya contiene criterios de aceptación**, ¿qué hago con ellos? La respuesta corta es **reescribir con traza** — ni copiar literal (importa la imprecisión del lenguaje de producto), ni referenciar a secas (`"ver JIRA-1234"` rompe la auto-contención del capítulo 1 y abre drift invisible). Reescribes los criterios en la spec al nivel de precisión que el validador del capítulo 6 necesita, y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*, no como contenedor del *qué hay que hacer*.
-
-La regla unificada: **la spec contiene su propia versión, precisa y verificable, de los criterios. El documento upstream se cita como fuente del por qué.** El anti-patrón a evitar — *fusionar user story y spec en un único archivo híbrido porque "dicen lo mismo"* — lo desarrollamos como anti-patrón #13 en el capítulo 12.
-
-**Cuando la user story vive en el mismo repo que la spec**, las objeciones más graves se desactivan: la auto-contención se conserva (todo está en git), el drift deja de ser invisible (queda un commit), y aparece una posibilidad nueva — un sensor automático (hook o agente recurrente) que detecte cuando la user story cambia sin que la spec se actualice. Pero la regla de "reescribir con traza" sigue siendo correcta: siguen siendo dos artefactos con propósitos distintos (la user story responde al *qué quiere el usuario*; la spec, al *qué garantías cumple el sistema*), y cada uno cambia por razones diferentes.
-
-Un riesgo concreto de este escenario: la tentación de editar ambos documentos con frecuencia sin que cada cambio esté plenamente justificado. Cada edición cruzada es una oportunidad de desalineamiento — y cuantas más haya, más difícil es saber cuál de los dos refleja la verdad actual. La traza (la referencia explícita que conecta un criterio de la spec con su origen en la user story) cumple un doble propósito: sirve como **punto de comprobación en el momento del cambio** (el humano o el agente que edita la spec puede verificar que el origen sigue siendo válido) y como **material de auditoría posterior** para un agente de doc-gathering que busque discrepancias entre ambos documentos de forma recurrente.
-
-**Una excepción legítima**: cuando el documento upstream es realmente autoritativo y vive bajo su propia disciplina de validación (un contrato OpenAPI/Protobuf con su propio CI, una política de seguridad corporativa, un RFC), la spec **resume las implicaciones** sin copiar el contenido. La distinción crítica: ese documento upstream tiene su *propia* validación operando sobre él. Una user story de Jira casi nunca tiene esa propiedad.
+Cuando los criterios de aceptación vienen de documentos upstream (user stories, contratos, ADRs), la regla es **reescribir con traza**, no copiar ni referenciar a secas. El detalle de cómo hacerlo — incluido el caso especial de documentos que viven en el mismo repo — se desarrolla en la [sección 4](04-spec-in-context.md#reutilizar-criterios-de-documentos-upstream-user-stories-contratos).
 
 ### 5. Los "por qués"
 

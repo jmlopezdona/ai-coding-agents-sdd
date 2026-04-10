@@ -148,7 +148,7 @@ There's a more subtle cause too: the team confuses *traceability* with *unificat
 2. **The author test**. If the file is edited by both the PM (for product reasons) and an engineer (for implementation reasons) without coordination, that's a sign you're maintaining two artifacts collapsed into one. Split them.
 3. **Enable a divergence sensor** between the two files instead of fusing them. A git hook or a chapter 6 recurring agent can watch for the user story changing without the spec being updated (or vice versa), and open an issue to reconcile them consciously. That preserves both audiences and makes the relationship between the two artifacts explicit.
 
-Chapter 3 develops this in its section *"Reusing criteria from upstream documents"* — here we just flag why silent fusion is an anti-pattern in its own right. It's one of the pathologies that putting product documentation in the repo amplifies the most when done without thought: what was a good organizational idea becomes a new archetype of bad spec.
+Chapter 4 develops this in its section *"Reusing criteria from upstream documents"* — here we just flag why silent fusion is an anti-pattern in its own right. It's one of the pathologies that putting product documentation in the repo amplifies the most when done without thought: what was a good organizational idea becomes a new archetype of bad spec.
 
 ---
 

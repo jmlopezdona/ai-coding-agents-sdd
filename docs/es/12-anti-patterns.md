@@ -148,7 +148,7 @@ A esto se suma una causa más sutil: el equipo confunde *trazabilidad* con *unif
 2. **El test del autor**. Si el archivo lo edita tanto el PM (por razones de producto) como un ingeniero (por razones de implementación) sin coordinación, es señal de que estás manteniendo dos artefactos colapsados en uno. Sepáralos.
 3. **Habilita un sensor de divergencia** entre ambos archivos en lugar de fusionarlos. Un git hook o un agente recurrente del capítulo 6 puede vigilar cuando la user story cambie sin que la spec se actualice (o al revés), y abrir un issue para reconciliarlas conscientemente. Eso preserva las dos audiencias y hace explícita la relación entre los dos artefactos.
 
-El capítulo 3 desarrolla este tema en su sección *"Reutilizar criterios de documentos upstream"* — aquí solo señalamos por qué la fusión silenciosa es un anti-patrón con nombre propio. Es una de las patologías que más amplifica meter la documentación de producto en el repo sin pensar: lo que era una buena idea organizativa se convierte en un arquetipo nuevo de spec malhecha.
+El capítulo 4 desarrolla este tema en su sección *"Reutilizar criterios de documentos upstream"* — aquí solo señalamos por qué la fusión silenciosa es un anti-patrón con nombre propio. Es una de las patologías que más amplifica meter la documentación de producto en el repo sin pensar: lo que era una buena idea organizativa se convierte en un arquetipo nuevo de spec malhecha.
 
 ---
 
