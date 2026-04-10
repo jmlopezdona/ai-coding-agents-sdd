@@ -62,7 +62,7 @@ Whys are the ingredient [Isoform's critique](https://isoform.ai/blog/the-limits-
 
 ### 6. Boundaries — the three-tier system
 
-This is Addy Osmani's most useful contribution to thinking about specs for agents. Instead of a flat list of "do" and "don't", divide constraints into **three tiers**:
+This is [Addy Osmani's](https://addyosmani.com/blog/good-spec/) most useful contribution to thinking about specs for agents. Instead of a flat list of "do" and "don't", divide constraints into **three tiers**:
 
 - **✅ Always do** — things the agent should do without asking permission.
   *Example: run the test suite before declaring any task done.*
@@ -128,11 +128,11 @@ This template fits in less than a screen and covers 80% of the value a spec can 
 
 **More information in a single spec isn't better — it's worse.** A global 500-line spec is a bad plan; five modular 100-line specs where today's task references just two is a good plan. This is the most important practical rule in the whole chapter, and it cuts against the intuition of almost everyone who starts with SDD.
 
-The reason has a name. Addy Osmani, citing academic studies, calls it **the curse of instructions**: the more you put in a prompt, the worse the model follows *each* of the things. It's not linear — it's a qualitative collapse. A spec with five constraints gets followed reasonably well. A spec with fifty gets followed reasonably badly across all of them, and often the agent acts as if none existed.
+The reason has a name. [Addy Osmani](https://addyosmani.com/blog/good-spec/), citing academic studies, calls it **the curse of instructions**: the more you put in a prompt, the worse the model follows *each* of the things. It's not linear — it's a qualitative collapse. A spec with five constraints gets followed reasonably well. A spec with fifty gets followed reasonably badly across all of them, and often the agent acts as if none existed.
 
 The winning strategy, then, is to break large specs into small modules and pass the agent only the module relevant to the current task.
 
-This is also one of the reasons tools like Spec-kit and Kiro generate **many small files** instead of one big one, and why that proliferation, mismanaged, becomes its own problem (we'll see this in chapter 10).
+This is also one of the reasons tools like [Spec-kit and Kiro](07-native-sdd-tools.md) generate **many small files** instead of one big one, and why that proliferation, mismanaged, becomes its own problem (we'll see this in chapter 10).
 
 ## What if a generator agent writes the spec?
 
@@ -156,7 +156,7 @@ When you end up with specs like this — and, if you leave the agent in its defa
 
 **You implement twice.** You've already paid the cost of thinking through the implementation at the level of classes and methods in the spec, and you're going to pay the same cost again when you code. Worse: anything you discover while implementing (and implementing always reveals something) forces you to go back and edit the spec, or accept drift on day one. You're at the worst point on the chapter 10 curve: maintenance tax from day one, before you've written a single line of code.
 
-**Human review becomes as expensive as code review.** This is exactly what Fowler reports about Spec-kit in chapter 7 — that the generated files were *heavier to review than the code itself*. And it's worse than reviewing code directly, because at least code runs and tests verify it; pseudocode in markdown has no safety net. You're reviewing something at code-level detail but **without code's guarantees**. The tired reviewer skims it — and the "spec" passes the filter as if it had been reviewed.
+**Human review becomes as expensive as code review.** This is exactly what [Fowler reports about Spec-kit](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) in chapter 7 — that the generated files were *heavier to review than the code itself*. And it's worse than reviewing code directly, because at least code runs and tests verify it; pseudocode in markdown has no safety net. You're reviewing something at code-level detail but **without code's guarantees**. The tired reviewer skims it — and the "spec" passes the filter as if it had been reviewed.
 
 The combination of the two is poisonous: you double the work *and* review it worse. It's almost always worse than not having written a spec at all.
 

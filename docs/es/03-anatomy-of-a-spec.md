@@ -62,7 +62,7 @@ Los por qués son el ingrediente que [la crítica de Isoform](https://isoform.ai
 
 ### 6. Boundaries — el sistema de tres niveles
 
-Esta es la contribución más útil de Addy Osmani al pensamiento sobre specs para agentes. En lugar de una lista plana de "haz" y "no hagas", divide las restricciones en **tres tiers**:
+Esta es la contribución más útil de [Addy Osmani](https://addyosmani.com/blog/good-spec/) al pensamiento sobre specs para agentes. En lugar de una lista plana de "haz" y "no hagas", divide las restricciones en **tres tiers**:
 
 - **✅ Always do** — cosas que el agente debe hacer sin pedir permiso.
   *Ejemplo: ejecutar la suite de tests antes de declarar terminada cualquier tarea.*
@@ -128,11 +128,11 @@ Esta plantilla cabe en menos de una pantalla y cubre el 80% del valor que una sp
 
 **Más información en una sola spec no es mejor — es peor.** Una spec global de 500 líneas es un mal plan; cinco specs modulares de 100 líneas, donde la tarea de hoy referencia solo dos, es un buen plan. Esta es la regla práctica más importante de todo el capítulo, y va contra la intuición de casi todo el mundo que empieza con SDD.
 
-La razón tiene nombre. Addy Osmani, citando estudios académicos, la llama **the curse of instructions**: cuanto más metes en un prompt, peor cumple el modelo *cada una* de las cosas. No es lineal — es un colapso cualitativo. Una spec con cinco restricciones se cumple razonablemente bien. Una spec con cincuenta se cumple razonablemente mal en todas, y muchas veces el agente actúa como si no existiera ninguna.
+La razón tiene nombre. [Addy Osmani](https://addyosmani.com/blog/good-spec/), citando estudios académicos, la llama **the curse of instructions**: cuanto más metes en un prompt, peor cumple el modelo *cada una* de las cosas. No es lineal — es un colapso cualitativo. Una spec con cinco restricciones se cumple razonablemente bien. Una spec con cincuenta se cumple razonablemente mal en todas, y muchas veces el agente actúa como si no existiera ninguna.
 
 La estrategia ganadora, entonces, es dividir specs grandes en módulos pequeños y pasarle al agente solo el módulo relevante para la tarea actual.
 
-Esta es también una de las razones por las que las herramientas tipo Spec-kit y Kiro generan **muchos archivos pequeños** en vez de uno grande, y por las que esa proliferación, mal gestionada, se convierte en su propio problema (lo veremos en el capítulo 10).
+Esta es también una de las razones por las que las herramientas tipo [Spec-kit y Kiro](07-native-sdd-tools.md) generan **muchos archivos pequeños** en vez de uno grande, y por las que esa proliferación, mal gestionada, se convierte en su propio problema (lo veremos en el capítulo 10).
 
 ## ¿Y si la spec la genera un agente?
 
@@ -156,7 +156,7 @@ Cuando te encuentras con specs así — y, si dejas al agente en su modo por def
 
 **Implementas dos veces.** Has pagado el coste de pensar la implementación a nivel de clases y métodos en la spec, y vas a pagar otra vez el mismo coste cuando codifiques. Peor: cualquier cosa que descubras al implementar (y al implementar siempre se descubren cosas) te obliga a volver atrás y editar la spec, o a aceptar drift inmediato. Estás en la peor parte de la curva del capítulo 10: maintenance tax desde el día uno, sin haber escrito todavía una línea de código.
 
-**La revisión humana se vuelve tan cara como revisar código.** Esto es exactamente lo que Fowler reporta de Spec-kit en el capítulo 7 — que los archivos generados eran *más pesados de revisar que el propio código*. Y es peor que revisar código directamente, porque al menos el código se ejecuta y los tests lo verifican; el pseudocódigo en markdown no tiene ninguna red de seguridad. Estás revisando algo del nivel de detalle del código pero **sin las garantías del código**. El reviewer humano, cansado, lo lee por encima — y la "spec" pasa el filtro como si hubiera sido revisada.
+**La revisión humana se vuelve tan cara como revisar código.** Esto es exactamente lo que [Fowler reporta de Spec-kit](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) en el capítulo 7 — que los archivos generados eran *más pesados de revisar que el propio código*. Y es peor que revisar código directamente, porque al menos el código se ejecuta y los tests lo verifican; el pseudocódigo en markdown no tiene ninguna red de seguridad. Estás revisando algo del nivel de detalle del código pero **sin las garantías del código**. El reviewer humano, cansado, lo lee por encima — y la "spec" pasa el filtro como si hubiera sido revisada.
 
 La combinación de las dos es venenosa: doblas el trabajo y *además* lo revisas peor. Es casi siempre peor que no haber escrito ninguna spec.
 
