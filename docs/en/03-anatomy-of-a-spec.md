@@ -44,6 +44,8 @@ An unavoidable question: if the upstream user story **already contains acceptanc
 
 The unified rule: **the spec contains its own precise, verifiable version of the criteria. The upstream document is cited as the source of the why.** The anti-pattern to avoid — *fusing user story and spec into a single hybrid file because "they say the same thing"* — we develop as anti-pattern #13 in chapter 12.
 
+**When the user story lives in the same repo as the spec**, the most serious objections go away: self-containment is preserved (everything is in git), drift stops being invisible (there's a commit), and a new possibility appears — an automatic sensor (hook or recurring agent) that detects when the user story changes without the spec being updated. But the "rewrite with traceability" rule still holds: they remain two artifacts with different purposes (the user story answers *what the user wants*; the spec, *what guarantees the system must meet*), and each changes for different reasons.
+
 **One legitimate exception**: when the upstream document is genuinely authoritative and lives under its own validation discipline (an OpenAPI/Protobuf contract with its own CI, a corporate security policy, an RFC), the spec **summarizes the implications** without copying the content. The critical distinction: that upstream document has its *own* validation operating on it. A Jira user story almost never has that property.
 
 ### 5. The *whys*

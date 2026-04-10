@@ -44,6 +44,8 @@ Una pregunta inevitable: si la user story upstream **ya contiene criterios de ac
 
 La regla unificada: **la spec contiene su propia versión, precisa y verificable, de los criterios. El documento upstream se cita como fuente del por qué.** El anti-patrón a evitar — *fusionar user story y spec en un único archivo híbrido porque "dicen lo mismo"* — lo desarrollamos como anti-patrón #13 en el capítulo 12.
 
+**Cuando la user story vive en el mismo repo que la spec**, las objeciones más graves se desactivan: la auto-contención se conserva (todo está en git), el drift deja de ser invisible (queda un commit), y aparece una posibilidad nueva — un sensor automático (hook o agente recurrente) que detecte cuando la user story cambia sin que la spec se actualice. Pero la regla de "reescribir con traza" sigue siendo correcta: siguen siendo dos artefactos con propósitos distintos (la user story responde al *qué quiere el usuario*; la spec, al *qué garantías cumple el sistema*), y cada uno cambia por razones diferentes.
+
 **Una excepción legítima**: cuando el documento upstream es realmente autoritativo y vive bajo su propia disciplina de validación (un contrato OpenAPI/Protobuf con su propio CI, una política de seguridad corporativa, un RFC), la spec **resume las implicaciones** sin copiar el contenido. La distinción crítica: ese documento upstream tiene su *propia* validación operando sobre él. Una user story de Jira casi nunca tiene esa propiedad.
 
 ### 5. Los "por qués"
