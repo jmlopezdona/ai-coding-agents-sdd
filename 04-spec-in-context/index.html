@@ -986,6 +986,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Reusing criteria from upstream documents (user stories, contracts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-the-agent-has-no-access-to-the-upstream-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the agent has no access to the upstream document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-agent-does-have-access-same-repo-or-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the agent does have access (same repo or MCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-unified-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The unified rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-documents-with-automatic-validation-against-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exception: documents with automatic validation against code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1847,6 +1897,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Reusing criteria from upstream documents (user stories, contracts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-the-agent-has-no-access-to-the-upstream-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the agent has no access to the upstream document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-agent-does-have-access-same-repo-or-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the agent does have access (same repo or MCP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-unified-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The unified rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception-documents-with-automatic-validation-against-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exception: documents with automatic validation against code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2008,11 +2108,17 @@
 <p>In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.</p>
 <p>Almost every pathology we'll see in chapter 12 comes from <strong>misaligning these three things</strong>: writing spec-anchored without anchoring (<a href="../12-anti-patterns/#4-theater-spec-with-fake-anchoring">#4</a>), writing spec-as-source without a generator (<a href="../12-anti-patterns/#9-promoting-prematurely-to-spec-as-source">#9</a> + <a href="../12-anti-patterns/#12-generated-spec-thats-pseudocode-in-disguise">#12</a>), or writing spec-first with spec-as-source-level detail (<a href="../12-anti-patterns/#2-big-spec-up-front">#2</a>). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.</p>
 <h2 id="reusing-criteria-from-upstream-documents-user-stories-contracts">Reusing criteria from upstream documents (user stories, contracts)<a class="headerlink" href="#reusing-criteria-from-upstream-documents-user-stories-contracts" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>An unavoidable question: if the upstream user story <strong>already contains acceptance criteria</strong>, what do I do with them? The short answer is <strong>rewrite with traceability</strong> — neither copy verbatim (it imports the imprecision of product language), nor reference-only (<code>"see JIRA-1234"</code> breaks the self-containment of chapter 1 and opens invisible drift). You rewrite the criteria in the spec at the level of precision the chapter 6 validator needs, and cite the user story in the "whys" section as the source of <em>what motivated the decision</em>, not as the container of <em>what to do</em>.</p>
-<p>The unified rule: <strong>the spec contains its own precise, verifiable version of the criteria. The upstream document is cited as the source of the why.</strong> The anti-pattern to avoid — <em>fusing user story and spec into a single hybrid file because "they say the same thing"</em> — we develop as <a href="../12-anti-patterns/#13-fusing-user-story-and-spec-into-a-single-file">anti-pattern #13</a> in chapter 12.</p>
-<p><strong>When the user story lives in the same repo as the spec</strong>, the most serious objections go away: self-containment is preserved (everything is in git), drift stops being invisible (there's a commit), and a new possibility appears — an automatic sensor (hook or recurring agent) that detects when the user story changes without the spec being updated. But the "rewrite with traceability" rule still holds: they remain two artifacts with different purposes (the user story answers <em>what the user wants</em>; the spec, <em>what guarantees the system must meet</em>), and each changes for different reasons.</p>
-<p>A concrete risk in this scenario: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment — and the more there are, the harder it is to know which of the two reflects the current truth. The trace (the explicit reference connecting a spec criterion to its origin in the user story) serves a dual purpose: it acts as a <strong>checkpoint at the time of change</strong> (the human or agent editing the spec can verify that the origin is still valid) and as <strong>audit material</strong> for a doc-gathering agent that scans for discrepancies between both documents on a recurring basis.</p>
-<p><strong>One legitimate exception</strong>: when the upstream document is genuinely authoritative and lives under its own validation discipline (an OpenAPI/Protobuf contract with its own CI, a corporate security policy, an RFC), the spec <strong>summarizes the implications</strong> without copying the content. The critical distinction: that upstream document has its <em>own</em> validation operating on it. A Jira user story almost never has that property.</p>
+<p>An unavoidable question: if the upstream user story <strong>already contains acceptance criteria</strong>, what do I do with them? The answer depends on whether the agent can access the original document, but in both cases there's a constant: <strong>the spec needs its own criteria at the level of engineering precision</strong>, not at the product level. A user story says <em>"the user can easily upload a photo"</em>; the spec needs <em>"JPEG/PNG ≤10 MB, fails with 413/415 with readable message"</em>. That's not copying — it's deriving engineering criteria from product criteria.</p>
+<h3 id="when-the-agent-has-no-access-to-the-upstream-document">When the agent has no access to the upstream document<a class="headerlink" href="#when-the-agent-has-no-access-to-the-upstream-document" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>If the user story lives in an external system without integration (Jira without MCP, Notion without API, a standalone document), the rule is <strong>derive with traceability</strong>: write your own precise criteria in the spec and cite the user story in the "whys" section as the source of <em>what motivated the decision</em>. A bare reference (<code>"see JIRA-1234"</code>) breaks the self-containment of chapter 1 and opens invisible drift — the agent can't read that link, and the user story can change without anyone noticing.</p>
+<h3 id="when-the-agent-does-have-access-same-repo-or-mcp">When the agent does have access (same repo or MCP)<a class="headerlink" href="#when-the-agent-does-have-access-same-repo-or-mcp" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>If the user story lives in the same Git repo or is accessible via MCP (Jira, Linear, Notion with integration), the agent can already read the original content. Here you don't need to copy anything — but you still need to <strong>derive your own criteria at the spec's level of precision</strong> and reference the origin. The user story still doesn't speak the spec's language: it answers <em>what the user wants</em>; the spec answers <em>what guarantees the system must meet</em>.</p>
+<p>In this scenario, self-containment is preserved (the agent accesses the upstream), drift stops being invisible (there's a commit if it's in git, or a timestamp if it comes via MCP), and an <strong>automatic sensor</strong> (hook or recurring agent) can detect when the user story changes without the spec being updated.</p>
+<p>A concrete risk: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment. The trace (the explicit reference connecting a spec criterion to its origin in the user story) serves a dual purpose: it acts as a <strong>checkpoint at the time of change</strong> (the human or agent editing the spec can verify that the origin is still valid) and as <strong>audit material</strong> for a doc-gathering agent that scans for discrepancies on a recurring basis.</p>
+<h3 id="the-unified-rule">The unified rule<a class="headerlink" href="#the-unified-rule" title="Enlace permanente a esta sección">&para;</a></h3>
+<p><strong>The spec always contains its own criteria, derived at the level of precision validation needs. The upstream document is cited as the source of the why, not as the container of the what.</strong> What changes based on access is whether you need to copy upstream content (no access) or just reference it and derive (with access). The anti-pattern to avoid in both cases — <em>fusing user story and spec into a single hybrid file because "they say the same thing"</em> — we develop as <a href="../12-anti-patterns/#13-fusing-user-story-and-spec-into-a-single-file">anti-pattern #13</a> in chapter 12.</p>
+<h3 id="exception-documents-with-automatic-validation-against-code">Exception: documents with automatic validation against code<a class="headerlink" href="#exception-documents-with-automatic-validation-against-code" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>When the upstream document is automatically validated against code on an ongoing basis (an OpenAPI contract with CI, a Protobuf schema with compatibility checks), it's enough to reference it and summarize the implications for your feature. A Jira user story has no automatic validation against code — its consistency depends on occasional human discipline, which makes it vulnerable to silent drift.</p>
 <h2 id="the-spec-and-technical-components-consume-produce-modify">The spec and technical components: consume, produce, modify<a class="headerlink" href="#the-spec-and-technical-components-consume-produce-modify" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Anatomy doesn't live in a vacuum: every spec lands on code that already exists. And in practice, almost every real spec <strong>touches multiple components at once</strong> — one is built new, another is modified, and several are consumed without being touched. Each of those relationships has different rules, and mixing them in a single language is one of the fastest ways to inflate a spec without gaining precision.</p>
 <p>This section extends the previous one on upstream documents — where we covered the user-story case — to the more general question: what does a spec say about the technical components it relates to?</p>
