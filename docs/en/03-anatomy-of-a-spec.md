@@ -24,9 +24,9 @@ No-goals are a vaccine against the agent's scope creep. Without them, the agent 
 
 ### 3. Technical constraints
 
-What the agent *cannot* touch, and what it *must* respect. These are the system's invariants.
+Technical design decisions *specific to this feature* that the agent needs to know to stay on track. These are not general project conventions (those live in the agent's global configuration — CLAUDE.md, rules, skills —, not in each spec). They're the architectural decisions that bound the solution space for *this* particular change.
 
-> *Images are served from the existing S3 bucket; no new bucket is introduced. Authentication goes through the `requireAuth` middleware; no other is invented. Error handling follows the `Result<T, AppError>` pattern used in `src/api/`.*
+> *Images are served from the existing S3 bucket; no new bucket is introduced. Authentication goes through the `requireAuth` middleware; no other is invented. No new table is created; the avatar is stored as a field on the existing `User` model.*
 
 Constraints are what makes the feature fit in the rest of the system instead of landing as a foreign body. They're the antidote to the context collapse from chapter 1.
 
@@ -75,7 +75,7 @@ The crucial distinction is the middle one. Without "ask first", the agent has on
 |---|---|---|
 | **Objective** | Observable outcome and for whom, in 1-2 sentences | Mixing two features into one |
 | **Non-goals** | Vaccine against the agent's scope creep | Not writing them |
-| **Technical constraints** | Invariants the feature must respect | Reinventing what already exists |
+| **Technical constraints** | Design decisions that bound the solution for this feature | Mixing in global project conventions |
 | **Acceptance criteria** | How you know it's done, verifiable | "Works well" as a criterion |
 | **Whys** | Reasons with owner and date; what ages well | Documenting *what* and omitting *why* |
 | **Boundaries** | Always / Ask first / Never for the agent | Forgetting "Ask first" |
@@ -93,9 +93,9 @@ One or two sentences. Observable result. For whom.
 - Other thing NOT done
 
 ## Technical constraints
-- Invariants respected
-- Project patterns followed
-- What can't be touched
+- Design decisions specific to this feature
+- Existing components to use (and which ones not to touch)
+- (Global project conventions live in CLAUDE.md / rules, not here)
 
 ## Acceptance criteria
 - [ ] Verifiable criterion 1

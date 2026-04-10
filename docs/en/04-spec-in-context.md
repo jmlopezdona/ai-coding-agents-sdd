@@ -177,7 +177,7 @@ It talks about the *what* in implementation terms, mentions no *why*, has no non
 >
 > **Non-goals:** no animated GIF support; no automatic compression; content moderation lives in another spec.
 >
-> **Constraints:** served from the existing S3 bucket; auth goes through `requireAuth`; errors follow the `Result<T, AppError>` pattern.
+> **Constraints:** served from the existing S3 bucket; auth goes through `requireAuth`; no new table, the avatar is a field on `User`.
 >
 > **Criteria:** an authenticated user can upload JPEG or PNG ≤10 MB; fails with 413 if oversize and 415 if invalid type, both with a readable message; only the owner can delete; an integration test covers all three cases.
 >

@@ -24,9 +24,9 @@ Los no-goals son una vacuna contra el scope creep del agente. Sin ellos, el agen
 
 ### 3. Restricciones técnicas
 
-Lo que el agente *no puede* tocar, y lo que *tiene que* respetar. Son los invariantes del sistema.
+Decisiones de diseño técnico *específicas de esta feature* que el agente necesita conocer para no salirse del camino. No son convenciones generales del proyecto (esas viven en la configuración global del agente — CLAUDE.md, rules, skills —, no en cada spec). Son las decisiones arquitecturales que acotan el espacio de soluciones para *este* cambio concreto.
 
-> *Las imágenes se sirven desde el bucket S3 ya existente, no se introduce uno nuevo. La autenticación pasa por el middleware `requireAuth`, no se inventa otro. El error handling sigue el patrón `Result<T, AppError>` que se usa en `src/api/`.*
+> *Las imágenes se sirven desde el bucket S3 ya existente, no se introduce uno nuevo. La autenticación pasa por el middleware `requireAuth`, no se inventa otro. No se crea una tabla nueva; el avatar se almacena como campo en el modelo `User` existente.*
 
 Las restricciones son lo que hace que la feature encaje en el resto del sistema en lugar de aterrizar como un cuerpo extraño. Son el antídoto del context collapse del capítulo 1.
 
@@ -75,7 +75,7 @@ La distinción crucial es la del medio. Sin el "ask first", el agente solo tiene
 |---|---|---|
 | **Objetivo** | Resultado observable y para quién, en 1-2 frases | Mezclar dos features en una |
 | **No-goals** | Vacuna contra el scope creep del agente | No escribirlos |
-| **Restricciones técnicas** | Invariantes que la feature debe respetar | Reinventar lo que ya existe |
+| **Restricciones técnicas** | Decisiones de diseño que acotan la solución para esta feature | Mezclar con convenciones globales del proyecto |
 | **Criterios de aceptación** | Cómo sabes que está hecho, verificables | "Funciona bien" como criterio |
 | **Por qués** | Razones con dueño y fecha; lo que envejece bien | Documentar el *qué* y omitir el *por qué* |
 | **Boundaries** | Always / Ask first / Never para el agente | Olvidar el "Ask first" |
@@ -93,9 +93,9 @@ Una o dos frases. Resultado observable. Para quién.
 - Otra cosa que NO se hace
 
 ## Restricciones técnicas
-- Invariantes que se respetan
-- Patrones del proyecto que se siguen
-- Lo que no se puede tocar
+- Decisiones de diseño específicas de esta feature
+- Componentes existentes que se deben usar (y cuáles no tocar)
+- (Las convenciones globales del proyecto viven en CLAUDE.md / rules, no aquí)
 
 ## Criterios de aceptación
 - [ ] Criterio verificable 1

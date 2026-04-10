@@ -177,7 +177,7 @@ Habla del *qué* en términos de implementación, no menciona ningún *por qué*
 >
 > **No-goals:** no se soporta GIF animado; no se comprime automáticamente; la moderación de contenido vive en otra spec.
 >
-> **Restricciones:** se sirve desde el bucket S3 existente; auth pasa por `requireAuth`; errores siguen el patrón `Result<T, AppError>`.
+> **Restricciones:** se sirve desde el bucket S3 existente; auth pasa por `requireAuth`; no se crea tabla nueva, el avatar es un campo en `User`.
 >
 > **Criterios:** un usuario autenticado puede subir JPEG o PNG ≤10 MB; falla con 413 si excede tamaño y 415 si tipo inválido, ambos con mensaje legible; solo el dueño puede borrar; un test de integración cubre los tres casos.
 >
