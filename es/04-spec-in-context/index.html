@@ -2138,7 +2138,7 @@
 <p><strong>Spec: Avatar upload</strong></p>
 <p><strong>Objetivo:</strong> permitir a un usuario autenticado subir una foto de perfil visible para sus seguidores y eliminable solo por él.</p>
 <p><strong>No-goals:</strong> no se soporta GIF animado; no se comprime automáticamente; la moderación de contenido vive en otra spec.</p>
-<p><strong>Restricciones:</strong> se sirve desde el bucket S3 existente; auth pasa por <code>requireAuth</code>; errores siguen el patrón <code>Result&lt;T, AppError&gt;</code>.</p>
+<p><strong>Restricciones:</strong> se sirve desde el bucket S3 existente; auth pasa por <code>requireAuth</code>; no se crea tabla nueva, el avatar es un campo en <code>User</code>.</p>
 <p><strong>Criterios:</strong> un usuario autenticado puede subir JPEG o PNG ≤10 MB; falla con 413 si excede tamaño y 415 si tipo inválido, ambos con mensaje legible; solo el dueño puede borrar; un test de integración cubre los tres casos.</p>
 <p><strong>Por qués:</strong> no comprimimos porque diseño quiere preservar calidad para cuentas verificadas (sept-2025, @maria); solo el dueño borra porque añadir moderación cambiaría el modelo de permisos y queremos esta iteración mínima.</p>
 <p><strong>Boundaries:</strong> ✅ ejecutar tests antes de declarar terminado · ⚠️ preguntar antes de tocar el esquema de <code>User</code> · 🚫 nunca deshabilitar tests existentes ni commitear secretos.</p>

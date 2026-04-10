@@ -2138,7 +2138,7 @@
 <p><strong>Spec: Avatar upload</strong></p>
 <p><strong>Objective:</strong> allow an authenticated user to upload a profile photo visible to followers and deletable only by them.</p>
 <p><strong>Non-goals:</strong> no animated GIF support; no automatic compression; content moderation lives in another spec.</p>
-<p><strong>Constraints:</strong> served from the existing S3 bucket; auth goes through <code>requireAuth</code>; errors follow the <code>Result&lt;T, AppError&gt;</code> pattern.</p>
+<p><strong>Constraints:</strong> served from the existing S3 bucket; auth goes through <code>requireAuth</code>; no new table, the avatar is a field on <code>User</code>.</p>
 <p><strong>Criteria:</strong> an authenticated user can upload JPEG or PNG ≤10 MB; fails with 413 if oversize and 415 if invalid type, both with a readable message; only the owner can delete; an integration test covers all three cases.</p>
 <p><strong>Whys:</strong> we don't compress because design wants to preserve quality for verified accounts (Sept-2025, @maria); only the owner deletes because adding moderation would change the permission model and we want this iteration minimal.</p>
 <p><strong>Boundaries:</strong> ✅ run tests before declaring done · ⚠️ ask before touching the <code>User</code> schema · 🚫 never disable existing tests or commit secrets.</p>

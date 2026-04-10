@@ -2058,9 +2058,9 @@
 </blockquote>
 <p>Los no-goals son una vacuna contra el scope creep del agente. Sin ellos, el agente — siguiendo su training — añadirá compresión, validación de contenido, soporte multi-formato y miniaturas, porque todas esas cosas son "lo que normalmente se hace". Y todas esas cosas son trabajo que tú no pediste.</p>
 <h3 id="3-restricciones-tecnicas">3. Restricciones técnicas<a class="headerlink" href="#3-restricciones-tecnicas" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Lo que el agente <em>no puede</em> tocar, y lo que <em>tiene que</em> respetar. Son los invariantes del sistema.</p>
+<p>Decisiones de diseño técnico <em>específicas de esta feature</em> que el agente necesita conocer para no salirse del camino. No son convenciones generales del proyecto (esas viven en la configuración global del agente — CLAUDE.md, rules, skills —, no en cada spec). Son las decisiones arquitecturales que acotan el espacio de soluciones para <em>este</em> cambio concreto.</p>
 <blockquote>
-<p><em>Las imágenes se sirven desde el bucket S3 ya existente, no se introduce uno nuevo. La autenticación pasa por el middleware <code>requireAuth</code>, no se inventa otro. El error handling sigue el patrón <code>Result&lt;T, AppError&gt;</code> que se usa en <code>src/api/</code>.</em></p>
+<p><em>Las imágenes se sirven desde el bucket S3 ya existente, no se introduce uno nuevo. La autenticación pasa por el middleware <code>requireAuth</code>, no se inventa otro. No se crea una tabla nueva; el avatar se almacena como campo en el modelo <code>User</code> existente.</em></p>
 </blockquote>
 <p>Las restricciones son lo que hace que la feature encaje en el resto del sistema en lugar de aterrizar como un cuerpo extraño. Son el antídoto del context collapse del capítulo 1.</p>
 <h3 id="4-criterios-de-aceptacion-verificables">4. Criterios de aceptación verificables<a class="headerlink" href="#4-criterios-de-aceptacion-verificables" title="Enlace permanente a esta sección">&para;</a></h3>
@@ -2113,8 +2113,8 @@
 </tr>
 <tr>
 <td><strong>Restricciones técnicas</strong></td>
-<td>Invariantes que la feature debe respetar</td>
-<td>Reinventar lo que ya existe</td>
+<td>Decisiones de diseño que acotan la solución para esta feature</td>
+<td>Mezclar con convenciones globales del proyecto</td>
 </tr>
 <tr>
 <td><strong>Criterios de aceptación</strong></td>
@@ -2144,9 +2144,9 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">-</span><span class="w"> </span>Otra cosa que NO se hace
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="gu">## Restricciones técnicas</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">-</span><span class="w"> </span>Invariantes que se respetan
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">-</span><span class="w"> </span>Patrones del proyecto que se siguen
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">-</span><span class="w"> </span>Lo que no se puede tocar
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">-</span><span class="w"> </span>Decisiones de diseño específicas de esta feature
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">-</span><span class="w"> </span>Componentes existentes que se deben usar (y cuáles no tocar)
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">-</span><span class="w"> </span>(Las convenciones globales del proyecto viven en CLAUDE.md / rules, no aquí)
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="gu">## Criterios de aceptación</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">- [ ]</span> Criterio verificable 1

@@ -2058,9 +2058,9 @@
 </blockquote>
 <p>No-goals are a vaccine against the agent's scope creep. Without them, the agent — following its training — will add compression, content validation, multi-format support and thumbnails, because all of those are "what's normally done". And all of those are work you didn't ask for.</p>
 <h3 id="3-technical-constraints">3. Technical constraints<a class="headerlink" href="#3-technical-constraints" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>What the agent <em>cannot</em> touch, and what it <em>must</em> respect. These are the system's invariants.</p>
+<p>Technical design decisions <em>specific to this feature</em> that the agent needs to know to stay on track. These are not general project conventions (those live in the agent's global configuration — CLAUDE.md, rules, skills —, not in each spec). They're the architectural decisions that bound the solution space for <em>this</em> particular change.</p>
 <blockquote>
-<p><em>Images are served from the existing S3 bucket; no new bucket is introduced. Authentication goes through the <code>requireAuth</code> middleware; no other is invented. Error handling follows the <code>Result&lt;T, AppError&gt;</code> pattern used in <code>src/api/</code>.</em></p>
+<p><em>Images are served from the existing S3 bucket; no new bucket is introduced. Authentication goes through the <code>requireAuth</code> middleware; no other is invented. No new table is created; the avatar is stored as a field on the existing <code>User</code> model.</em></p>
 </blockquote>
 <p>Constraints are what makes the feature fit in the rest of the system instead of landing as a foreign body. They're the antidote to the context collapse from chapter 1.</p>
 <h3 id="4-verifiable-acceptance-criteria">4. Verifiable acceptance criteria<a class="headerlink" href="#4-verifiable-acceptance-criteria" title="Enlace permanente a esta sección">&para;</a></h3>
@@ -2113,8 +2113,8 @@
 </tr>
 <tr>
 <td><strong>Technical constraints</strong></td>
-<td>Invariants the feature must respect</td>
-<td>Reinventing what already exists</td>
+<td>Design decisions that bound the solution for this feature</td>
+<td>Mixing in global project conventions</td>
 </tr>
 <tr>
 <td><strong>Acceptance criteria</strong></td>
@@ -2144,9 +2144,9 @@
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">-</span><span class="w"> </span>Other thing NOT done
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="gu">## Technical constraints</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">-</span><span class="w"> </span>Invariants respected
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">-</span><span class="w"> </span>Project patterns followed
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">-</span><span class="w"> </span>What can&#39;t be touched
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">-</span><span class="w"> </span>Design decisions specific to this feature
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">-</span><span class="w"> </span>Existing components to use (and which ones not to touch)
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">-</span><span class="w"> </span>(Global project conventions live in CLAUDE.md / rules, not here)
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="gu">## Acceptance criteria</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">- [ ]</span> Verifiable criterion 1
