@@ -84,7 +84,9 @@ A concrete risk in both cases: the temptation to edit both documents frequently 
 
 The rule: **the spec always contains its own criteria, derived at the level of precision validation needs. The upstream document is cited as the source of the why, not as the container of the what.** The anti-pattern to avoid — *fusing user story and spec into a hybrid* — we develop as [anti-pattern #13](12-anti-patterns.md#13-fusing-user-story-and-spec-into-a-single-file) in chapter 12.
 
-A note on where the ecosystem is heading: using assistants and agents to elaborate the functional requirements themselves (features, user stories, acceptance criteria) makes it possible to reach higher-rigor upstream more efficiently — with edge cases covered, business rules made explicit, and verifiable criteria from the start. That reduces the gap the spec has to bridge and leaves less room for interpretation, whether by the implementing agent or the human who would do the same without one. But human review and validation remain necessary to avoid the over-specification chapter 3 warns about: an agent generating requirements tends toward the same apparent-coverage bias as when it generates specs.
+!!! tip "Where the ecosystem is heading"
+
+    Using assistants and agents to elaborate the functional requirements themselves (features, user stories, acceptance criteria) makes it possible to reach higher-rigor upstream more efficiently — with edge cases covered, business rules made explicit, and verifiable criteria from the start. That reduces the gap the spec has to bridge and leaves less room for interpretation, whether by the implementing agent or the human who would do the same without one. But human review and validation remain necessary to avoid the over-specification chapter 3 warns about: an agent generating requirements tends toward the same apparent-coverage bias as when it generates specs.
 
 ### Special case: documents with automatic validation against code
 

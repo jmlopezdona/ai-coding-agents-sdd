@@ -84,7 +84,9 @@ Un riesgo concreto en ambos casos: la tentación de editar ambos documentos con 
 
 La regla: **la spec siempre contiene sus propios criterios, derivados al nivel de precisión que la validación necesita. El documento upstream se cita como fuente del por qué, no como contenedor del qué.** El anti-patrón a evitar — *fusionar user story y spec en un híbrido* — lo desarrollamos como [anti-patrón #13](12-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo) en el capítulo 12.
 
-Una nota sobre la dirección del ecosistema: el uso de asistentes y agentes para elaborar los propios requisitos funcionales (features, user stories, criterios de aceptación) permite llegar de forma más eficiente a un upstream de mayor rigor — con edge cases cubiertos, reglas de negocio explícitas y criterios verificables desde el origen. Eso reduce el gap que la spec tiene que cubrir y deja menos margen a la interpretación, tanto del agente que implementa como del humano que lo haría sin agente. Pero la revisión y validación humana sigue siendo necesaria para evitar la sobre-especificación que el capítulo 3 advierte: un agente generando requisitos tiende al mismo sesgo de cobertura aparente que cuando genera specs.
+!!! tip "Hacia dónde va el ecosistema"
+
+    El uso de asistentes y agentes para elaborar los propios requisitos funcionales (features, user stories, criterios de aceptación) permite llegar de forma más eficiente a un upstream de mayor rigor — con edge cases cubiertos, reglas de negocio explícitas y criterios verificables desde el origen. Eso reduce el gap que la spec tiene que cubrir y deja menos margen a la interpretación, tanto del agente que implementa como del humano que lo haría sin agente. Pero la revisión y validación humana sigue siendo necesaria para evitar la sobre-especificación que el capítulo 3 advierte: un agente generando requisitos tiende al mismo sesgo de cobertura aparente que cuando genera specs.
 
 ### Caso especial: documentos con validación automática contra el código
 
