@@ -33,7 +33,7 @@
     
     
       
-        <title>5. Los ciclos de vida SDD - Spec-Driven Development</title>
+        <title>5. Posibles enfoques del ciclo de vida - Spec-Driven Development</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#5-los-ciclos-de-vida-sdd-dos-enfoques-y-cuando-usar-cada-uno" class="md-skip">
+        <a href="#5-posibles-enfoques-del-ciclo-de-vida" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. Los ciclos de vida SDD
+              5. Posibles enfoques del ciclo de vida
             
           </span>
         </div>
@@ -966,7 +966,7 @@
   <span class="md-ellipsis">
     
   
-    5. Los ciclos de vida SDD
+    5. Posibles enfoques del ciclo de vida
   
 
     
@@ -984,7 +984,7 @@
   <span class="md-ellipsis">
     
   
-    5. Los ciclos de vida SDD
+    5. Posibles enfoques del ciclo de vida
   
 
     
@@ -1895,9 +1895,9 @@
   
 
 
-<h1 id="5-los-ciclos-de-vida-sdd-dos-enfoques-y-cuando-usar-cada-uno">5. Los ciclos de vida SDD: dos enfoques y cuándo usar cada uno<a class="headerlink" href="#5-los-ciclos-de-vida-sdd-dos-enfoques-y-cuando-usar-cada-uno" title="Enlace permanente a esta sección">&para;</a></h1>
+<h1 id="5-posibles-enfoques-del-ciclo-de-vida">5. Posibles enfoques del ciclo de vida<a class="headerlink" href="#5-posibles-enfoques-del-ciclo-de-vida" title="Enlace permanente a esta sección">&para;</a></h1>
 <p>Si lees tres artículos sobre Spec-Driven Development, encontrarás tres versiones distintas del "ciclo de vida SDD". Eso no es un fallo de la disciplina; es señal de que la disciplina aún se está formando. Pero deja al lector con un problema concreto: <em>¿qué fases hay, en qué orden, y por qué dos fuentes serias dicen cosas distintas?</em></p>
-<p>Este capítulo desambigua. Hay <strong>dos enfoques principales</strong> del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellas dice algo sobre el tipo de proyecto en el que estás.</p>
+<p>Este capítulo desambigua. Hay <strong>dos enfoques principales</strong> del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellos dice algo sobre el tipo de proyecto en el que estás.</p>
 <h2 id="enfoque-a">Enfoque A<a class="headerlink" href="#enfoque-a" title="Enlace permanente a esta sección">&para;</a></h2>
 <p><a href="https://arxiv.org/html/2602.00180">El paper de arXiv sobre SDD</a> propone un ciclo de cuatro fases:</p>
 <ol>
@@ -1926,9 +1926,9 @@
 <p><strong>El enfoque B (Requirements → Design → Tasks → Implementation) es mejor cuando el cuello de botella es la descomposición en trozos digeribles para el agente.</strong> Features grandes que un humano podría hacer pero un agente sin ayuda no, porque el blast radius de los cambios excede su ventana de atención. Si tu problema es "el agente se pierde en mi repo de 200 archivos", este es tu enfoque.</p>
 </li>
 </ul>
-<p>En la práctica, los equipos maduros acaban combinando: usan los nombres de el enfoque B en el flujo diario y separan una fase de validación (enfoque A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.</p>
+<p>En la práctica, los equipos maduros acaban combinando: usan los nombres del enfoque B en el flujo diario y separan una fase de validación (enfoque A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.</p>
 <h2 id="el-ciclo-de-vida-paso-a-paso-con-un-agente-real">El ciclo de vida, paso a paso, con un agente real<a class="headerlink" href="#el-ciclo-de-vida-paso-a-paso-con-un-agente-real" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Te lo cuento como flujo concreto, neutral respecto al enfoque, que es cómo se ve cuando lo haces de verdad.</p>
+<p>Lo que sigue es una <strong>síntesis práctica de ambos enfoques</strong> — un flujo de cinco pasos que toma lo mejor de cada uno. No es ninguno de los dos en estado puro, sino cómo se ve el proceso cuando lo haces de verdad.</p>
 <h3 id="paso-1-especificar-la-intencion">Paso 1 — Especificar la intención<a class="headerlink" href="#paso-1-especificar-la-intencion" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Abres una sesión con el agente. <strong>No le pides que escriba código</strong>. Le pides que te ayude a redactar la spec usando la plantilla del capítulo 3. Le das el objetivo de alto nivel y dejas que te haga preguntas. Si el agente no te hace preguntas, hazlas tú: "qué partes del sistema toca esto", "qué casos límite estoy olvidando", "qué no estamos construyendo y deberíamos decir explícitamente".</p>
 <p>El output de este paso es un archivo en <code>specs/</code> o donde tu proyecto los aloje. Cometido al repo, revisable, versionado.</p>
@@ -1940,12 +1940,13 @@
 <p>La regla heurística: si no puedes describir el estado "después de la tarea" en una frase, la tarea es demasiado grande.</p>
 <h3 id="paso-4-implementar-tarea-a-tarea">Paso 4 — Implementar tarea a tarea<a class="headerlink" href="#paso-4-implementar-tarea-a-tarea" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>El agente ejecuta las tareas de una en una. Para cada tarea: lee la spec, lee la tarea, escribe los tests que la tarea pide, escribe el código, ejecuta los tests, verifica. Si los tests no pasan, itera. Si pasan, marca la tarea como hecha y pasa a la siguiente.</p>
-<p>Lo importante aquí es que <strong>cada tarea es atomic respecto a la spec</strong>: o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra".</p>
+<p>Lo importante aquí es que <strong>cada tarea es atómica respecto a la spec</strong>: o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra".</p>
 <h3 id="paso-5-validar-contra-la-spec-original">Paso 5 — Validar contra la spec original<a class="headerlink" href="#paso-5-validar-contra-la-spec-original" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Cuando todas las tareas están hechas, el agente (o tú, o un segundo agente revisor) toma la spec original y verifica que todo lo que la spec pedía está hecho, y que no se ha hecho nada que la spec no pedía. Esta fase es la que más fácilmente se salta y la más importante: es donde los criterios de aceptación dejan de ser texto y se convierten en una checklist tachada o no tachada.</p>
 <h2 id="clarificacion-iterativa-lo-que-el-survey-de-arxiv-anade">Clarificación iterativa: lo que el survey de arXiv añade<a class="headerlink" href="#clarificacion-iterativa-lo-que-el-survey-de-arxiv-anade" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Hay un detalle que el survey de <a href="https://arxiv.org/html/2508.00083v1"><em>Code Generation with LLM-based Agents</em></a> documenta y que merece estar en este ciclo aunque no aparezca explícitamente en ninguna de los dos enfoques anteriores. Sistemas como <strong>ClarifyGPT</strong> y <strong>TiCoder</strong> introducen una fase <strong>previa</strong> a la spec: el agente, en lugar de tomar el primer prompt como verdad, hace preguntas iterativas para sacar a la superficie ambigüedades y huecos antes de que se materialicen como código equivocado.</p>
+<p>Hay un detalle que el survey de <a href="https://arxiv.org/html/2508.00083v1"><em>Code Generation with LLM-based Agents</em></a> documenta y que merece estar en este ciclo aunque no aparezca explícitamente en ninguno de los dos enfoques anteriores. Sistemas como <strong>ClarifyGPT</strong> y <strong>TiCoder</strong> introducen una fase <strong>previa</strong> a la spec: el agente, en lugar de tomar el primer prompt como verdad, hace preguntas iterativas para sacar a la superficie ambigüedades y huecos antes de que se materialicen como código equivocado.</p>
 <p>En la práctica, esto significa que tu fase 1 del ciclo (especificar) <strong>no es lineal</strong>. Es un mini-bucle dentro del bucle: prompt → preguntas del agente → respuestas → spec borrador → más preguntas → spec final. Los equipos que tratan la fase 1 como un ping-pong en lugar de un dictado obtienen specs sustancialmente mejores, y esto es independiente de qué herramienta uses.</p>
+<p>Esta fase de clarificación conecta directamente con los <strong>boundaries</strong> del capítulo 3 — en particular con la categoría <em>"ask first"</em>: las preguntas que el agente debe hacer antes de actuar. La diferencia es que aquí las preguntas ocurren antes de que la spec exista, no después.</p>
 <h2 id="el-ciclo-de-vida-no-es-lineal">El ciclo de vida no es lineal<a class="headerlink" href="#el-ciclo-de-vida-no-es-lineal" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una nota final que casi siempre se omite en las descripciones canónicas: <strong>el ciclo es raramente lineal en la práctica</strong>. Lo que pasa de verdad es que en el paso 4 descubres algo que invalida una asunción del paso 1, y vuelves atrás. El paso 5 te enseña que el criterio que escribiste no era verificable y tienes que reescribirlo. A mitad de una tarea, te das cuenta de que la spec tiene un hueco.</p>
 <p>Esto es <strong>normal y deseable</strong>. La diferencia entre un ciclo sano y uno patológico no es que el primero no tenga retrocesos; es que el sano <strong>actualiza la spec cuando descubre que estaba mal</strong> en lugar de ignorarla y seguir codificando. Esa es exactamente la idea del próximo capítulo: las <strong>especificaciones vivas</strong>.</p>

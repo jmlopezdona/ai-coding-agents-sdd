@@ -33,7 +33,7 @@
     
     
       
-        <title>5. The SDD lifecycles - Spec-Driven Development</title>
+        <title>5. Possible lifecycle approaches - Spec-Driven Development</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#5-the-sdd-lifecycles-two-approaches-and-when-to-use-each" class="md-skip">
+        <a href="#5-possible-lifecycle-approaches" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. The SDD lifecycles
+              5. Possible lifecycle approaches
             
           </span>
         </div>
@@ -966,7 +966,7 @@
   <span class="md-ellipsis">
     
   
-    5. The SDD lifecycles
+    5. Possible lifecycle approaches
   
 
     
@@ -984,7 +984,7 @@
   <span class="md-ellipsis">
     
   
-    5. The SDD lifecycles
+    5. Possible lifecycle approaches
   
 
     
@@ -1895,7 +1895,7 @@
   
 
 
-<h1 id="5-the-sdd-lifecycles-two-approaches-and-when-to-use-each">5. The SDD lifecycles: two approaches and when to use each<a class="headerlink" href="#5-the-sdd-lifecycles-two-approaches-and-when-to-use-each" title="Enlace permanente a esta sección">&para;</a></h1>
+<h1 id="5-possible-lifecycle-approaches">5. Possible lifecycle approaches<a class="headerlink" href="#5-possible-lifecycle-approaches" title="Enlace permanente a esta sección">&para;</a></h1>
 <p>If you read three articles about Spec-Driven Development, you'll find three different versions of the "SDD lifecycle". That's not a flaw of the discipline; it's a sign the discipline is still forming. But it leaves the reader with a concrete problem: <em>what phases are there, in what order, and why do two serious sources say different things?</em></p>
 <p>This chapter disambiguates. There are <strong>two main approaches</strong> of the lifecycle in the literature, they aren't interchangeable, and the choice between them says something about what kind of project you're in.</p>
 <h2 id="approach-a">Approach A<a class="headerlink" href="#approach-a" title="Enlace permanente a esta sección">&para;</a></h2>
@@ -1928,7 +1928,7 @@
 </ul>
 <p>In practice, mature teams end up combining: they use approach B's names in daily flow and break out a separate validation phase (approach A) when the feature touches something critical. That's not contradictory. It's choosing the right tool for the change's risk.</p>
 <h2 id="the-lifecycle-step-by-step-with-a-real-agent">The lifecycle, step by step, with a real agent<a class="headerlink" href="#the-lifecycle-step-by-step-with-a-real-agent" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>I'll tell you as a concrete flow, neutral with respect to the approach, which is how it looks when you actually do it.</p>
+<p>What follows is a <strong>practical synthesis of both approaches</strong> — a five-step flow that takes the best of each. It's neither in its pure form, but rather how the process looks when you actually do it.</p>
 <h3 id="step-1-specify-intent">Step 1 — Specify intent<a class="headerlink" href="#step-1-specify-intent" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>You open a session with the agent. <strong>You don't ask it to write code</strong>. You ask it to help draft the spec using the chapter 3 template. You give the high-level objective and let it ask questions. If the agent doesn't ask questions, ask them yourself: "what parts of the system does this touch", "what edge cases am I forgetting", "what aren't we building that we should explicitly say".</p>
 <p>The output of this step is a file in <code>specs/</code> or wherever your project hosts them. Committed, reviewable, versioned.</p>
@@ -1946,6 +1946,7 @@
 <h2 id="iterative-clarification-what-the-arxiv-survey-adds">Iterative clarification: what the arXiv survey adds<a class="headerlink" href="#iterative-clarification-what-the-arxiv-survey-adds" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>There's a detail the <a href="https://arxiv.org/html/2508.00083v1"><em>Code Generation with LLM-based Agents</em></a> survey documents that's worth being in this cycle even though it doesn't appear explicitly in either of the two approaches above. Systems like <strong>ClarifyGPT</strong> and <strong>TiCoder</strong> introduce a phase <strong>prior</strong> to the spec: instead of taking the first prompt as truth, the agent asks iterative questions to surface ambiguities and gaps before they materialize as wrong code.</p>
 <p>In practice, this means your phase 1 of the cycle <strong>isn't linear</strong>. It's a mini-loop within the loop: prompt → agent questions → answers → draft spec → more questions → final spec. Teams that treat phase 1 as ping-pong instead of dictation get substantially better specs, and this is independent of which tool you use.</p>
+<p>This clarification phase connects directly with chapter 3's <strong>boundaries</strong> — particularly the <em>"ask first"</em> category: the questions the agent should ask before acting. The difference is that here the questions happen before the spec exists, not after.</p>
 <h2 id="the-lifecycle-isnt-linear">The lifecycle isn't linear<a class="headerlink" href="#the-lifecycle-isnt-linear" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>A final note almost always omitted in canonical descriptions: <strong>the cycle is rarely linear in practice</strong>. What really happens is in step 4 you discover something that invalidates a step-1 assumption, and you go back. Step 5 teaches you that the criterion you wrote wasn't verifiable and you have to rewrite it. Mid-task, you realize the spec has a hole.</p>
 <p>This is <strong>normal and desirable</strong>. The difference between a healthy cycle and a pathological one isn't that the first has no backtracks; it's that the healthy one <strong>updates the spec when it discovers it was wrong</strong> instead of ignoring it and continuing to code. That's exactly the idea of the next chapter: <strong>living specifications</strong>.</p>
