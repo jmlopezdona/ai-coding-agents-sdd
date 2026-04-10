@@ -76,9 +76,9 @@ In an agile context, the user story and acceptance criteria are the **start of t
 
 How to incorporate the upstream depends on whether the agent can access the original document:
 
-**Without access** (Jira without MCP, Notion without API, a standalone document): **derive with traceability**. Write your own precise criteria in the spec and cite the user story in the "whys" section as the source of *what motivated the decision*. A bare reference (`"see JIRA-1234"`) breaks the self-containment of chapter 1 — the agent can't read that link, and the user story can change without anyone noticing.
+- **Without access** (Jira without MCP, Notion without API, a standalone document): **derive with traceability**. Write your own precise criteria in the spec and cite the user story in the "whys" section as the source of *what motivated the decision*. A bare reference (`"see JIRA-1234"`) breaks the self-containment of chapter 1 — the agent can't read that link, and the user story can change without anyone noticing.
 
-**With access** (same Git repo or MCP to Jira/Linear/Notion): you don't need to copy — but you still need to **derive your own criteria at the spec's level of precision** and reference the origin. In this scenario drift stops being invisible (there's a commit or a timestamp), and an **automatic sensor** can detect when the user story changes without the spec being updated.
+- **With access** (same Git repo or MCP to Jira/Linear/Notion): you don't need to copy — but you still need to **derive your own criteria at the spec's level of precision** and reference the origin. In this scenario drift stops being invisible (there's a commit or a timestamp), and an **automatic sensor** can detect when the user story changes without the spec being updated.
 
 A concrete risk in both cases: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment. The trace serves a dual purpose: **checkpoint at the time of change** and **audit material** for a doc-gathering agent that scans for discrepancies on a recurring basis.
 

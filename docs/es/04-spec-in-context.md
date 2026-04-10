@@ -76,9 +76,9 @@ En el contexto de trabajo ágil, la user story y los criterios de aceptación so
 
 Cómo incorporar el upstream depende de si el agente puede acceder al documento original:
 
-**Sin acceso** (Jira sin MCP, Notion sin API, un documento suelto): **derivar con traza**. Escribes tus propios criterios precisos en la spec y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*. Referenciar a secas (`"ver JIRA-1234"`) rompe la auto-contención del capítulo 1 — el agente no puede leer ese enlace, y la user story puede cambiar sin que nadie lo detecte.
+- **Sin acceso** (Jira sin MCP, Notion sin API, un documento suelto): **derivar con traza**. Escribes tus propios criterios precisos en la spec y citas la user story en la sección de "por qués" como fuente del *qué motivó la decisión*. Referenciar a secas (`"ver JIRA-1234"`) rompe la auto-contención del capítulo 1 — el agente no puede leer ese enlace, y la user story puede cambiar sin que nadie lo detecte.
 
-**Con acceso** (mismo repo Git o MCP a Jira/Linear/Notion): no necesitas copiar — pero sí necesitas **derivar tus propios criterios al nivel de precisión de la spec** y referenciar el origen. En este escenario el drift deja de ser invisible (queda un commit o un timestamp), y aparece la posibilidad de un **sensor automático** que detecte cuando la user story cambia sin que la spec se actualice.
+- **Con acceso** (mismo repo Git o MCP a Jira/Linear/Notion): no necesitas copiar — pero sí necesitas **derivar tus propios criterios al nivel de precisión de la spec** y referenciar el origen. En este escenario el drift deja de ser invisible (queda un commit o un timestamp), y aparece la posibilidad de un **sensor automático** que detecte cuando la user story cambia sin que la spec se actualice.
 
 Un riesgo concreto en ambos casos: la tentación de editar ambos documentos con frecuencia sin que cada cambio esté plenamente justificado. Cada edición cruzada es una oportunidad de desalineamiento. La traza cumple un doble propósito: **punto de comprobación en el momento del cambio** y **material de auditoría** para un agente de doc-gathering que busque discrepancias de forma recurrente.
 
