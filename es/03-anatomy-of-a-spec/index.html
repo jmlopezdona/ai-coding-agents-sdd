@@ -942,23 +942,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Criterios de aceptación verificables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reutilizar-criterios-de-documentos-upstream-user-stories-contratos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reutilizar criterios de documentos upstream (user stories, contratos)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -1859,23 +1842,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Criterios de aceptación verificables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reutilizar-criterios-de-documentos-upstream-user-stories-contratos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reutilizar criterios de documentos upstream (user stories, contratos)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
           <li class="md-nav__item">
@@ -2069,12 +2035,7 @@
 <p><em>Un usuario autenticado puede subir una imagen JPEG o PNG de hasta 10 MB. El upload falla con un mensaje claro si el archivo es de otro tipo o supera el tamaño. Solo el dueño del archivo puede borrarlo. Un test de integración cubre los tres casos.</em></p>
 </blockquote>
 <p>"Funciona bien" no es un criterio de aceptación. "Devuelve 413 con mensaje legible si el archivo supera los 10 MB" sí lo es.</p>
-<h4 id="reutilizar-criterios-de-documentos-upstream-user-stories-contratos">Reutilizar criterios de documentos upstream (user stories, contratos)<a class="headerlink" href="#reutilizar-criterios-de-documentos-upstream-user-stories-contratos" title="Enlace permanente a esta sección">&para;</a></h4>
-<p>Una pregunta inevitable: si la user story upstream <strong>ya contiene criterios de aceptación</strong>, ¿qué hago con ellos? La respuesta corta es <strong>reescribir con traza</strong> — ni copiar literal (importa la imprecisión del lenguaje de producto), ni referenciar a secas (<code>"ver JIRA-1234"</code> rompe la auto-contención del capítulo 1 y abre drift invisible). Reescribes los criterios en la spec al nivel de precisión que el validador del capítulo 6 necesita, y citas la user story en la sección de "por qués" como fuente del <em>qué motivó la decisión</em>, no como contenedor del <em>qué hay que hacer</em>.</p>
-<p>La regla unificada: <strong>la spec contiene su propia versión, precisa y verificable, de los criterios. El documento upstream se cita como fuente del por qué.</strong> El anti-patrón a evitar — <em>fusionar user story y spec en un único archivo híbrido porque "dicen lo mismo"</em> — lo desarrollamos como anti-patrón #13 en el capítulo 12.</p>
-<p><strong>Cuando la user story vive en el mismo repo que la spec</strong>, las objeciones más graves se desactivan: la auto-contención se conserva (todo está en git), el drift deja de ser invisible (queda un commit), y aparece una posibilidad nueva — un sensor automático (hook o agente recurrente) que detecte cuando la user story cambia sin que la spec se actualice. Pero la regla de "reescribir con traza" sigue siendo correcta: siguen siendo dos artefactos con propósitos distintos (la user story responde al <em>qué quiere el usuario</em>; la spec, al <em>qué garantías cumple el sistema</em>), y cada uno cambia por razones diferentes.</p>
-<p>Un riesgo concreto de este escenario: la tentación de editar ambos documentos con frecuencia sin que cada cambio esté plenamente justificado. Cada edición cruzada es una oportunidad de desalineamiento — y cuantas más haya, más difícil es saber cuál de los dos refleja la verdad actual. La traza (la referencia explícita que conecta un criterio de la spec con su origen en la user story) cumple un doble propósito: sirve como <strong>punto de comprobación en el momento del cambio</strong> (el humano o el agente que edita la spec puede verificar que el origen sigue siendo válido) y como <strong>material de auditoría posterior</strong> para un agente de doc-gathering que busque discrepancias entre ambos documentos de forma recurrente.</p>
-<p><strong>Una excepción legítima</strong>: cuando el documento upstream es realmente autoritativo y vive bajo su propia disciplina de validación (un contrato OpenAPI/Protobuf con su propio CI, una política de seguridad corporativa, un RFC), la spec <strong>resume las implicaciones</strong> sin copiar el contenido. La distinción crítica: ese documento upstream tiene su <em>propia</em> validación operando sobre él. Una user story de Jira casi nunca tiene esa propiedad.</p>
+<p>Cuando los criterios de aceptación vienen de documentos upstream (user stories, contratos, ADRs), la regla es <strong>reescribir con traza</strong>, no copiar ni referenciar a secas. El detalle de cómo hacerlo — incluido el caso especial de documentos que viven en el mismo repo — se desarrolla en la <a href="../04-spec-in-context/#reutilizar-criterios-de-documentos-upstream-user-stories-contratos">sección 4</a>.</p>
 <h3 id="5-los-por-ques">5. Los "por qués"<a class="headerlink" href="#5-los-por-ques" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Aquí es donde las specs ordinarias mueren y las buenas se separan del resto. Casi todas las specs explican el <em>qué</em>. Casi ninguna explica el <em>por qué</em>. Y los por qués son justo lo que el agente necesita para tomar decisiones inteligentes en los huecos que la spec no cubre.</p>
 <blockquote>

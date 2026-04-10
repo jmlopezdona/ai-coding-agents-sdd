@@ -978,6 +978,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reusing-criteria-from-upstream-documents-user-stories-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reusing criteria from upstream documents (user stories, contracts)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-spec-and-technical-components-consume-produce-modify" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1828,6 +1839,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#reusing-criteria-from-upstream-documents-user-stories-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reusing criteria from upstream documents (user stories, contracts)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-spec-and-technical-components-consume-produce-modify" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1964,7 +1986,7 @@
 
 
 <h1 id="4-the-spec-in-context-detail-components-and-calibration">4. The spec in context: detail, components and calibration<a class="headerlink" href="#4-the-spec-in-context-detail-components-and-calibration" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>In the <a href="../03-anatomy-of-a-spec/">previous section</a> we saw what to put inside a spec — the six blocks, the template, the curse of instructions, and the traps of agent generation. Now comes the follow-up question: <strong>how much detail</strong>, and <strong>how does the spec relate to the technical components</strong> of the system it touches.</p>
+<p>In the <a href="../03-anatomy-of-a-spec/">previous section</a> we saw what to put inside a spec — the six blocks, the template, the curse of instructions, and the traps of agent generation. Now comes the follow-up question: <strong>how much detail</strong>, <strong>how to incorporate information from upstream documents</strong>, and <strong>how does the spec relate to the technical components</strong> of the system it touches.</p>
 <h2 id="the-right-level-of-detail-depends-on-the-spectrum-level">The right level of detail depends on the spectrum level<a class="headerlink" href="#the-right-level-of-detail-depends-on-the-spectrum-level" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>So far we've talked about a spec's anatomy as if it were a single thing. It isn't. <strong>The appropriate level of detail depends on which level of the chapter 2 spectrum you're operating at</strong>, and writing a spec at the wrong level of detail for your spectrum level is one of the most common — and most expensive — ways to suffer bad SDD.</p>
 <h3 id="spec-first-light-intentional-non-exhaustive-detail">Spec-first → light, intentional, non-exhaustive detail<a class="headerlink" href="#spec-first-light-intentional-non-exhaustive-detail" title="Enlace permanente a esta sección">&para;</a></h3>
@@ -1985,9 +2007,15 @@
 </blockquote>
 <p>In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.</p>
 <p>Almost every pathology we'll see in chapter 12 comes from <strong>misaligning these three things</strong>: writing spec-anchored without anchoring (#4), writing spec-as-source without a generator (#9 + #12), or writing spec-first with spec-as-source-level detail (#2 + #12). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.</p>
+<h2 id="reusing-criteria-from-upstream-documents-user-stories-contracts">Reusing criteria from upstream documents (user stories, contracts)<a class="headerlink" href="#reusing-criteria-from-upstream-documents-user-stories-contracts" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>An unavoidable question: if the upstream user story <strong>already contains acceptance criteria</strong>, what do I do with them? The short answer is <strong>rewrite with traceability</strong> — neither copy verbatim (it imports the imprecision of product language), nor reference-only (<code>"see JIRA-1234"</code> breaks the self-containment of chapter 1 and opens invisible drift). You rewrite the criteria in the spec at the level of precision the chapter 6 validator needs, and cite the user story in the "whys" section as the source of <em>what motivated the decision</em>, not as the container of <em>what to do</em>.</p>
+<p>The unified rule: <strong>the spec contains its own precise, verifiable version of the criteria. The upstream document is cited as the source of the why.</strong> The anti-pattern to avoid — <em>fusing user story and spec into a single hybrid file because "they say the same thing"</em> — we develop as anti-pattern #13 in chapter 12.</p>
+<p><strong>When the user story lives in the same repo as the spec</strong>, the most serious objections go away: self-containment is preserved (everything is in git), drift stops being invisible (there's a commit), and a new possibility appears — an automatic sensor (hook or recurring agent) that detects when the user story changes without the spec being updated. But the "rewrite with traceability" rule still holds: they remain two artifacts with different purposes (the user story answers <em>what the user wants</em>; the spec, <em>what guarantees the system must meet</em>), and each changes for different reasons.</p>
+<p>A concrete risk in this scenario: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment — and the more there are, the harder it is to know which of the two reflects the current truth. The trace (the explicit reference connecting a spec criterion to its origin in the user story) serves a dual purpose: it acts as a <strong>checkpoint at the time of change</strong> (the human or agent editing the spec can verify that the origin is still valid) and as <strong>audit material</strong> for a doc-gathering agent that scans for discrepancies between both documents on a recurring basis.</p>
+<p><strong>One legitimate exception</strong>: when the upstream document is genuinely authoritative and lives under its own validation discipline (an OpenAPI/Protobuf contract with its own CI, a corporate security policy, an RFC), the spec <strong>summarizes the implications</strong> without copying the content. The critical distinction: that upstream document has its <em>own</em> validation operating on it. A Jira user story almost never has that property.</p>
 <h2 id="the-spec-and-technical-components-consume-produce-modify">The spec and technical components: consume, produce, modify<a class="headerlink" href="#the-spec-and-technical-components-consume-produce-modify" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Anatomy doesn't live in a vacuum: every spec lands on code that already exists. And in practice, almost every real spec <strong>touches multiple components at once</strong> — one is built new, another is modified, and several are consumed without being touched. Each of those relationships has different rules, and mixing them in a single language is one of the fastest ways to inflate a spec without gaining precision.</p>
-<p>This section extends the earlier subsection on <em>"Reusing criteria from upstream documents"</em> — where we covered the user-story case — to the more general question: what does a spec say about the technical components it relates to?</p>
+<p>This section extends the previous one on upstream documents — where we covered the user-story case — to the more general question: what does a spec say about the technical components it relates to?</p>
 <h3 id="three-relationships-three-rules">Three relationships, three rules<a class="headerlink" href="#three-relationships-three-rules" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>A spec can have three distinct relationships with each component it touches:</p>
 <p><strong>1. Consumed (it exists; the spec uses it).</strong> The component is already built, has its own contract (API, module, library), and the spec leans on it without modifying it. The rule is <strong>reference the contract, don't reimplement it</strong>. The spec documents <em>how</em> the component is used — which endpoints it calls, which errors it expects to handle — but it doesn't document what the component does on its own. That lives in the component's contract, which is its own source of truth.</p>
