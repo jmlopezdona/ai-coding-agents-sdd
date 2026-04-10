@@ -56,6 +56,8 @@ La forma correcta: la spec describe el **contrato observable** que el artefacto 
 
 Un matiz conceptualmente importante: una spec que produce un artefacto nuevo es **la fuente de verdad transitoria que hace handoff**. En cuanto el artefacto existe, **su propia documentación** se vuelve la fuente operacional, y la spec pasa a ser el *"por qué se construyó así"* — intención histórica, no contrato vivo. Confundir los dos roles lleva a la fusión silenciosa del [anti-patrón #13](12-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo).
 
+Un ejemplo concreto de este handoff: las APIs. Cuando una API está por implementar, el documento de diseño (un borrador de contrato, un tech design) es la fuente transitoria y la spec lo referencia. Pero una vez implementada, si el stack tecnológico genera documentación a partir del código (OpenAPI/Swagger generado desde anotaciones, por ejemplo), esa documentación generada pasa a ser la **fuente viva** — es la que refleja lo que el código realmente hace. A partir de ese momento, la spec y cualquier referencia futura deben apuntar al artefacto generado, no al documento de diseño original, que puede haber quedado obsoleto sin que nadie lo detecte.
+
 **3. Modificado (existe; la spec añade, cambia o quita capacidades).** La regla es **describe el delta observable, no el estado completo**. La spec no tiene que volver a documentar cómo funciona `User`; tiene que decir *"añade el campo `avatar_url` (opcional). Se actualiza al subir un avatar y se borra al borrarlo. Ningún otro comportamiento del modelo cambia."*
 
 La parte de **"ningún otro comportamiento cambia"** es lo que salva a la spec de inflarse. El delta es la spec; el resto vive en su propia documentación.

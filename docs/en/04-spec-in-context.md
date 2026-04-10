@@ -56,6 +56,8 @@ The right form: the spec describes the **observable contract** the new artifact 
 
 A conceptually important nuance: a spec that produces a new artifact is **the transient source of truth that hands off**. Once the artifact exists, **its own documentation** becomes the operational source, and the spec becomes the *"why it was built this way"* — historical intent, not living contract. Confusing the two roles leads to the silent fusion of [anti-pattern #13](12-anti-patterns.md#13-fusing-user-story-and-spec-into-a-single-file).
 
+A concrete example of this handoff: APIs. When an API is yet to be implemented, the design document (a draft contract, a tech design) is the transient source and the spec references it. But once implemented, if the tech stack generates documentation from code (OpenAPI/Swagger generated from annotations, for example), that generated documentation becomes the **living source** — it reflects what the code actually does. From that point on, the spec and any future references should point to the generated artifact, not to the original design document, which may have gone stale without anyone noticing.
+
 **3. Modified (it exists; the spec adds, changes or removes capabilities).** The rule is **describe the observable delta, not the full state**. The spec doesn't have to re-document how `User` works; it has to say *"add the `avatar_url` field (optional). Updated when an avatar is uploaded; cleared when deleted. No other model behavior changes."*
 
 The **"no other behavior changes"** part is what saves the spec from inflating. The delta is the spec; the rest lives in its own documentation.
