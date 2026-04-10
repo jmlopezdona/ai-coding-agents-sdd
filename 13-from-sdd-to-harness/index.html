@@ -347,7 +347,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../05-sdd-cycles/" class="md-tabs__link">
+        <a href="../05-sdd-lifecycles/" class="md-tabs__link">
           
   
   
@@ -943,14 +943,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-sdd-cycles/" class="md-nav__link">
+      <a href="../05-sdd-lifecycles/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    5. The SDD cycles
+    5. The SDD lifecycles
   
 
     
@@ -1828,7 +1828,7 @@
 <p>A well-written spec is persistent context with a specific shape: <em>intent + constraints + whys + verifiable criteria</em>. The harness contributes the general discipline ("context lives in the repo"); SDD contributes the concrete shape of one of the artifacts that lives in it.</p>
 <p>The operating consequence: when a team builds a harness, specs aren't just another folder — they're one of the central pieces of context. And when that same team applies SDD, the harness ensures specs reach the agent in the right form, at the right moment, with the right hooks.</p>
 <h2 id="coupling-point-2-sensors-that-validate-specs">Coupling point 2 — Sensors that validate specs<a class="headerlink" href="#coupling-point-2-sensors-that-validate-specs" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>The harness's second pillar is the duality <strong>guides and sensors</strong>: artifacts that orient the agent <em>before</em> acting (guides) and verifiers that detect when the agent has drifted <em>after</em> (sensors). The chapter 5 SDD cycle's phase 5 — verification — is exactly a kind of sensor.</p>
+<p>The harness's second pillar is the duality <strong>guides and sensors</strong>: artifacts that orient the agent <em>before</em> acting (guides) and verifiers that detect when the agent has drifted <em>after</em> (sensors). The chapter 5 SDD lifecycle's phase 5 — verification — is exactly a kind of sensor.</p>
 <p>Without harness, that phase 5 is manual or, at best, an ad-hoc script someone runs. With harness, it becomes infrastructure: tests comparing code against spec, recurring agents detecting drift, linters validating that spec constraints are still respected.</p>
 <p>This is the technical way to close the chapter 6 bidirectional loop. Without harness, the loop depends on human discipline ("remember to update the spec"). With harness, the loop is automatic ("the sensor detected code and spec diverged and opened an issue to reconcile them").</p>
 <h2 id="coupling-point-3-hooks-that-keep-specs-alive">Coupling point 3 — Hooks that keep specs alive<a class="headerlink" href="#coupling-point-3-hooks-that-keep-specs-alive" title="Enlace permanente a esta sección">&para;</a></h2>

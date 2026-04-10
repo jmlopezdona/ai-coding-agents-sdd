@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,7 +12,7 @@
         <meta name="author" content="jmlopezdona">
       
       
-        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-cycles/">
+        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-lifecycles/">
       
       
         <link rel="prev" href="../04-spec-in-context/">
@@ -22,25 +22,25 @@
       
       
         
-          <link rel="alternate" href="./" hreflang="en">
+          <link rel="alternate" href="../../05-sdd-lifecycles/" hreflang="en">
         
-          <link rel="alternate" href="../es/05-sdd-cycles/" hreflang="es">
+          <link rel="alternate" href="./" hreflang="es">
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>5. The SDD cycles - Spec-Driven Development</title>
+        <title>5. Los ciclos de vida SDD - Spec-Driven Development</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,7 +59,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -84,8 +84,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#5-the-sdd-cycles-two-variants-and-when-to-use-each" class="md-skip">
-          Skip to content
+        <a href="#5-los-ciclos-de-vida-sdd-dos-variantes-y-cuando-usar-cada-una" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -97,8 +97,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Spec-Driven Development" class="md-header__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../" title="Spec-Driven Development" class="md-header__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. The SDD cycles
+              5. Los ciclos de vida SDD
             
           </span>
         </div>
@@ -158,20 +158,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="./" hreflang="en" class="md-select__link">
+            <a href="../../05-sdd-lifecycles/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../es/05-sdd-cycles/" hreflang="es" class="md-select__link">
+            <a href="./" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
@@ -192,21 +192,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -219,7 +219,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -231,7 +231,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -252,7 +252,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -262,13 +262,13 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Home
+  Inicio
 
       </a>
     </li>
@@ -289,7 +289,7 @@
   
     
   
-  Introduction
+  Introducción
 
         </a>
       </li>
@@ -311,7 +311,7 @@
   
     
   
-  The problem
+  El problema
 
         </a>
       </li>
@@ -333,7 +333,7 @@
   
     
   
-  Foundations
+  Fundamentos
 
         </a>
       </li>
@@ -357,7 +357,7 @@
   
     
   
-  Lifecycle
+  Ciclo de vida
 
         </a>
       </li>
@@ -379,7 +379,7 @@
   
     
   
-  Tooling
+  Herramientas
 
         </a>
       </li>
@@ -401,7 +401,7 @@
   
     
   
-  Practice
+  Práctica
 
         </a>
       </li>
@@ -423,7 +423,7 @@
   
     
   
-  Critique
+  Crítica
 
         </a>
       </li>
@@ -445,7 +445,7 @@
   
     
   
-  Pitfalls
+  Errores comunes
 
         </a>
       </li>
@@ -467,7 +467,7 @@
   
     
   
-  Industrialization
+  Industrialización
 
         </a>
       </li>
@@ -495,9 +495,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Spec-Driven Development" class="md-nav__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
+    <a href="../" title="Spec-Driven Development" class="md-nav__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -507,7 +507,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -527,14 +527,14 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Home
+    Inicio
   
 
     
@@ -581,7 +581,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    Introducción
   
 
     
@@ -597,7 +597,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Introduction
+    Introducción
   
 
           </label>
@@ -617,7 +617,7 @@
   <span class="md-ellipsis">
     
   
-    Spec-Driven Development: building software with intent
+    Spec-Driven Development: producir software con intención
   
 
     
@@ -672,7 +672,7 @@
   <span class="md-ellipsis">
     
   
-    The problem
+    El problema
   
 
     
@@ -688,7 +688,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    The problem
+    El problema
   
 
           </label>
@@ -708,7 +708,7 @@
   <span class="md-ellipsis">
     
   
-    1. From vibe coding to SDD
+    1. Del vibe coding al SDD
   
 
     
@@ -767,7 +767,7 @@
   <span class="md-ellipsis">
     
   
-    Foundations
+    Fundamentos
   
 
     
@@ -783,7 +783,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Foundations
+    Fundamentos
   
 
           </label>
@@ -803,7 +803,7 @@
   <span class="md-ellipsis">
     
   
-    2. The specification spectrum
+    2. El espectro de la especificación
   
 
     
@@ -831,7 +831,7 @@
   <span class="md-ellipsis">
     
   
-    3. Anatomy of a good spec
+    3. Anatomía de una buena especificación
   
 
     
@@ -859,7 +859,7 @@
   <span class="md-ellipsis">
     
   
-    4. The spec in context
+    4. La spec en contexto
   
 
     
@@ -921,7 +921,7 @@
   <span class="md-ellipsis">
     
   
-    Lifecycle
+    Ciclo de vida
   
 
     
@@ -937,7 +937,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Lifecycle
+    Ciclo de vida
   
 
           </label>
@@ -966,7 +966,7 @@
   <span class="md-ellipsis">
     
   
-    5. The SDD cycles
+    5. Los ciclos de vida SDD
   
 
     
@@ -984,7 +984,7 @@
   <span class="md-ellipsis">
     
   
-    5. The SDD cycles
+    5. Los ciclos de vida SDD
   
 
     
@@ -996,7 +996,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
@@ -1005,15 +1005,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variant-a-the-arxiv-paper-version" class="md-nav__link">
+  <a href="#variante-a" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variant A — The arXiv paper version
+        Variante A
       
     </span>
   </a>
@@ -1021,10 +1021,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variant-b-the-devto-pockit-article-version" class="md-nav__link">
+  <a href="#variante-b" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variant B — The DEV.to (Pockit) article version
+        Variante B
       
     </span>
   </a>
@@ -1032,10 +1032,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#which-is-correct" class="md-nav__link">
+  <a href="#cual-es-la-correcta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Which is "correct"?
+        ¿Cuál es la "correcta"?
       
     </span>
   </a>
@@ -1043,22 +1043,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-cycle-step-by-step-with-a-real-agent" class="md-nav__link">
+  <a href="#el-ciclo-de-vida-paso-a-paso-con-un-agente-real" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The cycle, step by step, with a real agent
+        El ciclo de vida, paso a paso, con un agente real
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The cycle, step by step, with a real agent">
+    <nav class="md-nav" aria-label="El ciclo de vida, paso a paso, con un agente real">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-specify-intent" class="md-nav__link">
+  <a href="#paso-1-especificar-la-intencion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Specify intent
+        Paso 1 — Especificar la intención
       
     </span>
   </a>
@@ -1066,10 +1066,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-plan-implementation" class="md-nav__link">
+  <a href="#paso-2-planificar-la-implementacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Plan implementation
+        Paso 2 — Planificar la implementación
       
     </span>
   </a>
@@ -1077,10 +1077,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-decompose-into-tasks" class="md-nav__link">
+  <a href="#paso-3-descomponer-en-tareas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 — Decompose into tasks
+        Paso 3 — Descomponer en tareas
       
     </span>
   </a>
@@ -1088,10 +1088,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-implement-task-by-task" class="md-nav__link">
+  <a href="#paso-4-implementar-tarea-a-tarea" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4 — Implement task by task
+        Paso 4 — Implementar tarea a tarea
       
     </span>
   </a>
@@ -1099,10 +1099,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-validate-against-the-original-spec" class="md-nav__link">
+  <a href="#paso-5-validar-contra-la-spec-original" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5 — Validate against the original spec
+        Paso 5 — Validar contra la spec original
       
     </span>
   </a>
@@ -1115,10 +1115,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iterative-clarification-what-the-arxiv-survey-adds" class="md-nav__link">
+  <a href="#clarificacion-iterativa-lo-que-el-survey-de-arxiv-anade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Iterative clarification: what the arXiv survey adds
+        Clarificación iterativa: lo que el survey de arXiv añade
       
     </span>
   </a>
@@ -1126,10 +1126,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-cycle-isnt-linear" class="md-nav__link">
+  <a href="#el-ciclo-de-vida-no-es-lineal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The cycle isn't linear
+        El ciclo de vida no es lineal
       
     </span>
   </a>
@@ -1137,10 +1137,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-comes-next" class="md-nav__link">
+  <a href="#lo-que-viene-a-continuacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What comes next
+        Lo que viene a continuación
       
     </span>
   </a>
@@ -1170,7 +1170,7 @@
   <span class="md-ellipsis">
     
   
-    6. Living specs
+    6. Especificaciones vivas
   
 
     
@@ -1227,7 +1227,7 @@
   <span class="md-ellipsis">
     
   
-    Tooling
+    Herramientas
   
 
     
@@ -1243,7 +1243,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Tooling
+    Herramientas
   
 
           </label>
@@ -1263,7 +1263,7 @@
   <span class="md-ellipsis">
     
   
-    7. Native SDD tools
+    7. Herramientas SDD nativas
   
 
     
@@ -1291,7 +1291,7 @@
   <span class="md-ellipsis">
     
   
-    8. Architect layers over agents
+    8. Capas de arquitecto sobre agentes
   
 
     
@@ -1346,7 +1346,7 @@
   <span class="md-ellipsis">
     
   
-    Practice
+    Práctica
   
 
     
@@ -1362,7 +1362,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Practice
+    Práctica
   
 
           </label>
@@ -1382,7 +1382,7 @@
   <span class="md-ellipsis">
     
   
-    9. Patterns of application
+    9. Patrones de aplicación
   
 
     
@@ -1439,7 +1439,7 @@
   <span class="md-ellipsis">
     
   
-    Critique
+    Crítica
   
 
     
@@ -1455,7 +1455,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Critique
+    Crítica
   
 
           </label>
@@ -1475,7 +1475,7 @@
   <span class="md-ellipsis">
     
   
-    10. The honest critique
+    10. La crítica honesta
   
 
     
@@ -1503,7 +1503,7 @@
   <span class="md-ellipsis">
     
   
-    11. Context engineering as alternative
+    11. Context engineering como alternativa
   
 
     
@@ -1558,7 +1558,7 @@
   <span class="md-ellipsis">
     
   
-    Pitfalls
+    Errores comunes
   
 
     
@@ -1574,7 +1574,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Pitfalls
+    Errores comunes
   
 
           </label>
@@ -1594,7 +1594,7 @@
   <span class="md-ellipsis">
     
   
-    12. Anti-patterns
+    12. Anti-patrones
   
 
     
@@ -1649,7 +1649,7 @@
   <span class="md-ellipsis">
     
   
-    Industrialization
+    Industrialización
   
 
     
@@ -1665,7 +1665,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Industrialization
+    Industrialización
   
 
           </label>
@@ -1685,7 +1685,7 @@
   <span class="md-ellipsis">
     
   
-    13. From SDD to the harness
+    13. Del SDD al harness
   
 
     
@@ -1719,7 +1719,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
@@ -1728,15 +1728,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variant-a-the-arxiv-paper-version" class="md-nav__link">
+  <a href="#variante-a" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variant A — The arXiv paper version
+        Variante A
       
     </span>
   </a>
@@ -1744,10 +1744,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variant-b-the-devto-pockit-article-version" class="md-nav__link">
+  <a href="#variante-b" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variant B — The DEV.to (Pockit) article version
+        Variante B
       
     </span>
   </a>
@@ -1755,10 +1755,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#which-is-correct" class="md-nav__link">
+  <a href="#cual-es-la-correcta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Which is "correct"?
+        ¿Cuál es la "correcta"?
       
     </span>
   </a>
@@ -1766,22 +1766,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-cycle-step-by-step-with-a-real-agent" class="md-nav__link">
+  <a href="#el-ciclo-de-vida-paso-a-paso-con-un-agente-real" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The cycle, step by step, with a real agent
+        El ciclo de vida, paso a paso, con un agente real
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The cycle, step by step, with a real agent">
+    <nav class="md-nav" aria-label="El ciclo de vida, paso a paso, con un agente real">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-specify-intent" class="md-nav__link">
+  <a href="#paso-1-especificar-la-intencion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Specify intent
+        Paso 1 — Especificar la intención
       
     </span>
   </a>
@@ -1789,10 +1789,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-plan-implementation" class="md-nav__link">
+  <a href="#paso-2-planificar-la-implementacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Plan implementation
+        Paso 2 — Planificar la implementación
       
     </span>
   </a>
@@ -1800,10 +1800,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-decompose-into-tasks" class="md-nav__link">
+  <a href="#paso-3-descomponer-en-tareas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 — Decompose into tasks
+        Paso 3 — Descomponer en tareas
       
     </span>
   </a>
@@ -1811,10 +1811,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-implement-task-by-task" class="md-nav__link">
+  <a href="#paso-4-implementar-tarea-a-tarea" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4 — Implement task by task
+        Paso 4 — Implementar tarea a tarea
       
     </span>
   </a>
@@ -1822,10 +1822,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-validate-against-the-original-spec" class="md-nav__link">
+  <a href="#paso-5-validar-contra-la-spec-original" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5 — Validate against the original spec
+        Paso 5 — Validar contra la spec original
       
     </span>
   </a>
@@ -1838,10 +1838,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iterative-clarification-what-the-arxiv-survey-adds" class="md-nav__link">
+  <a href="#clarificacion-iterativa-lo-que-el-survey-de-arxiv-anade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Iterative clarification: what the arXiv survey adds
+        Clarificación iterativa: lo que el survey de arXiv añade
       
     </span>
   </a>
@@ -1849,10 +1849,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-cycle-isnt-linear" class="md-nav__link">
+  <a href="#el-ciclo-de-vida-no-es-lineal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The cycle isn't linear
+        El ciclo de vida no es lineal
       
     </span>
   </a>
@@ -1860,10 +1860,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-comes-next" class="md-nav__link">
+  <a href="#lo-que-viene-a-continuacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What comes next
+        Lo que viene a continuación
       
     </span>
   </a>
@@ -1887,7 +1887,7 @@
 
 
   
-    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/en/05-sdd-cycles.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/es/05-sdd-lifecycles.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1895,62 +1895,62 @@
   
 
 
-<h1 id="5-the-sdd-cycles-two-variants-and-when-to-use-each">5. The SDD cycles: two variants and when to use each<a class="headerlink" href="#5-the-sdd-cycles-two-variants-and-when-to-use-each" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>If you read three articles about Spec-Driven Development, you'll find three different versions of the "SDD cycle". That's not a flaw of the discipline; it's a sign the discipline is still forming. But it leaves the reader with a concrete problem: <em>what phases are there, in what order, and why do two serious sources say different things?</em></p>
-<p>This chapter disambiguates. There are <strong>two main variants</strong> of the cycle in the literature, they aren't interchangeable, and the choice between them says something about what kind of project you're in.</p>
-<h2 id="variant-a-the-arxiv-paper-version">Variant A — The arXiv paper version<a class="headerlink" href="#variant-a-the-arxiv-paper-version" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><a href="https://arxiv.org/html/2602.00180">The arXiv SDD paper</a> proposes a four-phase cycle:</p>
+<h1 id="5-los-ciclos-de-vida-sdd-dos-variantes-y-cuando-usar-cada-una">5. Los ciclos de vida SDD: dos variantes y cuándo usar cada una<a class="headerlink" href="#5-los-ciclos-de-vida-sdd-dos-variantes-y-cuando-usar-cada-una" title="Enlace permanente a esta sección">&para;</a></h1>
+<p>Si lees tres artículos sobre Spec-Driven Development, encontrarás tres versiones distintas del "ciclo de vida SDD". Eso no es un fallo de la disciplina; es señal de que la disciplina aún se está formando. Pero deja al lector con un problema concreto: <em>¿qué fases hay, en qué orden, y por qué dos fuentes serias dicen cosas distintas?</em></p>
+<p>Este capítulo desambigua. Hay <strong>dos variantes principales</strong> del ciclo de vida SDD en la literatura, no son intercambiables, y la elección entre ellas dice algo sobre el tipo de proyecto en el que estás.</p>
+<h2 id="variante-a">Variante A<a class="headerlink" href="#variante-a" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><a href="https://arxiv.org/html/2602.00180">El paper de arXiv sobre SDD</a> propone un ciclo de cuatro fases:</p>
 <ol>
-<li><strong>Specify</strong> — define what the software has to do through behavior descriptions, acceptance criteria and requirements. Without prescribing implementation.</li>
-<li><strong>Plan</strong> — decide how it's built: technologies, architecture, data models, interfaces.</li>
-<li><strong>Implement</strong> — produce code that realizes the spec according to the plan, in small validated increments.</li>
-<li><strong>Validate</strong> — verify that the code actually meets the spec via automated tests, BDD scenarios, stakeholder acceptance.</li>
+<li><strong>Specify</strong> — definir qué tiene que hacer el software a través de descripciones de comportamiento, criterios de aceptación y requisitos. Sin prescribir cómo se implementa.</li>
+<li><strong>Plan</strong> — decidir cómo se construye: tecnologías, arquitectura, modelos de datos, interfaces.</li>
+<li><strong>Implement</strong> — producir código que realiza la spec según el plan, en incrementos pequeños y validados.</li>
+<li><strong>Validate</strong> — verificar que el código realmente cumple la spec mediante tests automáticos, escenarios BDD, aceptación de stakeholders.</li>
 </ol>
-<p>What characterizes this variant is that <strong>validation is an explicit, separate phase</strong>. Verification isn't something that happens "at the end if there's time"; it's one of the four corners of the cycle, with the same weight as implementation.</p>
-<h2 id="variant-b-the-devto-pockit-article-version">Variant B — The DEV.to (Pockit) article version<a class="headerlink" href="#variant-b-the-devto-pockit-article-version" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><a href="https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788">The most practical article on day-to-day SDD use</a> proposes a different cycle, also four phases, but with different names and boundaries:</p>
+<p>Lo característico de esta variante es que la <strong>validación es una fase explícita y separada</strong>. La verificación no es algo que pasa "al final si hay tiempo"; es uno de los cuatro vértices del ciclo, con el mismo peso que la implementación.</p>
+<h2 id="variante-b">Variante B<a class="headerlink" href="#variante-b" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><a href="https://dev.to/pockit_tools/specification-driven-development-how-to-stop-vibe-coding-and-actually-ship-production-ready-5788">El artículo más práctico sobre cómo usar SDD en el día a día</a> propone un ciclo distinto, también de cuatro fases, pero con nombres y fronteras diferentes:</p>
 <ol>
-<li><strong>Requirements</strong> — what's being built, including user stories, edge cases, security requirements and explicit <em>no-goals</em>.</li>
-<li><strong>Design</strong> — translate requirements into technical decisions: database schema, endpoints, architecture, error handling.</li>
-<li><strong>Tasks</strong> — break the design into discrete steps, dependency-ordered, small enough for a focused agent session, each with tests.</li>
-<li><strong>Implementation</strong> — the agent writes code task by task, guided by the full context of previous phases, with TDD verifying each step.</li>
+<li><strong>Requirements</strong> — qué se construye, incluyendo user stories, casos límite, requisitos de seguridad y <em>no-goals</em> explícitos.</li>
+<li><strong>Design</strong> — traducir requisitos en decisiones técnicas: schema de base de datos, endpoints, arquitectura, error handling.</li>
+<li><strong>Tasks</strong> — descomponer el diseño en pasos discretos, ordenados por dependencias, lo bastante pequeños para una sesión enfocada del agente, cada uno con tests.</li>
+<li><strong>Implementation</strong> — el agente escribe código tarea a tarea, guiado por el contexto completo de las fases anteriores, con TDD verificando cada paso.</li>
 </ol>
-<p>The important difference from variant A is that here <strong>validation is embedded inside the task phase</strong> (each task brings its tests) and doesn't appear as a standalone phase. In exchange, there's an explicit <em>Tasks</em> phase that doesn't exist as such in variant A and lives hidden inside "Plan".</p>
-<h2 id="which-is-correct">Which is "correct"?<a class="headerlink" href="#which-is-correct" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Neither. They're two different views of the same process, optimized for different situations:</p>
+<p>La diferencia importante con la variante A es que aquí <strong>la validación está embebida en la fase de tareas</strong> (cada tarea trae sus tests) y no aparece como fase autónoma. A cambio, hay una fase explícita — <em>Tasks</em> — que en la variante A no existe como tal y vive escondida dentro de "Plan".</p>
+<h2 id="cual-es-la-correcta">¿Cuál es la "correcta"?<a class="headerlink" href="#cual-es-la-correcta" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Ninguna. Son dos puntos de vista distintos sobre el mismo proceso, optimizados para situaciones distintas:</p>
 <ul>
 <li>
-<p><strong>Variant A (Specify → Plan → Implement → Validate) is better when the system has strong invariants needing explicit and formal validation.</strong> Public APIs, regulated systems, code crossing team boundaries. If verification is a social and technical event deserving its own phase, this is your variant.</p>
+<p><strong>La variante A (Specify → Plan → Implement → Validate) es mejor cuando el sistema tiene invariantes fuertes que necesitan validación explícita y formal.</strong> APIs públicas, sistemas regulados, código que cruza fronteras de equipos. Si la verificación es un evento social y técnico que merece su propia fase, esta es tu variante.</p>
 </li>
 <li>
-<p><strong>Variant B (Requirements → Design → Tasks → Implementation) is better when the bottleneck is decomposing into chunks digestible by the agent.</strong> Big features a human could do but an unaided agent can't, because the blast radius of changes exceeds the attention window. If your problem is "the agent gets lost in my 200-file repo", this is your variant.</p>
+<p><strong>La variante B (Requirements → Design → Tasks → Implementation) es mejor cuando el cuello de botella es la descomposición en trozos digeribles para el agente.</strong> Features grandes que un humano podría hacer pero un agente sin ayuda no, porque el blast radius de los cambios excede su ventana de atención. Si tu problema es "el agente se pierde en mi repo de 200 archivos", esta es tu variante.</p>
 </li>
 </ul>
-<p>In practice, mature teams end up combining: they use variant B's names in daily flow and break out a separate validation phase (variant A) when the feature touches something critical. That's not contradictory. It's choosing the right tool for the change's risk.</p>
-<h2 id="the-cycle-step-by-step-with-a-real-agent">The cycle, step by step, with a real agent<a class="headerlink" href="#the-cycle-step-by-step-with-a-real-agent" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>I'll tell you as a concrete flow, neutral with respect to the variant, which is how it looks when you actually do it.</p>
-<h3 id="step-1-specify-intent">Step 1 — Specify intent<a class="headerlink" href="#step-1-specify-intent" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>You open a session with the agent. <strong>You don't ask it to write code</strong>. You ask it to help draft the spec using the chapter 3 template. You give the high-level objective and let it ask questions. If the agent doesn't ask questions, ask them yourself: "what parts of the system does this touch", "what edge cases am I forgetting", "what aren't we building that we should explicitly say".</p>
-<p>The output of this step is a file in <code>specs/</code> or wherever your project hosts them. Committed, reviewable, versioned.</p>
-<h3 id="step-2-plan-implementation">Step 2 — Plan implementation<a class="headerlink" href="#step-2-plan-implementation" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>With the spec in hand, you ask the agent for an <strong>implementation plan</strong>: which files it touches, in what order, what dependencies between tasks, what tests it intends to write. The plan isn't code; it's an intermediate document. You read it, discuss it, correct it if the agent misunderstood any constraint.</p>
-<p>This step is where Traycer-style tools add the most value (chapter 8), because the plan's quality determines the quality of everything that comes after.</p>
-<h3 id="step-3-decompose-into-tasks">Step 3 — Decompose into tasks<a class="headerlink" href="#step-3-decompose-into-tasks" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>You take the plan and cut it into <strong>small, sequential tasks, each with a "done" criterion</strong>. A typical task should fit in a single focused agent session, with no ambiguity. If a task needs more than one session, it's badly cut.</p>
-<p>Heuristic rule: if you can't describe the "after the task" state in one sentence, the task is too big.</p>
-<h3 id="step-4-implement-task-by-task">Step 4 — Implement task by task<a class="headerlink" href="#step-4-implement-task-by-task" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>The agent executes tasks one at a time. For each task: read the spec, read the task, write the tests the task asks for, write the code, run the tests, verify. If tests don't pass, iterate. If they pass, mark done and move on.</p>
-<p>What matters here is that <strong>each task is atomic with respect to the spec</strong>: either it's fully done or it's reverted. There are no half-done tasks "to be fixed in another".</p>
-<h3 id="step-5-validate-against-the-original-spec">Step 5 — Validate against the original spec<a class="headerlink" href="#step-5-validate-against-the-original-spec" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>When all tasks are done, the agent (or you, or a second reviewer agent) takes the original spec and verifies that everything the spec asked is done, and that nothing the spec didn't ask for has been done. This phase is the easiest to skip and the most important: it's where acceptance criteria stop being text and become a checked-or-unchecked checklist.</p>
-<h2 id="iterative-clarification-what-the-arxiv-survey-adds">Iterative clarification: what the arXiv survey adds<a class="headerlink" href="#iterative-clarification-what-the-arxiv-survey-adds" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>There's a detail the <a href="https://arxiv.org/html/2508.00083v1"><em>Code Generation with LLM-based Agents</em></a> survey documents that's worth being in this cycle even though it doesn't appear explicitly in either of the two variants above. Systems like <strong>ClarifyGPT</strong> and <strong>TiCoder</strong> introduce a phase <strong>prior</strong> to the spec: instead of taking the first prompt as truth, the agent asks iterative questions to surface ambiguities and gaps before they materialize as wrong code.</p>
-<p>In practice, this means your phase 1 of the cycle <strong>isn't linear</strong>. It's a mini-loop within the loop: prompt → agent questions → answers → draft spec → more questions → final spec. Teams that treat phase 1 as ping-pong instead of dictation get substantially better specs, and this is independent of which tool you use.</p>
-<h2 id="the-cycle-isnt-linear">The cycle isn't linear<a class="headerlink" href="#the-cycle-isnt-linear" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>A final note almost always omitted in canonical descriptions: <strong>the cycle is rarely linear in practice</strong>. What really happens is in step 4 you discover something that invalidates a step-1 assumption, and you go back. Step 5 teaches you that the criterion you wrote wasn't verifiable and you have to rewrite it. Mid-task, you realize the spec has a hole.</p>
-<p>This is <strong>normal and desirable</strong>. The difference between a healthy cycle and a pathological one isn't that the first has no backtracks; it's that the healthy one <strong>updates the spec when it discovers it was wrong</strong> instead of ignoring it and continuing to code. That's exactly the idea of the next chapter: <strong>living specifications</strong>.</p>
-<h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Chapter 6 is about the difference between static specs (the ones that age badly) and living specs (the ones that stay useful because implementation feeds back into the spec). It's the piece that turns this chapter's cycle into a sustainable process instead of a startup ritual.</p>
+<p>En la práctica, los equipos maduros acaban combinando: usan los nombres de la variante B en el flujo diario y separan una fase de validación (variante A) cuando la feature toca algo crítico. No es contradictorio. Es elegir la herramienta adecuada al riesgo del cambio.</p>
+<h2 id="el-ciclo-de-vida-paso-a-paso-con-un-agente-real">El ciclo de vida, paso a paso, con un agente real<a class="headerlink" href="#el-ciclo-de-vida-paso-a-paso-con-un-agente-real" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Te lo cuento como flujo concreto, neutral respecto a la variante, que es cómo se ve cuando lo haces de verdad.</p>
+<h3 id="paso-1-especificar-la-intencion">Paso 1 — Especificar la intención<a class="headerlink" href="#paso-1-especificar-la-intencion" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Abres una sesión con el agente. <strong>No le pides que escriba código</strong>. Le pides que te ayude a redactar la spec usando la plantilla del capítulo 3. Le das el objetivo de alto nivel y dejas que te haga preguntas. Si el agente no te hace preguntas, hazlas tú: "qué partes del sistema toca esto", "qué casos límite estoy olvidando", "qué no estamos construyendo y deberíamos decir explícitamente".</p>
+<p>El output de este paso es un archivo en <code>specs/</code> o donde tu proyecto los aloje. Cometido al repo, revisable, versionado.</p>
+<h3 id="paso-2-planificar-la-implementacion">Paso 2 — Planificar la implementación<a class="headerlink" href="#paso-2-planificar-la-implementacion" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Con la spec en mano, le pides al agente un <strong>plan de implementación</strong>: qué archivos toca, en qué orden, qué dependencias hay entre tareas, qué tests pretende escribir. El plan no es código; es un documento intermedio. Lo lees, lo discutes, lo corriges si el agente ha entendido mal alguna restricción.</p>
+<p>Este paso es donde las herramientas tipo Traycer aportan más valor (capítulo 8), porque la calidad del plan determina la calidad de todo lo que viene después.</p>
+<h3 id="paso-3-descomponer-en-tareas">Paso 3 — Descomponer en tareas<a class="headerlink" href="#paso-3-descomponer-en-tareas" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Tomas el plan y lo cortas en <strong>tareas pequeñas, secuenciales, cada una con un criterio de "hecho"</strong>. Una tarea típica debería caber en una sola sesión enfocada del agente, sin ambigüedad. Si una tarea necesita más de una sesión, está mal cortada.</p>
+<p>La regla heurística: si no puedes describir el estado "después de la tarea" en una frase, la tarea es demasiado grande.</p>
+<h3 id="paso-4-implementar-tarea-a-tarea">Paso 4 — Implementar tarea a tarea<a class="headerlink" href="#paso-4-implementar-tarea-a-tarea" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>El agente ejecuta las tareas de una en una. Para cada tarea: lee la spec, lee la tarea, escribe los tests que la tarea pide, escribe el código, ejecuta los tests, verifica. Si los tests no pasan, itera. Si pasan, marca la tarea como hecha y pasa a la siguiente.</p>
+<p>Lo importante aquí es que <strong>cada tarea es atomic respecto a la spec</strong>: o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra".</p>
+<h3 id="paso-5-validar-contra-la-spec-original">Paso 5 — Validar contra la spec original<a class="headerlink" href="#paso-5-validar-contra-la-spec-original" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Cuando todas las tareas están hechas, el agente (o tú, o un segundo agente revisor) toma la spec original y verifica que todo lo que la spec pedía está hecho, y que no se ha hecho nada que la spec no pedía. Esta fase es la que más fácilmente se salta y la más importante: es donde los criterios de aceptación dejan de ser texto y se convierten en una checklist tachada o no tachada.</p>
+<h2 id="clarificacion-iterativa-lo-que-el-survey-de-arxiv-anade">Clarificación iterativa: lo que el survey de arXiv añade<a class="headerlink" href="#clarificacion-iterativa-lo-que-el-survey-de-arxiv-anade" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Hay un detalle que el survey de <a href="https://arxiv.org/html/2508.00083v1"><em>Code Generation with LLM-based Agents</em></a> documenta y que merece estar en este ciclo aunque no aparezca explícitamente en ninguna de las dos variantes anteriores. Sistemas como <strong>ClarifyGPT</strong> y <strong>TiCoder</strong> introducen una fase <strong>previa</strong> a la spec: el agente, en lugar de tomar el primer prompt como verdad, hace preguntas iterativas para sacar a la superficie ambigüedades y huecos antes de que se materialicen como código equivocado.</p>
+<p>En la práctica, esto significa que tu fase 1 del ciclo (especificar) <strong>no es lineal</strong>. Es un mini-bucle dentro del bucle: prompt → preguntas del agente → respuestas → spec borrador → más preguntas → spec final. Los equipos que tratan la fase 1 como un ping-pong en lugar de un dictado obtienen specs sustancialmente mejores, y esto es independiente de qué herramienta uses.</p>
+<h2 id="el-ciclo-de-vida-no-es-lineal">El ciclo de vida no es lineal<a class="headerlink" href="#el-ciclo-de-vida-no-es-lineal" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Una nota final que casi siempre se omite en las descripciones canónicas: <strong>el ciclo es raramente lineal en la práctica</strong>. Lo que pasa de verdad es que en el paso 4 descubres algo que invalida una asunción del paso 1, y vuelves atrás. El paso 5 te enseña que el criterio que escribiste no era verificable y tienes que reescribirlo. A mitad de una tarea, te das cuenta de que la spec tiene un hueco.</p>
+<p>Esto es <strong>normal y deseable</strong>. La diferencia entre un ciclo sano y uno patológico no es que el primero no tenga retrocesos; es que el sano <strong>actualiza la spec cuando descubre que estaba mal</strong> en lugar de ignorarla y seguir codificando. Esa es exactamente la idea del próximo capítulo: las <strong>especificaciones vivas</strong>.</p>
+<h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>El capítulo 6 va sobre la diferencia entre specs estáticas (las que envejecen mal) y specs vivas (las que se mantienen útiles porque la implementación retroalimenta la spec). Es la pieza que convierte el ciclo de vida descrito en este capítulo en un proceso sostenible en lugar de un ritual de arranque.</p>
 
 
 
@@ -1974,7 +1974,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  Volver al principio
 </button>
         
       </main>
@@ -1983,33 +1983,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../04-spec-in-context/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. The spec in context">
+          <a href="../04-spec-in-context/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 4. La spec en contexto">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Previous
+                Anterior
               </span>
               <div class="md-ellipsis">
-                4. The spec in context
+                4. La spec en contexto
               </div>
             </div>
           </a>
         
         
           
-          <a href="../06-living-specs/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Living specs">
+          <a href="../06-living-specs/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 6. Especificaciones vivas">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Next
+                Siguiente
               </span>
               <div class="md-ellipsis">
-                6. Living specs
+                6. Especificaciones vivas
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2062,10 +2062,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

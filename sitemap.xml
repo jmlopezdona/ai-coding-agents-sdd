@@ -43,11 +43,11 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/04-spec-in-context/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-cycles/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-lifecycles/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-cycles/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-cycles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-lifecycles/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-lifecycles/"/>
     </url>
     <url>
         <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/06-living-specs/</loc>
@@ -148,11 +148,11 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/04-spec-in-context/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-cycles/</loc>
+        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-lifecycles/</loc>
         <lastmod>2026-04-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-cycles/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-cycles/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/05-sdd-lifecycles/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/05-sdd-lifecycles/"/>
     </url>
     <url>
         <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/06-living-specs/</loc>
