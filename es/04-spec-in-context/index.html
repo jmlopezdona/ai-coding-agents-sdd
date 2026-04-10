@@ -1001,10 +1001,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#caso-especial-documentos-de-producto-user-stories-briefs" class="md-nav__link">
+  <a href="#documentos-de-producto-como-consumir-user-stories-y-briefs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caso especial: documentos de producto (user stories, briefs)
+        Documentos de producto: cómo consumir user stories y briefs
       
     </span>
   </a>
@@ -1012,10 +1012,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#caso-especial-documentos-con-validacion-automatica-contra-el-codigo" class="md-nav__link">
+  <a href="#documentos-con-validacion-automatica-contra-el-codigo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caso especial: documentos con validación automática contra el código
+        Documentos con validación automática contra el código
       
     </span>
   </a>
@@ -1873,10 +1873,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#caso-especial-documentos-de-producto-user-stories-briefs" class="md-nav__link">
+  <a href="#documentos-de-producto-como-consumir-user-stories-y-briefs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caso especial: documentos de producto (user stories, briefs)
+        Documentos de producto: cómo consumir user stories y briefs
       
     </span>
   </a>
@@ -1884,10 +1884,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#caso-especial-documentos-con-validacion-automatica-contra-el-codigo" class="md-nav__link">
+  <a href="#documentos-con-validacion-automatica-contra-el-codigo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caso especial: documentos con validación automática contra el código
+        Documentos con validación automática contra el código
       
     </span>
   </a>
@@ -2045,7 +2045,7 @@
 <blockquote>
 <p><strong>En resumen</strong>: <em>consumido</em> = referencia y describe solo el uso; <em>producido</em> = define el contrato observable y prepara el handoff; <em>modificado</em> = describe el delta y declara el resto invariante.</p>
 </blockquote>
-<h3 id="caso-especial-documentos-de-producto-user-stories-briefs">Caso especial: documentos de producto (user stories, briefs)<a class="headerlink" href="#caso-especial-documentos-de-producto-user-stories-briefs" title="Enlace permanente a esta sección">&para;</a></h3>
+<h3 id="documentos-de-producto-como-consumir-user-stories-y-briefs">Documentos de producto: cómo consumir user stories y briefs<a class="headerlink" href="#documentos-de-producto-como-consumir-user-stories-y-briefs" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Los documentos de producto se <em>consumen</em> — la spec se alimenta de ellos pero no los modifica. La pregunta es <strong>cuánto gap hay entre el upstream y lo que la spec necesita</strong>, y eso depende del rigor con el que se hayan elaborado los requisitos funcionales.</p>
 <p>En un extremo, una user story dice <em>"el usuario puede subir una foto fácilmente"</em> — la spec tiene que derivar criterios de ingeniería completos: tipos de archivo, tamaño máximo, códigos de error, edge cases. En el otro extremo, unos criterios de aceptación bien elaborados ya cubren las reglas de negocio, los casos no felices y los límites funcionales — la spec solo necesita referenciarlos y añadir las restricciones técnicas que el upstream no cubre (qué middleware usar, qué componentes no tocar, qué patrones respetar).</p>
 <p>En el contexto de trabajo ágil, la user story y los criterios de aceptación son el <strong>inicio de la conversación</strong> con los desarrolladores para refinar el detalle funcional. SDD no cambia eso — lo que cambia es que el gap, sea del tamaño que sea, tiene que quedar cubierto <strong>explícitamente</strong> en algún sitio (la spec), no implícitamente en la cabeza del desarrollador. Cuanto más rigor haya en los requisitos funcionales upstream, menos trabajo de derivación necesitará la spec.</p>
@@ -2064,7 +2064,7 @@
 <p class="admonition-title">Hacia dónde va el ecosistema</p>
 <p>El uso de asistentes y agentes para elaborar los propios requisitos funcionales (features, user stories, criterios de aceptación) permite llegar de forma más eficiente a un upstream de mayor rigor — con edge cases cubiertos, reglas de negocio explícitas y criterios verificables desde el origen. Eso reduce el gap que la spec tiene que cubrir y deja menos margen a la interpretación, tanto del agente que implementa como del humano que lo haría sin agente. Pero la revisión y validación humana sigue siendo necesaria para evitar la sobre-especificación que el capítulo 3 advierte: un agente generando requisitos tiende al mismo sesgo de cobertura aparente que cuando genera specs.</p>
 </div>
-<h3 id="caso-especial-documentos-con-validacion-automatica-contra-el-codigo">Caso especial: documentos con validación automática contra el código<a class="headerlink" href="#caso-especial-documentos-con-validacion-automatica-contra-el-codigo" title="Enlace permanente a esta sección">&para;</a></h3>
+<h3 id="documentos-con-validacion-automatica-contra-el-codigo">Documentos con validación automática contra el código<a class="headerlink" href="#documentos-con-validacion-automatica-contra-el-codigo" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Cuando el artefacto consumido se valida automáticamente contra el código de forma continua (un contrato OpenAPI con CI, un esquema Protobuf con checks de compatibilidad), basta con referenciar y resumir las implicaciones para tu feature. Una user story de Jira no tiene validación automática contra el código — su consistencia depende de disciplina humana puntual, lo que la hace vulnerable a drift silencioso.</p>
 <h3 id="cuanto-detalle-poner-tres-dimensiones">Cuánto detalle poner: tres dimensiones<a class="headerlink" href="#cuanto-detalle-poner-tres-dimensiones" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Para cada artefacto que la spec produce o modifica, la pregunta es <em>"¿cuánto detalle?"</em>. La respuesta útil es hacerse <strong>tres preguntas explícitas</strong> y capturar solo lo load-bearing:</p>
