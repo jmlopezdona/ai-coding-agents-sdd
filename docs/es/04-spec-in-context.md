@@ -92,20 +92,19 @@ La regla: **la spec siempre contiene sus propios criterios, derivados al nivel d
 
 Cuando el artefacto consumido se valida automáticamente contra el código de forma continua (un contrato OpenAPI con CI, un esquema Protobuf con checks de compatibilidad), basta con referenciar y resumir las implicaciones para tu feature. Una user story de Jira no tiene validación automática contra el código — su consistencia depende de disciplina humana puntual, lo que la hace vulnerable a drift silencioso.
 
-### Cuánto detalle poner: tres dimensiones
+### Cuánto detalle poner: preguntas por dimensión
 
-Para cada artefacto que la spec produce o modifica, la pregunta es *"¿cuánto detalle?"*. La respuesta útil es hacerse **tres preguntas explícitas** y capturar solo lo load-bearing:
+Para cada artefacto que la spec produce o modifica, la pregunta es *"¿cuánto detalle?"*. La respuesta útil es hacerse **preguntas explícitas por dimensión** y capturar solo lo load-bearing. Tres dimensiones aparecen en casi todos los cambios:
 
 - **Funcional** — qué cambia en el comportamiento observable. *"El modelo `User` ahora puede tener un avatar; el campo es opcional; se actualiza al subir y se elimina al borrar."*
 - **No funcional** — qué restricciones cruzadas tiene que respetar el cambio. *"La migración no debe requerir downtime; el campo no debe romper la serialización existente."*
 - **Técnico** — qué decisiones de contrato/integración el cambio cierra explícitamente. *"El campo es indexado por `user_id`; la URL pasa por el CDN existente."*
 
+Pero no son las únicas. Dependiendo del dominio y del cambio, otras dimensiones pueden ser igual de relevantes: **seguridad** (qué superficie de ataque abre o cierra el cambio), **privacidad de datos** (qué datos personales se tocan y bajo qué política), **observabilidad** (qué métricas o logs necesita el cambio para ser operable), **migración/rollback** (qué pasa si hay que revertir). El principio no es "hay exactamente tres dimensiones" — es **hacerse preguntas distintas sobre cada aspecto del cambio** y documentar solo lo que es load-bearing para la validación.
+
 Para cada dimensión, una **referencia opcional al documento más profundo** si existe. Si una dimensión no aporta, omítela — la ausencia es informativa.
 
-Dos aclaraciones:
-
-1. **Lo que va en la spec es lo load-bearing**: lo que el validador del cap. 6 puede comparar contra el código. El detalle más fino vive en la documentación del artefacto.
-2. **El término "no funcional" es clásico pero contestado** ([Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) argumenta que todo es funcional, solo cambia la dimensión). Lo usamos como categoría operativa — tres preguntas distintas — no como ontología.
+Una aclaración: **lo que va en la spec es lo load-bearing** — lo que el validador del cap. 6 puede comparar contra el código. El detalle más fino vive en la documentación del artefacto.
 
 ### Dónde va esta información en los seis bloques
 

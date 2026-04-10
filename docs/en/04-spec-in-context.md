@@ -92,20 +92,19 @@ The rule: **the spec always contains its own criteria, derived at the level of p
 
 When the consumed artifact is automatically validated against code on an ongoing basis (an OpenAPI contract with CI, a Protobuf schema with compatibility checks), it's enough to reference it and summarize the implications for your feature. A Jira user story has no automatic validation against code — its consistency depends on occasional human discipline, which makes it vulnerable to silent drift.
 
-### How much detail: three dimensions
+### How much detail: questions per dimension
 
-For each artifact the spec produces or modifies, the question is *"how much detail?"*. The useful answer is to ask **three explicit questions** and capture only what's load-bearing:
+For each artifact the spec produces or modifies, the question is *"how much detail?"*. The useful answer is to ask **explicit questions per dimension** and capture only what's load-bearing. Three dimensions show up in almost every change:
 
 - **Functional** — what changes in observable behavior. *"The `User` model can now have an avatar; the field is optional; updated on upload, cleared on delete."*
 - **Non-functional** — which cross-cutting constraints the change must respect. *"The migration must not require downtime; the field must not break existing serialization."*
 - **Technical** — which contract/integration decisions the change explicitly closes. *"The field is indexed by `user_id`; the URL goes through the existing CDN."*
 
+But they're not the only ones. Depending on the domain and the change, other dimensions can be just as relevant: **security** (what attack surface the change opens or closes), **data privacy** (what personal data is touched and under what policy), **observability** (what metrics or logs the change needs to be operable), **migration/rollback** (what happens if it needs to be reverted). The principle isn't "there are exactly three dimensions" — it's **asking distinct questions about each aspect of the change** and documenting only what's load-bearing for validation.
+
 For each dimension, an **optional reference to the deeper document** if it exists. If a dimension doesn't add anything, omit it — absence is informative.
 
-Two clarifications:
-
-1. **What goes in the spec is what's load-bearing**: what the chapter 6 validator can compare against the code. Finer detail lives in the artifact's documentation.
-2. **The term "non-functional" is classical but contested** ([Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) argues everything is functional, just along different dimensions). We use it as an operational category — three different questions — not as ontology.
+One clarification: **what goes in the spec is what's load-bearing** — what the chapter 6 validator can compare against the code. Finer detail lives in the artifact's documentation.
 
 ### Where this information goes in the six blocks
 
