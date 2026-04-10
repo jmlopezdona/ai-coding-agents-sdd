@@ -1,9 +1,8 @@
 # 2. El espectro de la especificación
 
-Una de las cosas más útiles que aporta el paper [*Spec-Driven Development: From Code to Contract in the Age of AI Coding Assistants*](https://arxiv.org/html/2602.00180) es que se niega a presentar el SDD como una cosa única. Lo presenta como un **espectro de tres niveles de compromiso**, y entender en cuál de los tres niveles operas — y en cuál crees que operas — es probablemente la decisión más consecuente que vas a tomar en este curso.
+Una de las cosas más útiles que aporta el [paper fundacional del SDD](https://arxiv.org/html/2602.00180) es que se niega a presentarlo como una cosa única. Lo presenta como un **espectro de tres niveles de compromiso**, y entender en cuál de los tres niveles operas — y en cuál crees que operas — es probablemente la decisión más consecuente que vas a tomar en este curso.
 
 > *La spec declara la intención. El código la realiza.*
-> — [Spec-Driven Development paper, arXiv](https://arxiv.org/html/2602.00180)
 
 Esta es la frase tesis del paper, y vale la pena tenerla delante mientras leemos los tres niveles.
 
