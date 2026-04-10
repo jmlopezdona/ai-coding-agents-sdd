@@ -36,7 +36,7 @@ If you have to distill all of the above into a single sentence:
 
 In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.
 
-Almost every pathology we'll see in chapter 12 comes from **misaligning these three things**: writing spec-anchored without anchoring ([#4](12-anti-patterns.md#4-theater-spec-with-fake-anchoring)), writing spec-as-source without a generator ([#9](12-anti-patterns.md#9-promoting-prematurely-to-spec-as-source) + [#12](12-anti-patterns.md#12-generated-spec-thats-pseudocode-in-disguise)), or writing spec-first with spec-as-source-level detail ([#2](12-anti-patterns.md#2-big-spec-up-front) + [#12](12-anti-patterns.md#12-generated-spec-thats-pseudocode-in-disguise)). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.
+Almost every pathology we'll see in chapter 12 comes from **misaligning these three things**: writing spec-anchored without anchoring ([#4](12-anti-patterns.md#4-theater-spec-with-fake-anchoring)), writing spec-as-source without a generator ([#9](12-anti-patterns.md#9-promoting-prematurely-to-spec-as-source) + [#12](12-anti-patterns.md#12-generated-spec-thats-pseudocode-in-disguise)), or writing spec-first with spec-as-source-level detail ([#2](12-anti-patterns.md#2-big-spec-up-front)). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.
 
 ## Reusing criteria from upstream documents (user stories, contracts)
 
