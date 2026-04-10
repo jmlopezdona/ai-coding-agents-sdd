@@ -48,6 +48,23 @@ What follows is a **practical synthesis of both approaches** — a five-step flo
 
     If that upstream documentation doesn't exist or lacks the necessary rigor, the first step isn't writing the spec — it's **getting that upstream in place**. Skipping this step and trusting the agent to derive requirements from an informal conversation is exactly how you fall into the lack of rigor SDD is meant to prevent. Chapter 4 details [how to consume, produce and reference those artifacts](04-spec-in-context.md#the-spec-and-its-external-sources-consume-produce-modify).
 
+### One document or many: two strategies depending on context
+
+Steps 1, 2, and 3 produce artifacts — but **do they live in a single file or in several?** The answer isn't universal; it depends on the project's scale and whether upstream documentation already exists. There are two valid strategies:
+
+**Integrated document** — The six blocks from chapter 3 plus the plan and tasks coexist in a single file. This is the natural option for PoCs, prototypes, greenfield projects, and small to medium changes. Its main advantage: the [bidirectional loop from chapter 6](06-living-specs.md) updates a single location, with no risk of drift between artifacts. If your team is small and there are no stakeholders reviewing separate layers, this is the simplest and most sustainable strategy.
+
+**Separate artifacts** — Each step produces its own document: requirements, technical design, task list. This is the model [Kiro](07-native-sdd-tools.md#kiro) implements natively with its **Requirements → Design → Tasks** flow, and the one that fits enterprise teams where different people review different layers (product validates requirements, architecture validates design, the team validates tasks). The chapter 3 spec acts as the **master document** that references the others without duplicating them — exactly the [reference without reimplementing](04-spec-in-context.md#three-relationships-three-rules) rule from chapter 4.
+
+The cost of separate artifacts isn't trivial: each additional document is a drift surface. [Spec-kit](07-native-sdd-tools.md#spec-kit-github) suffered exactly this — Fowler observed that generated files were *"heavier to review than the code itself"*. If you choose this strategy, you need discipline or tooling to keep artifacts synchronized, and today [none of the native tools fully solve this](07-native-sdd-tools.md#what-none-of-these-tools-solve).
+
+In both cases, the **conceptual "spec" is always one** — it's the sum of everything the agent needs to implement with rigor. What changes is how it's physically distributed. And the deciding factor is usually the chapter 4 question: **does validated upstream documentation exist?** If yes, the spec consumes and references it (separate artifacts makes sense). If not, the spec must contain everything (integrated document is more natural).
+
+| Strategy | When it fits | Reference framework | Main risk |
+|---|---|---|---|
+| **Integrated document** | PoC, greenfield, small teams, medium changes | Manual with ch. 3 template | Can grow too large for complex projects |
+| **Separate artifacts** | Enterprise, brownfield, layered stakeholders, validated upstream | [Kiro](07-native-sdd-tools.md#kiro), [BMAD](07-native-sdd-tools.md#bmad) | Drift between documents; maintenance tax |
+
 ### Step 1 — Specify intent
 
 You open a session with the agent. **You don't ask it to write code**. You ask it to help draft the spec using the chapter 3 template, **feeding it with whatever upstream documentation** you already have — functional requirements, acceptance criteria, prior technical decisions. You give the high-level objective and let it ask questions. If the agent doesn't ask questions, ask them yourself: "what parts of the system does this touch", "what edge cases am I forgetting", "what aren't we building that we should explicitly say".
