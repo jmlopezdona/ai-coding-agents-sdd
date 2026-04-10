@@ -1023,10 +1023,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cuanto-detalle-poner-tres-dimensiones" class="md-nav__link">
+  <a href="#cuanto-detalle-poner-preguntas-por-dimension" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cuánto detalle poner: tres dimensiones
+        Cuánto detalle poner: preguntas por dimensión
       
     </span>
   </a>
@@ -1895,10 +1895,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cuanto-detalle-poner-tres-dimensiones" class="md-nav__link">
+  <a href="#cuanto-detalle-poner-preguntas-por-dimension" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cuánto detalle poner: tres dimensiones
+        Cuánto detalle poner: preguntas por dimensión
       
     </span>
   </a>
@@ -2066,19 +2066,16 @@
 </div>
 <h3 id="documentos-con-validacion-automatica-contra-el-codigo">Documentos con validación automática contra el código<a class="headerlink" href="#documentos-con-validacion-automatica-contra-el-codigo" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Cuando el artefacto consumido se valida automáticamente contra el código de forma continua (un contrato OpenAPI con CI, un esquema Protobuf con checks de compatibilidad), basta con referenciar y resumir las implicaciones para tu feature. Una user story de Jira no tiene validación automática contra el código — su consistencia depende de disciplina humana puntual, lo que la hace vulnerable a drift silencioso.</p>
-<h3 id="cuanto-detalle-poner-tres-dimensiones">Cuánto detalle poner: tres dimensiones<a class="headerlink" href="#cuanto-detalle-poner-tres-dimensiones" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Para cada artefacto que la spec produce o modifica, la pregunta es <em>"¿cuánto detalle?"</em>. La respuesta útil es hacerse <strong>tres preguntas explícitas</strong> y capturar solo lo load-bearing:</p>
+<h3 id="cuanto-detalle-poner-preguntas-por-dimension">Cuánto detalle poner: preguntas por dimensión<a class="headerlink" href="#cuanto-detalle-poner-preguntas-por-dimension" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Para cada artefacto que la spec produce o modifica, la pregunta es <em>"¿cuánto detalle?"</em>. La respuesta útil es hacerse <strong>preguntas explícitas por dimensión</strong> y capturar solo lo load-bearing. Tres dimensiones aparecen en casi todos los cambios:</p>
 <ul>
 <li><strong>Funcional</strong> — qué cambia en el comportamiento observable. <em>"El modelo <code>User</code> ahora puede tener un avatar; el campo es opcional; se actualiza al subir y se elimina al borrar."</em></li>
 <li><strong>No funcional</strong> — qué restricciones cruzadas tiene que respetar el cambio. <em>"La migración no debe requerir downtime; el campo no debe romper la serialización existente."</em></li>
 <li><strong>Técnico</strong> — qué decisiones de contrato/integración el cambio cierra explícitamente. <em>"El campo es indexado por <code>user_id</code>; la URL pasa por el CDN existente."</em></li>
 </ul>
+<p>Pero no son las únicas. Dependiendo del dominio y del cambio, otras dimensiones pueden ser igual de relevantes: <strong>seguridad</strong> (qué superficie de ataque abre o cierra el cambio), <strong>privacidad de datos</strong> (qué datos personales se tocan y bajo qué política), <strong>observabilidad</strong> (qué métricas o logs necesita el cambio para ser operable), <strong>migración/rollback</strong> (qué pasa si hay que revertir). El principio no es "hay exactamente tres dimensiones" — es <strong>hacerse preguntas distintas sobre cada aspecto del cambio</strong> y documentar solo lo que es load-bearing para la validación.</p>
 <p>Para cada dimensión, una <strong>referencia opcional al documento más profundo</strong> si existe. Si una dimensión no aporta, omítela — la ausencia es informativa.</p>
-<p>Dos aclaraciones:</p>
-<ol>
-<li><strong>Lo que va en la spec es lo load-bearing</strong>: lo que el validador del cap. 6 puede comparar contra el código. El detalle más fino vive en la documentación del artefacto.</li>
-<li><strong>El término "no funcional" es clásico pero contestado</strong> (<a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Fowler</a> argumenta que todo es funcional, solo cambia la dimensión). Lo usamos como categoría operativa — tres preguntas distintas — no como ontología.</li>
-</ol>
+<p>Una aclaración: <strong>lo que va en la spec es lo load-bearing</strong> — lo que el validador del cap. 6 puede comparar contra el código. El detalle más fino vive en la documentación del artefacto.</p>
 <h3 id="donde-va-esta-informacion-en-los-seis-bloques">Dónde va esta información en los seis bloques<a class="headerlink" href="#donde-va-esta-informacion-en-los-seis-bloques" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>La taxonomía consumir/producir/modificar y las tres dimensiones no crean una sección nueva en la spec — ayudan a escribir mejor las secciones que ya existen:</p>
 <ul>

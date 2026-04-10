@@ -1023,10 +1023,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-much-detail-three-dimensions" class="md-nav__link">
+  <a href="#how-much-detail-questions-per-dimension" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How much detail: three dimensions
+        How much detail: questions per dimension
       
     </span>
   </a>
@@ -1895,10 +1895,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-much-detail-three-dimensions" class="md-nav__link">
+  <a href="#how-much-detail-questions-per-dimension" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How much detail: three dimensions
+        How much detail: questions per dimension
       
     </span>
   </a>
@@ -2066,19 +2066,16 @@
 </div>
 <h3 id="documents-with-automatic-validation-against-code">Documents with automatic validation against code<a class="headerlink" href="#documents-with-automatic-validation-against-code" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>When the consumed artifact is automatically validated against code on an ongoing basis (an OpenAPI contract with CI, a Protobuf schema with compatibility checks), it's enough to reference it and summarize the implications for your feature. A Jira user story has no automatic validation against code — its consistency depends on occasional human discipline, which makes it vulnerable to silent drift.</p>
-<h3 id="how-much-detail-three-dimensions">How much detail: three dimensions<a class="headerlink" href="#how-much-detail-three-dimensions" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>For each artifact the spec produces or modifies, the question is <em>"how much detail?"</em>. The useful answer is to ask <strong>three explicit questions</strong> and capture only what's load-bearing:</p>
+<h3 id="how-much-detail-questions-per-dimension">How much detail: questions per dimension<a class="headerlink" href="#how-much-detail-questions-per-dimension" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>For each artifact the spec produces or modifies, the question is <em>"how much detail?"</em>. The useful answer is to ask <strong>explicit questions per dimension</strong> and capture only what's load-bearing. Three dimensions show up in almost every change:</p>
 <ul>
 <li><strong>Functional</strong> — what changes in observable behavior. <em>"The <code>User</code> model can now have an avatar; the field is optional; updated on upload, cleared on delete."</em></li>
 <li><strong>Non-functional</strong> — which cross-cutting constraints the change must respect. <em>"The migration must not require downtime; the field must not break existing serialization."</em></li>
 <li><strong>Technical</strong> — which contract/integration decisions the change explicitly closes. <em>"The field is indexed by <code>user_id</code>; the URL goes through the existing CDN."</em></li>
 </ul>
+<p>But they're not the only ones. Depending on the domain and the change, other dimensions can be just as relevant: <strong>security</strong> (what attack surface the change opens or closes), <strong>data privacy</strong> (what personal data is touched and under what policy), <strong>observability</strong> (what metrics or logs the change needs to be operable), <strong>migration/rollback</strong> (what happens if it needs to be reverted). The principle isn't "there are exactly three dimensions" — it's <strong>asking distinct questions about each aspect of the change</strong> and documenting only what's load-bearing for validation.</p>
 <p>For each dimension, an <strong>optional reference to the deeper document</strong> if it exists. If a dimension doesn't add anything, omit it — absence is informative.</p>
-<p>Two clarifications:</p>
-<ol>
-<li><strong>What goes in the spec is what's load-bearing</strong>: what the chapter 6 validator can compare against the code. Finer detail lives in the artifact's documentation.</li>
-<li><strong>The term "non-functional" is classical but contested</strong> (<a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Fowler</a> argues everything is functional, just along different dimensions). We use it as an operational category — three different questions — not as ontology.</li>
-</ol>
+<p>One clarification: <strong>what goes in the spec is what's load-bearing</strong> — what the chapter 6 validator can compare against the code. Finer detail lives in the artifact's documentation.</p>
 <h3 id="where-this-information-goes-in-the-six-blocks">Where this information goes in the six blocks<a class="headerlink" href="#where-this-information-goes-in-the-six-blocks" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>The consume/produce/modify taxonomy and the three dimensions don't create a new section in the spec — they help you write the sections you already have better:</p>
 <ul>
