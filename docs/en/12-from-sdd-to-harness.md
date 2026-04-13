@@ -70,7 +70,7 @@ Not every team adopting SDD needs to jump to level 2 immediately. There are spec
 - **[Chapter 11 anti-patterns](11-anti-patterns.md) reappear periodically** even though the team knows them. Individual awareness doesn't scale; infrastructure does.
 - **Chapter 7 tools fall short** because your system needs multiple layers (sensors + hooks + sandboxes + observability) that no single tool covers.
 
-If you recognize two or more, it's time to start building infrastructure. The [harness guide](https://jmlopezdona.github.io/ai-coding-agents-harness/) develops the concrete mechanisms to take that step.
+If you recognize two or more, it's time to start building infrastructure. The [harness engineering guide](https://jmlopezdona.github.io/ai-coding-agents-harness/) develops the concrete mechanisms to take that step.
 
 ## A goodbye without promises
 
@@ -86,4 +86,4 @@ If you take that, you take the best this guide can offer.
 
 ---
 
-*This chapter closes the course. If you want to take the next step toward automation, read the [harness guide](https://jmlopezdona.github.io/ai-coding-agents-harness/). And if you're missing the foundations on what an agent is and how to drive one, the [fundamentals guide](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/) is the natural starting point of the trilogy. All chapters here are self-contained: jump to whichever one you need when the problem it solves shows up.*
+*This chapter closes the course. If you want to take the next step toward automation, read the [harness engineering guide](https://jmlopezdona.github.io/ai-coding-agents-harness/). And if you're missing the foundations on what an agent is and how to drive one, the [fundamentals guide](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/) is the natural starting point of the trilogy. All chapters here are self-contained: jump to whichever one you need when the problem it solves shows up.*
