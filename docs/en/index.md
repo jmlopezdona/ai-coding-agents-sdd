@@ -46,20 +46,14 @@ Two chapters are **not optional** even though they look negative: chapter 9 (the
 
 - [7. SDD tools: Kiro, Spec-kit, Tessl, BMAD and Traycer](07-native-sdd-tools.md)
 
-### Part 5 — Practice
+### Part 5 — Putting it to work
 
 - [8. Patterns of application: features, refactors, bug fixes](08-patterns-of-application.md)
-
-### Part 6 — Critique
-
 - [9. The honest critique: maintenance tax, MDD and the illusion of control](09-honest-critique.md)
 - [10. Code-embedded context: the other side of the coin](10-context-engineering.md)
-
-### Part 7 — Common mistakes
-
 - [11. SDD anti-patterns](11-anti-patterns.md)
 
-### Part 8 — Industrialization
+### Part 6 — Industrialization
 
 - [12. From SDD to the harness: how the pieces fit](12-from-sdd-to-harness.md)
 
