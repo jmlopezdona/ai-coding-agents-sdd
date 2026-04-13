@@ -9,13 +9,28 @@ Esa frase resume el desplazamiento.
 
 ## La diferencia esencial con SDD
 
-SDD pone la intención **fuera del código**, en specs que el agente lee. Context engineering pone la intención **dentro del código y de los artefactos directamente legibles** del proyecto: comentarios estructurados, ADRs (Architecture Decision Records), commit messages ricos, notas en el README y, sí, instrucciones puntuales en archivos tipo `AGENTS.md` que viven en el repo pero **sin la pretensión de ser una fuente de verdad paralela**.
+SDD pone la intención en **specs que son documentos paralelos al código**. Lo que Isoform propone es distribuir esa intención en **artefactos con distintos niveles de acoplamiento al propio código**: desde comentarios inline (máximo acoplamiento) hasta ADRs (acoplamiento bajo, similar al de una spec).
 
-La diferencia parece pequeña pero tiene tres consecuencias profundas:
+Esto no es una dicotomía binaria "dentro vs fuera del código". Es un **gradiente de acoplamiento**:
 
-1. **No hay segundo sistema que mantener.** Las decisiones viven donde vive el código, así que no puedes desincronizarlas porque son la misma cosa. El *maintenance tax* del capítulo 9 desaparece por construcción.
-2. **Los por qués no se pierden** porque están adheridos al código que los implementa. Quitas la unidad lógica y se va con ella.
+| Artefacto | Acoplamiento al código | Riesgo de desincronización |
+|---|---|---|
+| Comentario inline | Máximo — mismo archivo, misma línea | Muy bajo |
+| Commit message | Alto — ligado al diff exacto vía `git blame` | Ninguno (inmutable) |
+| AGENTS.md / CLAUDE.md | Medio — en el repo, orientativo | Bajo si se mantiene corto |
+| ADR | Bajo — documento separado sobre decisiones | Medio (igual que una spec ligera) |
+| Spec en el repo | Bajo — documento separado sobre implementación | Medio-alto |
+| Spec en Confluence/Notion | Mínimo — fuera del repo | Alto |
+
+Hay que ser honesto: un ADR en `docs/adr/0005-auth-strategy.md` es un documento separado que describe decisiones sobre código que vive en otro sitio — **puede desincronizarse exactamente igual que una spec**. Lo que cambia entre un ADR y una spec no es su adherencia al código, sino **qué captura** (decisiones puntuales vs implementación completa) y **su ambición** (un por qué concreto vs una fuente de verdad del sistema).
+
+La propuesta de Isoform no es "todo adherido al código" — es **preferir los artefactos de la parte alta del gradiente** (comentarios, commits) y usar los de la parte baja (ADRs) solo para decisiones, no para describir el sistema entero. Las consecuencias prácticas:
+
+1. **Menos superficie de mantenimiento.** No desaparece el *maintenance tax* del capítulo 9 por completo — los ADRs también pueden quedar obsoletos — pero se reduce porque los artefactos más acoplados (comentarios, commits) no pueden desincronizarse por construcción.
+2. **Los por qués más críticos viajan con el código.** Un comentario de intención se borra cuando se borra la línea. Un commit message es inmutable. Los por qués que viven ahí no se pierden.
 3. **No hay falsa ilusión de completitud** porque no hay un documento maestro que dé sensación de cobertura. La cobertura es exactamente la del código.
+
+Una observación importante: **una spec que vive en el repositorio también es un artefacto del repo**, versionada con git, revisable en PRs. La frontera entre "spec" y "artefacto del proyecto" se desdibuja. La diferencia real no es dónde vive el archivo, sino el grado de acoplamiento con el código que describe y la ambición de lo que intenta capturar.
 
 ## Qué cosas hace context engineering
 
@@ -54,10 +69,10 @@ La línea entre "AGENTS.md como mapa" y "AGENTS.md como spec gigante" es exactam
 
 Para evitar que parezca que son enemigos irreconciliables — no lo son — vale la pena tabular en qué coinciden y en qué difieren.
 
-| Dimensión | SDD | Context engineering |
+| Dimensión | SDD | Code-embedded context |
 |---|---|---|
-| Dónde vive la intención | Specs externas | Dentro del código y del repo |
-| Mantenimiento sincronizado | Sí, explícito | No requerido por construcción |
+| Dónde vive la intención | Specs (documentos paralelos) | Distribuida en el gradiente de acoplamiento |
+| Mantenimiento sincronizado | Sí, explícito | Reducido pero no eliminado (los ADRs también envejecen) |
 | Captura los por qués | A veces (depende de disciplina) | Siempre, por diseño |
 | Granularidad | Por feature/módulo | Por decisión |
 | Visible en revisión de código | No directamente | Sí, en cada PR |
@@ -65,7 +80,7 @@ Para evitar que parezca que son enemigos irreconciliables — no lo son — vale
 | Coste de adopción | Alto | Bajo |
 | Madurez de la práctica | En formación | Décadas (ADRs son de 2011) |
 
-Los dos enfoques resuelven el mismo problema — el context collapse del capítulo 1 — con filosofías distintas. SDD apuesta por la **persistencia explícita**; context engineering apuesta por la **adherencia al sustrato**.
+Los dos enfoques resuelven el mismo problema — el context collapse del capítulo 1 — con filosofías distintas. SDD apuesta por la **persistencia explícita en documentos paralelos**; code-embedded context apuesta por **distribuir la intención en artefactos con alto acoplamiento al código**.
 
 ## Cuándo elegir context engineering en lugar de SDD
 
