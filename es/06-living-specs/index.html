@@ -1908,9 +1908,9 @@
 <p>La información fluye en una sola dirección: spec → código. Y eso significa que cualquier decisión que se tome durante la implementación — y siempre se toman muchas: trade-offs, descubrimientos, casos límite que aparecen al teclear — <strong>no vuelve a la spec</strong>. La spec describe la intención inicial; el código describe la realidad actual; entre ambos hay una grieta que crece con cada commit.</p>
 <p>Augment lo dice con una precisión incómoda:</p>
 <blockquote>
-<p><em>Gaps in the specification widen with direct code changes and keep resurfacing because AI generation is non-deterministic.</em></p>
+<p><em>Las brechas en la especificación se amplían con los cambios directos al código y siguen reapareciendo porque la generación con IA es no determinística.</em></p>
 </blockquote>
-<p>Es decir: <strong>el problema no solo es que la spec envejezca, es que la generación con LLMs es no determinística</strong>, así que cada vez que regeneras código a partir de una spec desactualizada, introduces inconsistencias nuevas. El gap no solo crece — cada ciclo de regeneración lo amplifica.</p>
+<p><strong>El problema no solo es que la spec envejezca, es que la generación con LLMs es no determinística</strong>, así que cada vez que regeneras código a partir de una spec desactualizada, introduces inconsistencias nuevas. El gap no solo crece — cada ciclo de regeneración lo amplifica.</p>
 <h2 id="que-es-una-spec-viva">Qué es una spec viva<a class="headerlink" href="#que-es-una-spec-viva" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una spec viva (<em>living spec</em>) es una spec que se actualiza cuando el código cambia. Esa es la definición corta. La definición operativa es algo más exigente:</p>
 <blockquote>
@@ -1927,7 +1927,7 @@
 <p>Esta es la fase que define una spec viva y la que casi todos los equipos olvidan. Cuando una tarea termina, <strong>alguien — agente o humano — escribe en la spec lo que se decidió de verdad durante la implementación</strong>. No "lo que la spec decía", sino "lo que el código acabó haciendo y por qué". Las decisiones tácticas suben de nivel y se quedan registradas.</p>
 <p>Augment dice exactamente esto:</p>
 <blockquote>
-<p><em>Agents or developers update the spec to reflect what was actually built.</em></p>
+<p><em>Los agentes o los desarrolladores actualizan la spec para reflejar lo que realmente se construyó.</em></p>
 </blockquote>
 <p>La consecuencia práctica: la spec deja de ser un plan y empieza a ser una <strong>descripción</strong>. Sigue capturando intención, pero también captura las decisiones que se tomaron al realizar esa intención. La grieta entre intención y realidad se cierra.</p>
 <h3 id="fase-4-production-feedback">Fase 4 — Production feedback<a class="headerlink" href="#fase-4-production-feedback" title="Enlace permanente a esta sección">&para;</a></h3>
