@@ -122,57 +122,87 @@ La regla heurística: si no puedes describir el estado "después de la tarea" en
 
 ## Fase 2 — Implementar la spec
 
-El principio es siempre el mismo: **cada tarea es atómica respecto a la spec** — o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra". Pero la forma de ejecutar esas tareas ya no es única. Las herramientas actuales permiten dos modelos de implementación, y la elección entre ellos afecta tanto a cómo se estructura la Fase 1 como a qué se verifica en la Fase 3.
+Una spec es la unidad de trabajo que **un agente recibe y resuelve de forma autónoma en su inner loop**. El agente lee la spec, descompone internamente el trabajo en tareas, implementa, y valida — todo dentro de una misma ejecución. El principio es siempre el mismo: **cada tarea es atómica respecto a la spec** — o se cumple completamente o se revierte.
 
-### Modelo secuencial — Un agente, una tarea a la vez
+Lo que varía es cómo el agente gestiona esas tareas internamente. Las herramientas actuales le dan dos opciones:
 
-El agente ejecuta las tareas de una en una. Para cada tarea: lee la spec, lee la tarea, escribe los tests que la tarea pide, escribe el código, ejecuta los tests, verifica. Si los tests no pasan, itera. Si pasan, marca la tarea como hecha y pasa a la siguiente.
+### Ejecución directa — El agente resuelve todo en su contexto
 
-Es el modelo más simple y predecible. Las interfaces entre tareas son implícitas — el agente las recuerda de la tarea anterior, porque trabaja en el mismo contexto. Funciona bien cuando las tareas tienen **dependencias fuertes entre sí** o cuando el equipo quiere revisar entre iteraciones.
+El agente ejecuta las tareas de una en una dentro de su propia sesión. Para cada tarea: lee la spec, lee la tarea, escribe los tests, escribe el código, ejecuta los tests, verifica. Si los tests no pasan, itera. Si pasan, pasa a la siguiente.
 
-### Modelo orquestado — Un agente coordinador con sub-agentes
+Las interfaces entre tareas son implícitas — el agente las recuerda porque trabaja en el mismo contexto. Es el modelo más simple y predecible, y funciona bien cuando las tareas tienen **dependencias fuertes entre sí** o cuando la spec cabe cómodamente en la ventana de contexto del agente.
 
-Las herramientas actuales (Claude Code con sub-agentes en worktrees aislados, Cursor con background agents, o cualquier harness que orqueste múltiples sesiones) abren una segunda posibilidad: un **agente orquestador** lee la spec completa y delega partes a **sub-agentes** que trabajan en paralelo.
+### Delegación a sub-agentes — El agente coordina internamente
 
-Imaginemos una spec que toca front, middleware y back. En lugar de un agente que implementa las tres capas secuencialmente, el orquestador puede lanzar tres sub-agentes — cada uno con su trozo de la spec y los contratos de interfaz con los demás. Cada sub-agente implementa y valida su parte de forma independiente. El orquestador integra y verifica que las partes encajan.
+Las herramientas actuales (Claude Code con sub-agentes, Cursor con background agents) permiten que el agente, **dentro de su misma ejecución**, delegue partes del trabajo a sub-agentes especializados o acotados por contexto.
 
-Este modelo es más rápido para features grandes con capas independientes, pero introduce un riesgo que el modelo secuencial no tiene: **fallos de integración entre partes**. Que cada sub-agente cumpla su trozo de spec no garantiza que el conjunto funcione — exactamente como en un equipo humano distribuido.
+Imaginemos una spec que toca front, middleware y back. El agente principal puede decidir — por mejor gestión de contexto o por usar prompts más especializados — lanzar sub-agentes internos para cada capa. Cada sub-agente recibe su trozo de la spec y los contratos de interfaz con los demás, implementa y valida su parte. El agente principal integra los resultados y verifica que las partes encajan.
 
-| | Secuencial | Orquestado |
+Es importante entender que **sigue siendo una sola spec ejecutada por un solo agente**. La decisión de usar sub-agentes es interna a la ejecución — es una estrategia de implementación del agente, no un workflow diferente. Desde fuera, el resultado es el mismo: el agente recibió una spec y entregó código que la cumple.
+
+Esa delegación puede ocurrir de dos formas:
+
+- **Implícita** — La spec no dice nada sobre cómo descomponer el trabajo. El agente decide por sí mismo si delegar y cómo, basándose en su evaluación de la complejidad. Es más simple de escribir, pero dependes de que el agente tome buenas decisiones de descomposición — y esas decisiones no quedan documentadas en ningún sitio.
+- **Explícita** — La spec define las partes delegables, sus fronteras y los contratos entre ellas. *"El front consume este contrato; el back lo produce; son implementables de forma independiente."* Más trabajo en la Fase 1, pero le das al agente la información para que delegue con rigor. Además, esas fronteras sirven como documentación de la estructura del cambio incluso si el agente no usa sub-agentes — conectan directamente con los **boundaries** del capítulo 3 y con los artefactos [producidos y consumidos del capítulo 4](04-spec-in-context.md#tres-relaciones-tres-reglas).
+
+| | Ejecución directa | Delegación a sub-agentes |
 |---|---|---|
-| **Quién decide el orden** | Humano o plan estático | Agente orquestador |
-| **Paralelismo** | No | Sí, por contexto o capa |
+| **Contexto** | Una sesión, un contexto | Agente principal + sub-agentes con contexto acotado |
+| **Paralelismo** | No | Posible, por contexto o capa |
 | **Interfaces entre tareas** | Implícitas (mismo contexto) | **Explícitas en la spec** (cada sub-agente solo ve su parte) |
-| **Riesgo principal** | Lentitud | Conflictos de integración |
-| **Validación necesaria** | Por tarea | Por sub-agente + integración global |
-| **Cuándo encaja** | Tareas con dependencias fuertes | Tareas con interfaces bien definidas entre capas |
+| **Riesgo principal** | Límites de la ventana de contexto | Fallos de integración entre partes |
+| **Cuándo encaja** | Specs acotadas, tareas con dependencias fuertes | Specs que cruzan capas con interfaces bien definidas |
 
 !!! tip "Impacto en la Fase 1"
 
-    Si piensas implementar con sub-agentes, la descomposición de la Fase 1 cambia de naturaleza. Las **interfaces entre partes de la spec se vuelven load-bearing**: no pueden ser implícitas. *"El endpoint acepta X y devuelve Y; el front consume Y con este contrato"* tiene que estar en la spec, porque cada sub-agente solo verá su contexto. Esto conecta directamente con los artefactos [producidos y consumidos del capítulo 4](04-spec-in-context.md#tres-relaciones-tres-reglas) — cada sub-agente *consume* el contrato que otro sub-agente *produce*.
+    Si la spec tiene la escala o la estructura que haga probable que el agente delegue a sub-agentes, las **interfaces entre partes se vuelven load-bearing**: no pueden ser implícitas. *"El endpoint acepta X y devuelve Y; el front consume Y con este contrato"* tiene que estar en la spec, porque cada sub-agente solo verá su contexto. Esto conecta directamente con los artefactos [producidos y consumidos del capítulo 4](04-spec-in-context.md#tres-relaciones-tres-reglas) — cada sub-agente *consume* el contrato que otro sub-agente *produce*.
 
 !!! note "Conexión con BMAD y Traycer"
 
-    El modelo orquestado no es nuevo conceptualmente — [BMAD](07-native-sdd-tools.md#bmad) ya usa múltiples agentes, pero con **roles fijos** (PM, Architect, QA, Developer). Lo que las herramientas actuales permiten es una orquestación más flexible: sub-agentes por **contexto de la spec** (front, back, infra), no por rol en el proceso. Y las capas de arquitecto tipo [Traycer](08-architect-layers.md) son el candidato natural para actuar como orquestador — su función de planificación y verificación encaja exactamente con coordinar sub-agentes.
+    La delegación a sub-agentes no es nueva conceptualmente — [BMAD](07-native-sdd-tools.md#bmad) ya usa múltiples agentes, pero con **roles fijos** (PM, Architect, QA, Developer). Lo que las herramientas actuales permiten es una delegación más flexible: sub-agentes por **contexto de la spec** (front, back, infra), no por rol en el proceso. Y las capas de arquitecto tipo [Traycer](08-architect-layers.md) encajan naturalmente como la lógica de coordinación — su función de planificación y verificación es exactamente lo que el agente principal necesita para orquestar sub-agentes.
 
-Ninguno de los dos modelos es universalmente mejor. El modelo secuencial es más simple y seguro; el orquestado es más rápido pero exige más rigor en la Fase 1 y más validación de integración en la Fase 3. Como con las demás decisiones de este capítulo, **el contexto manda**.
+Ninguna de las dos opciones es universalmente mejor. La ejecución directa es más simple; la delegación a sub-agentes gestiona mejor el contexto en specs grandes pero exige interfaces explícitas en la Fase 1 y validación de integración en la Fase 3. La decisión la toma el agente (o su configuración) según la naturaleza de la spec.
 
 ## Fase 3 — Validar la spec
 
-Cuando todas las tareas están hechas, alguien — el agente, tú, o un segundo agente revisor — toma la spec original y verifica que **todo lo que la spec pedía está hecho, y que no se ha hecho nada que la spec no pedía**. Esta fase es la que más fácilmente se salta y la más importante: es donde los criterios de aceptación dejan de ser texto y se convierten en una checklist tachada o no tachada.
+La validación es lo que cierra el ciclo — donde los criterios de aceptación dejan de ser texto y se convierten en una checklist tachada o no tachada. Pero no es un solo acto: ocurre en **dos niveles** y con **dos tipos de mecanismo** distintos.
 
-Es también la fase donde **más divergen los frameworks** — y donde más fallan:
+### Dos niveles: inner loop y outer loop
+
+**Validación inner loop** — El propio agente, antes de declarar "hecho", verifica que todos los criterios de aceptación de la spec se cumplen. Cada tarea ya tiene su validación individual (tests), pero aquí se trata de una verificación **global contra la spec como un todo**: ¿se cumplió todo lo que la spec pedía? ¿se hizo algo que la spec no pedía? Si el agente delegó a sub-agentes, incluye verificar que las partes se integran correctamente. Esta validación cierra la ejecución del agente.
+
+**Validación outer loop** — Después de que el agente entrega, un humano o un proceso externo (CI, un agente revisor independiente, un PR review) valida que la spec se cumplió. Aquí entran las cosas que el agente no puede verificar solo: ¿el resultado tiene sentido para el negocio? ¿la integración con el resto del sistema funciona? ¿el stakeholder está de acuerdo? ¿se respetaron restricciones que no son verificables por código (regulatorias, de UX, de rendimiento bajo carga real)?
+
+Sin inner loop, el agente entrega trabajo a medio hacer y el humano carga con toda la verificación. Sin outer loop, confías ciegamente en que el agente evaluó bien su propio trabajo.
+
+### Dos mecanismos: determinista y estocástico
+
+Dentro de cada nivel, hay una distinción igual de importante — **cómo** se valida:
+
+**Validación determinista** — Tests unitarios, tests de integración, linters, type checkers, contratos OpenAPI contra código, checks de CI. El resultado es siempre el mismo: pasa o no pasa. No hay ambigüedad. Es la validación más fiable y **debería ser la base** de ambos niveles.
+
+**Validación estocástica (por agente)** — Un LLM revisa si el código cumple la spec, si los criterios de aceptación se satisfacen, si no se hizo nada fuera de scope. Es útil para lo que las herramientas deterministas no pueden capturar — ¿el código respeta la intención? ¿se respetaron los no-goals? ¿la implementación es coherente con los por qués? — pero es inherentemente no-determinista: dos ejecuciones del mismo prompt de validación pueden dar resultados distintos.
+
+| | Determinista | Estocástica (agente) |
+|---|---|---|
+| **Inner loop** | Tests, linters, type checks — el agente los ejecuta como parte de su ciclo | El agente se auto-evalúa contra la spec antes de declarar "hecho" |
+| **Outer loop** | CI, contract checks, regression suite | Agente revisor independiente, humano asistido por agente |
+
+La combinación sana es **determinista como base, estocástica como complemento** — no al revés. Si tu única validación es pedirle a un agente que revise el trabajo de otro agente, tienes estocástico validando estocástico — que es exactamente el problema de fiabilidad que [Tessl](07-native-sdd-tools.md#tessl) sufre con la regeneración.
+
+### Cómo lo hacen los frameworks
+
+Es en la validación donde **más divergen los frameworks** — y donde más fallan:
 
 - **Validación explícita y separada** (enfoque A): la verificación es un evento propio con peso en el proceso. Es la opción más rigurosa, apropiada cuando hay invariantes fuertes, APIs públicas o código que cruza fronteras de equipos.
 - **Validación embebida en cada tarea** (enfoque B, [Kiro](07-native-sdd-tools.md#kiro)): cada tarea trae sus tests y se auto-valida al completarse. Más ágil, pero sin una verificación final se pierde la visión global — que cada tarea pase sus tests no garantiza que el conjunto cumpla la spec.
 - **Validación aspiracional** ([Spec-kit](07-native-sdd-tools.md#spec-kit-github)): aspira a spec-anchored pero en la práctica no tiene un mecanismo automático que compare spec contra código. Es spec-first con disfraz.
-- **Validación por regeneración** ([Tessl](07-native-sdd-tools.md#tessl)): si regeneras código desde la spec y obtienes lo mismo, "valida". Pero el no-determinismo de los LLMs entra en conflicto directo con esta promesa.
-- **Validación delegada a un rol** ([BMAD](07-native-sdd-tools.md#bmad)): un agente QA especializado verifica. La especialización ayuda con el foco, pero los fallos de coordinación entre agentes son sutiles.
-- **Validación de integración** (modelo orquestado): cuando múltiples sub-agentes implementan partes de la spec en paralelo, aparece un nivel adicional de validación — no solo "¿cada parte cumple su trozo de spec?" sino "¿las partes se integran correctamente?". Es la diferencia entre tests unitarios y tests de integración, aplicada al nivel de la spec.
+- **Validación por regeneración** ([Tessl](07-native-sdd-tools.md#tessl)): si regeneras código desde la spec y obtienes lo mismo, "valida". Pero el no-determinismo de los LLMs entra en conflicto directo con esta promesa — es validación estocástica pura sin base determinista.
+- **Validación delegada a un rol** ([BMAD](07-native-sdd-tools.md#bmad)): un agente QA especializado verifica. La especialización ayuda con el foco, pero sigue siendo estocástico validando estocástico a menos que el agente QA ejecute tests deterministas.
 
 !!! warning "La Fase 3 es lo que separa SDD de vibe coding con documentación"
 
-    Si la Fase 3 no existe o se reduce a "confiar en que los tests pasan", no estás haciendo SDD — estás haciendo spec-first con buenas intenciones. La verificación de que el código cumple la spec **como un todo** (no solo tarea a tarea) es el mecanismo que cierra el ciclo. Sin ella, la spec envejece desde el momento en que se escribe.
+    Si la Fase 3 no existe o se reduce a "confiar en que los tests pasan", no estás haciendo SDD — estás haciendo spec-first con buenas intenciones. La verificación de que el código cumple la spec **como un todo** (no solo tarea a tarea), en **ambos niveles** (inner y outer loop) y con **base determinista** (no solo estocástica) es el mecanismo que cierra el ciclo. Sin ella, la spec envejece desde el momento en que se escribe.
 
     Esta es exactamente la grieta que el [capítulo 7 identifica como problema común](07-native-sdd-tools.md#lo-que-ninguna-de-estas-herramientas-resuelve) de las herramientas nativas, y donde las capas de arquitecto del [capítulo 8](08-architect-layers.md) se han posicionado.
 

@@ -122,57 +122,87 @@ Heuristic rule: if you can't describe the "after the task" state in one sentence
 
 ## Phase 2 — Implement the spec
 
-The principle is always the same: **each task is atomic with respect to the spec** — either it's fully done or it's reverted. There are no half-done tasks "to be fixed in another". But how those tasks are executed is no longer a single option. Today's tools allow two implementation models, and the choice between them affects both how Phase 1 is structured and what gets verified in Phase 3.
+A spec is the unit of work that **one agent receives and resolves autonomously in its inner loop**. The agent reads the spec, internally decomposes the work into tasks, implements, and validates — all within a single execution. The principle is always the same: **each task is atomic with respect to the spec** — either it's fully done or it's reverted.
 
-### Sequential model — One agent, one task at a time
+What varies is how the agent manages those tasks internally. Today's tools give it two options:
 
-The agent executes tasks one at a time. For each task: read the spec, read the task, write the tests the task asks for, write the code, run the tests, verify. If tests don't pass, iterate. If they pass, mark done and move on.
+### Direct execution — The agent solves everything in its context
 
-It's the simplest and most predictable model. Interfaces between tasks are implicit — the agent remembers them from the previous task, because it works in the same context. It works well when tasks have **strong dependencies between them** or when the team wants to review between iterations.
+The agent executes tasks one at a time within its own session. For each task: read the spec, read the task, write the tests, write the code, run the tests, verify. If tests don't pass, iterate. If they pass, move on to the next.
 
-### Orchestrated model — A coordinator agent with sub-agents
+Interfaces between tasks are implicit — the agent remembers them because it works in the same context. It's the simplest and most predictable option, and works well when tasks have **strong dependencies between them** or when the spec fits comfortably in the agent's context window.
 
-Today's tools (Claude Code with sub-agents in isolated worktrees, Cursor with background agents, or any harness orchestrating multiple sessions) open a second possibility: an **orchestrator agent** reads the full spec and delegates parts to **sub-agents** working in parallel.
+### Delegation to sub-agents — The agent coordinates internally
 
-Imagine a spec that touches front-end, middleware, and back-end. Instead of one agent implementing all three layers sequentially, the orchestrator can launch three sub-agents — each with its slice of the spec and the interface contracts with the others. Each sub-agent implements and validates its part independently. The orchestrator integrates and verifies the parts fit together.
+Today's tools (Claude Code with sub-agents, Cursor with background agents) allow the agent, **within its same execution**, to delegate parts of the work to specialized or context-scoped sub-agents.
 
-This model is faster for large features with independent layers, but introduces a risk the sequential model doesn't have: **integration failures between parts**. Each sub-agent fulfilling its slice of spec doesn't guarantee the whole works — exactly like a distributed human team.
+Imagine a spec that touches front-end, middleware, and back-end. The main agent can decide — for better context management or to use more specialized prompts — to launch internal sub-agents for each layer. Each sub-agent receives its slice of the spec and the interface contracts with the others, implements and validates its part. The main agent integrates the results and verifies the parts fit together.
 
-| | Sequential | Orchestrated |
+It's important to understand that **this is still a single spec executed by a single agent**. The decision to use sub-agents is internal to the execution — it's an implementation strategy of the agent, not a different workflow. From the outside, the result is the same: the agent received a spec and delivered code that fulfills it.
+
+That delegation can happen in two ways:
+
+- **Implicit** — The spec says nothing about how to decompose the work. The agent decides on its own whether to delegate and how, based on its assessment of complexity. Simpler to write, but you depend on the agent making good decomposition decisions — and those decisions aren't documented anywhere.
+- **Explicit** — The spec defines the delegable parts, their boundaries, and the contracts between them. *"The front-end consumes this contract; the back-end produces it; they're independently implementable."* More work in Phase 1, but it gives the agent the information to delegate with rigor. Moreover, those boundaries serve as documentation of the change's structure even if the agent doesn't use sub-agents — they connect directly with chapter 3's **boundaries** and with [chapter 4's produced and consumed artifacts](04-spec-in-context.md#three-relationships-three-rules).
+
+| | Direct execution | Delegation to sub-agents |
 |---|---|---|
-| **Who decides the order** | Human or static plan | Orchestrator agent |
-| **Parallelism** | No | Yes, by context or layer |
+| **Context** | One session, one context | Main agent + sub-agents with scoped context |
+| **Parallelism** | No | Possible, by context or layer |
 | **Interfaces between tasks** | Implicit (same context) | **Explicit in the spec** (each sub-agent only sees its part) |
-| **Main risk** | Slowness | Integration conflicts |
-| **Validation needed** | Per task | Per sub-agent + global integration |
-| **When it fits** | Tasks with strong dependencies | Tasks with well-defined interfaces between layers |
+| **Main risk** | Context window limits | Integration failures between parts |
+| **When it fits** | Scoped specs, tasks with strong dependencies | Specs crossing layers with well-defined interfaces |
 
 !!! tip "Impact on Phase 1"
 
-    If you plan to implement with sub-agents, Phase 1's decomposition changes in nature. **Interfaces between parts of the spec become load-bearing**: they can't be implicit. *"The endpoint accepts X and returns Y; the front-end consumes Y with this contract"* has to be in the spec, because each sub-agent will only see its context. This connects directly with [chapter 4's produced and consumed artifacts](04-spec-in-context.md#three-relationships-three-rules) — each sub-agent *consumes* the contract another sub-agent *produces*.
+    If the spec has the scale or structure that makes it likely the agent will delegate to sub-agents, **interfaces between parts become load-bearing**: they can't be implicit. *"The endpoint accepts X and returns Y; the front-end consumes Y with this contract"* has to be in the spec, because each sub-agent will only see its context. This connects directly with [chapter 4's produced and consumed artifacts](04-spec-in-context.md#three-relationships-three-rules) — each sub-agent *consumes* the contract another sub-agent *produces*.
 
 !!! note "Connection with BMAD and Traycer"
 
-    The orchestrated model isn't conceptually new — [BMAD](07-native-sdd-tools.md#bmad) already uses multiple agents, but with **fixed roles** (PM, Architect, QA, Developer). What today's tools enable is more flexible orchestration: sub-agents by **spec context** (front, back, infra), not by process role. And architect layers like [Traycer](08-architect-layers.md) are the natural candidate to act as orchestrator — their planning and verification functions fit exactly with coordinating sub-agents.
+    Delegation to sub-agents isn't conceptually new — [BMAD](07-native-sdd-tools.md#bmad) already uses multiple agents, but with **fixed roles** (PM, Architect, QA, Developer). What today's tools enable is more flexible delegation: sub-agents by **spec context** (front, back, infra), not by process role. And architect layers like [Traycer](08-architect-layers.md) fit naturally as the coordination logic — their planning and verification functions are exactly what the main agent needs to orchestrate sub-agents.
 
-Neither model is universally better. The sequential model is simpler and safer; the orchestrated model is faster but demands more rigor in Phase 1 and more integration validation in Phase 3. As with every other decision in this chapter, **context rules**.
+Neither option is universally better. Direct execution is simpler; delegation to sub-agents manages context better for large specs but requires explicit interfaces in Phase 1 and integration validation in Phase 3. The decision is made by the agent (or its configuration) based on the spec's nature.
 
 ## Phase 3 — Validate the spec
 
-When all tasks are done, someone — the agent, you, or a second reviewer agent — takes the original spec and verifies that **everything the spec asked is done, and that nothing the spec didn't ask for has been done**. This phase is the easiest to skip and the most important: it's where acceptance criteria stop being text and become a checked-or-unchecked checklist.
+Validation is what closes the cycle — where acceptance criteria stop being text and become a checked-or-unchecked checklist. But it's not a single act: it happens at **two levels** and with **two types of mechanism**.
 
-It's also the phase where **frameworks diverge most** — and where they fail most:
+### Two levels: inner loop and outer loop
+
+**Inner loop validation** — The agent itself, before declaring "done", verifies that all acceptance criteria in the spec are met. Each task already has its individual validation (tests), but here it's about a **global check against the spec as a whole**: was everything the spec asked for done? Was anything done that the spec didn't ask for? If the agent delegated to sub-agents, this includes verifying the parts integrate correctly. This validation closes the agent's execution.
+
+**Outer loop validation** — After the agent delivers, a human or an external process (CI, an independent reviewer agent, a PR review) validates that the spec was fulfilled. This is where things the agent can't verify alone come in: does the result make business sense? Does the integration with the rest of the system work? Does the stakeholder agree? Were constraints that aren't code-verifiable respected (regulatory, UX, performance under real load)?
+
+Without inner loop, the agent delivers half-done work and the human bears all verification burden. Without outer loop, you blindly trust the agent evaluated its own work correctly.
+
+### Two mechanisms: deterministic and stochastic
+
+Within each level, there's an equally important distinction — **how** validation happens:
+
+**Deterministic validation** — Unit tests, integration tests, linters, type checkers, OpenAPI contracts against code, CI checks. The result is always the same: pass or fail. No ambiguity. It's the most reliable validation and **should be the foundation** of both levels.
+
+**Stochastic validation (by agent)** — An LLM reviews whether the code fulfills the spec, whether acceptance criteria are satisfied, whether nothing was done out of scope. It's useful for what deterministic tools can't capture — does the code respect the intent? Were the non-goals respected? Is the implementation coherent with the whys? — but it's inherently non-deterministic: two runs of the same validation prompt can give different results.
+
+| | Deterministic | Stochastic (agent) |
+|---|---|---|
+| **Inner loop** | Tests, linters, type checks — the agent runs them as part of its cycle | The agent self-evaluates against the spec before declaring "done" |
+| **Outer loop** | CI, contract checks, regression suite | Independent reviewer agent, human assisted by agent |
+
+The healthy combination is **deterministic as foundation, stochastic as complement** — not the other way around. If your only validation is asking an agent to review another agent's work, you have stochastic validating stochastic — which is exactly the reliability problem [Tessl](07-native-sdd-tools.md#tessl) suffers with regeneration.
+
+### How the frameworks handle it
+
+Validation is where **frameworks diverge most** — and where they fail most:
 
 - **Explicit and separate validation** (approach A): verification is its own event with weight in the process. The most rigorous option, appropriate when there are strong invariants, public APIs, or code crossing team boundaries.
 - **Validation embedded in each task** (approach B, [Kiro](07-native-sdd-tools.md#kiro)): each task brings its tests and self-validates on completion. More agile, but without a final verification you lose the global view — each task passing its tests doesn't guarantee the whole fulfills the spec.
 - **Aspirational validation** ([Spec-kit](07-native-sdd-tools.md#spec-kit-github)): aspires to spec-anchored but in practice has no automatic mechanism comparing spec against code. It's spec-first in disguise.
-- **Validation by regeneration** ([Tessl](07-native-sdd-tools.md#tessl)): if you regenerate code from the spec and get the same result, it "validates". But LLM non-determinism conflicts directly with this promise.
-- **Validation delegated to a role** ([BMAD](07-native-sdd-tools.md#bmad)): a specialized QA agent verifies. The specialization helps with focus, but coordination failures between agents are subtle.
-- **Integration validation** (orchestrated model): when multiple sub-agents implement parts of the spec in parallel, an additional validation level appears — not just "does each part fulfill its slice of spec?" but "do the parts integrate correctly?". It's the difference between unit tests and integration tests, applied at the spec level.
+- **Validation by regeneration** ([Tessl](07-native-sdd-tools.md#tessl)): if you regenerate code from the spec and get the same result, it "validates". But LLM non-determinism conflicts directly with this promise — it's pure stochastic validation with no deterministic foundation.
+- **Validation delegated to a role** ([BMAD](07-native-sdd-tools.md#bmad)): a specialized QA agent verifies. The specialization helps with focus, but it's still stochastic validating stochastic unless the QA agent runs deterministic tests.
 
 !!! warning "Phase 3 is what separates SDD from vibe coding with documentation"
 
-    If Phase 3 doesn't exist or is reduced to "trust that the tests pass", you're not doing SDD — you're doing spec-first with good intentions. Verifying that the code fulfills the spec **as a whole** (not just task by task) is the mechanism that closes the cycle. Without it, the spec ages from the moment it's written.
+    If Phase 3 doesn't exist or is reduced to "trust that the tests pass", you're not doing SDD — you're doing spec-first with good intentions. Verifying that the code fulfills the spec **as a whole** (not just task by task), at **both levels** (inner and outer loop), and with a **deterministic foundation** (not just stochastic) is the mechanism that closes the cycle. Without it, the spec ages from the moment it's written.
 
     This is exactly the gap [chapter 7 identifies as a common problem](07-native-sdd-tools.md#what-none-of-these-tools-solve) across native tools, and where the architect layers from [chapter 8](08-architect-layers.md) have positioned themselves.
 
