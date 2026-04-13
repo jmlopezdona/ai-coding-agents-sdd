@@ -103,7 +103,7 @@ BMAD es el caso más distinto del cuarteto, y por eso lo dejo para el final. En 
 
 ## Traycer
 
-[Traycer](https://traycer.ai/) se diferencia de las cuatro anteriores en un punto clave: no define su propio workflow de documentos ni te pide que abandones tu agente. Es una **plataforma donde usas tu AI tool habitual** (Claude Code, Cursor y otros CLIs) pero con tres capas añadidas alrededor: elicitación antes de codificar, planificación explícita, y verificación post-código.
+[Traycer](https://traycer.ai/) se diferencia de las cuatro anteriores en que no impone plantillas fijas de documentos — ofrece tipos de spec (PRD, Tech Doc, Design Spec) y estructura customizable, pero no dicta campos obligatorios — y te permite seguir usando tu agente habitual dentro de su plataforma. Es una **plataforma donde usas tu AI tool habitual** (Claude Code, Cursor y otros CLIs) pero con un workflow de tres fases alrededor: elicitación antes de codificar, planificación explícita, y verificación post-código.
 
 **Lo que hace bien:**
 
