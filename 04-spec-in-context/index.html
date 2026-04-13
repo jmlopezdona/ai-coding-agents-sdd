@@ -395,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+        <a href="../08-patterns-of-application/" class="md-tabs__link">
           
   
   
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../10-honest-critique/" class="md-tabs__link">
+        <a href="../09-honest-critique/" class="md-tabs__link">
           
   
   
@@ -439,7 +439,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../12-anti-patterns/" class="md-tabs__link">
+        <a href="../11-anti-patterns/" class="md-tabs__link">
           
   
   
@@ -461,7 +461,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../13-from-sdd-to-harness/" class="md-tabs__link">
+        <a href="../12-from-sdd-to-harness/" class="md-tabs__link">
           
   
   
@@ -1401,14 +1401,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+      <a href="../08-patterns-of-application/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patterns of application
+    8. Patterns of application
   
 
     
@@ -1494,14 +1494,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-honest-critique/" class="md-nav__link">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. The honest critique
+    9. The honest critique
   
 
     
@@ -1522,14 +1522,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering as alternative
+    10. Context engineering as alternative
   
 
     
@@ -1613,14 +1613,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-anti-patterns/" class="md-nav__link">
+      <a href="../11-anti-patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Anti-patterns
+    11. Anti-patterns
   
 
     
@@ -1704,14 +1704,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../13-from-sdd-to-harness/" class="md-nav__link">
+      <a href="../12-from-sdd-to-harness/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. From SDD to the harness
+    12. From SDD to the harness
   
 
     
@@ -1983,7 +1983,7 @@
 <p>So far we've talked about a spec's anatomy as if it were a single thing. It isn't. <strong>The appropriate level of detail depends on which level of the chapter 2 spectrum you're operating at</strong>, and writing a spec at the wrong level of detail for your spectrum level is one of the most common — and most expensive — ways to suffer bad SDD.</p>
 <h3 id="spec-first-light-intentional-non-exhaustive-detail">Spec-first → light, intentional, non-exhaustive detail<a class="headerlink" href="#spec-first-light-intentional-non-exhaustive-detail" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>In spec-first the spec is read once, when the feature kicks off, and from then on the code drifts freely. Its only function is to <strong>align team and agent at the start</strong>. No one is going to read it again, so every extra line you write is work no one will ever recover.</p>
-<p>The right amount of detail: objective, non-goals, acceptance criteria, the critical whys, and little else. If your spec-first runs longer than a screen, it's almost always because you're writing <em>aspirational</em> spec-anchored (<a href="../12-anti-patterns/#4-theater-spec-with-fake-anchoring">anti-pattern #4</a> in chapter 12) or because you've fallen into pseudocode (<a href="../12-anti-patterns/#12-generated-spec-thats-pseudocode-in-disguise">anti-pattern #12</a>). The optimal spec-first is the minimum viable to start with clear intent.</p>
+<p>The right amount of detail: objective, non-goals, acceptance criteria, the critical whys, and little else. If your spec-first runs longer than a screen, it's almost always because you're writing <em>aspirational</em> spec-anchored (<a href="../11-anti-patterns/#4-theater-spec-with-fake-anchoring">anti-pattern #4</a> in chapter 12) or because you've fallen into pseudocode (<a href="../11-anti-patterns/#12-generated-spec-thats-pseudocode-in-disguise">anti-pattern #12</a>). The optimal spec-first is the minimum viable to start with clear intent.</p>
 <h3 id="spec-anchored-medium-detail-bounded-by-what-the-anchoring-can-verify">Spec-anchored → medium detail, bounded by what the anchoring can verify<a class="headerlink" href="#spec-anchored-medium-detail-bounded-by-what-the-anchoring-can-verify" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>The logic shifts here. The spec <em>is</em> going to be read again — by validators, by tests, by recurring agents that detect drift. Detail is no longer optional: it has to be <strong>enough for the anchoring mechanism to compare against</strong>.</p>
 <p>But there's a counterintuitive upper bound: <strong>detail should not go beyond what your anchoring knows how to verify</strong>. If your validator checks API contracts and your spec describes UI rules, the UI part isn't anchored — it's spec-first disguised as spec-anchored. And because that piece isn't verified, it drifts freely.</p>
@@ -1998,16 +1998,16 @@
 <p><strong>The right level of detail for a spec is the one your validation mechanism — human, deterministic, or generative — knows how to consume. More than that is waste; less than that is blindness.</strong></p>
 </blockquote>
 <p>In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.</p>
-<p>Almost every pathology we'll see in chapter 12 comes from <strong>misaligning these three things</strong>: writing spec-anchored without anchoring (<a href="../12-anti-patterns/#4-theater-spec-with-fake-anchoring">#4</a>), writing spec-as-source without a generator (<a href="../12-anti-patterns/#9-promoting-prematurely-to-spec-as-source">#9</a> + <a href="../12-anti-patterns/#12-generated-spec-thats-pseudocode-in-disguise">#12</a>), or writing spec-first with spec-as-source-level detail (<a href="../12-anti-patterns/#2-big-spec-up-front">#2</a>). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.</p>
+<p>Almost every pathology we'll see in chapter 11 comes from <strong>misaligning these three things</strong>: writing spec-anchored without anchoring (<a href="../11-anti-patterns/#4-theater-spec-with-fake-anchoring">#4</a>), writing spec-as-source without a generator (<a href="../11-anti-patterns/#9-promoting-prematurely-to-spec-as-source">#9</a> + <a href="../11-anti-patterns/#12-generated-spec-thats-pseudocode-in-disguise">#12</a>), or writing spec-first with spec-as-source-level detail (<a href="../11-anti-patterns/#2-big-spec-up-front">#2</a>). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.</p>
 <h2 id="the-spec-and-its-external-sources-consume-produce-modify">The spec and its external sources: consume, produce, modify<a class="headerlink" href="#the-spec-and-its-external-sources-consume-produce-modify" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Every spec relates to artifacts that already exist — product documents, architectural decisions, code components. The taxonomy is always the same: <strong>do you consume it, produce it, or modify it?</strong> Understanding which relationship you have with each external artifact determines what goes in the spec, how much detail you include, and where it falls within the six blocks.</p>
 <h3 id="three-relationships-three-rules">Three relationships, three rules<a class="headerlink" href="#three-relationships-three-rules" title="Enlace permanente a esta sección">&para;</a></h3>
 <p><strong>1. Consumed (it exists; the spec uses it without modifying it).</strong> Applies to both code components (an existing service, a library) and documents (a user story, an ADR, an API contract). The rule is <strong>reference the contract or artifact, don't reimplement it</strong>. The spec documents <em>how</em> this feature uses it, not what the artifact does on its own — that lives in its own source of truth.</p>
 <p>An important nuance: <strong>cite the specific invariant this spec depends on, not the entire document</strong>. <em>"This spec respects ADR-007 (single Postgres instance) and ADR-012 (no synchronous calls between services)"</em> is useful. <em>"Related: ADR-007"</em> is noise.</p>
-<p><strong>2. Produced (it doesn't exist; the spec creates it).</strong> The typical case for a new feature: <em>"this spec creates a new endpoint / a new service / a new module"</em>. The trap: because it doesn't exist yet, you feel you have to "define it" in the spec, and you almost always end up describing it with classes, methods, signatures and payloads. That's exactly <a href="../12-anti-patterns/#12-generated-spec-thats-pseudocode-in-disguise">anti-pattern #12</a> (pseudocode dressed up as spec).</p>
+<p><strong>2. Produced (it doesn't exist; the spec creates it).</strong> The typical case for a new feature: <em>"this spec creates a new endpoint / a new service / a new module"</em>. The trap: because it doesn't exist yet, you feel you have to "define it" in the spec, and you almost always end up describing it with classes, methods, signatures and payloads. That's exactly <a href="../11-anti-patterns/#12-generated-spec-thats-pseudocode-in-disguise">anti-pattern #12</a> (pseudocode dressed up as spec).</p>
 <p>The right form: the spec describes the <strong>observable contract</strong> the new artifact must offer, not its internal structure. <em>"There must be a capability to accept authenticated avatar uploads (JPEG/PNG, ≤10 MB) and return a retrievable URL"</em> is observable contract. <em>"Create <code>AvatarUploadService</code> with method <code>upload(file, user_id) -&gt; AvatarMetadata</code>"</em> is pseudocode.</p>
 <p><strong>When a prior design document already exists</strong> (a tech design, an interface document, an API contract designed before implementation), the component at the code level is <em>produced</em>, but at the design level it's <em>consumed</em>. In that case, the spec references the design document and describes only the implications for this feature — exactly as with any consumed artifact. The "define the observable contract" rule applies only when no prior design already does so.</p>
-<p>A conceptually important nuance: a spec that produces a new artifact is <strong>the transient source of truth that hands off</strong>. Once the artifact exists, <strong>its own documentation</strong> becomes the operational source, and the spec becomes the <em>"why it was built this way"</em> — historical intent, not living contract. Confusing the two roles leads to the silent fusion of <a href="../12-anti-patterns/#13-fusing-user-story-and-spec-into-a-single-file">anti-pattern #13</a>.</p>
+<p>A conceptually important nuance: a spec that produces a new artifact is <strong>the transient source of truth that hands off</strong>. Once the artifact exists, <strong>its own documentation</strong> becomes the operational source, and the spec becomes the <em>"why it was built this way"</em> — historical intent, not living contract. Confusing the two roles leads to the silent fusion of <a href="../11-anti-patterns/#13-fusing-user-story-and-spec-into-a-single-file">anti-pattern #13</a>.</p>
 <p>A concrete example of this handoff: APIs. When an API is yet to be implemented, the design document (a draft contract, a tech design) is the transient source and the spec references it. But once implemented, if the tech stack generates documentation from code (OpenAPI/Swagger generated from annotations, for example), that generated documentation becomes the <strong>living source</strong> — it reflects what the code actually does. From that point on, the spec and any future references should point to the generated artifact, not to the original design document, which may have gone stale without anyone noticing.</p>
 <p><strong>3. Modified (it exists; the spec adds, changes or removes capabilities).</strong> The rule is <strong>describe the observable delta, not the full state</strong>. The spec doesn't have to re-document how <code>User</code> works; it has to say <em>"add the <code>avatar_url</code> field (optional). Updated when an avatar is uploaded; cleared when deleted. No other model behavior changes."</em></p>
 <p>The <strong>"no other behavior changes"</strong> part is what saves the spec from inflating. The delta is the spec; the rest lives in its own documentation.</p>
@@ -2029,7 +2029,7 @@
 </li>
 </ul>
 <p>A concrete risk in both cases: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment. The trace serves a dual purpose: <strong>checkpoint at the time of change</strong> and <strong>audit material</strong> for a doc-gathering agent that scans for discrepancies on a recurring basis.</p>
-<p>The rule: <strong>the spec always contains its own criteria, derived at the level of precision validation needs. The upstream document is cited as the source of the why, not as the container of the what.</strong> The anti-pattern to avoid — <em>fusing user story and spec into a hybrid</em> — we develop as <a href="../12-anti-patterns/#13-fusing-user-story-and-spec-into-a-single-file">anti-pattern #13</a> in chapter 12.</p>
+<p>The rule: <strong>the spec always contains its own criteria, derived at the level of precision validation needs. The upstream document is cited as the source of the why, not as the container of the what.</strong> The anti-pattern to avoid — <em>fusing user story and spec into a hybrid</em> — we develop as <a href="../11-anti-patterns/#13-fusing-user-story-and-spec-into-a-single-file">anti-pattern #13</a> in chapter 11.</p>
 <div class="admonition tip">
 <p class="admonition-title">Where the ecosystem is heading</p>
 <p>Using assistants and agents to elaborate the functional requirements themselves (features, user stories, acceptance criteria) makes it possible to reach higher-rigor upstream more efficiently — with edge cases covered, business rules made explicit, and verifiable criteria from the start. That reduces the gap the spec has to bridge and leaves less room for interpretation, whether by the implementing agent or the human who would do the same without one. But human review and validation remain necessary to avoid the over-specification chapter 3 warns about: an agent generating requirements tends toward the same apparent-coverage bias as when it generates specs.</p>
@@ -2059,9 +2059,9 @@
 <h3 id="size-heuristic-when-the-spec-needs-splitting">Size heuristic: when the spec needs splitting<a class="headerlink" href="#size-heuristic-when-the-spec-needs-splitting" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>If while writing constraints and criteria you discover the spec produces or modifies more than <strong>3-4 artifacts</strong>, you probably have one of three problems:</p>
 <ol>
-<li>A feature too big that should be split into multiple specs (chapter 9 modulation).</li>
+<li>A feature too big that should be split into multiple specs (chapter 8 modulation).</li>
 <li>An architectural change disguised as a feature, which deserves its own ADR.</li>
-<li>A refactor camouflaged as a feature (also chapter 9 modulation): what you're changing is the <em>shape</em> of the system, not adding business capability.</li>
+<li>A refactor camouflaged as a feature (also chapter 8 modulation): what you're changing is the <em>shape</em> of the system, not adding business capability.</li>
 </ol>
 <h3 id="summary-table-by-relationship-type">Summary table by relationship type<a class="headerlink" href="#summary-table-by-relationship-type" title="Enlace permanente a esta sección">&para;</a></h3>
 <table>
@@ -2118,7 +2118,7 @@
 </tr>
 </tbody>
 </table>
-<p>And an anti-pattern that appears when references accumulate without discipline: <strong>reference soup</strong> — a spec drowned by its own citations, where the agent and the human don't know which are load-bearing and end up ignoring them all. We develop it as <a href="../12-anti-patterns/#14-reference-soup">anti-pattern #14</a> in chapter 12. The preventive rule: <strong>reference only what the agent or the human needs for this task, and annotate the why of each reference</strong>.</p>
+<p>And an anti-pattern that appears when references accumulate without discipline: <strong>reference soup</strong> — a spec drowned by its own citations, where the agent and the human don't know which are load-bearing and end up ignoring them all. We develop it as <a href="../11-anti-patterns/#14-reference-soup">anti-pattern #14</a> in chapter 11. The preventive rule: <strong>reference only what the agent or the human needs for this task, and annotate the why of each reference</strong>.</p>
 <h2 id="in-summary-what-distinguishes-a-good-spec-from-a-mediocre-one">In summary: what distinguishes a good spec from a mediocre one<a class="headerlink" href="#in-summary-what-distinguishes-a-good-spec-from-a-mediocre-one" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>If you have to remember three things from these two sections, let them be these:</p>
 <ol>

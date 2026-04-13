@@ -395,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+        <a href="../08-patterns-of-application/" class="md-tabs__link">
           
   
   
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../10-honest-critique/" class="md-tabs__link">
+        <a href="../09-honest-critique/" class="md-tabs__link">
           
   
   
@@ -439,7 +439,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../12-anti-patterns/" class="md-tabs__link">
+        <a href="../11-anti-patterns/" class="md-tabs__link">
           
   
   
@@ -461,7 +461,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../13-from-sdd-to-harness/" class="md-tabs__link">
+        <a href="../12-from-sdd-to-harness/" class="md-tabs__link">
           
   
   
@@ -1401,14 +1401,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+      <a href="../08-patterns-of-application/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patterns of application
+    8. Patterns of application
   
 
     
@@ -1494,14 +1494,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-honest-critique/" class="md-nav__link">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. The honest critique
+    9. The honest critique
   
 
     
@@ -1522,14 +1522,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering as alternative
+    10. Context engineering as alternative
   
 
     
@@ -1613,14 +1613,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-anti-patterns/" class="md-nav__link">
+      <a href="../11-anti-patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Anti-patterns
+    11. Anti-patterns
   
 
     
@@ -1704,14 +1704,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../13-from-sdd-to-harness/" class="md-nav__link">
+      <a href="../12-from-sdd-to-harness/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. From SDD to the harness
+    12. From SDD to the harness
   
 
     
@@ -2111,7 +2111,7 @@
 <p>A good spec operates at a <strong>different abstraction level</strong> from the code. If it mentions classes and methods, it's no longer a spec: it's an implementation sketch. The spec's question isn't "which class calls which method?", it's "what observable guarantees must this satisfy, under what constraints, and why?". When the agent drops to the first level, the spec has lost its reason for existing, because it stops being <strong>comparable against the code from a different vantage point</strong>. If the spec says the same thing as the code but in markdown, it's just noise.</p>
 <h3 id="the-two-serious-consequences">The two serious consequences<a class="headerlink" href="#the-two-serious-consequences" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>When you end up with specs like this — and, if you leave the agent in its default mode, you will — you pay two costs that reinforce each other.</p>
-<p><strong>You implement twice.</strong> You've already paid the cost of thinking through the implementation at the level of classes and methods in the spec, and you're going to pay the same cost again when you code. Worse: anything you discover while implementing (and implementing always reveals something) forces you to go back and edit the spec, or accept drift on day one. You're at the worst point on the chapter 10 curve: maintenance tax from day one, before you've written a single line of code.</p>
+<p><strong>You implement twice.</strong> You've already paid the cost of thinking through the implementation at the level of classes and methods in the spec, and you're going to pay the same cost again when you code. Worse: anything you discover while implementing (and implementing always reveals something) forces you to go back and edit the spec, or accept drift on day one. You're at the worst point on the chapter 9 curve: maintenance tax from day one, before you've written a single line of code.</p>
 <p><strong>Human review becomes as expensive as code review.</strong> This is exactly what <a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Fowler reports about Spec-kit</a> in chapter 7 — that the generated files were <em>heavier to review than the code itself</em>. And it's worse than reviewing code directly, because at least code runs and tests verify it; pseudocode in markdown has no safety net. You're reviewing something at code-level detail but <strong>without code's guarantees</strong>. The tired reviewer skims it — and the "spec" passes the filter as if it had been reviewed.</p>
 <p>The combination of the two is poisonous: you double the work <em>and</em> review it worse. It's almost always worse than not having written a spec at all.</p>
 <h3 id="why-it-isnt-just-a-template-problem">Why it isn't just a template problem<a class="headerlink" href="#why-it-isnt-just-a-template-problem" title="Enlace permanente a esta sección">&para;</a></h3>
@@ -2122,10 +2122,10 @@
 <p>This doesn't mean agent-generated specs are useless. They're useful, but in a narrower role than most people imagine:</p>
 <ul>
 <li><strong>The agent can start well</strong>: the <strong>objective</strong> block, the <strong>verifiable acceptance criteria</strong> (carefully), a first list of <strong>candidate non-goals</strong> that the human then refines, and a proposal for <strong>boundaries</strong> based on patterns it already sees in the repo.</li>
-<li><strong>The human has to put in, no exceptions</strong>: the <strong>whys</strong>, the <strong>real non-goals</strong> (especially political or scope ones that aren't in any input), the team's <strong>tacit technical constraints</strong>, and the decision of <em>how much</em> spec the task deserves (what chapter 9 will call <em>modulation</em>: matching the weight of the spec to the actual complexity and risk of the feature). And, above all, the human has to <strong>delete</strong> anything the agent injected as pseudocode: classes, methods, signatures, payloads. If after deleting all that the spec is empty, you didn't need a spec; you needed well-written code (chapter 11, <em>context engineering</em>).</li>
+<li><strong>The human has to put in, no exceptions</strong>: the <strong>whys</strong>, the <strong>real non-goals</strong> (especially political or scope ones that aren't in any input), the team's <strong>tacit technical constraints</strong>, and the decision of <em>how much</em> spec the task deserves (what chapter 8 will call <em>modulation</em>: matching the weight of the spec to the actual complexity and risk of the feature). And, above all, the human has to <strong>delete</strong> anything the agent injected as pseudocode: classes, methods, signatures, payloads. If after deleting all that the spec is empty, you didn't need a spec; you needed well-written code (chapter 10, <em>context engineering</em>).</li>
 </ul>
 <p>The most useful practical rule: <strong>if your generated spec mentions a function signature or a class name, delete it</strong>. The spec talks about what guarantees the system meets, not how it's built.</p>
-<p>And the honest warning: using the agent as a draft generator <strong>doesn't reduce the total cost</strong> of doing SDD well. What it reduces is the cost of starting the first draft, which for many teams is the psychological barrier that weighs the most. The real cost — thinking intent precisely, capturing whys, keeping the spec alive — is still there, with no shortcut, and the agent doesn't pay it for you. If your SDD adoption depends on automatic generation eliminating that cost, what you'll have isn't SDD — you'll have <a href="../12-anti-patterns/#12-generated-spec-thats-pseudocode-in-disguise">anti-pattern #12</a> from chapter 12.</p>
+<p>And the honest warning: using the agent as a draft generator <strong>doesn't reduce the total cost</strong> of doing SDD well. What it reduces is the cost of starting the first draft, which for many teams is the psychological barrier that weighs the most. The real cost — thinking intent precisely, capturing whys, keeping the spec alive — is still there, with no shortcut, and the agent doesn't pay it for you. If your SDD adoption depends on automatic generation eliminating that cost, what you'll have isn't SDD — you'll have <a href="../11-anti-patterns/#12-generated-spec-thats-pseudocode-in-disguise">anti-pattern #12</a> from chapter 11.</p>
 <h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Up to here we've seen what to put inside a spec and the two most expensive traps when writing one: specs that are too large and specs generated by agents without supervision. But a spec's anatomy doesn't end with its blocks — <strong>the right level of detail depends on context</strong>: the spectrum level you're operating at, the technical components you touch, and the kind of validation you'll apply.</p>
 <p>In <strong><a href="../04-spec-in-context/">section 4</a></strong> we tackle exactly that: how to calibrate the spec so that detail is neither waste nor blindness.</p>

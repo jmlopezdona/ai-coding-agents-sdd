@@ -395,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+        <a href="../08-patterns-of-application/" class="md-tabs__link">
           
   
   
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../10-honest-critique/" class="md-tabs__link">
+        <a href="../09-honest-critique/" class="md-tabs__link">
           
   
   
@@ -439,7 +439,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../12-anti-patterns/" class="md-tabs__link">
+        <a href="../11-anti-patterns/" class="md-tabs__link">
           
   
   
@@ -461,7 +461,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../13-from-sdd-to-harness/" class="md-tabs__link">
+        <a href="../12-from-sdd-to-harness/" class="md-tabs__link">
           
   
   
@@ -1345,14 +1345,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+      <a href="../08-patterns-of-application/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patrones de aplicación
+    8. Patrones de aplicación
   
 
     
@@ -1438,14 +1438,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-honest-critique/" class="md-nav__link">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. La crítica honesta
+    9. La crítica honesta
   
 
     
@@ -1466,14 +1466,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering como alternativa
+    10. Context engineering como alternativa
   
 
     
@@ -1557,14 +1557,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-anti-patterns/" class="md-nav__link">
+      <a href="../11-anti-patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Anti-patrones
+    11. Anti-patrones
   
 
     
@@ -1648,14 +1648,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../13-from-sdd-to-harness/" class="md-nav__link">
+      <a href="../12-from-sdd-to-harness/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. Del SDD al harness
+    12. Del SDD al harness
   
 
     
@@ -1904,7 +1904,7 @@
 <p>Esta es la fase que añade Augment respecto a casi cualquier otra descripción del proceso SDD, y es brillante. Una vez que el código está en producción, <strong>las métricas, incidentes y aprendizajes operacionales también se reescriben en la spec</strong>. Si una asunción de la spec resulta ser falsa en producción ("creíamos que las imágenes serían de menos de 5 MB de media, en realidad son de 12"), eso vuelve a la spec como nota de hallazgo. Si un incidente revela un caso límite que la spec no contemplaba, ese caso límite se añade.</p>
 <p>La spec, en este modelo, es un <strong>documento que aprende</strong>. Empieza describiendo intención, atraviesa decisiones de implementación, y acaba conteniendo las cicatrices de lo que la realidad le ha enseñado al sistema.</p>
 <h2 id="por-que-esta-fase-4-importa-mas-de-lo-que-parece">Por qué esta fase 4 importa más de lo que parece<a class="headerlink" href="#por-que-esta-fase-4-importa-mas-de-lo-que-parece" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Una de las críticas más fuertes a SDD (capítulo 10, <a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a>) es que las specs <strong>pierden el contexto real</strong> porque solo capturan "lo que íbamos a hacer", no "lo que aprendimos al hacerlo". La fase 4 de las specs vivas es la respuesta directa a esa crítica. Si tu spec recoge production feedback, el contexto real <strong>no se pierde</strong> — se acumula.</p>
+<p>Una de las críticas más fuertes a SDD (capítulo 9, <a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a>) es que las specs <strong>pierden el contexto real</strong> porque solo capturan "lo que íbamos a hacer", no "lo que aprendimos al hacerlo". La fase 4 de las specs vivas es la respuesta directa a esa crítica. Si tu spec recoge production feedback, el contexto real <strong>no se pierde</strong> — se acumula.</p>
 <p>Es la diferencia entre un documento de diseño y un manual de operación. Y para un agente que llega seis meses después a hacer un cambio, leer la spec con production feedback es radicalmente más útil que leer la spec original.</p>
 <h2 id="mecanismos-para-que-el-bucle-no-muera">Mecanismos para que el bucle no muera<a class="headerlink" href="#mecanismos-para-que-el-bucle-no-muera" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>La razón por la que las specs estáticas se imponen no es ideológica — es entrópica. Mantener una spec viva requiere disciplina, y la disciplina sin mecanismo se evapora. Aquí van los mecanismos que de verdad funcionan:</p>
@@ -1914,7 +1914,7 @@
 <li><strong>Tratar cada decisión de implementación como un cambio potencial a la spec</strong>. Ante cada commit no trivial, la pregunta es: ¿esto cambia algo de lo que la spec asume? Si la respuesta es sí, el commit incluye la actualización correspondiente en la spec.</li>
 <li><strong>Hacer que la spec sea el primer lugar al que mira el agente</strong>. Si tu workflow lleva al agente al código antes de la spec, el agente nunca aprenderá a actualizar la spec. Si la spec es siempre el primer documento que se carga, el bucle se cierra.</li>
 </ul>
-<p>Ninguno de estos mecanismos es gratis, y ahí está el coste real del SDD. El capítulo 10 desarrolla este coste con honestidad — el famoso <em>maintenance tax</em> — y por qué no es despreciable.</p>
+<p>Ninguno de estos mecanismos es gratis, y ahí está el coste real del SDD. El capítulo 9 desarrolla este coste con honestidad — el famoso <em>maintenance tax</em> — y por qué no es despreciable.</p>
 <h2 id="lo-que-distingue-a-una-spec-viva-sana-de-una-muerta">Lo que distingue a una spec viva sana de una muerta<a class="headerlink" href="#lo-que-distingue-a-una-spec-viva-sana-de-una-muerta" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Test rápido. Mira la última modificación significativa de tu spec. Compárala con la última modificación del código que la spec describe. Si la diferencia es de horas o días, tu spec está viva. Si es de semanas o meses, tu spec está muerta y nadie te lo ha dicho todavía.</p>
 <p>Otro test: cuando un dev nuevo entra al equipo, ¿le mandas a leer las specs o le mandas a leer el código? Si le mandas al código y le adviertes "las specs están desactualizadas, no te fíes", la respuesta es clara — has aceptado oficialmente que las specs ya no son útiles. Y a partir de ese momento son peor que inútiles, porque generan ruido sin señal.</p>
@@ -1926,7 +1926,7 @@
 </ul>
 <p>La distinción no siempre es nítida, y es ahí donde el juicio del ingeniero importa. Pero la regla práctica es: <strong>si dentro de seis meses alguien leyendo la spec se sorprendería al ver lo que el código hace, la spec necesita ese update ahora</strong>. Si no, no.</p>
 <h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Hasta aquí hemos hablado del proceso. En el <strong>capítulo 7</strong> vamos a aterrizar en herramientas concretas: las cuatro herramientas SDD nativas que están definiendo el estado del arte hoy — <strong>Kiro, Spec-kit, Tessl y BMAD</strong> — con qué hacen bien, qué hacen mal y para qué tipo de equipo encaja cada una. Y en el capítulo 8, una categoría distinta: las herramientas que se sitúan <strong>encima</strong> de tu agente actual, como Traycer.</p>
+<p>Hasta aquí hemos hablado del proceso. En el <strong>capítulo 7</strong> vamos a aterrizar en herramientas concretas: las cuatro herramientas SDD nativas que están definiendo el estado del arte hoy — <strong>Kiro, Spec-kit, Tessl y BMAD</strong> — con qué hacen bien, qué hacen mal y para qué tipo de equipo encaja cada una. Traycer, que se sitúa encima de tu agente actual, también está incluido.</p>
 
 
 

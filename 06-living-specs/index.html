@@ -395,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+        <a href="../08-patterns-of-application/" class="md-tabs__link">
           
   
   
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../10-honest-critique/" class="md-tabs__link">
+        <a href="../09-honest-critique/" class="md-tabs__link">
           
   
   
@@ -439,7 +439,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../12-anti-patterns/" class="md-tabs__link">
+        <a href="../11-anti-patterns/" class="md-tabs__link">
           
   
   
@@ -461,7 +461,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../13-from-sdd-to-harness/" class="md-tabs__link">
+        <a href="../12-from-sdd-to-harness/" class="md-tabs__link">
           
   
   
@@ -1345,14 +1345,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+      <a href="../08-patterns-of-application/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patterns of application
+    8. Patterns of application
   
 
     
@@ -1438,14 +1438,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-honest-critique/" class="md-nav__link">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. The honest critique
+    9. The honest critique
   
 
     
@@ -1466,14 +1466,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering as alternative
+    10. Context engineering as alternative
   
 
     
@@ -1557,14 +1557,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-anti-patterns/" class="md-nav__link">
+      <a href="../11-anti-patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Anti-patterns
+    11. Anti-patterns
   
 
     
@@ -1648,14 +1648,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../13-from-sdd-to-harness/" class="md-nav__link">
+      <a href="../12-from-sdd-to-harness/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. From SDD to the harness
+    12. From SDD to the harness
   
 
     
@@ -1904,7 +1904,7 @@
 <p>This is the phase Augment adds compared to almost any other description of the SDD process, and it's brilliant. Once the code is in production, <strong>metrics, incidents and operational learnings also get written back into the spec</strong>. If a spec assumption turns out to be false in production ("we thought images would average less than 5 MB, in reality they're 12"), that goes back to the spec as a finding. If an incident reveals an edge case the spec didn't contemplate, that case is added.</p>
 <p>The spec, in this model, is a <strong>document that learns</strong>. It starts describing intent, passes through implementation decisions, and ends containing the scars of what reality has taught the system.</p>
 <h2 id="why-phase-4-matters-more-than-it-seems">Why phase 4 matters more than it seems<a class="headerlink" href="#why-phase-4-matters-more-than-it-seems" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>One of the strongest critiques of SDD (chapter 10, <a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a>) is that specs <strong>lose real context</strong> because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context <strong>isn't lost</strong> — it accumulates.</p>
+<p>One of the strongest critiques of SDD (chapter 9, <a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a>) is that specs <strong>lose real context</strong> because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context <strong>isn't lost</strong> — it accumulates.</p>
 <p>It's the difference between a design doc and an operations manual. And for an agent arriving six months later to make a change, reading the spec with production feedback is radically more useful than reading the original spec.</p>
 <h2 id="mechanisms-so-the-loop-doesnt-die">Mechanisms so the loop doesn't die<a class="headerlink" href="#mechanisms-so-the-loop-doesnt-die" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>The reason static specs win isn't ideological — it's entropic. Maintaining a living spec requires discipline, and discipline without mechanism evaporates. Here are the mechanisms that actually work:</p>
@@ -1914,7 +1914,7 @@
 <li><strong>Treat each implementation decision as a potential spec change</strong>. For every non-trivial commit, the question is: does this change anything the spec assumes? If the answer is yes, the commit includes the corresponding spec update.</li>
 <li><strong>Make the spec the first place the agent looks</strong>. If your workflow takes the agent to the code before the spec, the agent will never learn to update the spec. If the spec is always the first document loaded, the loop closes.</li>
 </ul>
-<p>None of these mechanisms is free, and that's where SDD's real cost lives. Chapter 10 develops this cost honestly — the famous <em>maintenance tax</em> — and why it's not negligible.</p>
+<p>None of these mechanisms is free, and that's where SDD's real cost lives. Chapter 9 develops this cost honestly — the famous <em>maintenance tax</em> — and why it's not negligible.</p>
 <h2 id="what-distinguishes-a-healthy-living-spec-from-a-dead-one">What distinguishes a healthy living spec from a dead one<a class="headerlink" href="#what-distinguishes-a-healthy-living-spec-from-a-dead-one" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Quick test. Look at the last significant modification of your spec. Compare it to the last modification of the code the spec describes. If the difference is hours or days, your spec is alive. If it's weeks or months, your spec is dead and nobody has told you yet.</p>
 <p>Another test: when a new dev joins the team, do you send them to read the specs or to read the code? If you send them to the code and warn "the specs are out of date, don't trust them", the answer is clear — you've officially accepted the specs are no longer useful. And from that moment on they're worse than useless, because they generate noise without signal.</p>
@@ -1926,7 +1926,7 @@
 </ul>
 <p>The distinction isn't always sharp, and that's where the engineer's judgment matters. But the practical rule is: <strong>if six months from now someone reading the spec would be surprised at what the code does, the spec needs that update now</strong>. If not, no.</p>
 <h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Up to here we've talked about process. In <strong>Chapter 7</strong> we land on concrete tools: the four native SDD tools defining the state of the art today — <strong>Kiro, Spec-kit, Tessl and BMAD</strong> — what they do well, what they do badly, and what kind of team each fits. And in chapter 8, a different category: tools that sit <strong>on top</strong> of your current agent, like Traycer.</p>
+<p>Up to here we've talked about process. In <strong>Chapter 7</strong> we land on concrete tools: the four native SDD tools defining the state of the art today — <strong>Kiro, Spec-kit, Tessl and BMAD</strong> — what they do well, what they do badly, and what kind of team each fits. Traycer, which sits on top of your current agent, is also included.</p>
 
 
 

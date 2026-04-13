@@ -12,17 +12,19 @@
         <meta name="author" content="jmlopezdona">
       
       
-        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/13-from-sdd-to-harness/">
+        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/08-patterns-of-application/">
       
       
-        <link rel="prev" href="../12-anti-patterns/">
+        <link rel="prev" href="../07-native-sdd-tools/">
       
+      
+        <link rel="next" href="../09-honest-critique/">
       
       
         
           <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="../es/13-from-sdd-to-harness/" hreflang="es">
+          <link rel="alternate" href="../es/08-patterns-of-application/" hreflang="es">
         
       
       
@@ -31,7 +33,7 @@
     
     
       
-        <title>13. From SDD to the harness - Spec-Driven Development</title>
+        <title>8. Patterns of application - Spec-Driven Development</title>
       
     
     
@@ -82,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#13-from-sdd-to-the-harness-how-the-pieces-fit" class="md-skip">
+        <a href="#8-patterns-of-application-features-refactors-and-bug-fixes" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              13. From SDD to the harness
+              8. Patterns of application
             
           </span>
         </div>
@@ -169,7 +171,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../es/13-from-sdd-to-harness/" hreflang="es" class="md-select__link">
+            <a href="../es/08-patterns-of-application/" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
@@ -387,11 +389,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -413,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../10-honest-critique/" class="md-tabs__link">
+        <a href="../09-honest-critique/" class="md-tabs__link">
           
   
   
@@ -435,7 +439,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../12-anti-patterns/" class="md-tabs__link">
+        <a href="../11-anti-patterns/" class="md-tabs__link">
           
   
   
@@ -453,13 +457,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../12-from-sdd-to-harness/" class="md-tabs__link">
           
   
   
@@ -1094,8 +1096,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1105,19 +1109,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -1135,7 +1142,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1150,17 +1157,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Patterns of application
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patterns of application
+    8. Patterns of application
   
 
     
@@ -1169,6 +1203,209 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-1-new-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 1 — New feature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern 1 — New feature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-applied-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The applied cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-errors-of-this-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical errors of this pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-this-pattern-isnt-for-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When this pattern isn't for you
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-2-refactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2 — Refactor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern 2 — Refactor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-right-starting-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The right starting question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-applied-cycle_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The applied cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-dont-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you don't write
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-3-bug-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 3 — Bug fix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern 3 — Bug fix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-applied-cycle-minimum-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The applied cycle (minimum version)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-bug-fix-turns-into-pattern-1-or-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the bug fix turns into pattern 1 or 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-matrix-to-pick-the-right-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A matrix to pick the right pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-meta-pattern-read-size-before-choosing-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The meta-pattern: read size before choosing process
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-comes-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What comes next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1246,14 +1483,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-honest-critique/" class="md-nav__link">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. The honest critique
+    9. The honest critique
   
 
     
@@ -1274,14 +1511,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering as alternative
+    10. Context engineering as alternative
   
 
     
@@ -1365,14 +1602,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-anti-patterns/" class="md-nav__link">
+      <a href="../11-anti-patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Anti-patterns
+    11. Anti-patterns
   
 
     
@@ -1397,10 +1634,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1410,22 +1645,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -1443,7 +1675,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1458,44 +1690,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    13. From SDD to the harness
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../12-from-sdd-to-harness/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. From SDD to the harness
+    12. From SDD to the harness
   
 
     
@@ -1504,125 +1709,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-bridge-thesis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The bridge thesis
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coupling-point-1-specs-as-persistent-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coupling point 1 — Specs as persistent context
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coupling-point-2-sensors-that-validate-specs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coupling point 2 — Sensors that validate specs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coupling-point-3-hooks-that-keep-specs-alive" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coupling point 3 — Hooks that keep specs alive
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coupling-point-4-architect-layers-as-harness-prototype" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coupling point 4 — Architect layers as harness prototype
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coupling-point-5-anti-patterns-that-only-the-harness-solves" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coupling point 5 — Anti-patterns that only the harness solves
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-take-the-next-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When to take the next step
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-the-harness-will-teach-you-in-short-preview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What the harness will teach you (in short preview)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-goodbye-without-promises" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A goodbye without promises
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1662,10 +1748,160 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-bridge-thesis" class="md-nav__link">
+  <a href="#pattern-1-new-feature" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The bridge thesis
+        Pattern 1 — New feature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern 1 — New feature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-applied-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The applied cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-errors-of-this-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical errors of this pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-this-pattern-isnt-for-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When this pattern isn't for you
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-2-refactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 2 — Refactor
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern 2 — Refactor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-right-starting-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The right starting question
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-applied-cycle_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The applied cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-you-dont-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you don't write
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-3-bug-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern 3 — Bug fix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern 3 — Bug fix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-applied-cycle-minimum-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The applied cycle (minimum version)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-bug-fix-turns-into-pattern-1-or-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the bug fix turns into pattern 1 or 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-matrix-to-pick-the-right-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A matrix to pick the right pattern
       
     </span>
   </a>
@@ -1673,10 +1909,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#coupling-point-1-specs-as-persistent-context" class="md-nav__link">
+  <a href="#the-meta-pattern-read-size-before-choosing-process" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Coupling point 1 — Specs as persistent context
+        The meta-pattern: read size before choosing process
       
     </span>
   </a>
@@ -1684,76 +1920,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#coupling-point-2-sensors-that-validate-specs" class="md-nav__link">
+  <a href="#what-comes-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Coupling point 2 — Sensors that validate specs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coupling-point-3-hooks-that-keep-specs-alive" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coupling point 3 — Hooks that keep specs alive
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coupling-point-4-architect-layers-as-harness-prototype" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coupling point 4 — Architect layers as harness prototype
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coupling-point-5-anti-patterns-that-only-the-harness-solves" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coupling point 5 — Anti-patterns that only the harness solves
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-take-the-next-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When to take the next step
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-the-harness-will-teach-you-in-short-preview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What the harness will teach you (in short preview)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-goodbye-without-promises" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A goodbye without promises
+        What comes next
       
     </span>
   </a>
@@ -1777,7 +1947,7 @@
 
 
   
-    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/en/13-from-sdd-to-harness.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/en/08-patterns-of-application.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1785,65 +1955,117 @@
   
 
 
-<h1 id="13-from-sdd-to-the-harness-how-the-pieces-fit">13. From SDD to the harness: how the pieces fit<a class="headerlink" href="#13-from-sdd-to-the-harness-how-the-pieces-fit" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>If you've made it this far, you have SDD as a discipline: you know how to specify intent, maintain the bidirectional loop, modulate the process by task type, and you have judgment to not confuse it with bureaucracy. What's missing is understanding <strong>where this connects</strong> with the trilogy's next layer: the <strong>harness</strong>, the internal infrastructure system that surrounds the agent so the discipline scales to a whole team and to months at a time.</p>
-<p>This chapter is the bridge. It doesn't repeat the harness course content — that's a whole other repository — but it points precisely at the five exact points where SDD couples with harness, and why the combination produces something better than the two separately.</p>
-<h2 id="the-bridge-thesis">The bridge thesis<a class="headerlink" href="#the-bridge-thesis" title="Enlace permanente a esta sección">&para;</a></h2>
+<h1 id="8-patterns-of-application-features-refactors-and-bug-fixes">8. Patterns of application: features, refactors and bug fixes<a class="headerlink" href="#8-patterns-of-application-features-refactors-and-bug-fixes" title="Enlace permanente a esta sección">&para;</a></h1>
+<p>One of the easiest traps to fall into with SDD is <strong>applying the same process to everything</strong>. It's the exact trap <a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Fowler</a> points out in Kiro in chapter 7: treating a three-line bug fix as a multi-story feature. The process doesn't scale uniformly because problems aren't uniform. This chapter walks through the three most common work patterns — new feature, refactor and bug fix — and describes <strong>how to modulate the SDD cycle</strong> for each.</p>
+<p>The general rule to keep in front of you: <strong>the spec's weight should be proportional to the cost of the change if it goes wrong</strong>. A critical, broadly-scoped feature deserves a full spec. A trivial bug fix deserves, at most, a note.</p>
+<h2 id="pattern-1-new-feature">Pattern 1 — New feature<a class="headerlink" href="#pattern-1-new-feature" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>This is the case SDD was designed for and where it pays the most. There's intent to capture, constraints to write, acceptance criteria to enumerate, edge cases to dig out before touching code.</p>
+<h3 id="the-applied-cycle">The applied cycle<a class="headerlink" href="#the-applied-cycle" title="Enlace permanente a esta sección">&para;</a></h3>
+<ol>
+<li><strong>Specify.</strong> Full chapter 3 template: objective, no-goals, constraints, criteria, whys, boundaries. Write this <em>before</em> talking to the agent about code.</li>
+<li><strong>Clarify.</strong> Pass the spec to the agent and ask it to ask you questions. This phase is rarely skipped for free: the questions the agent asks you are exactly the ambiguities that would have broken the code later.</li>
+<li><strong>Plan.</strong> The agent proposes which files it touches, in what order, what tests it writes. You review. If the plan is wrong, you fix it <em>here</em>, not later.</li>
+<li><strong>Implement task by task.</strong> Each task is atomic with respect to the spec. Each task brings its tests.</li>
+<li><strong>Verify.</strong> Compare the original spec with the final code. Acceptance criteria become a checked checklist.</li>
+<li><strong>Bidirectional update.</strong> Any decision made during implementation that wasn't in the original spec gets promoted to the spec.</li>
+</ol>
+<h3 id="typical-errors-of-this-pattern">Typical errors of this pattern<a class="headerlink" href="#typical-errors-of-this-pattern" title="Enlace permanente a esta sección">&para;</a></h3>
+<ul>
+<li><strong>Skipping step 2</strong> and barreling ahead with the first spec you write. Elicitation looks like cost; it's actually savings.</li>
+<li><strong>Confusing the plan with the code</strong>. The plan is debatable and cheap; the code is expensive to revert. Argue in the plan, not in the diff.</li>
+<li><strong>Forgetting step 6</strong> and leaving the spec frozen in its initial version. This is the difference between spec-first and spec-anchored from chapter 2.</li>
+</ul>
+<h3 id="when-this-pattern-isnt-for-you">When this pattern <strong>isn't</strong> for you<a class="headerlink" href="#when-this-pattern-isnt-for-you" title="Enlace permanente a esta sección">&para;</a></h3>
+<ul>
+<li>Experimental features where the intent is exactly "see what comes out". If you don't have clear intent before starting, there's nothing to specify yet.</li>
+<li>Research spikes. The spec comes <em>after</em> the spike, as conclusion, not before.</li>
+</ul>
+<h2 id="pattern-2-refactor">Pattern 2 — Refactor<a class="headerlink" href="#pattern-2-refactor" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>The refactor is the pattern most teams confuse how to apply SDD to. The temptation is to treat it like a new feature — "let's specify how we want the module to look" — and that almost always leads to an inflated spec nobody respects. The refactor deserves a different process.</p>
+<h3 id="the-right-starting-question">The right starting question<a class="headerlink" href="#the-right-starting-question" title="Enlace permanente a esta sección">&para;</a></h3>
 <blockquote>
-<p>SDD tells you <strong>what</strong> to specify and how. The harness tells you <strong>where</strong> that specification lives, <strong>who</strong> reads it, <strong>when</strong> it gets validated, and <strong>how</strong> it stays alive without sustained human discipline.</p>
+<p><em>What external invariants must remain true after the refactor?</em></p>
 </blockquote>
-<p>SDD without harness is ceremony: it depends on every team member applying perfect discipline, and perfect discipline doesn't scale. Harness without SDD is purposeless infrastructure: you have sandboxes and sensors and loops, but the agent doesn't know what to build because intent was never captured. Both together form a system; both apart are loose pieces.</p>
-<h2 id="coupling-point-1-specs-as-persistent-context">Coupling point 1 — Specs as persistent context<a class="headerlink" href="#coupling-point-1-specs-as-persistent-context" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>The harness's first pillar, per the corresponding course, is <strong>context as system of record</strong>: the idea that everything the agent should know has to be materialized in the repo, not in Slack or in heads. SDD specs are <strong>a specialization of that principle</strong>.</p>
-<p>A well-written spec is persistent context with a specific shape: <em>intent + constraints + whys + verifiable criteria</em>. The harness contributes the general discipline ("context lives in the repo"); SDD contributes the concrete shape of one of the artifacts that lives in it.</p>
-<p>The operating consequence: when a team builds a harness, specs aren't just another folder — they're one of the central pieces of context. And when that same team applies SDD, the harness ensures specs reach the agent in the right form, at the right moment, with the right hooks.</p>
-<h2 id="coupling-point-2-sensors-that-validate-specs">Coupling point 2 — Sensors that validate specs<a class="headerlink" href="#coupling-point-2-sensors-that-validate-specs" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>The harness's second pillar is the duality <strong>guides and sensors</strong>: artifacts that orient the agent <em>before</em> acting (guides) and verifiers that detect when the agent has drifted <em>after</em> (sensors). The chapter 5 SDD lifecycle's phase 5 — verification — is exactly a kind of sensor.</p>
-<p>Without harness, that phase 5 is manual or, at best, an ad-hoc script someone runs. With harness, it becomes infrastructure: tests comparing code against spec, recurring agents detecting drift, linters validating that spec constraints are still respected.</p>
-<p>This is the technical way to close the chapter 6 bidirectional loop. Without harness, the loop depends on human discipline ("remember to update the spec"). With harness, the loop is automatic ("the sensor detected code and spec diverged and opened an issue to reconcile them").</p>
-<h2 id="coupling-point-3-hooks-that-keep-specs-alive">Coupling point 3 — Hooks that keep specs alive<a class="headerlink" href="#coupling-point-3-hooks-that-keep-specs-alive" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>The chapter 7 Kiro detail — the <strong>hooks that fire on file save</strong> — isn't a detail. It's the prefiguration of one of the central harness mechanisms: <strong>repo events that trigger agent actions</strong> (regenerate docs, update indexes, validate invariants, refresh the living-specs loop).</p>
-<p>When a Kiro-style tool has those hooks, it's implementing a micro-piece of harness inside its own product. When you build your full harness, you have hooks for any event, and the spec maintenance axes that require human discipline in pure SDD become machine-triggered in SDD + harness.</p>
-<p>The operating rule: <strong>anything that in pure SDD requires "remember to do X when Y happens", in SDD + harness should become an automatic hook</strong>. If something stays in "remember", it'll be forgotten.</p>
-<h2 id="coupling-point-4-architect-layers-as-harness-prototype">Coupling point 4 — Architect layers as harness prototype<a class="headerlink" href="#coupling-point-4-architect-layers-as-harness-prototype" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>The chapter 8 tools — Traycer and similar — are technically <strong>harness applied to SDD</strong>. What they do — intercepting inputs, planning, verifying outputs — is exactly the harness guides-and-sensors dynamic, applied to the concrete cycle of a session with an agent.</p>
-<p>If the full harness seems too much to start with, an architect layer over your agent is the miniature version of the idea: try what it feels like to have guides and sensors wrapping the agent, before committing to building your own harness. And when you're ready for the full harness, you'll discover Traycer's logic is a particular case of the general pattern — because it is.</p>
-<h2 id="coupling-point-5-anti-patterns-that-only-the-harness-solves">Coupling point 5 — Anti-patterns that only the harness solves<a class="headerlink" href="#coupling-point-5-anti-patterns-that-only-the-harness-solves" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Several <a href="../12-anti-patterns/">chapter 12 anti-patterns</a> are specifically hard to avoid without harness:</p>
+<p>This is the thesis question of SDD applied to refactors. Not "how does the code look inside" — that's the agent's call — but "what externally observable guarantees can't be broken". Those invariants are your spec. Everything else is implementation freedom.</p>
+<h3 id="the-applied-cycle_1">The applied cycle<a class="headerlink" href="#the-applied-cycle_1" title="Enlace permanente a esta sección">&para;</a></h3>
+<ol>
+<li><strong>Capture invariants.</strong> A short list of things that must remain true: the public API doesn't change, existing tests still pass, the error contract is preserved, performance doesn't degrade more than X%.</li>
+<li><strong>Characterize the current state.</strong> If existing tests don't cover the invariants well, write the missing tests <em>before</em> touching anything. A refactor without a test net is vibe coding in disguise.</li>
+<li><strong>Plan the refactor.</strong> Small steps, each revertible, no step breaks invariants while running.</li>
+<li><strong>Implement step by step, with green tests at each step.</strong></li>
+<li><strong>Verify against the invariants.</strong> Same tests, same APIs, same external observability.</li>
+</ol>
+<h3 id="what-you-dont-write">What you don't write<a class="headerlink" href="#what-you-dont-write" title="Enlace permanente a esta sección">&para;</a></h3>
 <ul>
-<li><strong>Spec-as-Theatre</strong> dies when there's an automatic sensor measuring adherence: if the spec isn't respected, the harness says so.</li>
-<li><strong>The eternal spec</strong> dies when there's a recurring agent detecting drift and opening automatic issues.</li>
-<li><strong>Trusting the spec more than the code</strong> becomes rare when there are automatic validators that on disagreement force you to investigate before accepting the merge.</li>
-<li><strong>The review burden</strong> gets reduced when hooks generate the repetitive markdowns automatically and human attention is freed for what contributes judgment.</li>
+<li>You don't write "new design" because new design is the output, not the input.</li>
+<li>You don't write behavior acceptance criteria because behavior <em>must not change</em>. The invariants are your criteria.</li>
+<li>You don't write no-goals like in a feature; in a refactor the principal no-goal is implicit ("introduce no functional changes") and you only spell out exceptions.</li>
 </ul>
-<p>In other words: <strong>a significant part of what kills bad SDD is exactly what the harness is designed to solve</strong>. The two courses aren't sequential by whim — they're sequential because the problems you discover doing the discipline well are the problems harness addresses.</p>
-<h2 id="when-to-take-the-next-step">When to take the next step<a class="headerlink" href="#when-to-take-the-next-step" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Not every team adopting SDD needs to jump to the harness immediately. There are specific signals you're ready for the transition:</p>
+<h3 id="typical-errors">Typical errors<a class="headerlink" href="#typical-errors" title="Enlace permanente a esta sección">&para;</a></h3>
 <ul>
-<li><strong>The team applies SDD with discipline but sustainability depends on individuals.</strong> If Alice goes on vacation for a week and specs go out of date, you need mechanism, not more discipline.</li>
-<li><strong>The chapter 6 bidirectional loop works when someone takes care of it and breaks when nobody looks.</strong> That's a sign it needs to go from human process to infrastructure.</li>
-<li><strong><a href="../12-anti-patterns/">Chapter 12 anti-patterns</a> reappear periodically</strong> even though the team knows them. Individual awareness doesn't scale; infrastructure does.</li>
-<li><strong>Chapter 7 tools fall short because they're single-dimension</strong> and your system needs multiple layers (sensors + hooks + sandboxes + observability). That's a full harness, not one more tool.</li>
+<li><strong>Doing the refactor and "while we're at it" fixing two bugs and adding a small improvement.</strong> No. A refactor that changes behavior is no longer a refactor — it's a feature, and gets specified as one.</li>
+<li><strong>Skipping step 2.</strong> If existing tests don't cover the invariants, refactoring is Russian roulette. Characterization is the most underestimated phase of a refactor.</li>
 </ul>
-<p>If you recognize two or more, the trilogy's next course is your natural next step.</p>
-<h2 id="what-the-harness-will-teach-you-in-short-preview">What the harness will teach you (in short preview)<a class="headerlink" href="#what-the-harness-will-teach-you-in-short-preview" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>To make the bridge concrete, here's a very condensed idea of what the harness course develops and how it connects to what you've learned here:</p>
-<ul>
-<li><strong>Guides and sensors as two pillars.</strong> Harness ch. 3 develops this duality. Specs are guides; validators and recurring agents are sensors.</li>
-<li><strong>The loop as primitive.</strong> Harness ch. 4 presents "iteration as primitive". This course's ch. 5 cycle is a particular case.</li>
-<li><strong>Isolated, reproducible environments.</strong> Harness ch. 5 talks about disposable sandboxes. Here you improve the reliability of SDD's implementation phase.</li>
-<li><strong>Context as system of record.</strong> Harness ch. 6 is where your specs fit as one of the central artifacts.</li>
-<li><strong>Architecture for agents.</strong> Harness ch. 7 teaches you to design the repo so the agent can navigate it. Specs only work when the agent can find them.</li>
-</ul>
-<p>The progression is natural and worth doing in order: first this guide for the discipline, then the harness for the infrastructure.</p>
-<h2 id="a-goodbye-without-promises">A goodbye without promises<a class="headerlink" href="#a-goodbye-without-promises" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>An honest guide doesn't end with "and now your life will change". It ends with two simple truths:</p>
-<p>First, <strong>well-done SDD improves the agent's output and the project's sustainability</strong>. This is documented in the practice of teams that have applied it for a while and shows in concrete metrics: less rework, less drift, better onboarding. It's not magic, but it's real.</p>
-<p>Second, <strong>bad SDD is indistinguishable from bureaucracy and sometimes worse</strong>. This is also documented and is why chapter 10 exists. Applying it without judgment turns the discipline into its own bottleneck, and within weeks the team goes back to vibe coding with an additional layer of cynicism.</p>
-<p>The difference between the two isn't the tool. It's the team's judgment to modulate the formality level by problem, keep whys alive, read honest critiques as part of the course, and understand that SDD is <strong>one</strong> strategy within context engineering, not the only one.</p>
-<p>If you take that, you take the best this guide can offer.</p>
-<hr />
-<p><em>This chapter closes the course. If you want to take the next step, read the <a href="https://jmlopezdona.github.io/ai-coding-agents-harness/">harness guide</a>. And if you're missing the foundations on what an agent is and how to drive one, the <a href="https://jmlopezdona.github.io/ai-coding-agents-fundamentals/">fundamentals guide</a> is the natural starting point of the trilogy. All chapters here are self-contained: jump to whichever one you need when the problem it solves shows up.</em></p>
+<h2 id="pattern-3-bug-fix">Pattern 3 — Bug fix<a class="headerlink" href="#pattern-3-bug-fix" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>The bug fix is the pattern where full SDD is counterproductive. A three-line bug fix with full template, iterative clarification and formal plan is exactly the bureaucracy chapter 9 critiques. Don't do it.</p>
+<p>But "don't do it" doesn't mean "do vibe coding". It means the bug fix has its own very light version of the cycle, and it's worth naming it.</p>
+<h3 id="the-applied-cycle-minimum-version">The applied cycle (minimum version)<a class="headerlink" href="#the-applied-cycle-minimum-version" title="Enlace permanente a esta sección">&para;</a></h3>
+<ol>
+<li><strong>Reproduce the bug</strong> with a failing test. This is your minimum viable spec: the passing test is the acceptance criterion, all in one.</li>
+<li><strong>Diagnose root cause.</strong> If the agent finds it, perfect. If not, do it yourself.</li>
+<li><strong>Apply the fix</strong> with the red test in front.</li>
+<li><strong>Check the test passes and the others too.</strong></li>
+<li><strong>A short note in the relevant spec</strong> (if there is one) explaining the bug and the fix. One line, not a paragraph.</li>
+</ol>
+<h3 id="when-the-bug-fix-turns-into-pattern-1-or-2">When the bug fix turns into pattern 1 or 2<a class="headerlink" href="#when-the-bug-fix-turns-into-pattern-1-or-2" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Sometimes, while diagnosing a bug, you discover it's not local — it's a symptom of an architectural problem. At that point you <strong>escalate</strong>: stop the bug fix and open a feature or refactor spec. The signal this is happening is that the fix asks you to touch more than two unrelated files, or there are already three different bugs pointing to the same place.</p>
+<p>This "bug → refactor" transition is one of the most valuable moves in well-applied SDD and almost never explicitly taught. The heuristic: <strong>if the fix is mechanical, it's a bug fix; if the fix forces you to understand five things you didn't understand yesterday, it has stopped being a bug fix</strong>.</p>
+<h2 id="a-matrix-to-pick-the-right-pattern">A matrix to pick the right pattern<a class="headerlink" href="#a-matrix-to-pick-the-right-pattern" title="Enlace permanente a esta sección">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Yes → pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is there new intent to capture?</td>
+<td>Feature</td>
+</tr>
+<tr>
+<td>Does observable behavior change?</td>
+<td>Feature</td>
+</tr>
+<tr>
+<td>Should behavior stay the same and only structure change?</td>
+<td>Refactor</td>
+</tr>
+<tr>
+<td>Is there a concrete failing test to fix?</td>
+<td>Bug fix</td>
+</tr>
+<tr>
+<td>Does the fix touch five unrelated files?</td>
+<td>Refactor (or feature)</td>
+</tr>
+<tr>
+<td>Can you say in one sentence what has to change?</td>
+<td>Bug fix</td>
+</tr>
+</tbody>
+</table>
+<p>If you hesitate between two patterns, choose the lighter one and escalate if you discover it's too small. Late escalation hurts less than early over-specification.</p>
+<h2 id="the-meta-pattern-read-size-before-choosing-process">The meta-pattern: read size before choosing process<a class="headerlink" href="#the-meta-pattern-read-size-before-choosing-process" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>If you keep one idea from this chapter, let it be this: <strong>before applying SDD, read the problem's size</strong>. Not its apparent size — its real size, almost always discovered by asking two questions:</p>
+<ol>
+<li><em>How many distinct places in the system do I need to touch for this to work?</em></li>
+<li><em>How much does it hurt if this goes wrong and nobody notices for a week?</em></li>
+</ol>
+<p>The answers to those two questions, multiplied, tell you how much SDD you need. Lots × lots = pattern 1 with everything. Little × little = pattern 3 minimal. Intermediate combinations fall in pattern 2 variants.</p>
+<p>The chapter 7 tools (Kiro especially) tend to apply pattern 1 to everything, and that's why they sometimes feel heavy. The modulation criterion you're learning here is what no tool offers today: it's contributed by the engineer, and it's exactly the kind of judgment that distinguishes a team using SDD from one suffering it.</p>
+<h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>We arrive at the most uncomfortable chapter of the course. <strong>Chapter 9</strong> is the honest critique of SDD: where it fails, what it costs, why some critiques are fair, and what to do about it. If you've been reading the course convinced this discipline is the answer, that chapter is designed to unsettle you a little. It's deliberate and necessary.</p>
 
 
 
@@ -1879,7 +2101,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../12-anti-patterns/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12. Anti-patterns">
+          <a href="../07-native-sdd-tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7. SDD tools">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1889,11 +2111,27 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                12. Anti-patterns
+                7. SDD tools
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../09-honest-critique/" class="md-footer__link md-footer__link--next" aria-label="Next: 9. The honest critique">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                9. The honest critique
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

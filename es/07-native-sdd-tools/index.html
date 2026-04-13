@@ -18,7 +18,7 @@
         <link rel="prev" href="../06-living-specs/">
       
       
-        <link rel="next" href="../09-patterns-of-application/">
+        <link rel="next" href="../08-patterns-of-application/">
       
       
         
@@ -395,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+        <a href="../08-patterns-of-application/" class="md-tabs__link">
           
   
   
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../10-honest-critique/" class="md-tabs__link">
+        <a href="../09-honest-critique/" class="md-tabs__link">
           
   
   
@@ -439,7 +439,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../12-anti-patterns/" class="md-tabs__link">
+        <a href="../11-anti-patterns/" class="md-tabs__link">
           
   
   
@@ -461,7 +461,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../13-from-sdd-to-harness/" class="md-tabs__link">
+        <a href="../12-from-sdd-to-harness/" class="md-tabs__link">
           
   
   
@@ -1306,14 +1306,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+      <a href="../08-patterns-of-application/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patrones de aplicación
+    8. Patrones de aplicación
   
 
     
@@ -1399,14 +1399,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-honest-critique/" class="md-nav__link">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. La crítica honesta
+    9. La crítica honesta
   
 
     
@@ -1427,14 +1427,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering como alternativa
+    10. Context engineering como alternativa
   
 
     
@@ -1518,14 +1518,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-anti-patterns/" class="md-nav__link">
+      <a href="../11-anti-patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Anti-patrones
+    11. Anti-patrones
   
 
     
@@ -1609,14 +1609,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../13-from-sdd-to-harness/" class="md-nav__link">
+      <a href="../12-from-sdd-to-harness/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. Del SDD al harness
+    12. Del SDD al harness
   
 
     
@@ -1847,7 +1847,7 @@
 <p><strong>Lo que Fowler señala como problemático:</strong></p>
 <ul>
 <li><strong>Está en beta privada</strong>, con todas las limitaciones que eso implica (acceso, soporte, riesgo de cambios disruptivos, riesgo de desaparecer).</li>
-<li><strong>El no-determinismo de los LLMs entra en conflicto directo con la promesa de "regenera y obtienes lo mismo"</strong>. Si dos generaciones del mismo spec producen código distinto, la promesa de "una sola fuente de verdad" se desinfla. Esto es casi exactamente el problema que mató al Model-Driven Development en los 2000 y que el capítulo 10 desarrolla.</li>
+<li><strong>El no-determinismo de los LLMs entra en conflicto directo con la promesa de "regenera y obtienes lo mismo"</strong>. Si dos generaciones del mismo spec producen código distinto, la promesa de "una sola fuente de verdad" se desinfla. Esto es casi exactamente el problema que mató al Model-Driven Development en los 2000 y que el capítulo 9 desarrolla.</li>
 </ul>
 <p><strong>Para quién encaja:</strong></p>
 <ul>
@@ -1911,9 +1911,9 @@
 </ol>
 <h2 id="lo-que-ninguna-de-estas-herramientas-resuelve-por-completo">Lo que ninguna de estas herramientas resuelve por completo<a class="headerlink" href="#lo-que-ninguna-de-estas-herramientas-resuelve-por-completo" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Hay un problema transversal que vale la pena nombrar: <strong>mantener specs vivas a meses vista</strong> (capítulo 6). Todas estas herramientas te ayudan con el ciclo táctico de una feature — diseñar la spec, implementar, verificar. Pero la disciplina sostenida de mantener una spec actualizada cuando el código evoluciona y el equipo cambia sigue siendo trabajo del equipo, y ese trabajo tiene un coste real (capítulo 10).</p>
-<p>Traycer se acerca más que las otras al problema de la verificación post-código, pero su unidad de trabajo sigue siendo la sesión, no el ciclo de vida del módulo. Para la disciplina de mantenimiento a largo plazo, lo que se necesita es infraestructura de harness — hooks automáticos, sensores de drift, agentes recurrentes — que el <a href="../13-from-sdd-to-harness/">capítulo 13</a> desarrolla como puente entre SDD y el siguiente curso de la trilogía.</p>
+<p>Traycer se acerca más que las otras al problema de la verificación post-código, pero su unidad de trabajo sigue siendo la sesión, no el ciclo de vida del módulo. Para la disciplina de mantenimiento a largo plazo, lo que se necesita es infraestructura de harness — hooks automáticos, sensores de drift, agentes recurrentes — que el <a href="../12-from-sdd-to-harness/">capítulo 12</a> desarrolla como puente entre SDD y el siguiente curso de la trilogía.</p>
 <h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Hasta aquí hemos visto el ciclo de vida (cap. 5), las specs vivas (cap. 6), y las herramientas del ecosistema. En el <strong>capítulo 9</strong> bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.</p>
+<p>Hasta aquí hemos visto el ciclo de vida (cap. 5), las specs vivas (cap. 6), y las herramientas del ecosistema. En el <strong>capítulo 8</strong> bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.</p>
 
 
 
@@ -1966,13 +1966,13 @@
         
         
           
-          <a href="../09-patterns-of-application/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 9. Patrones de aplicación">
+          <a href="../08-patterns-of-application/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 8. Patrones de aplicación">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                9. Patrones de aplicación
+                8. Patrones de aplicación
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,35 +12,33 @@
         <meta name="author" content="jmlopezdona">
       
       
-        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/10-honest-critique/">
+        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/12-from-sdd-to-harness/">
       
       
-        <link rel="prev" href="../09-patterns-of-application/">
+        <link rel="prev" href="../11-anti-patterns/">
       
-      
-        <link rel="next" href="../11-context-engineering/">
       
       
         
-          <link rel="alternate" href="./" hreflang="en">
+          <link rel="alternate" href="../../12-from-sdd-to-harness/" hreflang="en">
         
-          <link rel="alternate" href="../es/10-honest-critique/" hreflang="es">
+          <link rel="alternate" href="./" hreflang="es">
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>10. The honest critique - Spec-Driven Development</title>
+        <title>12. Del SDD al harness - Spec-Driven Development</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,7 +57,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -84,8 +82,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#10-the-honest-critique-maintenance-tax-mdd-and-the-illusion-of-control" class="md-skip">
-          Skip to content
+        <a href="#12-del-sdd-al-harness-como-encajan-las-piezas" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -97,8 +95,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Spec-Driven Development" class="md-header__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../" title="Spec-Driven Development" class="md-header__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -118,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10. The honest critique
+              12. Del SDD al harness
             
           </span>
         </div>
@@ -158,20 +156,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="./" hreflang="en" class="md-select__link">
+            <a href="../../12-from-sdd-to-harness/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../es/10-honest-critique/" hreflang="es" class="md-select__link">
+            <a href="./" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
@@ -192,21 +190,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -219,7 +217,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -231,7 +229,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -252,7 +250,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -262,13 +260,13 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Home
+  Inicio
 
       </a>
     </li>
@@ -289,7 +287,7 @@
   
     
   
-  Introduction
+  Introducción
 
         </a>
       </li>
@@ -311,7 +309,7 @@
   
     
   
-  The problem
+  El problema
 
         </a>
       </li>
@@ -333,7 +331,7 @@
   
     
   
-  Foundations
+  Fundamentos
 
         </a>
       </li>
@@ -355,7 +353,7 @@
   
     
   
-  Lifecycle
+  Ciclo de vida
 
         </a>
       </li>
@@ -377,7 +375,7 @@
   
     
   
-  Tooling
+  Herramientas
 
         </a>
       </li>
@@ -393,13 +391,57 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+        <a href="../08-patterns-of-application/" class="md-tabs__link">
           
   
   
     
   
-  Practice
+  Práctica
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../09-honest-critique/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Crítica
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../11-anti-patterns/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Errores comunes
 
         </a>
       </li>
@@ -423,51 +465,7 @@
   
     
   
-  Critique
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../12-anti-patterns/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Pitfalls
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../13-from-sdd-to-harness/" class="md-tabs__link">
-          
-  
-  
-    
-  
-  Industrialization
+  Industrialización
 
         </a>
       </li>
@@ -495,9 +493,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Spec-Driven Development" class="md-nav__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
+    <a href="../" title="Spec-Driven Development" class="md-nav__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -507,7 +505,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -527,14 +525,14 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Home
+    Inicio
   
 
     
@@ -581,7 +579,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    Introducción
   
 
     
@@ -597,7 +595,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Introduction
+    Introducción
   
 
           </label>
@@ -617,7 +615,7 @@
   <span class="md-ellipsis">
     
   
-    Spec-Driven Development: building software with intent
+    Spec-Driven Development: producir software con intención
   
 
     
@@ -672,7 +670,7 @@
   <span class="md-ellipsis">
     
   
-    The problem
+    El problema
   
 
     
@@ -688,7 +686,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    The problem
+    El problema
   
 
           </label>
@@ -708,7 +706,7 @@
   <span class="md-ellipsis">
     
   
-    1. From vibe coding to SDD
+    1. Del vibe coding al SDD
   
 
     
@@ -767,7 +765,7 @@
   <span class="md-ellipsis">
     
   
-    Foundations
+    Fundamentos
   
 
     
@@ -783,7 +781,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Foundations
+    Fundamentos
   
 
           </label>
@@ -803,7 +801,7 @@
   <span class="md-ellipsis">
     
   
-    2. The specification spectrum
+    2. El espectro de la especificación
   
 
     
@@ -831,7 +829,7 @@
   <span class="md-ellipsis">
     
   
-    3. Anatomy of a good spec
+    3. Anatomía de una buena especificación
   
 
     
@@ -859,7 +857,7 @@
   <span class="md-ellipsis">
     
   
-    4. The spec in context
+    4. La spec en contexto
   
 
     
@@ -916,7 +914,7 @@
   <span class="md-ellipsis">
     
   
-    Lifecycle
+    Ciclo de vida
   
 
     
@@ -932,7 +930,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Lifecycle
+    Ciclo de vida
   
 
           </label>
@@ -952,7 +950,7 @@
   <span class="md-ellipsis">
     
   
-    5. Possible lifecycle approaches
+    5. Posibles enfoques del ciclo de vida
   
 
     
@@ -980,7 +978,7 @@
   <span class="md-ellipsis">
     
   
-    6. Living specs
+    6. Especificaciones vivas
   
 
     
@@ -1035,7 +1033,7 @@
   <span class="md-ellipsis">
     
   
-    Tooling
+    Herramientas
   
 
     
@@ -1051,7 +1049,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Tooling
+    Herramientas
   
 
           </label>
@@ -1071,7 +1069,7 @@
   <span class="md-ellipsis">
     
   
-    7. SDD tools
+    7. Herramientas SDD
   
 
     
@@ -1126,7 +1124,7 @@
   <span class="md-ellipsis">
     
   
-    Practice
+    Práctica
   
 
     
@@ -1142,7 +1140,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Practice
+    Práctica
   
 
           </label>
@@ -1155,14 +1153,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+      <a href="../08-patterns-of-application/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patterns of application
+    8. Patrones de aplicación
   
 
     
@@ -1187,10 +1185,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1202,29 +1198,26 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Critique
+    Crítica
   
 
     
@@ -1235,12 +1228,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Critique
+    Crítica
   
 
           </label>
@@ -1250,44 +1243,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    10. The honest critique
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. The honest critique
+    9. La crítica honesta
   
 
     
@@ -1296,114 +1262,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#critique-1-the-maintenance-tax" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Critique 1 — The maintenance tax
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#critique-2-the-loss-of-the-whys" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Critique 2 — The loss of the whys
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#critique-3-the-false-illusion-of-completeness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Critique 3 — The false illusion of completeness
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#critique-4-the-mdd-parallel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Critique 4 — The MDD parallel
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#critique-5-the-review-burden" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Critique 5 — The review burden
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#critique-6-the-control-that-isnt-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Critique 6 — The control that isn't control
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-sdd-clearly-isnt-for-you" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When SDD clearly isn't for you
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-comes-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What comes next
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1416,14 +1274,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering as alternative
+    10. Context engineering como alternativa
   
 
     
@@ -1478,7 +1336,7 @@
   <span class="md-ellipsis">
     
   
-    Pitfalls
+    Errores comunes
   
 
     
@@ -1494,7 +1352,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Pitfalls
+    Errores comunes
   
 
           </label>
@@ -1507,14 +1365,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-anti-patterns/" class="md-nav__link">
+      <a href="../11-anti-patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Anti-patterns
+    11. Anti-patrones
   
 
     
@@ -1539,8 +1397,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1550,26 +1410,29 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Industrialization
+    Industrialización
   
 
     
@@ -1580,12 +1443,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Industrialization
+    Industrialización
   
 
           </label>
@@ -1595,17 +1458,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../13-from-sdd-to-harness/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Del SDD al harness
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. From SDD to the harness
+    12. Del SDD al harness
   
 
     
@@ -1614,6 +1504,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#la-tesis-del-puente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La tesis del puente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#punto-de-acople-1-las-specs-como-contexto-persistente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Punto de acople 1 — Las specs como contexto persistente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#punto-de-acople-2-los-sensores-que-validan-specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Punto de acople 2 — Los sensores que validan specs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#punto-de-acople-3-hooks-que-mantienen-specs-vivas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Punto de acople 3 — Hooks que mantienen specs vivas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#punto-de-acople-4-las-capas-de-arquitecto-como-prototipo-de-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Punto de acople 4 — Las capas de arquitecto como prototipo de harness
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#punto-de-acople-5-los-anti-patrones-que-solo-el-harness-resuelve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Punto de acople 5 — Los anti-patrones que solo el harness resuelve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cuando-dar-el-siguiente-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cuándo dar el siguiente paso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lo-que-el-harness-te-va-a-ensenar-en-avance-corto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lo que el harness te va a enseñar (en avance corto)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#una-despedida-sin-promesas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Una despedida sin promesas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1639,7 +1648,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
@@ -1648,15 +1657,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#critique-1-the-maintenance-tax" class="md-nav__link">
+  <a href="#la-tesis-del-puente" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Critique 1 — The maintenance tax
+        La tesis del puente
       
     </span>
   </a>
@@ -1664,10 +1673,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#critique-2-the-loss-of-the-whys" class="md-nav__link">
+  <a href="#punto-de-acople-1-las-specs-como-contexto-persistente" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Critique 2 — The loss of the whys
+        Punto de acople 1 — Las specs como contexto persistente
       
     </span>
   </a>
@@ -1675,10 +1684,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#critique-3-the-false-illusion-of-completeness" class="md-nav__link">
+  <a href="#punto-de-acople-2-los-sensores-que-validan-specs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Critique 3 — The false illusion of completeness
+        Punto de acople 2 — Los sensores que validan specs
       
     </span>
   </a>
@@ -1686,10 +1695,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#critique-4-the-mdd-parallel" class="md-nav__link">
+  <a href="#punto-de-acople-3-hooks-que-mantienen-specs-vivas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Critique 4 — The MDD parallel
+        Punto de acople 3 — Hooks que mantienen specs vivas
       
     </span>
   </a>
@@ -1697,10 +1706,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#critique-5-the-review-burden" class="md-nav__link">
+  <a href="#punto-de-acople-4-las-capas-de-arquitecto-como-prototipo-de-harness" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Critique 5 — The review burden
+        Punto de acople 4 — Las capas de arquitecto como prototipo de harness
       
     </span>
   </a>
@@ -1708,10 +1717,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#critique-6-the-control-that-isnt-control" class="md-nav__link">
+  <a href="#punto-de-acople-5-los-anti-patrones-que-solo-el-harness-resuelve" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Critique 6 — The control that isn't control
+        Punto de acople 5 — Los anti-patrones que solo el harness resuelve
       
     </span>
   </a>
@@ -1719,10 +1728,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-sdd-clearly-isnt-for-you" class="md-nav__link">
+  <a href="#cuando-dar-el-siguiente-paso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When SDD clearly isn't for you
+        Cuándo dar el siguiente paso
       
     </span>
   </a>
@@ -1730,10 +1739,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-comes-next" class="md-nav__link">
+  <a href="#lo-que-el-harness-te-va-a-ensenar-en-avance-corto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What comes next
+        Lo que el harness te va a enseñar (en avance corto)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#una-despedida-sin-promesas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Una despedida sin promesas
       
     </span>
   </a>
@@ -1757,7 +1777,7 @@
 
 
   
-    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/en/10-honest-critique.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/es/12-from-sdd-to-harness.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1765,66 +1785,65 @@
   
 
 
-<h1 id="10-the-honest-critique-maintenance-tax-mdd-and-the-illusion-of-control">10. The honest critique: maintenance tax, MDD and the illusion of control<a class="headerlink" href="#10-the-honest-critique-maintenance-tax-mdd-and-the-illusion-of-control" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>So far the course has been constructive: why SDD is needed, how to do it, with what tools. This chapter isn't. This chapter is the counterweight, and it exists because any guide that only teaches you the positive patterns leaves you defenseless against the moment — and it will come — when your own process becomes the bottleneck.</p>
-<p>The critiques we'll collect aren't marginal objections. They come from two sources worth reading whole: <strong><a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a></strong> (<em>The Limits of Spec-Driven Development</em>) and <strong><a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Martin Fowler / Thoughtworks</a></strong> (<em>Understanding Spec-Driven Development: Kiro, spec-kit, and Tessl</em>). Both are written by people who tried SDD seriously and decided to publish what they saw.</p>
-<h2 id="critique-1-the-maintenance-tax">Critique 1 — The maintenance tax<a class="headerlink" href="#critique-1-the-maintenance-tax" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Isoform's most devastating critique is that detailed specs create <strong>documentation debt disguised as engineering discipline</strong>.</p>
+<h1 id="12-del-sdd-al-harness-como-encajan-las-piezas">12. Del SDD al harness: cómo encajan las piezas<a class="headerlink" href="#12-del-sdd-al-harness-como-encajan-las-piezas" title="Enlace permanente a esta sección">&para;</a></h1>
+<p>Si has llegado hasta aquí, ya tienes el SDD como disciplina: sabes especificar intención, mantener el bucle bidireccional, modular el proceso según el tipo de tarea, y tienes criterio para no confundirlo con burocracia. Lo que falta es entender <strong>dónde se conecta</strong> esto con la siguiente capa de la trilogía: el <strong>harness</strong>, el sistema de infraestructura interna que rodea al agente para que la disciplina escale a un equipo entero y a meses vista.</p>
+<p>Este capítulo es el puente. No repite el contenido del curso de harness — eso es otro repositorio entero — pero sí señala con precisión los cinco puntos exactos donde SDD se acopla con harness, y por qué la combinación produce algo mejor que los dos por separado.</p>
+<h2 id="la-tesis-del-puente">La tesis del puente<a class="headerlink" href="#la-tesis-del-puente" title="Enlace permanente a esta sección">&para;</a></h2>
 <blockquote>
-<p><em>Comprehensive specifications create documentation debt disguised as engineering discipline.</em></p>
+<p>SDD te dice <strong>qué</strong> especificar y cómo. Harness te dice <strong>dónde</strong> vive esa especificación, <strong>quién</strong> la lee, <strong>cuándo</strong> se valida, y <strong>cómo</strong> se mantiene viva sin disciplina humana sostenida.</p>
 </blockquote>
-<p>The logic is direct. When the system has a living spec (chapter 6), every change in the code asks for a change in the spec. When requirements change — and they always change — you need coordinated changes in both places. Cost rises. And unlike the maintenance cost of code, which is visible and discussed in sprint reviews, the spec maintenance cost is invisible: it doesn't appear in any burndown, nobody counts it, and it accumulates until one day the team realizes it's spending an uncomfortable proportion of its time maintaining documentation of a system instead of evolving it.</p>
-<p>Isoform puts it this way: SDD doesn't reduce overhead, it <em>displaces</em> it. What used to be undocumented code is now documented code, yes, but the cost doesn't disappear — it just changes location. And sometimes that new location is worse, because the spec has become a second system to maintain, with its own entropy, its own bugs (internally contradictory specs) and its own cognitive load.</p>
-<p><strong>How to defend yourself:</strong> measure the cost. Honestly, during a sprint, log how many hours the team spent updating specs and how many evolving code. If the ratio rises above 20% and the spec is still out of date, <strong>something is wrong with your process</strong>. Either specs are too detailed, or the chapter 6 loop isn't calibrated, or you're applying full spec to places that didn't need it (chapter 9). Any of the three, stop and redesign.</p>
-<h2 id="critique-2-the-loss-of-the-whys">Critique 2 — The loss of the <em>whys</em><a class="headerlink" href="#critique-2-the-loss-of-the-whys" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>This is the critique most worth taking seriously because it strikes at the heart of SDD.</p>
-<blockquote>
-<p><em>Specs describe what systems should do, but cannot capture why decisions were made. The missing context is where the real problems show up.</em></p>
-</blockquote>
-<p>Isoform argues typical specs focus too much on the <strong>hows</strong> — schemas, signatures, contracts, criteria — and fall short on the <strong>whys</strong>: assumptions, the real-world constraints that led to a decision, the trade-offs chosen, and especially the ones rejected and why.</p>
-<p>And whys are exactly what an agent (or a new human) needs six months later to make smart decisions in the gaps the spec doesn't cover. A spec without whys ages at the speed of the decisions around it, because it loses the ability to explain itself.</p>
-<p>Chapter 3 already tries to shield against this by making whys a mandatory section of the template. But the shield is only process; in practice, whys are the section most easily skipped when the team is in a hurry, and the one worst updated by the chapter 6 bidirectional loop. If you have to cut spec maintenance time, almost everyone cuts whys first — and that's exactly the worst thing you can cut.</p>
-<p><strong>How to defend yourself:</strong> treat whys as tier 0 of the spec. If a spec has no whys, it's an incomplete spec. If the chapter 6 bidirectional loop doesn't update whys, it's not really bidirectional — it's half-loop.</p>
-<h2 id="critique-3-the-false-illusion-of-completeness">Critique 3 — The false illusion of completeness<a class="headerlink" href="#critique-3-the-false-illusion-of-completeness" title="Enlace permanente a esta sección">&para;</a></h2>
-<blockquote>
-<p><em>Detailed specifications create misleading confidence.</em></p>
-</blockquote>
-<p>This is subtle and very real. A detailed spec looks exhaustive. When you read an 800-line spec with diagrams, criteria and templates, your brain assumes the system is well thought out. The spec works as <strong>internal social proof</strong>: "someone sat down to think this through, so it must be right".</p>
-<p>The trap is that detail ≠ correctness. A spec can be detailed and wrong. A spec can be internally consistent and not match reality. A spec can cover the 47 cases you thought of and not cover the 48<sup>th</sup> that only shows up in production.</p>
-<p>And worse: a detailed spec <strong>inhibits creative iteration</strong>. When there are 800 lines everyone accepted, changing course becomes a social move, not a technical one. The spec becomes a cultural brake. Isoform cites this as "reinforcing waterfall-like thinking", and the coincidence with waterfall isn't accidental: the more complete the spec before starting, the more the process resembles waterfall, with all the problems waterfall had.</p>
-<p><strong>How to defend yourself:</strong> suspect your own confidence in a dense spec. If nobody has questioned a spec decision in two sprints, it's not a sign of quality — it's a sign the spec has become an obstacle to questioning it. Periodically ask yourself: <em>if I rewrote this spec today, from scratch, would it come out the same?</em></p>
-<h2 id="critique-4-the-mdd-parallel">Critique 4 — The MDD parallel<a class="headerlink" href="#critique-4-the-mdd-parallel" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>This is Fowler's critique, and the one most worth understanding by historical context. In the 2000s, there was a wave of <strong>Model-Driven Development</strong> (MDD) that promised exactly what SDD promises today: you model, tools generate, single source of truth, magical maintainability. The models were XML with OCL, but the promise was the same.</p>
-<p>MDD failed. It did so for two reasons worth remembering:</p>
-<ol>
-<li><strong>The abstraction level was awkward.</strong> Models were too abstract for low-level details and too concrete for architecture. You ended up writing models almost as verbose as the code they generated, without the flexibility of code.</li>
-<li><strong>Generation was inflexible.</strong> When generated code didn't fit a specific situation, modifying it "broke" the model. You had to choose between living with suboptimal code or abandoning generation.</li>
-</ol>
-<p>Fowler sees a direct echo in SDD:</p>
-<blockquote>
-<p><em>SDD sits at an awkward abstraction level and just creates too much overhead and constraints. While LLMs reduce some MDD constraints, they introduce non-determinism — potentially combining MDD's inflexibility with LLM unpredictability.</em></p>
-</blockquote>
-<p>That last sentence deserves to stay on the wall. <strong>SDD potentially combines MDD's inflexibility with LLM unpredictability</strong>. The worst of both worlds: model rigidity plus generative model surprise. If MDD failed from just one of those problems, SDD could fail from the sum.</p>
-<p><strong>How to defend yourself:</strong> read the historical warning. When you're building very detailed specs, ask whether what you're writing is more maintainable than the code it would generate, and how much certainty you have that the agent will generate consistent code between runs. If both answers aren't clear, you're at the place where MDD died.</p>
-<h2 id="critique-5-the-review-burden">Critique 5 — The review burden<a class="headerlink" href="#critique-5-the-review-burden" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>A minor but practical Fowler critique: in his evaluation, spec-kit generated verbose, repetitive markdown files that <strong>were heavier to review than the code itself</strong> would have been. It's a specific observation about a specific tool, but it points to a general pattern: if your SDD process forces you to review more artifacts than the code it replaces, you've inverted the sign of the benefit.</p>
-<p><strong>How to defend yourself:</strong> measure real review time. A week of honest tracking tells you whether the spec saves review or adds to it. If it adds, simplify it.</p>
-<h2 id="critique-6-the-control-that-isnt-control">Critique 6 — The control that isn't control<a class="headerlink" href="#critique-6-the-control-that-isnt-control" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Fowler also observes that, even with elaborate specs and structured workflows, <strong>agents still ignore instructions, over-interpret others, create duplicates and produce unexpected things</strong>. The spec gives a sensation of control that doesn't match real agent behavior. Process elaboration has gone up, output predictability hasn't.</p>
-<p>It's the chapter's harshest observation: <strong>a longer spec doesn't produce a more obedient agent</strong>. It produces a more confident human and an equally unpredictable agent. And the gap between those two facts is exactly where problems sneak in.</p>
-<p><strong>How to defend yourself:</strong> measure adherence, not completeness. The question isn't "how detailed is the spec?", it's "what percentage of the spec's constraints get respected without re-prompting?". If the spec grows and adherence doesn't improve, you've added weight without traction.</p>
-<h2 id="when-sdd-clearly-isnt-for-you">When SDD clearly <em>isn't</em> for you<a class="headerlink" href="#when-sdd-clearly-isnt-for-you" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>After reading these six critiques, there are concrete signals SDD isn't the answer for your situation:</p>
+<p>SDD sin harness es ceremonia: depende de que cada miembro del equipo aplique disciplina perfecta, y la disciplina perfecta no escala. Harness sin SDD es infraestructura sin propósito: tienes sandboxes y sensores y bucles, pero el agente no sabe qué construir porque la intención nunca quedó capturada. Los dos juntos forman un sistema; los dos por separado son piezas sueltas.</p>
+<h2 id="punto-de-acople-1-las-specs-como-contexto-persistente">Punto de acople 1 — Las specs como contexto persistente<a class="headerlink" href="#punto-de-acople-1-las-specs-como-contexto-persistente" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>El primer pilar del harness, según el curso correspondiente, es <strong>el contexto como sistema de registro</strong>: la idea de que todo lo que el agente debe saber tiene que estar materializado en el repo, no en Slack ni en cabezas. Las specs del SDD son <strong>una especialización de ese principio</strong>.</p>
+<p>Una spec bien escrita es contexto persistente con una forma específica: <em>intención + restricciones + por qués + criterios verificables</em>. El harness aporta la disciplina general ("el contexto vive en el repo"); el SDD aporta la forma concreta de uno de los artefactos que viven en él.</p>
+<p>La consecuencia operativa: cuando un equipo monta un harness, las specs no son una carpeta más — son una de las piezas centrales del contexto. Y cuando ese mismo equipo aplica SDD, el harness se asegura de que las specs lleguen al agente de la forma correcta, en el momento correcto, con los hooks correctos.</p>
+<h2 id="punto-de-acople-2-los-sensores-que-validan-specs">Punto de acople 2 — Los sensores que validan specs<a class="headerlink" href="#punto-de-acople-2-los-sensores-que-validan-specs" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>El segundo pilar del harness es la dualidad <strong>guías y sensores</strong>: artefactos que orientan al agente <em>antes</em> de actuar (guías) y verificadores que detectan cuándo el agente se ha desviado <em>después</em> (sensores). La fase 5 del ciclo de vida SDD del capítulo 5 — verificación — es exactamente un tipo de sensor.</p>
+<p>Sin harness, esa fase 5 es manual o, en el mejor caso, un script ad-hoc que alguien ejecuta. Con harness, se convierte en infraestructura: tests que comparan código contra spec, agentes recurrentes que detectan drift entre uno y otro, linters que validan que las restricciones de la spec se siguen respetando.</p>
+<p>Esta es la forma técnica de cerrar el bucle bidireccional del capítulo 6. Sin harness, el bucle depende de la disciplina humana ("acuérdate de actualizar la spec"). Con harness, el bucle es automático ("el sensor detecta que el código y la spec divergieron y abre un issue para reconciliarlos").</p>
+<h2 id="punto-de-acople-3-hooks-que-mantienen-specs-vivas">Punto de acople 3 — Hooks que mantienen specs vivas<a class="headerlink" href="#punto-de-acople-3-hooks-que-mantienen-specs-vivas" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>El detalle de Kiro del capítulo 7 — los <strong>hooks que se disparan al guardar archivos</strong> — no es un detalle. Es la prefiguración de uno de los mecanismos centrales del harness: <strong>eventos del repo que disparan acciones del agente</strong> (regenerar docs, actualizar índices, validar invariantes, refrescar el bucle de specs vivas).</p>
+<p>Cuando una herramienta tipo Kiro tiene esos hooks, está implementando una micro-pieza de harness dentro de su propio producto. Cuando montas tu harness completo, tienes hooks para cualquier evento, y los ejes de mantenimiento de specs que requieren disciplina humana en SDD puro pasan a ser disparados por máquina en SDD + harness.</p>
+<p>La regla operativa: <strong>cualquier cosa que en SDD puro requiera "acuérdate de hacer X cuando pase Y", en SDD + harness debe convertirse en un hook automático</strong>. Si algo se queda en "acuérdate", se va a olvidar.</p>
+<h2 id="punto-de-acople-4-las-capas-de-arquitecto-como-prototipo-de-harness">Punto de acople 4 — Las capas de arquitecto como prototipo de harness<a class="headerlink" href="#punto-de-acople-4-las-capas-de-arquitecto-como-prototipo-de-harness" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Las herramientas como Traycer (<a href="../07-native-sdd-tools/#traycer">capítulo 7</a>) son, técnicamente, <strong>harness aplicado a SDD</strong>. Lo que hacen — interceptar entradas, planificar, verificar salidas — es exactamente la dinámica de guías y sensores del harness, aplicada al ciclo concreto de una sesión con un agente.</p>
+<p>Si el harness completo te parece demasiado para empezar, una capa de arquitecto sobre tu agente es la versión miniatura de la idea: prueba qué se siente tener guías y sensores envolviendo al agente, antes de comprometerte a montar harness propio. Y cuando estés listo para el harness completo, descubrirás que la lógica de Traycer es un caso particular del patrón general — porque lo es.</p>
+<h2 id="punto-de-acople-5-los-anti-patrones-que-solo-el-harness-resuelve">Punto de acople 5 — Los anti-patrones que solo el harness resuelve<a class="headerlink" href="#punto-de-acople-5-los-anti-patrones-que-solo-el-harness-resuelve" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Varios de los <a href="../11-anti-patterns/">anti-patrones del capítulo 12</a> son específicamente difíciles de evitar sin harness:</p>
 <ul>
-<li>Your code has a lifespan shorter than 6 months.</li>
-<li>You're in discovery phase where intent changes week to week.</li>
-<li>Your team is small (1-3 people) and coordination isn't the bottleneck.</li>
-<li>Your real bottleneck is deploy infrastructure, not code quality.</li>
-<li>Every time you write a spec, the relevant code has changed before you finished.</li>
+<li><strong>Spec-as-Theatre</strong> muere cuando hay un sensor automático que mide adhesión: si la spec no se respeta, el harness lo dice.</li>
+<li><strong>La spec eterna</strong> muere cuando hay un agente recurrente que detecta drift y abre issues automáticos.</li>
+<li><strong>Confiar en la spec más que en el código</strong> se vuelve raro cuando hay validadores automáticos que cuando hay desacuerdo te obligan a investigar antes de aceptar el merge.</li>
+<li><strong>El review burden</strong> se reduce cuando los hooks generan los markdowns repetitivos automáticamente y la atención humana queda libre para lo que aporta juicio.</li>
 </ul>
-<p>If you recognize your situation in any of the five, <strong>the cost of SDD probably exceeds its benefit for you</strong>. It's not a failing of the discipline. It's that the tool doesn't fit your problem, and forcing it is wasting team time.</p>
-<h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>The critiques leave the reader with a legitimate question: <em>if bad SDD is this, what do I do then?</em> chapter 11 develops the alternative Isoform proposes: <strong>context engineering</strong>. It's not "vibe coding but worse"; it's a deliberately different proposal about where intent should live.</p>
+<p>En otras palabras: <strong>una parte significativa de lo que mata al SDD malhecho es exactamente lo que el harness está diseñado para resolver</strong>. Los dos cursos no son secuenciales por capricho — son secuenciales porque los problemas que descubres haciendo bien la disciplina son los problemas que el harness aborda.</p>
+<h2 id="cuando-dar-el-siguiente-paso">Cuándo dar el siguiente paso<a class="headerlink" href="#cuando-dar-el-siguiente-paso" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>No todos los equipos que adoptan SDD necesitan saltar al harness inmediatamente. Hay señales específicas de que ya estás listo para la transición:</p>
+<ul>
+<li><strong>El equipo aplica SDD con disciplina pero la sostenibilidad depende de individuos.</strong> Si Alice se va una semana de vacaciones y las specs se desactualizan, necesitas mecanismo, no más disciplina.</li>
+<li><strong>El bucle bidireccional del capítulo 6 funciona cuando alguien lo cuida y se rompe cuando nadie lo mira.</strong> Eso es señal de que necesita pasar de proceso humano a infraestructura.</li>
+<li><strong>Los <a href="../11-anti-patterns/">anti-patrones del capítulo 12</a> reaparecen periódicamente</strong> aunque el equipo los conoce. La conciencia individual no escala; la infraestructura sí.</li>
+<li><strong>Las herramientas del capítulo 7 se quedan cortas porque son únicas para una dimensión</strong> y tu sistema necesita varias capas (sensors + hooks + sandboxes + observabilidad). Eso es un harness completo, no una herramienta más.</li>
+</ul>
+<p>Si reconoces dos o más, el siguiente curso de la trilogía es tu siguiente paso natural.</p>
+<h2 id="lo-que-el-harness-te-va-a-ensenar-en-avance-corto">Lo que el harness te va a enseñar (en avance corto)<a class="headerlink" href="#lo-que-el-harness-te-va-a-ensenar-en-avance-corto" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Para que el puente sea concreto, aquí va una idea muy condensada de qué desarrolla el curso de harness y cómo conecta con lo que has aprendido aquí:</p>
+<ul>
+<li><strong>Guías y sensores como dos pilares.</strong> El cap. 3 del harness desarrolla esta dualidad. Las specs son guías; los validadores y agentes recurrentes son sensores.</li>
+<li><strong>El bucle como primitiva.</strong> El cap. 4 del harness presenta la idea de "iteración como primitiva". El ciclo del cap. 5 de este curso es un caso particular.</li>
+<li><strong>Entornos aislados y reproducibles.</strong> El cap. 5 del harness habla de sandboxes desechables. Aquí mejoras la fiabilidad de la fase de implementación del SDD.</li>
+<li><strong>Contexto como sistema de registro.</strong> El cap. 6 del harness es donde tus specs encajan como uno de los artefactos centrales.</li>
+<li><strong>Arquitectura para agentes.</strong> El cap. 7 del harness te enseña a diseñar el repo de forma que el agente pueda navegarlo. Las specs solo funcionan cuando el agente las puede encontrar.</li>
+</ul>
+<p>La progresión es natural y vale la pena hacerla en orden: primero esta guía para tener la disciplina, después harness para tener la infraestructura.</p>
+<h2 id="una-despedida-sin-promesas">Una despedida sin promesas<a class="headerlink" href="#una-despedida-sin-promesas" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Una guía honesta no termina con "y ahora cambiará tu vida". Termina con dos verdades sencillas:</p>
+<p>Primero, <strong>SDD bien hecho mejora el output del agente y la sostenibilidad del proyecto</strong>. Esto está documentado en la práctica de los equipos que llevan tiempo aplicándolo y se nota en métricas concretas: menos retrabajo, menos drift, mejor onboarding. No es magia, pero es real.</p>
+<p>Segundo, <strong>SDD malhecho es indistinguible de la burocracia y a veces es peor</strong>. Esto también está documentado y es por lo que el capítulo 9 existe. Aplicarlo sin criterio convierte la disciplina en su propio cuello de botella, y a las pocas semanas el equipo vuelve al vibe coding con un nivel adicional de cinismo.</p>
+<p>La diferencia entre las dos no está en la herramienta. Está en el juicio del equipo para modular el nivel de formalidad según el problema, mantener vivos los por qués, leer las críticas honestas como parte del curso, y entender que SDD es <strong>una</strong> estrategia dentro de context engineering, no la única.</p>
+<p>Si te llevas eso, te llevas lo mejor que esta guía puede ofrecer.</p>
+<hr />
+<p><em>Este capítulo cierra el curso. Si quieres dar el siguiente paso, lee la <a href="https://jmlopezdona.github.io/ai-coding-agents-harness/">guía del harness</a>. Y si te faltan los fundamentos sobre qué es un agente y cómo se pilota, la <a href="https://jmlopezdona.github.io/ai-coding-agents-fundamentals/">guía de fundamentos</a> es el punto de partida natural de la trilogía. Todos los capítulos de aquí son auto-contenidos: salta al que necesites cuando aparezca el problema que resuelve.</em></p>
 
 
 
@@ -1848,7 +1867,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  Volver al principio
 </button>
         
       </main>
@@ -1857,40 +1876,24 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../09-patterns-of-application/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Patterns of application">
+          <a href="../11-anti-patterns/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 11. Anti-patrones">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Previous
+                Anterior
               </span>
               <div class="md-ellipsis">
-                9. Patterns of application
+                11. Anti-patrones
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../11-context-engineering/" class="md-footer__link md-footer__link--next" aria-label="Next: 11. Context engineering as alternative">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                11. Context engineering as alternative
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
@@ -1936,10 +1939,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

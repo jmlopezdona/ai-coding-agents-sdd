@@ -395,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+        <a href="../08-patterns-of-application/" class="md-tabs__link">
           
   
   
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../10-honest-critique/" class="md-tabs__link">
+        <a href="../09-honest-critique/" class="md-tabs__link">
           
   
   
@@ -439,7 +439,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../12-anti-patterns/" class="md-tabs__link">
+        <a href="../11-anti-patterns/" class="md-tabs__link">
           
   
   
@@ -461,7 +461,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../13-from-sdd-to-harness/" class="md-tabs__link">
+        <a href="../12-from-sdd-to-harness/" class="md-tabs__link">
           
   
   
@@ -1440,14 +1440,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+      <a href="../08-patterns-of-application/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patterns of application
+    8. Patterns of application
   
 
     
@@ -1533,14 +1533,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-honest-critique/" class="md-nav__link">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. The honest critique
+    9. The honest critique
   
 
     
@@ -1561,14 +1561,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering as alternative
+    10. Context engineering as alternative
   
 
     
@@ -1652,14 +1652,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-anti-patterns/" class="md-nav__link">
+      <a href="../11-anti-patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Anti-patterns
+    11. Anti-patterns
   
 
     
@@ -1743,14 +1743,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../13-from-sdd-to-harness/" class="md-nav__link">
+      <a href="../12-from-sdd-to-harness/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. From SDD to the harness
+    12. From SDD to the harness
   
 
     
@@ -2211,13 +2211,13 @@
 </div>
 <h3 id="sub-step-12-plan-implementation">Sub-step 1.2 — Plan implementation<a class="headerlink" href="#sub-step-12-plan-implementation" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>With the spec in hand, you ask the agent for an <strong>implementation plan</strong>: which files it touches, in what order, what dependencies between tasks, what tests it intends to write. The plan isn't code; it's an intermediate document. You read it, discuss it, correct it if the agent misunderstood any constraint.</p>
-<p>This sub-step is where Traycer-style tools add the most value (<a href="08-architect-layers.md">chapter 8</a>), because the plan's quality determines the quality of everything that comes after.</p>
+<p>This sub-step is where Traycer-style tools add the most value (<a href="../07-native-sdd-tools/#traycer">chapter 7</a>), because the plan's quality determines the quality of everything that comes after.</p>
 <h3 id="sub-step-13-decompose-into-tasks">Sub-step 1.3 — Decompose into tasks<a class="headerlink" href="#sub-step-13-decompose-into-tasks" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>You take the plan and cut it into <strong>small, sequential tasks, each with a "done" criterion</strong>. A typical task should fit in a single focused agent session, with no ambiguity. If a task needs more than one session, it's badly cut.</p>
 <p>Heuristic rule: if you can't describe the "after the task" state in one sentence, the task is too big.</p>
 <div class="admonition note">
 <p class="admonition-title">Not every project needs all three sub-steps</p>
-<p>For a small change or a PoC, sub-steps 1.2 and 1.3 can be implicit or nonexistent — the spec itself is the plan and the tasks are obvious. The entire Phase 1 can take five minutes. For an enterprise project with multiple stakeholders, each sub-step can have its own review and approval cycle. <strong>The weight of Phase 1 should be proportional to the change's risk</strong> — exactly the rule from <a href="../09-patterns-of-application/">chapter 9</a>.</p>
+<p>For a small change or a PoC, sub-steps 1.2 and 1.3 can be implicit or nonexistent — the spec itself is the plan and the tasks are obvious. The entire Phase 1 can take five minutes. For an enterprise project with multiple stakeholders, each sub-step can have its own review and approval cycle. <strong>The weight of Phase 1 should be proportional to the change's risk</strong> — exactly the rule from <a href="../08-patterns-of-application/">chapter 9</a>.</p>
 </div>
 <h2 id="phase-2-implement-the-spec">Phase 2 — Implement the spec<a class="headerlink" href="#phase-2-implement-the-spec" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>A spec is the unit of work that <strong>one agent receives and resolves autonomously in its inner loop</strong>. The agent reads the spec, internally decomposes the work into tasks, implements, and validates — all within a single execution. The principle is always the same: <strong>each task is atomic with respect to the spec</strong> — either it's fully done or it's reverted.</p>
@@ -2276,7 +2276,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Connection with BMAD and Traycer</p>
-<p>Delegation to sub-agents isn't conceptually new — <a href="../07-native-sdd-tools/#bmad">BMAD</a> already uses multiple agents, but with <strong>fixed roles</strong> (PM, Architect, QA, Developer). What today's tools enable is more flexible delegation: sub-agents by <strong>spec context</strong> (front, back, infra), not by process role. And architect layers like <a href="08-architect-layers.md">Traycer</a> fit naturally as the coordination logic — their planning and verification functions are exactly what the main agent needs to orchestrate sub-agents.</p>
+<p>Delegation to sub-agents isn't conceptually new — <a href="../07-native-sdd-tools/#bmad">BMAD</a> already uses multiple agents, but with <strong>fixed roles</strong> (PM, Architect, QA, Developer). What today's tools enable is more flexible delegation: sub-agents by <strong>spec context</strong> (front, back, infra), not by process role. And architect layers like <a href="../07-native-sdd-tools/#traycer">Traycer</a> fit naturally as the coordination logic — their planning and verification functions are exactly what the main agent needs to orchestrate sub-agents.</p>
 </div>
 <p>Neither option is universally better. Direct execution is simpler; delegation to sub-agents manages context better for large specs but requires explicit interfaces in Phase 1 and integration validation in Phase 3. The decision is made by the agent (or its configuration) based on the spec's nature.</p>
 <h2 id="phase-3-validate-the-spec">Phase 3 — Validate the spec<a class="headerlink" href="#phase-3-validate-the-spec" title="Enlace permanente a esta sección">&para;</a></h2>
@@ -2323,7 +2323,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Phase 3 is what separates SDD from vibe coding with documentation</p>
 <p>If Phase 3 doesn't exist or is reduced to "trust that the tests pass", you're not doing SDD — you're doing spec-first with good intentions. Verifying that the code fulfills the spec <strong>as a whole</strong> (not just task by task), at <strong>both levels</strong> (inner and outer loop), and with a <strong>deterministic foundation</strong> (not just stochastic) is the mechanism that closes the cycle. Without it, the spec ages from the moment it's written.</p>
-<p>This is exactly the gap <a href="../07-native-sdd-tools/#what-none-of-these-tools-solve">chapter 7 identifies as a common problem</a> across native tools, and where the architect layers from <a href="08-architect-layers.md">chapter 8</a> have positioned themselves.</p>
+<p>This is exactly the gap <a href="../07-native-sdd-tools/#what-none-of-these-tools-solve">chapter 7 identifies as a common problem</a> across native tools, and where the architect layers from <a href="../07-native-sdd-tools/#traycer">chapter 7</a> have positioned themselves.</p>
 </div>
 <h2 id="the-lifecycle-isnt-linear">The lifecycle isn't linear<a class="headerlink" href="#the-lifecycle-isnt-linear" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>A note almost always omitted in canonical descriptions: <strong>the cycle is rarely linear in practice</strong>. What really happens is in Phase 2 you discover something that invalidates a Phase 1 assumption, and you go back. Phase 3 teaches you that a criterion wasn't verifiable and you have to rewrite it. Mid-task, you realize the spec has a hole.</p>
@@ -2336,7 +2336,7 @@
 <li><strong>Implementation requiring many iterations</strong>: task decomposition might be too coarse, or interfaces between parts might not be explicit, or the agent might not have sufficient context.</li>
 <li><strong>Validation catching the same types of failure repeatedly</strong>: deterministic tests for a recurring pattern might be missing, or stochastic validation might not be complemented with automated checks.</li>
 </ul>
-<p>In these cases, what needs adjusting isn't the spec — it's <strong>the system itself</strong>: how specs are written, what tools are used to implement, what validation mechanisms are in place. This meta-level reflection — improving the process, not just the artifact — is exactly the territory of <strong>harness engineering</strong> that <a href="../13-from-sdd-to-harness/">chapter 13</a> develops: converting manual discipline into automatic infrastructure, so that each process iteration is better than the last and agents progressively need <strong>less human supervision and more autonomy</strong>.</p>
+<p>In these cases, what needs adjusting isn't the spec — it's <strong>the system itself</strong>: how specs are written, what tools are used to implement, what validation mechanisms are in place. This meta-level reflection — improving the process, not just the artifact — is exactly the territory of <strong>harness engineering</strong> that <a href="../12-from-sdd-to-harness/">chapter 12</a> develops: converting manual discipline into automatic infrastructure, so that each process iteration is better than the last and agents progressively need <strong>less human supervision and more autonomy</strong>.</p>
 <h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Chapter 6 is about the difference between static specs (the ones that age badly) and living specs (the ones that stay useful because implementation feeds back into the spec). It's the piece that turns the lifecycle described in this chapter into a sustainable process instead of a startup ritual.</p>
 

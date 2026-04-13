@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -12,35 +12,35 @@
         <meta name="author" content="jmlopezdona">
       
       
-        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/12-anti-patterns/">
+        <link rel="canonical" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/11-anti-patterns/">
       
       
-        <link rel="prev" href="../11-context-engineering/">
+        <link rel="prev" href="../10-context-engineering/">
       
       
-        <link rel="next" href="../13-from-sdd-to-harness/">
+        <link rel="next" href="../12-from-sdd-to-harness/">
       
       
         
-          <link rel="alternate" href="./" hreflang="en">
+          <link rel="alternate" href="../../11-anti-patterns/" hreflang="en">
         
-          <link rel="alternate" href="../es/12-anti-patterns/" hreflang="es">
+          <link rel="alternate" href="./" hreflang="es">
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>12. Anti-patterns - Spec-Driven Development</title>
+        <title>11. Anti-patrones - Spec-Driven Development</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,7 +59,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -84,8 +84,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#12-sdd-anti-patterns" class="md-skip">
-          Skip to content
+        <a href="#11-anti-patrones-del-sdd" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -97,8 +97,8 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Spec-Driven Development" class="md-header__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../" title="Spec-Driven Development" class="md-header__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              12. Anti-patterns
+              11. Anti-patrones
             
           </span>
         </div>
@@ -158,20 +158,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="./" hreflang="en" class="md-select__link">
+            <a href="../../11-anti-patterns/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../es/12-anti-patterns/" hreflang="es" class="md-select__link">
+            <a href="./" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
@@ -192,21 +192,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -219,7 +219,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -231,7 +231,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -252,7 +252,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -262,13 +262,13 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../" class="md-tabs__link">
         
   
   
     
   
-  Home
+  Inicio
 
       </a>
     </li>
@@ -289,7 +289,7 @@
   
     
   
-  Introduction
+  Introducción
 
         </a>
       </li>
@@ -311,7 +311,7 @@
   
     
   
-  The problem
+  El problema
 
         </a>
       </li>
@@ -333,7 +333,7 @@
   
     
   
-  Foundations
+  Fundamentos
 
         </a>
       </li>
@@ -355,7 +355,7 @@
   
     
   
-  Lifecycle
+  Ciclo de vida
 
         </a>
       </li>
@@ -377,7 +377,7 @@
   
     
   
-  Tooling
+  Herramientas
 
         </a>
       </li>
@@ -393,13 +393,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+        <a href="../08-patterns-of-application/" class="md-tabs__link">
           
   
   
     
   
-  Practice
+  Práctica
 
         </a>
       </li>
@@ -415,13 +415,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../10-honest-critique/" class="md-tabs__link">
+        <a href="../09-honest-critique/" class="md-tabs__link">
           
   
   
     
   
-  Critique
+  Crítica
 
         </a>
       </li>
@@ -445,7 +445,7 @@
   
     
   
-  Pitfalls
+  Errores comunes
 
         </a>
       </li>
@@ -461,13 +461,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../13-from-sdd-to-harness/" class="md-tabs__link">
+        <a href="../12-from-sdd-to-harness/" class="md-tabs__link">
           
   
   
     
   
-  Industrialization
+  Industrialización
 
         </a>
       </li>
@@ -495,9 +495,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Spec-Driven Development" class="md-nav__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
+    <a href="../" title="Spec-Driven Development" class="md-nav__button md-logo" aria-label="Spec-Driven Development" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -507,7 +507,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -527,14 +527,14 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Home
+    Inicio
   
 
     
@@ -581,7 +581,7 @@
   <span class="md-ellipsis">
     
   
-    Introduction
+    Introducción
   
 
     
@@ -597,7 +597,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Introduction
+    Introducción
   
 
           </label>
@@ -617,7 +617,7 @@
   <span class="md-ellipsis">
     
   
-    Spec-Driven Development: building software with intent
+    Spec-Driven Development: producir software con intención
   
 
     
@@ -672,7 +672,7 @@
   <span class="md-ellipsis">
     
   
-    The problem
+    El problema
   
 
     
@@ -688,7 +688,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    The problem
+    El problema
   
 
           </label>
@@ -708,7 +708,7 @@
   <span class="md-ellipsis">
     
   
-    1. From vibe coding to SDD
+    1. Del vibe coding al SDD
   
 
     
@@ -767,7 +767,7 @@
   <span class="md-ellipsis">
     
   
-    Foundations
+    Fundamentos
   
 
     
@@ -783,7 +783,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Foundations
+    Fundamentos
   
 
           </label>
@@ -803,7 +803,7 @@
   <span class="md-ellipsis">
     
   
-    2. The specification spectrum
+    2. El espectro de la especificación
   
 
     
@@ -831,7 +831,7 @@
   <span class="md-ellipsis">
     
   
-    3. Anatomy of a good spec
+    3. Anatomía de una buena especificación
   
 
     
@@ -859,7 +859,7 @@
   <span class="md-ellipsis">
     
   
-    4. The spec in context
+    4. La spec en contexto
   
 
     
@@ -916,7 +916,7 @@
   <span class="md-ellipsis">
     
   
-    Lifecycle
+    Ciclo de vida
   
 
     
@@ -932,7 +932,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Lifecycle
+    Ciclo de vida
   
 
           </label>
@@ -952,7 +952,7 @@
   <span class="md-ellipsis">
     
   
-    5. Possible lifecycle approaches
+    5. Posibles enfoques del ciclo de vida
   
 
     
@@ -980,7 +980,7 @@
   <span class="md-ellipsis">
     
   
-    6. Living specs
+    6. Especificaciones vivas
   
 
     
@@ -1035,7 +1035,7 @@
   <span class="md-ellipsis">
     
   
-    Tooling
+    Herramientas
   
 
     
@@ -1051,7 +1051,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Tooling
+    Herramientas
   
 
           </label>
@@ -1071,7 +1071,7 @@
   <span class="md-ellipsis">
     
   
-    7. SDD tools
+    7. Herramientas SDD
   
 
     
@@ -1126,7 +1126,7 @@
   <span class="md-ellipsis">
     
   
-    Practice
+    Práctica
   
 
     
@@ -1142,7 +1142,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Practice
+    Práctica
   
 
           </label>
@@ -1155,14 +1155,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+      <a href="../08-patterns-of-application/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patterns of application
+    8. Patrones de aplicación
   
 
     
@@ -1219,7 +1219,7 @@
   <span class="md-ellipsis">
     
   
-    Critique
+    Crítica
   
 
     
@@ -1235,7 +1235,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Critique
+    Crítica
   
 
           </label>
@@ -1248,14 +1248,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-honest-critique/" class="md-nav__link">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. The honest critique
+    9. La crítica honesta
   
 
     
@@ -1276,14 +1276,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering as alternative
+    10. Context engineering como alternativa
   
 
     
@@ -1343,7 +1343,7 @@
   <span class="md-ellipsis">
     
   
-    Pitfalls
+    Errores comunes
   
 
     
@@ -1359,7 +1359,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Pitfalls
+    Errores comunes
   
 
           </label>
@@ -1388,7 +1388,7 @@
   <span class="md-ellipsis">
     
   
-    12. Anti-patterns
+    11. Anti-patrones
   
 
     
@@ -1406,7 +1406,7 @@
   <span class="md-ellipsis">
     
   
-    12. Anti-patterns
+    11. Anti-patrones
   
 
     
@@ -1418,7 +1418,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
@@ -1427,7 +1427,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1454,10 +1454,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-spec-without-whys" class="md-nav__link">
+  <a href="#3-spec-sin-por-ques" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Spec without whys
+        3. Spec sin por qués
       
     </span>
   </a>
@@ -1465,10 +1465,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-theater-spec-with-fake-anchoring" class="md-nav__link">
+  <a href="#4-spec-teatral-con-anclaje-fingido" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Theater spec with fake anchoring
+        4. Spec teatral con anclaje fingido
       
     </span>
   </a>
@@ -1476,10 +1476,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-single-pattern-for-any-task" class="md-nav__link">
+  <a href="#5-patron-unico-para-cualquier-tarea" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Single pattern for any task
+        5. Patrón único para cualquier tarea
       
     </span>
   </a>
@@ -1487,10 +1487,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-the-spec-that-devours-code-in-review" class="md-nav__link">
+  <a href="#6-la-spec-que-devora-al-codigo-en-revision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. The spec that devours code in review
+        6. La spec que devora al código en revisión
       
     </span>
   </a>
@@ -1498,10 +1498,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-the-eternal-spec" class="md-nav__link">
+  <a href="#7-la-spec-eterna" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. The eternal spec
+        7. La spec eterna
       
     </span>
   </a>
@@ -1509,10 +1509,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-trusting-the-spec-more-than-the-code" class="md-nav__link">
+  <a href="#8-confiar-en-la-spec-mas-que-en-el-codigo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Trusting the spec more than the code
+        8. Confiar en la spec más que en el código
       
     </span>
   </a>
@@ -1520,10 +1520,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-promoting-prematurely-to-spec-as-source" class="md-nav__link">
+  <a href="#9-promocionar-prematuramente-a-spec-as-source" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Promoting prematurely to spec-as-source
+        9. Promocionar prematuramente a spec-as-source
       
     </span>
   </a>
@@ -1531,10 +1531,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-sdd-as-excuse-not-to-talk" class="md-nav__link">
+  <a href="#10-sdd-como-excusa-para-no-hablar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. SDD as excuse not to talk
+        10. SDD como excusa para no hablar
       
     </span>
   </a>
@@ -1542,10 +1542,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-sdd-applied-to-problems-that-arent-sdd-problems" class="md-nav__link">
+  <a href="#11-sdd-aplicado-a-problemas-que-no-son-de-sdd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. SDD applied to problems that aren't SDD problems
+        11. SDD aplicado a problemas que no son de SDD
       
     </span>
   </a>
@@ -1553,10 +1553,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-generated-spec-thats-pseudocode-in-disguise" class="md-nav__link">
+  <a href="#12-spec-generada-que-es-pseudocodigo-disfrazado" class="md-nav__link">
     <span class="md-ellipsis">
       
-        12. Generated spec that's pseudocode in disguise
+        12. Spec generada que es pseudocódigo disfrazado
       
     </span>
   </a>
@@ -1564,10 +1564,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-fusing-user-story-and-spec-into-a-single-file" class="md-nav__link">
+  <a href="#13-fusionar-user-story-y-spec-en-un-solo-archivo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13. Fusing user story and spec into a single file
+        13. Fusionar user story y spec en un solo archivo
       
     </span>
   </a>
@@ -1575,10 +1575,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-reference-soup" class="md-nav__link">
+  <a href="#14-sopa-de-referencias" class="md-nav__link">
     <span class="md-ellipsis">
       
-        14. Reference soup
+        14. Sopa de referencias
       
     </span>
   </a>
@@ -1586,10 +1586,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-this-list" class="md-nav__link">
+  <a href="#como-usar-esta-lista" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to use this list
+        Cómo usar esta lista
       
     </span>
   </a>
@@ -1597,10 +1597,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-comes-next" class="md-nav__link">
+  <a href="#lo-que-viene-a-continuacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What comes next
+        Lo que viene a continuación
       
     </span>
   </a>
@@ -1657,7 +1657,7 @@
   <span class="md-ellipsis">
     
   
-    Industrialization
+    Industrialización
   
 
     
@@ -1673,7 +1673,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Industrialization
+    Industrialización
   
 
           </label>
@@ -1686,14 +1686,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../13-from-sdd-to-harness/" class="md-nav__link">
+      <a href="../12-from-sdd-to-harness/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. From SDD to the harness
+    12. Del SDD al harness
   
 
     
@@ -1727,7 +1727,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
@@ -1736,7 +1736,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1763,10 +1763,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-spec-without-whys" class="md-nav__link">
+  <a href="#3-spec-sin-por-ques" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Spec without whys
+        3. Spec sin por qués
       
     </span>
   </a>
@@ -1774,10 +1774,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-theater-spec-with-fake-anchoring" class="md-nav__link">
+  <a href="#4-spec-teatral-con-anclaje-fingido" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Theater spec with fake anchoring
+        4. Spec teatral con anclaje fingido
       
     </span>
   </a>
@@ -1785,10 +1785,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-single-pattern-for-any-task" class="md-nav__link">
+  <a href="#5-patron-unico-para-cualquier-tarea" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Single pattern for any task
+        5. Patrón único para cualquier tarea
       
     </span>
   </a>
@@ -1796,10 +1796,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-the-spec-that-devours-code-in-review" class="md-nav__link">
+  <a href="#6-la-spec-que-devora-al-codigo-en-revision" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. The spec that devours code in review
+        6. La spec que devora al código en revisión
       
     </span>
   </a>
@@ -1807,10 +1807,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-the-eternal-spec" class="md-nav__link">
+  <a href="#7-la-spec-eterna" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. The eternal spec
+        7. La spec eterna
       
     </span>
   </a>
@@ -1818,10 +1818,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-trusting-the-spec-more-than-the-code" class="md-nav__link">
+  <a href="#8-confiar-en-la-spec-mas-que-en-el-codigo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Trusting the spec more than the code
+        8. Confiar en la spec más que en el código
       
     </span>
   </a>
@@ -1829,10 +1829,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-promoting-prematurely-to-spec-as-source" class="md-nav__link">
+  <a href="#9-promocionar-prematuramente-a-spec-as-source" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Promoting prematurely to spec-as-source
+        9. Promocionar prematuramente a spec-as-source
       
     </span>
   </a>
@@ -1840,10 +1840,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-sdd-as-excuse-not-to-talk" class="md-nav__link">
+  <a href="#10-sdd-como-excusa-para-no-hablar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. SDD as excuse not to talk
+        10. SDD como excusa para no hablar
       
     </span>
   </a>
@@ -1851,10 +1851,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-sdd-applied-to-problems-that-arent-sdd-problems" class="md-nav__link">
+  <a href="#11-sdd-aplicado-a-problemas-que-no-son-de-sdd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. SDD applied to problems that aren't SDD problems
+        11. SDD aplicado a problemas que no son de SDD
       
     </span>
   </a>
@@ -1862,10 +1862,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-generated-spec-thats-pseudocode-in-disguise" class="md-nav__link">
+  <a href="#12-spec-generada-que-es-pseudocodigo-disfrazado" class="md-nav__link">
     <span class="md-ellipsis">
       
-        12. Generated spec that's pseudocode in disguise
+        12. Spec generada que es pseudocódigo disfrazado
       
     </span>
   </a>
@@ -1873,10 +1873,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-fusing-user-story-and-spec-into-a-single-file" class="md-nav__link">
+  <a href="#13-fusionar-user-story-y-spec-en-un-solo-archivo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13. Fusing user story and spec into a single file
+        13. Fusionar user story y spec en un solo archivo
       
     </span>
   </a>
@@ -1884,10 +1884,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-reference-soup" class="md-nav__link">
+  <a href="#14-sopa-de-referencias" class="md-nav__link">
     <span class="md-ellipsis">
       
-        14. Reference soup
+        14. Sopa de referencias
       
     </span>
   </a>
@@ -1895,10 +1895,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-this-list" class="md-nav__link">
+  <a href="#como-usar-esta-lista" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to use this list
+        Cómo usar esta lista
       
     </span>
   </a>
@@ -1906,10 +1906,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-comes-next" class="md-nav__link">
+  <a href="#lo-que-viene-a-continuacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What comes next
+        Lo que viene a continuación
       
     </span>
   </a>
@@ -1933,7 +1933,7 @@
 
 
   
-    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/en/12-anti-patterns.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jmlopezdona/ai-coding-agents-sdd/edit/main/docs/es/11-anti-patterns.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1941,107 +1941,107 @@
   
 
 
-<h1 id="12-sdd-anti-patterns">12. SDD anti-patterns<a class="headerlink" href="#12-sdd-anti-patterns" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>A short list of the most expensive errors seen in teams adopting Spec-Driven Development. They're not here to scare you but so when you recognize them in your own process — and you will — you know how to stop them before they become habit.</p>
-<p>Each anti-pattern follows the same format: <strong>name</strong>, observable symptom, why it happens, and the correction.</p>
+<h1 id="11-anti-patrones-del-sdd">11. Anti-patrones del SDD<a class="headerlink" href="#11-anti-patrones-del-sdd" title="Enlace permanente a esta sección">&para;</a></h1>
+<p>Una lista corta de los errores más caros que se ven en equipos que adoptan Spec-Driven Development. No están aquí para asustarte sino para que cuando los reconozcas en tu propio proceso — y los vas a reconocer — sepas pararlos antes de que se conviertan en hábito.</p>
+<p>Cada anti-patrón sigue el mismo formato: <strong>nombre</strong>, síntoma observable, por qué pasa, y la corrección.</p>
 <hr />
 <h2 id="1-spec-as-theatre">1. Spec-as-Theatre<a class="headerlink" href="#1-spec-as-theatre" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> The team writes full template specs, commits them to the repo, and never reads them again. Neither the agent nor humans. Specs exist to "show we do SDD" in process reviews, not to be used.</p>
-<p><strong>Why it happens.</strong> Top-down adoption without conviction. Someone decided "we're going to do SDD" and the team's response was to comply with the minimum ritual. Specs are tribute to authority, not tools.</p>
-<p><strong>Correction.</strong> Either specs are used or they're eliminated. There's no middle ground. The signal that the spec is used is that when there's drift between code and spec <strong>someone discusses it in a PR</strong>. If that discussion never appears, specs are theater and it's better to acknowledge it.</p>
+<p><strong>Síntoma.</strong> El equipo escribe specs completas con plantilla, las commitea al repo, y nunca las vuelve a leer. Ni el agente, ni los humanos. Las specs existen para "demostrar que hacemos SDD" en revisiones de proceso, no para ser usadas.</p>
+<p><strong>Por qué pasa.</strong> Adopción top-down sin convicción. Alguien decidió "vamos a hacer SDD" y la respuesta del equipo fue cumplir con el ritual mínimo. Las specs son tributo a la autoridad, no herramientas.</p>
+<p><strong>Corrección.</strong> O las specs se usan o se eliminan. No hay punto medio. La señal de que la spec se usa es que cuando hay drift entre código y spec <strong>alguien lo discute en un PR</strong>. Si nunca aparece esa discusión, las specs son teatro y vale más reconocerlo.</p>
 <hr />
 <h2 id="2-big-spec-up-front">2. Big Spec Up Front<a class="headerlink" href="#2-big-spec-up-front" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> Before writing a single line of code, two weeks are spent on an exhaustive 800-line spec. By the time the team starts implementing, half the assumptions have already changed.</p>
-<p><strong>Why it happens.</strong> Confusion between SDD and waterfall. People coming from heavy processes apply heavy reflexes to SDD and produce giant specs reminiscent of design docs of yore.</p>
-<p><strong>Correction.</strong> Light, living specs. The chapter 3 template fits on one screen. If your spec needs more than that, almost always you're describing two features that should be separated, or specifying things the agent can already infer from the code's context.</p>
+<p><strong>Síntoma.</strong> Antes de escribir una sola línea de código se invierten dos semanas en una spec exhaustiva de 800 líneas. Para cuando el equipo empieza a implementar, la mitad de las asunciones ya han cambiado.</p>
+<p><strong>Por qué pasa.</strong> Confusión entre SDD y waterfall. La gente que viene de procesos pesados aplica los reflejos pesados al SDD y produce specs gigantes que recuerdan a los design docs de antaño.</p>
+<p><strong>Corrección.</strong> Specs ligeras y vivas. La plantilla del capítulo 3 cabe en una pantalla. Si tu spec necesita más de eso, casi siempre estás describiendo dos features que deberían separarse, o estás especificando cosas que el agente ya sabe inferir del contexto del código.</p>
 <hr />
-<h2 id="3-spec-without-whys">3. Spec without whys<a class="headerlink" href="#3-spec-without-whys" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> The spec describes the <em>what</em> in detail — schemas, criteria, contracts — but doesn't say why decisions were chosen. Six months later, no one knows whether a spec decision is still valid or is legacy from a constraint that no longer exists.</p>
-<p><strong>Why it happens.</strong> Whys are the easiest section to cut when the team is in a hurry, and short-term it doesn't show. Medium-term, it's what kills the spec's value.</p>
-<p><strong>Correction.</strong> Whys are mandatory section, not optional. In PR reviews, a spec without whys is treated as incomplete. And if a decision has no clear why, that itself should block the merge — because it means it hasn't been thought through.</p>
+<h2 id="3-spec-sin-por-ques">3. Spec sin por qués<a class="headerlink" href="#3-spec-sin-por-ques" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> La spec describe en detalle el <em>qué</em> — schemas, criterios, contratos — pero no dice por qué se eligieron las decisiones. Seis meses después, nadie sabe si una decisión de la spec sigue siendo válida o es legacy de una restricción que ya no existe.</p>
+<p><strong>Por qué pasa.</strong> Los por qués son la sección más fácil de recortar cuando el equipo va con prisa, y a corto plazo no se nota. A medio plazo, es lo que mata el valor de la spec.</p>
+<p><strong>Corrección.</strong> Los por qués son sección obligatoria, no opcional. En revisiones de PR, una spec sin por qués se trata como una spec incompleta. Y si una decisión no tiene un por qué claro, eso mismo debería bloquear el merge — porque significa que no se ha pensado.</p>
 <hr />
-<h2 id="4-theater-spec-with-fake-anchoring">4. Theater spec with fake anchoring<a class="headerlink" href="#4-theater-spec-with-fake-anchoring" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> The team declares spec-anchored (chapter 2) but has no automatic mechanism detecting drift between spec and code. The two live in parallel, both get modified, and nobody knows when they stopped matching.</p>
-<p><strong>Why it happens.</strong> Ambition without infrastructure. Aspiring to spec-anchored is easy; implementing the anchoring (tests, validators, recurring agents) requires real investment the team didn't make.</p>
-<p><strong>Correction.</strong> Honesty about the real level. If you have no automatic anchoring, you're in spec-first, not spec-anchored. Call it by its name. And if you want to level up, first invest in the mechanism, then declare the change.</p>
+<h2 id="4-spec-teatral-con-anclaje-fingido">4. Spec teatral con anclaje fingido<a class="headerlink" href="#4-spec-teatral-con-anclaje-fingido" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> El equipo se declara en spec-anchored (capítulo 2) pero no tiene ningún mecanismo automático que detecte drift entre spec y código. Las dos cosas viven en paralelo, ambas se modifican, y nadie sabe en qué momento dejaron de coincidir.</p>
+<p><strong>Por qué pasa.</strong> Ambición sin infraestructura. Aspirar a spec-anchored es fácil; implementar el anclaje (tests, validadores, agentes recurrentes) requiere inversión real que el equipo no hizo.</p>
+<p><strong>Corrección.</strong> Honestidad sobre el nivel real. Si no tienes anclaje automático, estás en spec-first, no en spec-anchored. Llámalo por su nombre. Y si quieres subir de nivel, primero invierte en el mecanismo, después declara el cambio.</p>
 <hr />
-<h2 id="5-single-pattern-for-any-task">5. Single pattern for any task<a class="headerlink" href="#5-single-pattern-for-any-task" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> Every change — feature, refactor, three-line bug fix — goes through the same complete process: template spec, formal plan, task decomposition, validation. The team complains SDD "is too slow" and is right.</p>
-<p><strong>Why it happens.</strong> Lack of modulation. Adoption was done without teaching the difference between chapter 9 patterns.</p>
-<p><strong>Correction.</strong> Process proportional to risk. Trivial bug fixes don't deserve a spec; big features do. Chapter 9's rule — <em>spec weight proportional to the cost of the change if it goes wrong</em> — isn't optional, it's what makes the process sustainable.</p>
+<h2 id="5-patron-unico-para-cualquier-tarea">5. Patrón único para cualquier tarea<a class="headerlink" href="#5-patron-unico-para-cualquier-tarea" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> Cada cambio — feature, refactor, bug fix de tres líneas — pasa por el mismo proceso completo: spec con plantilla, plan formal, descomposición en tareas, validación. El equipo se queja de que SDD "es muy lento" y tiene razón.</p>
+<p><strong>Por qué pasa.</strong> Falta de modulación. La adopción se hizo sin enseñar la diferencia entre los patrones del capítulo 8.</p>
+<p><strong>Corrección.</strong> Proceso proporcional al riesgo. Bug fixes triviales no merecen spec; features grandes sí. La regla del capítulo 8 — <em>el peso de la spec proporcional al coste del cambio si sale mal</em> — no es opcional, es lo que hace al proceso sostenible.</p>
 <hr />
-<h2 id="6-the-spec-that-devours-code-in-review">6. The spec that devours code in review<a class="headerlink" href="#6-the-spec-that-devours-code-in-review" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> PRs include so many markdown changes (specs, plans, tasks, checklists) that reviewing the code itself gets buried. Reviewers read markdown for 20 minutes and look at the code diff for 3.</p>
-<p><strong>Why it happens.</strong> <a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Fowler</a> identifies this as one of Spec-kit's specific problems: the process generates more artifacts to review than real code. If unbounded, "review" turns into "review markdown".</p>
-<p><strong>Correction.</strong> Measure markdown/code ratio in PRs over a sprint. If markdown systematically wins, simplify templates or automate generation of repetitive artifacts. Human review should focus where judgment adds value — code and new decisions — not where a linter could pass.</p>
+<h2 id="6-la-spec-que-devora-al-codigo-en-revision">6. La spec que devora al código en revisión<a class="headerlink" href="#6-la-spec-que-devora-al-codigo-en-revision" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> Los PRs incluyen tantos cambios de markdown (specs, plans, tasks, checklists) que la revisión del propio código queda enterrada. Los reviewers leen markdown durante 20 minutos y miran el diff de código durante 3.</p>
+<p><strong>Por qué pasa.</strong> <a href="https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html">Fowler</a> lo identifica como uno de los problemas concretos de Spec-kit: el proceso genera más artefactos para revisar que código real. Si no se acota, el "revisar" se vuelve "revisar markdown".</p>
+<p><strong>Corrección.</strong> Medir la ratio markdown/código de los PRs durante un sprint. Si el markdown gana sistemáticamente, simplifica las plantillas o automatiza la generación de los artefactos repetitivos. La revisión humana debe concentrarse donde el juicio aporta valor — el código y las decisiones nuevas — no donde un linter podría pasar.</p>
 <hr />
-<h2 id="7-the-eternal-spec">7. The eternal spec<a class="headerlink" href="#7-the-eternal-spec" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> A spec is written at the start of the feature and never updated again. Code evolves, the spec stays. Six months later, reading the spec actively misleads: it says things the code no longer does.</p>
-<p><strong>Why it happens.</strong> Absence of bidirectional loop (chapter 6). The definition of "done" doesn't include updating the spec, so the incentive is not to.</p>
-<p><strong>Correction.</strong> "Done" = "code merged <strong>and</strong> spec updated". Without the second, the task isn't done. This sounds harsh and it is, but it's the only way the bidirectional loop survives a team under pressure.</p>
+<h2 id="7-la-spec-eterna">7. La spec eterna<a class="headerlink" href="#7-la-spec-eterna" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> Una spec se escribe al inicio de la feature y nunca más se actualiza. El código evoluciona, la spec se queda. Seis meses después, leer la spec engaña activamente: dice cosas que el código ya no hace.</p>
+<p><strong>Por qué pasa.</strong> Ausencia de bucle bidireccional (capítulo 6). La definición de "hecho" no incluye actualizar la spec, así que el incentivo es no hacerlo.</p>
+<p><strong>Corrección.</strong> "Hecho" = "código mergeado <strong>y</strong> spec actualizada". Sin lo segundo, la tarea no está hecha. Esto suena duro y lo es, pero es la única forma en que el bucle bidireccional sobrevive a un equipo bajo presión.</p>
 <hr />
-<h2 id="8-trusting-the-spec-more-than-the-code">8. Trusting the spec more than the code<a class="headerlink" href="#8-trusting-the-spec-more-than-the-code" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> When there's disagreement between what the spec says and what the code does, the team assumes the spec is right and "the code is wrong". This reflex is exactly the opposite of correct.</p>
-<p><strong>Why it happens.</strong> A dense, well-written spec inspires confidence, and confidence becomes authority. But the authority is unjustified: the spec might be wrong, out of date, or written with assumptions that no longer apply.</p>
-<p><strong>Correction.</strong> Code is the operational source of truth. When there's disagreement, <strong>investigate</strong> instead of assuming. Sometimes the code is wrong and the spec is right. Sometimes — more often than the team's ego will accept — it's the spec that's wrong.</p>
+<h2 id="8-confiar-en-la-spec-mas-que-en-el-codigo">8. Confiar en la spec más que en el código<a class="headerlink" href="#8-confiar-en-la-spec-mas-que-en-el-codigo" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> Cuando hay un desacuerdo entre lo que dice la spec y lo que hace el código, el equipo asume que la spec tiene razón y "el código está mal". Este reflejo es exactamente lo opuesto al correcto.</p>
+<p><strong>Por qué pasa.</strong> Una spec densa y bien escrita inspira confianza, y la confianza se convierte en autoridad. Pero la autoridad es injustificada: la spec puede estar mal, desactualizada, o haber sido escrita con asunciones que ya no aplican.</p>
+<p><strong>Corrección.</strong> El código es la fuente de verdad operacional. Cuando hay desacuerdo, <strong>investiga</strong> en lugar de asumir. A veces el código está mal y la spec acierta. A veces — más frecuentemente de lo que el ego del equipo aceptará — es la spec la que está mal.</p>
 <hr />
-<h2 id="9-promoting-prematurely-to-spec-as-source">9. Promoting prematurely to spec-as-source<a class="headerlink" href="#9-promoting-prematurely-to-spec-as-source" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> The team, excited by Tessl or by the generation idea, declares "now we edit the spec and regenerate the code". Two weeks later there are manual changes in files marked <code>// GENERATED — DO NOT EDIT</code>, and the promise has deflated.</p>
-<p><strong>Why it happens.</strong> Spec-as-source today is still viable only in narrow domains (chapter 2). Applying it to general-purpose software clashes with LLM non-determinism and edge cases the spec didn't anticipate.</p>
-<p><strong>Correction.</strong> Spec-as-source is experimentation, not production, except in domains where it's worked for decades. If you want to explore it, do it on an isolated, reversible surface. Don't bet the critical path on it.</p>
+<h2 id="9-promocionar-prematuramente-a-spec-as-source">9. Promocionar prematuramente a spec-as-source<a class="headerlink" href="#9-promocionar-prematuramente-a-spec-as-source" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> El equipo, entusiasmado con Tessl o con la idea de la generación, declara que "ahora editamos la spec y regeneramos el código". A las dos semanas hay cambios manuales en archivos marcados como <code>// GENERATED — DO NOT EDIT</code>, y la promesa se ha desinflado.</p>
+<p><strong>Por qué pasa.</strong> Spec-as-source sigue siendo, hoy, viable solo en dominios estrechos (capítulo 2). Aplicarlo a software de propósito general choca con el no-determinismo de los LLMs y con casos límite que el spec no anticipaba.</p>
+<p><strong>Corrección.</strong> Spec-as-source es experimentación, no producción, salvo en los dominios donde lleva décadas funcionando. Si quieres explorarlo, hazlo en una superficie aislada y reversible. No lo apuestes en el path crítico.</p>
 <hr />
-<h2 id="10-sdd-as-excuse-not-to-talk">10. SDD as excuse not to talk<a class="headerlink" href="#10-sdd-as-excuse-not-to-talk" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> The team stops discussing decisions because "it's in the spec". The spec is used as substitute for the human conversation about trade-offs. Questions die with "read the spec".</p>
-<p><strong>Why it happens.</strong> Writing is more comfortable than discussing, especially for distributed teams. An elaborate spec starts working as a decree instead of as a proposal.</p>
-<p><strong>Correction.</strong> The spec is a starting point for conversation, not its end. If an important spec decision hasn't been questioned in six months, it's not a quality signal — it's a sign the spec has killed the conversation that should be alive.</p>
+<h2 id="10-sdd-como-excusa-para-no-hablar">10. SDD como excusa para no hablar<a class="headerlink" href="#10-sdd-como-excusa-para-no-hablar" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> El equipo deja de discutir las decisiones porque "está en la spec". La spec se usa como sustituto de la conversación humana sobre trade-offs. Las preguntas mueren con un "léete la spec".</p>
+<p><strong>Por qué pasa.</strong> Escribir es más cómodo que discutir, especialmente para equipos distribuidos. Una spec elaborada empieza a funcionar como un decreto en lugar de como una propuesta.</p>
+<p><strong>Corrección.</strong> La spec es un punto de partida para la conversación, no su fin. Si una decisión importante de la spec no ha sido cuestionada en seis meses, no es señal de calidad — es señal de que la spec ha matado la conversación que debería estar viva.</p>
 <hr />
-<h2 id="11-sdd-applied-to-problems-that-arent-sdd-problems">11. SDD applied to problems that aren't SDD problems<a class="headerlink" href="#11-sdd-applied-to-problems-that-arent-sdd-problems" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> The team adopts SDD expecting it to solve problems that are actually about something else: poorly defined product, poorly thought architecture, inexperienced team, broken deploy infrastructure. The discipline doesn't move the needle because it wasn't the right lever.</p>
-<p><strong>Why it happens.</strong> Methodology reification. "If SDD is good, my problem must be solvable with SDD." Not always.</p>
-<p><strong>Correction.</strong> Diagnose before treating. Ask what's failing exactly before deciding what methodology to apply. If the problem is product or infrastructure, no spec will fix it.</p>
+<h2 id="11-sdd-aplicado-a-problemas-que-no-son-de-sdd">11. SDD aplicado a problemas que no son de SDD<a class="headerlink" href="#11-sdd-aplicado-a-problemas-que-no-son-de-sdd" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> El equipo adopta SDD esperando que resuelva problemas que en realidad son de otra cosa: producto mal definido, arquitectura mal pensada, equipo sin experiencia, deploy infrastructure rota. La disciplina no mueve la aguja porque no era la palanca correcta.</p>
+<p><strong>Por qué pasa.</strong> Reificación de la metodología. "Si SDD es bueno, mi problema debe poder resolverse con SDD." No siempre.</p>
+<p><strong>Corrección.</strong> Diagnóstico antes de tratamiento. Pregunta qué está fallando exactamente, antes de decidir qué metodología aplicar. Si el problema es de producto o de infraestructura, ninguna spec lo va a arreglar.</p>
 <hr />
-<h2 id="12-generated-spec-thats-pseudocode-in-disguise">12. Generated spec that's pseudocode in disguise<a class="headerlink" href="#12-generated-spec-thats-pseudocode-in-disguise" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> The team uses an agent to generate specs from user stories, features, or architectural components. The resulting specs are full of classes, methods, function signatures, API payloads, and inline business rules. They look thorough. When implementation arrives, the team discovers that (a) it's implementing twice, because the decisions were already made in the "spec", and (b) human review of those specs is as expensive as reviewing code that doesn't exist yet — but without the safety net of tests or actual execution.</p>
-<p><strong>Why it happens.</strong> When you ask an LLM to "generate a spec", the model optimizes for <em>apparent coverage</em> and drops to the level of detail where it's comfortable: code. That's where its training corpus gives it the most confidence. Climbing to the right level for a spec — intent, constraints, whys — requires abstraction, which is exactly what the model does worst. The result is predictable: pseudocode in markdown, dressed up as a design doc.</p>
-<p>On top of this comes the team's own bias: a generated spec with 600 lines, classes, methods and diagrams <em>looks</em> rigorous. The tired reviewer assumes that something so detailed must be well thought out. And the "spec" passes the filter without anyone really checking whether it captures intent or just describes one of many possible implementations. Chapter 3 develops this anti-pattern in its section <em>"What if a generator agent writes the spec?"</em>; here we just give the operational corrections.</p>
-<p><strong>Correction.</strong> Three concrete rules:</p>
+<h2 id="12-spec-generada-que-es-pseudocodigo-disfrazado">12. Spec generada que es pseudocódigo disfrazado<a class="headerlink" href="#12-spec-generada-que-es-pseudocodigo-disfrazado" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> El equipo usa un agente para generar specs a partir de user stories, features o componentes arquitectónicos. Las specs resultantes están llenas de clases, métodos, firmas de funciones, payloads de API y reglas de negocio inline. Parecen completísimas. Cuando llega la implementación, el equipo descubre que (a) está implementando dos veces, porque las decisiones ya estaban tomadas en la "spec", y (b) la revisión humana de esas specs es tan cara como revisar el código que aún no existe — pero sin la red de seguridad de tests ni ejecución real.</p>
+<p><strong>Por qué pasa.</strong> Cuando le pides a un LLM "genera una spec", el modelo optimiza por <em>cobertura aparente</em> y baja al nivel de detalle donde está cómodo: el código. Es donde su corpus de entrenamiento le da más confianza. Subir al nivel correcto de una spec — intención, restricciones, por qués — requiere abstracción, que es justo lo que el modelo hace peor. El resultado es predecible: pseudocódigo en markdown, disfrazado de documento de diseño.</p>
+<p>A esto se suma el sesgo del equipo: una spec generada que tiene 600 líneas, clases, métodos y diagramas <em>parece</em> rigurosa. El revisor humano, cansado, asume que algo tan detallado tiene que estar bien pensado. Y la "spec" pasa el filtro sin que nadie verifique de verdad si captura intención o solo describe una implementación posible entre muchas. El capítulo 3 desarrolla este anti-patrón en su sección <em>"¿Y si la spec la genera un agente?"</em>: aquí solo damos las correcciones operativas.</p>
+<p><strong>Corrección.</strong> Tres reglas concretas:</p>
 <ol>
-<li><strong>If your spec mentions function signatures, class names or payload structures, delete them.</strong> The spec talks about what guarantees the system must meet, not how it's built. If after deleting them the spec is empty, you didn't need a spec — you needed well-written code (ch. 11).</li>
-<li><strong>Use the agent as a draft generator only for the <em>what</em>, not the <em>how</em>.</strong> The agent can start the objective, acceptance criteria and a candidate list of non-goals. The human has to put in, no exceptions, the whys, the real non-goals and the tacit constraints. What the agent doesn't know, it invents or omits — and invented whys are worse than missing whys.</li>
-<li><strong>Measure the implementation-detail / intent-detail ratio of your specs.</strong> If more than 30% of the spec describes code structures, you're writing pseudocode, not a spec. It's a sign that the generator agent (or you) has dropped a level of abstraction that breaks the document's purpose.</li>
+<li><strong>Si tu spec menciona firmas de función, nombres de clase o estructuras de payload, bórralas.</strong> La spec habla de qué garantías tiene que cumplir el sistema, no de cómo se construye. Si después de borrarlas la spec queda vacía, no necesitabas una spec — necesitabas código bien escrito (cap. 11).</li>
+<li><strong>Usa el agente como draft generator solo del <em>qué</em>, no del <em>cómo</em>.</strong> El agente puede arrancar bien el objetivo, los criterios de aceptación y una lista candidata de no-goals. El humano tiene que poner sí o sí los por qués, los no-goals reales y las restricciones tácitas. Lo que el agente no sabe, lo inventa o lo omite — y los por qués inventados son peores que los por qués ausentes.</li>
+<li><strong>Mide la ratio detalle-implementación / detalle-intención de tus specs.</strong> Si más del 30% de la spec describe estructuras de código, estás escribiendo pseudocódigo, no una spec. Es señal de que el agente generador (o tú mismo) ha bajado un nivel de abstracción que rompe el propósito del documento.</li>
 </ol>
-<p>The simple test: a good spec survives <strong>two different implementations</strong> by the same team and is still valid for both. A spec generated as pseudocode doesn't — it describes <em>one</em> specific way of implementing, and if the code drifts even slightly it's already in drift. If your spec can't pass that test, you don't have a spec; you have an implementation sketch you call a spec.</p>
+<p>El test sencillo: una buena spec sobrevive a <strong>dos implementaciones distintas</strong> del mismo equipo y sigue siendo válida para las dos. Una spec generada como pseudocódigo no — describe <em>una</em> forma específica de implementar, y si el código se desvía mínimamente ya está en drift. Si la spec no pasa ese test, no tienes una spec; tienes un boceto de implementación al que llamas spec.</p>
 <hr />
-<h2 id="13-fusing-user-story-and-spec-into-a-single-file">13. Fusing user story and spec into a single file<a class="headerlink" href="#13-fusing-user-story-and-spec-into-a-single-file" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> The team, trying to "avoid duplicate work", merges the user story and the spec into a single hybrid file. The result tries to be both things at once and is neither: too technical for the PM to refine as a user story, and too vague in its product language for the agent to use as a verifiable technical contract. When a product change comes in, someone edits the file and a technical detail is left inconsistent. When an implementation discovery comes in, someone edits the file and a product decision changes without the PM noticing.</p>
-<p><strong>Why it happens.</strong> It's very tempting, especially when product documentation lives in the same Git repo as the specs. The physical proximity makes the team ask "why have two files if they say the same thing?" — and the intuitive answer is to merge them. But the question is wrong: they don't say the same thing. The user story answers <em>what the user wants and why it matters to the business</em>. The spec answers <em>what observable guarantees the system must meet</em>. There's a 60-70% overlap, but they're not the same thing, and the overlap doesn't justify fusing them — each artifact serves a different audience and changes for different reasons.</p>
-<p>There's a more subtle cause too: the team confuses <em>traceability</em> with <em>unification</em>. It wants the link between product intent and technical contract to be explicit, and assumes the only way to achieve that is to put them in the same document. But traceability is achieved with references, traces and automatic sensors (chapter 6), not by fusing two artifacts with distinct purposes.</p>
-<p><strong>Correction.</strong> Three rules:</p>
+<h2 id="13-fusionar-user-story-y-spec-en-un-solo-archivo">13. Fusionar user story y spec en un solo archivo<a class="headerlink" href="#13-fusionar-user-story-y-spec-en-un-solo-archivo" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> El equipo, intentando "no duplicar trabajo", junta la user story y la spec en un único archivo híbrido. El resultado intenta ser las dos cosas a la vez y no es ninguna: es demasiado técnico para que el PM lo refine como user story, y demasiado vago en su lenguaje de producto para que el agente lo use como contrato técnico verificable. Cuando llega un cambio de producto, alguien edita el archivo y un detalle técnico queda inconsistente. Cuando llega un descubrimiento de implementación, alguien edita el archivo y una decisión de producto cambia sin que el PM se entere.</p>
+<p><strong>Por qué pasa.</strong> Es muy tentador, especialmente cuando la documentación de producto vive en el mismo repo Git que las specs. La proximidad física hace que el equipo pregunte "¿para qué tener dos archivos si dicen lo mismo?" — y la respuesta intuitiva es fusionarlos. Pero la pregunta está mal planteada: no dicen lo mismo. La user story responde a <em>qué quiere el usuario y por qué le importa al negocio</em>. La spec responde a <em>qué garantías observables tiene que cumplir el sistema</em>. Tienen un solapamiento del 60-70%, pero no son la misma cosa, y el solapamiento no justifica fundirlas — cada artefacto sirve a una audiencia distinta y cambia por motivos distintos.</p>
+<p>A esto se suma una causa más sutil: el equipo confunde <em>trazabilidad</em> con <em>unificación</em>. Quiere que el lazo entre intención de producto y contrato técnico sea explícito, y asume que la única forma de lograrlo es ponerlos en el mismo documento. Pero la trazabilidad se consigue con referencias, traces y sensores automáticos (capítulo 6), no fundiendo dos artefactos con propósitos distintos.</p>
+<p><strong>Corrección.</strong> Tres reglas:</p>
 <ol>
-<li><strong>Keep the physical separation</strong>, even when both files live in the same repo. The user story in <code>docs/product/</code>, the spec in <code>specs/</code>, each with its own history and its own audience. Proximity enables traceability and cross-validation — not fusion.</li>
-<li><strong>The author test</strong>. If the file is edited by both the PM (for product reasons) and an engineer (for implementation reasons) without coordination, that's a sign you're maintaining two artifacts collapsed into one. Split them.</li>
-<li><strong>Enable a divergence sensor</strong> between the two files instead of fusing them. A git hook or a chapter 6 recurring agent can watch for the user story changing without the spec being updated (or vice versa), and open an issue to reconcile them consciously. That preserves both audiences and makes the relationship between the two artifacts explicit.</li>
+<li><strong>Mantén la separación física</strong>, incluso cuando los dos archivos vivan en el mismo repo. La user story en <code>docs/product/</code>, la spec en <code>specs/</code>, cada una con su propia historia de cambios y su propia audiencia. La proximidad facilita la trazabilidad y la validación cruzada — no la fusión.</li>
+<li><strong>El test del autor</strong>. Si el archivo lo edita tanto el PM (por razones de producto) como un ingeniero (por razones de implementación) sin coordinación, es señal de que estás manteniendo dos artefactos colapsados en uno. Sepáralos.</li>
+<li><strong>Habilita un sensor de divergencia</strong> entre ambos archivos en lugar de fusionarlos. Un git hook o un agente recurrente del capítulo 6 puede vigilar cuando la user story cambie sin que la spec se actualice (o al revés), y abrir un issue para reconciliarlas conscientemente. Eso preserva las dos audiencias y hace explícita la relación entre los dos artefactos.</li>
 </ol>
-<p>Chapter 4 develops this in its section <em>"Reusing criteria from upstream documents"</em> — here we just flag why silent fusion is an anti-pattern in its own right. It's one of the pathologies that putting product documentation in the repo amplifies the most when done without thought: what was a good organizational idea becomes a new archetype of bad spec.</p>
+<p>El capítulo 4 desarrolla este tema en su sección <em>"Reutilizar criterios de documentos upstream"</em> — aquí solo señalamos por qué la fusión silenciosa es un anti-patrón con nombre propio. Es una de las patologías que más amplifica meter la documentación de producto en el repo sin pensar: lo que era una buena idea organizativa se convierte en un arquetipo nuevo de spec malhecha.</p>
 <hr />
-<h2 id="14-reference-soup">14. Reference soup<a class="headerlink" href="#14-reference-soup" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Symptom.</strong> The spec contains a long list of references — ADRs, contracts, feature briefs, components, user stories, architecture documents — all cited without prioritization or annotation. The "References" block is longer than the spec's own content. When the agent reads the spec, it doesn't know which of those references are load-bearing for this task and which are tangential context. When the human reviews it six months later, the same thing happens. The result: <strong>nobody follows them</strong>, and the effective spec ends up being only the visible content — the rest is decorative noise.</p>
-<p><strong>Why it happens.</strong> Two reinforcing causes. First, the team confuses <em>exhaustiveness of citations</em> with <em>rigor</em>: it cites everything "related" to look thorough, without distinguishing what this spec actually depends on from what just happens to live in the same neighborhood of the repo. Second, there's a defensive bias: adding references feels "cheap" (it doesn't break anything, it doesn't force you to think) compared to removing them (which requires defending why something isn't needed).</p>
-<p>On top of this comes the compound effect from chapter 3: when a team learns to reference upstream documents instead of copying them (which is the right rule), the easy slide is to reference <em>everything</em>. The "reference, don't copy" rule gets read as "reference always", and the other half is lost: "reference only what this task needs". It's the inverse of the <em>curse of instructions</em> from chapter 3 — and the paralyzing effect is the same.</p>
-<p><strong>Correction.</strong> Three rules:</p>
+<h2 id="14-sopa-de-referencias">14. Sopa de referencias<a class="headerlink" href="#14-sopa-de-referencias" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><strong>Síntoma.</strong> La spec contiene una lista larga de referencias — ADRs, contratos, feature briefs, componentes, user stories, documentos de arquitectura — todas citadas sin priorización ni anotación. El bloque "Referencias" es más largo que el contenido propio de la spec. Cuando el agente lee la spec, no sabe cuáles de esas referencias son load-bearing para esta tarea y cuáles son contexto tangencial. Cuando el humano la revisa en seis meses, le pasa lo mismo. El resultado es que <strong>nadie las sigue</strong>, y la spec efectiva acaba siendo solo el contenido visible — el resto es ruido decorativo.</p>
+<p><strong>Por qué pasa.</strong> Hay dos causas que se refuerzan. Primero, el equipo confunde <em>exhaustividad de citas</em> con <em>rigor</em>: cita todo lo "relacionado" para parecer riguroso, sin distinguir lo que esta spec realmente depende de lo que solo está en el mismo barrio del repo. Segundo, hay un sesgo defensivo: añadir referencias se siente "barato" (no rompe nada, no obliga a pensar) frente a quitarlas (que requiere defender por qué algo no se necesita).</p>
+<p>A esto se suma el efecto compuesto del capítulo 3: cuando el equipo aprende a referenciar documentos upstream en lugar de copiarlos (que es la regla correcta), la pendiente fácil es referenciarlo <em>todo</em>. La regla "referencia, no copies" se interpreta como "referencia siempre", y se pierde la otra mitad: "referencia solo lo que esta tarea necesita". Es el inverso de la <em>maldición de las instrucciones</em> del capítulo 3 — y el efecto paralizante es el mismo.</p>
+<p><strong>Corrección.</strong> Tres reglas:</p>
 <ol>
-<li><strong>Reference only what the agent or the human needs for this task</strong>, not what's tangentially related. If a reference would disappear without changing the implementation, it doesn't belong in the spec.</li>
-<li><strong>Annotate the why of each reference</strong>. <em>"Cited because this endpoint must respect the invariant in section 3 of ADR-007"</em> is useful. <em>"Related: ADR-007"</em> is noise. The annotation is the proof that you've thought about why the reference is there.</li>
-<li><strong>Measure the references / own-content ratio</strong>. If the citations block is longer than the criteria + whys + technical constraints sections combined, you have soup. Trim until your own content dominates.</li>
+<li><strong>Referencia solo lo que el agente o el humano necesita para esta tarea</strong>, no lo que está tangencialmente relacionado. Si una referencia desaparecería sin que la implementación cambie, no debe estar en la spec.</li>
+<li><strong>Anota el porqué de cada referencia</strong>. <em>"Citado porque este endpoint debe respetar el invariante de la sección 3 de ADR-007"</em> es útil. <em>"Relacionado: ADR-007"</em> es ruido. La anotación es la prueba de que has pensado por qué la referencia está ahí.</li>
+<li><strong>Mide la ratio referencias / contenido propio</strong>. Si el bloque de citas es más largo que las secciones de criterios + por qués + restricciones técnicas, hay sopa. Recorta hasta que el contenido propio domine.</li>
 </ol>
-<p>The simple test: ask someone outside the team to read the spec and underline the references <em>essential</em> for understanding what to build. If they underline less than 30% of those that appear, the rest are soup. Delete them or move them to the end as "optional context", separated from the spec's body.</p>
-<p>Chapter 3 develops this topic in its section <em>"The spec and technical components: consume, produce, modify"</em> — here we just give the symptom a name and the operational correction. It's an anti-pattern especially common in teams coming from adopting the "don't copy, reference" discipline: they've learned the right half of the rule but not the other half.</p>
+<p>El test sencillo: pídele a alguien externo al equipo que lea la spec y subraye las referencias <em>imprescindibles</em> para entender qué hay que construir. Si subraya menos del 30% de las que aparecen, las otras son sopa. Bórralas o mueve al final como "contexto opcional", separado del cuerpo de la spec.</p>
+<p>El capítulo 3 desarrolla este tema en su sección <em>"La spec y los componentes técnicos: consumir, producir, modificar"</em> — aquí solo damos el síntoma con nombre y la corrección operativa. Es un anti-patrón especialmente común en equipos que vienen de adoptar la disciplina de "no copies, referencia": han aprendido la mitad correcta de la regla pero no la otra mitad.</p>
 <hr />
-<h2 id="how-to-use-this-list">How to use this list<a class="headerlink" href="#how-to-use-this-list" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Once a quarter, in a retro, read this list aloud and ask the team: <em>do we recognize any of these in ourselves?</em> People, contrary to what ego promises, almost always recognize one or two. And recognizing them is half of stopping them.</p>
-<p>If you recognize three or more, <strong>the problem isn't one of the anti-patterns; it's the whole adoption of SDD</strong>. Go back to chapter 10 and 11 and rethink whether SDD is the right tool for your situation.</p>
-<h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
-<p><strong>Chapter 13</strong> closes the course connecting SDD with the next step: the harness. The exact points where the discipline couples with harness engineering, and why the two together produce much more than the two apart.</p>
+<h2 id="como-usar-esta-lista">Cómo usar esta lista<a class="headerlink" href="#como-usar-esta-lista" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Una vez al trimestre, durante una retrospectiva, lee esta lista en voz alta y pregunta al equipo: <em>¿reconocemos alguno de estos en nosotros?</em> La gente, contra lo que el ego promete, casi siempre reconoce uno o dos. Y reconocerlos es la mitad de pararlos.</p>
+<p>Si reconoces tres o más, <strong>el problema no es uno de los anti-patrones; es la adopción entera de SDD</strong>. Vuelve al capítulo 9 y al 11 y replantea si SDD es la herramienta correcta para tu situación.</p>
+<h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>El <strong>capítulo 12</strong> cierra el curso conectando SDD con el siguiente paso: el harness. Cuáles son los puntos exactos donde la disciplina se acopla con la ingeniería del harness, y por qué los dos juntos producen mucho más que los dos por separado.</p>
 
 
 
@@ -2065,7 +2065,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  Volver al principio
 </button>
         
       </main>
@@ -2074,33 +2074,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../11-context-engineering/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 11. Context engineering as alternative">
+          <a href="../10-context-engineering/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 10. Context engineering como alternativa">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Previous
+                Anterior
               </span>
               <div class="md-ellipsis">
-                11. Context engineering as alternative
+                10. Context engineering como alternativa
               </div>
             </div>
           </a>
         
         
           
-          <a href="../13-from-sdd-to-harness/" class="md-footer__link md-footer__link--next" aria-label="Next: 13. From SDD to the harness">
+          <a href="../12-from-sdd-to-harness/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 12. Del SDD al harness">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Next
+                Siguiente
               </span>
               <div class="md-ellipsis">
-                13. From SDD to the harness
+                12. Del SDD al harness
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2153,10 +2153,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

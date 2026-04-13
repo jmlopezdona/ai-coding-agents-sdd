@@ -395,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../09-patterns-of-application/" class="md-tabs__link">
+        <a href="../08-patterns-of-application/" class="md-tabs__link">
           
   
   
@@ -417,7 +417,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../10-honest-critique/" class="md-tabs__link">
+        <a href="../09-honest-critique/" class="md-tabs__link">
           
   
   
@@ -439,7 +439,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../12-anti-patterns/" class="md-tabs__link">
+        <a href="../11-anti-patterns/" class="md-tabs__link">
           
   
   
@@ -461,7 +461,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../13-from-sdd-to-harness/" class="md-tabs__link">
+        <a href="../12-from-sdd-to-harness/" class="md-tabs__link">
           
   
   
@@ -1295,14 +1295,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-patterns-of-application/" class="md-nav__link">
+      <a href="../08-patterns-of-application/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    9. Patrones de aplicación
+    8. Patrones de aplicación
   
 
     
@@ -1388,14 +1388,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-honest-critique/" class="md-nav__link">
+      <a href="../09-honest-critique/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    10. La crítica honesta
+    9. La crítica honesta
   
 
     
@@ -1416,14 +1416,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-context-engineering/" class="md-nav__link">
+      <a href="../10-context-engineering/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    11. Context engineering como alternativa
+    10. Context engineering como alternativa
   
 
     
@@ -1507,14 +1507,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-anti-patterns/" class="md-nav__link">
+      <a href="../11-anti-patterns/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Anti-patrones
+    11. Anti-patrones
   
 
     
@@ -1598,14 +1598,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../13-from-sdd-to-harness/" class="md-nav__link">
+      <a href="../12-from-sdd-to-harness/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. Del SDD al harness
+    12. Del SDD al harness
   
 
     
@@ -1803,7 +1803,7 @@
 </ul>
 <p><strong>Cuándo se rompe:</strong></p>
 <ul>
-<li>Cuando el coste de mantener spec y código sincronizados se vuelve mayor que el beneficio. Esto es real y el capítulo 10 lo desarrolla con honestidad.</li>
+<li>Cuando el coste de mantener spec y código sincronizados se vuelve mayor que el beneficio. Esto es real y el capítulo 9 lo desarrolla con honestidad.</li>
 <li>Cuando los tests automáticos no cubren lo suficiente como para cumplir su rol de "anclaje".</li>
 </ul>
 <h2 id="nivel-3-spec-as-source">Nivel 3 — Spec-as-Source<a class="headerlink" href="#nivel-3-spec-as-source" title="Enlace permanente a esta sección">&para;</a></h2>
@@ -1820,7 +1820,7 @@
 <li><strong>Dominio acotado</strong>: sistemas de control, dinámica física, procesamiento de señales. Problemas con leyes bien establecidas.</li>
 <li><strong>Generación determinística</strong>: el mismo diagrama produce el mismo código. Siempre.</li>
 </ol>
-<p>Para software de propósito general — APIs web, frontends, scripts internos, todo lo que la mayoría de equipos hacen el 95% del tiempo — ninguna de las tres condiciones se cumple. Las specs están en lenguaje natural (ambigüedad), el dominio cambia con cada feature (no acotado), y los LLMs son no determinísticos por diseño. Por eso spec-as-source aplicado a este tipo de software sigue siendo más promesa que realidad. La razón fundamental es la misma que mató al Model-Driven Development en los años 2000, y el capítulo 10 vuelve sobre esto.</p>
+<p>Para software de propósito general — APIs web, frontends, scripts internos, todo lo que la mayoría de equipos hacen el 95% del tiempo — ninguna de las tres condiciones se cumple. Las specs están en lenguaje natural (ambigüedad), el dominio cambia con cada feature (no acotado), y los LLMs son no determinísticos por diseño. Por eso spec-as-source aplicado a este tipo de software sigue siendo más promesa que realidad. La razón fundamental es la misma que mató al Model-Driven Development en los años 2000, y el capítulo 9 vuelve sobre esto.</p>
 <p><strong>Cuándo funciona:</strong></p>
 <ul>
 <li>Dominios maduros con semántica formal (embedded, control, hardware/software co-design).</li>
@@ -1914,7 +1914,7 @@
 <p>Si no puedes responder con seguridad, la respuesta operativa es la primera. Estás en spec-first. No es un drama, pero no te cuentes la historia de que estás en otro nivel.</p>
 <h2 id="la-trampa-del-queremos-estar-en-spec-anchored">La trampa del "queremos estar en spec-anchored"<a class="headerlink" href="#la-trampa-del-queremos-estar-en-spec-anchored" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>La trampa más cara que vemos en equipos que adoptan SDD es esta: aspiran a spec-anchored, escriben specs muy detalladas como si lo estuvieran, pero <strong>no invierten en el mecanismo de anclaje</strong>. No hay tests que comparen spec y código. No hay validador. No hay agente recurrente. Solo hay una carpeta <code>specs/</code> con markdowns que poco a poco se desactualizan.</p>
-<p>Eso es spec-first vestido de spec-anchored, y es peor que spec-first puro porque genera la falsa sensación de tener una fuente de verdad cuando lo que tienes es ficción documentada. El capítulo 10 vuelve sobre esto bajo el nombre de "ilusión de control".</p>
+<p>Eso es spec-first vestido de spec-anchored, y es peor que spec-first puro porque genera la falsa sensación de tener una fuente de verdad cuando lo que tienes es ficción documentada. El capítulo 9 vuelve sobre esto bajo el nombre de "ilusión de control".</p>
 <p>La regla operativa: <strong>no declares que haces spec-anchored hasta que tengas el mecanismo automático de anclaje funcionando</strong>. Sin ese mecanismo, lo que tienes es spec-first con más papeleo.</p>
 <h2 id="que-nivel-deberias-elegir">Qué nivel deberías elegir<a class="headerlink" href="#que-nivel-deberias-elegir" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>No hay una respuesta universal, pero hay una recomendación honesta:</p>
