@@ -1446,10 +1446,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#una-nota-sobre-la-palabra-context-engineering" class="md-nav__link">
+  <a href="#una-nota-importante-sobre-la-palabra-context-engineering" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Una nota sobre la palabra "context engineering"
+        Una nota importante sobre la palabra "context engineering"
       
     </span>
   </a>
@@ -1797,10 +1797,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#una-nota-sobre-la-palabra-context-engineering" class="md-nav__link">
+  <a href="#una-nota-importante-sobre-la-palabra-context-engineering" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Una nota sobre la palabra "context engineering"
+        Una nota importante sobre la palabra "context engineering"
       
     </span>
   </a>
@@ -1953,9 +1953,43 @@
 <li><strong>Nada de eso</strong> para refactors menores y bug fixes triviales.</li>
 </ul>
 <p>Esto puede sonar a "haz lo que te dé la gana", y es exactamente lo opuesto. Es <strong>modulación deliberada</strong> del nivel de formalidad según el coste y el riesgo del cambio. Es la habilidad que distingue a un equipo que aplica SDD bien de uno que lo sufre universalmente.</p>
-<h2 id="una-nota-sobre-la-palabra-context-engineering">Una nota sobre la palabra "context engineering"<a class="headerlink" href="#una-nota-sobre-la-palabra-context-engineering" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>El término está ganando tracción precisamente porque captura algo que el SDD no: que la batalla real no es escribir specs, es <strong>gestionar el contexto</strong> que llega al agente en el momento de actuar. Y el contexto puede venir de muchos sitios: specs, ADRs, commits, comentarios, AGENTS.md, búsquedas en el código, RAG sobre el repo, y herramientas de retrieval. Llamar a todo eso "context engineering" es honesto sobre lo que realmente está pasando.</p>
-<p>SDD es una <strong>estrategia concreta</strong> dentro de context engineering: la estrategia que elige specs externas como mecanismo principal. Y como toda estrategia, tiene contextos donde brilla y contextos donde estorba. Visto así, las dos posiciones del capítulo 9 y este capítulo no son enemigos: son dos puntos del mismo espectro de soluciones para el mismo problema, y la elección depende del contexto del equipo.</p>
+<h2 id="una-nota-importante-sobre-la-palabra-context-engineering">Una nota importante sobre la palabra "context engineering"<a class="headerlink" href="#una-nota-importante-sobre-la-palabra-context-engineering" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Hay que ser honesto con una colisión de términos. Cuando Isoform habla de "context engineering" en su artículo, se refiere a algo específico: <strong>incrustar intención, decisiones y restricciones dentro del propio código y sus artefactos adyacentes</strong> (ADRs, commits, comentarios de intención, AGENTS.md). Es una práctica de documentación ligada al código.</p>
+<p>Pero el término <strong>context engineering</strong> tiene un significado mucho más amplio y anterior en la comunidad de AI. Popularizado por figuras como Andrej Karpathy y Simon Willison, se refiere a la <strong>disciplina general de diseñar todo el contexto que llega al LLM en el momento de actuar</strong>: system prompts, ejemplos few-shot, resultados de RAG, definiciones de herramientas, historial de conversación, y cualquier otro input que condicione la respuesta del modelo. Es la evolución natural de "prompt engineering" cuando el input dejó de ser un único prompt.</p>
+<p>Las dos acepciones no son lo mismo:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Context engineering (general)</th>
+<th>Lo que propone Isoform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alcance</strong></td>
+<td>Todo input al LLM</td>
+<td>Solo artefactos del repo</td>
+</tr>
+<tr>
+<td><strong>Incluye</strong></td>
+<td>System prompts, RAG, tools, few-shot, specs</td>
+<td>ADRs, commits, comentarios, AGENTS.md</td>
+</tr>
+<tr>
+<td><strong>Objetivo</strong></td>
+<td>Que el agente actúe bien</td>
+<td>Que la intención sobreviva en el código</td>
+</tr>
+<tr>
+<td><strong>Quién lo hace</strong></td>
+<td>Quien configura el agente</td>
+<td>Quien escribe el código</td>
+</tr>
+</tbody>
+</table>
+<p>Lo que Isoform propone sería más preciso llamarlo <strong>code-embedded context</strong>: información relevante más allá de la propia codificación — los por qués, las restricciones, las decisiones — pero adherida al código en lugar de vivir en un documento externo como una spec. Es un subconjunto del context engineering general, no su sinónimo.</p>
+<p>Dicho esto, tanto SDD como code-embedded context son <strong>estrategias concretas dentro del context engineering general</strong>. SDD elige specs externas como mecanismo principal para alimentar el contexto del agente; code-embedded context elige el propio código y sus artefactos adyacentes. La elección depende del contexto del equipo, y como veremos en la síntesis siguiente, no son excluyentes.</p>
 <h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>El <strong>capítulo 11</strong> es el más corto del curso y el más operativo: una lista de <strong>anti-patrones</strong> del SDD que verás en equipos reales, con su nombre, su síntoma y la corrección. Es la parte que querrás imprimir y poner en la pared del equipo.</p>
 
