@@ -122,11 +122,40 @@ La regla heurística: si no puedes describir el estado "después de la tarea" en
 
 ## Fase 2 — Implementar la spec
 
+El principio es siempre el mismo: **cada tarea es atómica respecto a la spec** — o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra". Pero la forma de ejecutar esas tareas ya no es única. Las herramientas actuales permiten dos modelos de implementación, y la elección entre ellos afecta tanto a cómo se estructura la Fase 1 como a qué se verifica en la Fase 3.
+
+### Modelo secuencial — Un agente, una tarea a la vez
+
 El agente ejecuta las tareas de una en una. Para cada tarea: lee la spec, lee la tarea, escribe los tests que la tarea pide, escribe el código, ejecuta los tests, verifica. Si los tests no pasan, itera. Si pasan, marca la tarea como hecha y pasa a la siguiente.
 
-Lo importante aquí es que **cada tarea es atómica respecto a la spec**: o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra".
+Es el modelo más simple y predecible. Las interfaces entre tareas son implícitas — el agente las recuerda de la tarea anterior, porque trabaja en el mismo contexto. Funciona bien cuando las tareas tienen **dependencias fuertes entre sí** o cuando el equipo quiere revisar entre iteraciones.
 
-Esta es la fase más estable del ciclo — todos los frameworks la implementan de forma similar. Lo que varía es el nivel de autonomía del agente (desde un agente general con la spec como contexto, hasta [BMAD](07-native-sdd-tools.md#bmad) con un agente Developer especializado) y si la validación ocurre dentro de cada tarea (enfoque B, [Kiro](07-native-sdd-tools.md#kiro)) o se difiere a la Fase 3.
+### Modelo orquestado — Un agente coordinador con sub-agentes
+
+Las herramientas actuales (Claude Code con sub-agentes en worktrees aislados, Cursor con background agents, o cualquier harness que orqueste múltiples sesiones) abren una segunda posibilidad: un **agente orquestador** lee la spec completa y delega partes a **sub-agentes** que trabajan en paralelo.
+
+Imaginemos una spec que toca front, middleware y back. En lugar de un agente que implementa las tres capas secuencialmente, el orquestador puede lanzar tres sub-agentes — cada uno con su trozo de la spec y los contratos de interfaz con los demás. Cada sub-agente implementa y valida su parte de forma independiente. El orquestador integra y verifica que las partes encajan.
+
+Este modelo es más rápido para features grandes con capas independientes, pero introduce un riesgo que el modelo secuencial no tiene: **fallos de integración entre partes**. Que cada sub-agente cumpla su trozo de spec no garantiza que el conjunto funcione — exactamente como en un equipo humano distribuido.
+
+| | Secuencial | Orquestado |
+|---|---|---|
+| **Quién decide el orden** | Humano o plan estático | Agente orquestador |
+| **Paralelismo** | No | Sí, por contexto o capa |
+| **Interfaces entre tareas** | Implícitas (mismo contexto) | **Explícitas en la spec** (cada sub-agente solo ve su parte) |
+| **Riesgo principal** | Lentitud | Conflictos de integración |
+| **Validación necesaria** | Por tarea | Por sub-agente + integración global |
+| **Cuándo encaja** | Tareas con dependencias fuertes | Tareas con interfaces bien definidas entre capas |
+
+!!! tip "Impacto en la Fase 1"
+
+    Si piensas implementar con sub-agentes, la descomposición de la Fase 1 cambia de naturaleza. Las **interfaces entre partes de la spec se vuelven load-bearing**: no pueden ser implícitas. *"El endpoint acepta X y devuelve Y; el front consume Y con este contrato"* tiene que estar en la spec, porque cada sub-agente solo verá su contexto. Esto conecta directamente con los artefactos [producidos y consumidos del capítulo 4](04-spec-in-context.md#tres-relaciones-tres-reglas) — cada sub-agente *consume* el contrato que otro sub-agente *produce*.
+
+!!! note "Conexión con BMAD y Traycer"
+
+    El modelo orquestado no es nuevo conceptualmente — [BMAD](07-native-sdd-tools.md#bmad) ya usa múltiples agentes, pero con **roles fijos** (PM, Architect, QA, Developer). Lo que las herramientas actuales permiten es una orquestación más flexible: sub-agentes por **contexto de la spec** (front, back, infra), no por rol en el proceso. Y las capas de arquitecto tipo [Traycer](08-architect-layers.md) son el candidato natural para actuar como orquestador — su función de planificación y verificación encaja exactamente con coordinar sub-agentes.
+
+Ninguno de los dos modelos es universalmente mejor. El modelo secuencial es más simple y seguro; el orquestado es más rápido pero exige más rigor en la Fase 1 y más validación de integración en la Fase 3. Como con las demás decisiones de este capítulo, **el contexto manda**.
 
 ## Fase 3 — Validar la spec
 
@@ -139,6 +168,7 @@ Es también la fase donde **más divergen los frameworks** — y donde más fall
 - **Validación aspiracional** ([Spec-kit](07-native-sdd-tools.md#spec-kit-github)): aspira a spec-anchored pero en la práctica no tiene un mecanismo automático que compare spec contra código. Es spec-first con disfraz.
 - **Validación por regeneración** ([Tessl](07-native-sdd-tools.md#tessl)): si regeneras código desde la spec y obtienes lo mismo, "valida". Pero el no-determinismo de los LLMs entra en conflicto directo con esta promesa.
 - **Validación delegada a un rol** ([BMAD](07-native-sdd-tools.md#bmad)): un agente QA especializado verifica. La especialización ayuda con el foco, pero los fallos de coordinación entre agentes son sutiles.
+- **Validación de integración** (modelo orquestado): cuando múltiples sub-agentes implementan partes de la spec en paralelo, aparece un nivel adicional de validación — no solo "¿cada parte cumple su trozo de spec?" sino "¿las partes se integran correctamente?". Es la diferencia entre tests unitarios y tests de integración, aplicada al nivel de la spec.
 
 !!! warning "La Fase 3 es lo que separa SDD de vibe coding con documentación"
 

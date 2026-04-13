@@ -122,11 +122,40 @@ Heuristic rule: if you can't describe the "after the task" state in one sentence
 
 ## Phase 2 — Implement the spec
 
+The principle is always the same: **each task is atomic with respect to the spec** — either it's fully done or it's reverted. There are no half-done tasks "to be fixed in another". But how those tasks are executed is no longer a single option. Today's tools allow two implementation models, and the choice between them affects both how Phase 1 is structured and what gets verified in Phase 3.
+
+### Sequential model — One agent, one task at a time
+
 The agent executes tasks one at a time. For each task: read the spec, read the task, write the tests the task asks for, write the code, run the tests, verify. If tests don't pass, iterate. If they pass, mark done and move on.
 
-What matters here is that **each task is atomic with respect to the spec**: either it's fully done or it's reverted. There are no half-done tasks "to be fixed in another".
+It's the simplest and most predictable model. Interfaces between tasks are implicit — the agent remembers them from the previous task, because it works in the same context. It works well when tasks have **strong dependencies between them** or when the team wants to review between iterations.
 
-This is the most stable phase of the cycle — every framework implements it similarly. What varies is the agent's level of autonomy (from a general agent with the spec as context, to [BMAD](07-native-sdd-tools.md#bmad) with a specialized Developer agent) and whether validation happens within each task (approach B, [Kiro](07-native-sdd-tools.md#kiro)) or is deferred to Phase 3.
+### Orchestrated model — A coordinator agent with sub-agents
+
+Today's tools (Claude Code with sub-agents in isolated worktrees, Cursor with background agents, or any harness orchestrating multiple sessions) open a second possibility: an **orchestrator agent** reads the full spec and delegates parts to **sub-agents** working in parallel.
+
+Imagine a spec that touches front-end, middleware, and back-end. Instead of one agent implementing all three layers sequentially, the orchestrator can launch three sub-agents — each with its slice of the spec and the interface contracts with the others. Each sub-agent implements and validates its part independently. The orchestrator integrates and verifies the parts fit together.
+
+This model is faster for large features with independent layers, but introduces a risk the sequential model doesn't have: **integration failures between parts**. Each sub-agent fulfilling its slice of spec doesn't guarantee the whole works — exactly like a distributed human team.
+
+| | Sequential | Orchestrated |
+|---|---|---|
+| **Who decides the order** | Human or static plan | Orchestrator agent |
+| **Parallelism** | No | Yes, by context or layer |
+| **Interfaces between tasks** | Implicit (same context) | **Explicit in the spec** (each sub-agent only sees its part) |
+| **Main risk** | Slowness | Integration conflicts |
+| **Validation needed** | Per task | Per sub-agent + global integration |
+| **When it fits** | Tasks with strong dependencies | Tasks with well-defined interfaces between layers |
+
+!!! tip "Impact on Phase 1"
+
+    If you plan to implement with sub-agents, Phase 1's decomposition changes in nature. **Interfaces between parts of the spec become load-bearing**: they can't be implicit. *"The endpoint accepts X and returns Y; the front-end consumes Y with this contract"* has to be in the spec, because each sub-agent will only see its context. This connects directly with [chapter 4's produced and consumed artifacts](04-spec-in-context.md#three-relationships-three-rules) — each sub-agent *consumes* the contract another sub-agent *produces*.
+
+!!! note "Connection with BMAD and Traycer"
+
+    The orchestrated model isn't conceptually new — [BMAD](07-native-sdd-tools.md#bmad) already uses multiple agents, but with **fixed roles** (PM, Architect, QA, Developer). What today's tools enable is more flexible orchestration: sub-agents by **spec context** (front, back, infra), not by process role. And architect layers like [Traycer](08-architect-layers.md) are the natural candidate to act as orchestrator — their planning and verification functions fit exactly with coordinating sub-agents.
+
+Neither model is universally better. The sequential model is simpler and safer; the orchestrated model is faster but demands more rigor in Phase 1 and more integration validation in Phase 3. As with every other decision in this chapter, **context rules**.
 
 ## Phase 3 — Validate the spec
 
@@ -139,6 +168,7 @@ It's also the phase where **frameworks diverge most** — and where they fail mo
 - **Aspirational validation** ([Spec-kit](07-native-sdd-tools.md#spec-kit-github)): aspires to spec-anchored but in practice has no automatic mechanism comparing spec against code. It's spec-first in disguise.
 - **Validation by regeneration** ([Tessl](07-native-sdd-tools.md#tessl)): if you regenerate code from the spec and get the same result, it "validates". But LLM non-determinism conflicts directly with this promise.
 - **Validation delegated to a role** ([BMAD](07-native-sdd-tools.md#bmad)): a specialized QA agent verifies. The specialization helps with focus, but coordination failures between agents are subtle.
+- **Integration validation** (orchestrated model): when multiple sub-agents implement parts of the spec in parallel, an additional validation level appears — not just "does each part fulfill its slice of spec?" but "do the parts integrate correctly?". It's the difference between unit tests and integration tests, applied at the spec level.
 
 !!! warning "Phase 3 is what separates SDD from vibe coding with documentation"
 
