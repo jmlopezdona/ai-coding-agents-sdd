@@ -1,13 +1,13 @@
-# 10. Context engineering como alternativa
+# 10. Code-embedded context: la otra cara de la moneda
 
-El capítulo anterior cierra con seis críticas serias al SDD. Sería tramposo dejarte ahí, en la crítica sin alternativa. Por suerte, los mismos críticos — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development) en particular — proponen una idea distinta sobre dónde debe vivir la intención y los "por qués". La llaman **context engineering**, y este capítulo la presenta sin endulzarla pero también sin dramatizar la diferencia con SDD.
+El capítulo anterior cierra con seis críticas serias al SDD. Sería tramposo dejarte ahí, en la crítica sin complemento. Los mismos críticos — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development) en particular — proponen una idea distinta sobre dónde debe vivir la intención y los "por qués". La llaman "context engineering" (un término que merece matización, como veremos al final del capítulo), y este capítulo la presenta como lo que realmente es: **no una alternativa al SDD, sino su complemento natural** — la otra cara de la misma moneda.
 
 > *Captura la intención y las restricciones de las discusiones, actualiza el contexto iterativamente a medida que evoluciona la comprensión, y preserva explícitamente las razones de las decisiones dentro del propio código.*
 > — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development), *The Limits of Spec-Driven Development*
 
-Esa frase resume el desplazamiento.
+Esa frase resume el enfoque.
 
-## La diferencia esencial con SDD
+## En qué se diferencia del SDD
 
 SDD pone la intención en **specs que son documentos paralelos al código**. Lo que Isoform propone es distribuir esa intención en **artefactos con distintos niveles de acoplamiento al propio código**: desde comentarios inline (máximo acoplamiento) hasta ADRs (acoplamiento bajo, similar al de una spec).
 
@@ -32,9 +32,9 @@ La propuesta de Isoform no es "todo adherido al código" — es **preferir los a
 
 Una observación importante: **una spec que vive en el repositorio también es un artefacto del repo**, versionada con git, revisable en PRs. La frontera entre "spec" y "artefacto del proyecto" se desdibuja. La diferencia real no es dónde vive el archivo, sino el grado de acoplamiento con el código que describe y la ambición de lo que intenta capturar.
 
-## Qué cosas hace context engineering
+## Qué prácticas incluye
 
-Context engineering no es "no hagas nada". Es un conjunto de prácticas concretas, todas orientadas a **dejar trazas legibles dentro del propio sistema**:
+Code-embedded context no es "no hagas nada". Es un conjunto de prácticas concretas, todas orientadas a **dejar trazas legibles dentro del propio sistema**:
 
 ### 1. ADRs (Architecture Decision Records)
 
@@ -44,11 +44,11 @@ La diferencia con una spec: una spec dice "el sistema hace esto"; un ADR dice "e
 
 ### 2. Commit messages que explican
 
-Un commit message rico — no "fix" o "update", sino tres frases que dicen *qué* cambia, *por qué* y *qué efecto secundario tiene* — es context engineering en su forma más barata. `git blame` se vuelve un sistema de recuperación de intención. Cualquier agente futuro que pregunte "¿por qué esta línea?" tiene la respuesta a un comando de distancia.
+Un commit message rico — no "fix" o "update", sino tres frases que dicen *qué* cambia, *por qué* y *qué efecto secundario tiene* — es code-embedded context en su forma más barata. `git blame` se vuelve un sistema de recuperación de intención. Cualquier agente futuro que pregunte "¿por qué esta línea?" tiene la respuesta a un comando de distancia.
 
 ### 3. Comentarios sobre intención, no sobre mecánica
 
-Los comentarios tradicionales explican *qué hace* el código. Context engineering pide comentarios que expliquen *por qué* el código hace lo que hace, especialmente cuando la decisión tiene una razón no obvia.
+Los comentarios tradicionales explican *qué hace* el código. Code-embedded context pide comentarios que expliquen *por qué* el código hace lo que hace, especialmente cuando la decisión tiene una razón no obvia.
 
 ```python
 # No usamos retry exponencial aquí porque el cliente
@@ -57,17 +57,17 @@ Los comentarios tradicionales explican *qué hace* el código. Context engineeri
 # (Decisión post-incidente del 2025-11-12.)
 ```
 
-Ese comentario es context engineering puro: vive con el código, explica un por qué, y ningún agente futuro va a "limpiar" el retry por error porque la razón está justo ahí.
+Ese comentario es code-embedded context puro: vive con el código, explica un por qué, y ningún agente futuro va a "limpiar" el retry por error porque la razón está justo ahí.
 
 ### 4. AGENTS.md (o CLAUDE.md) como mapa, no como spec
 
-Un archivo `AGENTS.md` corto en la raíz del repo, que oriente al agente sobre **dónde están las cosas** y **qué convenciones se siguen**, es context engineering bien hecho. No es una spec del sistema; es un mapa de orientación para alguien que llega de fuera. Idealmente cabe en una pantalla.
+Un archivo `AGENTS.md` corto en la raíz del repo, que oriente al agente sobre **dónde están las cosas** y **qué convenciones se siguen**, es code-embedded context bien hecho. No es una spec del sistema; es un mapa de orientación para alguien que llega de fuera. Idealmente cabe en una pantalla.
 
-La línea entre "AGENTS.md como mapa" y "AGENTS.md como spec gigante" es exactamente la línea entre context engineering y SDD malhecho. Cuando AGENTS.md crece más allá de orientación y empieza a describir el sistema, te estás deslizando hacia la disciplina de specs por la puerta de atrás, con todos sus costes.
+La línea entre "AGENTS.md como mapa" y "AGENTS.md como spec gigante" es exactamente la línea entre code-embedded context y SDD malhecho. Cuando AGENTS.md crece más allá de orientación y empieza a describir el sistema, te estás deslizando hacia la disciplina de specs por la puerta de atrás, con todos sus costes.
 
-## En qué se parece a SDD y en qué no
+## SDD y code-embedded context: comparativa
 
-Para evitar que parezca que son enemigos irreconciliables — no lo son — vale la pena tabular en qué coinciden y en qué difieren.
+Para ver cómo encajan como complementos — no como enemigos — vale la pena tabular en qué coinciden y en qué difieren.
 
 | Dimensión | SDD | Code-embedded context |
 |---|---|---|
@@ -82,16 +82,15 @@ Para evitar que parezca que son enemigos irreconciliables — no lo son — vale
 
 Los dos enfoques resuelven el mismo problema — el context collapse del capítulo 1 — con filosofías distintas. SDD apuesta por la **persistencia explícita en documentos paralelos**; code-embedded context apuesta por **distribuir la intención en artefactos con alto acoplamiento al código**.
 
-## Cuándo elegir context engineering en lugar de SDD
+## Cuándo apoyarse más en code-embedded context
 
-Hay situaciones donde context engineering es objetivamente la mejor opción:
+Hay situaciones donde code-embedded context cubre la mayor parte de la necesidad y las specs formales aportan poco:
 
-- **Equipos pequeños** donde el coste de mantener specs externas es desproporcionado.
 - **Proyectos en fase de descubrimiento** donde la intención cambia más rápido de lo que se puede escribir una spec.
 - **Bases de código maduras con buenas convenciones** donde la mayor parte del contexto ya vive en el código y solo falta capturar los por qués.
 - **Equipos que ya practican ADRs disciplinados** y querrían no añadir un segundo sistema documental encima.
 
-Y hay situaciones donde context engineering se queda corto:
+Y hay situaciones donde code-embedded context no es suficiente y las specs formales aportan valor real:
 
 - **Sistemas regulados** donde la spec separada es un requisito de auditoría, no una elección estilística.
 - **Coordinación entre múltiples equipos** donde hace falta un artefacto compartido que no esté enterrado en commits.
@@ -99,9 +98,9 @@ Y hay situaciones donde context engineering se queda corto:
 
 ## La síntesis honesta: usa los dos
 
-Una de las cosas que más equipos descubren después de leer las dos posiciones es que **no son alternativas excluyentes**. El equipo maduro acaba haciendo una mezcla:
+Una de las cosas que más equipos descubren después de trabajar con ambos enfoques es que **funcionan mejor juntos que por separado**. El equipo maduro acaba haciendo una mezcla:
 
-- **ADRs y commit messages ricos como capa base**, siempre, para todo. Esto es context engineering puro y es gratis (o muy barato).
+- **ADRs y commit messages ricos como capa base**, siempre, para todo. Esto es code-embedded context puro y es gratis (o muy barato).
 - **Specs ligeras estilo capítulo 3** solo para features grandes con alcance amplio y vida larga, siguiendo el patrón 1 del capítulo 8.
 - **Specs vivas con bucle bidireccional** solo para los módulos donde el coste de mantenimiento se amortiza por su criticidad.
 - **Nada de eso** para refactors menores y bug fixes triviales.

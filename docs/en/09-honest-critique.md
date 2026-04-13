@@ -84,4 +84,4 @@ If you recognize your situation in either of the two, **the cost of SDD probably
 
 ## What comes next
 
-The critiques leave the reader with a legitimate question: *if bad SDD is this, what do I do then?* chapter 10 develops the alternative Isoform proposes: **context engineering**. It's not "vibe coding but worse"; it's a deliberately different proposal about where intent should live.
+The critiques leave the reader with a legitimate question: *if bad SDD is this, what do I do then?* Chapter 10 presents what Isoform calls "context engineering" — which we'll call **code-embedded context** to avoid confusion with the broader AI community term. It's not an alternative to SDD but its natural complement: a proposal for embedding intent directly in the code and its adjacent artifacts.

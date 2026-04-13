@@ -1,13 +1,13 @@
-# 10. Context engineering as alternative
+# 10. Code-embedded context: the other side of the coin
 
-The previous chapter closes with six serious critiques of SDD. It would be unfair to leave you there, in critique without alternative. Fortunately, the same critics — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development) in particular — propose a different idea about where intent and *whys* should live. They call it **context engineering**, and this chapter presents it without sweetening but also without dramatizing the difference with SDD.
+The previous chapter closes with six serious critiques of SDD. It would be unfair to leave you there, in critique without complement. The same critics — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development) in particular — propose a different idea about where intent and *whys* should live. They call it "context engineering" (a term that deserves qualification, as we'll see at the end of the chapter), and this chapter presents it for what it really is: **not an alternative to SDD, but its natural complement** — the other side of the same coin.
 
 > *Capture intent and constraints from discussions, update context iteratively as understanding evolves, and explicitly preserve decision rationales within code itself.*
 > — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development), *The Limits of Spec-Driven Development*
 
-That sentence sums up the shift.
+That sentence sums up the approach.
 
-## The essential difference from SDD
+## How it differs from SDD
 
 SDD puts intent in **specs that are documents parallel to the code**. What Isoform proposes is distributing that intent across **artifacts with varying levels of coupling to the code itself**: from inline comments (maximum coupling) to ADRs (low coupling, similar to a spec).
 
@@ -32,9 +32,9 @@ Isoform's proposal isn't "everything stuck to the code" — it's **preferring ar
 
 An important observation: **a spec that lives in the repository is also a repo artifact**, versioned with git, reviewable in PRs. The boundary between "spec" and "project artifact" blurs. The real difference isn't where the file lives, but the degree of coupling to the code it describes and the ambition of what it tries to capture.
 
-## What context engineering does
+## What practices it includes
 
-Context engineering isn't "do nothing". It's a set of concrete practices, all oriented to **leaving readable traces inside the system itself**:
+Code-embedded context isn't "do nothing". It's a set of concrete practices, all oriented to **leaving readable traces inside the system itself**:
 
 ### 1. ADRs (Architecture Decision Records)
 
@@ -44,11 +44,11 @@ The difference with a spec: a spec says "the system does this"; an ADR says "we 
 
 ### 2. Commit messages that explain
 
-A rich commit message — not "fix" or "update" but three sentences saying *what* changes, *why* and *what side effect* — is context engineering in its cheapest form. `git blame` becomes an intent retrieval system. Any future agent asking "why this line?" has the answer one command away.
+A rich commit message — not "fix" or "update" but three sentences saying *what* changes, *why* and *what side effect* — is code-embedded context in its cheapest form. `git blame` becomes an intent retrieval system. Any future agent asking "why this line?" has the answer one command away.
 
 ### 3. Comments about intent, not mechanics
 
-Traditional comments explain *what* the code does. Context engineering asks for comments that explain *why* the code does what it does, especially when the decision has a non-obvious reason.
+Traditional comments explain *what* the code does. Code-embedded context asks for comments that explain *why* the code does what it does, especially when the decision has a non-obvious reason.
 
 ```python
 # We don't use exponential retry here because the upstream
@@ -57,17 +57,17 @@ Traditional comments explain *what* the code does. Context engineering asks for 
 # (Post-incident decision 2025-11-12.)
 ```
 
-That comment is pure context engineering: it lives with the code, explains a why, and no future agent will "clean up" the retry by mistake because the reason is right there.
+That comment is pure code-embedded context: it lives with the code, explains a why, and no future agent will "clean up" the retry by mistake because the reason is right there.
 
 ### 4. AGENTS.md (or CLAUDE.md) as map, not as spec
 
-A short `AGENTS.md` file at the repo root, orienting the agent about **where things are** and **what conventions are followed**, is context engineering done well. It's not a system spec; it's an orientation map for someone arriving from outside. It ideally fits on one screen.
+A short `AGENTS.md` file at the repo root, orienting the agent about **where things are** and **what conventions are followed**, is code-embedded context done well. It's not a system spec; it's an orientation map for someone arriving from outside. It ideally fits on one screen.
 
-The line between "AGENTS.md as map" and "AGENTS.md as giant spec" is exactly the line between context engineering and bad SDD. When AGENTS.md grows beyond orientation and starts describing the system, you're sliding into spec discipline by the back door, with all its costs.
+The line between "AGENTS.md as map" and "AGENTS.md as giant spec" is exactly the line between code-embedded context and bad SDD. When AGENTS.md grows beyond orientation and starts describing the system, you're sliding into spec discipline by the back door, with all its costs.
 
-## Where it resembles SDD and where it doesn't
+## SDD and code-embedded context: comparison
 
-To avoid making them seem like irreconcilable enemies — they aren't — it's worth tabulating where they coincide and where they differ.
+To see how they fit as complements — not as enemies — it's worth tabulating where they coincide and where they differ.
 
 | Dimension | SDD | Code-embedded context |
 |---|---|---|
@@ -82,16 +82,15 @@ To avoid making them seem like irreconcilable enemies — they aren't — it's w
 
 The two approaches solve the same problem — chapter 1's context collapse — with different philosophies. SDD bets on **explicit persistence in parallel documents**; code-embedded context bets on **distributing intent across artifacts with high coupling to the code**.
 
-## When to choose context engineering over SDD
+## When to lean more on code-embedded context
 
-There are situations where context engineering is objectively the better option:
+There are situations where code-embedded context covers most of the need and formal specs add little:
 
-- **Small teams** where the cost of maintaining external specs is disproportionate.
 - **Discovery-phase projects** where intent changes faster than a spec can be written.
 - **Mature codebases with good conventions** where most context already lives in code and only the whys need capturing.
 - **Teams that already practice disciplined ADRs** and would prefer not to add a second documentary system on top.
 
-And situations where context engineering falls short:
+And situations where code-embedded context isn't enough and formal specs add real value:
 
 - **Regulated systems** where the separate spec is an audit requirement, not a stylistic choice.
 - **Coordination across multiple teams** where you need a shared artifact not buried in commits.
@@ -99,9 +98,9 @@ And situations where context engineering falls short:
 
 ## The honest synthesis: use both
 
-One thing many teams discover after reading both positions is that **they aren't mutually exclusive**. The mature team ends up doing a mix:
+One thing many teams discover after working with both approaches is that **they work better together than apart**. The mature team ends up doing a mix:
 
-- **ADRs and rich commit messages as base layer**, always, for everything. This is pure context engineering and is free (or very cheap).
+- **ADRs and rich commit messages as base layer**, always, for everything. This is pure code-embedded context and is free (or very cheap).
 - **Light specs in chapter 3 style** only for big features with broad scope and long life, following chapter 8's pattern 1.
 - **Living specs with bidirectional loop** only for modules where the maintenance cost amortizes through criticality.
 - **None of that** for minor refactors and trivial bug fixes.

@@ -62,7 +62,7 @@ nav:
       - "8. Patterns of application": 08-patterns-of-application.md
   - Critique:
       - "9. The honest critique": 09-honest-critique.md
-      - "10. Context engineering as alternative": 10-context-engineering.md
+      - "10. Code-embedded context": 10-context-engineering.md
   - Pitfalls:
       - "11. Anti-patterns": 11-anti-patterns.md
   - Industrialization:
@@ -136,7 +136,7 @@ plugins:
             "8. Patterns of application": "8. Patrones de aplicación"
             "Critique": "Crítica"
             "9. The honest critique": "9. La crítica honesta"
-            "10. Context engineering as alternative": "10. Context engineering como alternativa"
+            "10. Code-embedded context": "10. Code-embedded context: la otra cara de la moneda"
             "Pitfalls": "Errores comunes"
             "11. Anti-patterns": "11. Anti-patrones"
             "Industrialization": "Industrialización"

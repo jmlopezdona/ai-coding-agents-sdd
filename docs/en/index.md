@@ -19,7 +19,7 @@ This is the **second guide in a trilogy**: it comes after the [fundamentals guid
 
 Chapters are ordered **problem → foundations → cycle → tooling → practice → critique → bridge**, but each one stands on its own. If you already have the "why", jump to whichever chapter solves a concrete problem. If you're starting fresh, read in order.
 
-Two chapters are **not optional** even though they look negative: chapter 9 (the honest critique) and chapter 10 (context engineering as alternative). Without them, this course is marketing. With them, it gives judgment.
+Two chapters are **not optional** even though they look negative: chapter 9 (the honest critique) and chapter 10 (code-embedded context as complement). Without them, this course is marketing. With them, it gives judgment.
 
 ## Index
 
@@ -53,7 +53,7 @@ Two chapters are **not optional** even though they look negative: chapter 9 (the
 ### Part 6 — Critique
 
 - [9. The honest critique: maintenance tax, MDD and the illusion of control](09-honest-critique.md)
-- [10. Context engineering as alternative](10-context-engineering.md)
+- [10. Code-embedded context: the other side of the coin](10-context-engineering.md)
 
 ### Part 7 — Common mistakes
 

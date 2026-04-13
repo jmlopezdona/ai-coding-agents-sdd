@@ -19,7 +19,7 @@ Es la **segunda guía de una trilogía**: viene después de la [guía de fundame
 
 Los capítulos están ordenados de **problema → fundamentos → ciclo → herramientas → práctica → crítica → puente**, pero cada uno se sostiene por sí solo. Si ya tienes claro el "por qué", salta al capítulo que te resuelva un problema concreto. Si vienes de cero, léelos en orden.
 
-Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 10 (la crítica honesta) y el 11 (context engineering como alternativa). Sin ellos, el curso es marketing. Con ellos, da criterio.
+Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 9 (la crítica honesta) y el 10 (code-embedded context como complemento). Sin ellos, el curso es marketing. Con ellos, da criterio.
 
 ## Índice
 
@@ -53,7 +53,7 @@ Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 10 (l
 ### Parte 6 — Crítica
 
 - [9. La crítica honesta: maintenance tax, MDD y la ilusión de control](09-honest-critique.md)
-- [10. Context engineering como alternativa](10-context-engineering.md)
+- [10. Code-embedded context: la otra cara de la moneda](10-context-engineering.md)
 
 ### Parte 7 — Errores comunes
 
