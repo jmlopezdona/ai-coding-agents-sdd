@@ -33,7 +33,7 @@
     
     
       
-        <title>10. Context engineering como alternativa - Spec-Driven Development</title>
+        <title>10. Code-embedded context: la otra cara de la moneda - Spec-Driven Development</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#10-context-engineering-como-alternativa" class="md-skip">
+        <a href="#10-code-embedded-context-la-otra-cara-de-la-moneda" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10. Context engineering como alternativa
+              10. Code-embedded context: la otra cara de la moneda
             
           </span>
         </div>
@@ -1297,7 +1297,7 @@
   <span class="md-ellipsis">
     
   
-    10. Context engineering como alternativa
+    10. Code-embedded context: la otra cara de la moneda
   
 
     
@@ -1315,7 +1315,7 @@
   <span class="md-ellipsis">
     
   
-    10. Context engineering como alternativa
+    10. Code-embedded context: la otra cara de la moneda
   
 
     
@@ -1341,10 +1341,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-diferencia-esencial-con-sdd" class="md-nav__link">
+  <a href="#en-que-se-diferencia-del-sdd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La diferencia esencial con SDD
+        En qué se diferencia del SDD
       
     </span>
   </a>
@@ -1352,15 +1352,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#que-cosas-hace-context-engineering" class="md-nav__link">
+  <a href="#que-practicas-incluye" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Qué cosas hace context engineering
+        Qué prácticas incluye
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Qué cosas hace context engineering">
+    <nav class="md-nav" aria-label="Qué prácticas incluye">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1413,10 +1413,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#en-que-se-parece-a-sdd-y-en-que-no" class="md-nav__link">
+  <a href="#sdd-y-code-embedded-context-comparativa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        En qué se parece a SDD y en qué no
+        SDD y code-embedded context: comparativa
       
     </span>
   </a>
@@ -1424,10 +1424,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cuando-elegir-context-engineering-en-lugar-de-sdd" class="md-nav__link">
+  <a href="#cuando-apoyarse-mas-en-code-embedded-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cuándo elegir context engineering en lugar de SDD
+        Cuándo apoyarse más en code-embedded context
       
     </span>
   </a>
@@ -1692,10 +1692,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#la-diferencia-esencial-con-sdd" class="md-nav__link">
+  <a href="#en-que-se-diferencia-del-sdd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        La diferencia esencial con SDD
+        En qué se diferencia del SDD
       
     </span>
   </a>
@@ -1703,15 +1703,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#que-cosas-hace-context-engineering" class="md-nav__link">
+  <a href="#que-practicas-incluye" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Qué cosas hace context engineering
+        Qué prácticas incluye
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Qué cosas hace context engineering">
+    <nav class="md-nav" aria-label="Qué prácticas incluye">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1764,10 +1764,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#en-que-se-parece-a-sdd-y-en-que-no" class="md-nav__link">
+  <a href="#sdd-y-code-embedded-context-comparativa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        En qué se parece a SDD y en qué no
+        SDD y code-embedded context: comparativa
       
     </span>
   </a>
@@ -1775,10 +1775,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cuando-elegir-context-engineering-en-lugar-de-sdd" class="md-nav__link">
+  <a href="#cuando-apoyarse-mas-en-code-embedded-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cuándo elegir context engineering en lugar de SDD
+        Cuándo apoyarse más en code-embedded context
       
     </span>
   </a>
@@ -1843,14 +1843,14 @@
   
 
 
-<h1 id="10-context-engineering-como-alternativa">10. Context engineering como alternativa<a class="headerlink" href="#10-context-engineering-como-alternativa" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>El capítulo anterior cierra con seis críticas serias al SDD. Sería tramposo dejarte ahí, en la crítica sin alternativa. Por suerte, los mismos críticos — <a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a> en particular — proponen una idea distinta sobre dónde debe vivir la intención y los "por qués". La llaman <strong>context engineering</strong>, y este capítulo la presenta sin endulzarla pero también sin dramatizar la diferencia con SDD.</p>
+<h1 id="10-code-embedded-context-la-otra-cara-de-la-moneda">10. Code-embedded context: la otra cara de la moneda<a class="headerlink" href="#10-code-embedded-context-la-otra-cara-de-la-moneda" title="Enlace permanente a esta sección">&para;</a></h1>
+<p>El capítulo anterior cierra con seis críticas serias al SDD. Sería tramposo dejarte ahí, en la crítica sin complemento. Los mismos críticos — <a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a> en particular — proponen una idea distinta sobre dónde debe vivir la intención y los "por qués". La llaman "context engineering" (un término que merece matización, como veremos al final del capítulo), y este capítulo la presenta como lo que realmente es: <strong>no una alternativa al SDD, sino su complemento natural</strong> — la otra cara de la misma moneda.</p>
 <blockquote>
 <p><em>Captura la intención y las restricciones de las discusiones, actualiza el contexto iterativamente a medida que evoluciona la comprensión, y preserva explícitamente las razones de las decisiones dentro del propio código.</em>
 — <a href="https://isoform.ai/blog/the-limits-of-spec-driven-development">Isoform</a>, <em>The Limits of Spec-Driven Development</em></p>
 </blockquote>
-<p>Esa frase resume el desplazamiento.</p>
-<h2 id="la-diferencia-esencial-con-sdd">La diferencia esencial con SDD<a class="headerlink" href="#la-diferencia-esencial-con-sdd" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Esa frase resume el enfoque.</p>
+<h2 id="en-que-se-diferencia-del-sdd">En qué se diferencia del SDD<a class="headerlink" href="#en-que-se-diferencia-del-sdd" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>SDD pone la intención en <strong>specs que son documentos paralelos al código</strong>. Lo que Isoform propone es distribuir esa intención en <strong>artefactos con distintos niveles de acoplamiento al propio código</strong>: desde comentarios inline (máximo acoplamiento) hasta ADRs (acoplamiento bajo, similar al de una spec).</p>
 <p>Esto no es una dicotomía binaria "dentro vs fuera del código". Es un <strong>gradiente de acoplamiento</strong>:</p>
 <table>
@@ -1902,26 +1902,26 @@
 <li><strong>No hay falsa ilusión de completitud</strong> porque no hay un documento maestro que dé sensación de cobertura. La cobertura es exactamente la del código.</li>
 </ol>
 <p>Una observación importante: <strong>una spec que vive en el repositorio también es un artefacto del repo</strong>, versionada con git, revisable en PRs. La frontera entre "spec" y "artefacto del proyecto" se desdibuja. La diferencia real no es dónde vive el archivo, sino el grado de acoplamiento con el código que describe y la ambición de lo que intenta capturar.</p>
-<h2 id="que-cosas-hace-context-engineering">Qué cosas hace context engineering<a class="headerlink" href="#que-cosas-hace-context-engineering" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Context engineering no es "no hagas nada". Es un conjunto de prácticas concretas, todas orientadas a <strong>dejar trazas legibles dentro del propio sistema</strong>:</p>
+<h2 id="que-practicas-incluye">Qué prácticas incluye<a class="headerlink" href="#que-practicas-incluye" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Code-embedded context no es "no hagas nada". Es un conjunto de prácticas concretas, todas orientadas a <strong>dejar trazas legibles dentro del propio sistema</strong>:</p>
 <h3 id="1-adrs-architecture-decision-records">1. ADRs (Architecture Decision Records)<a class="headerlink" href="#1-adrs-architecture-decision-records" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Cada decisión arquitectónica importante se captura como un ADR corto: contexto, decisión, alternativas consideradas, consecuencias. Vive en <code>docs/adr/</code> o equivalente, versionada como código. No describe el sistema entero — describe <strong>decisiones</strong>, una por documento, con fecha y dueño.</p>
 <p>La diferencia con una spec: una spec dice "el sistema hace esto"; un ADR dice "elegimos hacerlo así por estas razones". ADRs son los por qués pelados, sin los qués. Y cuando un agente lee un ADR antes de tocar el módulo correspondiente, obtiene exactamente lo que la crítica de Isoform decía que las specs no daban.</p>
 <h3 id="2-commit-messages-que-explican">2. Commit messages que explican<a class="headerlink" href="#2-commit-messages-que-explican" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Un commit message rico — no "fix" o "update", sino tres frases que dicen <em>qué</em> cambia, <em>por qué</em> y <em>qué efecto secundario tiene</em> — es context engineering en su forma más barata. <code>git blame</code> se vuelve un sistema de recuperación de intención. Cualquier agente futuro que pregunte "¿por qué esta línea?" tiene la respuesta a un comando de distancia.</p>
+<p>Un commit message rico — no "fix" o "update", sino tres frases que dicen <em>qué</em> cambia, <em>por qué</em> y <em>qué efecto secundario tiene</em> — es code-embedded context en su forma más barata. <code>git blame</code> se vuelve un sistema de recuperación de intención. Cualquier agente futuro que pregunte "¿por qué esta línea?" tiene la respuesta a un comando de distancia.</p>
 <h3 id="3-comentarios-sobre-intencion-no-sobre-mecanica">3. Comentarios sobre intención, no sobre mecánica<a class="headerlink" href="#3-comentarios-sobre-intencion-no-sobre-mecanica" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Los comentarios tradicionales explican <em>qué hace</em> el código. Context engineering pide comentarios que expliquen <em>por qué</em> el código hace lo que hace, especialmente cuando la decisión tiene una razón no obvia.</p>
+<p>Los comentarios tradicionales explican <em>qué hace</em> el código. Code-embedded context pide comentarios que expliquen <em>por qué</em> el código hace lo que hace, especialmente cuando la decisión tiene una razón no obvia.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># No usamos retry exponencial aquí porque el cliente</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># de upstream tiene su propio backoff y los dos</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># concatenados generan timeouts duplicados.</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># (Decisión post-incidente del 2025-11-12.)</span>
 </span></code></pre></div>
-<p>Ese comentario es context engineering puro: vive con el código, explica un por qué, y ningún agente futuro va a "limpiar" el retry por error porque la razón está justo ahí.</p>
+<p>Ese comentario es code-embedded context puro: vive con el código, explica un por qué, y ningún agente futuro va a "limpiar" el retry por error porque la razón está justo ahí.</p>
 <h3 id="4-agentsmd-o-claudemd-como-mapa-no-como-spec">4. AGENTS.md (o CLAUDE.md) como mapa, no como spec<a class="headerlink" href="#4-agentsmd-o-claudemd-como-mapa-no-como-spec" title="Enlace permanente a esta sección">&para;</a></h3>
-<p>Un archivo <code>AGENTS.md</code> corto en la raíz del repo, que oriente al agente sobre <strong>dónde están las cosas</strong> y <strong>qué convenciones se siguen</strong>, es context engineering bien hecho. No es una spec del sistema; es un mapa de orientación para alguien que llega de fuera. Idealmente cabe en una pantalla.</p>
-<p>La línea entre "AGENTS.md como mapa" y "AGENTS.md como spec gigante" es exactamente la línea entre context engineering y SDD malhecho. Cuando AGENTS.md crece más allá de orientación y empieza a describir el sistema, te estás deslizando hacia la disciplina de specs por la puerta de atrás, con todos sus costes.</p>
-<h2 id="en-que-se-parece-a-sdd-y-en-que-no">En qué se parece a SDD y en qué no<a class="headerlink" href="#en-que-se-parece-a-sdd-y-en-que-no" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Para evitar que parezca que son enemigos irreconciliables — no lo son — vale la pena tabular en qué coinciden y en qué difieren.</p>
+<p>Un archivo <code>AGENTS.md</code> corto en la raíz del repo, que oriente al agente sobre <strong>dónde están las cosas</strong> y <strong>qué convenciones se siguen</strong>, es code-embedded context bien hecho. No es una spec del sistema; es un mapa de orientación para alguien que llega de fuera. Idealmente cabe en una pantalla.</p>
+<p>La línea entre "AGENTS.md como mapa" y "AGENTS.md como spec gigante" es exactamente la línea entre code-embedded context y SDD malhecho. Cuando AGENTS.md crece más allá de orientación y empieza a describir el sistema, te estás deslizando hacia la disciplina de specs por la puerta de atrás, con todos sus costes.</p>
+<h2 id="sdd-y-code-embedded-context-comparativa">SDD y code-embedded context: comparativa<a class="headerlink" href="#sdd-y-code-embedded-context-comparativa" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Para ver cómo encajan como complementos — no como enemigos — vale la pena tabular en qué coinciden y en qué difieren.</p>
 <table>
 <thead>
 <tr>
@@ -1974,24 +1974,23 @@
 </tbody>
 </table>
 <p>Los dos enfoques resuelven el mismo problema — el context collapse del capítulo 1 — con filosofías distintas. SDD apuesta por la <strong>persistencia explícita en documentos paralelos</strong>; code-embedded context apuesta por <strong>distribuir la intención en artefactos con alto acoplamiento al código</strong>.</p>
-<h2 id="cuando-elegir-context-engineering-en-lugar-de-sdd">Cuándo elegir context engineering en lugar de SDD<a class="headerlink" href="#cuando-elegir-context-engineering-en-lugar-de-sdd" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Hay situaciones donde context engineering es objetivamente la mejor opción:</p>
+<h2 id="cuando-apoyarse-mas-en-code-embedded-context">Cuándo apoyarse más en code-embedded context<a class="headerlink" href="#cuando-apoyarse-mas-en-code-embedded-context" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Hay situaciones donde code-embedded context cubre la mayor parte de la necesidad y las specs formales aportan poco:</p>
 <ul>
-<li><strong>Equipos pequeños</strong> donde el coste de mantener specs externas es desproporcionado.</li>
 <li><strong>Proyectos en fase de descubrimiento</strong> donde la intención cambia más rápido de lo que se puede escribir una spec.</li>
 <li><strong>Bases de código maduras con buenas convenciones</strong> donde la mayor parte del contexto ya vive en el código y solo falta capturar los por qués.</li>
 <li><strong>Equipos que ya practican ADRs disciplinados</strong> y querrían no añadir un segundo sistema documental encima.</li>
 </ul>
-<p>Y hay situaciones donde context engineering se queda corto:</p>
+<p>Y hay situaciones donde code-embedded context no es suficiente y las specs formales aportan valor real:</p>
 <ul>
 <li><strong>Sistemas regulados</strong> donde la spec separada es un requisito de auditoría, no una elección estilística.</li>
 <li><strong>Coordinación entre múltiples equipos</strong> donde hace falta un artefacto compartido que no esté enterrado en commits.</li>
 <li><strong>Features grandes con alcance amplio</strong> donde el plan formal previo aporta más que ADRs sueltos.</li>
 </ul>
 <h2 id="la-sintesis-honesta-usa-los-dos">La síntesis honesta: usa los dos<a class="headerlink" href="#la-sintesis-honesta-usa-los-dos" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Una de las cosas que más equipos descubren después de leer las dos posiciones es que <strong>no son alternativas excluyentes</strong>. El equipo maduro acaba haciendo una mezcla:</p>
+<p>Una de las cosas que más equipos descubren después de trabajar con ambos enfoques es que <strong>funcionan mejor juntos que por separado</strong>. El equipo maduro acaba haciendo una mezcla:</p>
 <ul>
-<li><strong>ADRs y commit messages ricos como capa base</strong>, siempre, para todo. Esto es context engineering puro y es gratis (o muy barato).</li>
+<li><strong>ADRs y commit messages ricos como capa base</strong>, siempre, para todo. Esto es code-embedded context puro y es gratis (o muy barato).</li>
 <li><strong>Specs ligeras estilo capítulo 3</strong> solo para features grandes con alcance amplio y vida larga, siguiendo el patrón 1 del capítulo 8.</li>
 <li><strong>Specs vivas con bucle bidireccional</strong> solo para los módulos donde el coste de mantenimiento se amortiza por su criticidad.</li>
 <li><strong>Nada de eso</strong> para refactors menores y bug fixes triviales.</li>
