@@ -8,7 +8,7 @@ Hay un puñado de herramientas que se han propuesto explícitamente como infraes
 
 Antes de entrar herramienta por herramienta, conviene tener presente la conclusión a la que llega [Martin Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) tras evaluar las tres principales:
 
-> *Neither of them is suitable for the majority of real life coding problems.*
+> *Ninguna de ellas es adecuada para la mayoría de los problemas reales de programación.*
 
 No es marketing inverso. Es la observación honesta de que las herramientas actuales sufren todas el mismo problema — *workflow mismatch*: aplican un proceso de talla única a problemas de tamaños radicalmente distintos. Una bug fix de tres líneas tratada como una feature multi-historia es burocracia. Una migración crítica tratada como un commit cualquiera es negligencia. Las herramientas de hoy no distinguen bien entre los dos extremos, y eso es su limitación común.
 

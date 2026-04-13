@@ -2,7 +2,7 @@
 
 El capítulo anterior cierra con seis críticas serias al SDD. Sería tramposo dejarte ahí, en la crítica sin alternativa. Por suerte, los mismos críticos — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development) en particular — proponen una idea distinta sobre dónde debe vivir la intención y los "por qués". La llaman **context engineering**, y este capítulo la presenta sin endulzarla pero también sin dramatizar la diferencia con SDD.
 
-> *Capture intent and constraints from discussions, update context iteratively as understanding evolves, and explicitly preserve decision rationales within code itself.*
+> *Captura la intención y las restricciones de las discusiones, actualiza el contexto iterativamente a medida que evoluciona la comprensión, y preserva explícitamente las razones de las decisiones dentro del propio código.*
 > — [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development), *The Limits of Spec-Driven Development*
 
 Esa frase resume el desplazamiento.

@@ -8,7 +8,7 @@ Las críticas que vamos a recoger no son objeciones marginales. Vienen de dos fu
 
 La crítica más demoledora de Isoform es que las specs detalladas crean **deuda de documentación disfrazada de disciplina de ingeniería**.
 
-> *Comprehensive specifications create documentation debt disguised as engineering discipline.*
+> *Las especificaciones exhaustivas crean deuda de documentación disfrazada de disciplina de ingeniería.*
 
 La lógica es directa. Cuando el sistema tiene una spec viva (capítulo 6), cada cambio en el código pide un cambio en la spec. Cuando los requisitos cambian — y siempre cambian — pides cambios coordinados en ambos sitios. El coste sube. Y a diferencia del coste de mantenimiento del código, que es visible y se discute en sprint reviews, el coste de mantenimiento de las specs es invisible: no aparece en ningún burndown, nadie lo cuenta, y se acumula hasta que un día el equipo se da cuenta de que está dedicando una proporción incómoda de su tiempo a mantener documentación de un sistema en vez de a evolucionarlo.
 
@@ -20,7 +20,7 @@ Isoform lo dice así: el SDD no reduce el overhead, lo *traslada*. Lo que antes 
 
 Esta es la crítica que más vale la pena tomarse en serio porque ataca el corazón del SDD.
 
-> *Specs describe what systems should do, but cannot capture why decisions were made. The missing context is where the real problems show up.*
+> *Las specs describen lo que los sistemas deben hacer, pero no pueden capturar por qué se tomaron las decisiones. El contexto que falta es donde aparecen los problemas reales.*
 
 Isoform argumenta que las specs típicas se centran demasiado en los **cómos** — schemas, firmas, contratos, criterios — y se quedan cortas en los **por qués**: las suposiciones, las restricciones del mundo real que llevaron a una decisión, los trade-offs que se eligieron y, sobre todo, los que se rechazaron y por qué.
 
@@ -32,7 +32,7 @@ El capítulo 3 ya intenta blindar contra esto haciendo de los "por qués" una se
 
 ## Crítica 3 — La falsa ilusión de completitud
 
-> *Detailed specifications create misleading confidence.*
+> *Las especificaciones detalladas crean una confianza engañosa.*
 
 Esta es sutil y muy real. Una spec detallada parece exhaustiva. Cuando lees una spec de 800 líneas con diagramas, criterios y plantillas, tu cerebro asume que el sistema está bien pensado. La spec funciona como **prueba social interna**: "alguien se sentó a pensar esto en serio, así que tiene que estar bien".
 
@@ -53,7 +53,7 @@ MDD fracasó. Lo hizo por dos razones que vale la pena recordar:
 
 Fowler ve un eco directo en SDD:
 
-> *SDD sits at an awkward abstraction level and just creates too much overhead and constraints. While LLMs reduce some MDD constraints, they introduce non-determinism — potentially combining MDD's inflexibility with LLM unpredictability.*
+> *SDD se sitúa en un nivel de abstracción incómodo y simplemente genera demasiado overhead y restricciones. Aunque los LLMs reducen algunas limitaciones de MDD, introducen no-determinismo — combinando potencialmente la inflexibilidad de MDD con la impredecibilidad de los LLMs.*
 
 Esa última frase merece quedarse en la pared. **SDD potencialmente combina la inflexibilidad de MDD con la impredictibilidad de los LLMs**. Lo peor de los dos mundos: la rigidez del modelo más la sorpresa del modelo generativo. Si MDD fracasó por uno solo de esos problemas, SDD podría fracasar por la suma.
 

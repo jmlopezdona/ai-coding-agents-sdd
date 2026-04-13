@@ -34,7 +34,7 @@ Lo que distingue spec-anchored de spec-first no es la calidad de la spec inicial
 
 El paper dice algo importante sobre este nivel:
 
-> *BDD frameworks like Cucumber exemplify this approach, making it the practical choice for most production systems.*
+> *Frameworks BDD como Cucumber ejemplifican este enfoque, convirtiéndolo en la opción práctica para la mayoría de sistemas en producción.*
 
 Es una pista honesta. Spec-anchored no es una invención nueva del SDD. Es BDD bien hecho, llevado al nivel de la intención arquitectónica en lugar del comportamiento de cara al usuario. Si tu equipo ya practica BDD con disciplina, está más cerca de SDD del que cree.
 
@@ -57,7 +57,7 @@ Tessl es el ejemplo más visible de esta filosofía hoy: genera código con un c
 
 El paper es claro sobre dónde funciona esto realmente:
 
-> *Currently viable mainly in mature domains like automotive embedded systems using tools such as Simulink.*
+> *Actualmente viable principalmente en dominios maduros como los sistemas embebidos de automoción, usando herramientas como Simulink.*
 
 **Simulink** es el ejemplo paradigmático y conviene entenderlo porque ilustra qué condiciones tiene que cumplir un dominio para que spec-as-source funcione de verdad. Es una herramienta de MathWorks (los mismos de MATLAB) en la que diseñas sistemas dibujando **diagramas de bloques visuales** — sensores, controladores, filtros, conexiones — y la herramienta **genera automáticamente código C/C++ embebido** a partir de ese diagrama. Los ingenieros editan el diagrama, no el código generado. Si hay un bug en el `.c`, se arregla el bloque y se regenera. Las industrias de automoción, aeroespacial y control industrial llevan décadas — desde los años 90 — produciendo firmware crítico de esta forma. No es teoría, es producción real a gran escala.
 
