@@ -1123,6 +1123,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fase 2 — Implementar la spec">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-secuencial-un-agente-una-tarea-a-la-vez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo secuencial — Un agente, una tarea a la vez
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-orquestado-un-agente-coordinador-con-sub-agentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo orquestado — Un agente coordinador con sub-agentes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1857,6 +1885,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fase 2 — Implementar la spec">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-secuencial-un-agente-una-tarea-a-la-vez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo secuencial — Un agente, una tarea a la vez
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelo-orquestado-un-agente-coordinador-con-sub-agentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo orquestado — Un agente coordinador con sub-agentes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2082,9 +2138,64 @@
 <p>En un cambio pequeño o una PoC, los sub-pasos 1.2 y 1.3 pueden ser implícitos o inexistentes — la spec misma ya es el plan y las tareas son obvias. La Fase 1 completa puede durar cinco minutos. En un proyecto enterprise con múltiples stakeholders, cada sub-paso puede tener su propio ciclo de revisión y aprobación. <strong>El peso de la Fase 1 debe ser proporcional al riesgo del cambio</strong> — exactamente la regla del <a href="../09-patterns-of-application/">capítulo 9</a>.</p>
 </div>
 <h2 id="fase-2-implementar-la-spec">Fase 2 — Implementar la spec<a class="headerlink" href="#fase-2-implementar-la-spec" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>El principio es siempre el mismo: <strong>cada tarea es atómica respecto a la spec</strong> — o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra". Pero la forma de ejecutar esas tareas ya no es única. Las herramientas actuales permiten dos modelos de implementación, y la elección entre ellos afecta tanto a cómo se estructura la Fase 1 como a qué se verifica en la Fase 3.</p>
+<h3 id="modelo-secuencial-un-agente-una-tarea-a-la-vez">Modelo secuencial — Un agente, una tarea a la vez<a class="headerlink" href="#modelo-secuencial-un-agente-una-tarea-a-la-vez" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>El agente ejecuta las tareas de una en una. Para cada tarea: lee la spec, lee la tarea, escribe los tests que la tarea pide, escribe el código, ejecuta los tests, verifica. Si los tests no pasan, itera. Si pasan, marca la tarea como hecha y pasa a la siguiente.</p>
-<p>Lo importante aquí es que <strong>cada tarea es atómica respecto a la spec</strong>: o se cumple completamente o se revierte. No hay tareas a medias que "luego se arreglan en otra".</p>
-<p>Esta es la fase más estable del ciclo — todos los frameworks la implementan de forma similar. Lo que varía es el nivel de autonomía del agente (desde un agente general con la spec como contexto, hasta <a href="../07-native-sdd-tools/#bmad">BMAD</a> con un agente Developer especializado) y si la validación ocurre dentro de cada tarea (enfoque B, <a href="../07-native-sdd-tools/#kiro">Kiro</a>) o se difiere a la Fase 3.</p>
+<p>Es el modelo más simple y predecible. Las interfaces entre tareas son implícitas — el agente las recuerda de la tarea anterior, porque trabaja en el mismo contexto. Funciona bien cuando las tareas tienen <strong>dependencias fuertes entre sí</strong> o cuando el equipo quiere revisar entre iteraciones.</p>
+<h3 id="modelo-orquestado-un-agente-coordinador-con-sub-agentes">Modelo orquestado — Un agente coordinador con sub-agentes<a class="headerlink" href="#modelo-orquestado-un-agente-coordinador-con-sub-agentes" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Las herramientas actuales (Claude Code con sub-agentes en worktrees aislados, Cursor con background agents, o cualquier harness que orqueste múltiples sesiones) abren una segunda posibilidad: un <strong>agente orquestador</strong> lee la spec completa y delega partes a <strong>sub-agentes</strong> que trabajan en paralelo.</p>
+<p>Imaginemos una spec que toca front, middleware y back. En lugar de un agente que implementa las tres capas secuencialmente, el orquestador puede lanzar tres sub-agentes — cada uno con su trozo de la spec y los contratos de interfaz con los demás. Cada sub-agente implementa y valida su parte de forma independiente. El orquestador integra y verifica que las partes encajan.</p>
+<p>Este modelo es más rápido para features grandes con capas independientes, pero introduce un riesgo que el modelo secuencial no tiene: <strong>fallos de integración entre partes</strong>. Que cada sub-agente cumpla su trozo de spec no garantiza que el conjunto funcione — exactamente como en un equipo humano distribuido.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Secuencial</th>
+<th>Orquestado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Quién decide el orden</strong></td>
+<td>Humano o plan estático</td>
+<td>Agente orquestador</td>
+</tr>
+<tr>
+<td><strong>Paralelismo</strong></td>
+<td>No</td>
+<td>Sí, por contexto o capa</td>
+</tr>
+<tr>
+<td><strong>Interfaces entre tareas</strong></td>
+<td>Implícitas (mismo contexto)</td>
+<td><strong>Explícitas en la spec</strong> (cada sub-agente solo ve su parte)</td>
+</tr>
+<tr>
+<td><strong>Riesgo principal</strong></td>
+<td>Lentitud</td>
+<td>Conflictos de integración</td>
+</tr>
+<tr>
+<td><strong>Validación necesaria</strong></td>
+<td>Por tarea</td>
+<td>Por sub-agente + integración global</td>
+</tr>
+<tr>
+<td><strong>Cuándo encaja</strong></td>
+<td>Tareas con dependencias fuertes</td>
+<td>Tareas con interfaces bien definidas entre capas</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Impacto en la Fase 1</p>
+<p>Si piensas implementar con sub-agentes, la descomposición de la Fase 1 cambia de naturaleza. Las <strong>interfaces entre partes de la spec se vuelven load-bearing</strong>: no pueden ser implícitas. <em>"El endpoint acepta X y devuelve Y; el front consume Y con este contrato"</em> tiene que estar en la spec, porque cada sub-agente solo verá su contexto. Esto conecta directamente con los artefactos <a href="../04-spec-in-context/#tres-relaciones-tres-reglas">producidos y consumidos del capítulo 4</a> — cada sub-agente <em>consume</em> el contrato que otro sub-agente <em>produce</em>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Conexión con BMAD y Traycer</p>
+<p>El modelo orquestado no es nuevo conceptualmente — <a href="../07-native-sdd-tools/#bmad">BMAD</a> ya usa múltiples agentes, pero con <strong>roles fijos</strong> (PM, Architect, QA, Developer). Lo que las herramientas actuales permiten es una orquestación más flexible: sub-agentes por <strong>contexto de la spec</strong> (front, back, infra), no por rol en el proceso. Y las capas de arquitecto tipo <a href="../08-architect-layers/">Traycer</a> son el candidato natural para actuar como orquestador — su función de planificación y verificación encaja exactamente con coordinar sub-agentes.</p>
+</div>
+<p>Ninguno de los dos modelos es universalmente mejor. El modelo secuencial es más simple y seguro; el orquestado es más rápido pero exige más rigor en la Fase 1 y más validación de integración en la Fase 3. Como con las demás decisiones de este capítulo, <strong>el contexto manda</strong>.</p>
 <h2 id="fase-3-validar-la-spec">Fase 3 — Validar la spec<a class="headerlink" href="#fase-3-validar-la-spec" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Cuando todas las tareas están hechas, alguien — el agente, tú, o un segundo agente revisor — toma la spec original y verifica que <strong>todo lo que la spec pedía está hecho, y que no se ha hecho nada que la spec no pedía</strong>. Esta fase es la que más fácilmente se salta y la más importante: es donde los criterios de aceptación dejan de ser texto y se convierten en una checklist tachada o no tachada.</p>
 <p>Es también la fase donde <strong>más divergen los frameworks</strong> — y donde más fallan:</p>
@@ -2094,6 +2205,7 @@
 <li><strong>Validación aspiracional</strong> (<a href="../07-native-sdd-tools/#spec-kit-github">Spec-kit</a>): aspira a spec-anchored pero en la práctica no tiene un mecanismo automático que compare spec contra código. Es spec-first con disfraz.</li>
 <li><strong>Validación por regeneración</strong> (<a href="../07-native-sdd-tools/#tessl">Tessl</a>): si regeneras código desde la spec y obtienes lo mismo, "valida". Pero el no-determinismo de los LLMs entra en conflicto directo con esta promesa.</li>
 <li><strong>Validación delegada a un rol</strong> (<a href="../07-native-sdd-tools/#bmad">BMAD</a>): un agente QA especializado verifica. La especialización ayuda con el foco, pero los fallos de coordinación entre agentes son sutiles.</li>
+<li><strong>Validación de integración</strong> (modelo orquestado): cuando múltiples sub-agentes implementan partes de la spec en paralelo, aparece un nivel adicional de validación — no solo "¿cada parte cumple su trozo de spec?" sino "¿las partes se integran correctamente?". Es la diferencia entre tests unitarios y tests de integración, aplicada al nivel de la spec.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">La Fase 3 es lo que separa SDD de vibe coding con documentación</p>

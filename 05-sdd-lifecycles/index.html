@@ -1123,6 +1123,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Phase 2 — Implement the spec">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequential-model-one-agent-one-task-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequential model — One agent, one task at a time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orchestrated-model-a-coordinator-agent-with-sub-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orchestrated model — A coordinator agent with sub-agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1857,6 +1885,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Phase 2 — Implement the spec">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequential-model-one-agent-one-task-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequential model — One agent, one task at a time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orchestrated-model-a-coordinator-agent-with-sub-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orchestrated model — A coordinator agent with sub-agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2082,9 +2138,64 @@
 <p>For a small change or a PoC, sub-steps 1.2 and 1.3 can be implicit or nonexistent — the spec itself is the plan and the tasks are obvious. The entire Phase 1 can take five minutes. For an enterprise project with multiple stakeholders, each sub-step can have its own review and approval cycle. <strong>The weight of Phase 1 should be proportional to the change's risk</strong> — exactly the rule from <a href="../09-patterns-of-application/">chapter 9</a>.</p>
 </div>
 <h2 id="phase-2-implement-the-spec">Phase 2 — Implement the spec<a class="headerlink" href="#phase-2-implement-the-spec" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>The principle is always the same: <strong>each task is atomic with respect to the spec</strong> — either it's fully done or it's reverted. There are no half-done tasks "to be fixed in another". But how those tasks are executed is no longer a single option. Today's tools allow two implementation models, and the choice between them affects both how Phase 1 is structured and what gets verified in Phase 3.</p>
+<h3 id="sequential-model-one-agent-one-task-at-a-time">Sequential model — One agent, one task at a time<a class="headerlink" href="#sequential-model-one-agent-one-task-at-a-time" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>The agent executes tasks one at a time. For each task: read the spec, read the task, write the tests the task asks for, write the code, run the tests, verify. If tests don't pass, iterate. If they pass, mark done and move on.</p>
-<p>What matters here is that <strong>each task is atomic with respect to the spec</strong>: either it's fully done or it's reverted. There are no half-done tasks "to be fixed in another".</p>
-<p>This is the most stable phase of the cycle — every framework implements it similarly. What varies is the agent's level of autonomy (from a general agent with the spec as context, to <a href="../07-native-sdd-tools/#bmad">BMAD</a> with a specialized Developer agent) and whether validation happens within each task (approach B, <a href="../07-native-sdd-tools/#kiro">Kiro</a>) or is deferred to Phase 3.</p>
+<p>It's the simplest and most predictable model. Interfaces between tasks are implicit — the agent remembers them from the previous task, because it works in the same context. It works well when tasks have <strong>strong dependencies between them</strong> or when the team wants to review between iterations.</p>
+<h3 id="orchestrated-model-a-coordinator-agent-with-sub-agents">Orchestrated model — A coordinator agent with sub-agents<a class="headerlink" href="#orchestrated-model-a-coordinator-agent-with-sub-agents" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Today's tools (Claude Code with sub-agents in isolated worktrees, Cursor with background agents, or any harness orchestrating multiple sessions) open a second possibility: an <strong>orchestrator agent</strong> reads the full spec and delegates parts to <strong>sub-agents</strong> working in parallel.</p>
+<p>Imagine a spec that touches front-end, middleware, and back-end. Instead of one agent implementing all three layers sequentially, the orchestrator can launch three sub-agents — each with its slice of the spec and the interface contracts with the others. Each sub-agent implements and validates its part independently. The orchestrator integrates and verifies the parts fit together.</p>
+<p>This model is faster for large features with independent layers, but introduces a risk the sequential model doesn't have: <strong>integration failures between parts</strong>. Each sub-agent fulfilling its slice of spec doesn't guarantee the whole works — exactly like a distributed human team.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Sequential</th>
+<th>Orchestrated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Who decides the order</strong></td>
+<td>Human or static plan</td>
+<td>Orchestrator agent</td>
+</tr>
+<tr>
+<td><strong>Parallelism</strong></td>
+<td>No</td>
+<td>Yes, by context or layer</td>
+</tr>
+<tr>
+<td><strong>Interfaces between tasks</strong></td>
+<td>Implicit (same context)</td>
+<td><strong>Explicit in the spec</strong> (each sub-agent only sees its part)</td>
+</tr>
+<tr>
+<td><strong>Main risk</strong></td>
+<td>Slowness</td>
+<td>Integration conflicts</td>
+</tr>
+<tr>
+<td><strong>Validation needed</strong></td>
+<td>Per task</td>
+<td>Per sub-agent + global integration</td>
+</tr>
+<tr>
+<td><strong>When it fits</strong></td>
+<td>Tasks with strong dependencies</td>
+<td>Tasks with well-defined interfaces between layers</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Impact on Phase 1</p>
+<p>If you plan to implement with sub-agents, Phase 1's decomposition changes in nature. <strong>Interfaces between parts of the spec become load-bearing</strong>: they can't be implicit. <em>"The endpoint accepts X and returns Y; the front-end consumes Y with this contract"</em> has to be in the spec, because each sub-agent will only see its context. This connects directly with <a href="../04-spec-in-context/#three-relationships-three-rules">chapter 4's produced and consumed artifacts</a> — each sub-agent <em>consumes</em> the contract another sub-agent <em>produces</em>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Connection with BMAD and Traycer</p>
+<p>The orchestrated model isn't conceptually new — <a href="../07-native-sdd-tools/#bmad">BMAD</a> already uses multiple agents, but with <strong>fixed roles</strong> (PM, Architect, QA, Developer). What today's tools enable is more flexible orchestration: sub-agents by <strong>spec context</strong> (front, back, infra), not by process role. And architect layers like <a href="../08-architect-layers/">Traycer</a> are the natural candidate to act as orchestrator — their planning and verification functions fit exactly with coordinating sub-agents.</p>
+</div>
+<p>Neither model is universally better. The sequential model is simpler and safer; the orchestrated model is faster but demands more rigor in Phase 1 and more integration validation in Phase 3. As with every other decision in this chapter, <strong>context rules</strong>.</p>
 <h2 id="phase-3-validate-the-spec">Phase 3 — Validate the spec<a class="headerlink" href="#phase-3-validate-the-spec" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>When all tasks are done, someone — the agent, you, or a second reviewer agent — takes the original spec and verifies that <strong>everything the spec asked is done, and that nothing the spec didn't ask for has been done</strong>. This phase is the easiest to skip and the most important: it's where acceptance criteria stop being text and become a checked-or-unchecked checklist.</p>
 <p>It's also the phase where <strong>frameworks diverge most</strong> — and where they fail most:</p>
@@ -2094,6 +2205,7 @@
 <li><strong>Aspirational validation</strong> (<a href="../07-native-sdd-tools/#spec-kit-github">Spec-kit</a>): aspires to spec-anchored but in practice has no automatic mechanism comparing spec against code. It's spec-first in disguise.</li>
 <li><strong>Validation by regeneration</strong> (<a href="../07-native-sdd-tools/#tessl">Tessl</a>): if you regenerate code from the spec and get the same result, it "validates". But LLM non-determinism conflicts directly with this promise.</li>
 <li><strong>Validation delegated to a role</strong> (<a href="../07-native-sdd-tools/#bmad">BMAD</a>): a specialized QA agent verifies. The specialization helps with focus, but coordination failures between agents are subtle.</li>
+<li><strong>Integration validation</strong> (orchestrated model): when multiple sub-agents implement parts of the spec in parallel, an additional validation level appears — not just "does each part fulfill its slice of spec?" but "do the parts integrate correctly?". It's the difference between unit tests and integration tests, applied at the spec level.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Phase 3 is what separates SDD from vibe coding with documentation</p>
