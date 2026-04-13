@@ -15,9 +15,9 @@ La información fluye en una sola dirección: spec → código. Y eso significa 
 
 Augment lo dice con una precisión incómoda:
 
-> *Gaps in the specification widen with direct code changes and keep resurfacing because AI generation is non-deterministic.*
+> *Las brechas en la especificación se amplían con los cambios directos al código y siguen reapareciendo porque la generación con IA es no determinística.*
 
-Es decir: **el problema no solo es que la spec envejezca, es que la generación con LLMs es no determinística**, así que cada vez que regeneras código a partir de una spec desactualizada, introduces inconsistencias nuevas. El gap no solo crece — cada ciclo de regeneración lo amplifica.
+**El problema no solo es que la spec envejezca, es que la generación con LLMs es no determinística**, así que cada vez que regeneras código a partir de una spec desactualizada, introduces inconsistencias nuevas. El gap no solo crece — cada ciclo de regeneración lo amplifica.
 
 ## Qué es una spec viva
 
@@ -45,7 +45,7 @@ Esta es la fase que define una spec viva y la que casi todos los equipos olvidan
 
 Augment dice exactamente esto:
 
-> *Agents or developers update the spec to reflect what was actually built.*
+> *Los agentes o los desarrolladores actualizan la spec para reflejar lo que realmente se construyó.*
 
 La consecuencia práctica: la spec deja de ser un plan y empieza a ser una **descripción**. Sigue capturando intención, pero también captura las decisiones que se tomaron al realizar esa intención. La grieta entre intención y realidad se cierra.
 
