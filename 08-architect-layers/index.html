@@ -1874,7 +1874,7 @@
 
 
 <h1 id="8-architect-layers-over-agents-traycer-and-the-wrapper-pattern">8. Architect layers over agents: Traycer and the wrapper pattern<a class="headerlink" href="#8-architect-layers-over-agents-traycer-and-the-wrapper-pattern" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>The previous chapter's tools share a feature: they're <strong>standalone</strong> SDD tools. You live inside them, their workflow is the workflow. There's another category growing in parallel that's worth understanding separately: tools that don't ask you to switch agent but <strong>sit on top of the agent you already use</strong>. We call them <em>architect layers</em>, and the most visible piece of this category today is <strong>Traycer</strong>.</p>
+<p>The previous chapter's tools share a feature: they <strong>define their own complete workflow</strong> — their environment, their document structure, their phase flow, their conventions. Adopting them means working within their way of doing things. There's another category growing in parallel that's worth understanding separately: tools that <strong>plug into whatever workflow you already have</strong>, sitting on top of the agent you already use without asking you to switch. We call them <em>architect layers</em>, and the most representative example of this category today is <strong>Traycer</strong>.</p>
 <h2 id="the-question-this-category-answers">The question this category answers<a class="headerlink" href="#the-question-this-category-answers" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>When a team already uses Cursor, Claude Code, Codex or similar and knows them well, the friction of adopting Kiro or Spec-kit isn't only learning a new tool. It's <strong>abandoning the tool where the team has hours, shortcuts, configurations and muscle memory</strong>. For many teams, that cost is prohibitive even if the new tool is objectively better in some dimensions.</p>
 <p>Architect layers solve that friction by not asking for it. Your agent stays Cursor or Claude Code or whatever you use. The layer inserts itself in the workflow at two specific points: <strong>before</strong> the agent (planning) and <strong>after</strong> the agent (verifying). In the middle, the agent works as always.</p>
@@ -1890,7 +1890,7 @@
 <p>When the agent finishes, Traycer <strong>compares what the agent did against the original spec/plan</strong> and flags divergences. It's the chapter 5 validation phase, automated and mandatory, instead of "if I remember, I'll review it".</p>
 <p>This post-code verification is exactly the gap chapter 7 identifies as unsolved by native SDD tools. Traycer closes it.</p>
 <h2 id="the-general-pattern-beyond-traycer">The general pattern, beyond Traycer<a class="headerlink" href="#the-general-pattern-beyond-traycer" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Even if Traycer is the most visible piece today, the pattern is worth understanding abstracted from the concrete tool:</p>
+<p>Even if Traycer is the most representative example today, the pattern is worth understanding abstracted from the concrete tool:</p>
 <blockquote>
 <p><strong>An architect layer wraps a coding agent with three things: requirement clarification before the prompt, explicit planning before the code, and automatic verification after the code.</strong></p>
 </blockquote>
@@ -1953,7 +1953,7 @@
 <p>There's a sentence worth carving down because it connects this chapter to the trilogy's next course. The "architect layer over agent" pattern is technically <strong>a piece of harness applied to SDD</strong>. What Traycer does — intercepting inputs, planning, verifying outputs — is exactly the kind of wrapper the harness course develops for many other dimensions (tests, sandboxes, sensors, hooks).</p>
 <p>Seen this way, Traycer isn't only an SDD tool: it's a concrete example of how a good harness improves SDD. And Kiro's hooks mentioned in chapter 7 are another example of the same principle: harness + SDD reinforce each other. Chapter 13 returns to this.</p>
 <h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Up to here we've seen the cycle (ch. 5), living specs (ch. 6), and two categories of tools (ch. 7 and 8). In <strong>Chapter 9</strong> we go down to practice: how all this applies to three different kinds of work — new features, refactors, and bug fixes — because the optimal process isn't the same in all three cases.</p>
+<p>Up to here we've seen the lifecycle (ch. 5), living specs (ch. 6), and two categories of tools (ch. 7 and 8). In <strong>Chapter 9</strong> we go down to practice: how all this applies to three different kinds of work — new features, refactors, and bug fixes — because the optimal process isn't the same in all three cases.</p>
 
 
 
