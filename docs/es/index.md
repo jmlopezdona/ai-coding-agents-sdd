@@ -2,7 +2,7 @@
 
 Una guía para equipos técnicos que ya saben usar agentes de codificación (Claude Code, Codex, Cursor, Copilot…) y han chocado con el muro: los resultados son inconsistentes, el agente se desvía a media sesión, los refactors rompen archivos que el agente nunca vio, y "escribe un mejor prompt" dejó de funcionar hace tiempo.
 
-Es la **segunda guía de una trilogía**: viene después de la [guía de fundamentos](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/) (qué es un agente, cómo se usa) y antes de la [guía de harness engineering](https://jmlopezdona.github.io/ai-coding-agents-harness/) (cómo se implementa el sistema alrededor del agente). El SDD es la disciplina intermedia: **cómo estructurar el trabajo para que el agente pueda ejecutarlo bien**.
+Es la **segunda guía de una trilogía**: viene después de la [guía de fundamentos](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/es/) (qué es un agente, cómo se usa) y antes de la [guía de harness engineering](https://jmlopezdona.github.io/ai-coding-agents-harness/es/) (cómo se implementa el sistema alrededor del agente). El SDD es la disciplina intermedia: **cómo estructurar el trabajo para que el agente pueda ejecutarlo bien**.
 
 ## Premisas
 
