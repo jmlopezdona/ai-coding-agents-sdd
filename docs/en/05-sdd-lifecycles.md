@@ -212,6 +212,18 @@ A note almost always omitted in canonical descriptions: **the cycle is rarely li
 
 This is **normal and desirable**. The difference between a healthy cycle and a pathological one isn't that the first has no backtracks; it's that the healthy one **updates the spec when it discovers it was wrong** instead of ignoring it and continuing to code. That feedback from Phase 3 back to Phase 1 is exactly the idea of the next chapter: **living specifications**.
 
+### When the problem isn't the spec but the process
+
+But there's a second level of feedback that's equally important and easier to ignore. If a team discovers it's **iterating too much** — specs constantly getting rewritten, implementation requiring many adjustments, validation catching recurrent failures of the same type — the problem probably isn't a specific spec. It's **how specs are being designed, how implementation is being done, or how validation is being performed**.
+
+Some concrete symptoms:
+
+- **Specs that always need rewriting in Phase 2**: Phase 1 might not be capturing the necessary upstream documentation, or acceptance criteria might be too vague for the agent to interpret unambiguously.
+- **Implementation requiring many iterations**: task decomposition might be too coarse, or interfaces between parts might not be explicit, or the agent might not have sufficient context.
+- **Validation catching the same types of failure repeatedly**: deterministic tests for a recurring pattern might be missing, or stochastic validation might not be complemented with automated checks.
+
+In these cases, what needs adjusting isn't the spec — it's **the system itself**: how specs are written, what tools are used to implement, what validation mechanisms are in place. This meta-level reflection — improving the process, not just the artifact — is exactly the territory of **harness engineering** that [chapter 13](13-from-sdd-to-harness.md) develops: converting manual discipline into automatic infrastructure, so that each process iteration is better than the last and agents progressively need **less human supervision and more autonomy**.
+
 ## What comes next
 
 Chapter 6 is about the difference between static specs (the ones that age badly) and living specs (the ones that stay useful because implementation feeds back into the spec). It's the piece that turns the lifecycle described in this chapter into a sustainable process instead of a startup ritual.

@@ -212,6 +212,18 @@ Una nota que casi siempre se omite en las descripciones canónicas: **el ciclo e
 
 Esto es **normal y deseable**. La diferencia entre un ciclo sano y uno patológico no es que el primero no tenga retrocesos; es que el sano **actualiza la spec cuando descubre que estaba mal** en lugar de ignorarla y seguir codificando. Esa retroalimentación de la Fase 3 hacia la Fase 1 es exactamente la idea del próximo capítulo: las **especificaciones vivas**.
 
+### Cuando el problema no es la spec sino el proceso
+
+Pero hay un segundo nivel de retroalimentación que es igual de importante y más fácil de ignorar. Si un equipo descubre que **itera demasiado** — que las specs se reescriben constantemente, que la implementación requiere muchos ajustes, que la validación detecta fallos recurrentes del mismo tipo — el problema probablemente no está en una spec concreta. Está en **cómo se están diseñando las specs, cómo se está implementando, o cómo se está validando**.
+
+Algunos síntomas concretos:
+
+- **Specs que siempre necesitan reescribirse en la Fase 2**: puede que la Fase 1 no esté recogiendo la documentación upstream necesaria, o que los criterios de aceptación sean demasiado vagos para que el agente los interprete sin ambigüedad.
+- **Implementación que requiere muchas iteraciones**: puede que la descomposición en tareas sea demasiado gruesa, o que las interfaces entre partes no estén explícitas, o que el agente no tenga el contexto suficiente.
+- **Validación que detecta los mismos tipos de fallo una y otra vez**: puede que falten tests deterministas para un patrón recurrente, o que la validación estocástica no esté complementada con checks automáticos.
+
+En estos casos, lo que hay que ajustar no es la spec — es **el propio sistema**: cómo se escriben las specs, qué herramientas se usan para implementar, qué mecanismos de validación están en su sitio. Esta reflexión de meta-nivel — mejorar el proceso, no solo el artefacto — es exactamente el territorio del **harness engineering** que el [capítulo 13](13-from-sdd-to-harness.md) desarrolla: convertir la disciplina manual en infraestructura automática, para que cada iteración del proceso sea mejor que la anterior y los agentes necesiten progresivamente **menos supervisión humana y más autonomía**.
+
 ## Lo que viene a continuación
 
 El capítulo 6 va sobre la diferencia entre specs estáticas (las que envejecen mal) y specs vivas (las que se mantienen útiles porque la implementación retroalimenta la spec). Es la pieza que convierte el ciclo de vida descrito en este capítulo en un proceso sostenible en lugar de un ritual de arranque.
