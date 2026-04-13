@@ -1851,13 +1851,57 @@
 </blockquote>
 <p>Esa frase resume el desplazamiento.</p>
 <h2 id="la-diferencia-esencial-con-sdd">La diferencia esencial con SDD<a class="headerlink" href="#la-diferencia-esencial-con-sdd" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>SDD pone la intención <strong>fuera del código</strong>, en specs que el agente lee. Context engineering pone la intención <strong>dentro del código y de los artefactos directamente legibles</strong> del proyecto: comentarios estructurados, ADRs (Architecture Decision Records), commit messages ricos, notas en el README y, sí, instrucciones puntuales en archivos tipo <code>AGENTS.md</code> que viven en el repo pero <strong>sin la pretensión de ser una fuente de verdad paralela</strong>.</p>
-<p>La diferencia parece pequeña pero tiene tres consecuencias profundas:</p>
+<p>SDD pone la intención en <strong>specs que son documentos paralelos al código</strong>. Lo que Isoform propone es distribuir esa intención en <strong>artefactos con distintos niveles de acoplamiento al propio código</strong>: desde comentarios inline (máximo acoplamiento) hasta ADRs (acoplamiento bajo, similar al de una spec).</p>
+<p>Esto no es una dicotomía binaria "dentro vs fuera del código". Es un <strong>gradiente de acoplamiento</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Artefacto</th>
+<th>Acoplamiento al código</th>
+<th>Riesgo de desincronización</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comentario inline</td>
+<td>Máximo — mismo archivo, misma línea</td>
+<td>Muy bajo</td>
+</tr>
+<tr>
+<td>Commit message</td>
+<td>Alto — ligado al diff exacto vía <code>git blame</code></td>
+<td>Ninguno (inmutable)</td>
+</tr>
+<tr>
+<td>AGENTS.md / CLAUDE.md</td>
+<td>Medio — en el repo, orientativo</td>
+<td>Bajo si se mantiene corto</td>
+</tr>
+<tr>
+<td>ADR</td>
+<td>Bajo — documento separado sobre decisiones</td>
+<td>Medio (igual que una spec ligera)</td>
+</tr>
+<tr>
+<td>Spec en el repo</td>
+<td>Bajo — documento separado sobre implementación</td>
+<td>Medio-alto</td>
+</tr>
+<tr>
+<td>Spec en Confluence/Notion</td>
+<td>Mínimo — fuera del repo</td>
+<td>Alto</td>
+</tr>
+</tbody>
+</table>
+<p>Hay que ser honesto: un ADR en <code>docs/adr/0005-auth-strategy.md</code> es un documento separado que describe decisiones sobre código que vive en otro sitio — <strong>puede desincronizarse exactamente igual que una spec</strong>. Lo que cambia entre un ADR y una spec no es su adherencia al código, sino <strong>qué captura</strong> (decisiones puntuales vs implementación completa) y <strong>su ambición</strong> (un por qué concreto vs una fuente de verdad del sistema).</p>
+<p>La propuesta de Isoform no es "todo adherido al código" — es <strong>preferir los artefactos de la parte alta del gradiente</strong> (comentarios, commits) y usar los de la parte baja (ADRs) solo para decisiones, no para describir el sistema entero. Las consecuencias prácticas:</p>
 <ol>
-<li><strong>No hay segundo sistema que mantener.</strong> Las decisiones viven donde vive el código, así que no puedes desincronizarlas porque son la misma cosa. El <em>maintenance tax</em> del capítulo 9 desaparece por construcción.</li>
-<li><strong>Los por qués no se pierden</strong> porque están adheridos al código que los implementa. Quitas la unidad lógica y se va con ella.</li>
+<li><strong>Menos superficie de mantenimiento.</strong> No desaparece el <em>maintenance tax</em> del capítulo 9 por completo — los ADRs también pueden quedar obsoletos — pero se reduce porque los artefactos más acoplados (comentarios, commits) no pueden desincronizarse por construcción.</li>
+<li><strong>Los por qués más críticos viajan con el código.</strong> Un comentario de intención se borra cuando se borra la línea. Un commit message es inmutable. Los por qués que viven ahí no se pierden.</li>
 <li><strong>No hay falsa ilusión de completitud</strong> porque no hay un documento maestro que dé sensación de cobertura. La cobertura es exactamente la del código.</li>
 </ol>
+<p>Una observación importante: <strong>una spec que vive en el repositorio también es un artefacto del repo</strong>, versionada con git, revisable en PRs. La frontera entre "spec" y "artefacto del proyecto" se desdibuja. La diferencia real no es dónde vive el archivo, sino el grado de acoplamiento con el código que describe y la ambición de lo que intenta capturar.</p>
 <h2 id="que-cosas-hace-context-engineering">Qué cosas hace context engineering<a class="headerlink" href="#que-cosas-hace-context-engineering" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Context engineering no es "no hagas nada". Es un conjunto de prácticas concretas, todas orientadas a <strong>dejar trazas legibles dentro del propio sistema</strong>:</p>
 <h3 id="1-adrs-architecture-decision-records">1. ADRs (Architecture Decision Records)<a class="headerlink" href="#1-adrs-architecture-decision-records" title="Enlace permanente a esta sección">&para;</a></h3>
@@ -1883,19 +1927,19 @@
 <tr>
 <th>Dimensión</th>
 <th>SDD</th>
-<th>Context engineering</th>
+<th>Code-embedded context</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Dónde vive la intención</td>
-<td>Specs externas</td>
-<td>Dentro del código y del repo</td>
+<td>Specs (documentos paralelos)</td>
+<td>Distribuida en el gradiente de acoplamiento</td>
 </tr>
 <tr>
 <td>Mantenimiento sincronizado</td>
 <td>Sí, explícito</td>
-<td>No requerido por construcción</td>
+<td>Reducido pero no eliminado (los ADRs también envejecen)</td>
 </tr>
 <tr>
 <td>Captura los por qués</td>
@@ -1929,7 +1973,7 @@
 </tr>
 </tbody>
 </table>
-<p>Los dos enfoques resuelven el mismo problema — el context collapse del capítulo 1 — con filosofías distintas. SDD apuesta por la <strong>persistencia explícita</strong>; context engineering apuesta por la <strong>adherencia al sustrato</strong>.</p>
+<p>Los dos enfoques resuelven el mismo problema — el context collapse del capítulo 1 — con filosofías distintas. SDD apuesta por la <strong>persistencia explícita en documentos paralelos</strong>; code-embedded context apuesta por <strong>distribuir la intención en artefactos con alto acoplamiento al código</strong>.</p>
 <h2 id="cuando-elegir-context-engineering-en-lugar-de-sdd">Cuándo elegir context engineering en lugar de SDD<a class="headerlink" href="#cuando-elegir-context-engineering-en-lugar-de-sdd" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Hay situaciones donde context engineering es objetivamente la mejor opción:</p>
 <ul>

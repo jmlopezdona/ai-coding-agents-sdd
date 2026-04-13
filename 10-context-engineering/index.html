@@ -1851,13 +1851,57 @@
 </blockquote>
 <p>That sentence sums up the shift.</p>
 <h2 id="the-essential-difference-from-sdd">The essential difference from SDD<a class="headerlink" href="#the-essential-difference-from-sdd" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>SDD puts intent <strong>outside the code</strong>, in specs the agent reads. Context engineering puts intent <strong>inside the code and the directly readable artifacts</strong> of the project: structured comments, ADRs (Architecture Decision Records), rich commit messages, README notes and, yes, occasional instructions in <code>AGENTS.md</code>-style files that live in the repo but <strong>without pretending to be a parallel source of truth</strong>.</p>
-<p>The difference looks small but has three deep consequences:</p>
+<p>SDD puts intent in <strong>specs that are documents parallel to the code</strong>. What Isoform proposes is distributing that intent across <strong>artifacts with varying levels of coupling to the code itself</strong>: from inline comments (maximum coupling) to ADRs (low coupling, similar to a spec).</p>
+<p>This isn't a binary "inside vs outside the code" dichotomy. It's a <strong>coupling gradient</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Coupling to code</th>
+<th>Desynchronization risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inline comment</td>
+<td>Maximum — same file, same line</td>
+<td>Very low</td>
+</tr>
+<tr>
+<td>Commit message</td>
+<td>High — tied to the exact diff via <code>git blame</code></td>
+<td>None (immutable)</td>
+</tr>
+<tr>
+<td>AGENTS.md / CLAUDE.md</td>
+<td>Medium — in the repo, orientational</td>
+<td>Low if kept short</td>
+</tr>
+<tr>
+<td>ADR</td>
+<td>Low — separate document about decisions</td>
+<td>Medium (same as a light spec)</td>
+</tr>
+<tr>
+<td>Spec in repo</td>
+<td>Low — separate document about implementation</td>
+<td>Medium-high</td>
+</tr>
+<tr>
+<td>Spec in Confluence/Notion</td>
+<td>Minimal — outside the repo</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<p>We need to be honest: an ADR at <code>docs/adr/0005-auth-strategy.md</code> is a separate document describing decisions about code that lives elsewhere — <strong>it can desynchronize exactly like a spec</strong>. What changes between an ADR and a spec isn't its adherence to the code, but <strong>what it captures</strong> (specific decisions vs complete implementation) and <strong>its ambition</strong> (a concrete why vs a system source of truth).</p>
+<p>Isoform's proposal isn't "everything stuck to the code" — it's <strong>preferring artifacts at the top of the gradient</strong> (comments, commits) and using those at the bottom (ADRs) only for decisions, not for describing the entire system. The practical consequences:</p>
 <ol>
-<li><strong>There's no second system to maintain.</strong> Decisions live where the code lives, so you can't desynchronize them because they're the same thing. Chapter 9's <em>maintenance tax</em> disappears by construction.</li>
-<li><strong>Whys aren't lost</strong> because they're stuck to the code that implements them. Remove the logical unit and the why goes with it.</li>
+<li><strong>Less maintenance surface.</strong> Chapter 9's <em>maintenance tax</em> doesn't completely disappear — ADRs can also go stale — but it's reduced because the most coupled artifacts (comments, commits) can't desynchronize by construction.</li>
+<li><strong>The most critical whys travel with the code.</strong> An intent comment gets deleted when the line gets deleted. A commit message is immutable. The whys living there aren't lost.</li>
 <li><strong>There's no false illusion of completeness</strong> because there's no master document giving a sensation of coverage. Coverage is exactly the code's coverage.</li>
 </ol>
+<p>An important observation: <strong>a spec that lives in the repository is also a repo artifact</strong>, versioned with git, reviewable in PRs. The boundary between "spec" and "project artifact" blurs. The real difference isn't where the file lives, but the degree of coupling to the code it describes and the ambition of what it tries to capture.</p>
 <h2 id="what-context-engineering-does">What context engineering does<a class="headerlink" href="#what-context-engineering-does" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Context engineering isn't "do nothing". It's a set of concrete practices, all oriented to <strong>leaving readable traces inside the system itself</strong>:</p>
 <h3 id="1-adrs-architecture-decision-records">1. ADRs (Architecture Decision Records)<a class="headerlink" href="#1-adrs-architecture-decision-records" title="Enlace permanente a esta sección">&para;</a></h3>
@@ -1883,19 +1927,19 @@
 <tr>
 <th>Dimension</th>
 <th>SDD</th>
-<th>Context engineering</th>
+<th>Code-embedded context</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Where intent lives</td>
-<td>External specs</td>
-<td>Inside code and repo</td>
+<td>Specs (parallel documents)</td>
+<td>Distributed across the coupling gradient</td>
 </tr>
 <tr>
 <td>Synchronized maintenance</td>
 <td>Yes, explicit</td>
-<td>Not required by construction</td>
+<td>Reduced but not eliminated (ADRs also age)</td>
 </tr>
 <tr>
 <td>Captures whys</td>
@@ -1929,7 +1973,7 @@
 </tr>
 </tbody>
 </table>
-<p>The two approaches solve the same problem — chapter 1's context collapse — with different philosophies. SDD bets on <strong>explicit persistence</strong>; context engineering bets on <strong>substrate adherence</strong>.</p>
+<p>The two approaches solve the same problem — chapter 1's context collapse — with different philosophies. SDD bets on <strong>explicit persistence in parallel documents</strong>; code-embedded context bets on <strong>distributing intent across artifacts with high coupling to the code</strong>.</p>
 <h2 id="when-to-choose-context-engineering-over-sdd">When to choose context engineering over SDD<a class="headerlink" href="#when-to-choose-context-engineering-over-sdd" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>There are situations where context engineering is objectively the better option:</p>
 <ul>
