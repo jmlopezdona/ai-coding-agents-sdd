@@ -1941,7 +1941,7 @@
 <ul>
 <li><strong>Make the update part of the definition of "done"</strong>. A task isn't finished until the spec reflects what was done. This goes in the PR checklist, not in informal "would be nice if...".</li>
 <li><strong>Use recurring agents that detect drift</strong>. An agent that nightly compares specs and code and opens issues when there are divergences. That's harness work, not strictly SDD, which is why this point gets developed in the next course.</li>
-<li><strong>Treat implementation decisions as mini-PRs to the spec</strong>. Every non-trivial commit asks: does this change anything the spec assumes? If yes, the commit includes a spec entry.</li>
+<li><strong>Treat each implementation decision as a potential spec change</strong>. For every non-trivial commit, the question is: does this change anything the spec assumes? If the answer is yes, the commit includes the corresponding spec update.</li>
 <li><strong>Make the spec the first place the agent looks</strong>. If your workflow takes the agent to the code before the spec, the agent will never learn to update the spec. If the spec is always the first document loaded, the loop closes.</li>
 </ul>
 <p>None of these mechanisms is free, and that's where SDD's real cost lives. Chapter 10 develops this cost honestly — the famous <em>maintenance tax</em> — and why it's not negligible.</p>
