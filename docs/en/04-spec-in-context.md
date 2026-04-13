@@ -10,7 +10,7 @@ So far we've talked about a spec's anatomy as if it were a single thing. It isn'
 
 In spec-first the spec is read once, when the feature kicks off, and from then on the code drifts freely. Its only function is to **align team and agent at the start**. No one is going to read it again, so every extra line you write is work no one will ever recover.
 
-The right amount of detail: objective, non-goals, acceptance criteria, the critical whys, and little else. If your spec-first runs longer than a screen, it's almost always because you're writing *aspirational* spec-anchored ([anti-pattern #4](12-anti-patterns.md#4-theater-spec-with-fake-anchoring) in chapter 12) or because you've fallen into pseudocode ([anti-pattern #12](12-anti-patterns.md#12-generated-spec-thats-pseudocode-in-disguise)). The optimal spec-first is the minimum viable to start with clear intent.
+The right amount of detail: objective, non-goals, acceptance criteria, the critical whys, and little else. If your spec-first runs longer than a screen, it's almost always because you're writing *aspirational* spec-anchored ([anti-pattern #4](11-anti-patterns.md#4-theater-spec-with-fake-anchoring) in chapter 12) or because you've fallen into pseudocode ([anti-pattern #12](11-anti-patterns.md#12-generated-spec-thats-pseudocode-in-disguise)). The optimal spec-first is the minimum viable to start with clear intent.
 
 ### Spec-anchored → medium detail, bounded by what the anchoring can verify
 
@@ -36,7 +36,7 @@ If you have to distill all of the above into a single sentence:
 
 In spec-first the "validator" is the team in a single initial reading, so the right detail is what fits in that reading. In spec-anchored the validator is the anchoring mechanism, so the right detail is what the anchoring knows how to compare. In spec-as-source the validator is the generator, so the right detail is what the generator needs to produce unambiguous code.
 
-Almost every pathology we'll see in chapter 12 comes from **misaligning these three things**: writing spec-anchored without anchoring ([#4](12-anti-patterns.md#4-theater-spec-with-fake-anchoring)), writing spec-as-source without a generator ([#9](12-anti-patterns.md#9-promoting-prematurely-to-spec-as-source) + [#12](12-anti-patterns.md#12-generated-spec-thats-pseudocode-in-disguise)), or writing spec-first with spec-as-source-level detail ([#2](12-anti-patterns.md#2-big-spec-up-front)). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.
+Almost every pathology we'll see in chapter 11 comes from **misaligning these three things**: writing spec-anchored without anchoring ([#4](11-anti-patterns.md#4-theater-spec-with-fake-anchoring)), writing spec-as-source without a generator ([#9](11-anti-patterns.md#9-promoting-prematurely-to-spec-as-source) + [#12](11-anti-patterns.md#12-generated-spec-thats-pseudocode-in-disguise)), or writing spec-first with spec-as-source-level detail ([#2](11-anti-patterns.md#2-big-spec-up-front)). Anatomy isn't absolute — it's relative to what kind of validation will be applied to what you write.
 
 ## The spec and its external sources: consume, produce, modify
 
@@ -48,13 +48,13 @@ Every spec relates to artifacts that already exist — product documents, archit
 
 An important nuance: **cite the specific invariant this spec depends on, not the entire document**. *"This spec respects ADR-007 (single Postgres instance) and ADR-012 (no synchronous calls between services)"* is useful. *"Related: ADR-007"* is noise.
 
-**2. Produced (it doesn't exist; the spec creates it).** The typical case for a new feature: *"this spec creates a new endpoint / a new service / a new module"*. The trap: because it doesn't exist yet, you feel you have to "define it" in the spec, and you almost always end up describing it with classes, methods, signatures and payloads. That's exactly [anti-pattern #12](12-anti-patterns.md#12-generated-spec-thats-pseudocode-in-disguise) (pseudocode dressed up as spec).
+**2. Produced (it doesn't exist; the spec creates it).** The typical case for a new feature: *"this spec creates a new endpoint / a new service / a new module"*. The trap: because it doesn't exist yet, you feel you have to "define it" in the spec, and you almost always end up describing it with classes, methods, signatures and payloads. That's exactly [anti-pattern #12](11-anti-patterns.md#12-generated-spec-thats-pseudocode-in-disguise) (pseudocode dressed up as spec).
 
 The right form: the spec describes the **observable contract** the new artifact must offer, not its internal structure. *"There must be a capability to accept authenticated avatar uploads (JPEG/PNG, ≤10 MB) and return a retrievable URL"* is observable contract. *"Create `AvatarUploadService` with method `upload(file, user_id) -> AvatarMetadata`"* is pseudocode.
 
 **When a prior design document already exists** (a tech design, an interface document, an API contract designed before implementation), the component at the code level is *produced*, but at the design level it's *consumed*. In that case, the spec references the design document and describes only the implications for this feature — exactly as with any consumed artifact. The "define the observable contract" rule applies only when no prior design already does so.
 
-A conceptually important nuance: a spec that produces a new artifact is **the transient source of truth that hands off**. Once the artifact exists, **its own documentation** becomes the operational source, and the spec becomes the *"why it was built this way"* — historical intent, not living contract. Confusing the two roles leads to the silent fusion of [anti-pattern #13](12-anti-patterns.md#13-fusing-user-story-and-spec-into-a-single-file).
+A conceptually important nuance: a spec that produces a new artifact is **the transient source of truth that hands off**. Once the artifact exists, **its own documentation** becomes the operational source, and the spec becomes the *"why it was built this way"* — historical intent, not living contract. Confusing the two roles leads to the silent fusion of [anti-pattern #13](11-anti-patterns.md#13-fusing-user-story-and-spec-into-a-single-file).
 
 A concrete example of this handoff: APIs. When an API is yet to be implemented, the design document (a draft contract, a tech design) is the transient source and the spec references it. But once implemented, if the tech stack generates documentation from code (OpenAPI/Swagger generated from annotations, for example), that generated documentation becomes the **living source** — it reflects what the code actually does. From that point on, the spec and any future references should point to the generated artifact, not to the original design document, which may have gone stale without anyone noticing.
 
@@ -82,7 +82,7 @@ How to incorporate the upstream depends on whether the agent can access the orig
 
 A concrete risk in both cases: the temptation to edit both documents frequently without each change being fully justified. Every cross-edit is an opportunity for misalignment. The trace serves a dual purpose: **checkpoint at the time of change** and **audit material** for a doc-gathering agent that scans for discrepancies on a recurring basis.
 
-The rule: **the spec always contains its own criteria, derived at the level of precision validation needs. The upstream document is cited as the source of the why, not as the container of the what.** The anti-pattern to avoid — *fusing user story and spec into a hybrid* — we develop as [anti-pattern #13](12-anti-patterns.md#13-fusing-user-story-and-spec-into-a-single-file) in chapter 12.
+The rule: **the spec always contains its own criteria, derived at the level of precision validation needs. The upstream document is cited as the source of the why, not as the container of the what.** The anti-pattern to avoid — *fusing user story and spec into a hybrid* — we develop as [anti-pattern #13](11-anti-patterns.md#13-fusing-user-story-and-spec-into-a-single-file) in chapter 11.
 
 !!! tip "Where the ecosystem is heading"
 
@@ -119,9 +119,9 @@ The consume/produce/modify taxonomy and the dimensions don't create a new sectio
 
 If while writing constraints and criteria you discover the spec produces or modifies more than **3-4 artifacts**, you probably have one of three problems:
 
-1. A feature too big that should be split into multiple specs (chapter 9 modulation).
+1. A feature too big that should be split into multiple specs (chapter 8 modulation).
 2. An architectural change disguised as a feature, which deserves its own ADR.
-3. A refactor camouflaged as a feature (also chapter 9 modulation): what you're changing is the *shape* of the system, not adding business capability.
+3. A refactor camouflaged as a feature (also chapter 8 modulation): what you're changing is the *shape* of the system, not adding business capability.
 
 ### Summary table by relationship type
 
@@ -135,7 +135,7 @@ If while writing constraints and criteria you discover the spec produces or modi
 | **Product doc / brief** | Extract the cardinal whys | Whys | Importing vague product language |
 | **User story** | Derive criteria with traceability | Criteria + Whys | Verbatim copy or opaque reference |
 
-And an anti-pattern that appears when references accumulate without discipline: **reference soup** — a spec drowned by its own citations, where the agent and the human don't know which are load-bearing and end up ignoring them all. We develop it as [anti-pattern #14](12-anti-patterns.md#14-reference-soup) in chapter 12. The preventive rule: **reference only what the agent or the human needs for this task, and annotate the why of each reference**.
+And an anti-pattern that appears when references accumulate without discipline: **reference soup** — a spec drowned by its own citations, where the agent and the human don't know which are load-bearing and end up ignoring them all. We develop it as [anti-pattern #14](11-anti-patterns.md#14-reference-soup) in chapter 11. The preventive rule: **reference only what the agent or the human needs for this task, and annotate the why of each reference**.
 
 ## In summary: what distinguishes a good spec from a mediocre one
 

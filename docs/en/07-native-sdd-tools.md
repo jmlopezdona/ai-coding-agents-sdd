@@ -70,7 +70,7 @@ Tessl is the most radical proposal of the four. It aims directly at the **Spec-a
 **What Fowler flags as problematic:**
 
 - **It's in private beta**, with all the limitations that implies (access, support, risk of disruptive changes, risk of disappearing).
-- **LLM non-determinism conflicts directly with the "regenerate and you get the same thing" promise**. If two generations of the same spec produce different code, the "single source of truth" promise deflates. This is almost exactly the problem that killed Model-Driven Development in the 2000s and that chapter 10 develops.
+- **LLM non-determinism conflicts directly with the "regenerate and you get the same thing" promise**. If two generations of the same spec produce different code, the "single source of truth" promise deflates. This is almost exactly the problem that killed Model-Driven Development in the 2000s and that chapter 9 develops.
 
 **Who it fits:**
 
@@ -139,8 +139,8 @@ An honest recommendation, knowing it'll age:
 
 There's a cross-cutting problem worth naming: **keeping specs alive over months** (chapter 6). All these tools help with the tactical cycle of a feature — design the spec, implement, verify. But the sustained discipline of maintaining a spec updated as code evolves and the team changes remains team work, and that work has a real cost (chapter 10).
 
-Traycer comes closer than the others to post-code verification, but its work unit is still the session, not the module's lifecycle. For long-term maintenance discipline, what's needed is harness infrastructure — automatic hooks, drift sensors, recurring agents — which [chapter 13](13-from-sdd-to-harness.md) develops as the bridge between SDD and the next course in the trilogy.
+Traycer comes closer than the others to post-code verification, but its work unit is still the session, not the module's lifecycle. For long-term maintenance discipline, what's needed is harness infrastructure — automatic hooks, drift sensors, recurring agents — which [chapter 12](12-from-sdd-to-harness.md) develops as the bridge between SDD and the next course in the trilogy.
 
 ## What comes next
 
-Up to here we've seen the lifecycle (ch. 5), living specs (ch. 6), and the ecosystem's tools. In **chapter 9** we go down to practice: how all this applies to three different kinds of work — new features, refactors, and bug fixes — because the optimal process isn't the same in all three cases.
+Up to here we've seen the lifecycle (ch. 5), living specs (ch. 6), and the ecosystem's tools. In **chapter 8** we go down to practice: how all this applies to three different kinds of work — new features, refactors, and bug fixes — because the optimal process isn't the same in all three cases.

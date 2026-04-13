@@ -1,4 +1,4 @@
-# 9. Patrones de aplicación: features, refactors y bug fixes
+# 8. Patrones de aplicación: features, refactors y bug fixes
 
 Una de las trampas más fáciles de caer en SDD es **aplicar el mismo proceso a todo**. Es la trampa exacta que [Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) le señala a Kiro en el capítulo 7: tratar un bug fix de tres líneas como una feature multi-historia. El proceso no escala uniformemente porque los problemas no son uniformes. Este capítulo recorre los tres patrones de trabajo más comunes — feature nueva, refactor y bug fix — y describe **cómo modular el ciclo SDD** para cada uno.
 
@@ -59,7 +59,7 @@ Esta es la pregunta tesis del SDD aplicado a refactors. No "cómo queda el códi
 
 ## Patrón 3 — Bug fix
 
-El bug fix es el patrón donde el SDD pleno es contraproducente. Un bug fix de tres líneas con plantilla completa, clarificación iterativa y plan formal es exactamente la burocracia que el capítulo 10 critica. No lo hagas.
+El bug fix es el patrón donde el SDD pleno es contraproducente. Un bug fix de tres líneas con plantilla completa, clarificación iterativa y plan formal es exactamente la burocracia que el capítulo 9 critica. No lo hagas.
 
 Pero "no lo hagas" no significa "haz vibe coding". Significa que el bug fix tiene su propia versión muy ligera del ciclo, y vale la pena nombrarla.
 
@@ -103,4 +103,4 @@ Las herramientas del capítulo 7 (Kiro especialmente) tienden a aplicar el patr�
 
 ## Lo que viene a continuación
 
-Llegamos al capítulo más incómodo del curso. El **capítulo 10** es la crítica honesta a SDD: dónde falla, qué cuesta, por qué algunas de las críticas son justas y qué hacer al respecto. Si vienes leyendo el curso convencido de que esta disciplina es la respuesta, ese capítulo está diseñado para descolocarte un poco. Es deliberado y es necesario.
+Llegamos al capítulo más incómodo del curso. El **capítulo 9** es la crítica honesta a SDD: dónde falla, qué cuesta, por qué algunas de las críticas son justas y qué hacer al respecto. Si vienes leyendo el curso convencido de que esta disciplina es la respuesta, ese capítulo está diseñado para descolocarte un poco. Es deliberado y es necesario.

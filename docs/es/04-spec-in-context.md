@@ -10,7 +10,7 @@ Hasta aquí hemos hablado de la anatomía de una spec como si fuera una sola cos
 
 En spec-first la spec se lee una vez, al arrancar la feature, y a partir de ahí el código deriva libremente. Su única función es **alinear al equipo y al agente al principio**. Nadie la va a leer de vuelta, así que cada línea extra que escribas es trabajo que nadie va a recuperar.
 
-El detalle apropiado: objetivo, no-goals, criterios de aceptación, los por qués críticos, y poco más. Si tu spec-first ocupa más de una pantalla, casi siempre es porque estás escribiendo spec-anchored *aspiracional* ([anti-patrón #4](12-anti-patterns.md#4-spec-teatral-con-anclaje-fingido) del capítulo 12) o porque caíste en pseudocódigo ([anti-patrón #12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado)). La spec-first óptima es la mínima viable para arrancar con intención clara.
+El detalle apropiado: objetivo, no-goals, criterios de aceptación, los por qués críticos, y poco más. Si tu spec-first ocupa más de una pantalla, casi siempre es porque estás escribiendo spec-anchored *aspiracional* ([anti-patrón #4](11-anti-patterns.md#4-spec-teatral-con-anclaje-fingido) del capítulo 12) o porque caíste en pseudocódigo ([anti-patrón #12](11-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado)). La spec-first óptima es la mínima viable para arrancar con intención clara.
 
 ### Spec-anchored → detalle medio, acotado por lo que el anclaje puede verificar
 
@@ -36,7 +36,7 @@ Si tienes que destilar todo lo anterior a una sola frase:
 
 En spec-first el "validador" es el equipo en una sola lectura inicial, así que el detalle apropiado es lo que cabe en esa lectura. En spec-anchored el validador es el mecanismo de anclaje, así que el detalle apropiado es lo que el anclaje sabe comparar. En spec-as-source el validador es el generador, así que el detalle apropiado es lo que el generador necesita para producir código sin ambigüedad.
 
-Casi todas las patologías que veremos en el capítulo 12 vienen de **desalinear estas tres cosas**: escribir spec-anchored sin anclaje ([#4](12-anti-patterns.md#4-spec-teatral-con-anclaje-fingido)), escribir spec-as-source sin generador ([#9](12-anti-patterns.md#9-promocionar-prematuramente-a-spec-as-source) + [#12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado)), o escribir spec-first con el detalle de spec-as-source ([#2](12-anti-patterns.md#2-big-spec-up-front)). La anatomía no es absoluta — es relativa a qué tipo de validación se va a hacer sobre lo que escribes.
+Casi todas las patologías que veremos en el capítulo 11 vienen de **desalinear estas tres cosas**: escribir spec-anchored sin anclaje ([#4](11-anti-patterns.md#4-spec-teatral-con-anclaje-fingido)), escribir spec-as-source sin generador ([#9](11-anti-patterns.md#9-promocionar-prematuramente-a-spec-as-source) + [#12](11-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado)), o escribir spec-first con el detalle de spec-as-source ([#2](11-anti-patterns.md#2-big-spec-up-front)). La anatomía no es absoluta — es relativa a qué tipo de validación se va a hacer sobre lo que escribes.
 
 ## La spec y sus fuentes externas: consumir, producir, modificar
 
@@ -48,13 +48,13 @@ Toda spec se relaciona con artefactos que ya existen — documentos de producto,
 
 Un matiz importante: **cita el invariante específico del que esta spec depende, no el documento entero**. *"Esta spec respeta ADR-007 (single Postgres instance) y ADR-012 (no llamadas síncronas entre servicios)"* es útil. *"Relacionado: ADR-007"* es ruido.
 
-**2. Producido (no existe; la spec lo crea).** Es el caso típico de una feature nueva: *"esta spec crea un nuevo endpoint / un nuevo servicio / un nuevo módulo"*. Aquí la trampa es obvia: como no existe todavía, sientes que tienes que "definirlo" en la spec, y casi siempre acabas describiéndolo con clases, métodos, firmas y payloads. Eso es exactamente el [anti-patrón #12](12-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado) (pseudocódigo disfrazado de spec).
+**2. Producido (no existe; la spec lo crea).** Es el caso típico de una feature nueva: *"esta spec crea un nuevo endpoint / un nuevo servicio / un nuevo módulo"*. Aquí la trampa es obvia: como no existe todavía, sientes que tienes que "definirlo" en la spec, y casi siempre acabas describiéndolo con clases, métodos, firmas y payloads. Eso es exactamente el [anti-patrón #12](11-anti-patterns.md#12-spec-generada-que-es-pseudocodigo-disfrazado) (pseudocódigo disfrazado de spec).
 
 La forma correcta: la spec describe el **contrato observable** que el artefacto nuevo tiene que ofrecer, no su estructura interna. *"Debe existir una capacidad para aceptar uploads de avatares autenticados (JPEG/PNG, ≤10 MB) y devolver una URL recuperable"* es contrato observable. *"Crear `AvatarUploadService` con método `upload(file, user_id) -> AvatarMetadata`"* es pseudocódigo.
 
 **Cuando ya existe un documento de diseño previo** (un tech design, un documento de interfaces, un contrato de API diseñado antes de la implementación), el componente a nivel de código se *produce*, pero a nivel de diseño se *consume*. En ese caso, la spec referencia el documento de diseño y describe solo las implicaciones para esta feature — exactamente como con cualquier artefacto consumido. La regla de "definir el contrato observable" aplica solo cuando no hay ningún diseño previo que ya lo haga.
 
-Un matiz conceptualmente importante: una spec que produce un artefacto nuevo es **la fuente de verdad transitoria que hace handoff**. En cuanto el artefacto existe, **su propia documentación** se vuelve la fuente operacional, y la spec pasa a ser el *"por qué se construyó así"* — intención histórica, no contrato vivo. Confundir los dos roles lleva a la fusión silenciosa del [anti-patrón #13](12-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo).
+Un matiz conceptualmente importante: una spec que produce un artefacto nuevo es **la fuente de verdad transitoria que hace handoff**. En cuanto el artefacto existe, **su propia documentación** se vuelve la fuente operacional, y la spec pasa a ser el *"por qué se construyó así"* — intención histórica, no contrato vivo. Confundir los dos roles lleva a la fusión silenciosa del [anti-patrón #13](11-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo).
 
 Un ejemplo concreto de este handoff: las APIs. Cuando una API está por implementar, el documento de diseño (un borrador de contrato, un tech design) es la fuente transitoria y la spec lo referencia. Pero una vez implementada, si el stack tecnológico genera documentación a partir del código (OpenAPI/Swagger generado desde anotaciones, por ejemplo), esa documentación generada pasa a ser la **fuente viva** — es la que refleja lo que el código realmente hace. A partir de ese momento, la spec y cualquier referencia futura deben apuntar al artefacto generado, no al documento de diseño original, que puede haber quedado obsoleto sin que nadie lo detecte.
 
@@ -82,7 +82,7 @@ Cómo incorporar el upstream depende de si el agente puede acceder al documento 
 
 Un riesgo concreto en ambos casos: la tentación de editar ambos documentos con frecuencia sin que cada cambio esté plenamente justificado. Cada edición cruzada es una oportunidad de desalineamiento. La traza cumple un doble propósito: **punto de comprobación en el momento del cambio** y **material de auditoría** para un agente de doc-gathering que busque discrepancias de forma recurrente.
 
-La regla: **la spec siempre contiene sus propios criterios, derivados al nivel de precisión que la validación necesita. El documento upstream se cita como fuente del por qué, no como contenedor del qué.** El anti-patrón a evitar — *fusionar user story y spec en un híbrido* — lo desarrollamos como [anti-patrón #13](12-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo) en el capítulo 12.
+La regla: **la spec siempre contiene sus propios criterios, derivados al nivel de precisión que la validación necesita. El documento upstream se cita como fuente del por qué, no como contenedor del qué.** El anti-patrón a evitar — *fusionar user story y spec en un híbrido* — lo desarrollamos como [anti-patrón #13](11-anti-patterns.md#13-fusionar-user-story-y-spec-en-un-solo-archivo) en el capítulo 11.
 
 !!! tip "Hacia dónde va el ecosistema"
 
@@ -135,7 +135,7 @@ Si al escribir restricciones y criterios descubres que la spec produce o modific
 | **Doc de producto / brief** | Extrae los por qués cardinales | Por qués | Importar lenguaje vago de producto |
 | **User story** | Derivar criterios con traza | Criterios + Por qués | Copia literal o referencia opaca |
 
-Y un anti-patrón que aparece cuando las referencias se acumulan sin disciplina: **sopa de referencias** — una spec ahogada por sus propias citas, donde el agente y el humano no saben cuáles son load-bearing y acaban ignorándolas todas. Lo desarrollamos como [anti-patrón #14](12-anti-patterns.md#14-sopa-de-referencias) en el capítulo 12. La regla preventiva: **referencia solo lo que el agente o el humano necesita para esta tarea, y anota el porqué de cada referencia**.
+Y un anti-patrón que aparece cuando las referencias se acumulan sin disciplina: **sopa de referencias** — una spec ahogada por sus propias citas, donde el agente y el humano no saben cuáles son load-bearing y acaban ignorándolas todas. Lo desarrollamos como [anti-patrón #14](11-anti-patterns.md#14-sopa-de-referencias) en el capítulo 11. La regla preventiva: **referencia solo lo que el agente o el humano necesita para esta tarea, y anota el porqué de cada referencia**.
 
 ## En resumen: lo que distingue una spec buena de una mediocre
 

@@ -1,4 +1,4 @@
-# 12. SDD anti-patterns
+# 11. SDD anti-patterns
 
 A short list of the most expensive errors seen in teams adopting Spec-Driven Development. They're not here to scare you but so when you recognize them in your own process — and you will — you know how to stop them before they become habit.
 
@@ -50,9 +50,9 @@ Each anti-pattern follows the same format: **name**, observable symptom, why it 
 
 **Symptom.** Every change — feature, refactor, three-line bug fix — goes through the same complete process: template spec, formal plan, task decomposition, validation. The team complains SDD "is too slow" and is right.
 
-**Why it happens.** Lack of modulation. Adoption was done without teaching the difference between chapter 9 patterns.
+**Why it happens.** Lack of modulation. Adoption was done without teaching the difference between chapter 8 patterns.
 
-**Correction.** Process proportional to risk. Trivial bug fixes don't deserve a spec; big features do. Chapter 9's rule — *spec weight proportional to the cost of the change if it goes wrong* — isn't optional, it's what makes the process sustainable.
+**Correction.** Process proportional to risk. Trivial bug fixes don't deserve a spec; big features do. Chapter 8's rule — *spec weight proportional to the cost of the change if it goes wrong* — isn't optional, it's what makes the process sustainable.
 
 ---
 
@@ -176,8 +176,8 @@ Chapter 3 develops this topic in its section *"The spec and technical components
 
 Once a quarter, in a retro, read this list aloud and ask the team: *do we recognize any of these in ourselves?* People, contrary to what ego promises, almost always recognize one or two. And recognizing them is half of stopping them.
 
-If you recognize three or more, **the problem isn't one of the anti-patterns; it's the whole adoption of SDD**. Go back to chapter 10 and 11 and rethink whether SDD is the right tool for your situation.
+If you recognize three or more, **the problem isn't one of the anti-patterns; it's the whole adoption of SDD**. Go back to chapter 9 and 11 and rethink whether SDD is the right tool for your situation.
 
 ## What comes next
 
-**Chapter 13** closes the course connecting SDD with the next step: the harness. The exact points where the discipline couples with harness engineering, and why the two together produce much more than the two apart.
+**Chapter 12** closes the course connecting SDD with the next step: the harness. The exact points where the discipline couples with harness engineering, and why the two together produce much more than the two apart.

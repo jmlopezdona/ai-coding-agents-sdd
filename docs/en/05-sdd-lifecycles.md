@@ -108,7 +108,7 @@ The output of this sub-step is a file in `specs/` or wherever your project hosts
 
 With the spec in hand, you ask the agent for an **implementation plan**: which files it touches, in what order, what dependencies between tasks, what tests it intends to write. The plan isn't code; it's an intermediate document. You read it, discuss it, correct it if the agent misunderstood any constraint.
 
-This sub-step is where Traycer-style tools add the most value ([chapter 8](08-architect-layers.md)), because the plan's quality determines the quality of everything that comes after.
+This sub-step is where Traycer-style tools add the most value ([chapter 7](07-native-sdd-tools.md#traycer)), because the plan's quality determines the quality of everything that comes after.
 
 ### Sub-step 1.3 — Decompose into tasks
 
@@ -118,7 +118,7 @@ Heuristic rule: if you can't describe the "after the task" state in one sentence
 
 !!! note "Not every project needs all three sub-steps"
 
-    For a small change or a PoC, sub-steps 1.2 and 1.3 can be implicit or nonexistent — the spec itself is the plan and the tasks are obvious. The entire Phase 1 can take five minutes. For an enterprise project with multiple stakeholders, each sub-step can have its own review and approval cycle. **The weight of Phase 1 should be proportional to the change's risk** — exactly the rule from [chapter 9](09-patterns-of-application.md).
+    For a small change or a PoC, sub-steps 1.2 and 1.3 can be implicit or nonexistent — the spec itself is the plan and the tasks are obvious. The entire Phase 1 can take five minutes. For an enterprise project with multiple stakeholders, each sub-step can have its own review and approval cycle. **The weight of Phase 1 should be proportional to the change's risk** — exactly the rule from [chapter 9](08-patterns-of-application.md).
 
 ## Phase 2 — Implement the spec
 
@@ -159,7 +159,7 @@ That delegation can happen in two ways:
 
 !!! note "Connection with BMAD and Traycer"
 
-    Delegation to sub-agents isn't conceptually new — [BMAD](07-native-sdd-tools.md#bmad) already uses multiple agents, but with **fixed roles** (PM, Architect, QA, Developer). What today's tools enable is more flexible delegation: sub-agents by **spec context** (front, back, infra), not by process role. And architect layers like [Traycer](08-architect-layers.md) fit naturally as the coordination logic — their planning and verification functions are exactly what the main agent needs to orchestrate sub-agents.
+    Delegation to sub-agents isn't conceptually new — [BMAD](07-native-sdd-tools.md#bmad) already uses multiple agents, but with **fixed roles** (PM, Architect, QA, Developer). What today's tools enable is more flexible delegation: sub-agents by **spec context** (front, back, infra), not by process role. And architect layers like [Traycer](07-native-sdd-tools.md#traycer) fit naturally as the coordination logic — their planning and verification functions are exactly what the main agent needs to orchestrate sub-agents.
 
 Neither option is universally better. Direct execution is simpler; delegation to sub-agents manages context better for large specs but requires explicit interfaces in Phase 1 and integration validation in Phase 3. The decision is made by the agent (or its configuration) based on the spec's nature.
 
@@ -204,7 +204,7 @@ Validation is where **frameworks diverge most** — and where they fail most:
 
     If Phase 3 doesn't exist or is reduced to "trust that the tests pass", you're not doing SDD — you're doing spec-first with good intentions. Verifying that the code fulfills the spec **as a whole** (not just task by task), at **both levels** (inner and outer loop), and with a **deterministic foundation** (not just stochastic) is the mechanism that closes the cycle. Without it, the spec ages from the moment it's written.
 
-    This is exactly the gap [chapter 7 identifies as a common problem](07-native-sdd-tools.md#what-none-of-these-tools-solve) across native tools, and where the architect layers from [chapter 8](08-architect-layers.md) have positioned themselves.
+    This is exactly the gap [chapter 7 identifies as a common problem](07-native-sdd-tools.md#what-none-of-these-tools-solve) across native tools, and where the architect layers from [chapter 7](07-native-sdd-tools.md#traycer) have positioned themselves.
 
 ## The lifecycle isn't linear
 
@@ -222,7 +222,7 @@ Some concrete symptoms:
 - **Implementation requiring many iterations**: task decomposition might be too coarse, or interfaces between parts might not be explicit, or the agent might not have sufficient context.
 - **Validation catching the same types of failure repeatedly**: deterministic tests for a recurring pattern might be missing, or stochastic validation might not be complemented with automated checks.
 
-In these cases, what needs adjusting isn't the spec — it's **the system itself**: how specs are written, what tools are used to implement, what validation mechanisms are in place. This meta-level reflection — improving the process, not just the artifact — is exactly the territory of **harness engineering** that [chapter 13](13-from-sdd-to-harness.md) develops: converting manual discipline into automatic infrastructure, so that each process iteration is better than the last and agents progressively need **less human supervision and more autonomy**.
+In these cases, what needs adjusting isn't the spec — it's **the system itself**: how specs are written, what tools are used to implement, what validation mechanisms are in place. This meta-level reflection — improving the process, not just the artifact — is exactly the territory of **harness engineering** that [chapter 12](12-from-sdd-to-harness.md) develops: converting manual discipline into automatic infrastructure, so that each process iteration is better than the last and agents progressively need **less human supervision and more autonomy**.
 
 ## What comes next
 

@@ -59,14 +59,14 @@ nav:
   - Tooling:
       - "7. SDD tools": 07-native-sdd-tools.md
   - Practice:
-      - "9. Patterns of application": 09-patterns-of-application.md
+      - "8. Patterns of application": 08-patterns-of-application.md
   - Critique:
-      - "10. The honest critique": 10-honest-critique.md
-      - "11. Context engineering as alternative": 11-context-engineering.md
+      - "9. The honest critique": 09-honest-critique.md
+      - "10. Context engineering as alternative": 10-context-engineering.md
   - Pitfalls:
-      - "12. Anti-patterns": 12-anti-patterns.md
+      - "11. Anti-patterns": 11-anti-patterns.md
   - Industrialization:
-      - "13. From SDD to the harness": 13-from-sdd-to-harness.md
+      - "12. From SDD to the harness": 12-from-sdd-to-harness.md
 
 markdown_extensions:
   - admonition
@@ -133,14 +133,14 @@ plugins:
             "Tooling": "Herramientas"
             "7. SDD tools": "7. Herramientas SDD"
             "Practice": "Práctica"
-            "9. Patterns of application": "9. Patrones de aplicación"
+            "8. Patterns of application": "8. Patrones de aplicación"
             "Critique": "Crítica"
-            "10. The honest critique": "10. La crítica honesta"
-            "11. Context engineering as alternative": "11. Context engineering como alternativa"
+            "9. The honest critique": "9. La crítica honesta"
+            "10. Context engineering as alternative": "10. Context engineering como alternativa"
             "Pitfalls": "Errores comunes"
-            "12. Anti-patterns": "12. Anti-patrones"
+            "11. Anti-patterns": "11. Anti-patrones"
             "Industrialization": "Industrialización"
-            "13. From SDD to the harness": "13. Del SDD al harness"
+            "12. From SDD to the harness": "12. Del SDD al harness"
 
 extra:
   social:

@@ -47,7 +47,7 @@ La mayoría de los equipos confunden lo que están haciendo: dicen "estamos haci
 
 ## La crítica que también es parte del curso
 
-Una guía honesta sobre SDD tiene que aceptar que la disciplina también puede salir mal. El capítulo 10 desarrolla las críticas más fuertes — el *maintenance tax* de [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development), el paralelo con el viejo Model-Driven Development de [Martin Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html), la pérdida de los "por qués", la falsa ilusión de control — y el capítulo 11 presenta la alternativa que propone [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development): *context engineering*, donde la intención y los "por qués" se preservan **dentro del código** en vez de en specs externas.
+Una guía honesta sobre SDD tiene que aceptar que la disciplina también puede salir mal. El capítulo 9 desarrolla las críticas más fuertes — el *maintenance tax* de [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development), el paralelo con el viejo Model-Driven Development de [Martin Fowler](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html), la pérdida de los "por qués", la falsa ilusión de control — y el capítulo 10 presenta la alternativa que propone [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development): *context engineering*, donde la intención y los "por qués" se preservan **dentro del código** en vez de en specs externas.
 
 No están ahí para hacer ruido. Están porque mal aplicada esta disciplina es indistinguible de la burocracia, y si el curso solo te enseña los patrones positivos te va a dejar sin defensa contra el momento — que llegará — en el que tu propio proceso se convierta en el cuello de botella.
 
@@ -63,7 +63,7 @@ SDD existe porque entre saber usar un agente y saber montarle un harness complet
 
 ## Por dónde seguir
 
-Si quieres entender el dolor concreto que SDD intenta resolver, salta al **capítulo 1**. Si ya lo tienes claro y quieres el modelo conceptual, empieza por el **capítulo 2** (el espectro). Si vienes a por herramientas, los capítulos **7 y 8** son tu ruta corta. Y si vienes a buscar criterio para no tragarte el hype, lee primero el **capítulo 10** y vuelve al principio con otros ojos.
+Si quieres entender el dolor concreto que SDD intenta resolver, salta al **capítulo 1**. Si ya lo tienes claro y quieres el modelo conceptual, empieza por el **capítulo 2** (el espectro). Si vienes a por herramientas, los capítulos **7 y 8** son tu ruta corta. Y si vienes a buscar criterio para no tragarte el hype, lee primero el **capítulo 9** y vuelve al principio con otros ojos.
 
 Lo que no hace falta es leerla en orden de tapa a tapa. Lo que sí hace falta es no quedarse solo con los capítulos cómodos.
 

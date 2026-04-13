@@ -47,7 +47,7 @@ Most teams confuse what they're doing: they say "we're doing SDD" when they're a
 
 ## The critique that's also part of the course
 
-An honest guide on SDD has to accept that the discipline can also go wrong. Chapter 10 develops the strongest critiques — [Isoform's](https://isoform.ai/blog/the-limits-of-spec-driven-development) *maintenance tax*, [Martin Fowler's](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) parallel with the old Model-Driven Development, the loss of the *whys*, the false illusion of control — and chapter 11 presents [Isoform's](https://isoform.ai/blog/the-limits-of-spec-driven-development) alternative: *context engineering*, where intent and *whys* are preserved **inside the code** rather than in external specs.
+An honest guide on SDD has to accept that the discipline can also go wrong. Chapter 9 develops the strongest critiques — [Isoform's](https://isoform.ai/blog/the-limits-of-spec-driven-development) *maintenance tax*, [Martin Fowler's](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) parallel with the old Model-Driven Development, the loss of the *whys*, the false illusion of control — and chapter 10 presents [Isoform's](https://isoform.ai/blog/the-limits-of-spec-driven-development) alternative: *context engineering*, where intent and *whys* are preserved **inside the code** rather than in external specs.
 
 They aren't there for noise. They're there because misapplied, this discipline is indistinguishable from bureaucracy, and if the course only teaches you the positive patterns it leaves you defenseless against the moment — and it will come — when your own process becomes the bottleneck.
 
@@ -63,7 +63,7 @@ SDD exists because between knowing how to use an agent and knowing how to engine
 
 ## Where to go next
 
-If you want to understand the concrete pain SDD tries to solve, jump to **Chapter 1**. If you already get it and want the conceptual model, start with **Chapter 2** (the spectrum). If you came for tools, **chapters 7 and 8** are your shortcut. And if you came looking for judgment so you don't swallow the hype, read **Chapter 10** first and come back to the start with new eyes.
+If you want to understand the concrete pain SDD tries to solve, jump to **Chapter 1**. If you already get it and want the conceptual model, start with **Chapter 2** (the spectrum). If you came for tools, **chapter 7** are your shortcut. And if you came looking for judgment so you don't swallow the hype, read **Chapter 9** first and come back to the start with new eyes.
 
 You don't have to read it cover to cover. You do have to not stop at the comfortable chapters.
 

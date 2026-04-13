@@ -1,4 +1,4 @@
-# 13. Del SDD al harness: cómo encajan las piezas
+# 12. Del SDD al harness: cómo encajan las piezas
 
 Si has llegado hasta aquí, ya tienes el SDD como disciplina: sabes especificar intención, mantener el bucle bidireccional, modular el proceso según el tipo de tarea, y tienes criterio para no confundirlo con burocracia. Lo que falta es entender **dónde se conecta** esto con la siguiente capa de la trilogía: el **harness**, el sistema de infraestructura interna que rodea al agente para que la disciplina escale a un equipo entero y a meses vista.
 
@@ -36,13 +36,13 @@ La regla operativa: **cualquier cosa que en SDD puro requiera "acuérdate de hac
 
 ## Punto de acople 4 — Las capas de arquitecto como prototipo de harness
 
-Las herramientas del capítulo 8 — Traycer y similares — son, técnicamente, **harness aplicado a SDD**. Lo que hacen — interceptar entradas, planificar, verificar salidas — es exactamente la dinámica de guías y sensores del harness, aplicada al ciclo concreto de una sesión con un agente.
+Las herramientas como Traycer ([capítulo 7](07-native-sdd-tools.md#traycer)) son, técnicamente, **harness aplicado a SDD**. Lo que hacen — interceptar entradas, planificar, verificar salidas — es exactamente la dinámica de guías y sensores del harness, aplicada al ciclo concreto de una sesión con un agente.
 
 Si el harness completo te parece demasiado para empezar, una capa de arquitecto sobre tu agente es la versión miniatura de la idea: prueba qué se siente tener guías y sensores envolviendo al agente, antes de comprometerte a montar harness propio. Y cuando estés listo para el harness completo, descubrirás que la lógica de Traycer es un caso particular del patrón general — porque lo es.
 
 ## Punto de acople 5 — Los anti-patrones que solo el harness resuelve
 
-Varios de los [anti-patrones del capítulo 12](12-anti-patterns.md) son específicamente difíciles de evitar sin harness:
+Varios de los [anti-patrones del capítulo 12](11-anti-patterns.md) son específicamente difíciles de evitar sin harness:
 
 - **Spec-as-Theatre** muere cuando hay un sensor automático que mide adhesión: si la spec no se respeta, el harness lo dice.
 - **La spec eterna** muere cuando hay un agente recurrente que detecta drift y abre issues automáticos.
@@ -57,7 +57,7 @@ No todos los equipos que adoptan SDD necesitan saltar al harness inmediatamente.
 
 - **El equipo aplica SDD con disciplina pero la sostenibilidad depende de individuos.** Si Alice se va una semana de vacaciones y las specs se desactualizan, necesitas mecanismo, no más disciplina.
 - **El bucle bidireccional del capítulo 6 funciona cuando alguien lo cuida y se rompe cuando nadie lo mira.** Eso es señal de que necesita pasar de proceso humano a infraestructura.
-- **Los [anti-patrones del capítulo 12](12-anti-patterns.md) reaparecen periódicamente** aunque el equipo los conoce. La conciencia individual no escala; la infraestructura sí.
+- **Los [anti-patrones del capítulo 12](11-anti-patterns.md) reaparecen periódicamente** aunque el equipo los conoce. La conciencia individual no escala; la infraestructura sí.
 - **Las herramientas del capítulo 7 se quedan cortas porque son únicas para una dimensión** y tu sistema necesita varias capas (sensors + hooks + sandboxes + observabilidad). Eso es un harness completo, no una herramienta más.
 
 Si reconoces dos o más, el siguiente curso de la trilogía es tu siguiente paso natural.
@@ -80,7 +80,7 @@ Una guía honesta no termina con "y ahora cambiará tu vida". Termina con dos ve
 
 Primero, **SDD bien hecho mejora el output del agente y la sostenibilidad del proyecto**. Esto está documentado en la práctica de los equipos que llevan tiempo aplicándolo y se nota en métricas concretas: menos retrabajo, menos drift, mejor onboarding. No es magia, pero es real.
 
-Segundo, **SDD malhecho es indistinguible de la burocracia y a veces es peor**. Esto también está documentado y es por lo que el capítulo 10 existe. Aplicarlo sin criterio convierte la disciplina en su propio cuello de botella, y a las pocas semanas el equipo vuelve al vibe coding con un nivel adicional de cinismo.
+Segundo, **SDD malhecho es indistinguible de la burocracia y a veces es peor**. Esto también está documentado y es por lo que el capítulo 9 existe. Aplicarlo sin criterio convierte la disciplina en su propio cuello de botella, y a las pocas semanas el equipo vuelve al vibe coding con un nivel adicional de cinismo.
 
 La diferencia entre las dos no está en la herramienta. Está en el juicio del equipo para modular el nivel de formalidad según el problema, mantener vivos los por qués, leer las críticas honestas como parte del curso, y entender que SDD es **una** estrategia dentro de context engineering, no la única.
 

@@ -70,7 +70,7 @@ Tessl es la propuesta más radical del cuarteto. Apunta directamente al nivel **
 **Lo que Fowler señala como problemático:**
 
 - **Está en beta privada**, con todas las limitaciones que eso implica (acceso, soporte, riesgo de cambios disruptivos, riesgo de desaparecer).
-- **El no-determinismo de los LLMs entra en conflicto directo con la promesa de "regenera y obtienes lo mismo"**. Si dos generaciones del mismo spec producen código distinto, la promesa de "una sola fuente de verdad" se desinfla. Esto es casi exactamente el problema que mató al Model-Driven Development en los 2000 y que el capítulo 10 desarrolla.
+- **El no-determinismo de los LLMs entra en conflicto directo con la promesa de "regenera y obtienes lo mismo"**. Si dos generaciones del mismo spec producen código distinto, la promesa de "una sola fuente de verdad" se desinfla. Esto es casi exactamente el problema que mató al Model-Driven Development en los 2000 y que el capítulo 9 desarrolla.
 
 **Para quién encaja:**
 
@@ -139,8 +139,8 @@ Una recomendación honesta, sabiendo que envejecerá:
 
 Hay un problema transversal que vale la pena nombrar: **mantener specs vivas a meses vista** (capítulo 6). Todas estas herramientas te ayudan con el ciclo táctico de una feature — diseñar la spec, implementar, verificar. Pero la disciplina sostenida de mantener una spec actualizada cuando el código evoluciona y el equipo cambia sigue siendo trabajo del equipo, y ese trabajo tiene un coste real (capítulo 10).
 
-Traycer se acerca más que las otras al problema de la verificación post-código, pero su unidad de trabajo sigue siendo la sesión, no el ciclo de vida del módulo. Para la disciplina de mantenimiento a largo plazo, lo que se necesita es infraestructura de harness — hooks automáticos, sensores de drift, agentes recurrentes — que el [capítulo 13](13-from-sdd-to-harness.md) desarrolla como puente entre SDD y el siguiente curso de la trilogía.
+Traycer se acerca más que las otras al problema de la verificación post-código, pero su unidad de trabajo sigue siendo la sesión, no el ciclo de vida del módulo. Para la disciplina de mantenimiento a largo plazo, lo que se necesita es infraestructura de harness — hooks automáticos, sensores de drift, agentes recurrentes — que el [capítulo 12](12-from-sdd-to-harness.md) desarrolla como puente entre SDD y el siguiente curso de la trilogía.
 
 ## Lo que viene a continuación
 
-Hasta aquí hemos visto el ciclo de vida (cap. 5), las specs vivas (cap. 6), y las herramientas del ecosistema. En el **capítulo 9** bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.
+Hasta aquí hemos visto el ciclo de vida (cap. 5), las specs vivas (cap. 6), y las herramientas del ecosistema. En el **capítulo 8** bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.

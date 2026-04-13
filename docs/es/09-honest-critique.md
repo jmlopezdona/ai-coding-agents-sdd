@@ -1,4 +1,4 @@
-# 10. La crítica honesta: maintenance tax, MDD y la ilusión de control
+# 9. La crítica honesta: maintenance tax, MDD y la ilusión de control
 
 Hasta aquí el curso ha sido constructivo: por qué hace falta SDD, cómo se hace, con qué herramientas. Este capítulo no. Este capítulo es el contrapeso, y existe porque cualquier guía que solo te enseñe los patrones positivos te está dejando sin defensa contra el momento — que llegará — en que tu propio proceso se vuelva el cuello de botella.
 
@@ -87,4 +87,4 @@ Si reconoces tu situación en cualquiera de las cinco, **el coste del SDD probab
 
 ## Lo que viene a continuación
 
-Las críticas dejan al lector con una pregunta legítima: *si SDD malhecho es esto, ¿qué hago entonces?* El capítulo 11 desarrolla la alternativa que propone Isoform: **context engineering**. No es "vibe coding pero peor"; es una propuesta deliberadamente distinta sobre dónde debe vivir la intención.
+Las críticas dejan al lector con una pregunta legítima: *si SDD malhecho es esto, ¿qué hago entonces?* El capítulo 10 desarrolla la alternativa que propone Isoform: **context engineering**. No es "vibe coding pero peor"; es una propuesta deliberadamente distinta sobre dónde debe vivir la intención.

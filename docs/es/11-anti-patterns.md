@@ -1,4 +1,4 @@
-# 12. Anti-patrones del SDD
+# 11. Anti-patrones del SDD
 
 Una lista corta de los errores más caros que se ven en equipos que adoptan Spec-Driven Development. No están aquí para asustarte sino para que cuando los reconozcas en tu propio proceso — y los vas a reconocer — sepas pararlos antes de que se conviertan en hábito.
 
@@ -50,9 +50,9 @@ Cada anti-patrón sigue el mismo formato: **nombre**, síntoma observable, por q
 
 **Síntoma.** Cada cambio — feature, refactor, bug fix de tres líneas — pasa por el mismo proceso completo: spec con plantilla, plan formal, descomposición en tareas, validación. El equipo se queja de que SDD "es muy lento" y tiene razón.
 
-**Por qué pasa.** Falta de modulación. La adopción se hizo sin enseñar la diferencia entre los patrones del capítulo 9.
+**Por qué pasa.** Falta de modulación. La adopción se hizo sin enseñar la diferencia entre los patrones del capítulo 8.
 
-**Corrección.** Proceso proporcional al riesgo. Bug fixes triviales no merecen spec; features grandes sí. La regla del capítulo 9 — *el peso de la spec proporcional al coste del cambio si sale mal* — no es opcional, es lo que hace al proceso sostenible.
+**Corrección.** Proceso proporcional al riesgo. Bug fixes triviales no merecen spec; features grandes sí. La regla del capítulo 8 — *el peso de la spec proporcional al coste del cambio si sale mal* — no es opcional, es lo que hace al proceso sostenible.
 
 ---
 
@@ -176,8 +176,8 @@ El capítulo 3 desarrolla este tema en su sección *"La spec y los componentes t
 
 Una vez al trimestre, durante una retrospectiva, lee esta lista en voz alta y pregunta al equipo: *¿reconocemos alguno de estos en nosotros?* La gente, contra lo que el ego promete, casi siempre reconoce uno o dos. Y reconocerlos es la mitad de pararlos.
 
-Si reconoces tres o más, **el problema no es uno de los anti-patrones; es la adopción entera de SDD**. Vuelve al capítulo 10 y al 11 y replantea si SDD es la herramienta correcta para tu situación.
+Si reconoces tres o más, **el problema no es uno de los anti-patrones; es la adopción entera de SDD**. Vuelve al capítulo 9 y al 11 y replantea si SDD es la herramienta correcta para tu situación.
 
 ## Lo que viene a continuación
 
-El **capítulo 13** cierra el curso conectando SDD con el siguiente paso: el harness. Cuáles son los puntos exactos donde la disciplina se acopla con la ingeniería del harness, y por qué los dos juntos producen mucho más que los dos por separado.
+El **capítulo 12** cierra el curso conectando SDD con el siguiente paso: el harness. Cuáles son los puntos exactos donde la disciplina se acopla con la ingeniería del harness, y por qué los dos juntos producen mucho más que los dos por separado.

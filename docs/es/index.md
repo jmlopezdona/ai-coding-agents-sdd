@@ -44,31 +44,30 @@ Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 10 (l
 
 ### Parte 4 — Herramientas
 
-- [7. Herramientas SDD nativas: Kiro, Spec-kit, Tessl, BMAD](07-native-sdd-tools.md)
-- [8. Capas de arquitecto sobre agentes: Traycer y el patrón de envoltura](08-architect-layers.md)
+- [7. Herramientas SDD: Kiro, Spec-kit, Tessl, BMAD y Traycer](07-native-sdd-tools.md)
 
 ### Parte 5 — Práctica
 
-- [9. Patrones de aplicación: features, refactor, bugfix](09-patterns-of-application.md)
+- [8. Patrones de aplicación: features, refactor, bugfix](08-patterns-of-application.md)
 
 ### Parte 6 — Crítica
 
-- [10. La crítica honesta: maintenance tax, MDD y la ilusión de control](10-honest-critique.md)
-- [11. Context engineering como alternativa](11-context-engineering.md)
+- [9. La crítica honesta: maintenance tax, MDD y la ilusión de control](09-honest-critique.md)
+- [10. Context engineering como alternativa](10-context-engineering.md)
 
 ### Parte 7 — Errores comunes
 
-- [12. Anti-patrones del SDD](12-anti-patterns.md)
+- [11. Anti-patrones del SDD](11-anti-patterns.md)
 
 ### Parte 8 — Industrialización
 
-- [13. Del SDD al harness: cómo encajan las piezas](13-from-sdd-to-harness.md)
+- [12. Del SDD al harness: cómo encajan las piezas](12-from-sdd-to-harness.md)
 
 ## Qué *no* encontrarás en esta versión
 
 - Comparativas exhaustivas de herramientas. El ecosistema cambia cada trimestre; el capítulo 7 es un mapa, no una guía de compra.
 - Plantillas de spec listas para producción. Hay esqueletos en los capítulos 3 y 9, pero la spec útil se escribe contra tu dominio, no contra una plantilla genérica.
-- Promesas de productividad. Si alguien te promete 10×, probablemente no ha leído el capítulo 10.
+- Promesas de productividad. Si alguien te promete 10×, probablemente no ha leído el capítulo 9.
 
 ## Fuentes
 

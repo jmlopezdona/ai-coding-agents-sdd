@@ -108,7 +108,7 @@ El output de este sub-paso es un archivo en `specs/` o donde tu proyecto los alo
 
 Con la spec en mano, le pides al agente un **plan de implementación**: qué archivos toca, en qué orden, qué dependencias hay entre tareas, qué tests pretende escribir. El plan no es código; es un documento intermedio. Lo lees, lo discutes, lo corriges si el agente ha entendido mal alguna restricción.
 
-Este sub-paso es donde las herramientas tipo Traycer aportan más valor ([capítulo 8](08-architect-layers.md)), porque la calidad del plan determina la calidad de todo lo que viene después.
+Este sub-paso es donde las herramientas tipo Traycer aportan más valor ([capítulo 7](07-native-sdd-tools.md#traycer)), porque la calidad del plan determina la calidad de todo lo que viene después.
 
 ### Sub-paso 1.3 — Descomponer en tareas
 
@@ -118,7 +118,7 @@ La regla heurística: si no puedes describir el estado "después de la tarea" en
 
 !!! note "No todos los proyectos necesitan los tres sub-pasos"
 
-    En un cambio pequeño o una PoC, los sub-pasos 1.2 y 1.3 pueden ser implícitos o inexistentes — la spec misma ya es el plan y las tareas son obvias. La Fase 1 completa puede durar cinco minutos. En un proyecto enterprise con múltiples stakeholders, cada sub-paso puede tener su propio ciclo de revisión y aprobación. **El peso de la Fase 1 debe ser proporcional al riesgo del cambio** — exactamente la regla del [capítulo 9](09-patterns-of-application.md).
+    En un cambio pequeño o una PoC, los sub-pasos 1.2 y 1.3 pueden ser implícitos o inexistentes — la spec misma ya es el plan y las tareas son obvias. La Fase 1 completa puede durar cinco minutos. En un proyecto enterprise con múltiples stakeholders, cada sub-paso puede tener su propio ciclo de revisión y aprobación. **El peso de la Fase 1 debe ser proporcional al riesgo del cambio** — exactamente la regla del [capítulo 9](08-patterns-of-application.md).
 
 ## Fase 2 — Implementar la spec
 
@@ -159,7 +159,7 @@ Esa delegación puede ocurrir de dos formas:
 
 !!! note "Conexión con BMAD y Traycer"
 
-    La delegación a sub-agentes no es nueva conceptualmente — [BMAD](07-native-sdd-tools.md#bmad) ya usa múltiples agentes, pero con **roles fijos** (PM, Architect, QA, Developer). Lo que las herramientas actuales permiten es una delegación más flexible: sub-agentes por **contexto de la spec** (front, back, infra), no por rol en el proceso. Y las capas de arquitecto tipo [Traycer](08-architect-layers.md) encajan naturalmente como la lógica de coordinación — su función de planificación y verificación es exactamente lo que el agente principal necesita para orquestar sub-agentes.
+    La delegación a sub-agentes no es nueva conceptualmente — [BMAD](07-native-sdd-tools.md#bmad) ya usa múltiples agentes, pero con **roles fijos** (PM, Architect, QA, Developer). Lo que las herramientas actuales permiten es una delegación más flexible: sub-agentes por **contexto de la spec** (front, back, infra), no por rol en el proceso. Y las capas de arquitecto tipo [Traycer](07-native-sdd-tools.md#traycer) encajan naturalmente como la lógica de coordinación — su función de planificación y verificación es exactamente lo que el agente principal necesita para orquestar sub-agentes.
 
 Ninguna de las dos opciones es universalmente mejor. La ejecución directa es más simple; la delegación a sub-agentes gestiona mejor el contexto en specs grandes pero exige interfaces explícitas en la Fase 1 y validación de integración en la Fase 3. La decisión la toma el agente (o su configuración) según la naturaleza de la spec.
 
@@ -204,7 +204,7 @@ Es en la validación donde **más divergen los frameworks** — y donde más fal
 
     Si la Fase 3 no existe o se reduce a "confiar en que los tests pasan", no estás haciendo SDD — estás haciendo spec-first con buenas intenciones. La verificación de que el código cumple la spec **como un todo** (no solo tarea a tarea), en **ambos niveles** (inner y outer loop) y con **base determinista** (no solo estocástica) es el mecanismo que cierra el ciclo. Sin ella, la spec envejece desde el momento en que se escribe.
 
-    Esta es exactamente la grieta que el [capítulo 7 identifica como problema común](07-native-sdd-tools.md#lo-que-ninguna-de-estas-herramientas-resuelve) de las herramientas nativas, y donde las capas de arquitecto del [capítulo 8](08-architect-layers.md) se han posicionado.
+    Esta es exactamente la grieta que el [capítulo 7 identifica como problema común](07-native-sdd-tools.md#lo-que-ninguna-de-estas-herramientas-resuelve) de las herramientas nativas, y donde las capas de arquitecto del [capítulo 7](07-native-sdd-tools.md#traycer) se han posicionado.
 
 ## El ciclo de vida no es lineal
 
@@ -222,7 +222,7 @@ Algunos síntomas concretos:
 - **Implementación que requiere muchas iteraciones**: puede que la descomposición en tareas sea demasiado gruesa, o que las interfaces entre partes no estén explícitas, o que el agente no tenga el contexto suficiente.
 - **Validación que detecta los mismos tipos de fallo una y otra vez**: puede que falten tests deterministas para un patrón recurrente, o que la validación estocástica no esté complementada con checks automáticos.
 
-En estos casos, lo que hay que ajustar no es la spec — es **el propio sistema**: cómo se escriben las specs, qué herramientas se usan para implementar, qué mecanismos de validación están en su sitio. Esta reflexión de meta-nivel — mejorar el proceso, no solo el artefacto — es exactamente el territorio del **harness engineering** que el [capítulo 13](13-from-sdd-to-harness.md) desarrolla: convertir la disciplina manual en infraestructura automática, para que cada iteración del proceso sea mejor que la anterior y los agentes necesiten progresivamente **menos supervisión humana y más autonomía**.
+En estos casos, lo que hay que ajustar no es la spec — es **el propio sistema**: cómo se escriben las specs, qué herramientas se usan para implementar, qué mecanismos de validación están en su sitio. Esta reflexión de meta-nivel — mejorar el proceso, no solo el artefacto — es exactamente el territorio del **harness engineering** que el [capítulo 12](12-from-sdd-to-harness.md) desarrolla: convertir la disciplina manual en infraestructura automática, para que cada iteración del proceso sea mejor que la anterior y los agentes necesiten progresivamente **menos supervisión humana y más autonomía**.
 
 ## Lo que viene a continuación
 

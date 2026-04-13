@@ -19,7 +19,7 @@ This is the **second guide in a trilogy**: it comes after the [fundamentals guid
 
 Chapters are ordered **problem → foundations → cycle → tooling → practice → critique → bridge**, but each one stands on its own. If you already have the "why", jump to whichever chapter solves a concrete problem. If you're starting fresh, read in order.
 
-Two chapters are **not optional** even though they look negative: chapter 10 (the honest critique) and chapter 11 (context engineering as alternative). Without them, this course is marketing. With them, it gives judgment.
+Two chapters are **not optional** even though they look negative: chapter 9 (the honest critique) and chapter 10 (context engineering as alternative). Without them, this course is marketing. With them, it gives judgment.
 
 ## Index
 
@@ -44,31 +44,30 @@ Two chapters are **not optional** even though they look negative: chapter 10 (th
 
 ### Part 4 — Tooling
 
-- [7. Native SDD tools: Kiro, Spec-kit, Tessl, BMAD](07-native-sdd-tools.md)
-- [8. Architect layers over agents: Traycer and the wrapper pattern](08-architect-layers.md)
+- [7. SDD tools: Kiro, Spec-kit, Tessl, BMAD and Traycer](07-native-sdd-tools.md)
 
 ### Part 5 — Practice
 
-- [9. Patterns of application: features, refactors, bug fixes](09-patterns-of-application.md)
+- [8. Patterns of application: features, refactors, bug fixes](08-patterns-of-application.md)
 
 ### Part 6 — Critique
 
-- [10. The honest critique: maintenance tax, MDD and the illusion of control](10-honest-critique.md)
-- [11. Context engineering as alternative](11-context-engineering.md)
+- [9. The honest critique: maintenance tax, MDD and the illusion of control](09-honest-critique.md)
+- [10. Context engineering as alternative](10-context-engineering.md)
 
 ### Part 7 — Common mistakes
 
-- [12. SDD anti-patterns](12-anti-patterns.md)
+- [11. SDD anti-patterns](11-anti-patterns.md)
 
 ### Part 8 — Industrialization
 
-- [13. From SDD to the harness: how the pieces fit](13-from-sdd-to-harness.md)
+- [12. From SDD to the harness: how the pieces fit](12-from-sdd-to-harness.md)
 
 ## What you *won't* find in this version
 
 - Exhaustive tool comparisons. The ecosystem turns over every quarter; chapter 7 is a map, not a buyer's guide.
 - Production-ready spec templates. There are skeletons in chapters 3 and 9, but useful specs are written against your domain, not against a generic template.
-- Productivity promises. If someone promises you 10×, they probably haven't read chapter 10.
+- Productivity promises. If someone promises you 10×, they probably haven't read chapter 9.
 
 ## Sources
 

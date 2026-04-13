@@ -46,7 +46,7 @@ It's an honest hint. Spec-anchored isn't a new SDD invention. It's BDD done well
 
 **When it breaks:**
 
-- When the cost of keeping spec and code synchronized exceeds the benefit. This is real and chapter 10 develops it honestly.
+- When the cost of keeping spec and code synchronized exceeds the benefit. This is real and chapter 9 develops it honestly.
 - When automated tests don't cover enough to fulfill their "anchoring" role.
 
 ## Level 3 — Spec-as-Source
@@ -67,7 +67,7 @@ What makes Simulink work, and what's missing in general-purpose software, are th
 2. **Bounded domain**: control systems, physical dynamics, signal processing. Problems with well-established laws.
 3. **Deterministic generation**: the same diagram produces the same code. Always.
 
-For general-purpose software — web APIs, frontends, internal scripts, everything most teams do 95% of the time — none of the three conditions hold. Specs are in natural language (ambiguity), the domain changes with every feature (unbounded), and LLMs are non-deterministic by design. That's why spec-as-source applied to this kind of software is still more promise than reality. The fundamental reason is the same one that killed Model-Driven Development in the 2000s, and chapter 10 returns to this.
+For general-purpose software — web APIs, frontends, internal scripts, everything most teams do 95% of the time — none of the three conditions hold. Specs are in natural language (ambiguity), the domain changes with every feature (unbounded), and LLMs are non-deterministic by design. That's why spec-as-source applied to this kind of software is still more promise than reality. The fundamental reason is the same one that killed Model-Driven Development in the 2000s, and chapter 9 returns to this.
 
 **When it works:**
 
@@ -125,7 +125,7 @@ If you can't answer with confidence, the operative answer is the first one. You'
 
 The most expensive trap we see in teams adopting SDD is this: they aspire to spec-anchored, write very detailed specs as if they were there, but **don't invest in the anchoring mechanism**. There are no tests comparing spec and code. No validator. No recurring agent. Just a `specs/` folder with markdowns slowly going out of date.
 
-That's spec-first dressed as spec-anchored, and it's worse than pure spec-first because it generates the false sensation of having a source of truth when what you have is documented fiction. Chapter 10 returns to this under the name "illusion of control".
+That's spec-first dressed as spec-anchored, and it's worse than pure spec-first because it generates the false sensation of having a source of truth when what you have is documented fiction. Chapter 9 returns to this under the name "illusion of control".
 
 The operating rule: **don't declare you do spec-anchored until you have the automatic anchoring mechanism working**. Without that mechanism, what you have is spec-first with more paperwork.
 

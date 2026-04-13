@@ -57,7 +57,7 @@ The spec, in this model, is a **document that learns**. It starts describing int
 
 ## Why phase 4 matters more than it seems
 
-One of the strongest critiques of SDD (chapter 10, [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development)) is that specs **lose real context** because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context **isn't lost** — it accumulates.
+One of the strongest critiques of SDD (chapter 9, [Isoform](https://isoform.ai/blog/the-limits-of-spec-driven-development)) is that specs **lose real context** because they only capture "what we were going to do", not "what we learned doing it". Phase 4 of living specs is the direct answer to that critique. If your spec records production feedback, real context **isn't lost** — it accumulates.
 
 It's the difference between a design doc and an operations manual. And for an agent arriving six months later to make a change, reading the spec with production feedback is radically more useful than reading the original spec.
 
@@ -70,7 +70,7 @@ The reason static specs win isn't ideological — it's entropic. Maintaining a l
 - **Treat each implementation decision as a potential spec change**. For every non-trivial commit, the question is: does this change anything the spec assumes? If the answer is yes, the commit includes the corresponding spec update.
 - **Make the spec the first place the agent looks**. If your workflow takes the agent to the code before the spec, the agent will never learn to update the spec. If the spec is always the first document loaded, the loop closes.
 
-None of these mechanisms is free, and that's where SDD's real cost lives. Chapter 10 develops this cost honestly — the famous *maintenance tax* — and why it's not negligible.
+None of these mechanisms is free, and that's where SDD's real cost lives. Chapter 9 develops this cost honestly — the famous *maintenance tax* — and why it's not negligible.
 
 ## What distinguishes a healthy living spec from a dead one
 
@@ -89,4 +89,4 @@ The distinction isn't always sharp, and that's where the engineer's judgment mat
 
 ## What comes next
 
-Up to here we've talked about process. In **Chapter 7** we land on concrete tools: the four native SDD tools defining the state of the art today — **Kiro, Spec-kit, Tessl and BMAD** — what they do well, what they do badly, and what kind of team each fits. And in chapter 8, a different category: tools that sit **on top** of your current agent, like Traycer.
+Up to here we've talked about process. In **Chapter 7** we land on concrete tools: the four native SDD tools defining the state of the art today — **Kiro, Spec-kit, Tessl and BMAD** — what they do well, what they do badly, and what kind of team each fits. Traycer, which sits on top of your current agent, is also included.
