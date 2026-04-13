@@ -4,7 +4,7 @@ Las herramientas del capítulo anterior comparten una característica: **definen
 
 ## La pregunta que esta categoría responde
 
-Cuando un equipo ya usa Cursor, Claude Code, Codex o similar y los conoce bien, la fricción de adoptar las herramientas del capítulo anterior tiene dos caras. En algunos casos implica **cambiar de herramienta** — Kiro, por ejemplo, es un IDE distinto donde pierdes los atajos, configuraciones y memoria muscular que tu equipo ha acumulado. En otros implica **adaptar tu modelo de trabajo** al flujo que la herramienta impone — su estructura de documentos, sus fases, sus convenciones — aunque sigas usando tu agente habitual. En ambos casos, el coste de adopción es real aunque la nueva herramienta sea objetivamente mejor en algunas dimensiones.
+Cuando un equipo ya usa Cursor, Claude Code, Codex o similar y los conoce bien, la fricción de adoptar las herramientas del capítulo anterior tiene dos caras. En algunos casos implica **cambiar de herramienta** — Kiro, por ejemplo, es un IDE distinto donde pierdes los atajos, configuraciones y hábitos de trabajo que tu equipo ha acumulado. En otros implica **adaptar tu modelo de trabajo** al flujo que la herramienta impone — su estructura de documentos, sus fases, sus convenciones — aunque sigas usando tu agente habitual. En ambos casos, el coste de adopción es real aunque la nueva herramienta sea objetivamente mejor en algunas dimensiones.
 
 Las capas de arquitecto resuelven esa fricción al no pedirla. Tu agente sigue siendo Cursor o Claude Code o el que uses. La capa se inserta en el flujo de trabajo en dos puntos concretos: **antes** del agente (planificando) y **después** del agente (verificando). En medio, el agente trabaja como siempre.
 
