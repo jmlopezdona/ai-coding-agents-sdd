@@ -93,11 +93,24 @@ One thing many teams discover after reading both positions is that **they aren't
 
 This may sound like "do whatever you want", and it's exactly the opposite. It's **deliberate modulation** of the formality level according to the change's cost and risk. It's the skill that distinguishes a team applying SDD well from one suffering it universally.
 
-## A note on the term "context engineering"
+## An important note on the term "context engineering"
 
-The term is gaining traction precisely because it captures something SDD doesn't: the real battle isn't writing specs, it's **managing the context** that reaches the agent at the moment of action. And context can come from many places: specs, ADRs, commits, comments, AGENTS.md, codebase searches, RAG over the repo, and retrieval tools. Calling all of that "context engineering" is honest about what's really going on.
+We need to be honest about a term collision. When Isoform talks about "context engineering" in their article, they mean something specific: **embedding intent, decisions and constraints inside the code itself and its adjacent artifacts** (ADRs, commits, intent comments, AGENTS.md). It's a documentation practice tied to the code.
 
-SDD is a **concrete strategy** within context engineering: the strategy that picks external specs as the main mechanism. And like any strategy, it has contexts where it shines and contexts where it gets in the way. Seen this way, the chapter 9 and this chapter's positions aren't enemies: they're two points on the same spectrum of solutions to the same problem, and the choice depends on the team's context.
+But the term **context engineering** has a much broader and earlier meaning in the AI community. Popularized by figures like Andrej Karpathy and Simon Willison, it refers to the **general discipline of designing everything that reaches the LLM at the moment of action**: system prompts, few-shot examples, RAG results, tool definitions, conversation history, and any other input that conditions the model's response. It's the natural evolution of "prompt engineering" when the input stopped being a single prompt.
+
+The two meanings are not the same:
+
+| | Context engineering (general) | What Isoform proposes |
+|---|---|---|
+| **Scope** | All LLM input | Repo artifacts only |
+| **Includes** | System prompts, RAG, tools, few-shot, specs | ADRs, commits, comments, AGENTS.md |
+| **Goal** | Agent acts well | Intent survives in code |
+| **Who does it** | Whoever configures the agent | Whoever writes the code |
+
+What Isoform proposes would be more precisely called **code-embedded context**: relevant information beyond the code itself — the whys, the constraints, the decisions — but adhered to the code rather than living in an external document like a spec. It's a subset of general context engineering, not its synonym.
+
+That said, both SDD and code-embedded context are **concrete strategies within general context engineering**. SDD chooses external specs as the main mechanism for feeding the agent's context; code-embedded context chooses the code itself and its adjacent artifacts. The choice depends on the team's context, and as we'll see in the following synthesis, they aren't mutually exclusive.
 
 ## What comes next
 
