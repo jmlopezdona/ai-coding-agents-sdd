@@ -53,7 +53,7 @@ Two chapters are **not optional** even though they look negative: chapter 9 (the
 - [10. Code-embedded context: the other side of the coin](10-context-engineering.md)
 - [11. SDD anti-patterns](11-anti-patterns.md)
 
-### Part 6 — Industrialization
+### Part 6 — What's next
 
 - [12. From SDD to the harness: how the pieces fit](12-from-sdd-to-harness.md)
 

@@ -63,7 +63,7 @@ nav:
       - "9. The honest critique": 09-honest-critique.md
       - "10. Code-embedded context": 10-context-engineering.md
       - "11. Anti-patterns": 11-anti-patterns.md
-  - Industrialization:
+  - What's next:
       - "12. From SDD to the harness": 12-from-sdd-to-harness.md
 
 markdown_extensions:
@@ -135,7 +135,7 @@ plugins:
             "9. The honest critique": "9. La crítica honesta"
             "10. Code-embedded context": "10. Code-embedded context: la otra cara de la moneda"
             "11. Anti-patterns": "11. Anti-patrones"
-            "Industrialization": "Industrialización"
+            "What's next": "Qué sigue"
             "12. From SDD to the harness": "12. Del SDD al harness"
 
 extra:
