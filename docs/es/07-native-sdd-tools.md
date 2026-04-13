@@ -34,6 +34,8 @@ Kiro es el IDE agéntico de AWS. Su workflow es probablemente el más simple del
 - Equipos con features medianas-grandes donde el ritual de tres documentos amortiza su coste.
 - Equipos que quieren un onramp suave a SDD sin reescribir su tooling.
 
+:material-book-open-variant: [Documentación y guía de inicio](https://kiro.dev/docs/getting-started)
+
 ## Spec-kit (GitHub)
 
 Spec-kit es el toolkit oficial de GitHub para Spec-Driven Development. Es un CLI y un conjunto de plantillas que introducen *checkpoints* en cada etapa del proceso. Su rasgo distintivo es la **constitution**: un documento de reglas fundamentales del proyecto que vive por encima de las specs individuales y que el agente lee antes de cualquier tarea.
@@ -54,6 +56,8 @@ Spec-kit es el toolkit oficial de GitHub para Spec-Driven Development. Es un CLI
 - Equipos profundamente integrados en GitHub que quieren la ergonomía y no temen el coste de revisar markdown.
 - Equipos que quieren probar la idea de la "constitution" como capa global de boundaries.
 
+:material-book-open-variant: [Repositorio y documentación](https://github.com/github/spec-kit)
+
 ## Tessl
 
 Tessl es la propuesta más radical del cuarteto. Apunta directamente al nivel **Spec-as-Source** del espectro: la spec es la única fuente que humanos editan, el código se genera, los archivos generados llevan una marca `// GENERATED FROM SPEC - DO NOT EDIT`. Si el código está mal, arreglas la spec y regeneras.
@@ -72,6 +76,8 @@ Tessl es la propuesta más radical del cuarteto. Apunta directamente al nivel **
 
 - Experimentación deliberada en superficies aisladas y pequeñas. No es una herramienta para apostar tu repo principal en 2026.
 - Equipos con curiosidad por hacia dónde podría ir SDD a largo plazo.
+
+:material-book-open-variant: [Documentación y quickstart](https://docs.tessl.io/introduction-to-tessl/quickstart-skills-docs-rules)
 
 ## BMAD
 
@@ -92,6 +98,8 @@ BMAD es el caso más distinto del cuarteto, y por eso lo dejo para el final. En 
 
 - Equipos con apetito experimental y procesos ágiles maduros que pueden absorber la complejidad.
 - Casos donde la separación de preocupaciones por rol aporta más que la simplicidad de un solo agente bien dirigido.
+
+:material-book-open-variant: [Repositorio y documentación](https://github.com/bmad-code-org/BMAD-METHOD)
 
 ## Cómo elegir (o no elegir)
 
