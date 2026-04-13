@@ -1,4 +1,4 @@
-# 7. Herramientas SDD: Kiro, Spec-kit, Tessl, BMAD y Traycer
+# 7. Herramientas: Kiro, Spec-kit, Tessl, BMAD y Traycer
 
 Hay un puñado de herramientas que se han propuesto explícitamente como infraestructura para hacer Spec-Driven Development. En este capítulo recorremos las cinco más visibles hoy — situándolas en el espectro del capítulo 2 y siendo honestos sobre dónde encaja cada una y dónde se rompe.
 

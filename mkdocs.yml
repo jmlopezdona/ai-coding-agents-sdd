@@ -56,9 +56,8 @@ nav:
   - Lifecycle:
       - "5. Possible lifecycle approaches": 05-sdd-lifecycles.md
       - "6. Living specs": 06-living-specs.md
-  - Tooling:
-      - "7. SDD tools": 07-native-sdd-tools.md
   - Putting it to work:
+      - "7. Tools": 07-native-sdd-tools.md
       - "8. Patterns of application": 08-patterns-of-application.md
       - "9. The honest critique": 09-honest-critique.md
       - "10. Code-embedded context": 10-context-engineering.md
@@ -128,9 +127,8 @@ plugins:
             "Lifecycle": "Ciclo de vida"
             "5. Possible lifecycle approaches": "5. Posibles enfoques del ciclo de vida"
             "6. Living specs": "6. Especificaciones vivas"
-            "Tooling": "Herramientas"
-            "7. SDD tools": "7. Herramientas SDD"
             "Putting it to work": "Puesta en práctica"
+            "7. Tools": "7. Herramientas"
             "8. Patterns of application": "8. Patrones de aplicación"
             "9. The honest critique": "9. La crítica honesta"
             "10. Code-embedded context": "10. Code-embedded context: la otra cara de la moneda"
