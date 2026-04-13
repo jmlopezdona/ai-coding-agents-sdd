@@ -2,7 +2,7 @@
 
 There are a handful of tools explicitly proposing themselves as infrastructure for doing Spec-Driven Development. We call them **native** because the spec is the center of their workflow, not an add-on. In this chapter we walk through the four most visible today — Kiro, Spec-kit, Tessl and BMAD — situating each in the chapter 2 spectrum and being honest about where each fits and where each breaks.
 
-> **Important note:** this chapter will age fast. The SDD ecosystem is in full ferment and what's described here is the state of the art in early 2026. Treat it as a map, not as a buyer's guide.
+> **Important note:** this chapter will age fast. The SDD ecosystem is in full ferment and what's described here is the state of the art in early 2026. Treat it as a point-in-time snapshot, not as a definitive recommendation.
 
 ## Fowler's warning
 
