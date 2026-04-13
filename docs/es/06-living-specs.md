@@ -67,7 +67,7 @@ La razón por la que las specs estáticas se imponen no es ideológica — es en
 
 - **Hacer del update parte de la definición de "hecho"**. Una tarea no está terminada hasta que la spec refleja lo que se hizo. Esto entra en el checklist de PR, no en el "sería bueno que..." informal.
 - **Usar agentes recurrentes que detecten drift**. Un agente que cada noche compara specs y código y abre issues cuando hay divergencias. Es trabajo del harness, no del SDD propiamente, y por eso este punto se desarrolla en el curso siguiente.
-- **Tratar las decisiones de implementación como mini-PRs a la spec**. Cada commit no trivial pregunta: ¿esto cambia algo de lo que la spec asume? Si sí, el commit incluye una entrada en la spec.
+- **Tratar cada decisión de implementación como un cambio potencial a la spec**. Ante cada commit no trivial, la pregunta es: ¿esto cambia algo de lo que la spec asume? Si la respuesta es sí, el commit incluye la actualización correspondiente en la spec.
 - **Hacer que la spec sea el primer lugar al que mira el agente**. Si tu workflow lleva al agente al código antes de la spec, el agente nunca aprenderá a actualizar la spec. Si la spec es siempre el primer documento que se carga, el bucle se cierra.
 
 Ninguno de estos mecanismos es gratis, y ahí está el coste real del SDD. El capítulo 10 desarrolla este coste con honestidad — el famoso *maintenance tax* — y por qué no es despreciable.

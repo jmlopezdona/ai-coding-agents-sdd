@@ -67,7 +67,7 @@ The reason static specs win isn't ideological — it's entropic. Maintaining a l
 
 - **Make the update part of the definition of "done"**. A task isn't finished until the spec reflects what was done. This goes in the PR checklist, not in informal "would be nice if...".
 - **Use recurring agents that detect drift**. An agent that nightly compares specs and code and opens issues when there are divergences. That's harness work, not strictly SDD, which is why this point gets developed in the next course.
-- **Treat implementation decisions as mini-PRs to the spec**. Every non-trivial commit asks: does this change anything the spec assumes? If yes, the commit includes a spec entry.
+- **Treat each implementation decision as a potential spec change**. For every non-trivial commit, the question is: does this change anything the spec assumes? If the answer is yes, the commit includes the corresponding spec update.
 - **Make the spec the first place the agent looks**. If your workflow takes the agent to the code before the spec, the agent will never learn to update the spec. If the spec is always the first document loaded, the loop closes.
 
 None of these mechanisms is free, and that's where SDD's real cost lives. Chapter 10 develops this cost honestly — the famous *maintenance tax* — and why it's not negligible.
