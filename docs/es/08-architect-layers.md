@@ -1,6 +1,6 @@
 # 8. Capas de arquitecto sobre agentes: Traycer y el patrón de envoltura
 
-Las herramientas del capítulo anterior comparten una característica: son herramientas SDD **autónomas**. Vives dentro de ellas, su workflow es el workflow. Hay otra categoría que está creciendo en paralelo y que vale la pena entender por separado: las herramientas que no te piden que cambies de agente, sino que **se sitúan encima del agente que ya usas**. Las llamamos *capas de arquitecto*, y la pieza más visible de esta categoría hoy es **Traycer**.
+Las herramientas del capítulo anterior comparten una característica: **definen su propio workflow completo** — su entorno, su estructura de documentos, su flujo de fases, sus convenciones. Adoptarlas implica trabajar dentro de su forma de hacer las cosas. Pero hay otra categoría que está creciendo en paralelo y que vale la pena entender por separado: las herramientas que **se insertan en el workflow que ya tengas**, situándose encima del agente que ya usas sin pedirte que lo cambies. Las llamamos *capas de arquitecto*, y el ejemplo más representativo de esta categoría hoy es **Traycer**.
 
 ## La pregunta que esta categoría responde
 
@@ -32,7 +32,7 @@ Esta verificación post-código es exactamente la grieta que el capítulo 7 iden
 
 ## El patrón general, más allá de Traycer
 
-Aunque Traycer sea la pieza más visible hoy, el patrón vale la pena entenderlo abstraído de la herramienta concreta:
+Aunque Traycer sea el ejemplo más representativo hoy, el patrón vale la pena entenderlo abstraído de la herramienta concreta:
 
 > **Una capa de arquitecto envuelve a un agente de codificación con tres cosas: clarificación de requisitos antes del prompt, planificación explícita antes del código, y verificación automática después del código.**
 
@@ -40,7 +40,7 @@ El patrón es independiente de la herramienta y va a aparecer en otras formas. H
 
 ## Una nota sobre el sesgo de la fuente
 
-La discusión más completa sobre Traycer en la comunidad viene de un post de r/vibecoding que es **claramente promocional**. Su autor lo declara como "mi mejor opción" y la estructura del post es la de marketing, no la de análisis neutral. Esto no significa que las afirmaciones sean falsas — la categoría existe y la lógica del patrón es sólida — pero sí que conviene matizar la entusiasmo del material original.
+La discusión más completa sobre Traycer en la comunidad viene de un post de r/vibecoding que es **claramente promocional**. Su autor lo declara como "mi mejor opción" y la estructura del post es la de marketing, no la de análisis neutral. Esto no significa que las afirmaciones sean falsas — la categoría existe y la lógica del patrón es sólida — pero sí que conviene matizar el entusiasmo del material original.
 
 La forma honesta de evaluar Traycer (o cualquier herramienta del patrón) es: monta una semana de trabajo real con ella, mide cuántos retrabajos te ahorras y cuántos prompts adicionales necesitas para arreglar lo que la herramienta no anticipó. Si la diferencia es notable, sigue. Si no, vuelve atrás sin coste.
 
@@ -72,4 +72,4 @@ Visto así, Traycer no es solo una herramienta SDD: es un ejemplo concreto de c�
 
 ## Lo que viene a continuación
 
-Hasta aquí hemos visto el ciclo (cap. 5), las specs vivas (cap. 6), y dos categorías de herramientas (cap. 7 y 8). En el **capítulo 9** bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.
+Hasta aquí hemos visto el ciclo de vida (cap. 5), las specs vivas (cap. 6), y dos categorías de herramientas (cap. 7 y 8). En el **capítulo 9** bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.

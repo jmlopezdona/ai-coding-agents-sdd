@@ -1,6 +1,6 @@
 # 8. Architect layers over agents: Traycer and the wrapper pattern
 
-The previous chapter's tools share a feature: they're **standalone** SDD tools. You live inside them, their workflow is the workflow. There's another category growing in parallel that's worth understanding separately: tools that don't ask you to switch agent but **sit on top of the agent you already use**. We call them *architect layers*, and the most visible piece of this category today is **Traycer**.
+The previous chapter's tools share a feature: they **define their own complete workflow** — their environment, their document structure, their phase flow, their conventions. Adopting them means working within their way of doing things. There's another category growing in parallel that's worth understanding separately: tools that **plug into whatever workflow you already have**, sitting on top of the agent you already use without asking you to switch. We call them *architect layers*, and the most representative example of this category today is **Traycer**.
 
 ## The question this category answers
 
@@ -32,7 +32,7 @@ This post-code verification is exactly the gap chapter 7 identifies as unsolved 
 
 ## The general pattern, beyond Traycer
 
-Even if Traycer is the most visible piece today, the pattern is worth understanding abstracted from the concrete tool:
+Even if Traycer is the most representative example today, the pattern is worth understanding abstracted from the concrete tool:
 
 > **An architect layer wraps a coding agent with three things: requirement clarification before the prompt, explicit planning before the code, and automatic verification after the code.**
 
@@ -72,4 +72,4 @@ Seen this way, Traycer isn't only an SDD tool: it's a concrete example of how a 
 
 ## What comes next
 
-Up to here we've seen the cycle (ch. 5), living specs (ch. 6), and two categories of tools (ch. 7 and 8). In **Chapter 9** we go down to practice: how all this applies to three different kinds of work — new features, refactors, and bug fixes — because the optimal process isn't the same in all three cases.
+Up to here we've seen the lifecycle (ch. 5), living specs (ch. 6), and two categories of tools (ch. 7 and 8). In **Chapter 9** we go down to practice: how all this applies to three different kinds of work — new features, refactors, and bug fixes — because the optimal process isn't the same in all three cases.
