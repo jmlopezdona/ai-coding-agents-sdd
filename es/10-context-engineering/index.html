@@ -1321,10 +1321,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cuando-apoyarse-mas-en-code-embedded-context" class="md-nav__link">
+  <a href="#cuando-es-suficiente-y-cuando-necesitas-specs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cuándo apoyarse más en code-embedded context
+        Cuándo es suficiente y cuándo necesitas specs
       
     </span>
   </a>
@@ -1609,10 +1609,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cuando-apoyarse-mas-en-code-embedded-context" class="md-nav__link">
+  <a href="#cuando-es-suficiente-y-cuando-necesitas-specs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cuándo apoyarse más en code-embedded context
+        Cuándo es suficiente y cuándo necesitas specs
       
     </span>
   </a>
@@ -1808,18 +1808,19 @@
 </tbody>
 </table>
 <p>Los dos enfoques resuelven el mismo problema — el context collapse del capítulo 1 — con filosofías distintas. SDD apuesta por la <strong>persistencia explícita en documentos paralelos</strong>; code-embedded context apuesta por <strong>distribuir la intención en artefactos con alto acoplamiento al código</strong>.</p>
-<h2 id="cuando-apoyarse-mas-en-code-embedded-context">Cuándo apoyarse más en code-embedded context<a class="headerlink" href="#cuando-apoyarse-mas-en-code-embedded-context" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Hay situaciones donde code-embedded context cubre la mayor parte de la necesidad y las specs formales aportan poco:</p>
+<h2 id="cuando-es-suficiente-y-cuando-necesitas-specs">Cuándo es suficiente y cuándo necesitas specs<a class="headerlink" href="#cuando-es-suficiente-y-cuando-necesitas-specs" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Code-embedded context — comentarios de intención, commits ricos, ADRs — es la <strong>capa base que siempre debería estar</strong>. La pregunta no es "¿cuál de los dos uso?" sino "¿necesito añadir specs formales encima?". La clave está en que cubren momentos distintos: code-embedded context captura los <strong>por qués después</strong> de las decisiones; las specs capturan la <strong>intención antes</strong> de implementar.</p>
+<p><strong>Code-embedded context es suficiente cuando:</strong></p>
 <ul>
-<li><strong>Proyectos en fase de descubrimiento</strong> donde la intención cambia más rápido de lo que se puede escribir una spec.</li>
-<li><strong>Bases de código maduras con buenas convenciones</strong> donde la mayor parte del contexto ya vive en el código y solo falta capturar los por qués.</li>
-<li><strong>Equipos que ya practican ADRs disciplinados</strong> y querrían no añadir un segundo sistema documental encima.</li>
+<li>El cambio es lo bastante pequeño como para que el agente lo entienda con el código existente y un prompt bien escrito — refactors, bug fixes, features pequeñas.</li>
+<li>La intención se puede comunicar en el momento y no necesita sobrevivir semanas antes de implementarse.</li>
+<li>No hay múltiples personas que necesiten alinearse sobre qué se va a construir antes de que nadie escriba código.</li>
 </ul>
-<p>Y hay situaciones donde code-embedded context no es suficiente y las specs formales aportan valor real:</p>
+<p><strong>Necesitas añadir specs formales encima cuando:</strong></p>
 <ul>
-<li><strong>Sistemas regulados</strong> donde la spec separada es un requisito de auditoría, no una elección estilística.</li>
-<li><strong>Coordinación entre múltiples equipos</strong> donde hace falta un artefacto compartido que no esté enterrado en commits.</li>
-<li><strong>Features grandes con alcance amplio</strong> donde el plan formal previo aporta más que ADRs sueltos.</li>
+<li>La intención tiene que <strong>sobrevivir en el tiempo</strong> antes de implementarse — necesitas un artefacto que capture "qué vamos a hacer" y sea revisable por otros antes de que nadie escriba código.</li>
+<li>El alcance es <strong>demasiado grande</strong> para comunicarlo en un prompt — el agente necesita un documento de referencia que no cabe en un comentario ni en un commit.</li>
+<li>Hay <strong>requisitos de auditoría o compliance</strong> que exigen un artefacto separado y trazable.</li>
 </ul>
 <h2 id="la-sintesis-honesta-usa-los-dos">La síntesis honesta: usa los dos<a class="headerlink" href="#la-sintesis-honesta-usa-los-dos" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una de las cosas que más equipos descubren después de trabajar con ambos enfoques es que <strong>funcionan mejor juntos que por separado</strong>. El equipo maduro acaba haciendo una mezcla:</p>
