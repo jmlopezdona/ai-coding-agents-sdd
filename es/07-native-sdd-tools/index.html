@@ -18,7 +18,7 @@
         <link rel="prev" href="../06-living-specs/">
       
       
-        <link rel="next" href="../08-architect-layers/">
+        <link rel="next" href="../09-patterns-of-application/">
       
       
         
@@ -33,7 +33,7 @@
     
     
       
-        <title>7. Herramientas SDD nativas - Spec-Driven Development</title>
+        <title>7. Herramientas SDD - Spec-Driven Development</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#7-herramientas-sdd-nativas-kiro-spec-kit-tessl-y-bmad" class="md-skip">
+        <a href="#7-herramientas-sdd-kiro-spec-kit-tessl-bmad-y-traycer" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              7. Herramientas SDD nativas
+              7. Herramientas SDD
             
           </span>
         </div>
@@ -1014,8 +1014,6 @@
       
         
       
-        
-      
     
     
     
@@ -1087,7 +1085,7 @@
   <span class="md-ellipsis">
     
   
-    7. Herramientas SDD nativas
+    7. Herramientas SDD
   
 
     
@@ -1105,7 +1103,7 @@
   <span class="md-ellipsis">
     
   
-    7. Herramientas SDD nativas
+    7. Herramientas SDD
   
 
     
@@ -1186,6 +1184,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#traycer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traycer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#como-elegir-o-no-elegir" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1197,10 +1206,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lo-que-ninguna-de-estas-herramientas-resuelve" class="md-nav__link">
+  <a href="#lo-que-ninguna-de-estas-herramientas-resuelve-por-completo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lo que ninguna de estas herramientas resuelve
+        Lo que ninguna de estas herramientas resuelve por completo
       
     </span>
   </a>
@@ -1222,34 +1231,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-architect-layers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    8. Capas de arquitecto sobre agentes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1738,6 +1719,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#traycer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traycer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#como-elegir-o-no-elegir" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1749,10 +1741,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lo-que-ninguna-de-estas-herramientas-resuelve" class="md-nav__link">
+  <a href="#lo-que-ninguna-de-estas-herramientas-resuelve-por-completo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lo que ninguna de estas herramientas resuelve
+        Lo que ninguna de estas herramientas resuelve por completo
       
     </span>
   </a>
@@ -1795,8 +1787,8 @@
   
 
 
-<h1 id="7-herramientas-sdd-nativas-kiro-spec-kit-tessl-y-bmad">7. Herramientas SDD nativas: Kiro, Spec-kit, Tessl y BMAD<a class="headerlink" href="#7-herramientas-sdd-nativas-kiro-spec-kit-tessl-y-bmad" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>Hay un puñado de herramientas que se han propuesto explícitamente como infraestructura para hacer Spec-Driven Development. Las llamamos <strong>nativas</strong> porque la spec es el centro de su workflow, no un complemento. En este capítulo recorremos las cuatro más visibles hoy — Kiro, Spec-kit, Tessl y BMAD — situándolas en el espectro del capítulo 2 y siendo honestos sobre dónde encaja cada una y dónde se rompe.</p>
+<h1 id="7-herramientas-sdd-kiro-spec-kit-tessl-bmad-y-traycer">7. Herramientas SDD: Kiro, Spec-kit, Tessl, BMAD y Traycer<a class="headerlink" href="#7-herramientas-sdd-kiro-spec-kit-tessl-bmad-y-traycer" title="Enlace permanente a esta sección">&para;</a></h1>
+<p>Hay un puñado de herramientas que se han propuesto explícitamente como infraestructura para hacer Spec-Driven Development. En este capítulo recorremos las cinco más visibles hoy — situándolas en el espectro del capítulo 2 y siendo honestos sobre dónde encaja cada una y dónde se rompe.</p>
 <blockquote>
 <p><strong>Nota importante:</strong> este capítulo envejecerá rápido. El ecosistema SDD está en plena ebullición y lo que aquí se describe es el estado del arte a principios de 2026. Trátalo como una foto del momento, no como una recomendación definitiva.</p>
 </blockquote>
@@ -1882,6 +1874,25 @@
 <li>Casos donde la separación de preocupaciones por rol aporta más que la simplicidad de un solo agente bien dirigido.</li>
 </ul>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <a href="https://github.com/bmad-code-org/BMAD-METHOD">Repositorio de BMAD</a></p>
+<h2 id="traycer">Traycer<a class="headerlink" href="#traycer" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><a href="https://traycer.ai/">Traycer</a> se diferencia de las cuatro anteriores en un punto clave: no define su propio workflow de documentos ni te pide que abandones tu agente. Es una <strong>plataforma donde usas tu AI tool habitual</strong> (Claude Code, Cursor y otros CLIs) pero con tres capas añadidas alrededor: elicitación antes de codificar, planificación explícita, y verificación post-código.</p>
+<p><strong>Lo que hace bien:</strong></p>
+<ul>
+<li><strong>Elicitación</strong>: antes de dejarte hablar con tu agente, te hace una ronda de preguntas para sacar a la superficie requisitos que habrías olvidado. Es la clarificación iterativa del capítulo 5 convertida en mecanismo automático.</li>
+<li><strong>Planificación</strong>: genera un plan de implementación detallado — qué archivos toca, qué dependencias, qué orden — antes de que el agente escriba código. El plan es revisable y corregible.</li>
+<li><strong>Verificación</strong>: cuando el agente termina, compara lo que hizo con el plan/spec original y señala divergencias. Es la Fase 3 del capítulo 5, automatizada.</li>
+</ul>
+<p><strong>Lo que hay que mirar con cuidado:</strong></p>
+<ul>
+<li>La discusión más completa sobre Traycer en la comunidad viene de un post de r/vibecoding que es <strong>claramente promocional</strong>. La categoría existe y la lógica es sólida, pero conviene matizar el entusiasmo del material original.</li>
+<li>Aunque se posiciona como una "capa sobre tu agente", en la práctica es una plataforma donde ejecutas tus herramientas dentro de su entorno — lo que lo acerca más al modelo de las herramientas anteriores que a un wrapper puro.</li>
+</ul>
+<p><strong>Para quién encaja:</strong></p>
+<ul>
+<li>Equipos que ya tienen un agente preferido y quieren añadir planificación y verificación sin cambiar de herramienta.</li>
+<li>Proyectos donde el problema principal es la falta de plan y la ausencia de verificación post-código, no la estructura del proceso SDD.</li>
+</ul>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <a href="https://traycer.ai/">Documentación de Traycer</a></p>
 <h2 id="como-elegir-o-no-elegir">Cómo elegir (o no elegir)<a class="headerlink" href="#como-elegir-o-no-elegir" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una recomendación honesta, sabiendo que envejecerá:</p>
 <ol>
@@ -1892,17 +1903,17 @@
 <p><strong>Si has hecho specs a mano y sabes qué te falta</strong>, evalúa Kiro o Spec-kit dependiendo de si te molesta más la rigidez (Kiro) o la verbosidad (Spec-kit).</p>
 </li>
 <li>
-<p><strong>Si te interesa empujar la frontera</strong>, prueba Tessl en una superficie aislada o monta una proof-of-concept con BMAD. No los pongas en el path crítico.</p>
+<p><strong>Si tu problema es la falta de plan y verificación, no la estructura del proceso</strong>, mira Traycer o herramientas similares que añadan esas capas sobre tu agente actual.</p>
 </li>
 <li>
-<p><strong>Si tu problema real es el <em>blast radius</em> de los cambios y no la estructura del proceso</strong>, ninguna herramienta de este capítulo te va a resolver el problema. Lo que necesitas vive en el capítulo siguiente: una <strong>capa de arquitecto</strong> sobre tu agente actual.</p>
+<p><strong>Si te interesa empujar la frontera</strong>, prueba Tessl en una superficie aislada o monta una proof-of-concept con BMAD. No los pongas en el path crítico.</p>
 </li>
 </ol>
-<h2 id="lo-que-ninguna-de-estas-herramientas-resuelve">Lo que ninguna de estas herramientas resuelve<a class="headerlink" href="#lo-que-ninguna-de-estas-herramientas-resuelve" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Hay un patrón que vale la pena nombrar y que ninguna de las cuatro herramientas resuelve por sí sola: <strong>el problema de la verificación post-código</strong>. Las cuatro te ayudan a estructurar la spec y el plan; ninguna verifica con suficiente rigor que el código generado <strong>cumple</strong> la spec original. Esa verificación, cuando se hace, es típicamente otra ronda de prompt manual.</p>
-<p>Esa es exactamente la grieta donde Traycer (capítulo 8) y otras herramientas del patrón "capa de arquitecto" se han posicionado.</p>
+<h2 id="lo-que-ninguna-de-estas-herramientas-resuelve-por-completo">Lo que ninguna de estas herramientas resuelve por completo<a class="headerlink" href="#lo-que-ninguna-de-estas-herramientas-resuelve-por-completo" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>Hay un problema transversal que vale la pena nombrar: <strong>mantener specs vivas a meses vista</strong> (capítulo 6). Todas estas herramientas te ayudan con el ciclo táctico de una feature — diseñar la spec, implementar, verificar. Pero la disciplina sostenida de mantener una spec actualizada cuando el código evoluciona y el equipo cambia sigue siendo trabajo del equipo, y ese trabajo tiene un coste real (capítulo 10).</p>
+<p>Traycer se acerca más que las otras al problema de la verificación post-código, pero su unidad de trabajo sigue siendo la sesión, no el ciclo de vida del módulo. Para la disciplina de mantenimiento a largo plazo, lo que se necesita es infraestructura de harness — hooks automáticos, sensores de drift, agentes recurrentes — que el <a href="../13-from-sdd-to-harness/">capítulo 13</a> desarrolla como puente entre SDD y el siguiente curso de la trilogía.</p>
 <h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>El capítulo 8 cubre la <strong>otra categoría</strong> de herramientas SDD: las que no reemplazan tu agente sino que lo envuelven. Es una distinción importante porque responde a una pregunta distinta. Las herramientas de este capítulo responden a "¿qué herramienta uso?". Las del próximo responden a "¿cómo mejoro la herramienta que ya estoy usando?".</p>
+<p>Hasta aquí hemos visto el ciclo de vida (cap. 5), las specs vivas (cap. 6), y las herramientas del ecosistema. En el <strong>capítulo 9</strong> bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.</p>
 
 
 
@@ -1955,13 +1966,13 @@
         
         
           
-          <a href="../08-architect-layers/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 8. Capas de arquitecto sobre agentes">
+          <a href="../09-patterns-of-application/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 9. Patrones de aplicación">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                8. Capas de arquitecto sobre agentes
+                9. Patrones de aplicación
               </div>
             </div>
             <div class="md-footer__button md-icon">

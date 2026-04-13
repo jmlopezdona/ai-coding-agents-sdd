@@ -18,7 +18,7 @@
         <link rel="prev" href="../06-living-specs/">
       
       
-        <link rel="next" href="../08-architect-layers/">
+        <link rel="next" href="../09-patterns-of-application/">
       
       
         
@@ -33,7 +33,7 @@
     
     
       
-        <title>7. Native SDD tools - Spec-Driven Development</title>
+        <title>7. SDD tools - Spec-Driven Development</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#7-native-sdd-tools-kiro-spec-kit-tessl-and-bmad" class="md-skip">
+        <a href="#7-sdd-tools-kiro-spec-kit-tessl-bmad-and-traycer" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              7. Native SDD tools
+              7. SDD tools
             
           </span>
         </div>
@@ -1014,8 +1014,6 @@
       
         
       
-        
-      
     
     
     
@@ -1087,7 +1085,7 @@
   <span class="md-ellipsis">
     
   
-    7. Native SDD tools
+    7. SDD tools
   
 
     
@@ -1105,7 +1103,7 @@
   <span class="md-ellipsis">
     
   
-    7. Native SDD tools
+    7. SDD tools
   
 
     
@@ -1186,6 +1184,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#traycer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traycer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-choose-or-not-choose" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1197,10 +1206,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-none-of-these-tools-solve" class="md-nav__link">
+  <a href="#what-none-of-these-tools-fully-solve" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What none of these tools solve
+        What none of these tools fully solve
       
     </span>
   </a>
@@ -1222,34 +1231,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-architect-layers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    8. Architect layers over agents
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1738,6 +1719,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#traycer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traycer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-choose-or-not-choose" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1749,10 +1741,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-none-of-these-tools-solve" class="md-nav__link">
+  <a href="#what-none-of-these-tools-fully-solve" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What none of these tools solve
+        What none of these tools fully solve
       
     </span>
   </a>
@@ -1795,8 +1787,8 @@
   
 
 
-<h1 id="7-native-sdd-tools-kiro-spec-kit-tessl-and-bmad">7. Native SDD tools: Kiro, Spec-kit, Tessl and BMAD<a class="headerlink" href="#7-native-sdd-tools-kiro-spec-kit-tessl-and-bmad" title="Enlace permanente a esta sección">&para;</a></h1>
-<p>There are a handful of tools explicitly proposing themselves as infrastructure for doing Spec-Driven Development. We call them <strong>native</strong> because the spec is the center of their workflow, not an add-on. In this chapter we walk through the four most visible today — Kiro, Spec-kit, Tessl and BMAD — situating each in the chapter 2 spectrum and being honest about where each fits and where each breaks.</p>
+<h1 id="7-sdd-tools-kiro-spec-kit-tessl-bmad-and-traycer">7. SDD tools: Kiro, Spec-kit, Tessl, BMAD and Traycer<a class="headerlink" href="#7-sdd-tools-kiro-spec-kit-tessl-bmad-and-traycer" title="Enlace permanente a esta sección">&para;</a></h1>
+<p>There are a handful of tools explicitly proposing themselves as infrastructure for doing Spec-Driven Development. In this chapter we walk through the five most visible today — situating each in the chapter 2 spectrum and being honest about where each fits and where each breaks.</p>
 <blockquote>
 <p><strong>Important note:</strong> this chapter will age fast. The SDD ecosystem is in full ferment and what's described here is the state of the art in early 2026. Treat it as a point-in-time snapshot, not as a definitive recommendation.</p>
 </blockquote>
@@ -1882,6 +1874,25 @@
 <li>Cases where role separation of concerns adds more than the simplicity of a single well-directed agent.</li>
 </ul>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <a href="https://github.com/bmad-code-org/BMAD-METHOD">BMAD repository</a></p>
+<h2 id="traycer">Traycer<a class="headerlink" href="#traycer" title="Enlace permanente a esta sección">&para;</a></h2>
+<p><a href="https://traycer.ai/">Traycer</a> differs from the previous four in a key way: it doesn't define its own document workflow or ask you to abandon your agent. It's a <strong>platform where you use your usual AI tool</strong> (Claude Code, Cursor and other CLIs) but with three layers added around it: elicitation before coding, explicit planning, and post-code verification.</p>
+<p><strong>What it does well:</strong></p>
+<ul>
+<li><strong>Elicitation</strong>: before letting you talk to your agent, it runs a round of questions to surface requirements you'd have forgotten. It's chapter 5's iterative clarification turned into an automatic mechanism.</li>
+<li><strong>Planning</strong>: generates a detailed implementation plan — which files, what dependencies, what order — before the agent writes code. The plan is reviewable and correctable.</li>
+<li><strong>Verification</strong>: when the agent finishes, it compares what was done against the original plan/spec and flags divergences. It's chapter 5's Phase 3, automated.</li>
+</ul>
+<p><strong>What to look at carefully:</strong></p>
+<ul>
+<li>The most complete community discussion of Traycer comes from a r/vibecoding post that is <strong>clearly promotional</strong>. The category exists and the logic is solid, but it's worth tempering the original material's enthusiasm.</li>
+<li>Although it positions itself as a "layer over your agent", in practice it's a platform where you run your tools inside its environment — which brings it closer to the previous tools' model than to a pure wrapper.</li>
+</ul>
+<p><strong>Who it fits:</strong></p>
+<ul>
+<li>Teams that already have a preferred agent and want to add planning and verification without switching tools.</li>
+<li>Projects where the main problem is lack of planning and absence of post-code verification, not the structure of the SDD process.</li>
+</ul>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <a href="https://traycer.ai/">Traycer documentation</a></p>
 <h2 id="how-to-choose-or-not-choose">How to choose (or not choose)<a class="headerlink" href="#how-to-choose-or-not-choose" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>An honest recommendation, knowing it'll age:</p>
 <ol>
@@ -1892,17 +1903,17 @@
 <p><strong>If you've done specs by hand and know what's missing</strong>, evaluate Kiro or Spec-kit depending on whether rigidity (Kiro) or verbosity (Spec-kit) bothers you more.</p>
 </li>
 <li>
-<p><strong>If you're interested in pushing the frontier</strong>, try Tessl on an isolated surface or build a proof-of-concept with BMAD. Don't put them on the critical path.</p>
+<p><strong>If your problem is lack of planning and verification, not process structure</strong>, look at Traycer or similar tools that add those layers over your current agent.</p>
 </li>
 <li>
-<p><strong>If your real problem is the <em>blast radius</em> of changes and not process structure</strong>, no tool in this chapter will solve it. What you need lives in the next chapter: an <strong>architect layer</strong> over your current agent.</p>
+<p><strong>If you're interested in pushing the frontier</strong>, try Tessl on an isolated surface or build a proof-of-concept with BMAD. Don't put them on the critical path.</p>
 </li>
 </ol>
-<h2 id="what-none-of-these-tools-solve">What none of these tools solve<a class="headerlink" href="#what-none-of-these-tools-solve" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>There's a pattern worth naming that none of the four tools solves on its own: <strong>post-code verification</strong>. The four help you structure spec and plan; none verifies with sufficient rigor that the generated code <strong>meets</strong> the original spec. That verification, when done, is typically another round of manual prompting.</p>
-<p>That's exactly the gap where Traycer (chapter 8) and other tools in the "architect layer" pattern have positioned themselves.</p>
+<h2 id="what-none-of-these-tools-fully-solve">What none of these tools fully solve<a class="headerlink" href="#what-none-of-these-tools-fully-solve" title="Enlace permanente a esta sección">&para;</a></h2>
+<p>There's a cross-cutting problem worth naming: <strong>keeping specs alive over months</strong> (chapter 6). All these tools help with the tactical cycle of a feature — design the spec, implement, verify. But the sustained discipline of maintaining a spec updated as code evolves and the team changes remains team work, and that work has a real cost (chapter 10).</p>
+<p>Traycer comes closer than the others to post-code verification, but its work unit is still the session, not the module's lifecycle. For long-term maintenance discipline, what's needed is harness infrastructure — automatic hooks, drift sensors, recurring agents — which <a href="../13-from-sdd-to-harness/">chapter 13</a> develops as the bridge between SDD and the next course in the trilogy.</p>
 <h2 id="what-comes-next">What comes next<a class="headerlink" href="#what-comes-next" title="Enlace permanente a esta sección">&para;</a></h2>
-<p>Chapter 8 covers the <strong>other category</strong> of SDD tools: the ones that don't replace your agent but wrap it. It's an important distinction because it answers a different question. The tools in this chapter answer "which tool do I use?". The next chapter's answer "how do I improve the tool I'm already using?".</p>
+<p>Up to here we've seen the lifecycle (ch. 5), living specs (ch. 6), and the ecosystem's tools. In <strong>chapter 9</strong> we go down to practice: how all this applies to three different kinds of work — new features, refactors, and bug fixes — because the optimal process isn't the same in all three cases.</p>
 
 
 
@@ -1955,13 +1966,13 @@
         
         
           
-          <a href="../08-architect-layers/" class="md-footer__link md-footer__link--next" aria-label="Next: 8. Architect layers over agents">
+          <a href="../09-patterns-of-application/" class="md-footer__link md-footer__link--next" aria-label="Next: 9. Patterns of application">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                8. Architect layers over agents
+                9. Patterns of application
               </div>
             </div>
             <div class="md-footer__button md-icon">

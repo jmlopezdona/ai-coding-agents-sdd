@@ -64,13 +64,6 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/07-native-sdd-tools/"/>
     </url>
     <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/08-architect-layers/</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/08-architect-layers/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/08-architect-layers/"/>
-    </url>
-    <url>
         <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/09-patterns-of-application/</loc>
         <lastmod>2026-04-13</lastmod>
         <changefreq>daily</changefreq>
@@ -167,13 +160,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/07-native-sdd-tools/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/07-native-sdd-tools/"/>
-    </url>
-    <url>
-        <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/08-architect-layers/</loc>
-        <lastmod>2026-04-13</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/es/08-architect-layers/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jmlopezdona.github.io/ai-coding-agents-sdd/08-architect-layers/"/>
     </url>
     <url>
         <loc>https://jmlopezdona.github.io/ai-coding-agents-sdd/es/09-patterns-of-application/</loc>

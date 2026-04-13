@@ -1297,8 +1297,6 @@
       
         
       
-        
-      
     
     
     
@@ -1358,35 +1356,7 @@
   <span class="md-ellipsis">
     
   
-    7. Herramientas SDD nativas
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-architect-layers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    8. Capas de arquitecto sobre agentes
+    7. Herramientas SDD
   
 
     
@@ -2241,7 +2211,7 @@
 </div>
 <h3 id="sub-paso-12-planificar-la-implementacion">Sub-paso 1.2 — Planificar la implementación<a class="headerlink" href="#sub-paso-12-planificar-la-implementacion" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Con la spec en mano, le pides al agente un <strong>plan de implementación</strong>: qué archivos toca, en qué orden, qué dependencias hay entre tareas, qué tests pretende escribir. El plan no es código; es un documento intermedio. Lo lees, lo discutes, lo corriges si el agente ha entendido mal alguna restricción.</p>
-<p>Este sub-paso es donde las herramientas tipo Traycer aportan más valor (<a href="../08-architect-layers/">capítulo 8</a>), porque la calidad del plan determina la calidad de todo lo que viene después.</p>
+<p>Este sub-paso es donde las herramientas tipo Traycer aportan más valor (<a href="08-architect-layers.md">capítulo 8</a>), porque la calidad del plan determina la calidad de todo lo que viene después.</p>
 <h3 id="sub-paso-13-descomponer-en-tareas">Sub-paso 1.3 — Descomponer en tareas<a class="headerlink" href="#sub-paso-13-descomponer-en-tareas" title="Enlace permanente a esta sección">&para;</a></h3>
 <p>Tomas el plan y lo cortas en <strong>tareas pequeñas, secuenciales, cada una con un criterio de "hecho"</strong>. Una tarea típica debería caber en una sola sesión enfocada del agente, sin ambigüedad. Si una tarea necesita más de una sesión, está mal cortada.</p>
 <p>La regla heurística: si no puedes describir el estado "después de la tarea" en una frase, la tarea es demasiado grande.</p>
@@ -2306,7 +2276,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Conexión con BMAD y Traycer</p>
-<p>La delegación a sub-agentes no es nueva conceptualmente — <a href="../07-native-sdd-tools/#bmad">BMAD</a> ya usa múltiples agentes, pero con <strong>roles fijos</strong> (PM, Architect, QA, Developer). Lo que las herramientas actuales permiten es una delegación más flexible: sub-agentes por <strong>contexto de la spec</strong> (front, back, infra), no por rol en el proceso. Y las capas de arquitecto tipo <a href="../08-architect-layers/">Traycer</a> encajan naturalmente como la lógica de coordinación — su función de planificación y verificación es exactamente lo que el agente principal necesita para orquestar sub-agentes.</p>
+<p>La delegación a sub-agentes no es nueva conceptualmente — <a href="../07-native-sdd-tools/#bmad">BMAD</a> ya usa múltiples agentes, pero con <strong>roles fijos</strong> (PM, Architect, QA, Developer). Lo que las herramientas actuales permiten es una delegación más flexible: sub-agentes por <strong>contexto de la spec</strong> (front, back, infra), no por rol en el proceso. Y las capas de arquitecto tipo <a href="08-architect-layers.md">Traycer</a> encajan naturalmente como la lógica de coordinación — su función de planificación y verificación es exactamente lo que el agente principal necesita para orquestar sub-agentes.</p>
 </div>
 <p>Ninguna de las dos opciones es universalmente mejor. La ejecución directa es más simple; la delegación a sub-agentes gestiona mejor el contexto en specs grandes pero exige interfaces explícitas en la Fase 1 y validación de integración en la Fase 3. La decisión la toma el agente (o su configuración) según la naturaleza de la spec.</p>
 <h2 id="fase-3-validar-la-spec">Fase 3 — Validar la spec<a class="headerlink" href="#fase-3-validar-la-spec" title="Enlace permanente a esta sección">&para;</a></h2>
@@ -2353,7 +2323,7 @@
 <div class="admonition warning">
 <p class="admonition-title">La Fase 3 es lo que separa SDD de vibe coding con documentación</p>
 <p>Si la Fase 3 no existe o se reduce a "confiar en que los tests pasan", no estás haciendo SDD — estás haciendo spec-first con buenas intenciones. La verificación de que el código cumple la spec <strong>como un todo</strong> (no solo tarea a tarea), en <strong>ambos niveles</strong> (inner y outer loop) y con <strong>base determinista</strong> (no solo estocástica) es el mecanismo que cierra el ciclo. Sin ella, la spec envejece desde el momento en que se escribe.</p>
-<p>Esta es exactamente la grieta que el <a href="../07-native-sdd-tools/#lo-que-ninguna-de-estas-herramientas-resuelve">capítulo 7 identifica como problema común</a> de las herramientas nativas, y donde las capas de arquitecto del <a href="../08-architect-layers/">capítulo 8</a> se han posicionado.</p>
+<p>Esta es exactamente la grieta que el <a href="../07-native-sdd-tools/#lo-que-ninguna-de-estas-herramientas-resuelve">capítulo 7 identifica como problema común</a> de las herramientas nativas, y donde las capas de arquitecto del <a href="08-architect-layers.md">capítulo 8</a> se han posicionado.</p>
 </div>
 <h2 id="el-ciclo-de-vida-no-es-lineal">El ciclo de vida no es lineal<a class="headerlink" href="#el-ciclo-de-vida-no-es-lineal" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una nota que casi siempre se omite en las descripciones canónicas: <strong>el ciclo es raramente lineal en la práctica</strong>. Lo que pasa de verdad es que en la Fase 2 descubres algo que invalida una asunción de la Fase 1, y vuelves atrás. La Fase 3 te enseña que un criterio no era verificable y tienes que reescribirlo. A mitad de una tarea, te das cuenta de que la spec tiene un hueco.</p>
