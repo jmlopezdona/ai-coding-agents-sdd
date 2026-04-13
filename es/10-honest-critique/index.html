@@ -1801,7 +1801,7 @@
 <h2 id="critica-1-el-maintenance-tax">Crítica 1 — El maintenance tax<a class="headerlink" href="#critica-1-el-maintenance-tax" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>La crítica más demoledora de Isoform es que las specs detalladas crean <strong>deuda de documentación disfrazada de disciplina de ingeniería</strong>.</p>
 <blockquote>
-<p><em>Comprehensive specifications create documentation debt disguised as engineering discipline.</em></p>
+<p><em>Las especificaciones exhaustivas crean deuda de documentación disfrazada de disciplina de ingeniería.</em></p>
 </blockquote>
 <p>La lógica es directa. Cuando el sistema tiene una spec viva (capítulo 6), cada cambio en el código pide un cambio en la spec. Cuando los requisitos cambian — y siempre cambian — pides cambios coordinados en ambos sitios. El coste sube. Y a diferencia del coste de mantenimiento del código, que es visible y se discute en sprint reviews, el coste de mantenimiento de las specs es invisible: no aparece en ningún burndown, nadie lo cuenta, y se acumula hasta que un día el equipo se da cuenta de que está dedicando una proporción incómoda de su tiempo a mantener documentación de un sistema en vez de a evolucionarlo.</p>
 <p>Isoform lo dice así: el SDD no reduce el overhead, lo <em>traslada</em>. Lo que antes era código sin documentar ahora es código documentado, sí, pero el coste no desaparece — solo cambia de lugar. Y a veces ese nuevo lugar es peor, porque la spec se ha convertido en un segundo sistema que mantener, con su propia entropía, sus propios bugs (specs internamente contradictorias) y su propia carga cognitiva.</p>
@@ -1809,7 +1809,7 @@
 <h2 id="critica-2-la-perdida-de-los-por-ques">Crítica 2 — La pérdida de los "por qués"<a class="headerlink" href="#critica-2-la-perdida-de-los-por-ques" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Esta es la crítica que más vale la pena tomarse en serio porque ataca el corazón del SDD.</p>
 <blockquote>
-<p><em>Specs describe what systems should do, but cannot capture why decisions were made. The missing context is where the real problems show up.</em></p>
+<p><em>Las specs describen lo que los sistemas deben hacer, pero no pueden capturar por qué se tomaron las decisiones. El contexto que falta es donde aparecen los problemas reales.</em></p>
 </blockquote>
 <p>Isoform argumenta que las specs típicas se centran demasiado en los <strong>cómos</strong> — schemas, firmas, contratos, criterios — y se quedan cortas en los <strong>por qués</strong>: las suposiciones, las restricciones del mundo real que llevaron a una decisión, los trade-offs que se eligieron y, sobre todo, los que se rechazaron y por qué.</p>
 <p>Y los por qués son justo lo que un agente (o un humano nuevo) necesita seis meses después para tomar decisiones inteligentes en los huecos que la spec no cubre. Una spec sin por qués envejece a la velocidad de las decisiones que la rodean, porque pierde la capacidad de explicarse a sí misma.</p>
@@ -1817,7 +1817,7 @@
 <p><strong>Cómo defenderte:</strong> trata los por qués como tier 0 de la spec. Si una spec no tiene por qués, es spec incompleta. Si el bucle bidireccional del capítulo 6 no actualiza por qués, no es bidireccional de verdad — es half-loop.</p>
 <h2 id="critica-3-la-falsa-ilusion-de-completitud">Crítica 3 — La falsa ilusión de completitud<a class="headerlink" href="#critica-3-la-falsa-ilusion-de-completitud" title="Enlace permanente a esta sección">&para;</a></h2>
 <blockquote>
-<p><em>Detailed specifications create misleading confidence.</em></p>
+<p><em>Las especificaciones detalladas crean una confianza engañosa.</em></p>
 </blockquote>
 <p>Esta es sutil y muy real. Una spec detallada parece exhaustiva. Cuando lees una spec de 800 líneas con diagramas, criterios y plantillas, tu cerebro asume que el sistema está bien pensado. La spec funciona como <strong>prueba social interna</strong>: "alguien se sentó a pensar esto en serio, así que tiene que estar bien".</p>
 <p>La trampa es que detalle ≠ corrección. Una spec puede ser detallada y estar equivocada. Una spec puede estar internamente consistente y no encajar con la realidad. Una spec puede cubrir los 47 casos que se te ocurrieron y no cubrir el 48 que solo se descubre en producción.</p>
@@ -1832,7 +1832,7 @@
 </ol>
 <p>Fowler ve un eco directo en SDD:</p>
 <blockquote>
-<p><em>SDD sits at an awkward abstraction level and just creates too much overhead and constraints. While LLMs reduce some MDD constraints, they introduce non-determinism — potentially combining MDD's inflexibility with LLM unpredictability.</em></p>
+<p><em>SDD se sitúa en un nivel de abstracción incómodo y simplemente genera demasiado overhead y restricciones. Aunque los LLMs reducen algunas limitaciones de MDD, introducen no-determinismo — combinando potencialmente la inflexibilidad de MDD con la impredecibilidad de los LLMs.</em></p>
 </blockquote>
 <p>Esa última frase merece quedarse en la pared. <strong>SDD potencialmente combina la inflexibilidad de MDD con la impredictibilidad de los LLMs</strong>. Lo peor de los dos mundos: la rigidez del modelo más la sorpresa del modelo generativo. Si MDD fracasó por uno solo de esos problemas, SDD podría fracasar por la suma.</p>
 <p><strong>Cómo defenderte:</strong> leer el aviso histórico. Cuando estés construyendo specs muy detalladas, pregúntate si lo que estás escribiendo es más mantenible que el código que generaría, y cuánta certeza tienes de que el agente generará código consistente entre runs. Si las dos respuestas no son claras, estás en el sitio donde MDD murió.</p>

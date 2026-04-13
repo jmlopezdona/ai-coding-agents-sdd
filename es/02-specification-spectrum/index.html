@@ -1822,7 +1822,7 @@
 <p>Lo que distingue spec-anchored de spec-first no es la calidad de la spec inicial. Es que <strong>hay un coste tangible asociado a dejar que la spec se desactualice</strong>. Si el test falla, alguien tiene que decidir: ¿actualizo el código para que cumpla la spec, o actualizo la spec para reflejar lo que el código ahora hace? Esa decisión, hecha cien veces, es lo que mantiene la spec viva.</p>
 <p>El paper dice algo importante sobre este nivel:</p>
 <blockquote>
-<p><em>BDD frameworks like Cucumber exemplify this approach, making it the practical choice for most production systems.</em></p>
+<p><em>Frameworks BDD como Cucumber ejemplifican este enfoque, convirtiéndolo en la opción práctica para la mayoría de sistemas en producción.</em></p>
 </blockquote>
 <p>Es una pista honesta. Spec-anchored no es una invención nueva del SDD. Es BDD bien hecho, llevado al nivel de la intención arquitectónica en lugar del comportamiento de cara al usuario. Si tu equipo ya practica BDD con disciplina, está más cerca de SDD del que cree.</p>
 <p><strong>Cuándo funciona:</strong></p>
@@ -1841,7 +1841,7 @@
 <p>Tessl es el ejemplo más visible de esta filosofía hoy: genera código con un comentario <code>// GENERATED FROM SPEC - DO NOT EDIT</code> al principio de cada archivo. La promesa es que vuelves a tener una sola fuente de verdad, como en compilación clásica.</p>
 <p>El paper es claro sobre dónde funciona esto realmente:</p>
 <blockquote>
-<p><em>Currently viable mainly in mature domains like automotive embedded systems using tools such as Simulink.</em></p>
+<p><em>Actualmente viable principalmente en dominios maduros como los sistemas embebidos de automoción, usando herramientas como Simulink.</em></p>
 </blockquote>
 <p><strong>Simulink</strong> es el ejemplo paradigmático y conviene entenderlo porque ilustra qué condiciones tiene que cumplir un dominio para que spec-as-source funcione de verdad. Es una herramienta de MathWorks (los mismos de MATLAB) en la que diseñas sistemas dibujando <strong>diagramas de bloques visuales</strong> — sensores, controladores, filtros, conexiones — y la herramienta <strong>genera automáticamente código C/C++ embebido</strong> a partir de ese diagrama. Los ingenieros editan el diagrama, no el código generado. Si hay un bug en el <code>.c</code>, se arregla el bloque y se regenera. Las industrias de automoción, aeroespacial y control industrial llevan décadas — desde los años 90 — produciendo firmware crítico de esta forma. No es teoría, es producción real a gran escala.</p>
 <p>Lo que hace que Simulink funcione, y que es exactamente lo que falta en software de propósito general, son tres condiciones:</p>
