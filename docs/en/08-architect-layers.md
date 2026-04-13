@@ -1,10 +1,10 @@
 # 8. Architect layers over agents: Traycer and the wrapper pattern
 
-The previous chapter's tools share a feature: they **define their own complete workflow** — their environment, their document structure, their phase flow, their conventions. Adopting them means working within their way of doing things. There's another category growing in parallel that's worth understanding separately: tools that **plug into whatever workflow you already have**, sitting on top of the agent you already use without asking you to switch. We call them *architect layers*, and the most representative example of this category today is **Traycer**.
+The previous chapter's tools share a feature: they **define their own complete workflow** — their environment, their document structure, their phase flow, their conventions. Adopting them means working within their way of doing things. There's another category growing in parallel that's worth understanding separately: tools that **plug into whatever workflow you already have**, sitting on top of the agent you already use without asking you to switch. We call them *architect layers*, and the most representative example of this category today is **[Traycer](https://traycer.ai/)**.
 
 ## The question this category answers
 
-When a team already uses Cursor, Claude Code, Codex or similar and knows them well, the friction of adopting Kiro or Spec-kit isn't only learning a new tool. It's **abandoning the tool where the team has hours, shortcuts, configurations and muscle memory**. For many teams, that cost is prohibitive even if the new tool is objectively better in some dimensions.
+When a team already uses Cursor, Claude Code, Codex or similar and knows them well, the friction of adopting the previous chapter's tools has two sides. In some cases it means **switching tools** — Kiro, for example, is a different IDE where you lose the shortcuts, configurations, and muscle memory your team has built up. In others it means **adapting your working model** to the flow the tool imposes — its document structure, its phases, its conventions — even if you keep your usual agent. In both cases, the adoption cost is real even if the new tool is objectively better in some dimensions.
 
 Architect layers solve that friction by not asking for it. Your agent stays Cursor or Claude Code or whatever you use. The layer inserts itself in the workflow at two specific points: **before** the agent (planning) and **after** the agent (verifying). In the middle, the agent works as always.
 
