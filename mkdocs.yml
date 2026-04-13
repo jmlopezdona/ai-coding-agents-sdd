@@ -57,8 +57,7 @@ nav:
       - "5. Possible lifecycle approaches": 05-sdd-lifecycles.md
       - "6. Living specs": 06-living-specs.md
   - Tooling:
-      - "7. Native SDD tools": 07-native-sdd-tools.md
-      - "8. Architect layers over agents": 08-architect-layers.md
+      - "7. SDD tools": 07-native-sdd-tools.md
   - Practice:
       - "9. Patterns of application": 09-patterns-of-application.md
   - Critique:
@@ -132,8 +131,7 @@ plugins:
             "5. Possible lifecycle approaches": "5. Posibles enfoques del ciclo de vida"
             "6. Living specs": "6. Especificaciones vivas"
             "Tooling": "Herramientas"
-            "7. Native SDD tools": "7. Herramientas SDD nativas"
-            "8. Architect layers over agents": "8. Capas de arquitecto sobre agentes"
+            "7. SDD tools": "7. Herramientas SDD"
             "Practice": "Práctica"
             "9. Patterns of application": "9. Patrones de aplicación"
             "Critique": "Crítica"

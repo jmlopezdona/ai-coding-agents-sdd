@@ -1,6 +1,6 @@
-# 7. Native SDD tools: Kiro, Spec-kit, Tessl and BMAD
+# 7. SDD tools: Kiro, Spec-kit, Tessl, BMAD and Traycer
 
-There are a handful of tools explicitly proposing themselves as infrastructure for doing Spec-Driven Development. We call them **native** because the spec is the center of their workflow, not an add-on. In this chapter we walk through the four most visible today — Kiro, Spec-kit, Tessl and BMAD — situating each in the chapter 2 spectrum and being honest about where each fits and where each breaks.
+There are a handful of tools explicitly proposing themselves as infrastructure for doing Spec-Driven Development. In this chapter we walk through the five most visible today — situating each in the chapter 2 spectrum and being honest about where each fits and where each breaks.
 
 > **Important note:** this chapter will age fast. The SDD ecosystem is in full ferment and what's described here is the state of the art in early 2026. Treat it as a point-in-time snapshot, not as a definitive recommendation.
 
@@ -101,6 +101,28 @@ BMAD is the most distinct case of the four, which is why I left it for last. Ins
 
 :material-book-open-variant: [BMAD repository](https://github.com/bmad-code-org/BMAD-METHOD)
 
+## Traycer
+
+[Traycer](https://traycer.ai/) differs from the previous four in a key way: it doesn't define its own document workflow or ask you to abandon your agent. It's a **platform where you use your usual AI tool** (Claude Code, Cursor and other CLIs) but with three layers added around it: elicitation before coding, explicit planning, and post-code verification.
+
+**What it does well:**
+
+- **Elicitation**: before letting you talk to your agent, it runs a round of questions to surface requirements you'd have forgotten. It's chapter 5's iterative clarification turned into an automatic mechanism.
+- **Planning**: generates a detailed implementation plan — which files, what dependencies, what order — before the agent writes code. The plan is reviewable and correctable.
+- **Verification**: when the agent finishes, it compares what was done against the original plan/spec and flags divergences. It's chapter 5's Phase 3, automated.
+
+**What to look at carefully:**
+
+- The most complete community discussion of Traycer comes from a r/vibecoding post that is **clearly promotional**. The category exists and the logic is solid, but it's worth tempering the original material's enthusiasm.
+- Although it positions itself as a "layer over your agent", in practice it's a platform where you run your tools inside its environment — which brings it closer to the previous tools' model than to a pure wrapper.
+
+**Who it fits:**
+
+- Teams that already have a preferred agent and want to add planning and verification without switching tools.
+- Projects where the main problem is lack of planning and absence of post-code verification, not the structure of the SDD process.
+
+:material-book-open-variant: [Traycer documentation](https://traycer.ai/)
+
 ## How to choose (or not choose)
 
 An honest recommendation, knowing it'll age:
@@ -109,16 +131,16 @@ An honest recommendation, knowing it'll age:
 
 2. **If you've done specs by hand and know what's missing**, evaluate Kiro or Spec-kit depending on whether rigidity (Kiro) or verbosity (Spec-kit) bothers you more.
 
-3. **If you're interested in pushing the frontier**, try Tessl on an isolated surface or build a proof-of-concept with BMAD. Don't put them on the critical path.
+3. **If your problem is lack of planning and verification, not process structure**, look at Traycer or similar tools that add those layers over your current agent.
 
-4. **If your real problem is the *blast radius* of changes and not process structure**, no tool in this chapter will solve it. What you need lives in the next chapter: an **architect layer** over your current agent.
+4. **If you're interested in pushing the frontier**, try Tessl on an isolated surface or build a proof-of-concept with BMAD. Don't put them on the critical path.
 
-## What none of these tools solve
+## What none of these tools fully solve
 
-There's a pattern worth naming that none of the four tools solves on its own: **post-code verification**. The four help you structure spec and plan; none verifies with sufficient rigor that the generated code **meets** the original spec. That verification, when done, is typically another round of manual prompting.
+There's a cross-cutting problem worth naming: **keeping specs alive over months** (chapter 6). All these tools help with the tactical cycle of a feature — design the spec, implement, verify. But the sustained discipline of maintaining a spec updated as code evolves and the team changes remains team work, and that work has a real cost (chapter 10).
 
-That's exactly the gap where Traycer (chapter 8) and other tools in the "architect layer" pattern have positioned themselves.
+Traycer comes closer than the others to post-code verification, but its work unit is still the session, not the module's lifecycle. For long-term maintenance discipline, what's needed is harness infrastructure — automatic hooks, drift sensors, recurring agents — which [chapter 13](13-from-sdd-to-harness.md) develops as the bridge between SDD and the next course in the trilogy.
 
 ## What comes next
 
-Chapter 8 covers the **other category** of SDD tools: the ones that don't replace your agent but wrap it. It's an important distinction because it answers a different question. The tools in this chapter answer "which tool do I use?". The next chapter's answer "how do I improve the tool I'm already using?".
+Up to here we've seen the lifecycle (ch. 5), living specs (ch. 6), and the ecosystem's tools. In **chapter 9** we go down to practice: how all this applies to three different kinds of work — new features, refactors, and bug fixes — because the optimal process isn't the same in all three cases.

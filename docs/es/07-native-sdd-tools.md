@@ -1,6 +1,6 @@
-# 7. Herramientas SDD nativas: Kiro, Spec-kit, Tessl y BMAD
+# 7. Herramientas SDD: Kiro, Spec-kit, Tessl, BMAD y Traycer
 
-Hay un puñado de herramientas que se han propuesto explícitamente como infraestructura para hacer Spec-Driven Development. Las llamamos **nativas** porque la spec es el centro de su workflow, no un complemento. En este capítulo recorremos las cuatro más visibles hoy — Kiro, Spec-kit, Tessl y BMAD — situándolas en el espectro del capítulo 2 y siendo honestos sobre dónde encaja cada una y dónde se rompe.
+Hay un puñado de herramientas que se han propuesto explícitamente como infraestructura para hacer Spec-Driven Development. En este capítulo recorremos las cinco más visibles hoy — situándolas en el espectro del capítulo 2 y siendo honestos sobre dónde encaja cada una y dónde se rompe.
 
 > **Nota importante:** este capítulo envejecerá rápido. El ecosistema SDD está en plena ebullición y lo que aquí se describe es el estado del arte a principios de 2026. Trátalo como una foto del momento, no como una recomendación definitiva.
 
@@ -101,6 +101,28 @@ BMAD es el caso más distinto del cuarteto, y por eso lo dejo para el final. En 
 
 :material-book-open-variant: [Repositorio de BMAD](https://github.com/bmad-code-org/BMAD-METHOD)
 
+## Traycer
+
+[Traycer](https://traycer.ai/) se diferencia de las cuatro anteriores en un punto clave: no define su propio workflow de documentos ni te pide que abandones tu agente. Es una **plataforma donde usas tu AI tool habitual** (Claude Code, Cursor y otros CLIs) pero con tres capas añadidas alrededor: elicitación antes de codificar, planificación explícita, y verificación post-código.
+
+**Lo que hace bien:**
+
+- **Elicitación**: antes de dejarte hablar con tu agente, te hace una ronda de preguntas para sacar a la superficie requisitos que habrías olvidado. Es la clarificación iterativa del capítulo 5 convertida en mecanismo automático.
+- **Planificación**: genera un plan de implementación detallado — qué archivos toca, qué dependencias, qué orden — antes de que el agente escriba código. El plan es revisable y corregible.
+- **Verificación**: cuando el agente termina, compara lo que hizo con el plan/spec original y señala divergencias. Es la Fase 3 del capítulo 5, automatizada.
+
+**Lo que hay que mirar con cuidado:**
+
+- La discusión más completa sobre Traycer en la comunidad viene de un post de r/vibecoding que es **claramente promocional**. La categoría existe y la lógica es sólida, pero conviene matizar el entusiasmo del material original.
+- Aunque se posiciona como una "capa sobre tu agente", en la práctica es una plataforma donde ejecutas tus herramientas dentro de su entorno — lo que lo acerca más al modelo de las herramientas anteriores que a un wrapper puro.
+
+**Para quién encaja:**
+
+- Equipos que ya tienen un agente preferido y quieren añadir planificación y verificación sin cambiar de herramienta.
+- Proyectos donde el problema principal es la falta de plan y la ausencia de verificación post-código, no la estructura del proceso SDD.
+
+:material-book-open-variant: [Documentación de Traycer](https://traycer.ai/)
+
 ## Cómo elegir (o no elegir)
 
 Una recomendación honesta, sabiendo que envejecerá:
@@ -109,16 +131,16 @@ Una recomendación honesta, sabiendo que envejecerá:
 
 2. **Si has hecho specs a mano y sabes qué te falta**, evalúa Kiro o Spec-kit dependiendo de si te molesta más la rigidez (Kiro) o la verbosidad (Spec-kit).
 
-3. **Si te interesa empujar la frontera**, prueba Tessl en una superficie aislada o monta una proof-of-concept con BMAD. No los pongas en el path crítico.
+3. **Si tu problema es la falta de plan y verificación, no la estructura del proceso**, mira Traycer o herramientas similares que añadan esas capas sobre tu agente actual.
 
-4. **Si tu problema real es el *blast radius* de los cambios y no la estructura del proceso**, ninguna herramienta de este capítulo te va a resolver el problema. Lo que necesitas vive en el capítulo siguiente: una **capa de arquitecto** sobre tu agente actual.
+4. **Si te interesa empujar la frontera**, prueba Tessl en una superficie aislada o monta una proof-of-concept con BMAD. No los pongas en el path crítico.
 
-## Lo que ninguna de estas herramientas resuelve
+## Lo que ninguna de estas herramientas resuelve por completo
 
-Hay un patrón que vale la pena nombrar y que ninguna de las cuatro herramientas resuelve por sí sola: **el problema de la verificación post-código**. Las cuatro te ayudan a estructurar la spec y el plan; ninguna verifica con suficiente rigor que el código generado **cumple** la spec original. Esa verificación, cuando se hace, es típicamente otra ronda de prompt manual.
+Hay un problema transversal que vale la pena nombrar: **mantener specs vivas a meses vista** (capítulo 6). Todas estas herramientas te ayudan con el ciclo táctico de una feature — diseñar la spec, implementar, verificar. Pero la disciplina sostenida de mantener una spec actualizada cuando el código evoluciona y el equipo cambia sigue siendo trabajo del equipo, y ese trabajo tiene un coste real (capítulo 10).
 
-Esa es exactamente la grieta donde Traycer (capítulo 8) y otras herramientas del patrón "capa de arquitecto" se han posicionado.
+Traycer se acerca más que las otras al problema de la verificación post-código, pero su unidad de trabajo sigue siendo la sesión, no el ciclo de vida del módulo. Para la disciplina de mantenimiento a largo plazo, lo que se necesita es infraestructura de harness — hooks automáticos, sensores de drift, agentes recurrentes — que el [capítulo 13](13-from-sdd-to-harness.md) desarrolla como puente entre SDD y el siguiente curso de la trilogía.
 
 ## Lo que viene a continuación
 
-El capítulo 8 cubre la **otra categoría** de herramientas SDD: las que no reemplazan tu agente sino que lo envuelven. Es una distinción importante porque responde a una pregunta distinta. Las herramientas de este capítulo responden a "¿qué herramienta uso?". Las del próximo responden a "¿cómo mejoro la herramienta que ya estoy usando?".
+Hasta aquí hemos visto el ciclo de vida (cap. 5), las specs vivas (cap. 6), y las herramientas del ecosistema. En el **capítulo 9** bajamos a la práctica: cómo se aplica todo esto a tres tipos de trabajo distintos — features nuevas, refactors, y bug fixes — porque el proceso óptimo no es el mismo en los tres casos.
