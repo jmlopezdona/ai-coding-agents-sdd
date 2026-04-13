@@ -82,19 +82,21 @@ Para ver cómo encajan como complementos — no como enemigos — vale la pena t
 
 Los dos enfoques resuelven el mismo problema — el context collapse del capítulo 1 — con filosofías distintas. SDD apuesta por la **persistencia explícita en documentos paralelos**; code-embedded context apuesta por **distribuir la intención en artefactos con alto acoplamiento al código**.
 
-## Cuándo apoyarse más en code-embedded context
+## Cuándo es suficiente y cuándo necesitas specs
 
-Hay situaciones donde code-embedded context cubre la mayor parte de la necesidad y las specs formales aportan poco:
+Code-embedded context — comentarios de intención, commits ricos, ADRs — es la **capa base que siempre debería estar**. La pregunta no es "¿cuál de los dos uso?" sino "¿necesito añadir specs formales encima?". La clave está en que cubren momentos distintos: code-embedded context captura los **por qués después** de las decisiones; las specs capturan la **intención antes** de implementar.
 
-- **Proyectos en fase de descubrimiento** donde la intención cambia más rápido de lo que se puede escribir una spec.
-- **Bases de código maduras con buenas convenciones** donde la mayor parte del contexto ya vive en el código y solo falta capturar los por qués.
-- **Equipos que ya practican ADRs disciplinados** y querrían no añadir un segundo sistema documental encima.
+**Code-embedded context es suficiente cuando:**
 
-Y hay situaciones donde code-embedded context no es suficiente y las specs formales aportan valor real:
+- El cambio es lo bastante pequeño como para que el agente lo entienda con el código existente y un prompt bien escrito — refactors, bug fixes, features pequeñas.
+- La intención se puede comunicar en el momento y no necesita sobrevivir semanas antes de implementarse.
+- No hay múltiples personas que necesiten alinearse sobre qué se va a construir antes de que nadie escriba código.
 
-- **Sistemas regulados** donde la spec separada es un requisito de auditoría, no una elección estilística.
-- **Coordinación entre múltiples equipos** donde hace falta un artefacto compartido que no esté enterrado en commits.
-- **Features grandes con alcance amplio** donde el plan formal previo aporta más que ADRs sueltos.
+**Necesitas añadir specs formales encima cuando:**
+
+- La intención tiene que **sobrevivir en el tiempo** antes de implementarse — necesitas un artefacto que capture "qué vamos a hacer" y sea revisable por otros antes de que nadie escriba código.
+- El alcance es **demasiado grande** para comunicarlo en un prompt — el agente necesita un documento de referencia que no cabe en un comentario ni en un commit.
+- Hay **requisitos de auditoría o compliance** que exigen un artefacto separado y trazable.
 
 ## La síntesis honesta: usa los dos
 

@@ -82,19 +82,21 @@ To see how they fit as complements — not as enemies — it's worth tabulating 
 
 The two approaches solve the same problem — chapter 1's context collapse — with different philosophies. SDD bets on **explicit persistence in parallel documents**; code-embedded context bets on **distributing intent across artifacts with high coupling to the code**.
 
-## When to lean more on code-embedded context
+## When it's enough and when you need specs
 
-There are situations where code-embedded context covers most of the need and formal specs add little:
+Code-embedded context — intent comments, rich commits, ADRs — is the **base layer that should always be there**. The question isn't "which one do I use?" but "do I need to add formal specs on top?". The key is that they cover different moments: code-embedded context captures the **whys after** decisions are made; specs capture **intent before** implementation.
 
-- **Discovery-phase projects** where intent changes faster than a spec can be written.
-- **Mature codebases with good conventions** where most context already lives in code and only the whys need capturing.
-- **Teams that already practice disciplined ADRs** and would prefer not to add a second documentary system on top.
+**Code-embedded context is enough when:**
 
-And situations where code-embedded context isn't enough and formal specs add real value:
+- The change is small enough for the agent to understand with existing code and a well-written prompt — refactors, bug fixes, small features.
+- Intent can be communicated in the moment and doesn't need to survive weeks before implementation.
+- There aren't multiple people who need to align on what will be built before anyone writes code.
 
-- **Regulated systems** where the separate spec is an audit requirement, not a stylistic choice.
-- **Coordination across multiple teams** where you need a shared artifact not buried in commits.
-- **Large features with broad scope** where the formal upfront plan adds more than scattered ADRs.
+**You need to add formal specs on top when:**
+
+- Intent needs to **survive over time** before implementation — you need an artifact that captures "what we're going to build" and is reviewable by others before anyone writes code.
+- The scope is **too large** to communicate in a prompt — the agent needs a reference document that doesn't fit in a comment or a commit.
+- There are **audit or compliance requirements** that demand a separate, traceable artifact.
 
 ## The honest synthesis: use both
 
