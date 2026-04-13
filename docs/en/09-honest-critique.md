@@ -77,13 +77,10 @@ It's the chapter's harshest observation: **a longer spec doesn't produce a more 
 
 After reading these six critiques, there are concrete signals SDD isn't the answer for your situation:
 
-- Your code has a lifespan shorter than 6 months.
 - You're in discovery phase where intent changes week to week.
-- Your team is small (1-3 people) and coordination isn't the bottleneck.
-- Your real bottleneck is deploy infrastructure, not code quality.
 - Every time you write a spec, the relevant code has changed before you finished.
 
-If you recognize your situation in any of the five, **the cost of SDD probably exceeds its benefit for you**. It's not a failing of the discipline. It's that the tool doesn't fit your problem, and forcing it is wasting team time.
+If you recognize your situation in either of the two, **the cost of SDD probably exceeds its benefit for you**. It's not a failing of the discipline. It's that the tool doesn't fit your problem, and forcing it is wasting team time.
 
 ## What comes next
 

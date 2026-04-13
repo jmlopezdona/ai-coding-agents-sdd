@@ -77,13 +77,10 @@ Es la observación más cruda del capítulo: **una spec más larga no produce un
 
 Después de leer estas seis críticas, hay señales concretas de que SDD no es la respuesta para tu situación:
 
-- Tu código tiene un horizonte de vida menor a 6 meses.
 - Estás en fase de descubrimiento donde la intención cambia semana a semana.
-- Tu equipo es pequeño (1-3 personas) y la coordinación no es el cuello de botella.
-- Tu cuello de botella real es la deploy infrastructure, no la calidad del código.
 - Cada vez que escribes una spec, el código relevante ha cambiado antes de terminarla.
 
-Si reconoces tu situación en cualquiera de las cinco, **el coste del SDD probablemente excede su beneficio para ti**. No es un fallo de la disciplina. Es que la herramienta no encaja en tu problema, y forzarla es malgastar el tiempo del equipo.
+Si reconoces tu situación en cualquiera de las dos, **el coste del SDD probablemente excede su beneficio para ti**. No es un fallo de la disciplina. Es que la herramienta no encaja en tu problema, y forzarla es malgastar el tiempo del equipo.
 
 ## Lo que viene a continuación
 
