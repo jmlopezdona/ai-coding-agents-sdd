@@ -1212,6 +1212,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="El ciclo de vida no es lineal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuando-el-problema-no-es-la-spec-sino-el-proceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cuando el problema no es la spec sino el proceso
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2013,6 +2030,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="El ciclo de vida no es lineal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuando-el-problema-no-es-la-spec-sino-el-proceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cuando el problema no es la spec sino el proceso
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2324,6 +2358,15 @@
 <h2 id="el-ciclo-de-vida-no-es-lineal">El ciclo de vida no es lineal<a class="headerlink" href="#el-ciclo-de-vida-no-es-lineal" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>Una nota que casi siempre se omite en las descripciones canónicas: <strong>el ciclo es raramente lineal en la práctica</strong>. Lo que pasa de verdad es que en la Fase 2 descubres algo que invalida una asunción de la Fase 1, y vuelves atrás. La Fase 3 te enseña que un criterio no era verificable y tienes que reescribirlo. A mitad de una tarea, te das cuenta de que la spec tiene un hueco.</p>
 <p>Esto es <strong>normal y deseable</strong>. La diferencia entre un ciclo sano y uno patológico no es que el primero no tenga retrocesos; es que el sano <strong>actualiza la spec cuando descubre que estaba mal</strong> en lugar de ignorarla y seguir codificando. Esa retroalimentación de la Fase 3 hacia la Fase 1 es exactamente la idea del próximo capítulo: las <strong>especificaciones vivas</strong>.</p>
+<h3 id="cuando-el-problema-no-es-la-spec-sino-el-proceso">Cuando el problema no es la spec sino el proceso<a class="headerlink" href="#cuando-el-problema-no-es-la-spec-sino-el-proceso" title="Enlace permanente a esta sección">&para;</a></h3>
+<p>Pero hay un segundo nivel de retroalimentación que es igual de importante y más fácil de ignorar. Si un equipo descubre que <strong>itera demasiado</strong> — que las specs se reescriben constantemente, que la implementación requiere muchos ajustes, que la validación detecta fallos recurrentes del mismo tipo — el problema probablemente no está en una spec concreta. Está en <strong>cómo se están diseñando las specs, cómo se está implementando, o cómo se está validando</strong>.</p>
+<p>Algunos síntomas concretos:</p>
+<ul>
+<li><strong>Specs que siempre necesitan reescribirse en la Fase 2</strong>: puede que la Fase 1 no esté recogiendo la documentación upstream necesaria, o que los criterios de aceptación sean demasiado vagos para que el agente los interprete sin ambigüedad.</li>
+<li><strong>Implementación que requiere muchas iteraciones</strong>: puede que la descomposición en tareas sea demasiado gruesa, o que las interfaces entre partes no estén explícitas, o que el agente no tenga el contexto suficiente.</li>
+<li><strong>Validación que detecta los mismos tipos de fallo una y otra vez</strong>: puede que falten tests deterministas para un patrón recurrente, o que la validación estocástica no esté complementada con checks automáticos.</li>
+</ul>
+<p>En estos casos, lo que hay que ajustar no es la spec — es <strong>el propio sistema</strong>: cómo se escriben las specs, qué herramientas se usan para implementar, qué mecanismos de validación están en su sitio. Esta reflexión de meta-nivel — mejorar el proceso, no solo el artefacto — es exactamente el territorio del <strong>harness engineering</strong> que el <a href="../13-from-sdd-to-harness/">capítulo 13</a> desarrolla: convertir la disciplina manual en infraestructura automática, para que cada iteración del proceso sea mejor que la anterior y los agentes necesiten progresivamente <strong>menos supervisión humana y más autonomía</strong>.</p>
 <h2 id="lo-que-viene-a-continuacion">Lo que viene a continuación<a class="headerlink" href="#lo-que-viene-a-continuacion" title="Enlace permanente a esta sección">&para;</a></h2>
 <p>El capítulo 6 va sobre la diferencia entre specs estáticas (las que envejecen mal) y specs vivas (las que se mantienen útiles porque la implementación retroalimenta la spec). Es la pieza que convierte el ciclo de vida descrito en este capítulo en un proceso sostenible en lugar de un ritual de arranque.</p>
 
