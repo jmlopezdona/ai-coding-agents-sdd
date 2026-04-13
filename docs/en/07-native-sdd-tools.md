@@ -34,7 +34,7 @@ Kiro is AWS's agentic IDE. Its workflow is probably the simplest of the four: th
 - Teams with medium-large features where the three-document ritual amortizes its cost.
 - Teams wanting a soft onramp to SDD without rewriting their tooling.
 
-:material-book-open-variant: [Documentation and getting started](https://kiro.dev/docs/getting-started)
+:material-book-open-variant: [Kiro getting started](https://kiro.dev/docs/getting-started)
 
 ## Spec-kit (GitHub)
 
@@ -56,7 +56,7 @@ Spec-kit is GitHub's official toolkit for Spec-Driven Development. It's a CLI an
 - Teams deeply integrated in GitHub wanting the ergonomics and not afraid of the markdown review cost.
 - Teams wanting to try the "constitution" idea as a global boundaries layer.
 
-:material-book-open-variant: [Repository and documentation](https://github.com/github/spec-kit)
+:material-book-open-variant: [Spec-kit repository](https://github.com/github/spec-kit)
 
 ## Tessl
 
@@ -77,7 +77,7 @@ Tessl is the most radical proposal of the four. It aims directly at the **Spec-a
 - Deliberate experimentation on isolated, small surfaces. Not a tool to bet your main repo on in 2026.
 - Teams curious about where SDD might go long term.
 
-:material-book-open-variant: [Documentation and quickstart](https://docs.tessl.io/introduction-to-tessl/quickstart-skills-docs-rules)
+:material-book-open-variant: [Tessl quickstart](https://docs.tessl.io/introduction-to-tessl/quickstart-skills-docs-rules)
 
 ## BMAD
 
@@ -99,7 +99,7 @@ BMAD is the most distinct case of the four, which is why I left it for last. Ins
 - Teams with experimental appetite and mature agile processes that can absorb the complexity.
 - Cases where role separation of concerns adds more than the simplicity of a single well-directed agent.
 
-:material-book-open-variant: [Repository and documentation](https://github.com/bmad-code-org/BMAD-METHOD)
+:material-book-open-variant: [BMAD repository](https://github.com/bmad-code-org/BMAD-METHOD)
 
 ## How to choose (or not choose)
 
