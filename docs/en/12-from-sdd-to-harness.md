@@ -1,78 +1,76 @@
-# 12. From SDD to the harness: how the pieces fit
+# 12. From discipline to the software factory
 
-If you've made it this far, you have SDD as a discipline: you know how to specify intent, maintain the bidirectional loop, modulate the process by task type, and you have judgment to not confuse it with bureaucracy. What's missing is understanding **where this connects** with the trilogy's next layer: the **harness**, the internal infrastructure system that surrounds the agent so the discipline scales to a whole team and to months at a time.
+If you've made it this far, you have SDD as a discipline: you know how to specify intent, maintain the bidirectional loop, modulate the process by task type, and you have judgment to not confuse it with bureaucracy. What's missing is understanding **where all this leads** when you stop depending on individual discipline and start building a system that works on its own.
 
-This chapter is the bridge. It doesn't repeat the harness course content — that's a whole other repository — but it points precisely at the five exact points where SDD couples with harness, and why the combination produces something better than the two separately.
+## The autonomy progression
 
-## The bridge thesis
+The natural path isn't "SDD and then something else". It's a continuous progression where the system takes on increasing responsibility and the human shifts from the center to the periphery:
 
-> SDD tells you **what** to specify and how. The harness tells you **where** that specification lives, **who** reads it, **when** it gets validated, and **how** it stays alive without sustained human discipline.
+### Level 1 — Human in the loop (pure SDD)
 
-SDD without harness is ceremony: it depends on every team member applying perfect discipline, and perfect discipline doesn't scale. Harness without SDD is purposeless infrastructure: you have sandboxes and sensors and loops, but the agent doesn't know what to build because intent was never captured. Both together form a system; both apart are loose pieces.
+This is where you are now. The human writes specs, reviews the agent's output, maintains the bidirectional loop manually, and detects drift with their own eyes. It works, but it has a ceiling: **it depends on every team member applying perfect discipline, and perfect discipline doesn't scale**. If Alice goes on vacation for a week, specs go out of date. If nobody checks the loop, it breaks.
 
-## Coupling point 1 — Specs as persistent context
+### Level 2 — Human on the loop (SDD + automation)
 
-The harness's first pillar, per the corresponding course, is **context as system of record**: the idea that everything the agent should know has to be materialized in the repo, not in Slack or in heads. SDD specs are **a specialization of that principle**.
+The human no longer executes each step — **they supervise a system that executes for them**. Automatic hooks fire validations when code changes. Sensors detect drift between spec and code and open issues without human intervention. Recurring agents keep specs alive. The human defines intent, reviews exceptions, and makes decisions the system can't make alone.
 
-A well-written spec is persistent context with a specific shape: *intent + constraints + whys + verifiable criteria*. The harness contributes the general discipline ("context lives in the repo"); SDD contributes the concrete shape of one of the artifacts that lives in it.
+The operational difference is profound: at level 1, forgetting to update the spec is a discipline failure. At level 2, it's an infrastructure bug — and infrastructure bugs get fixed once.
 
-The operating consequence: when a team builds a harness, specs aren't just another folder — they're one of the central pieces of context. And when that same team applies SDD, the harness ensures specs reach the agent in the right form, at the right moment, with the right hooks.
+### Level 3 — Human over the loop (software factory)
 
-## Coupling point 2 — Sensors that validate specs
+The human defines intent at a high level and the system handles the rest: decomposes intent into specs, implements, verifies, detects problems, and self-corrects. The human intervenes for exceptions and strategic decisions, not for the normal flow. Each iteration of the system makes it more autonomous and more reliable.
 
-The harness's second pillar is the duality **guides and sensors**: artifacts that orient the agent *before* acting (guides) and verifiers that detect when the agent has drifted *after* (sensors). The chapter 5 SDD lifecycle's phase 5 — verification — is exactly a kind of sensor.
+This isn't science fiction — it's the direction tools like Traycer ([chapter 7](07-native-sdd-tools.md#traycer)) are already pointing toward with their elicitation → planning → verification cycle. The difference is that at level 3, that cycle doesn't need a human supervising each session.
 
-Without harness, that phase 5 is manual or, at best, an ad-hoc script someone runs. With harness, it becomes infrastructure: tests comparing code against spec, recurring agents detecting drift, linters validating that spec constraints are still respected.
+## The mechanisms that enable each jump
 
-This is the technical way to close the chapter 6 bidirectional loop. Without harness, the loop depends on human discipline ("remember to update the spec"). With harness, the loop is automatic ("the sensor detected code and spec diverged and opened an issue to reconcile them").
+The progression isn't abstract. Each level is enabled by concrete mechanisms that connect directly to what you've learned in this course:
 
-## Coupling point 3 — Hooks that keep specs alive
+### Specs as persistent context
 
-The chapter 7 Kiro detail — the **hooks that fire on file save** — isn't a detail. It's the prefiguration of one of the central harness mechanisms: **repo events that trigger agent actions** (regenerate docs, update indexes, validate invariants, refresh the living-specs loop).
+Everything the agent should know has to be materialized in the repo, not in Slack or in heads. SDD specs are a specialization of that principle: persistent context with a specific shape — *intent + constraints + whys + verifiable criteria*.
 
-When a Kiro-style tool has those hooks, it's implementing a micro-piece of harness inside its own product. When you build your full harness, you have hooks for any event, and the spec maintenance axes that require human discipline in pure SDD become machine-triggered in SDD + harness.
+At level 1, specs are written and maintained by a human. At level 2, the system ensures specs reach the agent in the right form, at the right moment, with the right hooks. At level 3, the system generates and updates specs as part of its own cycle.
 
-The operating rule: **anything that in pure SDD requires "remember to do X when Y happens", in SDD + harness should become an automatic hook**. If something stays in "remember", it'll be forgotten.
+### Sensors that validate specs
 
-## Coupling point 4 — Architect layers as harness prototype
+Chapter 5's verification phase is a manual sensor: someone compares what the agent did with what the spec asked for. At level 2, that becomes infrastructure: tests comparing code against spec, recurring agents detecting drift, linters validating that constraints are still respected.
 
-Tools like Traycer ([chapter 7](07-native-sdd-tools.md#traycer)) are technically **harness applied to SDD**. What they do — intercepting inputs, planning, verifying outputs — is exactly the harness guides-and-sensors dynamic, applied to the concrete cycle of a session with an agent.
+This is the technical way to close the chapter 6 bidirectional loop. Without automation, the loop depends on human discipline ("remember to update the spec"). With automation, the loop is automatic ("the sensor detected code and spec diverged and opened an issue to reconcile them").
 
-If the full harness seems too much to start with, an architect layer over your agent is the miniature version of the idea: try what it feels like to have guides and sensors wrapping the agent, before committing to building your own harness. And when you're ready for the full harness, you'll discover Traycer's logic is a particular case of the general pattern — because it is.
+### Hooks that eliminate "remember to..."
 
-## Coupling point 5 — Anti-patterns that only the harness solves
+The hooks that fire on file save — like Kiro's in chapter 7 — are the prefiguration of a more general principle: **repo events that trigger automatic actions** (regenerate docs, update indexes, validate invariants, refresh the living-specs loop).
 
-Several [chapter 11 anti-patterns](11-anti-patterns.md) are specifically hard to avoid without harness:
+The operating rule: **anything that in pure SDD requires "remember to do X when Y happens" should become an automatic hook**. If something stays in "remember", it'll be forgotten. Each hook you add is a step from level 1 to level 2.
 
-- **Spec-as-Theatre** dies when there's an automatic sensor measuring adherence: if the spec isn't respected, the harness says so.
+### SDD tools as factory prototypes
+
+Tools like Traycer are technically **level 2 prototypes**: they intercept inputs, plan, verify outputs. It's the guides-and-sensors dynamic applied to the concrete cycle of a session with an agent.
+
+If the full factory seems too much to start with, an SDD tool over your agent is the miniature version of the idea: try what it feels like to have guides and sensors wrapping the agent, before committing to building your own infrastructure.
+
+### Anti-patterns that only automation solves
+
+Several [chapter 11 anti-patterns](11-anti-patterns.md) are specifically hard to avoid with human discipline alone:
+
+- **Spec-as-Theatre** dies when there's an automatic sensor measuring adherence: if the spec isn't respected, the system says so.
 - **The eternal spec** dies when there's a recurring agent detecting drift and opening automatic issues.
 - **Trusting the spec more than the code** becomes rare when there are automatic validators that on disagreement force you to investigate before accepting the merge.
 - **The review burden** gets reduced when hooks generate the repetitive markdowns automatically and human attention is freed for what contributes judgment.
 
-In other words: **a significant part of what kills bad SDD is exactly what the harness is designed to solve**. The two courses aren't sequential by whim — they're sequential because the problems you discover doing the discipline well are the problems harness addresses.
+In other words: **a significant part of what kills bad SDD is exactly what automation is designed to solve**.
 
-## When to take the next step
+## Signals it's time to level up
 
-Not every team adopting SDD needs to jump to the harness immediately. There are specific signals you're ready for the transition:
+Not every team adopting SDD needs to jump to level 2 immediately. There are specific signals:
 
-- **The team applies SDD with discipline but sustainability depends on individuals.** If Alice goes on vacation for a week and specs go out of date, you need mechanism, not more discipline.
-- **The chapter 6 bidirectional loop works when someone takes care of it and breaks when nobody looks.** That's a sign it needs to go from human process to infrastructure.
+- **Sustainability depends on individuals.** If one person goes away for a week and specs go out of date, you need mechanism, not more discipline.
+- **The bidirectional loop works when someone takes care of it and breaks when nobody looks.** That's a sign it needs to go from human process to infrastructure.
 - **[Chapter 11 anti-patterns](11-anti-patterns.md) reappear periodically** even though the team knows them. Individual awareness doesn't scale; infrastructure does.
-- **Chapter 7 tools fall short because they're single-dimension** and your system needs multiple layers (sensors + hooks + sandboxes + observability). That's a full harness, not one more tool.
+- **Chapter 7 tools fall short** because your system needs multiple layers (sensors + hooks + sandboxes + observability) that no single tool covers.
 
-If you recognize two or more, the trilogy's next course is your natural next step.
-
-## What the harness will teach you (in short preview)
-
-To make the bridge concrete, here's a very condensed idea of what the harness course develops and how it connects to what you've learned here:
-
-- **Guides and sensors as two pillars.** Harness ch. 3 develops this duality. Specs are guides; validators and recurring agents are sensors.
-- **The loop as primitive.** Harness ch. 4 presents "iteration as primitive". This course's ch. 5 cycle is a particular case.
-- **Isolated, reproducible environments.** Harness ch. 5 talks about disposable sandboxes. Here you improve the reliability of SDD's implementation phase.
-- **Context as system of record.** Harness ch. 6 is where your specs fit as one of the central artifacts.
-- **Architecture for agents.** Harness ch. 7 teaches you to design the repo so the agent can navigate it. Specs only work when the agent can find them.
-
-The progression is natural and worth doing in order: first this guide for the discipline, then the harness for the infrastructure.
+If you recognize two or more, it's time to start building infrastructure. The [harness guide](https://jmlopezdona.github.io/ai-coding-agents-harness/) develops the concrete mechanisms to take that step.
 
 ## A goodbye without promises
 
@@ -82,10 +80,10 @@ First, **well-done SDD improves the agent's output and the project's sustainabil
 
 Second, **bad SDD is indistinguishable from bureaucracy and sometimes worse**. This is also documented and is why chapter 9 exists. Applying it without judgment turns the discipline into its own bottleneck, and within weeks the team goes back to vibe coding with an additional layer of cynicism.
 
-The difference between the two isn't the tool. It's the team's judgment to modulate the formality level by problem, keep whys alive, read honest critiques as part of the course, and understand that SDD is **one** strategy within context engineering, not the only one.
+The difference between the two isn't the tool. It's the team's judgment to modulate the formality level by problem, keep whys alive, and understand that manual discipline is only the first step — the goal is to build a system where quality is a consequence of infrastructure, not individual heroism.
 
 If you take that, you take the best this guide can offer.
 
 ---
 
-*This chapter closes the course. If you want to take the next step, read the [harness guide](https://jmlopezdona.github.io/ai-coding-agents-harness/). And if you're missing the foundations on what an agent is and how to drive one, the [fundamentals guide](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/) is the natural starting point of the trilogy. All chapters here are self-contained: jump to whichever one you need when the problem it solves shows up.*
+*This chapter closes the course. If you want to take the next step toward automation, read the [harness guide](https://jmlopezdona.github.io/ai-coding-agents-harness/). And if you're missing the foundations on what an agent is and how to drive one, the [fundamentals guide](https://jmlopezdona.github.io/ai-coding-agents-fundamentals/) is the natural starting point of the trilogy. All chapters here are self-contained: jump to whichever one you need when the problem it solves shows up.*

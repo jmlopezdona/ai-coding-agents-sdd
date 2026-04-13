@@ -55,7 +55,7 @@ Two chapters are **not optional** even though they look negative: chapter 9 (the
 
 ### Part 6 — What's next
 
-- [12. From SDD to the harness: how the pieces fit](12-from-sdd-to-harness.md)
+- [12. From discipline to the software factory](12-from-sdd-to-harness.md)
 
 ## What you *won't* find in this version
 

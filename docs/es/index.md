@@ -55,7 +55,7 @@ Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 9 (la
 
 ### Parte 6 — Qué sigue
 
-- [12. Del SDD al harness: cómo encajan las piezas](12-from-sdd-to-harness.md)
+- [12. De la disciplina a la fábrica de software](12-from-sdd-to-harness.md)
 
 ## Qué *no* encontrarás en esta versión
 

@@ -64,7 +64,7 @@ nav:
       - "10. Code-embedded context": 10-context-engineering.md
       - "11. Anti-patterns": 11-anti-patterns.md
   - What's next:
-      - "12. From SDD to the harness": 12-from-sdd-to-harness.md
+      - "12. From discipline to the software factory": 12-from-sdd-to-harness.md
 
 markdown_extensions:
   - admonition
@@ -136,7 +136,7 @@ plugins:
             "10. Code-embedded context": "10. Code-embedded context: la otra cara de la moneda"
             "11. Anti-patterns": "11. Anti-patrones"
             "What's next": "Qué sigue"
-            "12. From SDD to the harness": "12. Del SDD al harness"
+            "12. From discipline to the software factory": "12. De la disciplina a la fábrica de software"
 
 extra:
   social:
