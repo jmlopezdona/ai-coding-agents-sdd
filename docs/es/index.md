@@ -17,7 +17,7 @@ Es la **segunda guía de una trilogía**: viene después de la [guía de fundame
 
 ## Cómo leer esta guía
 
-Los capítulos están ordenados de **problema → fundamentos → ciclo → herramientas → práctica → crítica → puente**, pero cada uno se sostiene por sí solo. Si ya tienes claro el "por qué", salta al capítulo que te resuelva un problema concreto. Si vienes de cero, léelos en orden.
+Los capítulos están ordenados de **problema → fundamentos → ciclo → práctica → puente**, pero cada uno se sostiene por sí solo. Si ya tienes claro el "por qué", salta al capítulo que te resuelva un problema concreto. Si vienes de cero, léelos en orden.
 
 Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 9 (la crítica honesta) y el 10 (code-embedded context como complemento). Sin ellos, el curso es marketing. Con ellos, da criterio.
 
@@ -42,18 +42,15 @@ Hay dos capítulos que **no son opcionales** aunque parezcan negativos: el 9 (la
 - [5. Posibles enfoques del ciclo de vida](05-sdd-lifecycles.md)
 - [6. Especificaciones vivas: el bucle bidireccional](06-living-specs.md)
 
-### Parte 4 — Herramientas
+### Parte 4 — Puesta en práctica
 
 - [7. Herramientas SDD: Kiro, Spec-kit, Tessl, BMAD y Traycer](07-native-sdd-tools.md)
-
-### Parte 5 — Puesta en práctica
-
 - [8. Patrones de aplicación: features, refactor, bugfix](08-patterns-of-application.md)
 - [9. La crítica honesta: maintenance tax, MDD y la ilusión de control](09-honest-critique.md)
 - [10. Code-embedded context: la otra cara de la moneda](10-context-engineering.md)
 - [11. Anti-patrones del SDD](11-anti-patterns.md)
 
-### Parte 6 — Qué sigue
+### Parte 5 — Qué sigue
 
 - [12. De la disciplina a la fábrica de software](12-from-sdd-to-harness.md)
 

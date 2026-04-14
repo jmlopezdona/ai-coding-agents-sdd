@@ -17,7 +17,7 @@ This is the **second guide in a trilogy**: it comes after the [fundamentals guid
 
 ## How to read this guide
 
-Chapters are ordered **problem → foundations → cycle → tooling → practice → critique → bridge**, but each one stands on its own. If you already have the "why", jump to whichever chapter solves a concrete problem. If you're starting fresh, read in order.
+Chapters are ordered **problem → foundations → cycle → practice → bridge**, but each one stands on its own. If you already have the "why", jump to whichever chapter solves a concrete problem. If you're starting fresh, read in order.
 
 Two chapters are **not optional** even though they look negative: chapter 9 (the honest critique) and chapter 10 (code-embedded context as complement). Without them, this course is marketing. With them, it gives judgment.
 
@@ -42,18 +42,15 @@ Two chapters are **not optional** even though they look negative: chapter 9 (the
 - [5. Possible lifecycle approaches](05-sdd-lifecycles.md)
 - [6. Living specs: the bidirectional loop](06-living-specs.md)
 
-### Part 4 — Tooling
+### Part 4 — Putting it to work
 
 - [7. SDD tools: Kiro, Spec-kit, Tessl, BMAD and Traycer](07-native-sdd-tools.md)
-
-### Part 5 — Putting it to work
-
 - [8. Patterns of application: features, refactors, bug fixes](08-patterns-of-application.md)
 - [9. The honest critique: maintenance tax, MDD and the illusion of control](09-honest-critique.md)
 - [10. Code-embedded context: the other side of the coin](10-context-engineering.md)
 - [11. SDD anti-patterns](11-anti-patterns.md)
 
-### Part 6 — What's next
+### Part 5 — What's next
 
 - [12. From discipline to the software factory](12-from-sdd-to-harness.md)
 
